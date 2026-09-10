@@ -14,7 +14,7 @@ L'objectif principal de ce guide est de vous montrer comment configurer un stock
 
 Dans le cadre de cette configuration :
 
-- **Accès à l'offre S3 Cloud Temple** : Vous devez disposer de l'offre S3 fournis par Cloud Temple (clé d'accès et clé secrète).  
+- **Accès à le produit S3 Cloud Temple** : Vous devez disposer de le produit S3 fourni par Cloud Temple (clé d'accès et clé secrète).  
   
 ---
 
@@ -29,6 +29,7 @@ Dans le cadre de cette configuration :
 ## Versions des logiciels
 
 Assurez-vous que les versions suivantes de logiciels et outils sont installées pour garantir une compatibilité optimale :  
+
 - **Kasten K10** : v5.5.10 ou supérieur  
 - **OpenShift CLI** : v4.15.6 ou supérieur  
 - **Kubernetes** : v1.24 ou supérieur (via OpenShift)  
@@ -43,7 +44,7 @@ Pour suivre ce guide, assurez-vous d’avoir les éléments suivants :
 2. **Clés S3 fournies par Cloud Temple** :
    - Clé d'accès (Access Key)
    - Clé secrète (Secret Key)  
-3. **Bucket préconfiguré** : Un Bucket dans S3 Cloud Temple, exemple : `demobackup`.   
+3. **Bucket préconfiguré** : Un Bucket dans S3 Cloud Temple, exemple : `demobackup`.
 4. **Autorisations Kubernetes** : Vous devez disposer des permissions administratives au sein du namespace Kasten (`kasten-io`) pour effectuer des configurations.  
 
 ---
@@ -61,6 +62,7 @@ Pour suivre ce guide, assurez-vous d’avoir les éléments suivants :
 ## Fichiers nécessaires
 
 Aucun fichier spécifique n’est nécessaire pour cette configuration, mais vous aurez besoin des informations suivantes provenant de Cloud Temple :  
+
 - **Clé d'accès S3**  
 - **Clé secrète S3**  
 - **URL de l’endpoint S3 SNC** : Par exemple, `xxxxx.s3.fr1.cloud-temple.com`.  
@@ -140,6 +142,7 @@ Pour confirmer que la sauvegarde est correctement configurée :
 En suivant ce guide, vous avez configuré avec succès un emplacement de sauvegarde S3 compatible SecNumCloud dans Kasten avec l’infrastructure Cloud Temple. Ce workflow permet de gérer efficacement vos sauvegardes, tout en tirant parti d’un stockage certifié et sécurisé.  
 
 Pour aller plus loin, vous pouvez :  
+
 - Ajouter d'autres workloads à sauvegarder.  
 - Configurer des politiques de rétention avancées dans Kasten.  
 - Automatiser les tests de restauration pour valider vos données.  

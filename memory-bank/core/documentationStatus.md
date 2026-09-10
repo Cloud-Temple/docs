@@ -1,273 +1,143 @@
-# Statut de Documentation - Tableau de Bord
+# Statut de la Documentation
 
-## Vue d'ensemble des Services
+## 🚦 État Global du Build
 
-| Service            | Structure | Contenu | Images  | i18n    | Statut Global        |
-| ------------------ | --------- | ------- | ------- | ------- | -------------------- |
-| Console Management | ✅ 95%    | ✅ 90%  | ✅ 95%  | ✅ 85%  | 🟢 **EXCELLENT**    |
-| Bastion Security   | ✅ 100%   | ✅ 100% | ✅ 100% | ✅ 85%  | 🟢 **PARFAIT**      |
-| IaaS Bare Metal    | ✅ 100%   | ✅ 85%  | ✅ 80%  | ✅ 80%  | 🟢 **BON**          |
-| IaaS Open Source   | ✅ 100%   | ✅ 80%  | ✅ 75%  | ✅ 80%  | 🟡 **SATISFAISANT** |
-| IaaS VMware        | ✅ 100%   | ✅ 90%  | ✅ 85%  | ✅ 80%  | 🟢 **BON**          |
-| PaaS OpenShift     | ✅ 100%   | ✅ 85%  | ✅ 80%  | ✅ 80%  | 🟢 **BON**          |
-| Housing            | ✅ 100%   | ✅ 90%  | ✅ 70%  | ✅ 80%  | 🟢 **BON**          |
-| Network Services   | 🔴 40%    | 🔴 20%  | 🔴 10%  | 🔴 15%  | 🔴 **CRITIQUE**     |
-| Storage OSS        | 🔴 30%    | 🔴 15%  | 🔴 5%   | 🔴 10%  | 🔴 **CRITIQUE**     |
-| LLMaaS             | ✅ 100%   | ✅ 100% | ✅ 95%  | ✅ 80%  | 🟢 **PARFAIT**      |
+- **Dernier build validé** : ✅ SUCCÈS (04/05/2026)
+- **Langues compilées** : fr, en, es, it, de
+- **Version** : 3.25.0
 
-## Détail par Dossier
+## 📊 Couverture par Service
 
-### 📁 `/docs/console/` - Console Management
+### Console Management (`/docs/console/`)
 
-#### Statut des Fichiers
-| Fichier                 | Taille | Complétude | Dernière MAJ | Statut            |
-| ----------------------- | ------ | ---------- | ------------ | ----------------- |
-| `console.md`            | ≈ 3KB  | ✅ 95%     | Récente      | 🟢 **COMPLET**   |
-| `console_quickstart.md` | ≈ 5KB  | ✅ 90%     | Récente      | 🟢 **COMPLET**   |
-| `api.md`                | ≈ 8KB  | ✅ 95%     | Récente      | 🟢 **EXCELLENT** |
-| `orders.md`             | ≈ 4KB  | ✅ 85%     | Récente      | 🟢 **BON**       |
-| `status.md`             | ≈ 3KB  | ✅ 80%     | Récente      | 🟢 **BON**       |
+- **État** : ✅ Stable et complet
+- **Nouveauté** : Module Billing (gestionnaire des coûts) ajouté en avril 2026
 
-#### Sous-Module IAM
-| Fichier             | Statut | Complétude |
-| ------------------- | ------ | ---------- |
-| `iam/iam.md`        | ✅     | 95%        |
-| `iam/concepts.md`   | ✅     | 90%        |
-| `iam/quickstart.md` | ✅     | 85%        |
-| `iam/images/`       | ✅     | Présent    |
-| `iam/tutorials/`    | ✅     | Présent    |
+### Bastion Security (`/docs/bastion/`)
 
-#### En Développement
-- 🔄 `metrics/` : Structure créée, contenu en cours
-- 🔄 `security/` : Structure créée, contenu en cours
+- **État** : ✅ Stable
 
-#### Images Console (40+ fichiers)
-- ✅ **Grafana Dashboards** : 4 captures
-- ✅ **API Interface** : 4 captures + 1 JPG
-- ✅ **Home & Login** : Interface principale
-- ✅ **Incidents** : 6 captures workflow
-- ✅ **Interventions** : 5 captures menu
-- ✅ **IP Management** : 2 captures
-- ✅ **Logs & Metrics** : 4 captures
-- ✅ **Onboarding** : 9 captures processus
-- ✅ **Orders** : 8 captures commandes
+### IaaS Services (`/docs/iaas_*/`)
 
-### 📁 `/docs/bastion/` - Bastion Security
+- **État** : ✅ Stable et enrichi
+- **Évolutions** :
+  - IaaS OpenSource : section sauvegarde enrichie (architecture, sécurité, monitoring)
+  - IaaS VMware : métriques cluster documentées
+  - IaaS Bare Metal : précisions BFS ajoutées
+  - Plafonds IOPS/bande passante ajoutés pour toutes les classes de stockage
 
-#### Fichiers Principaux
-| Fichier         | Taille | Complétude | Statut          |
-| --------------- | ------ | ---------- | --------------- |
-| `bastion.md`    | ≈ 4KB  | ✅ 100%    | 🟢 **PARFAIT** |
-| `concepts.md`   | ≈ 6KB  | ✅ 100%    | 🟢 **PARFAIT** |
-| `quickstart.md` | ≈ 5KB  | ✅ 100%    | 🟢 **PARFAIT** |
-| `tutorials.md`  | ≈ 7KB  | ✅ 100%    | 🟢 **PARFAIT** |
+### PaaS OpenShift (`/docs/paas_openshift/`)
 
-#### Images Bastion (13 fichiers)
-- ✅ **Appliances** : Configuration
-- ✅ **Architecture** : Diagrammes PNG + SVG
-- ✅ **Sessions** : Création, ouverture, modification, suppression
-- ✅ **Support** : Interface intégrée
-- ✅ **Workflows** : Processus complets
+- **État** : ✅ Stable
 
-### 📁 `/docs/iaas_*` - Infrastructure Services
+### Managed Kubernetes (`/docs/managed_kubernetes/`)
 
-#### IaaS Bare Metal
-| Fichier              | Complétude | Priorité Action          |
-| -------------------- | ---------- | ------------------------ |
-| `iaas_bare-metal.md` | ✅ 90%     | 🔵 **Amélioration**     |
-| `concepts.md`        | ✅ 85%     | 🔶 **Enrichissement**   |
-| `quickstart.md`      | ✅ 80%     | 🔶 **Détail technique** |
-| `tutorials.md`       | ✅ 80%     | 🔶 **Cas d'usage**      |
-| `images/`            | ✅ Présent | 🔵 **Diagrammes**       |
+- **État** : ✅ Stable et complet
+- **Évolutions** : GPU, Gateway API, OpenCost, Bare Metal nodes
 
-#### IaaS Open Source
-| Fichier              | Complétude | Action Requise                   |
-| -------------------- | ---------- | -------------------------------- |
-| `iaas_opensource.md` | ✅ 80%     | 🔶 **Technologies détaillées**  |
-| `concepts.md`        | ✅ 75%     | 🔶 **Architecture open source** |
-| `quickstart.md`      | ✅ 80%     | 🔶 **Installation guidée**      |
-| `tutorials.md`       | ✅ 75%     | 🔶 **Implémentations**          |
-| `images/`            | ✅ Présent | 🔶 **Captures installation**    |
+### Managed MariaDB (`/docs/managed_mariadb/`)
 
-#### IaaS VMware
-| Fichier          | Complétude | Qualité           |
-| ---------------- | ---------- | ----------------- |
-| `iaas_vmware.md` | ✅ 95%     | 🟢 **Excellent** |
-| `concepts.md`    | ✅ 90%     | 🟢 **Très bon**  |
-| `quickstart.md`  | ✅ 85%     | 🟢 **Bon**       |
-| `images/`        | ✅ Présent | 🟢 **Bon**       |
-| `tutorials/`     | ✅ Présent | 🟢 **Avancé**    |
+- **État** : 🆕 Nouveau (preview, avril 2026)
+- **Contenu** : Présentation, concepts (StandAlone/Distributed), quickstart
+- **À faire** : Tutoriels pratiques
 
-### 📁 `/docs/paas_openshift/` - Platform as a Service
+### Managed PostgreSQL (`/docs/managed_postgresql/`)
 
-#### Documentation Container
-| Fichier             | Statut     | Complétude               |
-| ------------------- | ---------- | ------------------------ |
-| `paas_openshift.md` | ✅ 90%     | 🟢 **Très bon**         |
-| `concepts.md`       | ✅ 85%     | 🟢 **Bon**              |
-| `quickstart.md`     | ✅ 80%     | 🔶 **À enrichir**       |
-| `images/`           | ✅ Présent | 🟢 **Screenshots OK**   |
-| `tutorials/`        | ✅ Présent | 🔶 **DevOps workflows** |
+- **État** : 🆕 Nouveau (preview, avril 2026)
+- **Contenu** : Présentation, concepts, quickstart
+- **À faire** : Tutoriels pratiques
 
-### 📁 `/docs/housing/` - Colocation
+### VM Instances (`/docs/public_cloud/vm_instances/`)
 
-#### Infrastructure Physique
-| Fichier         | Complétude | Statut            |
-| --------------- | ---------- | ----------------- |
-| `housing.md`    | ✅ 95%     | 🟢 **Excellent** |
-| `concepts.md`   | ✅ 90%     | 🟢 **Très bon**  |
-| `quickstart.md` | ✅ 85%     | 🟢 **Bon**       |
-| `tutorials.md`  | ✅ 85%     | 🟢 **Bon**       |
+- **État** : 🆕 Nouveau (preview, avril 2026)
+- **Contenu** : Vue d'ensemble, concepts, quickstart illustré (9 étapes), 3 tutoriels
+- **SLA** : 99,95%
 
-### 📁 `/docs/network/` - Services Réseau 🔴 CRITIQUE
+### LLMaaS (`/docs/llmaas/`)
 
-#### État Actuel
-- 🔴 **internet/** : Dossier vide
-- 🔴 **private_network/** : Dossier vide
+- **État** : ✅ Stable et validé
+- **Modèles** : 40+
 
-#### Actions Urgentes Requises
-1. **Internet Connectivity** :
-   - 📝 `internet.md` : Offres connectivité
-   - 📝 `concepts.md` : Architecture réseau
-   - 📝 `quickstart.md` : Configuration
-   - 📝 `tutorials.md` : Cas d'usage
+### Network (`/docs/network/`)
 
-2. **Private Networks** :
-   - 📝 `private_network.md` : Réseaux privés
-   - 📝 `concepts.md` : VLAN, VPN, interconnexions
-   - 📝 `quickstart.md` : Configuration réseau
-   - 📝 `tutorials.md` : Scénarios avancés
+- **État** : ✅ Stable
+- **Structure** : VPC, Private Network, Private Backbone, Internet (concepts avancés BGP)
 
-### 📁 `/docs/storage/` - Solutions Stockage 🔴 CRITIQUE
+### Storage (`/docs/storage/`)
 
-#### État Actuel
-- 🔴 **oss/** : Dossier vide
+- **État** : ✅ Bon (9 tutoriels, FAQ, plafonds IOPS)
 
-#### Documentation à Créer
-1. **Object Storage Service** :
-   - 📝 `oss.md` : Présentation service
-   - 📝 `concepts.md` : Architecture S3
-   - 📝 `quickstart.md` : Première utilisation
-   - 📝 `tutorials.md` : Intégrations
-   - 📝 `images/` : Captures interface
+### Terraform (`/docs/terraform/`)
 
-### 📁 `/docs/llmaas/` - LLM as a Service
+- **État** : ✅ Stable
 
-#### Fichiers Principaux
-| Fichier            | Taille | Complétude | Statut             |
-| ------------------ | ------ | ---------- | ------------------ |
-| `llmaas.md`        | ≈ 2KB  | ✅ 100%    | 🟢 **COMPLET**    |
-| `concepts.md`      | ≈ 3KB  | ✅ 100%    | 🟢 **COMPLET**    |
-| `quickstart.md`    | ≈ 4KB  | ✅ 100%    | 🟢 **COMPLET**    |
-| `api.md`           | ≈ 15KB | ✅ 100%    | 🟢 **COMPLET**    |
-| `tutorials.md`     | ≈ 25KB | ✅ 100%    | 🟢 **COMPLET**    |
-| `models.md`        | ≈ 10KB | ✅ 100%    | 🟢 **AUTOMATISÉ** |
-| `rag_explained.md` | ≈ 8KB  | ✅ 100%    | 🟢 **COMPLET**    |
-| `changelog.md`     | ≈ 2KB  | ✅ 100%    | 🟢 **NOUVEAU**    |
+### Contractuel (`/docs/contractual/`)
 
-#### État des Tests (`/tests/llmaas/`)
-- ✅ **Suite complète** : 9/9 tests réussis.
-- ✅ **Tests RAG** : FAISS et Qdrant validés.
-- ✅ **Runner unifié** : `run_all_tests.py` fonctionnel.
+- **État** : ✅ Restructuré (avril 2026)
+- **Architecture** : Pages hub `contracts.md` et `shared-responsibility.md`, RACI par service
+- **Navigation** : Colonne dédiée dans le footer (plus de menu latéral)
 
-## Statut Internationalisation
+## 🌍 Internationalisation (i18n)
 
-### Couverture par Langue
-| Langue   | Code  | Statut          | Complétude | Priorité          |
-| -------- | ----- | --------------- | ---------- | ----------------- |
-| Français | `fr/` | 🟢 **Source**  | 100%       | 🔥 **Référence** |
-| Anglais  | `en/` | 🟡 **Partiel** | 75%        | 🔥 **HAUTE**     |
-| Allemand | `de/` | 🟡 **Partiel** | 60%        | 🔶 **MOYENNE**   |
-| Espagnol | `es/` | 🟡 **Partiel** | 60%        | 🔶 **MOYENNE**   |
-| Italien  | `it/` | 🟡 **Partiel** | 55%        | 🔵 **BASSE**     |
+**Script de traduction** : `scripts/translate_py/translate.py`
 
-### Fichiers Traduction
-| Type                              | Statut | Commentaire                   |
-| --------------------------------- | ------ | ----------------------------- |
-| `code.json`                       | ✅     | Interface UI traduite         |
-| `docusaurus-plugin-content-docs/` | 🔶    | Contenu partiellement traduit |
-| `docusaurus-theme-classic/`       | ✅     | Thème localisé                |
+**État des hash** : ✅ 157/157 fichiers synchronisés (resync 17/05/2026)
 
-## Documentation Contractuelle
+| Langue | Statut Build | Qualité Traduction | Actions Requises |
+|--------|--------------|-------------------|------------------|
+| **FR** | ✅ Succès | Native | Source de vérité |
+| **EN** | ✅ Succès | Haute | Aucune |
+| **ES** | ✅ Succès | Moyenne | Aucune |
+| **IT** | ✅ Succès | Moyenne | Aucune |
+| **DE** | ✅ Succès | Moyenne | Aucune |
 
-### Statut `/contractual/`
-| Type          | Format          | Statut | Commentaire          |
-| ------------- | --------------- | ------ | -------------------- |
-| Bare Metal    | `.md` + `.docx` | ✅     | Contrats complets    |
-| CGVU          | `.md` + `.docx` | ✅     | Conditions générales |
-| DPA           | `.md` + `.docx` | ✅     | Protection données   |
-| Order Process | `.md`           | ✅     | Processus commande   |
-| Templates     | `.dotx`         | ✅     | Modèles juridiques   |
+### Scripts impactant les traductions
 
-### Contrats par Service
-- ✅ **IaaS** : Dossier complet
-- ✅ **Network** : Contrats réseau
-- ✅ **PaaS** : Contrats platform
-- ✅ **LLMaaS** : **NOUVEAU** - Matrice de responsabilité (RACI)
+| Script | Écrit docs/ | Écrit i18n/ | Met à jour hash |
+|--------|:-:|:-:|:-:|
+| `scripts/translate_py/translate.py` | ❌ | ✅ | ✅ |
+| `scripts/extract_changelog.py` | ✅ | ✅ | ✅ (corrigé 17/05/2026) |
+| `scripts/generate_models_doc/generate_models_doc.py` | ✅ | ❌ | N/A (déclenche re-traduction) |
 
-## Métriques Techniques
+> ⚠️ **Règle** : Ne jamais éditer `i18n/` manuellement. Modifier `docs/` puis lancer `translate.py`.
+> L'ancien script `oldies/translate.js` a été supprimé le 17/05/2026.
 
-### Taille Documentation
-- **Total fichiers** : ~150 fichiers markdown
-- **Images** : ~65 captures d'écran
-- **Langues** : 5 langues supportées
-- **Services** : 9 services principaux
+## 🏗️ Navigation et Structure
 
-### Performance Docusaurus
-- **Build time** : < 30 secondes
-- **Pages générées** : ~200 pages
-- **Bundle size** : Optimisé
-- **SEO** : Métadonnées complètes
+### Catégories principales (sidebar)
 
-## Issues et Blocages
+- **Cloud Public** : VM Instances (preview)
+- **Compute** : IaaS OpenSource, IaaS VMware
+- **Containers** : Managed Kubernetes, PaaS OpenShift
+- **Managed Databases** : MariaDB, PostgreSQL (preview)
+- **Network** : VPC, Private Backbone
+- **Sécurité & Identité** : Bastion, Console IAM
+- **Stockage** : OSS
+- **LLMaaS** : IA Générative
+- **Contractuel** : Colonne footer dédiée
 
-### 🔴 Issues Critiques
-1. **Network Documentation** : Services non documentés
-2. **Storage OSS** : API non documentée
-3. **Traductions** : Retard mise à jour multilingue
+## 🛠️ Maintenance Technique
 
-### 🔶 Issues Moyennes
-1. **Console Metrics** : Module incomplet
-2. **Console Security** : Module incomplet
-3. **Screenshots** : Mise à jour Interface Shiva
+### Actions Récentes (session 17/05/2026)
 
-### 🔵 Améliorations
-1. **SEO Optimization** : Métadonnées avancées
-2. **Navigation** : Amélioration UX
-3. **Search** : Optimisation recherche
+- [x] Resync des hash de traduction (102 mis à jour, 34 ajoutés, 55 orphelins nettoyés)
+- [x] Nettoyage changelog_produits.md (tronqué avant v4.0, ~2600 → ~420 lignes)
+- [x] Correction extract_changelog.py pour mettre à jour les hash après génération
+- [x] Suppression de l'ancien script oldies/translate.js
+- [x] Mise à jour README.md et scripts/README.md (doc traduction complète)
+- [x] Mise à jour Memory Bank
 
-## Planning de Résolution
+### Actions Récentes (session 14/05/2026)
 
-### Semaine 1 (Priorité Critique)
-- 🔥 **Network Internet** : Documentation complète
-- 🔥 **Network Private** : Documentation VLAN/VPN
-- 🔥 **Storage OSS** : API S3 et concepts
+- [x] Fix permissions git (core.fileMode false)
+- [x] Mise à jour changelog (3 entrées manquantes : stockage IOPS, sauvegarde IaaS, DB sizing)
+- [x] Fix chunking traduction (code-block-aware dans ContentSplitter)
 
-### Semaine 2 (Priorité Haute)
-- 🔶 **Console Metrics** : Dashboards Grafana
-- 🔶 **Console Security** : Contrôles sécurité
-- 🔶 **Traductions EN** : Mise à jour anglais
+### Actions Futures
 
-### Semaine 3-4 (Optimisation)
-- 🔵 **Screenshots** : Nouvelle interface Shiva
-- 🔵 **Tutorials** : Enrichissement cas d'usage
-- 🔵 **SEO** : Optimisation métadonnées
-
-## KPI Documentation
-
-### Objectifs 2025
-- **Couverture services** : 100% (actuellement 87%)
-- **Complétude contenu** : 95% (actuellement 85%)
-- **Traductions** : 90% (actuellement 70%)
-- **Support visuel** : 95% (actuellement 85%)
-
-### Métriques de Suivi
-- ✅ **Services complets** : 7/9
-- 🔶 **Services partiels** : 2/9
-- 🔴 **Services manquants** : 0/9
-- 📊 **Progression globale** : 87%
+- [ ] Ajouter des tutoriels pour Managed MariaDB et PostgreSQL
+- [ ] Enrichir VM Instances avec cas d'usage avancés
 
 ---
 
-*Tableau de bord documentation - 05/06/2025*
-*Prochaine révision : Weekly*
+*Dernière mise à jour : 17/05/2026*

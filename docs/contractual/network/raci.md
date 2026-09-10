@@ -1,6 +1,8 @@
 ---
 title: Matrice de responsabilité Réseau
+displayed_sidebar: docSidebar
 ---
+
 
 ### Connectivité réseau client
 

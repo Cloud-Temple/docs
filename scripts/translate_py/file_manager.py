@@ -5,6 +5,7 @@ Ce module gère la lecture/écriture des fichiers, le calcul des hashes,
 la gestion des métadonnées de traduction et les opérations sur les fichiers.
 """
 
+from fnmatch import fnmatch
 import hashlib
 import json
 import shutil
@@ -92,7 +93,7 @@ class FileTypeDetector:
         
         if extension in LANG_CONFIG.TRANSLATABLE_EXTENSIONS:
             return FileType.MARKDOWN
-        elif extension in {'.png', '.jpg', '.jpeg', '.gif', '.svg'}:
+        elif extension in {'.png', '.png', '.jpeg', '.gif', '.svg'}:
             return FileType.IMAGE
         elif extension in {'.docx', '.pdf'}:
             return FileType.DOCUMENT
@@ -268,6 +269,46 @@ class TaskBuilder:
         self.file_hasher = FileHasher()
         self.file_detector = FileTypeDetector()
     
+    def _matches_path_filters(self, relative_path: str) -> bool:
+        """
+        Indique si un fichier entre dans le périmètre demandé par --path.
+
+        Sans filtre, tout passe. Un motif correspond par égalité exacte, par
+        glob (fnmatch), ou comme préfixe de répertoire.
+        """
+        filtres = getattr(self.config, 'path_filters', None)
+        if not filtres:
+            return True
+        chemin = relative_path.replace('\\', '/')
+        for motif in filtres:
+            m = motif.replace('\\', '/').strip('/')
+            if chemin == m or fnmatch(chemin, m) or chemin.startswith(m + '/'):
+                return True
+        return False
+
+    def _apply_path_filters(self, files: List[Path]) -> List[Path]:
+        """
+        Restreint la liste des fichiers au périmètre demandé.
+
+        Un filtre qui ne correspond à rien lève une erreur : sans cela, une
+        faute de frappe produirait un run qui ne traduit rien, indistinguable
+        d'un run réussi.
+        """
+        filtres = getattr(self.config, 'path_filters', None)
+        if not filtres:
+            return files
+        retenus = [
+            f for f in files
+            if self._matches_path_filters(self.file_scanner.get_relative_path(f))
+        ]
+        if not retenus:
+            raise ValueError(
+                "Aucun fichier ne correspond à --path "
+                f"({', '.join(filtres)}). Les chemins sont relatifs à docs/ ; "
+                "vérifier l'orthographe avant de relancer."
+            )
+        return retenus
+
     async def build_translation_tasks(
         self,
         target_languages: List[str],
@@ -289,7 +330,7 @@ class TaskBuilder:
         Returns:
             Liste des tâches de traduction
         """
-        files = self.file_scanner.scan_files()
+        files = self._apply_path_filters(self.file_scanner.scan_files())
         
         # Trouve les répertoires avec .notranslation
         notranslation_dirs = self._find_notranslation_directories()
@@ -302,8 +343,6 @@ class TaskBuilder:
             
             # Vérifier si le fichier est dans un répertoire .notranslation
             force_copy = self._is_in_notranslation_directory(file_path, notranslation_dirs)
-            if force_copy:
-                print(f"📋 Fichier forcé en copie (répertoire .notranslation): {relative_path}")
             
             # Calcul du hash pour les fichiers traduisibles (même si force_copy)
             current_hash = None
@@ -324,6 +363,7 @@ class TaskBuilder:
                     target_path=target_path,
                     current_hash=current_hash,
                     stored_hash=stored_hash,
+                    force_copy=force_copy,
                     force_retranslation=force_retranslation,
                     init_mode=init_mode,
                     translate_missing=translate_missing
@@ -411,6 +451,7 @@ class TaskBuilder:
         target_path: Path,
         current_hash: Optional[str],
         stored_hash: Optional[str],
+        force_copy: bool,
         force_retranslation: bool,
         init_mode: bool,
         translate_missing: bool
@@ -423,6 +464,7 @@ class TaskBuilder:
             target_path: Chemin cible
             current_hash: Hash actuel du fichier source
             stored_hash: Hash stocké en métadonnées
+            force_copy: Fichier markdown à copier sans traduction
             force_retranslation: Forcer la retraduction
             init_mode: Mode initialisation
             translate_missing: Traduire les fichiers manquants
@@ -430,18 +472,31 @@ class TaskBuilder:
         Returns:
             True si traduction nécessaire
         """
-        # En mode force, tout est à traduire
+        # Fichiers non-markdown (images, documents, etc.) : JAMAIS copier.
+        # Les images déjà commitées dans i18n y restent.
+        # Le script ne doit PAS re-créer les dossiers d'images à chaque exécution.
+        # Pour les nouveaux contenus, utiliser @site/docs/... (chemins absolus).
+        if file_type != FileType.MARKDOWN:
+            return False
+
+        # Fichiers markdown sous .notranslation : traiter comme une copie.
+        # Ils ne sont pas nécessairement présents dans translation-meta.json.
+        # La source de vérité est donc l'identité source/cible, pas le hash stocké.
+        if force_copy:
+            if not target_path.exists():
+                return True
+
+            target_hash = self.file_hasher.compute_file_hash(target_path)
+            return current_hash != target_hash
+        
+        # --force : retraduire même si l'empreinte concorde. C'était le SEUL cas
+        # où l'option a un sens, et le seul qui n'était pas traité : le
+        # paramètre force_retranslation était reçu puis ignoré, si bien que
+        # --force ne pouvait pas reprendre un fichier marqué à jour — y compris
+        # une traduction tronquée dont l'empreinte mentait.
         if force_retranslation:
             return True
-        
-        # En mode init, on ne traduit que les manquants si demandé
-        if init_mode:
-            return translate_missing and not target_path.exists()
-        
-        # Fichiers non-markdown : copie si manquant
-        if file_type != FileType.MARKDOWN:
-            return not target_path.exists()
-        
+
         # Fichiers markdown : vérification du hash
         if not target_path.exists():
             return True  # Fichier manquant

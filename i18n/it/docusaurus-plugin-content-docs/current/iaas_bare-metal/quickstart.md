@@ -1,29 +1,29 @@
 ---
-title: Guida rapida
+title: Guida di avvio
 ---
-import shivaBareMetalMenu from './images/shiva_bare-metal_menu.png'
-import shivaBareMetalList from './images/shiva_bare-metal_list.png'
-import shivaBareMetalDetails from './images/shiva_bare-metal_details.png'
-import shivaBareMetalStoragelist from './images/shiva_bare-metal_storagelist.png'
+import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
+import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
+import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
+import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
 # Guida rapida per l'offerta Bare Metal
 
-Questa pagina vi guida attraverso i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Seguite queste istruzioni per scoprire i menu e le funzionalità disponibili.
+Questa pagina illustra i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Segui queste istruzioni per scoprire i menu e le funzionalità disponibili.
 
 ---
 
 ## Prerequisiti
 
-Prima di iniziare, assicuratevi dei seguenti punti:
+Prima di iniziare, verifica i seguenti punti:
 
-1. **Abbonamento attivo**: La vostra organizzazione deve aver sottoscritto l'offerta Bare Metal.
-2. **Permessi utente**: Il vostro account utente deve disporre dei diritti necessari per accedere e gestire le risorse Bare Metal.
+1. **Sottoscrizione attiva** : La tua organizzazione deve aver sottoscritto l'offerta Bare Metal.
+2. **Permessi utente** : Il tuo account utente deve disporre dei permessi necessari per accedere e gestire le risorse Bare Metal.
 
 ---
 
 ## Accesso all'interfaccia Bare Metal
 
-Una volta che l'abbonamento è attivato e i permessi configurati, un nuovo menu intitolato **Bare Metal** appare nella console Cloud Temple. Questo menu contiene due sottomenu principali: **Bare Metal** e **Volumes**.
+Una volta attivata la sottoscrizione e configurate le autorizzazioni, un nuovo menu denominato **Bare Metal** appare nella console Cloud Temple. Questo menu contiene due sottomenu principali: **Bare Metal** e **Volumes**.
 
 <img src={shivaBareMetalMenu} />
 
@@ -31,7 +31,7 @@ Una volta che l'abbonamento è attivato e i permessi configurati, un nuovo menu 
 
 ### 1. Sottomenu **Bare Metal**
 
-Il sottomenu **Bare Metal** presenta una tabella che elenca tutte le istanze Bare Metal disponibili. Questa tabella include le informazioni principali per ogni istanza:
+Il sottomenu **Bare Metal** visualizza una tabella che elenca tutte le istanze Bare Metal disponibili. Questa tabella include le informazioni principali per ogni istanza:
 
 - **Nome del Bare Metal**
 - **Stato**
@@ -42,8 +42,8 @@ Il sottomenu **Bare Metal** presenta una tabella che elenca tutte le istanze Bar
 
 #### Funzionalità principali
 
-- **Pulsante Azione**: Permette di accedere direttamente alla console di amministrazione del Bare Metal.
-- **Nome cliccabile**: Cliccando sul nome di un'istanza Bare Metal, viene visualizzata una nuova pagina con i **dettagli completi** dell'istanza:
+- **Pulsante Azione** : Consente di accedere direttamente alla console di amministrazione del Bare Metal.
+- **Nome cliccabile** : Facendo clic sul nome di un'istanza Bare Metal, viene visualizzata una nuova pagina con i **dettagli completi** dell'istanza :
   - Informazioni sull'hardware (RAM, CPU, GPU, ecc.).
   - Configurazione di rete (indirizzi IP associati).
   - Informazioni di connettività per la gestione.
@@ -54,7 +54,7 @@ Il sottomenu **Bare Metal** presenta una tabella che elenca tutte le istanze Bar
 
 ### 2. Sottomenu **Volumes**
 
-Il sottomenu **Volumes** mostra una tabella che elenca tutti i volumi di storage associati al vostro abbonamento Bare Metal. Per ogni volume, sono disponibili le seguenti informazioni:
+Il sottomenu **Volumes** visualizza una tabella che elenca tutti i volumi di archiviazione associati alla tua sottoscrizione Bare Metal. Per ogni volume, sono disponibili le seguenti informazioni:
 
 - **Nome del volume**
 - **Capacità**
@@ -63,8 +63,18 @@ Il sottomenu **Volumes** mostra una tabella che elenca tutti i volumi di storage
 
 <img src={shivaBareMetalStoragelist} />
 
+:::info[Volume BFS (Boot from SAN)]
+Il **Volume 1** è il volume **BFS (Boot from SAN)** e deve essere utilizzato per installare il sistema operativo.
+
+**Importante:** Questo volume non è condivisibile con gli altri Bare Metal della stessa zona di disponibilità (AZ).
+:::
+
+:::tip[Best practice]
+Si consiglia di installare l'OS sul volume **BFS** e di archiviare i dati su un volume **LUN** aggiuntivo. Questa separazione facilita la manutenzione, i backup e la reinstallazione del sistema, se necessario.
+:::
+
 #### Funzionalità principali
 
-- Gestione dei volumi: Da questa tabella, potete mappare i volumi alle vostre istanze Bare Metal.
+- **Gestione dei volumi** : Da questa dashboard, puoi mappare i volumi alle tue istanze Bare Metal.
 
 ---

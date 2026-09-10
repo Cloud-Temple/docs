@@ -1,0 +1,8 @@
+{
+  "label": "Tutoriali",
+  "sidebar_position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Tutoriali pratici per l'utilizzo dei servizi VMware."
+  }
+}

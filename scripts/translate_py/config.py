@@ -7,7 +7,7 @@ du système de traduction automatique de la documentation Cloud Temple.
 
 import os
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 from pydantic import BaseModel, Field, validator
 from dotenv import load_dotenv
 
@@ -27,7 +27,7 @@ class TranslationConfig(BaseModel):
     
     # Configuration modèle
     model: str = Field(
-        default="qwen3:30b-a3b",
+        default="qwen3.6:27b",
         description="Modèle utilisé pour la traduction"
     )
     model_type: str = Field(
@@ -91,18 +91,18 @@ class TranslationConfig(BaseModel):
         description="Nombre de tokens de sécurité à soustraire du contexte disponible"
     )
     
+    path_filters: List[str] = Field(
+        default_factory=list,
+        description="Restreint le périmètre aux fichiers correspondants. "
+                    "Chemins relatifs à docs/, motifs glob acceptés. "
+                    "Vide = tous les fichiers."
+    )
+
     @validator('doc_base_path', pre=True)
     def convert_path(cls, v) -> Path:
         """Convertit le chemin en objet Path."""
         return Path(v)
     
-    @validator('api_key')
-    def validate_api_key(cls, v) -> Optional[str]:
-        """Valide la présence de la clé API si nécessaire."""
-        if not v and not os.getenv('TRANSLATION_LOCAL_MODE'):
-            raise ValueError("CLOUDTEMPLE_API_KEY est requis")
-        return v
-
 
 class LanguageConfig(BaseModel):
     """Configuration des langues supportées."""
@@ -119,13 +119,24 @@ class LanguageConfig(BaseModel):
     TRANSLATABLE_EXTENSIONS: set = {'.md'}
     
     # Extensions de fichiers à copier sans traduction
-    COPYABLE_EXTENSIONS: set = {'.png', '.jpg', '.jpeg', '.gif', '.svg', '.docx', '.pdf'}
+    COPYABLE_EXTENSIONS: set = {'.png', '.png', '.jpeg', '.gif', '.svg', '.docx', '.pdf'}
 
 
-def load_config() -> TranslationConfig:
+def load_config(
+    api_key: Optional[str] = None,
+    api_url: Optional[str] = None,
+    model: Optional[str] = None,
+    path_filters: Optional[List[str]] = None
+) -> TranslationConfig:
     """
     Charge la configuration depuis les variables d'environnement.
     
+    Args:
+        api_key: Clé API fournie en ligne de commande. Prioritaire sur l'environnement.
+        api_url: URL API fournie en ligne de commande. Prioritaire sur l'environnement.
+        model: Modèle fourni en ligne de commande. Prioritaire sur l'environnement.
+        path_filters: Restreint le périmètre à ces chemins (relatifs à docs/).
+
     Returns:
         TranslationConfig: Configuration chargée et validée
         
@@ -146,9 +157,9 @@ def load_config() -> TranslationConfig:
     
     # Construction de la configuration depuis les variables d'environnement
     config_data = {
-        'api_url': os.getenv('CLOUDTEMPLE_API_URL'),
-        'api_key': os.getenv('CLOUDTEMPLE_API_KEY'),
-        'model': os.getenv('TRANSLATION_MODEL'),
+        'api_url': api_url or os.getenv('CLOUDTEMPLE_API_URL'),
+        'api_key': api_key or os.getenv('CLOUDTEMPLE_API_KEY'),
+        'model': model or os.getenv('TRANSLATION_MODEL'),
         'model_type': os.getenv('MODEL_TYPE'),
         'temperature': _get_float_env('TRANSLATION_TEMPERATURE'),
         'top_p': _get_float_env('TRANSLATION_TOP_P'),
@@ -159,6 +170,7 @@ def load_config() -> TranslationConfig:
         'max_tokens_per_block': _get_int_env('MAX_TOKENS_PER_BLOCK'),
         'max_model_context_length': _get_int_env('MAX_MODEL_CONTEXT_LENGTH'),
         'buffer_tokens': _get_int_env('BUFFER_TOKENS'),
+        'path_filters': list(path_filters) if path_filters else None,
     }
     
     # Suppression des valeurs None pour utiliser les défauts
@@ -235,12 +247,13 @@ def _find_project_root(start_path: Path) -> Path:
     return Path(".").resolve()
 
 
-def validate_environment(config: TranslationConfig) -> bool:
+def validate_environment(config: TranslationConfig, require_api: bool = True) -> bool:
     """
     Valide l'environnement d'exécution.
     
     Args:
         config: Configuration à valider
+        require_api: Exige une clé API pour les modes qui appellent le service distant
         
     Returns:
         True si l'environnement est valide
@@ -259,7 +272,7 @@ def validate_environment(config: TranslationConfig) -> bool:
     paths['i18n'].mkdir(exist_ok=True)
     
     # Vérification de la clé API en mode distant
-    if not os.getenv('TRANSLATION_LOCAL_MODE') and not config.api_key:
+    if require_api and not os.getenv('TRANSLATION_LOCAL_MODE') and not config.api_key:
         raise ValueError("CLOUDTEMPLE_API_KEY requis pour l'API distante")
     
     return True

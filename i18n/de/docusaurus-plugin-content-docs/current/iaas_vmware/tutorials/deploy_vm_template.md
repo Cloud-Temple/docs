@@ -4,44 +4,44 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import shivaCatalogsCharger from './images/shiva_catalogs_charger.png';
-import shivaCatalogsAjout from './images/shiva_catalogs_ajout.png';
-import shivaCatalogsDeployer from './images/shiva_catalogs_deployer.png';
+import shivaCatalogsCharger from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_charger.png';
+import shivaCatalogsAjout from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_ajout.png';
+import shivaCatalogsDeployer from '@site/docs/iaas_vmware/tutorials/images/shiva_catalogs_deployer.png';
 
-Dieser Leitfaden ermöglicht es Ihnen, innerhalb von 5 Minuten Ihre ersten Instanzen in der Trusted Cloud bereitzustellen.
+Dieser Leitfaden ermöglicht es Ihnen, Ihre ersten Instanzen in der Cloud de Confiance in weniger als 5 Minuten bereitzustellen.
 
 ## __Voraussetzungen__
 
-1. Ein Abonnement für das Cloud Temple-Angebot (IaaS-Abonnement).
-2. Aktivierte Berechtigungen für den Objektziel __'IaaS'__
+1. Das Cloud Temple-Produkt abonniert haben (Abonnement des IaaS-Produkts).
+2. Die Berechtigungen für den Objekt-Treiber __'IaaS'__ aktiviert haben.
 
 ## Eine virtuelle Maschine aus einer Vorlage bereitstellen
 
-Dieser Leitfaden zeigt Schritt für Schritt, wie Sie eine virtuelle Maschine aus einer Vorlage in der Shiva-Konsole bereitstellen.
+Dieser Leitfaden zeigt Ihnen Schritt für Schritt, wie Sie eine virtuelle Maschine aus einer Vorlage in der Konsole bereitstellen.
 
-Gehen Sie im Shiva-Portal zum Reiter "Trusted Cloud" und dann zu "Kataloge". Bevor Sie eine Vorlage bereitstellen können, muss diese in Ihrem privaten Katalog im Reiter "Mein Katalog" geladen sein.
+Navigieren Sie im Konsolenportal zum Reiter "Vertrauenswürdige Cloud" und anschließend zu "Kataloge". Bevor eine Vorlage bereitgestellt werden kann, muss sie in Ihrem privaten Katalog im Reiter "Mein Katalog" hochgeladen werden.
 
-Dafür haben Sie zwei Möglichkeiten: Entweder importieren Sie Ihre eigene Vorlage direkt in Ihren privaten Katalog oder Sie importieren ein Modell aus dem öffentlichen Katalog von Cloud Temple.
+Dafür haben Sie zwei Möglichkeiten: Sie können Ihre eigene Vorlage direkt in Ihren privaten Katalog importieren oder eine Vorlage aus dem öffentlichen Katalog von Cloud Temple importieren.
 
-### Eine persönliche Vorlage in den privaten Katalog importieren
+### Persönliches Template in den privaten Katalog importieren
 
-Klicken Sie im Reiter "Mein Katalog" auf "Dateien veröffentlichen".
+Im Tab "Mein Katalog" klicken Sie auf "Dateien veröffentlichen".
 
 <img src={shivaCatalogsCharger} />
 
-Folgen Sie dann den Schritten zur Veröffentlichung der Vorlage, indem Sie ihren Namen und eine Beschreibung eingeben und den Speicherort in einer Bibliothek auswählen.
+Führen Sie anschließend die Schritte zur Veröffentlichung des Templates durch, geben Sie seinen Namen und eine Beschreibung ein und wählen Sie den Speicherort in einer Bibliothek.
 
-Die Vorlage muss dann in Ihrem privaten Katalog erscheinen.
+Das Template sollte anschließend in Ihrem privaten Katalog angezeigt werden.
 
-### Eine Vorlage aus dem öffentlichen Katalog importieren
+### Template aus dem öffentlichen Katalog importieren
 
-Klicken Sie im Reiter "Öffentlicher Katalog" auf die Schaltfläche "Zu meinem Katalog hinzufügen" der Vorlage Ihrer Wahl, um sie in Ihren privaten Katalog zu importieren. Diese muss dann in Ihrem privaten Katalog erscheinen.
+Im Reiter "Öffentlicher Katalog" klicken Sie auf die Schaltfläche "Zu meinem Katalog hinzufügen" des gewünschten Templates, um es in Ihren privaten Katalog zu importieren. Anschließend sollte es in Ihrem privaten Katalog erscheinen.
 <img src={shivaCatalogsAjout} />
 
-### Die Vorlage bereitstellen
+### Template bereitstellen
 
-Sobald die Vorlage in Ihrem privaten Katalog importiert ist, können Sie sie bereitstellen, indem Sie auf "Bereitstellen" klicken.
+Nachdem das Template in Ihrem privaten Katalog importiert wurde, können Sie es durch Klicken auf "Bereitstellen" bereitstellen.
 
 <img src={shivaCatalogsDeployer} />
 
-Folgen Sie dann den verschiedenen Schritten zur Bereitstellung der Ressource, indem Sie ihren physischen Standort (Rechenzentrum, Cluster, Datenspeicher) und andere optionale Konfigurationsparameter auswählen.
+Folgen Sie anschließend den verschiedenen Schritten der Bereitstellung der Ressource, indem Sie den physischen Standort (Datacenter, Rechencluster, Datastore) und weitere optionale Konfigurationsparameter auswählen.

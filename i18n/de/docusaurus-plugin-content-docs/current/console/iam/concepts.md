@@ -1,255 +1,159 @@
 ---
 title: Konzepte
 ---
-import shivaOnboard_003 from './images/shiva_onboard_003.png'
-import shivaOnboard_004 from './images/shiva_onboard_004.png'
-import shivaOnboard_001 from './images/shiva_onboard_001.png'
-import shivaOnboard_005 from './images/shiva_onboard_005.png'
-import shivaProfil_012 from './images/shiva_profil_012.png'
-import shivaProfil_014 from './images/shiva_profil_014.png'
-import shivaProfil_015 from './images/shiva_profil_015.png'
-import shivaProfil_016 from './images/shiva_profil_016.png'
-import shivaProfil_013 from './images/shiva_profil_013.png'
-import shivaProfil_010 from './images/shiva_profil_010.png'
-import shivaProfil_009 from './images/shiva_profil_009.png'
-import shivaProfil_011 from './images/shiva_profil_011.png'
-import shivaProfil_006 from './images/shiva_profil_006.png'
-import shivaProfil_007 from './images/shiva_profil_007.png'
-import shivaTenantRessources_01 from './images/shiva_tenant_ressources_01.png'
+import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
+import shivaProfil_012 from '@site/docs/console/iam/images/shiva_profil_012.png'
+import shivaProfil_014 from '@site/docs/console/iam/images/shiva_profil_014.png'
+import shivaProfil_015 from '@site/docs/console/iam/images/shiva_profil_015.png'
+import shivaProfil_016 from '@site/docs/console/iam/images/shiva_profil_016.png'
+import shivaProfil_013 from '@site/docs/console/iam/images/shiva_profil_013.png'
+import shivaProfil_010 from '@site/docs/console/iam/images/shiva_profil_010.png'
+import shivaProfil_009 from '@site/docs/console/iam/images/shiva_profil_009.png'
+import shivaProfil_011 from '@site/docs/console/iam/images/shiva_profil_011.png'
+import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
+import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
+import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant_ressources_01.png'
 
-## Benutzer
+## Modell der Zugriffsverwaltung
 
-Die Zugriffskonten für die Shiva-Konsole werden durch das Masterkonto des Auftraggebers auf Einladung erstellt (unabhängig vom Authentifizierungsrepository). Die Anmeldeinformationen sind für Ihre [Organisation](#organisations) global.
+Die Zugriffsverwaltung in der Console beruht auf zwei ineinander verschachtelten Ebenen:
 
-*__Hinweis:__ [Die Identitätsfederierung wird auf Ebene der Organisation verwaltet](#organisations#mecanismes-dauthentification)*
+- die __[Organisation](#organisationen)__: die vertragliche Einheit. Sie trägt die Benutzerkonten, die Authentifizierungskonfiguration und alle Ihre Tenants;
+- der __[Tenant](#tenant)__: eine Gruppierung von Ressourcen innerhalb der Organisation. Er trägt die technischen Ressourcen und die Berechtigungen der Benutzer.
 
-### Erstellung eines Benutzerkontos in Ihrer Organisation
+Dazwischen liegt ein __gemeinsamer Bereich__: die Identität des Benutzers. Ein Konto wird nur einmal in der Organisation erstellt und anschließend in allen Tenants verwendet, auf die es Zugriff hat.
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](#organisations) einzuladen, gehen Sie im linken Menü __'Verwaltung'__ am grünen Band oben auf Ihrem Bildschirm und dann im Untermenü __'Benutzer'__.
+### Wer verwaltet was
 
-Klicken Sie auf den Button __'Neuer Benutzer'__ auf der Benutzerseite.
+| Verwaltetes Objekt                                    | Organisation                                  | Tenant                                          |
+| ----------------------------------------------------- | --------------------------------------------- | ----------------------------------------------- |
+| Vertrag und Abrechnung                                | Ja                                            | Verbrauchsbericht pro Tenant                    |
+| Authentifizierungsmechanismus (lokal, SSO)            | Ja                                            | Nein (von der Organisation geerbt)              |
+| Lebenszyklus der Konten (Einladung, Löschung)         | Ja                                            | Nein (Konten gelten organisationsweit)          |
+| __Berechtigungen der Benutzer__                       | __Nein__                                      | __Ja, Tenant für Tenant__                       |
+| __Benennung eines Eigentümers__                       | __Ja__ (Eigentümer der Organisation)          | __Ja__ (Eigentümer des Tenants)                 |
+| Technische Ressourcen (Compute, Storage, Netzwerk)    | Nein                                          | Ja                                              |
+| Zugelassene IP-Adressen                               | Nein                                          | Ja                                              |
 
-<img src={shivaOnboard_003} />
+:::info[Wichtig]
+Berechtigungen werden __niemals__ auf Organisationsebene konfiguriert: sie werden Tenant für Tenant festgelegt. Auf Organisationsebene können Sie einen Benutzer hingegen als __Eigentümer der Organisation__ benennen.
+:::
 
-Geben Sie dann die E-Mail-Adresse des Benutzers an
+## Gemeinsamer Bereich: das Benutzerkonto
 
-<img src={shivaOnboard_004} />
+Die Zugriffskonten für die Konsole werden vom Masterkonto des Auftraggebers auf Einladung erstellt (unabhängig vom Authentifizierungsspeicher).
+Die Anmeldeinformationen sind für Ihre [Organisation](#organisationen) global: ein Benutzer verfügt über ein einziges Konto, unabhängig von der Anzahl der Tenants, in denen er tätig ist.
 
-Der Benutzer erhält dann eine E-Mail zur Überprüfung.
+*__Hinweis :__ [Die Identitätsföderierung wird auf Organisationsebene verwaltet](#authentifizierungsmechanismen)*
 
-<img src={shivaOnboard_001} />
-
-Nach Abschluss der Überprüfung kann der Benutzer sich auf der Konsole anmelden.
-
-### Zuweisung von Berechtigungen an einen Benutzer
-
-Die Verwaltung der Benutzerrechte erfolgt über die Benutzerseite.
-
-<img src={shivaOnboard_003} />
-
-Standardmäßig hat ein Benutzer keine Berechtigungen. Es ist daher notwendig, dass der Administrator, der die Einladung erstellt hat, den notwendigen Berechtigungen für seine Tätigkeit zuweist. Es reicht aus, auf das Menü __'Aktionen'__ des Benutzers zu klicken und die Option __'Bearbeiten'__ auszuwählen.
-
-Das Menü zur Aktivierung der Berechtigungen erscheint dann:
-
-<img src={shivaOnboard_005} />
-
-Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenants) der [Organisation](#organisations) durchgeführt werden.
-
-Die Liste der Berechtigungen und ihre Definitionen sind [hier](#permissions) zugänglich.
-
-### Wiederanmeldung eines Benutzers
-
-Wenn ein Benutzer bereitgestellt wurde, aber innerhalb der Frist des von der Console gesendeten E-Mails seine Registrierung nicht bestätigt hat, kann er seine Registrierung nicht mehr bestätigen. Es ist dann möglich, ihm einen Link zu senden, damit er seine ursprüngliche Registrierung erneut durchführt.
-
-Die Wiederanmeldung eines Benutzers erfolgt im Tab __'Benutzer'__ im Administration-Fenster, unten links auf dem Bildschirm.
-
-Wählen Sie den Benutzer aus, den Sie wiederanmelden möchten, und klicken Sie auf die Aktionsschaltfläche am Ende der Zeile, dann auf __'Wiederanmeldung'__.
-
-__Warnung__: Stellen Sie sicher, dass Sie die Ursache der Wiederanmeldung Ihres Benutzerkontos sind. Melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
-
-<img src={shivaProfil_012} />
+Die nachfolgend beschriebenen Aktionen betreffen das Konto selbst, unabhängig davon, in welchem Tenant Sie angemeldet sind.
 
 ### Profil aktualisieren
 
-Diese Aktion ist nur für ein lokales Konto (nicht SSO) verfügbar.
+Diese Aktion ist nur für lokale Konten (kein SSO) verfügbar.
 
-Wählen Sie in Ihrem „Profil“, oben rechts auf dem Bildschirm, dann „Benutzereinstellungen“ und wählen Sie die Aktion „Profil aktualisieren“.
+Wählen Sie oben rechts auf dem Bildschirm in Ihrem __'Profil'__ die Option __'Benutzereinstellungen'__ und wählen Sie die Aktion __'Profil aktualisieren'__ aus.
 
-Gehen Sie anschließend in Ihr E-Mail-Postfach und klicken Sie auf den von der Konsole erzeugten Link. Folgen Sie einfach den Schritten, um Ihr Profil zu aktualisieren.
+Rufen Sie anschließend Ihr Postfach auf und klicken Sie auf den von der Konsole generierten Link. Folgen Sie einfach den Schritten, um Ihr Profil zu aktualisieren.
 
-__Warnung__: Stellen Sie sicher, dass Sie die Ursprungsquelle der Profilaktualisierungsanfrage sind. Vielen Dank, wenn Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket melden.
+__Warnung__: Stellen Sie sicher, dass Sie die Anfrage zur Profilaktualisierung selbst gestellt haben. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
 
 <img src={shivaProfil_014} />
 
 ### Passwort zurücksetzen
 
-Diese Aktion ist nur für ein lokales Konto (nicht SSO) verfügbar.
+Diese Aktion ist nur für ein lokales Konto (kein SSO) verfügbar.
 
-Wählen Sie in Ihrem __'Profil'__, oben rechts auf dem Bildschirm, dann __'Benutzereinstellungen'__ und wählen Sie die Aktion __'Passwort zurücksetzen'__.
+Wählen Sie in Ihrem __'Profil'__ oben rechts auf dem Bildschirm und dann __'Benutzereinstellungen'__ aus, und wählen Sie die Aktion __'Passwort zurücksetzen'__ aus.
 
-Gehen Sie anschließend in Ihren E-Mail-Postfach und klicken Sie auf den Link, der von der Konsole generiert wurde. Folgen Sie einfach den Schritten, um Ihr Passwort zu aktualisieren.
+Rufen Sie anschließend Ihre E-Mail-Box auf und klicken Sie auf den von der Konsole generierten Link. Folgen Sie einfach den Schritten, um Ihr Passwort zu aktualisieren.
 
-__Warnung__: Stellen Sie sicher, dass Sie die Anfrage zur Passwortrücksetzung selbst gestellt haben. Melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
+__Warnung__: Stellen Sie sicher, dass Sie selbst der Auslöser der Anfrage zum Zurücksetzen Ihres Passworts sind. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
 
 <img src={shivaProfil_015} />
 
-### Zurücksetzen der zweistufigen Authentifizierung
+### Zurücksetzen der Multi-Faktor-Authentifizierung
 
-Diese Aktion ist nur für ein lokales Konto (nicht SSO) verfügbar.
+Diese Aktion ist nur für einen lokalen Benutzeraccount (kein SSO) verfügbar.
 
-Wählen Sie in Ihrem __'Profil'__, oben rechts auf dem Bildschirm, dann __'Benutzereinstellungen'__ und wählen Sie die Aktion __'MFA zurücksetzen'__.
+Wählen Sie oben rechts auf dem Bildschirm in Ihrem __'Profil'__ und anschließend __'Benutzereinstellungen'__ aus, und wählen Sie die Aktion __'MFA zurücksetzen'__ aus.
 
-Gehen Sie anschließend in Ihr E-Mail-Konto und klicken Sie auf den von der Konsole generierten Link. Befolgen Sie einfach die Schritte, um Ihre zweistufige Authentifizierung zu aktualisieren.
+Rufen Sie anschließend Ihr E-Mail-Postfach auf und klicken Sie auf den von der Konsole generierten Link. Folgen Sie einfach den Schritten, um Ihre Multi-Faktor-Authentifizierung zu aktualisieren.
 
-__Warnung__: Stellen Sie sicher, dass Sie die Anfrage zum Zurücksetzen Ihrer zweistufigen Authentifizierung selbst gestellt haben. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über einen Support-Ticket.
+__Warnung__: Stellen Sie sicher, dass Sie die Zurücksetzungsanfrage für Ihre Multi-Faktor-Authentifizierung selbst initiiert haben. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
 
 <img src={shivaProfil_016} />
 
-### Benutzer löschen
-
-Die Löschung eines Benutzers erfolgt im Tab __'Benutzer'__ im Administrationsbereich, unten links auf dem Bildschirm.
-
-Wählen Sie den Benutzer aus, den Sie löschen möchten, und klicken Sie auf die Aktion am Ende der Zeile, dann auf __'Löschen'__.
-
-<img src={shivaProfil_013} />
-<img src={shivaProfil_010} />
-
-Hinweis: Sie können sich selbst nicht löschen und Sie können keinen Benutzer __'Eigentümer'__ löschen.
-
-### Abmelden
-
-Die Abmeldung eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, dann __'Abmelden'__.
-
-<img src={shivaProfil_009} />
-<img src={shivaProfil_011} />
-
-Eine automatische Abmeldung erfolgt bei Ablauf des Sitzungs-JWT-Tokens.
-
-### Ändern der Sprache eines Benutzers
+### Sprache eines Benutzers ändern
 
 Die Änderung der Sprache eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
 
 <img src={shivaProfil_006} />
 
-Die Konfiguration erfolgt pro Mieter [Tenant](#tenants).
+Die Konfiguration erfolgt für jeden Tenant [Tenant](#tenant).
 
-### Themenbenachrichtigungen abonnieren
+### Abonnement für themenspezifische Benachrichtigungen
 
-Die Verwaltung der Abonnements ermöglicht das Empfangen von E-Mails zu aktivierten Themen, die automatisch bei Auftreten entsprechender Ereignisse versendet werden.
+Die Verwaltung der Abonnements ermöglicht den Empfang von E-Mails zu den aktivierten Themen, die automatisch bei Auftreten entsprechender Ereignisse versendet werden.
 
-Sie ist im Benutzerprofil im Tab "Meine Abonnements" zugänglich:
+Sie ist im Benutzerprofil unter der Registerkarte "Meine Abonnements" verfügbar:
 
 <img src={shivaProfil_007} />
 
-Beispielsweise werden bei einem Vorfall spezifische E-Mail-Benachrichtigungen zu diesem Thema generiert.
+ Beispielsweise werden im Falle eines Vorfalls E-Mail-Benachrichtigungen, die diesem Thema zugeordnet sind, generiert.
 
-Die Liste der verfügbaren Themen kann sich weiterentwickeln und schrittweise erweitert werden, um den Anforderungen und Veränderungen in unserem operativen Umfeld gerecht zu werden.
+Die Liste der verfügbaren Themen kann sich entwickeln und schrittweise erweitert werden, um sich an die Anforderungen und Veränderungen in unserem Betriebsumfeld anzupassen.
 
-## Berechtigungen
+### Abmelden
 
-Die Shiva-Konsole ermöglicht eine detaillierte Verwaltung der Benutzerrechte einer Organisation mit einer Trennung nach Mandanten.  
-Anfangs ist das Hauptkonto des Auftraggebers für die Anfangskonfiguration der Konten und zugehörigen Berechtigungen verantwortlich.  
-Danach ermöglicht das Recht __'iam_write'__ einem Konto, die Berechtigungen anderer Benutzer zu verwalten.
+Die Abmeldung eines Benutzers erfolgt in seinem __'Profil'__ oben rechts auf dem Bildschirm, gefolgt von __'Abmelden'__.
 
-### Verfügbare Berechtigungen für Benutzer Ihrer Organisation
+<img src={shivaProfil_009} />
+<img src={shivaProfil_011} />
 
-Wenn ein Benutzer erstellt wird, hat er standardmäßig keine Berechtigungen. Jede Berechtigung wird individuell zugewiesen und funktioniert unabhängig, ohne Überlappung mit anderen Berechtigungen. Sie wirken zusammen, was bedeutet, dass ein Benutzer alle erforderlichen Berechtigungen besitzen muss, um eine bestimmte Aktion auszuführen.
-
-Die folgenden Berechtigungen können für jeden Benutzer und jeden Mandanten Ihrer Organisation konfiguriert werden:
-
-- Leseberechtigungen: Erlauben nur die Anzeige von Ressourcen ohne Änderungsmöglichkeit.
-- Schreibberechtigungen: Erlauben die Änderung von Konfigurationen.
-- Verwaltungsrechte: Erlauben die fortgeschrittene Verwaltung von Ressourcen.
-- Konsole-Zugriff: Erlauben den Zugriff auf die Konsole (SSH/RDP) auf Ressourcen.
-- Virtueller Maschinen-Strom: Erlauben die Verwaltung der Stromversorgung einer virtuellen Maschine.
-
-- __Dies sind Berechtigungen, nicht Rollen.__ Daher ist es erforderlich, die Berechtigungen Lese- und Schreibzugriff zu haben, um eine Konfiguration zu ändern.
-
-Letzte Aktualisierung: 16/07/2025
-
-| Berechtigungsname                             | Berechtigungsbeschreibung                                                                                                   |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| activity_read                                 | Anzeige von Protokollen und Aktivitäten                                                                                      |
-| activity_write                                | Verwaltung von Protokollen und Aktivitäten                                                                                   |
-| backup_iaas_opensource_read                   | Verwaltung von Backup-Ressourcen - Angebot OpenIaaS - Anzeige                                                             |
-| backup_iaas_opensource_write                  | Verwaltung von Backup-Ressourcen - Angebot OpenIaaS - Änderung                                                             |
-| backup_iaas_spp_read                          | Verwaltung von Backup-Ressourcen - Angebot Vmware - Anzeige                                                               |
-| backup_iaas_spp_write                         | Verwaltung von Backup-Ressourcen - Angebot Vmware - Änderung                                                               |
-| bastion_read                                  | Anzeige von Bastion-Ressourcen                                                                                             |
-| bastion_write                                 | Verwaltung von Ressourcen (Appliances, Sitzungen, usw.) der Bastion                                                         |
-| bastion_console_access                        | Zugriffserlaubnis auf die Konsole (SSH/RDP) einer Ressource, die durch eine Bastion-Appliance geschützt ist                              |
-| compute_iaas_opensource_console_access        | Angebot OpenIaaS - Öffnen der Konsole einer virtuellen Maschine                                                             |
-| compute_iaas_opensource_infrastructure_read   | Angebot OpenIaaS - Anzeige von erweiterten Daten der Xen Orchestra-Ressourcen |
-| compute_iaas_opensource_infrastructure_write  | Angebot OpenIaaS - Fortgeschrittene Verwaltung der Xen Orchestra-Ressourcen                                                          |
-| compute_iaas_opensource_read                  | Angebot OpenIaaS - Anzeige von Ressourcen des Typs virtuelle Maschinen                                                      |
-| compute_iaas_opensource_management            | Angebot OpenIaaS - Verwaltung von Ressourcen des Typs virtuelle Maschinen                                                   |
-| compute_iaas_opensource_virtual_machine_power | Angebot OpenIaaS - Verwaltung der Stromversorgung einer virtuellen Maschine                                                 |
-| compute_iaas_opensource_replication_recover   | Angebot OpenIaaS - Verwaltung der Replikation                                                              |
-| compute_iaas_vmware_console_access            | Angebot Vmware - Öffnen der Konsole einer virtuellen Maschine                                                               |
-| compute_iaas_vmware_infrastructure_read       | Angebot Vmware - Anzeige von erweiterten Daten der VMware-Ressourcen (Affinitätsregeln/Anti-Affinitätsregeln, DRS-Konfiguration usw.)  |
-| compute_iaas_vmware_infrastructure_write      | Angebot Vmware - Fortgeschrittene Verwaltung der VMware-Ressourcen                                                         |
-| compute_iaas_vmware_read                      | Angebot Vmware - Anzeige von Ressourcen des Typs virtuelle Maschinen                                                        |
-| compute_iaas_vmware_management                | Angebot Vmware - Verwaltung von Ressourcen des Typs virtuelle Maschinen (Ermöglicht die Verschlüsselung einer virtuellen Maschine)                                                              |
-| compute_iaas_vmware_virtual_machine_power     | Angebot Vmware - Verwaltung der Stromversorgung einer virtuellen Maschine                                                   |
-| baremetal_management                          | Angebot Bare Metal - Verwaltung von Bare Metal-Ressourcen                                                               |
-| baremetal_read                                | Angebot Bare Metal - Anzeige von Bare Metal-Ressourcen                                                               |
-| baremetal_console_access                      | Angebot Bare Metal - Öffnen der Konsole eines Bare Metal                                                                  |
-| console_public_access_read                    | Anzeige der IP-Adressen, die den Zugriff auf die Konsole erlauben                                                           |
-| console_public_access_write                   | Hinzufügen von IP-Adressen, die den Zugriff auf die Konsole erlauben                                                         |
-| documentation_read                            | Anzeige der Confluence-Dokumentationsressourcen                                                                             |
-| housing_read                                  | Anzeige von Ressourcen des Typs Rechenzentrums                                                                              |
-| iam_offline_access                            | Erstellung und Löschung von persönlichen Zugriffstoken (PAT)                                                                 |
-| iam_read                                      | Anzeige der Benutzerberechtigungen                                                                                          |
-| iam_write                                     | Verwaltung der Benutzerberechtigungen                                                                                       |
-| intervention_read                             | Anzeige von geplanten Änderungen und Bereitstellungen auf der Plattform                                                       |
-| inventory_read                                | Anzeige von Inventar-Ressourcen                                                                                             |
-| inventory_write                               | Verwaltung von Inventar-Ressourcen                                                                                          |
-| monitoring_read                               | Anzeige des Monitorings                                                                                                     |
-| monitoring_write                              | Verwaltung des Monitorings                                                                                                  |
-| metric_read                                   | Anzeige von Gesundheitsdaten zu virtuellen Maschinen und Hosts                                                              |
-| network_read                                  | Anzeige von Netzwerk-Ressourcen                                                                                             |
-| network_write                                 | Verwaltung von Netzwerk-Ressourcen                                                                                          |
-| order_read                                    | Anzeige von Infrastruktur-Bestellungen                                                                                      |
-| order_write                                   | Erstellung einer Infrastruktur-Bestellung                                                                                   |
-| object-storage_iam_management                 | Erlaubt die Verwaltung von Speicherkonten auf dem S3-Produkt                                                                 |
-| object-storage_read                           | Erlaubt das Anzeigen von Buckets und Bucket-Konfigurationen                                                                 |
-| object-storage_write                          | Erlaubt das Bearbeiten von Buckets und Bucket-Konfigurationen                                                              |
-| openshift_management                          | Erlaubt den Zugriff auf Openshift-Plattformen (auf den Mandanten beschränkt)                                                |
-| support_management                            | Anzeige aller Support-Tickets des Mandanten                                                                                 |
-| support_read                                  | Anzeige der eigenen Support-Tickets des Mandanten                                                                           |
-| support_write                                 | Erstellung eines Support-Tickets für den Mandanten                                                                          |
-| tag_read                                      | Anzeige von Tags, außer den RTMS-Tags                                                                                       |
-| tag_write                                     | Verwaltung von Tags, außer den RTMS-Tags                                                                                    |
-| ticket_comment_read                           | Anzeige von Kommentaren                                                                                                     |
-| ticket_comment_write                          | Verwaltung von Kommentaren                                                                                                  |
-| ticket_read                                   | Anzeige von Tickets                                                                                                         |
-| ticket_write                                  | Verwaltung von Tickets                                                                                                      |
-| incident_management                           | Verwaltung von Incident                                                                                                       |
-| incident_read                                 | Anzeige von Incident                                                                                                            |
+Eine automatische Abmeldung erfolgt bei Ablauf des Sitzungs-JWT-Tokens (JWT Token).
 
 ## Organisationen
 
-Die Organisation ist mit Ihrem __Auftraggeberkonto__ und dem __zugehörigen Cloud Temple-Vertrag__ verbunden. Sie stellt Ihre Einheit (Gesellschaft, Abteilung, Team, ...) dar, die die vertragliche Beziehung zwischen Cloud Temple und Ihnen trägt.
+Die Organisation ist mit Ihrem __Sponsorkonto__ und dem zugehörigen __Cloud-Temple-Vertrag__ verknüpft. Sie repräsentiert Ihre Entität (Unternehmen, Abteilung, Team, ...), die die Vertragsbeziehung zwischen Cloud Temple und Ihnen vertritt.
 
 ### Prinzip einer Organisation
 
-Die Organisation hat vier große Rollen:
+Die Organisation erfüllt vier zentrale Rollen:
 
-- Sie ist die __vertragliche Einheit__ für Aspekte der Überwachung und Abrechnung,
-- Sie definiert den __globalen Authentifizierungsmechanismus__: Die Authentifizierung kann lokal auf der Shiva-Konsole oder über einen Identitätsfederationsdienst erfolgen,
+- Sie fungiert als __vertragliche Entität__ für die Aspekte der Nachverfolgung und Abrechnung,
+- Sie definiert __die globale Konfiguration des Authentifizierungsmechanismus__: Die Authentifizierung kann lokal auf Konsolenebene oder remote über einen Identitätsföderationsdienst erfolgen,
 - Sie verwaltet alle __Benutzerkonten__,
-- Sie __verwaltet die Mandanten__ (Production, Préproduction, Dev, Anwendung 1, Anwendung 2, ...) die Sie für Ihre Cloud-Architektur definieren.
+- Sie __bündelt die Tenants__ (Production, Préproduction, Dev, Application 1, Application 2, ...), die Sie für die Anforderungen Ihrer Cloud-Architektur definieren.
 
-Die Rollen (Rechte/Berechtigungen) der Benutzer sind für jeden in Ihrer Organisation definierten Mandanten konfigurierbar. Zum Beispiel kann ein Konto berechtigt sein, Ressourcen in einem Mandanten zu bestellen, aber nicht in einem anderen.
+Die Rollen (droits/permissions) der Benutzer sind für jeden in Ihrer Organisation definierten Tenant konfigurierbar. Ein Konto kann beispielsweise autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht.
+
+### Was auf Organisationsebene verwaltet wird
+
+Der Organisationsbereich umfasst:
+
+- den für alle Konten gemeinsamen __Authentifizierungsmechanismus__,
+- den __Lebenszyklus der Benutzerkonten__: Einladung, Neuanmeldung, Löschung,
+- die __Benennung der Eigentümer der Organisation__,
+- die __Liste der Tenants__ Ihrer Architektur.
+
+:::warning[Berechtigungen werden hier nicht verwaltet]
+Auf der Seite __'Benutzer'__ der Organisation können Sie ein Konto erstellen, als Eigentümer benennen und löschen. Sie können dort __keine__ Berechtigungen zuweisen: diese sind je Tenant spezifisch und werden im betreffenden Tenant konfiguriert (siehe [Zuweisung von Berechtigungen in einem Tenant](#zuweisung-von-berechtigungen-in-einem-tenant)).
+:::
 
 ### Authentifizierungsmechanismen
 
-Die Shiva-Konsole ermöglicht auf Ebene der Organisation __die Konfiguration des Authentifizierungsmechanismus__. Sie können entweder das lokale Authentifizierungsverzeichnis der Shiva-Konsole verwenden oder Ihre Organisation mit einer Ihrer Authentifizierungsquellen verknüpfen.
+Auf Organisationsebene ermöglicht die Konsole __die Konfiguration des Authentifizierungsmechanismus__. Sie können
+das lokale Authentifizierungs-Repository der Konsole verwenden oder Ihre Organisation mit einem
+Ihrer Authentifizierungs-Repositories anbinden.
 
-Die folgenden externen Authentifizierungsquellen werden unterstützt:
+Folgende externe Repositories werden unterstützt:
 
-- Authentifizierungsquellen, die mit __OpenID Connect__ kompatibel sind,
-- Authentifizierungsquellen, die mit __SAML__ kompatibel sind,
+- __OpenID Connect__-kompatible Repositories,
+- __SAML__-kompatible Repositories,
 - __Microsoft ADFS__
 - __Microsoft EntraID__ (Microsoft Azure Active Directory)
 - Amazon AWS Cognito
@@ -257,78 +161,254 @@ Die folgenden externen Authentifizierungsquellen werden unterstützt:
 - Auth0
 - KeyCloak
 
+:::info[Important]
+Für alle Konten aus einer Identitätsföderation ist eine E-Mail-Adresse erforderlich. Konten, die ohne E-Mail-Adresse erstellt wurden, können sich nicht anmelden und werden möglicherweise automatisch gelöscht.
+:::
+
+### Erstellen eines Benutzerkontos in Ihrer Organisation
+
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt per Einladung. Um einen Benutzer in eine [Organisation](#organisationen) einzuladen, navigieren Sie im Menü __'Verwaltung'__ links auf Ihrem Bildschirm in der grünen Leiste und anschließend im Untermenü __'Benutzer'__.
+
+Klicken Sie auf der Benutzerseite auf die Schaltfläche __'Neuer Benutzer'__.
+
+<img src={shivaOnboard_003} />
+
+Geben Sie anschließend die E-Mail-Adresse des Benutzers ein
+
+<img src={shivaOnboard_004} />
+
+Der Benutzer erhält daraufhin eine Bestätigungs-E-Mail.
+
+<img src={shivaOnboard_001} />
+
+Nach Abschluss der Bestätigung kann sich der Benutzer bei der Konsole anmelden.
+
+Standardmäßig verfügt __ein neu erstellter Benutzer über keine Rechte__. Sie müssen ihm anschließend die für seine Tätigkeit erforderlichen Berechtigungen erteilen, und zwar __in jedem Tenant__, in dem er tätig werden soll.
+
+### Verwaltung der Eigentümer der Organisation
+
+Der __Eigentümer der Organisation__ ist die einzige Rolle, die auf Organisationsebene zugewiesen werden kann. Sie ist vom [Eigentümer eines Tenants](#verwaltung-der-eigentümer-auf-einem-tenant) zu unterscheiden.
+
+- Die Benennung erfolgt auf der Seite __'Benutzer'__ des Bereichs Administration über das Aktionsmenü in der Zeile des Benutzers.
+- Diese Rolle gewährt Zugriff auf die __Organisationsansicht__: vertragliche Nachverfolgung, Liste der Tenants, Kontenverwaltung.
+- Es handelt sich nicht um eine feingranulare Berechtigung: auf Organisationsebene ist keine Berechtigung des Typs `read` / `write` zuzuweisen.
+- Ein Benutzer __'Eigentümer'__ kann nicht gelöscht werden.
+
+### Neuanmeldung eines Benutzers
+
+Wenn ein Benutzer provisioniert wurde, seine Registrierung jedoch nicht innerhalb der in der von der Konsole gesendeten E-Mail angegebenen Ablaufzeit bestätigt hat, kann er seine Registrierung nicht mehr bestätigen. In diesem Fall kann ihm ein Link erneut zugesendet werden, damit er seine Erstregistrierung wiederholt.
+
+Die Neuanmeldung eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
+
+Wählen Sie den Benutzer aus, den Sie erneut anmelden möchten, und klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Neuanmeldung'__.
+
+__Warnung__: Stellen Sie sicher, dass Sie selbst der Auslöser der Neuanmeldungsanfrage für Ihr Benutzerkonto sind. Bitte melden Sie alle Anfragen, die nicht von Ihnen stammen, über ein Support-Ticket.
+
+<img src={shivaProfil_012} />
+
+### Löschen eines Benutzers
+
+Das Löschen eines Benutzers erfolgt im Reiter __'Benutzer'__ im Verwaltungsbereich unten links auf dem Bildschirm.
+
+Wählen Sie den zu löschenden Benutzer aus, klicken Sie dann auf die Aktionsschaltfläche am Ende der Zeile und anschließend auf __'Löschen'__.
+
+<img src={shivaProfil_013} />
+<img src={shivaProfil_010} />
+
+Hinweis: Sie können sich nicht selbst löschen und keinen Benutzer vom Typ __'Besitzer'__ löschen.
+
 ## Tenant
 
-Der Tenant ist ein __Ressourcenbündel innerhalb einer Organisation__. Eine [Organisation](#organisations) hat mindestens einen Tenant (der __Standard-Tenant__ genannt wird und umbenannt werden kann). Normalerweise werden mehrere Tenants verwendet, um Verantwortlichkeiten oder technische Bereiche zu segmentieren.
+Der Tenant ist eine __Gruppierung von Ressourcen innerhalb einer Organisation__. Eine [Organisation](#organisationen) verfügt über mindestens einen Tenant (als __Standardtenant__ bezeichnet, der umbenannt werden kann). In der Regel werden mehrere Tenants verwendet, um Zuständigkeiten oder technische Umfangsbereiche zu segmentieren.
 
-Beispielsweise:
+Beispiel:
 
-- Ein Tenant __Production__
-- Ein Tenant __Präproduktion__
+- Ein Tenant __Produktion__
+- Ein Tenant __Vorproduktion__
 - Ein Tenant __Test__
-- Ein Tenant __Qualifizierung__
+- Ein Tenant __Qualifikation__
 
-Es ist jedoch auch möglich, die Dinge mit einer __Anwendungssicht__ oder nach __Kritikalität__ zu organisieren:
+Es ist jedoch auch möglich, die Struktur nach einer __Anwendungssicht__ oder nach __Kritizität__ zu organisieren:
 
-- Ein Tenant __Anwendung 1__ oder __Kritikalität 1__
-- Ein Tenant __Anwendung 2__ oder __Kritikalität 2__
+- Ein Tenant __Anwendung 1__ oder __Kritizität 1__
+- Ein Tenant __Anwendung 2__ oder __Kritizität 2__
 - ...
 
-Die technischen Ressourcen, die bestellt werden, werden einem bestimmten Tenant zugewiesen und werden nicht mit anderen Tents geteilt. Beispielsweise sind ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke nur in einem Tenant verfügbar.
-Bezüglich der Netzwerke ist es möglich, __'cross-tenant'-Netzwerke__ zu beantragen, um die Netzwerkverfügbarkeit zwischen den Tents sicherzustellen.
+Die bestellten technischen Ressourcen werden einem bestimmten Tenant zugewiesen und nicht mit anderen Tenants geteilt. Ein Hypervisor-Cluster und die zugehörigen L2-Netzwerke sind beispielsweise nur in einem Tenant verfügbar.
+Bei Netzwerken ist es möglich, __'tenantübergreifende'__ Netzwerke anzufordern, um die Netzwerkkontinuität zwischen den Tenants sicherzustellen.
 
-Die Benutzerberechtigungen müssen in jedem Tenant definiert werden. Daher muss jede Organisation sorgfältig über die gewünschten Tents nachdenken. Dieser Punkt wird in der Regel in einem Initiativworkshop behandelt, bei der Erstellung der Organisation.
+Die Architektur kann durch Hinzufügen oder Entfernen von Tenants erweitert werden.
 
-Es ist möglich, die Architektur durch Hinzufügen oder Entfernen von Tents zu verändern.
+Ein Tenant darf nicht leer sein. Er muss zwingend mit mindestens einer Ressource initialisiert werden:
 
-Ein Tenant darf nicht leer sein. Er muss unbedingt mit einem Minimum an Ressourcen initialisiert werden:
-
-- Eine Verfügbarkeitszone (AZ, also ein physisches Rechenzentrum),
-- Ein Berechnungscluster,
-- Ein Speicherplatz,
+- Eine Verfügbarkeitszone (AZ, soit un datacenter physique),
+- Ein Rechencluster,
+- Ein Speicherbereich,
 - Ein VLAN-Netzwerk.
 
 | Bestellreferenz                                        | Einheit    | SKU                     |
-|--------------------------------------------------------|------------|-------------------------|
-| TENANT - *(REGION)* - Aktivierung eines Tenants         | 1 Tenant   | csp:tenant:v1           |
-| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 Tenant   | csp:(region):iaas:az:v1 |
+|--------------------------------------------------------------|----------|-------------------------|
+| TENANT - *(REGION)* - Aktivierung eines Tenants                 | 1 Tenant | csp:tenant:v1           |
+| TENANT - *(REGION)* - Aktivierung einer Verfügbarkeitszone | 1 Tenant | csp:(region):iaas:az:v1 |
 
-### Verwaltung der Eigentümer eines Tenants
+### Was auf Tenant-Ebene verwaltet wird
 
-Jeder Tenant hat mindestens einen Eigentümer, was eine klare Verantwortung und eine effiziente Verwaltung der zugehörigen Ressourcen sicherstellt. Außerdem ist es möglich, mehrere Eigentümer auf einem einzelnen Tenant zu deklarieren, was Zusammenarbeit und gemeinsame Entscheidungsfindung ermöglicht. Unten finden Sie wichtige Informationen, die bei der Verwaltung dieser Eigentümer berücksichtigt werden müssen.
+Der Tenant-Bereich umfasst:
 
-#### Wichtige Informationen zur Eigentümerverwaltung
+- die bestellten und bereitgestellten __technischen Ressourcen__,
+- die __Berechtigungen der Benutzer__ auf diesen Ressourcen,
+- die __Benennung der Eigentümer des Tenants__,
+- die zum Zugriff auf den Tenant __zugelassenen IP-Adressen__,
+- die __Verbrauchsverfolgung__ der Ressourcen.
+
+Die Berechtigungen der Benutzer sind in jedem Tenant festzulegen. Ein Konto kann somit autorisiert sein, Ressourcen in einem Tenant zu bestellen, in einem anderen jedoch nicht. Daher muss jede Organisation die gewünschten Tenants sorgfältig planen: dieser Punkt wird in der Regel im Initialisierungsworkshop zum Zeitpunkt der Erstellung der Organisation behandelt.
+
+### Zuweisung von Berechtigungen in einem Tenant
+
+Die Verwaltung der Rechte eines Benutzers erfolgt über die Benutzerseite, __Tenant für Tenant__.
+
+<img src={shivaOnboard_003} />
+
+Standardmäßig hat ein Benutzer keine Rechte. Daher muss der Administrator, der die Einladung gesendet hat, ihm die für seine Tätigkeit erforderlichen Rechte erteilen. Klicken Sie einfach auf das Menü __'Aktionen'__ des Benutzers und wählen Sie die Option __'Bearbeiten'__.
+
+Das Menü zur Aktivierung der Rechte erscheint dann:
+
+<img src={shivaOnboard_005} />
+
+Die Konfiguration der Berechtigungen muss für jeden [Tenant](#tenant) der [Organisation](#organisationen) erneut vorgenommen werden, in dem der Benutzer tätig werden soll: eine globale Zuweisung auf Organisationsebene gibt es nicht.
+
+Die Liste der Berechtigungen und deren Definitionen ist [hier](#berechtigungen) verfügbar.
+
+### Verwaltung der Eigentümer auf einem Tenant
+
+Jeder Tenant verfügt über mindestens einen Eigentümer, um so eine klare Verantwortung und ein effizientes Ressourcenmanagement zu gewährleisten. Darüber hinaus können mehrere Eigentümer für denselben Tenant angegeben werden, was eine Zusammenarbeit und eine gemeinsame Entscheidungsfindung ermöglicht. Nachfolgend finden Sie wichtige Informationen, die bei der Verwaltung dieser Eigentümer zu beachten sind.
+
+Der Eigentümer eines Tenants ist eine vom [Eigentümer der Organisation](#verwaltung-der-eigentümer-der-organisation) unterschiedliche Rolle: er trägt die Verantwortung für einen Ressourcenbereich, nicht für die Vertragsbeziehung.
+
+#### Wichtige Informationen zur Verwaltung der Eigentümer
 
 #### 1. Anzahl der Eigentümer
 
-* Es gibt keine technische Grenze für die Anzahl der Eigentümer, die auf dem Mandanten definiert werden können.
-- Das Verwaltungsinterface (IHM) gibt eine Warnung aus, wenn mehr als 3 Eigentümer vorhanden sind, um zu veranlassen, die Anzahl der Eigentümer aufgrund von Sicherheits- und optimierter Zugangsverwaltungsgründen zu begrenzen.
+- Es besteht keine technische Begrenzung für die Anzahl der Eigentümer, die auf dem Tenant definiert werden können.
 
-#### 2. Hinzufügen eines neuen Eigentümers
+- Die Verwaltungsoberfläche (IHM) zeigt eine Warnung an, wenn mehr als 3 Eigentümer vorhanden sind, um dazu anzuregen, die Anzahl der Eigentümer aus Sicherheitsgründen und für ein optimales Zugriffsmanagement zu begrenzen.
 
-* Bei der Hinzufügung eines neuen Eigentümers kann die Aktualisierung seiner Berechtigungen eine Verzögerung von bis zu 60 Minuten verursachen.
-- Dieser Verbreitungszeitraum ist normal und stellt sicher, dass die Zugriffsrechte korrekt auf alle verknüpften Dienste und Ressourcen angewendet werden.
+#### 2. Hinzufügen eines neuen Besitzers
 
-#### 2. Berechtigungen eines Eigentümers
+- Beim Hinzufügen eines neuen Besitzers kann die Aktualisierung seiner Berechtigungen eine Verzögerung von bis zu 60 Minuten erfordern.
 
-* Ein Eigentümer erhält alle Berechtigungen, die mit den auf seinem Mandanten aktivierten Produkten verbunden sind.
-- Es ist nicht möglich, die Berechtigungen eines Eigentümers zu ändern.
+- Diese Propagationszeit ist normal und stellt sicher, dass die Zugriffsrechte auf alle zugehörigen Dienste und Ressourcen korrekt angewendet werden.
 
-#### 3. Entfernung eines Eigentümers
+#### 2. Berechtigungen eines Besitzers
 
-* Um einen Eigentümer aus dem Mieter zu entfernen, muss der Benutzer eine Anfrage an den Support senden.
-- Diese Prozedur stellt sicher, dass die Änderungen der Zugriffsrechte sicher und gemäß den besten Praktiken der Zugriffsverwaltung durchgeführt werden.
+- Einem Besitzer werden alle Berechtigungen zugewiesen, die mit den auf seinem Tenant aktivierten Produkten verknüpft sind.
 
-### Zugriffsberechtigung für einen Mandanten: Genehmigte IP-Adressen
+- Es ist nicht möglich, die Berechtigungen eines Besitzers zu ändern.
 
-Der Zugriff auf die Cloud-Verwaltungsconsole ist streng auf vorher genehmigte IP-Adressen beschränkt, im Einklang mit den Anforderungen der SecNumCloud-Zertifizierung. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem sie den Zugriff nur für Benutzer aus festgelegten IP-Bereichen ermöglicht und somit die Risiken von unerlaubtem Zugriff minimiert und die Cloud-Infrastruktur gemäß den höchsten Sicherheitsstandards schützt.
+#### 3. Entfernen eines Eigentümers
 
-Hinweis: *Die Entfernung einer genehmigten IP erfolgt über eine Supportanfrage in der Cloud Temple-Console.*
+- Um einen Eigentümer aus dem Tenant zu entfernen, muss der Benutzer eine Anfrage an den Support stellen.
 
-### Ressourcenverbrauch innerhalb eines Mandanten
+- Dieses Verfahren stellt sicher, dass Änderungen an den Zugriffsrechten auf sichere Weise und gemäß den bewährten Verfahren für das Zugriffsmanagement durchgeführt werden.
 
-Es ist möglich, die Cloud-Ressourcen anzuzeigen, die innerhalb eines Mandanten verbraucht werden, wodurch eine detaillierte Übersicht über die Nutzung der verschiedenen bereitgestellten Dienste entsteht. Diese Funktion ermöglicht es den Benutzern, den Ressourcenverbrauch in Echtzeit zu verfolgen, die am stärksten beanspruchten Dienste zu identifizieren und ihre Nutzung entsprechend den Anforderungen zu optimieren.
+### Zugriffsberechtigung für einen Tenant: Zugelassene IPs
 
-Im Menü der Konsole klicken Sie auf „Verbrauchsbericht“ und wählen Sie das gewünschte Zeitintervall aus. Sie können dann den Cloud-Ressourcenverbrauch für die definierte Periode detailliert ansehen, was Ihnen ermöglicht, die Nutzung der Dienste zu analysieren und Ihre Verwaltung entsprechend zu optimieren:
+Der Zugriff auf die Cloud-Management-Konsole ist streng auf zuvor autorisierte IP-Adressen beschränkt, um den Anforderungen der SecNumCloud-Zertifizierung zu entsprechen. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem der Zugriff nur auf Benutzer aus angegebenen IP-Bereichen ermöglicht wird, wodurch das Risiko unbefugten Zugriffs minimiert und die Cloud-Infrastruktur nach den höchsten Sicherheitsstandards geschützt wird.
+
+Hinweis: *Das Entfernen einer zugelassenen IP-Adresse erfolgt über eine Supportanfrage in der Cloud-Temple-Konsole.*
+
+### Ressourcenverbrauch innerhalb eines Tenants
+
+Es können die innerhalb eines Tenants verbrauchten Cloud-Ressourcen eingesehen werden, was eine detaillierte Übersicht über die Nutzung der bereitgestellten Dienste bietet. Diese Funktion ermöglicht es Benutzern, den Ressourcenverbrauch in Echtzeit zu verfolgen, die am stärksten ausgelasteten Dienste zu identifizieren und die Nutzung bedarfsgerecht zu optimieren.
+
+Klicken Sie im Konsolenmenü auf "Verbrauchsbericht" und wählen Sie den gewünschten Zeitraum aus. Sie können so den Verbrauch der Cloud-Ressourcen im festgelegten Zeitraum detailliert einsehen, was Ihnen die Analyse der Dienstnutzung und die daraus folgende Optimierung Ihrer Verwaltung ermöglicht:
 
 <img src={shivaTenantRessources_01} />
+
+## Berechtigungen
+
+Die Konsole ermöglicht eine feingranulare Rechteverwaltung für die Benutzer einer Organisation mit einer __Trennung je Tenant__.
+Anfangs ermöglicht das Hauptkonto des Sponsors die Erstkonfiguration der Konten und der zugehörigen Berechtigungen.
+Im weiteren Verlauf ermöglicht die Berechtigung __'iam_write'__ einem Konto, die Berechtigungen anderer Benutzer zu verwalten, und zwar in dem Tenant, in dem ihm dieses Recht erteilt wurde.
+
+### Verfügbare Berechtigungen für Benutzer Ihrer Organisation
+
+Wenn ein Benutzer erstellt wird, hat er standardmäßig keine Berechtigungen. Jede Berechtigung wird einzeln zugewiesen und funktioniert isoliert, ohne Überschneidungen mit anderen Berechtigungen. Sie werden kombiniert angewendet, was bedeutet, dass ein Benutzer über alle erforderlichen Berechtigungen verfügen muss, um eine bestimmte Aktion auszuführen.
+
+Die folgenden Berechtigungen können für jeden Benutzer und für jeden Tenant Ihrer Organisation konfiguriert werden:
+
+- Berechtigungen vom Typ „read“: Ermöglichen ausschließlich die Anzeige von Ressourcen ohne Änderungsmöglichkeit.
+- Berechtigungen vom Typ „write“: Ermöglichen die Änderung von Konfigurationen.
+- Berechtigungen vom Typ „management“: Ermöglichen das erweiterte Ressourcenmanagement.
+- Berechtigungen vom Typ „console_access“: Ermöglichen PMAD-ähnliche Verbindungen zu Ressourcen.
+- Berechtigungen vom Typ „virtual_machine_power“: Ermöglichen die Stromverwaltung einer virtuellen Maschine.
+
+- __Dies sind Berechtigungen, keine Rollen.__ In diesem Zusammenhang ist es erforderlich, sowohl die READ- als auch die WRITE-Berechtigung zu besitzen, um eine Konfiguration zu ändern.
+
+Zuletzt aktualisiert am: 20.04.2026
+
+| Berechtigungsname                           | Beschreibung der Berechtigung                                                                                                 |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| activity_read                                 | Anzeige von Protokollen und Aktivitäten                                                                                   |
+| activity_write                                | Verwaltung von Protokollen und Aktivitäten                                                                                        |
+| backup_iaas_opensource_read                   | OpenIaaS-Angebot - Verwaltung von Backup-Ressourcen - consultation                                                         |
+| backup_iaas_opensource_write                  | OpenIaaS-Angebot - Verwaltung von Backup-Ressourcen - Änderung                                                         |
+| backup_iaas_spp_read                          | VMware-Angebot - Verwaltung von Backup-Ressourcen - Anzeige                                                           |
+| backup_iaas_spp_write                         | VMware-Angebot - Verwaltung von Backup-Ressourcen - Änderung                                                           |
+| bastion_read                                  | Anzeige von Bastion-Ressourcen                                                                                   |
+| bastion_write                                 | Verwaltung von Bastion-Ressourcen (Appliances, Sitzungen, ...) de type Bastion                                                             |
+| bastion_console_access                        | Berechtigung zum Zugriff auf die Konsole (SSH/RDP) einer durch eine Bastion-Appliance geschützten Ressource                               |
+| compute_iaas_opensource_console_access        | OpenIaaS-Angebot - Öffnen der Konsole einer virtuellen Maschine                                                              |
+| compute_iaas_opensource_infrastructure_read   | OpenIaaS-Angebot - Anzeige erweiterter Daten der Xen Orchestra-Ressourcen                                                |
+| compute_iaas_opensource_infrastructure_write  | OpenIaaS-Angebot - Erweitertes Management der Xen Orchestra-Ressourcen                                                                 |
+| compute_iaas_opensource_read                  | OpenIaaS-Angebot - Anzeige von Ressourcen vom Typ Virtuelle Maschinen                                                      |
+| compute_iaas_opensource_management            | OpenIaaS-Angebot - Verwaltung von Ressourcen vom Typ Virtuelle Maschinen                                                           |
+| compute_iaas_opensource_virtual_machine_power | OpenIaaS-Angebot - Stromverwaltung einer virtuellen Maschine                                                            |
+| compute_iaas_opensource_replication_recover   | OpenIaaS-Angebot - Verwaltung der Replikation                                                                                    |
+| compute_iaas_vmware_console_access            | VMware-Angebot - Öffnen der Konsole einer virtuellen Maschine                                                                |
+| compute_iaas_vmware_infrastructure_read       | VMware-Angebot - Anzeige erweiterter Daten der VMware-Ressourcen (Affinitäts-/Anti-Affinitätsregeln, DRS-Konfiguration, usw.) |
+| compute_iaas_vmware_infrastructure_write      | VMware-Angebot - Erweitertes Management der VMware-Ressourcen                                                                          |
+| compute_iaas_vmware_read                      | VMware-Angebot - Anzeige von Ressourcen vom Typ Virtuelle Maschinen                                                        |
+| compute_iaas_vmware_management                | VMware-Angebot - Verwaltung von Ressourcen vom Typ Virtuelle Maschinen (ermöglicht die Verschlüsselung einer virtuellen Maschine)             |
+| compute_iaas_vmware_virtual_machine_power     | VMware-Angebot - Stromverwaltung einer virtuellen Maschine                                                              |
+| baremetal_management                          | Bare-Metal-Angebot - Verwaltung von Bare-Metal-Ressourcen                                                                  |
+| baremetal_read                                | Bare-Metal-Angebot - Anzeige von Bare-Metal-Ressourcen                                                             |
+| baremetal_console_access                      | Bare-Metal-Angebot - Öffnen der Konsole eines Bare-Metal-Systems                                                                    |
+| console_public_access_read                    | Anzeige der für den Konsolenzugriff zugelassenen IPs                                                                        |
+| console_public_access_write                   | Hinzufügen von IPs für den Konsolenzugriff                                                                                 |
+| documentation_read                            | Anzeige von Confluence-Dokumentationsressourcen                                                                       |
+| housing_read                                  | Anzeige von Colocation-Ressourcen                                                                                |
+| iam_offline_access                            | Erstellung und Löschung persönlicher Zugriffstoken (PAT)                                                                       |
+| iam_read                                      | Anzeige von Benutzerrechten                                                                                          |
+| iam_write                                     | Verwaltung von Benutzerrechten                                                                                               |
+| intervention_read                             | Anzeige von geplanten Änderungen und Produktivsetzungen auf der Plattform                                                 |
+| inventory_read                                | Anzeige von Inventar-Ressourcen                                                                                |
+| inventory_write                               | Verwaltung von Inventar-Ressourcen                                                                                     |
+| monitoring_read                               | Anzeige des Monitorings                                                                                                    |
+| monitoring_write                              | Verwaltung des Monitorings                                                                                                         |
+| metric_read                                   | Anzeige von Gesundheitsdaten zu virtuellen Maschinen und Hosts                                                        |
+| network_read                                  | Anzeige von Netzwerkressourcen                                                                                            |
+| network_write                                 | Verwaltung von Netzwerkressourcen                                                                                                 |
+| order_read                                    | Anzeige von Infrastrukturbestellungen                                                                                    |
+| order_write                                   | Erstellung von Infrastrukturbestellungen                                                                                           |
+| object-storage_iam_management                 | Ermöglicht die Verwaltung von Speicherkonten im S3-Produkt                                                                      |
+| object-storage_read                           | Ermöglicht das Anzeigen von Buckets und deren Konfigurationen                                                                  |
+| object-storage_write                          | Ermöglicht das Bearbeiten von Buckets und deren Konfigurationen                                                                 |
+| openshift_management                          | Ermöglicht die Anmeldung auf OpenShift-Plattformen (auf den Tenant beschränkt)                                                         |
+| support_management                            | Anzeige aller Support-Tickets des Tenants                                                                      |
+| support_read                                  | Anzeige der eigenen Support-Tickets des Tenants                                                                                 |
+| support_write                                 | Erstellung eines Support-Tickets für den Tenant                                                                                    |
+| tag_read                                      | Anzeige von Tags, außer RTMS-Tags                                                                                  |
+| tag_write                                     | Verwaltung von Tags, außer RTMS-Tags                                                                                       |
+| ticket_comment_read                           | Anzeige von Kommentaren                                                                                                 |
+| ticket_comment_write                          | Verwaltung von Kommentaren                                                                                                      |
+| ticket_read                                   | Anzeige von Tickets                                                                                                      |
+| ticket_write                                  | Verwaltung von Tickets                                                                                                           |
+| incident_management                           | Verwaltung von Incidents                                                                                                         |
+| incident_read                                 | Anzeige von Incidents                                                                                                    |
+| billing_read                                  | Anzeige von Verbrauchsdashboards                                                                                  |
+| vpc_read                                      | VPC-Angebot - Anzeige von Netzwerkressourcen vom Typ VPC                                                                      |
+| vpc_write                                     | VPC-Angebot - Verwaltung von Netzwerkressourcen vom Typ VPC                                                                           |
+| public_cloud_vm_instances_management          | VM-Instances-Angebot - Verwaltung von virtuellen Maschinen                                                                          |
+| public_cloud_vm_instances_read                | VM-Instances-Angebot - Anzeige von virtuellen Maschinen                                                                     |
+| public_cloud_vm_instances_console_access      | VM-Instances-Angebot - Öffnen der Konsole von virtuellen Maschinen                                                          |

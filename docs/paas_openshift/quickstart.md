@@ -1,28 +1,100 @@
 ---
 title: Guide de démarrage
 ---
-import oshiftRights from './images/oshift_rights.png'
-import oshiftMenu_001 from './images/oshift_menu_001.png'
-import oshiftMenu_002 from './images/oshift_menu_002.png'
-import oshiftMenu_003 from './images/oshift_menu_003.png'
+import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
+import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
+import oshiftClusterDetail_001 from '@site/docs/paas_openshift/images/oshift_cluster_detail_001.png'
+import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png'
+import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
+import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
-## Déployer une plateforme Redhat Openshift au sein de votre tenant
+# QuickStart pour le produit OpenShift
 
-### Affectation des droits d'accès
+Cette page vous guide à travers les étapes initiales pour utiliser le produit **OpenShift** depuis la console Cloud Temple. Suivez ces instructions pour découvrir les menus et fonctionnalités disponibles.
 
-Il est indispensable que l'administrateur du [Tenant](../console/iam/concepts.md#tenants) accorde le droit de gestion de la plateforme Openshift à l'utilisateur administrateur Openshift pour pouvoir y accéder :
+---
 
-<img src={oshiftRights} />
+## Prérequis
 
-### Accès à l'environnement Openshift au sein d'un tenant
+Avant de commencer, assurez-vous des points suivants :
 
-Après l'affectation des droits, le module '__Openshift__' apparaît alors dans le menu de la console Cloud Temple :
+1. **Souscription activée** : Votre organisation doit avoir souscrit à le produit OpenShift.
+2. **Permissions utilisateur** : Votre compte utilisateur doit disposer des droits nécessaires pour accéder et gérer les ressources OpenShift.
+
+---
+
+## Premier accès et commande
+
+Lors de votre premier accès à le produit OpenShift, après activation de la souscription et configuration des permissions, un écran d'accueil s'affiche :
+
+<img src={oshiftOrder_001} />
+
+Cet écran indique que vous n'avez pas encore de clusters OpenShift SecNumCloud déployés.
+
+**Pour commander votre premier cluster OpenShift SecNumCloud, veuillez contacter le support Cloud Temple.**
+
+Une fois votre commande traitée par le support et votre cluster déployé, vous pourrez accéder au menu OpenShift.
+
+---
+
+## Accès à l'interface OpenShift
+
+Une fois votre premier cluster déployé, un nouveau menu intitulé **OpenShift** apparaît dans la console Cloud Temple. Ce menu contient un sous-menu principal : **Clusters**.
 
 <img src={oshiftMenu_001} />
 
-Vous voyez alors apparaître les clusters Openshift qui sont déployés au sein de votre tenant.
+---
 
-Cliquez sur le cluster que vous souhaitez administrer. Vous accéder à l'environnement d'administration du cluster :
+### 1. Liste des clusters
+
+Le sous-menu **Clusters** vous présente un tableau listant tous les clusters OpenShift disponibles, déployés au sein de votre tenant. Ce tableau inclut les informations principales pour chaque cluster :
+
+- **Nom du cluster**
+- **URL d'accès**
+- **URL API**
+- **Version**
+- **Statut**
+- **Dernière mise à jour**
+
+<img src={oshiftSubMenu_001} />
+
+💡 **Pour accéder aux détails complets d'un cluster, cliquez sur son nom dans le tableau.**
+
+---
+
+### 2. Détail d'un cluster
+
+Lorsque vous cliquez sur le **nom d'un cluster** dans la liste, une page détaillée s'affiche avec les informations complètes du cluster :
+
+**Informations de connectivité :**
+
+- **URL d'accès** : Interface web du cluster
+- **URL d'API** : Point d'entrée API pour les opérations CLI
+
+**Informations générales :**
+
+- **Statut** : État actuel du cluster
+- **Dernière mise à jour** : Date de la dernière modification
+- **Version** : Version d'OpenShift déployée
+
+**Nœuds du cluster :**
+
+Un tableau détaille chaque nœud avec les informations suivantes :
+
+- **Nom du noeud**
+- **Type**
+- **AZ** (Availability Zone)
+- **Statut**
+- **CPU**
+- **RAM**
+
+<img src={oshiftClusterDetail_001} />
+
+---
+
+## Accès à l'interface d'administration OpenShift
+
+Cliquez sur l'**URL d'accès** du cluster que vous souhaitez administrer. Vous accédez à l'environnement d'administration du cluster :
 
 <img src={oshiftMenu_002} />
 
@@ -38,17 +110,17 @@ Voici les informations de connexion et de configuration propres à votre environ
 
 Pour accéder aux différents composants OpenShift, veillez à ce que votre locataire soit inscrit sur la liste blanche dans la console (consultez la documentation : [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
-- __URL Shiva Tenant__ :
-  [https://__votre-id-locataire__.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
+- **URL Console Tenant** :
+  [https://**votre-id-locataire**.shiva.cloud-temple.com/](https://**votre-id-locataire**.shiva.cloud-temple.com/)
 
-- __OpenShift UI__ :
-  [https://ui-ocp01-__votre-id__.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
+- **OpenShift UI** :
+  [https://ui-ocp01-**votre-id**.paas.cloud-temple.com/](https://ui-ocp01-**votre-id**.paas.cloud-temple.com/)
 
-- __API externe__ :
-  [https://api-ocp01-__votre-id__.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
+- **API externe** :
+  [https://api-ocp01-**votre-id**.paas.cloud-temple.com](https://api-ocp01-**votre-id**.paas.cloud-temple.com)
 
-- __GitOps (ARGOCD)__ :
-  [https://gitops-ocp01-__votre-id__.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
+- **GitOps (ARGOCD)** :
+  [https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**votre-id**.paas.cloud-temple.com/applications)
 
 #### Connexion au cluster via CLI
 
@@ -77,7 +149,7 @@ docker push registry-ocp01-{votre-id}.paas.cloud-temple.com/<namespace>/temp:lat
 
 #### Configuration des routeurs et Load Balancers
 
-La plateforme propose des options flexibles pour le __roulage des flux__ et l’__équilibrage de charge__ :
+La plateforme propose des options flexibles pour le **roulage des flux** et l’**équilibrage de charge** :
 
 - Par défaut, des load balancers privés sont utilisés pour les routes et les ingresses.
 - Domaines :
@@ -98,7 +170,7 @@ metadata:
 
 Les configurations réseau jouent un rôle crucial pour sécuriser les communications avec OpenShift.
 
-- __Réseau d’interconnexion__ : 100.67.0.0/28
-- __VIP du load balancer privé__ : 100.67.0.3
+- **Réseau d’interconnexion** : 100.67.0.0/28
+- **VIP du load balancer privé** : 100.67.0.3
 
 Vérifiez que votre pare-feu dispose d’une interface dédiée et autorise le trafic entre les réseaux spécifiés.

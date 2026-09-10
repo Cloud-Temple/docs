@@ -1,11 +1,13 @@
+
+
 ---
 title: Tutorial
 ---
 
-Questi tutorial vi aiutano a implementare e gestire l'Housing Cloud Temple dal portale Shiva.
+Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Console.
 
 <div class="card">
   <h3>Tutorial</h3>
-  <p>Al momento non sono disponibili tutorial, ma ci stiamo lavorando attivamente. Tornate presto per saperne di più!</p>
-  <a href="../" class="card-link">Vai alla pagina iniziale &rarr;</a>
+  <p>Al momento non sono disponibili tutorial, ma ci stiamo lavorando attivamente. Torna presto per ulteriori informazioni!</p>
+  <a href="./../" class="card-link">Vai alla pagina Home &rarr;</a>
 </div>

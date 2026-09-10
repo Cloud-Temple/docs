@@ -1,6 +1,8 @@
 ---
 title: Matrice de responsabilité - LLMaaS
+displayed_sidebar: docSidebar
 ---
+
 
 Voici le RACI du partage de responsabilité entre le client et Cloud Temple pour l'usage de la plateforme LLM as a Service (LLMaaS).
 

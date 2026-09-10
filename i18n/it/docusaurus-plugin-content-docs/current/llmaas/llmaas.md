@@ -3,25 +3,25 @@ title: Panoramica
 sidebar_position: 1
 ---
 
-# LLM come un Servizio (LLMaaS)
+# LLM come Servizio (LLMaaS)
 
 ## Accesso all'API
 
-L'API è accessibile tramite la Console Cloud Temple. Puoi gestire le tue chiavi API, monitorare il tuo consumo e configurare i tuoi terzi nei parametri del tuo account. La console consente inoltre di visualizzare l'uso dei tuoi modelli.
+L'API è accessibile tramite la Console Cloud Temple. Puoi gestire le tue chiavi API, monitorare il consumo e configurare i tier nelle impostazioni del tuo account. La console consente inoltre di visualizzare l'utilizzo dei tuoi modelli.
 
 ## Autenticazione
 
-Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la propria chiave API nel formato Bearer token. Se si utilizzano i SDK client, la chiave verrà automaticamente inclusa in ogni richiesta. Se si integra direttamente con l'API, è necessario inviare questo header manualmente.
+Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la tua chiave API in formato Bearer token. Se utilizzi gli SDK client, la chiave verrà inclusa automaticamente in ogni richiesta. Se effettui l'integrazione direttamente con l'API, devi inviare questo header tu stesso.
 
 ## Tipi di contenuto
 
-L'API LLMaaS accetta sempre JSON nel corpo delle richieste e restituisce JSON nel corpo delle risposte. Devi inviare l'intestazione `content-type: application/json` nelle tue richieste. Se utilizzi i SDK client, questo sarà gestito automaticamente.
+L'API LLMaaS accetta sempre JSON nel corpo delle richieste e restituisce JSON nel corpo delle risposte. È necessario inviare l'intestazione `content-type: application/json` nelle richieste. Se si utilizzano gli SDK client, ciò verrà gestito automaticamente.
 
-## Headers di risposta
+## Intestazioni della risposta
 
-L'API LLMaaS include i seguenti headers in ogni risposta:
+L'API LLMaaS include i seguenti header in ogni risposta :
 
-- `id` : Un identificatore univoco a livello globale per la richiesta
+- `id` : Un identificativo globalmente univoco per la richiesta
 - `backend` : Informazioni sull'infrastruttura utilizzata (engine_type, machine_name)
 
 ## Esempi
@@ -32,11 +32,11 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
-    "model": "granite3.3:8b",
+    "model": "gpt-oss:120b",
     "messages": [
       {
         "role": "user", 
-        "content": "Ciao! Puoi presentarti in francese?"
+        "content": "Salut ! Peux-tu te présenter en français ?"
       }
     ],
     "max_tokens": 200,
@@ -63,7 +63,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   ],
   "created": 1749110753,
   "id": "chatcmpl-ollama-14b812ef-b21f-430c-b93c-d0d1bf653806",
-  "model": "granite3.3:8b",
+  "model": "gpt-oss:120b",
   "object": "chat.completion",
   "usage": {
     "completion_tokens": 200,
@@ -78,17 +78,17 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro     | Tipo    | Descrizione                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | stringa | Il modello da utilizzare (vedi [catalogo dei modelli](./models.md)) |
-| `messages`    | array   | Elenco dei messaggi della conversazione                       |
-| `max_tokens`  | intero  | Numero massimo di token da generare                           |
-| `temperature` | float   | Controllo della creatività (0.0-2.0)                          |
-| `top_p`       | float   | Controllo della diversità delle risposte                      |
-| `stream`      | booleano| Attiva lo streaming delle risposte                            |
-| `user`        | stringa | Identificativo univoco dell'utente finale                     |
+| `model`       | string  | Il modello da utilizzare (vedere [catalogo dei modelli](./models.md)) |
+| `messages`    | array   | Elenco dei messaggi della conversazione                     |
+| `max_tokens`  | integer | Numero massimo di token da generare                         |
+| `temperature` | float   | Controlla la creatività (0.0-2.0)                           |
+| `top_p`       | float   | Controlla la diversità delle risposte                       |
+| `stream`      | boolean | Abilita lo streaming della risposta                         |
+| `user`        | string  | Identificativo univoco dell'utente finale                   |
 
 ## URL di base
 
-L'URL di base per tutte le richieste API è :
+L'URL di base per tutte le richieste API è:
 ```
 https://api.ai.cloud-temple.com/v1/
 ```
@@ -97,7 +97,11 @@ https://api.ai.cloud-temple.com/v1/
 
 - `/chat/completions` : Generazione di risposte conversazionali
 - `/completions` : Completamento di testo semplice
-- `/embeddings` : Crea un vettore di embedding che rappresenta il testo di input
+- `/embeddings` : Vettorizzazione per la ricerca semantica e RAG
+- `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatibile con SDK Cohere)
+- `/audio/transcriptions` : Trascrizione audio batch (Whisper)
+- `/audio/speech` : Sintesi vocale (TTS)
+- `/images/generations` : Generazione di immagini
 - `/models` : Elenco dei modelli disponibili
 
 ### Esempio: Elenco dei modelli
@@ -113,12 +117,12 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   "object": "list",
   "data": [
     {
-      "id": "granite3.3:8b",
+      "id": "gpt-oss:120b",
       "object": "model",
       "created": 1749110897,
       "owned_by": "CloudTemple",
-      "root": "granite3.3:8b",
-      "aliases": ["granite3.3:8b"],
+      "root": "gpt-oss:120b",
+      "aliases": ["gpt-oss:120b"],
       "parent": null,
       "max_model_len": 60000,
       "permission": [
@@ -142,4 +146,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-La risposta contiene tutti i modelli disponibili con le loro specifiche e permessi.
+La risposta contiene tutti i modelli disponibili con le relative specifiche e autorizzazioni.

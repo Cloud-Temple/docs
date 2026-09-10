@@ -4,7 +4,7 @@ title : Déployer une Machine Virtuelle (VM) avec KubeVirt
 
 ## Objectifs
 
-Ce tutoriel a pour objectif de fournir des étapes claires pour déployer et configurer des machines virtuelles (VM) dans **KubeVirt** sur votre cluster OpenShift. 
+Ce tutoriel a pour objectif de fournir des étapes claires pour déployer et configurer des machines virtuelles (VM) dans **KubeVirt** sur votre cluster OpenShift.
 
 Deux scénarios seront abordés :
 
@@ -231,4 +231,4 @@ Vous aurez besoin des fichiers suivants pour le déploiement :
 
 ## Conclusion
 
-Ce guide vous a permis de déployer des machines virtuelles Fedora et Windows Server sur KubeVirt avec OpenShift. Vous avez appris à configurer les accès réseau (SSH/RDP) et à exposer des services web. Ces étapes peuvent être reproduites pour divers scénarios où des VM sont nécessaires dans un environnement sur le PaaS Openshift **Cloud Temple**. 🚀
+Ce guide vous a permis de déployer des machines virtuelles Fedora et Windows Server sur KubeVirt avec OpenShift. Vous avez appris à configurer les accès réseau (SSH/RDP) et à exposer des services web. Ces étapes peuvent être reproduites pour divers scénarios où des VM sont nécessaires dans un environnement sur le PaaS OpenShift **Cloud Temple**. 🚀

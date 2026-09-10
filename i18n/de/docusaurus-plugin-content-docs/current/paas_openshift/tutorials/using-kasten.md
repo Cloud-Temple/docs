@@ -29,6 +29,7 @@ Im Rahmen dieser Konfiguration:
 ## Softwareversionen
 
 Stellen Sie sicher, dass die folgenden Softwareversionen und Tools installiert sind, um eine optimale Kompatibilität zu gewährleisten:
+
 - **Kasten K10**: v5.5.10 oder höher
 - **OpenShift CLI**: v4.15.6 oder höher
 - **Kubernetes**: v1.24 oder höher (über OpenShift)
@@ -37,7 +38,7 @@ Stellen Sie sicher, dass die folgenden Softwareversionen und Tools installiert s
 
 ## Voraussetzungen
 
-Um diesem Leitfaden zu folgen, stellen Sie sicher, dass Sie die folgenden Elemente haben: 
+Um diesem Leitfaden zu folgen, stellen Sie sicher, dass Sie die folgenden Elemente haben:
 
 1. **Zugang zur Kasten-Benutzeroberfläche**: Sie müssen Zugriff auf das in Ihrem OpenShift-Cluster bereitgestellte Kasten-Dashboard haben.
 2. **Von Cloud Temple bereitgestellte S3-Schlüssel**:
@@ -61,6 +62,7 @@ Um diesem Leitfaden zu folgen, stellen Sie sicher, dass Sie die folgenden Elemen
 ## Benötigte Dateien
 
 Es sind keine spezifischen Dateien für diese Konfiguration erforderlich, aber Sie benötigen die folgenden Informationen von Cloud Temple:
+
 - **S3-Zugangsschlüssel**
 - **S3-Geheimschlüssel**
 - **S3 SNC-Endpunkt-URL**: Beispiel `xxxxx.s3.fr1.cloud-temple.com`.
@@ -137,9 +139,10 @@ Um zu bestätigen, dass das Backup korrekt konfiguriert ist:
 
 ## Fazit
 
-Durch die Befolgung dieses Leitfadens haben Sie erfolgreich einen SecNumCloud-kompatiblen S3-Speicherort in Kasten mit der Cloud Temple-Infrastruktur konfiguriert. Dieses Workflow ermöglicht es Ihnen, Ihre Backups effektiv zu verwalten und gleichzeitig von einem zertifizierten und sicheren Speicher zu profitieren. 
+Durch die Befolgung dieses Leitfadens haben Sie erfolgreich einen SecNumCloud-kompatiblen S3-Speicherort in Kasten mit der Cloud Temple-Infrastruktur konfiguriert. Dieses Workflow ermöglicht es Ihnen, Ihre Backups effektiv zu verwalten und gleichzeitig von einem zertifizierten und sicheren Speicher zu profitieren.
 
 Für weiterführende Maßnahmen könnten Sie:
+
 - Weitere Workloads zum Backup hinzufügen.
 - Erweiterte Aufbewahrungsrichtlinien in Kasten konfigurieren.
 - Die Wiederherstellungstests automatisieren, um Ihre Daten zu validieren.

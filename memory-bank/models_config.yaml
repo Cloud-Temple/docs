@@ -3,30 +3,60 @@
 
 # Statistiques globales
 stats:
-  total_models: 45 # Mis à jour
+  total_models: 41 # Mis à jour
   min_context: 8192 # Granite Guardian 2B
-  max_context: 128000 # Qwen2.5-VL
-  pricing_input: 0.9
-  pricing_output: 4
-  pricing_reasoning: 21
+  max_context: 262144 # Qwen3 4B
+  pricing_input: 1.9
+  pricing_output: 8
+  pricing_reasoning: 8
+  pricing_audio: 0.01 # Par minutes
   secnumcloud: true
   hds: true
   sovereign: true
 
 # Modèles de grande taille
 large_models:
-  - name: Llama 3.3 70B
+  - name: gpt-oss:120b
+    editor: OpenAI
+    location: FR 🇫🇷
+    parameters: 120
+    parameters_string: 120B
+    context_size: 120000
+    speed: 140 tokens/seconde
+    energy_per_million_tokens: 1.69
+    licence: Apache 2.0
+    description: Modèle de langage open-weight de pointe d'OpenAI, offrant de solides performances avec une licence flexible Apache 2.0.
+    details: Un modèle Mixture-of-Experts (MoE) de 120 milliards de paramètres avec environ 5.1 milliards de paramètres actifs. Il offre un effort de raisonnement configurable et un accès complet à la chaîne de pensée.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: false
+    tags:
+      - MoE
+      - Agent
+      - Raisonnement
+      - Open-Source
+      - Très Large
+    use_cases:
+      - Agents conversationnels avancés avec raisonnement complexe et intégration d'outils.
+      - Applications nécessitant une transparence totale du processus de raisonnement (chain-of-thought).
+      - Scénarios commerciaux nécessitant une licence permissive (Apache 2.0).
+      - Fine-tuning pour des tâches spécialisées nécessitant un modèle de base puissant.
+
+  - name: llama3.3:70b
     editor: Meta
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 70
     parameters_string: 70B
-    context_size: 60000
-    speed: 26 tokens/seconde
-    energy_per_million_tokens: 11.75 # (1100W / 26 t/s) / 3.6
+    context_size: 132000
+    speed: 31 tokens/seconde
+    energy_per_million_tokens: 8.58
     licence: LLAMA 3.3 Community Licence
     description: Modèle multilingue de pointe développé par Meta, conçu pour exceller dans le dialogue naturel, le raisonnement complexe et la compréhension nuancée des instructions.
-    details: Combinant une efficacité remarquable avec des ressources computationnelles réduites, ce modèle offre des capacités multilingues étendues couvrant 8 langues majeures (anglais, français, allemand, espagnol, italien, portugais, hindi et thaï). Sa fenêtre contextuelle de 60 000 tokens permet l'analyse approfondie de documents complexes et de conversations longues, tout en maintenant une cohérence globale exceptionnelle. Optimisé pour minimiser les biais et les réponses problématiques.
-    supports_tools: false
+    details: Combinant une efficacité remarquable avec des ressources computationnelles réduites, ce modèle offre des capacités multilingues étendues couvrant 8 langues majeures (anglais, français, allemand, espagnol, italien, portugais, hindi et thaï). Sa fenêtre contextuelle de 132 000 tokens permet l'analyse approfondie de documents complexes et de conversations longues, tout en maintenant une cohérence globale exceptionnelle. Optimisé pour minimiser les biais et les réponses problématiques.
+    supports_tools: true
     supports_vision: false
     supports_reasoning: false
     supports_security: false
@@ -42,65 +72,15 @@ large_models:
       - Analyse de documents juridiques ou techniques volumineux (>100 pages)
       - Génération de textes structurés avec fidélité aux consignes stylistiques
 
-  - name: Qwen3 235B
-    editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 235
-    parameters_string: 235B
-    context_size: 60000
-    speed: 17 tokens/seconde
-    energy_per_million_tokens: 7.84 # (480W / 17 t/s) / 3.6
-    licence: Apache 2.0
-    description: Modèle très volumineux de la nouvelle génération Qwen3, offrant des capacités étendues pour les tâches les plus complexes.
-    details: Fait partie de la série Qwen3. Ce modèle de 235 milliards de paramètres est conçu pour exceller dans les tâches de raisonnement profond, de génération de code complexe, et de compréhension nuancée sur de vastes contextes. Supporte plus de 100 langues et intègre des modes de pensée hybrides.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: true
-    supports_security: false
-    is_fast: false
-    tags:
-      - Agent
-      - Raisonnement
-      - Multilingue
-      - Très Large
-    use_cases:
-      - Agents conversationnels très avancés avec grand contexte et intégration d'outils (MCP)
-      - Résolution de problèmes extrêmement complexes (maths, code)
-      - Analyse et génération de documents très volumineux et techniques
-      - Applications multilingues (>100 langues) nécessitant une compréhension et une génération de très haute fidélité
-
-  - name: DeepSeek-R1 671B
-    editor: DeepSeek AI
-    location: FR 🇫🇷
-    parameters: 671
-    parameters_string: 671B
-    context_size: 16000
-    speed: 12 tokens/seconde
-    energy_per_million_tokens: 11.11 # (480W / 12 t/s) / 3.6
-    licence: MIT Licence
-    description: Modèle extrêmement volumineux de DeepSeek AI, conçu pour le summum du raisonnement et de la génération.
-    details: DeepSeek-R1 671B représente l'un des plus grands modèles ouverts, destiné aux tâches de raisonnement les plus ardues et à la génération de texte d'une qualité exceptionnelle.
-    supports_tools: false
-    supports_vision: false
-    supports_reasoning: true
-    supports_security: false
-    is_fast: false
-    tags:
-      - Raisonnement
-      - Extrêmement Large
-    use_cases:
-      - Tâches de raisonnement de pointe
-      - Génération de texte de qualité supérieure
-      - Recherche et développement en IA
-
-  - name: Gemma 3 27B
+  - name: gemma3:27b
     editor: Google
+    dsp: 30/03/2026
     location: FR 🇫🇷
     parameters: 27
     parameters_string: 27B
     context_size: 120000
-    speed: 20 tokens/seconde
-    energy_per_million_tokens: 6.67 # (480W / 20 t/s) / 3.6
+    speed: 24 tokens/seconde
+    energy_per_million_tokens: 5.56
     licence: Google Gemma Terms of Use
     description: Modèle révolutionnaire de Google offrant un équilibre optimal entre puissance et efficacité, avec un rapport performance/coût exceptionnel pour les applications professionnelles exigeantes.
     details: Doté d'une efficacité matérielle inégalée, ce modèle intègre des capacités multimodales natives et excelle dans la performance multilingue sur plus de 140 langues. Sa fenêtre contextuelle impressionnante de 120 000 tokens en fait le choix idéal pour l'analyse de documents très volumineux, la recherche documentaire, et toute application nécessitant la compréhension de contextes étendus. Son architecture optimisée permet un déploiement flexible sans compromettre la qualité des résultats.
@@ -120,67 +100,96 @@ large_models:
       - Extraction structurée de données à partir de PDF et documents scannés
       - Intégration avec des outils externes via l'API function calling
 
-  - name: Qwen3 30B-A3B FP8
+  - name: qwen3-coder:30b
     editor: Qwen Team
     location: FR 🇫🇷
     parameters: 30
-    parameters_string: 30B-A3B
-    context_size: 32000
-    speed: 106 tokens/seconde
-    energy_per_million_tokens: 2.88 # (1100W / 106 t/s) / 3.6
+    parameters_string: 30B
+    context_size: 250000
+    speed: 84 tokens/seconde
+    energy_per_million_tokens: 3.14
     licence: Apache 2.0
-    description: Modèle MoE FP8 (3B activés) nouvelle génération, avec modes de pensée hybrides et capacités agentiques avancées.
-    details: Version FP8 du modèle MoE Qwen3 30B-A3B. Intègre un mode "Thinking" pour le raisonnement complexe et un mode "Non-Thinking" rapide. Capacités améliorées en raisonnement, code, maths et agent (outils/MCP). Supporte plus de 100 langues. Idéal pour un équilibre performance/coût optimal.
+    description: Modèle MoE optimisé pour les tâches d'ingénierie logicielle, avec un contexte très long.
+    details: Capacités agentiques avancées pour les tâches de génie logiciel, support natif d'un contexte de 250K tokens, pré-entraîné sur 7.5T tokens avec un fort ratio de code, et optimisé par apprentissage par renforcement pour améliorer les taux d'exécution de code.
     supports_tools: true
     supports_vision: false
     supports_reasoning: true
     supports_security: false
     is_fast: true
     tags:
-      - MoE
       - Agent
-      - Raisonnement
-      - Rapide
+      - Programmation
+      - Grand Contexte
+      - MoE
+    use_cases:
+      - Agents d'ingénierie logicielle pour explorer et modifier des bases de code
+      - Génération de code complexe avec compréhension à l'échelle du dépôt (repository-scale)
+      - Tâches de raisonnement sur des contextes étendus
+      - Amélioration de code via apprentissage par renforcement
+
+  - name: qwen3-2507:30b-a3b
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 30
+    parameters_string: 30B
+    context_size: 250000
+    speed: 118 tokens/seconde
+    energy_per_million_tokens: 1.65
+    licence: Apache 2.0
+    description: Version améliorée du mode non-pensée de Qwen3-30B, avec des capacités générales, une couverture de connaissances et un alignement utilisateur améliorés.
+    details: Améliorations significatives du suivi d'instructions, du raisonnement, de la compréhension de texte, des mathématiques, du codage et de l'utilisation d'outils. Contexte natif de 250k tokens. 
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: true
+    tags:
+      - Agent
+      - Grand Contexte
+      - MoE
       - Multilingue
     use_cases:
-      - Agents conversationnels avancés avec intégration d'outils (MCP)
-      - Résolution de problèmes complexes (maths, code) avec mode "Thinking"
-      - Applications multilingues (>100 langues)
-      - Scénarios nécessitant un équilibre coût/performance (MoE) sur VLLM
-      - Dialogue multi-tours engageant et suivi d'instructions précis
+      - Tâches complexes nécessitant un suivi d'instructions précis et un raisonnement logique.
+      - Applications multilingues avec une large couverture de connaissances.
+      - Génération de texte de haute qualité pour des tâches ouvertes et subjectives.
+      - Analyse de documents très volumineux grâce au contexte de 250k tokens.
 
-  - name: DeepSeek-R1 70B
-    editor: DeepSeek AI
+  - name: qwen3:30b-a3b
+    editor: Qwen Team
+    dsp: 31/12/2026
     location: FR 🇫🇷
-    parameters: 70
-    parameters_string: 70B
+    parameters: 30
+    parameters_string: 30B
     context_size: 32000
-    speed: 21 tokens/seconde
-    energy_per_million_tokens: 12.56 # (950W / 21 t/s) / 3.6
-    licence: MIT Licence
-    description: Modèle 70B de DeepSeek AI
-    details: DeepSeek-R1 70B est conçu pour des tâches complexes de raisonnement et de génération.
-    supports_tools: false
+    speed: 118 tokens/seconde
+    energy_per_million_tokens: 1.65
+    licence: Apache 2.0
+    description: Dernière génération des modèles Qwen, offrant des améliorations significatives en termes de données d'entraînement, d'architecture et d'optimisation.
+    details: Pré-entraîné sur 36T de tokens dans 119 langues. Modèle MoE (Mixture-of-Experts) avec 128 experts dont 8 activés par token. 
+    supports_tools: true
     supports_vision: false
     supports_reasoning: true
     supports_security: false
     is_fast: false
     tags:
-      - Raisonnement
-      - Large
+      - Agent
+      - Programmation
+      - Multilingue
+      - MoE
     use_cases:
-      - Tâches de raisonnement de pointe
-      - Génération de texte de qualité supérieure
-      - Recherche et développement en IA
+      - Tâches de raisonnement complexes et génération de code.
+      - Applications multilingues nécessitant une large couverture linguistique.
+      - Scénarios nécessitant un bon équilibre entre performance et efficacité des ressources grâce à l'architecture MoE.
 
-  - name: Qwen2.5-VL 32B
+  - name: qwen2.5vl:32b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 32
     parameters_string: 32B
     context_size: 120000
-    speed: 18 tokens/seconde
-    energy_per_million_tokens: 7.41 # (480W / 18 t/s) / 3.6
+    speed: 22 tokens/seconde
+    energy_per_million_tokens: 6.06
     licence: Apache 2.0
     description: Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de compréhension visuelle et d'agentique de pointe.
     details: Ce modèle vision-langage de 32 milliards de paramètres est conçu pour les tâches les plus exigeantes, combinant une compréhension visuelle profonde avec des capacités de raisonnement avancées pour interagir avec des interfaces graphiques et analyser des documents complexes.
@@ -202,14 +211,15 @@ large_models:
       - Tâches de localisation d'objets et de reconnaissance de texte de haute précision
       - Génération de descriptions riches et détaillées à partir d'images complexes
 
-  - name: Qwen2.5-VL 72B
+  - name: qwen2.5vl:72b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 72
     parameters_string: 72B
     context_size: 128000
-    speed: 15 tokens/seconde
-    energy_per_million_tokens: 8.89 # (480W / 15 t/s) / 3.6 (estimation)
+    speed: 13 tokens/seconde
+    energy_per_million_tokens: 10.26
     licence: Apache 2.0
     description: Version la plus puissante de la série Qwen2.5-VL, offrant des capacités de compréhension visuelle et d'agentique de pointe pour les tâches les plus exigeantes.
     details: Ce modèle vision-langage de 72 milliards de paramètres est conçu pour les tâches les plus exigeantes, combinant une compréhension visuelle profonde avec des capacités de raisonnement avancées pour interagir avec des interfaces graphiques et analyser des documents complexes.
@@ -231,16 +241,98 @@ large_models:
       - Tâches de localisation d'objets et de reconnaissance de texte de très haute précision
       - Génération de descriptions riches et détaillées à partir d'images très complexes
 
+  - name: qwen3-next:80b
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 80
+    parameters_string: 80B
+    context_size: 262144
+    speed: 59 tokens/seconde
+    energy_per_million_tokens: 3.30
+    licence: Apache 2.0
+    description: Modèle Next 80B FP8 de Qwen, optimisé pour les grands contextes et le raisonnement, servi via vLLM (A100).
+    details: Variante A3B-Instruct en FP8, configurée avec un contexte jusqu'à 262k tokens, prise en charge du function calling, guided decoding (xgrammar) et spéculative (qwen3_next_mtp). Déployé sur 2×A100 avec vLLM.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: true
+    tags:
+      - Agent
+      - Raisonnement
+      - Grand Contexte
+      - MoE
+    use_cases:
+      - Agents conversationnels avancés avec intégration d'outils
+      - Analyse de documents très volumineux (jusqu'à 260k tokens)
+      - Génération de code et tâches complexes nécessitant raisonnement structuré
+
 # Modèles spécialisés
 specialized_models:
-  - name: Qwen3 14B
+  - name: embeddinggemma:300m
+    editor: Google
+    location: FR 🇫🇷
+    parameters: 0.3
+    parameters_string: 300M
+    context_size: 2048
+    licence: Google Gemma Terms of Use
+    description: Modèle d'embedding de pointe de Google, optimisé pour sa taille, idéal pour les tâches de recherche et de récupération sémantique.
+    details: Construit sur Gemma 3, ce modèle produit des représentations vectorielles de texte pour la classification, le clustering et la recherche de similarité. Entraîné sur plus de 100 langues, sa petite taille le rend parfait pour les environnements à ressources limitées.
+    supports_tools: false
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: true
+    tags:
+      - Embedding
+      - Compact
+      - Sémantique
+      - Efficient
+      - Multilingue
+    use_cases:
+      - Recherche et récupération d'informations (Retrieval)
+      - Classification et clustering de documents
+      - Recherche de similarité sémantique
+      - Déploiement sur des appareils à ressources limitées (mobile, laptop)
+
+  - name: gpt-oss:20b
+    editor: OpenAI
+    location: FR 🇫🇷
+    parameters: 20
+    parameters_string: 20B
+    context_size: 120000
+    speed: 85 tokens/seconde
+    energy_per_million_tokens: 1.57
+    licence: Apache 2.0
+    description: Modèle de langage open-weight d'OpenAI, optimisé pour l'efficacité et le déploiement sur du matériel grand public.
+    details: Un modèle Mixture-of-Experts (MoE) de 21 milliards de paramètres avec 3.6 milliards de paramètres actifs. Il offre un effort de raisonnement configurable et des capacités d'agent.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: true
+    tags:
+      - MoE
+      - Agent
+      - Raisonnement
+      - Open-Source
+      - Compact
+      - Rapide
+    use_cases:
+      - Déploiements sur des appareils à ressources limitées (edge devices) ou des serveurs à faible coût.
+      - Applications nécessitant une inférence rapide avec de bonnes capacités de raisonnement.
+      - Cas d'usage agentiques avec appel de fonctions, navigation web et exécution de code.
+      - Fine-tuning pour des tâches spécialisées sur du matériel grand public.
+
+  - name: qwen3:14b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 14
     parameters_string: 14B
     context_size: 32000
-    speed: 68 tokens/seconde
-    energy_per_million_tokens: 3.88 # (950W / 68 t/s) / 3.6
+    speed: 44 tokens/seconde
+    energy_per_million_tokens: 3.03
     licence: Apache 2.0
     description: Modèle dense nouvelle génération Qwen3 (14B), offrant des performances équivalentes à Qwen2.5 32B avec une meilleure efficacité.
     details: Fait partie de la série Qwen3, entraîné sur ~36T tokens. Capacités améliorées en raisonnement, code, maths et agent (outils/MCP). Supporte plus de 100 langues et les modes de pensée hybrides.
@@ -260,41 +352,15 @@ specialized_models:
       - Analyse de données et raisonnement complexe
       - Intégration avec des outils externes via function calling
 
-  - name: Gemma 3 12B
+  - name: gemma3:4b
     editor: Google
-    location: FR 🇫🇷
-    parameters: 12
-    parameters_string: 12B
-    context_size: 120000
-    speed: 56 tokens/seconde
-    energy_per_million_tokens: 4.71 # (950W / 56 t/s) / 3.6
-    licence: Google Gemma Terms of Use
-    description: Version intermédiaire du modèle Gemma 3 offrant un excellent équilibre entre performance et efficacité.
-    details: Ce modèle de taille moyenne combine performances de haute qualité et efficacité opérationnelle, offrant une grande partie des capacités de son grand frère de 27B paramètres dans un format plus léger. Idéal pour les déploiements nécessitant qualité et rapidité sans les ressources computationnelles des plus grands modèles.
-    supports_tools: false
-    supports_vision: true
-    supports_reasoning: false
-    supports_security: false
-    is_fast: true
-    tags:
-      - Vision
-      - Rapide
-      - Grand Contexte
-    use_cases:
-      - Applications multimodales avec contraintes de ressources modérées
-      - Traitement de documents avec contexte standard (jusqu'à 100 pages)
-      - Génération de contenu textuel et analyse d'images combinées
-      - Déploiements sur GPU standard sans infrastructure spécialisée
-      - Chatbots avancés avec capacités visuelles et textuelles intégrées
-
-  - name: Gemma 3 4B
-    editor: Google
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 4
     parameters_string: 4B
     context_size: 120000
-    speed: 57 tokens/seconde
-    energy_per_million_tokens: 0.58 # (120W / 57 t/s) / 3.6
+    speed: 60 tokens/seconde
+    energy_per_million_tokens: 0.55
     licence: Google Gemma Terms of Use
     description: Modèle compact de Google offrant d'excellentes performances dans un format léger et économique.
     details: Cette version compacte du modèle Gemma 3 est optimisée pour les déploiements avec contraintes de ressources tout en maintenant des performances remarquables pour sa taille. Son architecture efficiente permet une inférence rapide sur du matériel standard, idéale pour les applications nécessitant réactivité et déploiement à grande échelle. Malgré sa taille réduite, il maintient des capacités multimodales pour traiter à la fois texte et images.
@@ -316,14 +382,15 @@ specialized_models:
       - Applications mobiles avec analyse d'images et textes
       - Traitement de requêtes visuelles simples à moyenne complexité avec haute performance
 
-  - name: Gemma 3 1B
+  - name: gemma3:1b
     editor: Google
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 1
     parameters_string: 1B
     context_size: 32000
-    speed: 112 tokens/seconde
-    energy_per_million_tokens: 0.15 # (60W / 112 t/s) / 3.6
+    speed: 115 tokens/seconde
+    energy_per_million_tokens: 0.15
     licence: Google Gemma Terms of Use
     description: Micro-modèle ultra-léger conçu pour les déploiements sur appareils à très faibles ressources.
     details: Ce modèle ultra-compact représente la quintessence de l'efficience, permettant des déploiements dans des environnements extrêmement contraints en ressources. Malgré sa taille minimale, il offre des capacités de base surprenantes pour des tâches textuelles simples à modérées, avec une vitesse d'inférence exceptionnelle. Il prend également en charge l'intégration avec des outils externes via function calling.
@@ -344,35 +411,16 @@ specialized_models:
       - Assistants compacts pour applications grand public avec intégration services externes
       - Systèmes de contrôle intelligents intégrant plusieurs APIs/services
 
-  - name: Lucie-7B-Instruct
-    editor: OpenLLM-France
-    location: FR 🇫🇷
-    parameters: 7
-    parameters_string: 7B
-    context_size: 32000
-    speed: 4 tokens/seconde
-    energy_per_million_tokens: 8.33 # (120W / 4 t/s) / 3.6
-    licence: Apache 2.0
-    description: Modèle causal multilingue open-source (7B), fine-tuné depuis Lucie-7B. Optimisé pour le français.
-    details: Fine-tuné sur instructions synthétiques (ChatGPT, Gemma) et prompts customisés. Non optimisé pour code/maths. Entraîné sur contexte 4k mais conserve la capacité du modèle de base pour 32k. Modèle en développement.
-    supports_tools: false
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: false
-    tags:
-      - Français
-      - Open-Source
-      - Efficient
 
-  - name: Mistral Small 3.1
+  - name: mistral-small3.1:24b
     editor: Mistral AI
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 24
     parameters_string: 24B
     context_size: 120000
-    speed: 35 tokens/seconde
-    energy_per_million_tokens: 3.72 # (480W / 35 t/s) / 3.6
+    speed: 34 tokens/seconde
+    energy_per_million_tokens: 3.83
     licence: Apache 2.0
     description: Modèle compact et réactif de Mistral AI, spécialement conçu pour offrir une assistance conversationnelle fluide et pertinente avec une vitesse de réponse optimale.
     details: Malgré sa taille modérée, ce modèle affiche une performance remarquable qui rivalise avec celle de nombreux modèles propriétaires bien plus volumineux. Son architecture ingénieusement optimisée facilite le déploiement local sur des infrastructures variées. Intégrant des capacités multimodales natives, il peut traiter à la fois du texte et des images sans recourir à des systèmes externes. Sa licence Apache 2.0 offre une flexibilité maximale pour les déploiements commerciaux et les personnalisations, en faisant un choix idéal pour les entreprises soucieuses d'équilibrer performance et contraintes légales.
@@ -392,14 +440,15 @@ specialized_models:
       - Outils de création/édition de contenu avec réponse immédiate (blogs, emails)
       - Déploiement sur infrastructures standard (24B de paramètres)
 
-  - name: Mistral Small 3.2
+  - name: mistral-small3.2:24b
     editor: Mistral AI
+    dsp: 30/06/2026
     location: FR 🇫🇷
     parameters: 24
     parameters_string: 24B
-    context_size: 120000
-    speed: 35 tokens/seconde
-    energy_per_million_tokens: 3.72 # (480W / 35 t/s) / 3.6
+    context_size: 128000
+    speed: 56 tokens/seconde
+    energy_per_million_tokens: 2.33
     licence: Apache 2.0
     description: Mise à jour mineure de Mistral Small 3.1, améliorant le suivi d'instructions, la robustesse du function calling et réduisant les erreurs de répétition.
     details: Cette version 3.2 conserve les forces de son prédécesseur tout en apportant des améliorations ciblées. Elle est plus apte à suivre des instructions précises, produit moins de générations infinies ou de réponses répétitives, et son template pour le function calling est plus robuste. Pour les autres aspects, ses performances sont équivalentes ou légèrement supérieures à la version 3.1.
@@ -419,14 +468,15 @@ specialized_models:
       - Applications nécessitant une grande fiabilité pour éviter les répétitions
       - Cas d'usage identiques à Mistral Small 3.1 avec des performances accrues
 
-  - name: DeepCoder
+  - name: deepcoder:14b
     editor: Agentica x Together AI
+    dsp: 30/12/2025
     location: FR 🇫🇷
     parameters: 14
     parameters_string: 14B
     context_size: 32000
-    speed: 64 tokens/seconde
-    energy_per_million_tokens: 4.12 # (950W / 64 t/s) / 3.6
+    speed: 9 tokens/seconde
+    energy_per_million_tokens: 3.72
     licence: Apache 2.0
     description: Modèle IA open source (14B) par Together AI & Agentica, alternative crédible aux modèles propriétaires pour la génération de code.
     details: Performances remarquables en génération de code et raisonnement algorithmique (60.6% LiveCodeBench Pass@1, 1936 Codeforces, 92.6% HumanEval+). Entraîné via RL (GRPO+) avec allongement progressif du contexte (32k -> 64k). Projet transparent (code, dataset, logs ouverts). Permet l'intégration de capacités avancées de génération de code sans dépendre de solutions propriétaires.
@@ -449,14 +499,15 @@ specialized_models:
       - Transposition de code entre langagesframeworks (par exemple Python vers JavaScript)
 
 
-  - name: Granite 3.2 Vision
+  - name: granite3.2-vision:2b
     editor: IBM
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 2
     parameters_string: 2B
     context_size: 16384
-    speed: 48 tokens/seconde
-    energy_per_million_tokens: 0.69 # (120W / 48 t/s) / 3.6
+    speed: 88 tokens/seconde
+    energy_per_million_tokens: 0.38
     licence: Apache 2.0
     description: Modèle compact révolutionnaire d'IBM spécialisé dans la vision par ordinateur, capable d'analyser et comprendre directement les documents visuels sans recourir à des technologies OCR intermédiaires.
     details: Ce modèle compact réalise l'exploit remarquable d'égaler les performances de modèles bien plus volumineux sur un large éventail de tâches de compréhension visuelle. Sa capacité à interpréter directement le contenu visuel des documents - textes, tableaux, graphiques et diagrammes - sans passer par une étape d'OCR traditionnelle représente une avancée significative en termes d'efficacité et de précision. Cette approche intégrée réduit considérablement les erreurs de reconnaissance et permet une compréhension plus contextuelle et plus nuancée du contenu visuel.
@@ -477,14 +528,15 @@ specialized_models:
       - Traitement de documents manuscrits avec taux de reconnaissance élevé
       - Vision par ordinateur légère (2B paramètres) avec vitesse élevée (50 tokens/s)
 
-  - name: Granite 3.3 8B
+  - name: granite3.3:8b
     editor: IBM
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 8
     parameters_string: 8B
     context_size: 60000
-    speed: 30 tokens/seconde
-    energy_per_million_tokens: 1.11 # (120W / 30 t/s) / 3.6
+    speed: 39 tokens/seconde
+    energy_per_million_tokens: 0.85
     licence: Apache 2.0
     description: Modèle Granite 8B fine-tuné par IBM pour un raisonnement et un suivi d'instructions améliorés, avec un contexte de 128k tokens.
     details: Cette version 8B du modèle Granite 3.3 offre des gains significatifs sur les benchmarks génériques (AlpacaEval-2.0, Arena-Hard) et des améliorations en mathématiques, codage et suivi d'instructions. Il supporte 12 langues, le Fill-in-the-Middle (FIM) pour le code, le mode "Thinking" pour la réflexion structurée, et l'appel de fonctions. Licence Apache 2.0. Idéal pour les tâches générales et l'intégration dans des assistants IA.
@@ -506,14 +558,15 @@ specialized_models:
       - Intégration avec des outils externes via function calling
       - Raisonnement structuré avec le mode "Thinking"
 
-  - name: Granite 3.3 2B
+  - name: granite3.3:2b
     editor: IBM
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 2
     parameters_string: 2B
     context_size: 120000
-    speed: 45 tokens/seconde
-    energy_per_million_tokens: 0.74 # (120W / 45 t/s) / 3.6
+    speed: 88 tokens/seconde
+    energy_per_million_tokens: 0.38
     licence: Apache 2.0
     description: Modèle Granite 2B fine-tuné par IBM, optimisé pour le raisonnement et le suivi d'instructions, avec un contexte de 128k tokens.
     details: Version compacte de Granite 3.3 (2B paramètres) offrant les mêmes améliorations en raisonnement, instruction-following, mathématiques et codage que la version 8B. Supporte 12 langues, le Fill-in-the-Middle (FIM), le mode "Thinking", et l'appel de fonctions. Licence Apache 2.0. Excellent choix pour des déploiements légers nécessitant de longues capacités contextuelles et de raisonnement.
@@ -534,14 +587,15 @@ specialized_models:
       - Traitement de documents longs sur appareils moins puissants
       - Génération/complétion de code FIM sur postes de travail standards
 
-  - name: Magistral 24B
+  - name: magistral:24b
     editor: Mistral AI
+    dsp: 30/03/2025
     location: FR 🇫🇷
     parameters: 24
     parameters_string: 24B
     context_size: 40000
-    speed: 25 tokens/seconde
-    energy_per_million_tokens: 5.33 # (480W / 25 t/s) / 3.6
+    speed: 29 tokens/seconde
+    energy_per_million_tokens: 4.59
     licence: Apache 2.0
     description: Le premier modèle de raisonnement de Mistral AI, excellant dans le raisonnement spécifique au domaine, transparent et multilingue.
     details: Idéal pour une utilisation générale nécessitant un traitement de pensée plus long et une meilleure précision. Utile pour la recherche juridique, la prévision financière, le développement de logiciels et la narration créative. Résout les défis en plusieurs étapes où la transparence et la précision sont essentielles.
@@ -559,73 +613,15 @@ specialized_models:
       - Ingénierie logicielle (planification de projet, architecture)
       - Création de contenu et communication (rédaction créative, narration)
 
-  - name: Granite 3.1 MoE
-    editor: IBM
-    location: FR 🇫🇷
-    parameters: 3
-    parameters_string: 3B
-    context_size: 32000
-    speed: 74 tokens/seconde
-    energy_per_million_tokens: 0.45 # (120W / 74 t/s) / 3.6
-    licence: Apache 2.0
-    description: Modèle innovant d'IBM utilisant l'architecture Mixture-of-Experts (MoE) pour offrir des performances exceptionnelles tout en optimisant drastiquement l'utilisation des ressources computationnelles.
-    details: L'architecture MoE (Mixture-of-Experts) de ce modèle constitue une avancée significative dans l'optimisation des modèles de langage, permettant d'atteindre des performances comparables à celles de modèles bien plus volumineux tout en maintenant une empreinte mémoire considérablement réduite. Cette approche innovante active dynamiquement uniquement les parties pertinentes du réseau pour chaque tâche spécifique, assurant ainsi une efficacité énergétique et computationnelle remarquable sans compromis sur la qualité des résultats.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: true
-    is_fast: true
-    tags:
-      - Agent
-      - Sécurité
-      - Rapide
-      - MoE
-      - Efficacité
-      - Efficient
-    use_cases:
-      - Applications généralistes avec coût d'inférence optimisé (42 tokens/seconde)
-      - Traitement de documents dans des environnements CPU avec utilisation RAM limitée
-      - Analyses spécialisées avec activation dynamique des parties pertinentes du modèle
-      - Déploiements haute densité avec faible consommation énergétique par inférence
-      - Traitement parallèle de plusieurs types de requêtes avec spécialisation MoE
-
-  - name: cogito:14b
+  - name: cogito:32b
     editor: Deep Cogito
-    location: FR 🇫🇷
-    parameters: 14
-    parameters_string: 14B
-    context_size: 32000
-    speed: 60 tokens/seconde
-    energy_per_million_tokens: 4.40 # (950W / 60 t/s) / 3.6
-    licence: LLAMA 3.2 Community Licence
-    description: Modèle de Deep Cogito spécialement conçu pour exceller dans les tâches de raisonnement profond et de compréhension contextuelle nuancée, idéal pour les applications analytiques sophistiquées.
-    details: Doté d'excellentes capacités de raisonnement logique et de compréhension sémantique approfondie, ce modèle se distingue par sa capacité à saisir les subtilités et les implications dans des textes complexes. Sa conception privilégie la cohérence du raisonnement et la précision analytique, le rendant particulièrement adapté aux applications nécessitant une analyse minutieuse et contextuelle des informations. Sa taille modérée permet un déploiement flexible tout en maintenant des performances de haute qualité sur un large éventail de tâches analytiques exigeantes.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: true
-    supports_security: false
-    is_fast: true
-    tags:
-      - Agent
-      - Raisonnement
-      - Compréhension
-      - Analyse
-      - Rapide
-    use_cases:
-      - Analyse sémantique de textes avec identification des implications non explicites
-      - Raisonnement causal structuré avec identification des relations cause-effet
-      - Synthèse de documents complexes avec extraction des informations clés
-      - Systèmes de question-réponse précis sur corpus documentaires spécialisés
-      - Analyse argumentative avec évaluation de la solidité des raisonnements
-
-  - name: Cogito 32B
-    editor: Deep Cogito
+    dsp: 30/06/2026
     location: FR 🇫🇷
     parameters: 32
     parameters_string: 32B
     context_size: 32000
-    speed: 32 tokens/seconde
-    energy_per_million_tokens: 8.25 # (950W / 32 t/s) / 3.6
+    speed: 37 tokens/seconde
+    energy_per_million_tokens: 7.13
     licence: LLAMA 3.2 Community Licence
     description: Version avancée du modèle Cogito offrant des capacités de raisonnement et d'analyse considérablement amplifiées, conçue pour les applications les plus exigeantes en matière d'intelligence artificielle analytique.
     details: Cette version étendue du modèle Cogito pousse encore plus loin les capacités de raisonnement et de compréhension, offrant une profondeur d'analyse inégalée pour les applications les plus complexes. Sa conception architecturale sophistiquée lui permet d'aborder des raisonnements multi-étapes avec rigueur et précision, tout en maintenant une cohérence globale remarquable. Idéal pour les applications critiques nécessitant une intelligence artificielle capable d'un raisonnement nuancé et d'une compréhension contextuelle approfondie comparable aux analyses d'experts humains dans des domaines spécialisés.
@@ -646,14 +642,15 @@ specialized_models:
       - Systèmes experts dans des domaines spécialisés (juridique, médical, technique)
       - Analyse avec raisonnement multi-étapes et explicabilité complète des conclusions
 
-  - name: Qwen3 32B
+  - name: qwen3:32b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 32
     parameters_string: 32B
     context_size: 40000
-    speed: 18 tokens/seconde
-    energy_per_million_tokens: 7.41 # (480W / 18 t/s) / 3.6
+    speed: 21 tokens/seconde
+    energy_per_million_tokens: 6.35
     licence: Apache 2.0
     description: Modèle puissant de la nouvelle génération Qwen3, offrant des capacités avancées en raisonnement, code, et agentique, avec un contexte étendu.
     details: Fait partie de la série Qwen3, entraîné sur un vaste corpus de données. Ce modèle de 32 milliards de paramètres est conçu pour exceller dans les tâches complexes, supporter plus de 100 langues et intégrer des modes de pensée hybrides pour une meilleure performance.
@@ -673,14 +670,15 @@ specialized_models:
       - Analyse et génération de documents volumineux
       - Applications multilingues (>100 langues) nécessitant une compréhension profonde
 
-  - name: QwQ-32B
+  - name: qwq:32b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 32
     parameters_string: 32B
     context_size: 32000
-    speed: 35 tokens/seconde
-    energy_per_million_tokens: 7.54 # (950W / 35 t/s) / 3.6
+    speed: 11 tokens/seconde
+    energy_per_million_tokens: 23.99
     licence: Apache 2.0
     description: Modèle de 32 milliards de paramètres amélioré par apprentissage par renforcement (RL) pour exceller dans le raisonnement, le codage, les mathématiques et les tâches d'agent.
     details: Ce modèle utilise une approche RL innovante avec des récompenses basées sur les résultats (vérificateurs de précision pour les maths, exécution de code pour le codage) et un entraînement multi-étapes pour améliorer les capacités générales sans dégrader les performances spécialisées. Il intègre des capacités d'agent pour utiliser des outils et adapter son raisonnement. Licence Apache 2.0.
@@ -701,14 +699,15 @@ specialized_models:
       - Applications d'agent capables d'interagir avec l'environnement
       - Instruction following amélioré et alignement avec les préférences humaines
 
-  - name: DeepSeek-R1 14B
+  - name: deepseek-r1:14b
     editor: DeepSeek AI
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 14
     parameters_string: 14B
     context_size: 32000
-    speed: 62 tokens/seconde
-    energy_per_million_tokens: 4.26 # (950W / 62 t/s) / 3.6
+    speed: 23 tokens/seconde
+    energy_per_million_tokens: 1.45
     licence: MIT licence
     description: Version compacte et efficiente du modèle DeepSeek-R1, offrant un excellent compromis entre performance et légèreté pour les déploiements nécessitant flexibilité et réactivité.
     details: Représentant un équilibre optimal entre performance et efficacité, cette version compacte du modèle DeepSeek-R1 conserve les principales qualités de raisonnement et d'analyse de son homologue plus volumineux, tout en permettant un déploiement plus léger et plus flexible. Sa conception soigneusement optimisée assure des résultats de qualité sur un large éventail de tâches, tout en minimisant les exigences en ressources computationnelles. Cette combinaison en fait le choix idéal pour les applications nécessitant un déploiement agile sans compromis majeur sur les capacités fondamentales.
@@ -729,14 +728,15 @@ specialized_models:
       - Déploiement sur edge computing avec inférence locale optimisée
       - Prototypage rapide d'applications IA avec temps d'itération court
 
-  - name: DeepSeek-R1 32B
+  - name: deepseek-r1:32b
     editor: DeepSeek AI
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 32
     parameters_string: 32B
     context_size: 32000
-    speed: 33 tokens/seconde
-    energy_per_million_tokens: 7.99 # (950W / 33 t/s) / 3.6
+    speed: 20 tokens/seconde
+    energy_per_million_tokens: 13.18
     licence: MIT licence
     description: Version intermédiaire du modèle DeepSeek-R1 offrant un équilibre stratégique entre les capacités avancées de la version 70B et l'efficience de la version 14B, pour une polyvalence et performance optimales.
     details: Cette version intermédiaire du modèle DeepSeek-R1 combine intelligemment puissance et efficacité, proposant des performances significativamente améliorées par rapport à la version 14B tout en maintenant une empreinte plus légère que la version 70B. Cette position stratégique dans la gamme en fait une option particulièrement intéressante pour les déploiements nécessitant des capacités de raisonnement avancées sans les exigences matérielles des plus grands modèles. Sa polyvalence lui permet d'exceller sur un large éventail de tâches, de l'analyse de texte à la génération de contenu structuré.
@@ -755,14 +755,15 @@ specialized_models:
       - Applications combinant analyse de données et génération de contenus
       - Assistants spécialisés pour secteurs techniques (juridique, médical, technique)
 
-  - name: Cogito 3B
+  - name: cogito:3b
     editor: Deep Cogito
+    dsp: 30/06/2025
     location: FR 🇫🇷
     parameters: 3
     parameters_string: 3B
     context_size: 32000
-    speed: 55 tokens/seconde
-    energy_per_million_tokens: 0.61 # (120W / 55 t/s) / 3.6
+    speed: 78 tokens/seconde
+    energy_per_million_tokens: 0.43
     licence: LLAMA 3.2 Community Licence
     description: Version compacte du modèle Cogito, optimisée pour le raisonnement sur des appareils à ressources limitées.
     details: Offre les capacités de raisonnement de la famille Cogito dans un format très léger (3 milliards de paramètres), idéal pour les déploiements embarqués ou les environnements CPU.
@@ -778,8 +779,9 @@ specialized_models:
       - Efficient
       - Rapide
 
-  - name: Granite Embedding
+  - name: granite-embedding:278m
     editor: IBM
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 0.278
     parameters_string: 278M
@@ -798,8 +800,9 @@ specialized_models:
       - Sémantique
       - Efficient
 
-  - name: Granite 3 Guardian 2B
+  - name: granite3-guardian:2b
     editor: IBM
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 2
     parameters_string: 2B
@@ -819,8 +822,9 @@ specialized_models:
       - Filtrage
       - Efficient
 
-  - name: Granite 3 Guardian 8B
+  - name: granite3-guardian:8b
     editor: IBM
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 8
     parameters_string: 8B
@@ -838,122 +842,15 @@ specialized_models:
       - Conformité
       - Filtrage
 
-  - name: Qwen 2.5 0.5B
+  - name: qwen3:0.6b
     editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 0.5
-    parameters_string: 0.5B
-    context_size: 32000
-    speed: 162 tokens/seconde
-    energy_per_million_tokens: 0.10 # (60W / 162 t/s) / 3.6
-    licence: MIT licence
-    description: Micro-modèle ultra-léger de la famille Qwen 2.5, conçu pour une efficacité maximale sur appareils contraints.
-    details: Le plus petit modèle de la série Qwen 2.5, offrant des capacités de base en traitement de langage avec une empreinte minimale. Idéal pour les tâches très simples sur des appareils IoT ou mobiles.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: true
-    tags:
-      - Ultra-compact
-      - Rapide
-      - Embarqué
-      - Efficient
-
-  - name: Qwen 2.5 1.5B
-    editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 1.5
-    parameters_string: 1.5B
-    context_size: 32000
-    speed: 102 tokens/seconde
-    energy_per_million_tokens: 0.33 # (120W / 102 t/s) / 3.6
-    licence: MIT licence
-    description: Modèle très compact de la famille Qwen 2.5, offrant un bon équilibre performance/taille pour les déploiements légers.
-    details: Modèle légèrement plus grand que la version 0.5B, offrant des capacités améliorées tout en restant très efficace. Convient aux applications mobiles ou embarquées nécessitant un peu plus de puissance.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: true
-    tags:
-      - Compact
-      - Rapide
-      - Embarqué
-      - Efficient
-
-  - name: Qwen 2.5 14B
-    editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 14
-    parameters_string: 14B
-    context_size: 32000
-    speed: 61 tokens/seconde
-    energy_per_million_tokens: 4.33 # (950W / 61 t/s) / 3.6
-    licence: MIT licence
-    description: Modèle polyvalent de taille moyenne de la famille Qwen 2.5, bon équilibre performance/ressources.
-    details: Offre de solides capacités multilingues et de compréhension générale dans un format 14B. Convient à une large gamme d'applications nécessitant un modèle fiable sans les exigences des très grands modèles.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: true
-    tags:
-      - Polyvalent
-      - Multilingue
-      - Rapide
-
-  - name: Qwen 2.5 32B
-    editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 32
-    parameters_string: 32B
-    context_size: 32000
-    speed: 31 tokens/seconde
-    energy_per_million_tokens: 8.51 # (950W / 31 t/s) / 3.6
-    licence: MIT licence
-    description: Modèle puissant de la famille Qwen 2.5, offrant des capacités avancées en compréhension et génération.
-    details: Version 32B de Qwen 2.5, fournissant des performances accrues par rapport à la version 14B, notamment en raisonnement et en suivi d'instructions complexes, tout en restant plus léger que le modèle 72B.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: true
-    supports_security: false
-    is_fast: false
-    tags:
-      - Polyvalent
-      - Multilingue
-      - Raisonnement
-
-  - name: Qwen 2.5 3B
-    editor: Qwen Team
-    location: FR 🇫🇷
-    parameters: 3
-    parameters_string: 3B
-    context_size: 32000
-    speed: 64 tokens/seconde
-    energy_per_million_tokens: 0.52 # (120W / 64 t/s) / 3.6
-    licence: MIT licence
-    description: Modèle compact et efficace de la famille Qwen 2.5, adapté aux tâches générales sur ressources limitées.
-    details: Offre un bon compromis entre les capacités des modèles 1.5B et 14B. Idéal pour les applications nécessitant une bonne compréhension générale dans un format léger et rapide.
-    supports_tools: true
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: true
-    tags:
-      - Compact
-      - Rapide
-      - Polyvalent
-      - Efficient
-
-  - name: Qwen3 0.6b
-    editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 0.6
     parameters_string: 0.6B
     context_size: 32000
-    speed: 112 tokens/seconde
-    energy_per_million_tokens: 0.15 # (60W / 112 t/s) / 3.6
+    speed: 28 tokens/seconde
+    energy_per_million_tokens: 0.60
     licence: Apache 2.0
     description: Modèle compact et efficace de la famille Qwen3, adapté aux tâches générales sur ressources limitées.
     details: Offre un bon compromis entre les capacités des modèles ultra-compacts et les modèles plus grands. Idéal pour les applications nécessitant une bonne compréhension générale dans un format léger et rapide.
@@ -968,14 +865,15 @@ specialized_models:
       - Polyvalent
       - Efficient
 
-  - name: Qwen3 1.7b
+  - name: qwen3:1.7b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 1.7
     parameters_string: 1.7B
     context_size: 32000
-    speed: 88 tokens/seconde
-    energy_per_million_tokens: 0.38 # (120W / 88 t/s) / 3.6
+    speed: 46 tokens/seconde
+    energy_per_million_tokens: 0.73
     licence: Apache 2.0
     description: Modèle très compact de la famille Qwen3, offrant un bon équilibre performance/taille pour les déploiements légers.
     details: Modèle légèrement plus grand que la version 0.6B, offrant des capacités améliorées tout en restant très efficace. Convient aux applications mobiles ou embarquées nécessitant un peu plus de puissance.
@@ -990,14 +888,15 @@ specialized_models:
       - Embarqué
       - Efficient
 
-  - name: Qwen3 4b
+  - name: qwen3:4b
     editor: Qwen Team
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 4
     parameters_string: 4B
     context_size: 32000
-    speed: 49 tokens/seconde
-    energy_per_million_tokens: 0.68 # (120W / 49 t/s) / 3.6
+    speed: 29 tokens/seconde
+    energy_per_million_tokens: 1.15
     licence: Apache 2.0
     description: Modèle compact de la famille Qwen3 offrant d'excellentes performances dans un format léger et économique.
     details: Cette version compacte du modèle Qwen3 est optimisée pour les déploiements avec contraintes de ressources tout en maintenant des performances remarquables pour sa taille. Son architecture efficiente permet une inférence rapide sur du matériel standard.
@@ -1010,14 +909,71 @@ specialized_models:
       - Compact
       - Efficient
 
-  - name: Qwen3 8b
+  - name: qwen3-2507-think:4b
     editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 4
+    parameters_string: 4B
+    context_size: 250000
+    speed: 77 tokens/seconde
+    energy_per_million_tokens: 1.73
+    licence: Apache 2.0
+    description: Modèle Qwen3-4B optimisé pour le raisonnement, avec des performances améliorées sur les tâches logiques, les mathématiques, la science et le code, et un contexte étendu à 250K tokens.
+    details: Cette version "Thinking" dispose d'une longueur de pensée accrue, la rendant idéale pour les tâches de raisonnement très complexes. Elle offre également des améliorations générales en suivi d'instructions, utilisation d'outils et génération de texte.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: false
+    is_fast: true
+    tags:
+      - Agent
+      - Raisonnement
+      - Grand Contexte
+      - Compact
+      - Rapide
+    use_cases:
+      - Tâches de raisonnement très complexes (logique, maths, science, code).
+      - Agents conversationnels avec un historique de conversation très étendu (256k tokens).
+      - Analyse de documents très volumineux avec raisonnement profond.
+      - Intégration avec des outils externes via function calling sur de très grands contextes.
+
+  - name: qwen3-2507:4b
+    editor: Qwen Team
+    location: FR 🇫🇷
+    parameters: 4
+    parameters_string: 4B
+    context_size: 250000
+    speed: 69 tokens/seconde
+    energy_per_million_tokens: 1.93
+    licence: Apache 2.0
+    description: Version mise à jour du mode non-pensée de Qwen3-4B, avec des améliorations significatives des capacités générales, une couverture de connaissances étendue et un meilleur alignement avec les préférences des utilisateurs.
+    details: Améliorations notables du suivi d'instructions, du raisonnement logique, de la compréhension de texte, des mathématiques, du codage et de l'utilisation d'outils. Contexte natif de 250k tokens.
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: false
+    supports_security: false
+    is_fast: true
+    tags:
+      - Agent
+      - Grand Contexte
+      - Compact
+      - Rapide
+      - Multilingue
+    use_cases:
+      - Tâches générales nécessitant un suivi d'instructions précis et un raisonnement logique.
+      - Applications multilingues avec une large couverture de connaissances.
+      - Génération de texte de haute qualité pour des tâches ouvertes et subjectives.
+      - Analyse de documents très volumineux grâce au contexte de 256k tokens.
+
+  - name: qwen3:8b
+    editor: Qwen Team
+    dsp: 31/12/2026
     location: FR 🇫🇷
     parameters: 8
     parameters_string: 8B
     context_size: 32000
-    speed: 33 tokens/seconde
-    energy_per_million_tokens: 1.01 # (120W / 33 t/s) / 3.6
+    speed: 18 tokens/seconde
+    energy_per_million_tokens: 1.85
     licence: Apache 2.0
     description: Modèle Qwen3 8B offrant un bon équilibre entre performance et efficacité pour les tâches générales.
     details: Version 8B de Qwen3, offrant des capacités améliorées en raisonnement, code, maths et agent. Supporte plus de 100 langues et les modes de pensée hybrides.
@@ -1032,14 +988,15 @@ specialized_models:
       - Multilingue
       - Efficient
 
-  - name: Qwen2.5-VL 3B
+  - name: qwen2.5vl:3b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 3.8
     parameters_string: 3.8B
     context_size: 128000
-    speed: 65 tokens/seconde
-    energy_per_million_tokens: 0.51 # (120W / 65 t/s) / 3.6
+    speed: 73 tokens/seconde
+    energy_per_million_tokens: 0.45
     licence: Apache 2.0
     description: Modèle Vision-Langage compact, solution performante pour l'IA en périphérie (edge AI).
     details: Qwen2.5-VL est le nouveau modèle phare vision-langage de Qwen, marquant une avancée significative par rapport à Qwen2-VL. Caractéristiques clés - Compréhension visuelle (objets communs, textes, graphiques, icônes, mises en page). Capacités d'agent visuel (raisonnement, direction dynamique d'outils pour utilisation d'ordinateur/téléphone). Localisation visuelle précise (boîtes englobantes, points, sorties JSON stables). Génération de sorties structurées (factures, formulaires, tableaux). Le Qwen2.5-VL-3B surpasse même la version 7B de Qwen2-VL.
@@ -1058,14 +1015,15 @@ specialized_models:
       - Localisation Visuelle
       - Edge AI
 
-  - name: Qwen2.5-VL 7B
+  - name: qwen2.5vl:7b
     editor: Qwen Team
+    dsp: 31/12/2025
     location: FR 🇫🇷
     parameters: 8.3
     parameters_string: 7B (8.3B)
     context_size: 128000
-    speed: 35 tokens/seconde
-    energy_per_million_tokens: 0.95 # (120W / 35 t/s) / 3.6
+    speed: 48 tokens/seconde
+    energy_per_million_tokens: 0.69
     licence: Apache 2.0
     description: Modèle Vision-Langage performant, surpassant GPT-4o-mini sur certaines tâches.
     details: Qwen2.5-VL est le nouveau modèle phare vision-langage de Qwen, marquant une avancée significative par rapport à Qwen2-VL. Caractéristiques clés - Compréhension visuelle (objets communs, textes, graphiques, icônes, mises en page). Capacités d'agent visuel (raisonnement, direction dynamique d'outils pour utilisation d'ordinateur/téléphone). Localisation visuelle précise (boîtes englobantes, points, sorties JSON stables). Génération de sorties structurées (factures, formulaires, tableaux). Le Qwen2.5-VL-7B-Instruct surpasse GPT-4o-mini dans plusieurs tâches et est particulièrement performant pour la compréhension de documents et de diagrammes.
@@ -1082,34 +1040,15 @@ specialized_models:
       - OCR
       - Localisation Visuelle
 
-  - name: Foundation-Sec-8B
-    editor: Foundation AI — Cisco
-    location: FR 🇫🇷
-    parameters: 8
-    parameters_string: 8B
-    context_size: 16384
-    speed: 21 tokens/seconde
-    energy_per_million_tokens: 1.59 # (120W / 21 t/s) / 3.6
-    licence: Apache 2.0
-    description: Modèle de langage spécialisé pour la cybersécurité, optimisé pour l'efficacité.
-    details: Modèle Foundation-Sec-8B (Llama-3.1-FoundationAI-SecurityLLM-base-8B) basé sur Llama-3.1-8B, pré-entraîné sur un corpus cybersécurité. Conçu pour la détection de menaces, l'évaluation de vulnérabilités, l'automatisation de la sécurité, etc. Optimisé pour le déploiement local. Contexte de 16k tokens.
-    supports_tools: false
-    supports_vision: false
-    supports_reasoning: true
-    supports_security: true
-    is_fast: false
-    tags:
-      - Sécurité
-      - Compact
-
-  - name: devstral 24B
+  - name: devstral:24b
     editor: Mistral AI & All Hands AI
+    dsp: 30/03/2025
     location: FR 🇫🇷
     parameters: 24
     parameters_string: 24B
-    context_size: 120000
-    speed: 45 tokens/seconde
-    energy_per_million_tokens: 5.86 # (950W / 45 t/s) / 3.6
+    context_size: 100000
+    speed: 50 tokens/seconde
+    energy_per_million_tokens: 5.27
     licence: Apache 2.0
     description: Devstral est un LLM agentique pour les tâches d'ingénierie logicielle.
     details: Devstral est un LLM agentique pour les tâches d'ingénierie logicielle. Il excelle dans l'utilisation d'outils pour explorer les bases de code, modifier plusieurs fichiers et alimenter les agents d'ingénierie logicielle. Il est affiné à partir de Mistral Small 3.1, disposant ainsi d'une longue fenêtre contextuelle allant jusqu'à 128k tokens. 
@@ -1128,14 +1067,15 @@ specialized_models:
       - Agentic
       - Européen
 
-  - name: Cogito 8B
+  - name: cogito:8b
     editor: Deep Cogito
+    dsp: 30/06/2025
     location: FR 🇫🇷
     parameters: 8
     parameters_string: 8B
     context_size: 32000
-    speed: 30 tokens/seconde
-    energy_per_million_tokens: 1.11 # (120W / 30 t/s) / 3.6
+    speed: 43 tokens/seconde
+    energy_per_million_tokens: 0.77
     licence: LLAMA 3.2 Community Licence
     description: Modèle de taille intermédiaire de la famille Cogito, offrant un bon équilibre entre les capacités de raisonnement et l'efficacité.
     details: Cette version 8B se positionne entre les modèles compacts et les modèles plus larges, offrant des capacités de raisonnement robustes pour une large gamme d'applications analytiques sans nécessiter les ressources des modèles plus grands.
@@ -1150,47 +1090,89 @@ specialized_models:
       - Polyvalent
       - Efficient
 
-  - name: Llama 3.1 8B
-    editor: Meta
+  - name: granite4-small-h:32b
+    editor: IBM
     location: FR 🇫🇷
-    parameters: 8
-    parameters_string: 8B
-    context_size: 32000
-    speed: 31 tokens/seconde
-    energy_per_million_tokens: 1.08 # (120W / 31 t/s) / 3.6
-    licence: LLAMA 3.1 Community Licence
-    description: Modèle de base de la famille Llama 3.1, offrant des performances solides pour sa taille.
-    details: Basé sur l'architecture Llama 3.1, ce modèle 8B est un excellent point de départ pour des tâches générales, offrant une bonne qualité de génération et de compréhension dans un format efficace.
-    supports_tools: false
-    supports_vision: false
-    supports_reasoning: false
-    supports_security: false
-    is_fast: false
-    tags:
-      - Polyvalent
-      - Efficient
-
-  - name: Phi-4 Reasoning 14B
-    editor: Microsoft
-    location: FR 🇫🇷
-    parameters: 14
-    parameters_string: 14B
-    context_size: 32000
-    speed: 71 tokens/seconde
-    energy_per_million_tokens: 3.71 # (950W / 71 t/s) / 3.6
-    licence: MIT Licence
-    description: Modèle de la famille Phi de Microsoft, spécialisé dans le raisonnement complexe et les mathématiques.
-    details: Ce modèle est spécifiquement entraîné pour exceller dans les tâches qui nécessitent un raisonnement logique en plusieurs étapes, ce qui le rend particulièrement performant pour les problèmes de mathématiques, de logique et de codage.
-    supports_tools: false
+    parameters: 32
+    parameters_string: 32B (9B actifs)
+    context_size: 128000
+    speed: 28 tokens/seconde
+    energy_per_million_tokens: 1.19
+    licence: Apache 2.0
+    description: Modèle MoE (Mixture-of-Experts) d'IBM, conçu comme un "cheval de bataille" pour les tâches d'entreprise quotidiennes, avec une excellente efficacité pour les longs contextes.
+    details: Ce modèle hybride (Transformer + Mamba-2) de 32 milliards de paramètres (9B actifs) est optimisé pour les workflows d'entreprise comme les agents multi-outils et l'automatisation du support client. Son architecture innovante réduit de plus de 70% l'utilisation de la RAM pour les longs contextes et les lots multiples.
+    supports_tools: true
     supports_vision: false
     supports_reasoning: true
+    supports_security: true
+    is_fast: false
+    tags:
+      - Agent
+      - Raisonnement
+      - Sécurité
+      - MoE
+      - Grand Contexte
+      - Efficient
+    use_cases:
+      - Agents conversationnels pour le support client avec accès à des bases de connaissances étendues.
+      - Automatisation de workflows d'entreprise nécessitant l'utilisation de plusieurs outils.
+      - Analyse de documents longs avec une consommation de ressources optimisée.
+      - Déploiements sur des infrastructures de taille moyenne grâce à son efficacité.
+
+  - name: granite4-tiny-h:7b
+    editor: IBM
+    location: FR 🇫🇷
+    parameters: 7
+    parameters_string: 7B (1B actif)
+    context_size: 128000
+    speed: 77 tokens/seconde
+    energy_per_million_tokens: 0.43
+    licence: Apache 2.0
+    description: Modèle MoE hybride ultra-efficace d'IBM, conçu pour la faible latence, les applications "edge" et locales, et comme brique de base pour les workflows agentiques.
+    details: Ce modèle de 7 milliards de paramètres (1B actifs) combine des couches Transformer et Mamba-2 pour une efficacité maximale. Il réduit l'utilisation de la RAM de plus de 70% pour les longs contextes, le rendant idéal pour les appareils à ressources limitées et les tâches rapides comme le "function calling".
+    supports_tools: true
+    supports_vision: false
+    supports_reasoning: true
+    supports_security: true
+    is_fast: true
+    tags:
+      - Agent
+      - Raisonnement
+      - Sécurité
+      - MoE
+      - Grand Contexte
+      - Efficient
+      - Rapide
+      - Compact
+    use_cases:
+      - Applications embarquées et "edge" nécessitant une faible latence.
+      - Tâches rapides au sein de workflows agentiques plus larges (ex: function calling).
+      - Analyse de documents sur du matériel grand public.
+      - Déploiements nécessitant une empreinte mémoire minimale.
+
+  - name: deepseek-ocr
+    editor: DeepSeek AI
+    location: FR 🇫🇷
+    parameters: 3
+    parameters_string: 3B
+    context_size: 8192
+    speed: 120 tokens/seconde
+    energy_per_million_tokens: 0.16
+    licence: MIT licence
+    description: Modèle OCR spécialisé de DeepSeek, conçu pour une extraction de texte haute précision avec préservation de la mise en forme.
+    details: Système OCR en deux étapes (encodeur visuel + décodeur MoE 3B) optimisé pour la conversion de documents en Markdown structuré (tableaux, formules). Nécessite un pré-traitement spécifique (Logits Processor) pour des performances optimales.
+    supports_tools: false
+    supports_vision: true
+    supports_reasoning: false
     supports_security: false
     is_fast: true
     tags:
-      - Raisonnement
-      - Mathématiques
-      - Programmation
-      - Rapide
+      - Vision
+      - OCR
+      - Efficient
+    use_cases:
+      - Extraction de texte structuré (Markdown/latex) depuis des images/PDF
+      - Numérisation de documents avec tableaux et formules complexes
 
 # Cas d'usage recommandés
 use_cases:
@@ -1198,31 +1180,32 @@ use_cases:
     description: Chatbots et assistants capables de communiquer dans plusieurs langues avec détection automatique, maintien du contexte sur l'ensemble de la conversation et compréhension des spécificités linguistiques
     recommended_models:
       - Llama 3.3
-      - Mistral Small 3.1
-      - Qwen 2.5 
-      - Granite 3.3 
+      - Mistral Small 3.2
+      - Qwen 3
+      - Openai OSS 
+      - Granite 4 
 
   - name: Analyse de documents longs
     description: Traitement de documents volumineux (>100 pages) avec maintien du contexte sur l'ensemble du texte, extraction d'informations clés, génération de résumés pertinents et réponse à des questions spécifiques sur le contenu
     recommended_models:
-      - Gemma 3 
-      - DeepSeek-R1 
-      - Granite 3.3  # Mis à jour
+      - Gemma 3
+      - Qwen next
+      - Qwen 3 
+      - Granite 4  # Mis à jour
 
   - name: Programmation et développement
     description: Génération et optimisation de code dans multiples langages, débogage, refactoring, développement de fonctionnalités complètes, compréhension des implémentations algorithmiques complexes et création de tests unitaires
     recommended_models:
       - DeepCoder
-      - QwQ
-      - DeepSeek-R1 
-      - Granite 3.3 # Ajouté (FIM)
+      - Qwen3 coder 
+      - Granite 4
       - Devstral
 
   - name: Analyse visuelle
     description: Traitement direct d'images et documents visuels sans pré-traitement OCR, interprétation de diagrammes techniques, graphiques, tableaux, dessins et photos avec génération d'explications textuelles détaillées du contenu visuel
     recommended_models:
-      - Granite 3.2 Vision
-      - Mistral Small 3.1
+      - deepseek-OCR
+      - Mistral Small 3.2
       - Gemma 3
       - Qwen2.5-VL
     
@@ -1230,16 +1213,15 @@ use_cases:
     description: Applications nécessitant des capacités spécifiques en matière de sécurité ; filtrage de contenu sensible, traçabilité des raisonnements, vérification RGPD/HDS, minimisation des risques, analyse des vulnérabilités et respect des réglementations sectorielles
     recommended_models:
       - Granite Guardian
-      - Granite 3.3
+      - Granite 4
       - Devstral
-      - Mistral Small 3.1
+      - Mistral Small 3.2
       - Magistral 24b
-      - Foundation-Sec-8B
 
   - name: Déploiements légers et embarqués
     description: Applications nécessitant une empreinte minimale en ressources, déploiement sur appareils à capacité limitée, inférence en temps réel sur CPU standard et intégration dans des systèmes embarqués ou IoT
     recommended_models:
       - Gemma 3
-      - Granite 3.1 MoE
       - Granite Guardian
-      - Granite 3.3
+      - Granite 4 tiny
+      - DeepSeek-OCR

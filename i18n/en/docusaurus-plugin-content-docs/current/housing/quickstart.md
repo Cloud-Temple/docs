@@ -3,38 +3,39 @@ title: Quickstart Guide
 ---
 
 
-This **Quickstart Housing** guide will help you get started with the Cloud Temple physical hosting offer. It covers the essential steps to submit a hosting request, configure your equipment, and benefit from complementary services.
+This **Quickstart Housing** guide helps you get started quickly with the Cloud Temple physical hosting product. It covers the essential steps to submit a hosting request, configure your equipment, and take advantage of additional services.
 
-## Step 1: Submit a Hosting Request
+## Step 1: Submit a hosting request
 
 1. Access the Cloud Temple console.
-2. Open a service request by providing :
-   - Name of your organization.
+2. Open a service folder by providing:
+   - Your organization's name.
    - Contact details (email and phone number).
-   - Desired hosting type (shared 'U' or dedicated rack).
-   - Quantity and characteristics of equipment (size, weight, power consumption, etc.).
+   - Desired hosting type (shared per 'U' or dedicated per rack).
+   - Quantity and specifications of the equipment (size, weight, power consumption, etc.).
 
-## Step 2: Prepare Your Equipment
+## Step 2: Prepare your equipment
 
-- Verify that your equipment meets technical constraints :
-  - Rack Unit (U) size.
-  - Maximum weight per 'U' (25kg for shared, up to 1000kg for dedicated rack).
-  - Power consumption (150W to 3Kw depending on the subscribed option).
+- Verify that your equipment meets the technical constraints:
+  - Size in rack units (U).
+  - Maximum weight per 'U' (25kg for shared, up to 1000kg for a dedicated rack).
+  - Power consumption (150W to 3kW depending on the subscribed option).
 
-## Step 3: Configure Network Connectivity
+## Step 3: Configure network connectivity
 
-1. Select the required port type :
+1. Select the required port type:
    - Copper 1Gbps.
    - Fiber 1Gbps or 10Gbps.
-2. Add connectivity options in Meet Me Room if needed for operator integration.
+2. Add Meet Me Room connectivity options if necessary for operator integration.
 
-## Step 4: Activate Hands & Eyes Services
+## Step 4: Enable Hands & Eyes services
 
-If needed, request technical assistance for :
+If needed, request technical assistance for:
+
 - Installing your equipment.
-- Configuring cabling.
-- Performing occasional actions (reboot, photos, etc.).
+- Configuring the cabling.
+- Performing one-time actions (reboot, photos, etc.).
 
-## Step 5: Validate the Installation
+## Step 5: Validate the installation
 
-Once your equipment is installed, verify its connectivity and proper functioning directly via the Cloud Temple console or in coordination with support.
+Once your equipment is installed, verify its connectivity and proper operation directly via the Cloud Temple console or in coordination with support.

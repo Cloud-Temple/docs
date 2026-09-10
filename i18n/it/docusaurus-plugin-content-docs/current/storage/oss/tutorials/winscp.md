@@ -1,8 +1,8 @@
 ---
 title: Utilizzare WinSCP
 ---
-import S3Winscp_001 from '../images/S3_winscp_001.png'
-import S3Winscp_002 from '../images/S3_winscp_002.png'
+import S3Winscp_001 from '@site/docs/storage/oss/images/S3_winscp_001.png'
+import S3Winscp_002 from '@site/docs/storage/oss/images/S3_winscp_002.png'
 
 È possibile utilizzare [Winscp (versione 6.3 o superiore)](https://winscp.net/eng/download.php) per connettersi al tuo storage oggetti.
 

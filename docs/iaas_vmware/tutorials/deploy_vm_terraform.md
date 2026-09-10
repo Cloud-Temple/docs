@@ -4,14 +4,14 @@ tags:
   - iaas_vmware
   - tutorials
 ---
-import statusCloudInit from './images/status_cloud_init.png';
-import cloudInitOutput from './images/cloud-init-output.png';
+import statusCloudInit from '@site/docs/iaas_vmware/tutorials/images/status_cloud_init.png';
+import cloudInitOutput from '@site/docs/iaas_vmware/tutorials/images/cloud-init-output.png';
 
 Ce guide va vous permettre de déployer en moins de 5 minutes vos premières instances sur le Cloud de Confiance.
 
 ## __Prérequis__
 
-1. Avoir souscrit à l'offre Cloud Temple (souscription à l'offre IaaS).
+1. Avoir souscrit à le produit Cloud Temple (souscription à le produit IaaS).
 2. Avoir les permissions activées pour le pilote des objets __'IaaS'__
 
 ## Déployer une machine virtuelle via Terraform

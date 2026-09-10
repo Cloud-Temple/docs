@@ -54,8 +54,12 @@ python test_audio_transcription.py
 export LLMAAS_API_KEY="votre-token-api-reel"
 ```
 
-### Token par Défaut
-Si non configuré, utilise `test-token-for-docs` (pour tests d'erreurs uniquement).
+### Fichier local optionnel
+```bash
+cp .env.example .env
+```
+
+Le fichier `.env` local ne doit jamais être commité. Les tests d'intégration réels nécessitent une clé fournie par l'environnement.
 
 ## 📦 Dépendances
 
@@ -68,7 +72,7 @@ pip install langchain langchain-openai  # Pour LangChain tests
 
 ### Node.js
 ```bash
-npm install axios
+yarn add axios
 ```
 
 ## 📊 Critères de Succès
@@ -192,7 +196,7 @@ pip install requests
 
 **Node.js script fails**
 ```bash
-npm install axios
+yarn add axios
 node --version  # Vérifier Node.js installé
 ```
 

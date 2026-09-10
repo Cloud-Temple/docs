@@ -21,9 +21,9 @@ Chaque service Cloud Temple suit une structure documentaire cohérente dans `/do
 ```markdown
 ---
 title: [Nom du Service]
-sidebar_position: [numéro]
 ---
 ```
+*(Note: `sidebar_label` et `sidebar_position` sont interdits dans le frontmatter)*
 
 #### Navigation Hierarchy
 Basée sur `/sidebars.ts` existant :
@@ -131,6 +131,23 @@ housing/
 - **Sécurité** : Accès et surveillance
 - **SLA** : Niveaux de service
 
+## Conventions de Formatage et Linting
+
+### Règles Strictes
+- **Pas de Sidebar Metadata** : Ne JAMAIS utiliser `sidebar_label` ou `sidebar_position` dans le frontmatter des fichiers Markdown. La structure est gérée par le système de fichiers ou `sidebars.ts`.
+- **Espaces autour des listes (MD032)** : Toujours laisser une ligne vide avant le premier élément d'une liste et après le dernier élément.
+  - ❌ Incorrect :
+    ```markdown
+    Texte introductif :
+    - Item 1
+    ```
+  - ✅ Correct :
+    ```markdown
+    Texte introductif :
+
+    - Item 1
+    ```
+
 ## Conventions d'Images
 
 ### Nomenclature Standard
@@ -144,7 +161,7 @@ images/
 ```
 
 ### Types de Captures
-- **Interface** : Screenshots console Shiva
+- **Interface** : Screenshots Console
 - **Workflow** : Séquences d'actions
 - **Architecture** : Diagrammes techniques
 - **Monitoring** : Dashboards Grafana
@@ -225,6 +242,16 @@ Action critique nécessitant attention
 - **Curl examples** : Appels API formatés
 - **Configuration files** : YAML, JSON avec syntaxe highlighting
 - **Scripts** : Bash, PowerShell pour automatisation
+
+### Équations Mathématiques (LaTeX / KaTeX)
+Le projet supporte désormais le rendu d'équations mathématiques grâce aux plugins `remark-math` et `rehype-katex`.
+- **Blocs** : Utiliser `$$...$$` pour les équations centrées sur leur propre ligne.
+- **En ligne** : Utiliser `$..$` pour les formules au sein d'un paragraphe.
+
+**⚠️ Note de compatibilité** :
+- Le plugin `rehype-katex` v7 (installé) nécessite une feuille de style KaTeX récente.
+- Dans `docusaurus.config.ts`, utiliser impérativement le CSS **v0.16.9+** : `https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css`.
+- Si une version plus ancienne (ex: v0.13.24) est utilisée, le rendu sera doublé (formule rendue + source texte).
 
 ## Standards Multilingues
 
@@ -312,7 +339,7 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 1. **Créer/Modifier** la documentation source (fr).
 2. **Tester** les exemples de code pour garantir leur validité.
 3. **Traduire** les modifications en lançant le script (`python scripts/translate_py/translate.py`).
-4. **Compiler** le site en local (`npm run build`) pour vérifier l'absence d'erreurs (liens cassés, etc.).
+4. **Compiler** le site en local (`yarn build`) pour vérifier l'absence d'erreurs (liens cassés, etc.).
 5. **Mettre à jour** le `docs/changelog.md` avec des notes de version claires et orientées utilisateur.
 6. **Commiter** l'ensemble des changements (sources, traductions, changelog) avec un message descriptif.
 7. **Pousser** les commits sur le dépôt distant.
@@ -364,6 +391,69 @@ i18n/[langue]/docusaurus-plugin-content-docs/current/
 - ✅ **Vérification existence** : Aucun lien cassé vers licences
 - 🛠️ **Maintenance zéro** : Un fichier par type, réutilisation maximale
 - 🤖 **Intégration** : `generate_models_doc.py` gère tout automatiquement
+
+---
+
+## 🔧 Mécanique de Dépannage Build & i18n
+
+### Objectif
+Cette section définit la procédure standard pour résoudre les erreurs de build Docusaurus, en particulier celles liées aux traductions (i18n) et au MDX.
+
+### 🚨 Types d'Erreurs Courantes
+
+#### 1. MDX Compilation Failed
+**Symptôme** :
+```
+Error: MDX compilation failed for file "..."
+Cause: Could not parse expression with acorn
+Line: X, Column: Y
+```
+**Cause** :
+- Blocs de code mal formés ou non fermés (souvent introduit par la traduction automatique).
+- Accolades `{}` dans le texte qui sont interprétées comme du code JSX/JS par le parser MDX.
+**Solution** :
+1.  Localiser la ligne précise dans le fichier indiqué.
+2.  Vérifier si le bloc de code précédent est bien fermé par ` ``` `.
+3.  Vérifier si le bloc de code contient des ` ``` ` intempestifs à l'intérieur.
+4.  Si l'erreur est dans du texte, échapper les accolades ou les mettre dans un bloc de code inline (` `).
+
+#### 2. ReferenceError (Variables Indéfinies)
+**Symptôme** :
+```
+Error: Can't render static file for pathname "..."
+[cause]: ReferenceError: [variableName] is not defined
+```
+**Cause** :
+- Import d'image manquant.
+- Nom de variable d'image traduit par erreur dans le corps du fichier MDX (ex: `import myImage ... <img src={myImage} />` devient `<img src={monImage} />` après traduction, alors que l'import reste `myImage`).
+**Solution** :
+1.  Identifier la variable incriminée dans le message d'erreur.
+2.  Vérifier les imports en haut du fichier MDX.
+3.  Corriger le nom de la variable dans le corps du texte (JSX) pour qu'il corresponde exactement à l'import.
+
+#### 3. Broken Links / Anchors
+**Symptôme** :
+```
+[INFO] Docusaurus found broken links!
+... linking to ../path/file.md#anchor (resolved as: ...)
+```
+**Cause** :
+- Liens relatifs incorrects après déplacement de fichiers.
+- Ancres (`#titre`) qui changent avec la traduction des titres (ex: `#introduction` devient `#einführung`), alors que le lien pointe toujours vers l'ancre originale (ou vice-versa).
+**Solution** :
+- Utiliser des liens absolus `/docs/...` plutôt que relatifs complexes.
+- Éviter de lier vers des ancres auto-générées dans les fichiers traduits si possible, ou vérifier manuellement les ancres cibles.
+
+### 🛠️ Workflow de Résolution Itératif
+
+1.  **Build de Diagnostic** : Lancer `npm run build` pour obtenir la liste exacte des erreurs.
+2.  **Traitement Prioritaire** : S'attaquer d'abord aux erreurs **bloquantes** (MDX, ReferenceError) qui arrêtent le build. Les warnings (broken links) peuvent attendre.
+3.  **Correction Ciblée** :
+    - Ouvrir le fichier fautif.
+    - Utiliser `sed -n 'X,Yp' fichier` pour lire autour de la ligne d'erreur si le fichier est gros.
+    - Appliquer la correction.
+4.  **Validation Incrémentale** : Relancer le build après chaque correction majeure pour vérifier si l'erreur a disparu ou s'est déplacée.
+5.  **Nettoyage** : Une fois le build passant (SUCCESS), traiter les warnings restants si le temps le permet.
 
 ---
 

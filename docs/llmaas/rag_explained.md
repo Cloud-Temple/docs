@@ -2,7 +2,7 @@
 
 Ce document explique les concepts fondamentaux derrière la technique de **Retrieval-Augmented Generation (RAG)**.
 
-:::tip Code d'Exemple Disponible
+:::tip[Code d'Exemple Disponible]
 Les concepts abordés ici sont illustrés dans un démonstrateur complet et fonctionnel disponible sur notre GitHub. Il constitue une excellente base de départ pour comprendre le fonctionnement pratique d'un pipeline RAG.
 
 ➡️ **[Accéder au code du Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
@@ -20,23 +20,23 @@ Le processus se déroule en deux temps :
 
 C'est cette étape de **Retrieval** qui est au cœur de notre sujet. Comment un ordinateur parvient-il à "comprendre" qu'une question et un paragraphe parlent de la même chose ? La magie opère grâce aux **vecteurs**.
 
-![Schéma conceptuel du RAG](./images/rag_concept_overview.png)
+![Schéma conceptuel du RAG](@site/docs/llmaas/images/rag_concept_overview.png)
 
 ## Étape 1 : L'Embedding : Transformer les Mots en Nombres
 
 Un ordinateur ne comprend pas les mots, mais il est excellent pour manipuler les nombres. L'**embedding** est le processus qui traduit un texte (un mot, une phrase, un document) en une liste de nombres, appelée **vecteur**.
 
-:::tip Qu'est-ce qu'un vecteur ?
+:::tip[Qu'est-ce qu'un vecteur ?]
 En termes simples, un vecteur est une liste de nombres qui représente un point dans un espace à plusieurs dimensions. Chaque nombre dans le vecteur correspond à une coordonnée sur un "axe" de cet espace. Pour les embeddings de texte, ces axes ne sont pas `x`, `y`, `z` mais des dimensions sémantiques abstraites (par exemple, un axe pourrait représenter le concept de "royauté", un autre celui de "félin", etc.).
 :::
 
 `"Le chat est sur le tapis."`  →  `[-0.01, 0.98, 0.45, ..., -0.33]`
 
-![Exemple de vecteur d'embedding](./images/embedding_vector_example.png)
+![Exemple de vecteur d'embedding](@site/docs/llmaas/images/embedding_vector_example.png)
 
 Ce vecteur n'est pas aléatoire. Il représente la "position" du texte dans un espace sémantique multidimensionnel. Des textes ayant un sens similaire auront des vecteurs qui pointent dans des directions similaires.
 
-:::tip Analogie Géographique
+:::tip[Analogie Géographique]
 Imaginez une carte géographique. "Paris" et "France" seraient très proches, tout comme "Rome" et "Italie". "Paris" serait plus éloigné de "Rome" que de "France", mais plus proche que de "Tokyo". L'embedding fait la même chose, mais avec des milliers de "dimensions" au lieu de deux, pour capturer des nuances de sens complexes.
 :::
 
@@ -61,10 +61,10 @@ Les benchmarks ci-dessous illustrent deux avantages clés :
 -   **Précision de la Recherche** : Le premier graphique montre que les modèles Granite (en bleu) sont très compétitifs, voire supérieurs, à des modèles de taille similaire sur des tâches de recherche sémantique (`Retrieval Tasks`).
 -   **Vitesse d'Inférence** : Le second graphique montre que les modèles Granite sont **nettement plus rapides** (temps par requête plus faible) que la plupart des alternatives populaires, ce qui est un avantage considérable pour les applications nécessitant des réponses en temps réel.
 
-![Benchmark de Performance des Modèles Granite](./images/granite_benchmark_performance.png)
+![Benchmark de Performance des Modèles Granite](@site/docs/llmaas/images/granite_benchmark_performance.png)
 *Comparaison des performances sur des tâches de recherche (BEIR) et de recherche de code (CoIR).*
 
-![Benchmark de Vitesse des Modèles Granite](./images/granite_benchmark_speed.png)
+![Benchmark de Vitesse des Modèles Granite](@site/docs/llmaas/images/granite_benchmark_speed.png)
 *Comparaison de la latence (temps par requête en secondes) entre différents modèles d'embedding.*
 
 C'est pour cet équilibre entre **performance, vitesse, sécurité juridique et éthique** que nous avons choisi d'intégrer le modèle `granite-embedding:278m` (la version multilingue la plus puissante) comme service d'embedding par défaut.
@@ -90,7 +90,7 @@ Le calcul de la similarité cosinus donnera :
 -   `cos(v_q, v_a) = 1.0` → Angle de 0°. Similarité parfaite.
 -   `cos(v_q, v_b) = 0.0` → Angle de 90°. Aucune similarité.
 
-![Illustration de la Similarité Cosinus](./images/cosine_similarity_concept.png)
+![Illustration de la Similarité Cosinus](@site/docs/llmaas/images/cosine_similarity_concept.png)
 
 C'est le résultat que nous voulons : le Document A est sémantiquement identique à la question, même si sa formulation est plus longue.
 
@@ -100,7 +100,7 @@ C'est le résultat que nous voulons : le Document A est sémantiquement identiqu
 -   **Score** : Un score de 0 signifie que les vecteurs sont identiques. Plus le score est élevé, plus ils sont éloignés.
 -   **Inconvénient pour le texte** : Elle est sensible à la magnitude. Dans notre exemple ci-dessus, la distance entre `v_q` et `v_a` ne serait pas nulle, car les vecteurs n'ont pas la même longueur, même s'ils ont le même sens.
 
-![Illustration de la Distance Euclidienne](./images/euclidean_distance_concept.png)
+![Illustration de la Distance Euclidienne](@site/docs/llmaas/images/euclidean_distance_concept.png)
 
 ## Conclusion
 

@@ -3,28 +3,29 @@
 Welcome to the official documentation repository for Cloud Temple.
 Here, you’ll find guides and resources to help you better understand and utilize Cloud Temple’s services and solutions.
 
-A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com). This repository and the website are synchronized to ensure up-to-date content.
+A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/).
+A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/home).
 
 This project is continuously updated with new guides and improvements.
 
 # Contributing
+
 We value your contributions! Whether it’s improving an existing guide or creating a new one, your input helps us make this repository better.
 
 ## How to Contribute
 
-	1.	Fork this repository: Clone your fork to your local environment.
-	2.	Make your changes: Update or create guides.
-	3.	Submit a Pull Request (PR): Propose your changes to the develop branch.
+ 1. Fork this repository: Clone your fork to your local environment.
+ 2. Make your changes: Update or create guides.
+ 3. Submit a Pull Request (PR): Propose your changes to the develop branch.
 
 Our team will review your contribution, provide feedback if needed, and integrate approved changes.
 
 ## Guidelines for Contributions
 
-	•	Ensure your contributions are accurate, tested, and well-documented.
-	•	Include a brief explanation of your changes in the PR comments.
-	•	Follow the structure and style of existing guides for consistency.
+ • Ensure your contributions are accurate, tested, and well-documented.
+ • Include a brief explanation of your changes in the PR comments.
+ • Follow the structure and style of existing guides for consistency.
 
 # Licensing
 
@@ -35,11 +36,13 @@ By contributing to this repository, you agree to the terms outlined in the LICEN
 To get started, follow these simple steps:
 
 1. Navigate to the Docker directory:
+
 ```bash
 cd docker/local
 ```
 
 2. Launch the services with Docker Compose:
+
 ```bash
 docker-compose up
 ```
@@ -56,28 +59,26 @@ Open your browser and go to: <http://localhost:3000/docs/>
 
 ### Prerequisites
 
-- **Node.js** (version 18.0 or higher)
-- **npm** or **yarn** package manager
+- __Node.js__ (version 18.0 or higher)
+- __yarn__ package manager
 
 ### Installation Steps
 
-1. **Install dependencies**
+1. __Install dependencies__
+
    ```bash
-   npm install
-   # or
    yarn install
    ```
 
-2. **Start the development server**
+2. __Start the development server__
+
    ```bash
-   npm start
-   # or
    yarn start
    ```
 
    This command will start the Docusaurus development server with hot reloading enabled.
 
-3. **Access the documentation locally**
+3. __Access the documentation locally__
 
    Open your browser and go to: <http://localhost:3000/docs/>
 
@@ -85,27 +86,28 @@ Open your browser and go to: <http://localhost:3000/docs/>
 
 ### Multi-language Development
 
-The documentation supports 5 languages: **French (default)**, English, Spanish, Italian, and German.
+The documentation supports 5 languages: __French (default)__, English, Spanish, Italian, and German.
 
 #### Working with Multiple Languages
 
-1. **Default Language (French)**
+1. __Default Language (French)__
    - All content is written in French in the `/docs/` directory
    - This is the source language for all translations
 
-2. **Start with a specific language**
+2. __Start with a specific language__
+
    ```bash
    # Start in English
-   npm start -- --locale en
-   
+   yarn start --locale en
+
    # Start in Spanish
-   npm start -- --locale es
-   
+   yarn start --locale es
+
    # Start in Italian
-   npm start -- --locale it
-   
+   yarn start --locale it
+
    # Start in German
-   npm start -- --locale de
+   yarn start --locale de
    ```
 
 🎉 Your local environment is ready!
@@ -115,11 +117,13 @@ The documentation supports 5 languages: **French (default)**, English, Spanish, 
 To get started, follow these simple steps:
 
 1. Build the docker image:
+
 ```bash
 docker build -t docs:v3 . -f docker/production/Dockerfile
 ```
 
 2. Launch the services with Docker Compose:
+
 ```bash
 docker run -it --rm -p 8080:80 --name docs docs:v3
 ```
@@ -130,55 +134,53 @@ Open your browser and go to: <http://localhost:8080>
 
 > Base url is set to "/" on production build
 
+## Docker Image Labels
+
+The production image (`nginx:stable-alpine` stage) embeds the following [OCI standard labels](https://github.com/opencontainers/image-spec/blob/main/annotations.md):
+
+| Label | Value |
+|---|---|
+| `org.opencontainers.image.title` | `Cloud Temple Documentation` |
+| `org.opencontainers.image.description` | `Cloud Temple official documentation site (Docusaurus static build served by nginx)` |
+| `org.opencontainers.image.vendor` | `Cloud Temple` |
+| `org.opencontainers.image.source` | `https://github.com/Cloud-Temple/docs` |
+| `org.opencontainers.image.licenses` | `proprietary` |
+
+You can inspect the labels of a built image with:
+
+```bash
+docker inspect docs:v3 --format '{{ json .Config.Labels }}' | jq
+```
+
+> **Security note:** Alpine packages in the final stage are upgraded at build time (`apk upgrade --no-cache`) to ensure all OS-level CVEs are patched. Rebuild the image regularly to pick up new security fixes.
+
 # Scripts for Automation
 
-This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [**Scripts README**](./scripts/README.md).
+This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [__Scripts README__](./scripts/README.md).
 
 ## 📜 LLMaaS Model Documentation Generator
 
 This Python script automatically generates the `models.md` page from a YAML configuration file.
 
-- **Source**: `memory-bank/models_config.yaml`
-- **Output**: `docs/llmaas/models.md`
+- __Source__: `memory-bank/models_config.yaml`
+- __Output__: `docs/llmaas/models.md`
 
 ### Usage
+
 To update the model documentation, run the following command from the project root:
+
 ```bash
-npm run generate:models
+yarn generate:models
 # or directly:
-python scripts/generate_models_doc.py
+python scripts/generate_models_doc/generate_models_doc.py
 ```
 
 ## 🌍 Translation System
 
-This documentation supports multiple languages. The primary content is written in French (in the `/docs/` directory) and automatically translated using an advanced Python system powered by the **Cloud Temple LLMaaS API**.
+The documentation supports 5 languages: __French (source)__, English, German, Spanish, and Italian. The French content in `/docs/` is the source — translations are generated automatically via the **Cloud Temple LLMaaS API**, with SHA-256 change detection so only modified files are re-translated. The API token is passed via the `--token` CLI flag (recommended) or environment variables.
 
-The system uses SHA-256 hashing to intelligently detect modified files, ensuring that only new or changed content is sent for translation. It features a modern command-line interface with real-time progress and detailed statistics.
+> ⚠️ **Never edit files in `i18n/` manually** — they are overwritten on each translation run. Always edit the French source in `/docs/`.
 
-### Quick Start
+➡️ **Full setup (venv, install, token, usage, rules and troubleshooting):** see the [__Scripts Documentation__](./scripts/README.md).
 
-1.  **Install Dependencies**:
-    ```bash
-    cd scripts/translate_py
-    pip install -r requirements.txt
-    ```
-
-2.  **Configure Environment**:
-    Copy the example `.env` file and add your API key.
-    ```bash
-    # From the scripts/translate_py directory
-    cp .env.example .env
-    # Now, edit the .env file with your credentials
-    ```
-
-3.  **Run Translation**:
-    After adding or modifying content in the `/docs` directory, run the translation from the project root.
-    ```bash
-    # Translate all modified files to all supported languages
-    python scripts/translate_py/translate.py
-
-    # Perform a dry run to see what would be translated
-    python scripts/translate_py/translate.py --dry-run
-    ```
-
-> For a complete list of commands, advanced features (like `--force`, `--init`, `.notranslation` files), and troubleshooting, please see the detailed [**Translation Script Documentation**](./scripts/README.md#--translatetranslatepy-recommandé).
+> For a complete list of commands, advanced features, and troubleshooting, please see the detailed [__Scripts Documentation__](./scripts/README.md).

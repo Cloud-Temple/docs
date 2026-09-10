@@ -4,9 +4,9 @@
 
 ### Statut : ✅ EXCELLENT (95% complet)
 
-La console de management Cloud Temple, nommée **Console Shiva**, représente le point d'entrée centralisé pour la gestion de tous les services Cloud Temple.
+La console de management Cloud Temple, nommée **Console**, représente le point d'entrée centralisé pour la gestion de tous les services Cloud Temple.
 
-## Architecture Console Shiva
+## Architecture Console
 
 ### Composants Principaux
 - **Interface Web** : SPA (Single Page Application) moderne
@@ -66,7 +66,7 @@ La documentation Console dispose du plus riche support visuel :
 - `shiva_api_001.png` : Documentation Swagger
 - `shiva_api_002.png` : Authentification API
 - `shiva_api_003.png` : Endpoints principaux
-- `shiva_api_004.jpg` : Tests API
+- `shiva_api_004.png` : Tests API
 
 #### **Workflow Incidents** (6 captures)
 - `shiva_incident_001.png` : Création incident
@@ -101,7 +101,7 @@ La documentation Console dispose du plus riche support visuel :
 - **RBAC** : Contrôle accès granulaire
 
 ### Intégrations Service
-La Console Shiva centralise :
+La Console centralise :
 - **IaaS** : Gestion VMs, bare metal, storage
 - **PaaS** : Orchestration OpenShift
 - **Network** : Configuration VLAN, VPN

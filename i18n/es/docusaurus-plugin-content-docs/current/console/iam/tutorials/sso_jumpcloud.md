@@ -2,67 +2,71 @@
 title: Ejemplo de federación de identidad con JumpCloud
 tags:
   - iam
-  - tutorials
+  - tutoriales
   - onboarding
 ---
-import ssoJumpcloud001 from './images/sso_jumpcloud_001.jpg';
-import ssoJumpcloud002 from './images/sso_jumpcloud_002.jpg';
+import ssoJumpcloud001 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_001.png';
+import ssoJumpcloud002 from '@site/docs/console/iam/tutorials/images/sso_jumpcloud_002.png';
 
-Este tutorial lo guía a través de la configuración de la autenticación única (SSO) entre JumpCloud y la consola Cloud Temple utilizando el protocolo OpenID Connect (OIDC).
+Este tutorial le guía a través de la configuración de la autenticación única (SSO) entre JumpCloud y la consola Cloud Temple utilizando el protocolo OpenID Connect (OIDC).
 
-Para obtener información detallada directamente desde JumpCloud, consulte su documentación oficial sobre SSO OIDC: [SSO con OIDC](https://jumpcloud.com/support/sso-with-oidc).
+Para obtener más información detallada directamente desde JumpCloud, consulte su documentación oficial sobre SSO con OIDC: [SSO with OIDC](https://jumpcloud.com/support/sso-with-oidc).
 
-## Requisitos previos
+## Requisitos
 
-Antes de comenzar, asegúrese de haber obtenido la información necesaria de Cloud Temple, incluido el URI de redirección específico para su instancia Keycloak.
+Antes de comenzar, asegúrese de haber obtenido la información necesaria de Cloud Temple, en particular la URI de redirección específica para su instancia de Keycloak.
 
 ## Configuración en JumpCloud
 
 Siga estos pasos para configurar una nueva aplicación OIDC en su consola de administración de JumpCloud:
 
-1.  **Crear una nueva aplicación:**
-    *   Navegue hasta la sección de aplicaciones en JumpCloud.
-    *   Haga clic en "Agregar" o "Crear una nueva aplicación".
-    *   Elija la opción para una integración de aplicación personalizada ("Custom Application Integration").
+1. **Crear una nueva aplicación:**
+    * Navegue a la sección de aplicaciones en JumpCloud.
+    * Haga clic en "Agregar" o "Crear una nueva aplicación".
+    * Elija la opción para una integración de aplicación personalizada ("Custom Application Integration").
 
-2.  **Configurar el SSO OIDC:**
-    *   Seleccione "Administrar Single Sign-On (SSO)".
-    *   Elija "Configurar SSO con OIDC".
+2. **Configurar el SSO OIDC:**
+    * Seleccione "Manage Single Sign-On (SSO)".
+    * Elija "Configure SSO with OIDC".
 
-    <img src={ssoJumpcloud001} alt="Configuración SSO OIDC de JumpCloud" />
+    <img src={ssoJumpcloud001} alt="Configuración SSO OIDC JumpCloud" />
 
-3.  **Ingresar los URIs de redirección:**
-    *   En el campo correspondiente (a menudo llamado "Redirect URIs" o "Callback URLs"), ingrese el URI proporcionado por Cloud Temple. Su formato generalmente será:
+3. **Ingresar los URIs de redirección:**
+    * En el campo correspondiente (a menudo llamado "Redirect URIs" o "Callback URLs"), ingrese el URI proporcionado por Cloud Temple. Generalmente seguirá este formato:
+
         ```
         https://keycloak-shiva.cloud-temple.com/auth/realms/<company specific>/broker/<company specific>/endpoint
         ```
-        *Reemplace company specific por los identificadores específicos de su empresa proporcionados por Cloud Temple.*
 
-4.  **Elegir el tipo de autenticación del cliente:**
-    *   Seleccione `Cliente Secret Post` como "Tipo de autenticación del cliente".
+        *Reemplace `<company specific>` por los identificadores específicos de su empresa proporcionados por Cloud Temple.*
 
-5.  **Ingresar la URL de inicio de sesión:**
-    *   En el campo "URL de inicio de sesión", ingrese la URL que utiliza para acceder a su consola Cloud Temple. Por ejemplo:
+4. **Elegir el tipo de autenticación de cliente:**
+    * Seleccione `Client Secret Post` como "Tipo de autenticación de cliente".
+
+5. **Ingresar la URL de inicio de sesión:**
+    * En el campo "Login URL", ingrese la URL que utiliza para acceder a su consola de Cloud Temple. Por ejemplo:
+
         ```
         https://<unique-identifier>.shiva.cloud-temple.com
         ```
-        *Reemplace unique-identifier por el identificador único de su instancia Cloud Temple.*
 
-6.  **Configurar el mapeo de atributos:**
-    *   En la sección "Mapeo de atributos" (o equivalente), asegúrese de que los siguientes atributos estén seleccionados para ser enviados a Cloud Temple:
-        *   `Email`
-        *   `Perfil` (puede incluir nombre, apellido, etc.)
+        *Reemplace `<unique-identifier>` por el identificador único de su instancia de Cloud Temple.*
 
-    <img src={ssoJumpcloud002} alt="Mapeo de atributos de JumpCloud" />
+6. **Configurar el mapeo de atributos:**
+    * En la sección "Attribute Mapping" (o equivalente), asegúrese de que los siguientes atributos estén seleccionados para ser enviados a Cloud Temple:
+        * `Correo electrónico`
+        * `Perfil` (puede incluir nombre, apellido, etc.)
 
-7.  **Asignar grupos:**
-    *   Asigne los grupos de usuarios de JumpCloud que deben tener acceso a la consola Cloud Temple a través de esta aplicación SSO.
+    <img src={ssoJumpcloud002} alt="Mapeo de Atributos JumpCloud" />
 
-8.  **Activar la aplicación:**
-    *   Haga clic en "Activar" o "Guardar" para finalizar la configuración de la aplicación.
+7. **Asignar grupos:**
+    * Asigne los grupos de usuarios de JumpCloud que deben tener acceso a la consola de Cloud Temple a través de esta aplicación SSO.
 
-9.  **Proporcionar las credenciales a Cloud Temple:**
-    *   Después de activarla, JumpCloud le proporcionará un **ID de cliente** y un **Secreto de cliente**.
-    *   Comuníquelo de manera segura a su contacto de Cloud Temple para finalizar la configuración de la federación en Keycloak.
+8. **Activar la aplicación:**
+    * Haga clic en "Activate" o "Save" para finalizar la configuración de la aplicación.
 
-Una vez que Cloud-Temple haya configurado la federación con las credenciales proporcionadas, los usuarios asignados podrán iniciar sesión en la consola Cloud Temple utilizando sus credenciales de JumpCloud.
+9. **Proporcionar las credenciales a Cloud Temple:**
+    * Después de la activación, JumpCloud le proporcionará un **Client ID** y un **Client Secret**.
+    * Comuníquese de forma segura con su contacto de Cloud Temple para compartir esta información y finalizar la configuración de la federación en el lado de Keycloak.
+
+Una vez que Cloud-Temple haya configurado la federación con las credenciales proporcionadas, sus usuarios asignados podrán iniciar sesión en la consola de Cloud Temple utilizando sus credenciales de JumpCloud.

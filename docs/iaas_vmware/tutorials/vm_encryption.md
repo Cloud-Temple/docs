@@ -1,16 +1,16 @@
 ---
-title: Chiffrer une machine virtuelle VMware
+title: Chiffrer une machine virtuelle
 tags:
   - iaas_vmware
   - tutorials
 ---
-import shivaHsmKms_000 from './images/shiva_hsm_kms_000.png'
-import shivaHsmKms_001 from './images/shiva_hsm_kms_001.png'
-import shivaHsmKms_002 from './images/shiva_hsm_kms_002.png'
-import shivaHsmKms_003 from './images/shiva_hsm_kms_003.png'
-import shivaHsmKms_004 from './images/shiva_hsm_kms_004.png'
+import shivaHsmKms_000 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_000.png'
+import shivaHsmKms_001 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_001.png'
+import shivaHsmKms_002 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_002.png'
+import shivaHsmKms_003 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_003.png'
+import shivaHsmKms_004 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_004.png'
 
-Ce tutoriel vous aide à chiffrer une machine virtuelle IaaS VMWare depuis le portail Shiva.
+Ce tutoriel vous aide à chiffrer une machine virtuelle IaaS VMWare depuis le portail Console.
 
 ### Prérequis
 
@@ -27,7 +27,7 @@ Ce tutoriel vous aide à chiffrer une machine virtuelle IaaS VMWare depuis le po
 
 ### Interface
 
-Une fois connecté au portail web Shiva, depuis le menu **'IaaS'**, sous-menu **'Configuration'** puis l'onglet **'vCenters'**, vous trouverez l'information vous indiquant si le chiffrement est activé sur la vstack en question.
+Une fois connecté au portail web Console, depuis le menu **'IaaS'**, sous-menu **'Configuration'** puis l'onglet **'vCenters'**, vous trouverez l'information vous indiquant si le chiffrement est activé sur la vstack en question.
 
 <img src={shivaHsmKms_000} />
 

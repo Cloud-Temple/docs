@@ -1,70 +1,63 @@
 ---
-title: FAQ
+title: Frequently Asked Questions
 ---
 
-### What is the maximum file size that can be handled with the web console?
+## Is S3 access restricted to an internal network?
 
-The web limit is 40MB per file. Beyond this, a native S3 client with the API must be used.
+No — there is no concept of a "private internal network" in this context. Access to the **S3** service is performed **via public IP addresses**. By default, S3 buckets are **private**, and access is controlled through IP address whitelists associated with each bucket.
 
-### Which S3 client can I use to manage my files?
-The main S3 clients are compatible. Minio, aws cli, WINSCP, ...
+Allowed IP addresses can be:
 
-### Does the S3 Cloud Temple offer use the 'PathStyle' or 'UrlStyle' method?
+- **Dedicated public IPs** assigned to the client within the Cloud Temple infrastructure;
+- or **external public IPs** (remote sites, warehouses, factories, partner operators, etc.).
 
-Due to constraints associated with SecNumCloud qualification, at this time, the offer is designed to use the '**PathStyle**' method. We are working to make the '**UrlStyle**' method available in H1 2025.
+## Can buckets be accessible from outside?
 
-### What is the maximum number of buckets per tenant?
+Yes, but only in specific, controlled cases. Access restrictions are managed **at the bucket level**, allowing you to define:
 
-The maximum number of buckets per tenant is 999.
+- **Strictly private buckets**, accessible only from the client's authorized public IP addresses;
+- **Partially accessible buckets**, allowing specific external public IP addresses (remote sites, partners).
 
-### How to add the HASH of a file when uploading an object?
-Globalement, le HASH des fichiers est supporté sur notre stockage objet via les métadonnées. Certains clients permettent de calculer à la volée un HASH et de l'ajouter en métadonnée (minio-mc avec MD5 par exemple), pour d'autres, il faut renseigner la donnée en métadonnée directement.
+## What is a secure S3 download link?
 
-1. Cas de l'ajout d'un HASH avec le client minio-mc : ce client supporte le calcul à la volée d'un hash MD5 et le stockage dans les métadonnées
+A **pre-signed URL** is a temporary, signed URL that allows one-time access to an S3 object without exposing permanent credentials. The link contains a **token** and an **expiration date**.
 
+**Characteristics:**
 
-            ╰─➤  cat test.txt                       
-            Ceci est un test 
-            ╰─➤  md5 test.txt                       
-            MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
-            ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB
-            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  111 B/s 0s
-            ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt
-            Name      : test.txt
-            Date      : 2024-06-08 10:21:31 CEST 
+- Configurable validity period (e.g., 5 days by default)
+- Generated via API or from within an application
+- Access subject to IP whitelist rules and bucket policies
 
-            Size      : 18 B   
-            ETag      : 8b34b2754802a46e3475998dfcf76f83 
-            Type      : file 
-            Encryption: SSE-S3
-            Metadata  :
-                Content-Type: text/plain 
+## Can signed URLs be used from outside?
 
-2. Example of manually adding a sha256: to do this, we use the file's S3 attributes.
+Not if the bucket is restricted by IP list.
 
-            ╰─➤  cat test.txt
-            Ceci est un test
-            ╰─➤  shasum -a 256 test.txt                            
-            2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
-            ╰─➤  mc cp -md5 test.txt CLR-PUB/CLR-PUB -attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"
-            ...lesur/Downloads/test.txt: 18 B / 18 B  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  141 B/s 0s
-            ╰─➤  mc stat CLR-PUB/CLR-PUB/test.txt                                                                     
-            Name      : test.txt
+Even with a valid signed URL, access will be denied if the request does not originate from an **authorized public IP address** for that bucket.
 
-```markdown
-            Date      : 2024-06-08 10:41:17 CEST
-            Size      : 18 B
-            ETag      : 8b34b2754802a46e3475998dfcf76f83
-            Type      : file
-            Encryption: SSE-S3
-            Metadata  :
-                X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
-                Content-Type              : text/plain
+Example:
 
+> If the bucket is configured to allow only the client's dedicated public IPs, an external user will **not** be able to download the file, even with a temporary link.
 
-### How is Cloud Temple's S3 offer billed?
+## Can temporary links be created for one-time use?
 
-The price is a monthly rate, per GiB of storage, billed monthly. However, the platform calculates usage by the hour and bills on a monthly basis of 720 hours.
+Yes. **Pre-signed links** can be generated on demand for temporary sharing. They include an **access token** and expire after the configured duration.
 
-For example, if you consume 30 GiB for 1 hour during the month and then nothing, and a few days later consume 30 GiB for 2 hours, the monthly bill will be *( Price (1 x 30GiB) + 2 x Price (30GiB) ) / 720* for the considered month. The billing is done at the end of the term.
-```
+These links always remain subject to the bucket's **IP restrictions**.
+
+## What happens if a request comes from an unauthorized IP?
+
+Access is **denied** (HTTP 403 – *Access Denied*).
+
+The service checks:
+
+1. The validity of the **token** (if pre-signed link)
+2. The **source IP** of the request
+3. The **ACL policies** and rules configured on the bucket
+
+Any unsatisfied condition results in access being denied.
+
+## Recommended Use Cases
+
+- **Internal client archiving**: Private buckets accessible only from the client's dedicated public IP addresses (managed via whitelist).
+- **Secure temporary sharing**: Generation of pre-signed links with short expiration times and strict IP access control.
+- **Specific remote site access**: Authorization of precise external public IP addresses for business sites (warehouses, factories) after security validation.

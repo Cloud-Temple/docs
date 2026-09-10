@@ -3,120 +3,133 @@ title: Konzepte
 ---
 
 
-Das **Bare Metal**-Angebot von Cloud Temple bietet dedizierte physische Server in Verbindung mit verteiltem Block-Speicher.
-Diese Lösung bietet vollständige Anpassungsmöglichkeiten für Kunden, die ihre eigenen Software-Umgebungen verwalten möchten, sei es für die Installation eines Linux-Systems, Windows oder eines Hypervisors.
+Das **Bare Metal**-Angebot von Cloud Temple bietet dedizierte physische Server in Kombination mit einem verteilten Block-Speicher.
+Diese Lösung bietet vollständige Anpassungsmöglichkeiten für Kunden, die ihre eigenen Softwareumgebungen verwalten möchten, sei es zur Installation eines Linux- oder Windows-Betriebssystems oder eines Hypervisors.
 
 ---
 
-## Eine Hardware- und flexible Infrastruktur
+## Eine physische und flexible Infrastruktur
 
-Das Bare Metal-Angebot basiert auf einer Architektur, die entwickelt wurde, um den Anforderungen kritischer Workloads gerecht zu werden.
+Das Bare-Metal-Angebot basiert auf einer Architektur, die für die Anforderungen kritischer Workloads konzipiert ist.
 
 ### Hauptkomponenten
 
-- **Cisco UCS Server**: Leistungsstark und zuverlässig, diese Rechenblades bilden die Grundlage des Angebots.
-- **IBM Spectrum Virtualize Speicher**: Ein verteilter Block-Speicher, der Ausfallsicherheit und hohe Leistung bietet.
+- **Cisco UCS-Server** : Leistungsstark und zuverlässig bilden diese Compute-Blades die Grundlage des Angebots.
+- **IBM Spectrum Virtualize Storage** : Ein verteilter Block-Speicher, der hohe Resilienz und Leistung bietet.
 
 ### Architektur
 
-Das verteilte Speichermodell bietet eine Trennung zwischen Rechenleistung (Bare Metal-Server) und Speicher (verteilter Block), was ermöglicht:
+Das verteilte Speichermodell bietet eine Trennung zwischen Compute (Bare-Metal-Servern) und Storage (verteilter Blockspeicher), was Folgendes ermöglicht:
 
-- Flexibilität bei der Zuordnung von Speichervolumen zu mehreren Bare Metal-Servern je nach Bedarf.
-- Optimale Anpassung der Rechen- und Speicherkonfigurationen.
-- Erhöhte Ausfallsicherheit durch die Verwendung von **Distributed RAID 6**.
+- Flexibilität zum Zuordnen von Storage-Volumes auf mehrere Bare-Metal-Server je nach Bedarf.
+- Optimale Anpassung der Compute- und Storage-Konfigurationen.
+- Erhöhte Resilienz durch den Einsatz von **Distributed RAID 6**.
 
 ---
 
 ## Regionen und Verfügbarkeitszonen
 
-Das Bare Metal-Produkt wird in einer Verfügbarkeitszone bereitgestellt.
+Das Produkt Bare Metal wird in einer Verfügbarkeitszone bereitgestellt.
 Eine [Verfügbarkeitszone](../additional_content/concepts_az.md) ist Teil einer [Region](../additional_content/concepts_regional.md).
 
-Diese Art der Bereitstellung ermöglicht es Ihnen, den Standort der Bare Metal-Server zu wählen und sie auf verschiedene Verfügbarkeitszonen (AZ) zu verteilen.
-Dies bietet eine bessere Lastverteilung, maximiert die Redundanz und erleichtert die Implementierung eines Disaster Recovery Plans (DRP) im Falle eines Vorfalls.
+Diese Bereitstellungsart ermöglicht die Auswahl des Standorts der Bare-Metal-Server und deren Verteilung auf verschiedene Verfügbarkeitszonen (AZ).
+Dies bietet eine bessere Lastverteilung, maximiert die Redundanz und erleichtert die Einrichtung eines Disaster-Recovery-Plans (DRP) im Störungsfall.
 
 ---
 
-## Rechenblades-Klassen
+## Compute-Blade-Klassen
 
-Die für das Bare Metal-Angebot verfügbaren Rechenblades bieten eine Reihe von Leistungsmerkmalen, um verschiedenen Anforderungen gerecht zu werden:
+Die für das Bare-Metal-Angebot verfügbaren Rechenklingen bieten ein Leistungsspektrum, das auf verschiedene Anforderungen zugeschnitten ist:
 
-| Referenz             | RAM  **(1)** | Frequenz **(2)**                         | Anzahl der Kerne / Threads | Konnektivität **(3)** | GPU **(4)**          |
+| Referenz             | RAM  **(1)** | Taktfrequenz **(2)**                         | Anzahl der Kerne / Threads | Konnektivität **(3)** | GPU **(4)**          |
 |-----------------------|--------------|-------------------------------------------|---------------------------|----------------------|----------------------|
-| **ECO**              | 384 GB       | 2,20/3,0 GHz (Silver 4114 oder gleichwertig)  | 20 / 40 Threads           | 2 X 10 Gbit/s        | -                    |
-| **STANDARD**         | 384 GB       | 2,40/3,4 GHz (Silver 4314 oder gleichwertig)  | 32 / 64 Threads           | 2 X 25 Gbit/s        | -                    |
-| **ADVANCE**          | 768 GB       | 2,80/3,5 GHz (Gold 6342 oder gleichwertig)    | 48 / 96 Threads           | 2 X 25 Gbit/s        | -                    |
-| **PERFORMANCE 1**    | 384 GB       | 3,20/3,6 GHz (Xeon E-53I5Y oder gleichwertig) | 16 / 32 Threads           | 2 X 25 Gbit/s        | -                    |
-| **PERFORMANCE 2**    | 768 GB       | 3,00/3,6 GHz (Gold 6354 oder gleichwertig)    | 36 / 72 Threads           | 2 X 25 Gbit/s        | -                    |
-| **PERFORMANCE 3**    | 1536 GB      | 2,60/3,5 GHz (Gold 6348 oder gleichwertig)    | 56 / 112 Threads          | 2 X 25 Gbit/s        | -                    |
-| **PERFORMANCE 4**    | 512 GB       | 2,50/4,1 GHz (Intel 6426Y oder gleichwertig)  | 32 / 64 Threads           | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
+| **ECO**              | 384 Go       | 2.20/3.0 GHz (Silver 4114 ou équivalent)  | 20 / 40 threads           | 2 X 10 Gbit/s        | -                    |
+| **STANDARD**         | 384 Go       | 2.40/3.4 GHz (Silver 4314 ou équivalent)  | 32 / 64 threads           | 2 X 25 Gbit/s        | -                    |
+| **ADVANCE**          | 768 Go       | 2.80/3.5 GHz (Gold 6342 ou équivalent)    | 48 / 96 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 1**    | 384 Go       | 3.20/3.6 GHz (Xeon E-53I5Y ou équivalent) | 16 / 32 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 2**    | 768 Go       | 3.00/3.6 GHz (Gold 6354 ou équivalent)    | 36 / 72 threads           | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 3**    | 1536 Go      | 2.60/3.5 GHz (Gold 6348 ou équivalent)    | 56 / 112 threads          | 2 X 25 Gbit/s        | -                    |
+| **PERFORMANCE 4**    | 512 Go       | 2.50/4.1 GHz (Intel 6426Y ou équivalent)  | 32 / 64 threads           | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48Go |
 
 ### Hinweise
 
-- **(1)** Die Speichermenge ist die, die physisch auf den Blades verfügbar ist und nicht geändert werden kann.
-- **(2)** Die angegebenen Frequenzen entsprechen der minimalen Basisfrequenz und der Turbo-Frequenz.
-- **(3)** Die physische Konnektivität wird für Netzwerkzugriff und Block-Speicherzugriff gemeinsam genutzt, dank einer konvergenten Cisco UCS-Architektur.
-- **(4)** Verfügbare GPUs entwickeln sich entsprechend den neuesten Technologien. Stand 1. Mai 2024 umfasst das Angebot NVIDIA LOVELACE L40S GPUs.
+- **(1)** Die Speichermenge entspricht der physisch auf den Blades verfügbaren Kapazität und kann nicht geändert werden.
+- **(2)** Die angegebenen Frequenzen entsprechen der minimalen Basistaktung und der Turbo-Taktfrequenz.
+- **(3)** Die physische Konnektivität wird für den Netzwerk- und Blockspeicherzugriff gemeinsam genutzt, ermöglicht durch eine konvergierte Cisco UCS-Architektur.
+- **(4)** Die verfügbaren GPUs richten sich nach dem neuesten Technologiefortschritt. Stand 1. Mai 2024 umfasst das Produkt NVIDIA LOVELACE L40S-GPUs.
 
-Die Verfügbarkeit der Infrastruktur wird mit 99,9% garantiert, monatlich gemessen, einschließlich Wartungsfenstern. Jede Anfrage im Zusammenhang mit dem SLA muss über ein Incident-Ticket gemeldet werden.
+Die Verfügbarkeit der Infrastruktur ist mit 99.9% garantiert, monatlich gemessen, inklusive Wartungsfenster. Alle SLA-bezogenen Anfragen müssen über ein Incident-Ticket gemeldet werden.
 
 ---
 
 ## Block-Speicherklassen
 
-Verteilter Block-Speicher, basierend auf **IBM Spectrum Virtualize**, bietet eine Reihe von Leistungsmerkmalen, die an verschiedene Anwendungsfälle angepasst sind:
+Der verteilte Block-Speicher, basierend auf **IBM Spectrum Virtualize**, bietet eine Palette von Leistungswerten, die auf verschiedene Anwendungsfälle zugeschnitten sind:
 
-| Referenz                         | IOPS/TB                 | Hauptanwendung                        |
-|-----------------------------------|-------------------------|----------------------------------------|
-| **FLASH - Essential**             | 500                     | Leichte Workloads                      |
-| **FLASH - Standard**              | 1500                    | Standard-Workloads                     |
-| **FLASH - Premium**               | 3000                    | Intensive Workloads                    |
-| **FLASH - Enterprise**            | 7500                    | Kritische Workloads                    |
-| **FLASH - Ultra**                 | 15000                   | Ultra-intensive Workloads              |
-| **MASS STORAGE - Archivierung**   | Nicht anwendbar         | Wirtschaftlicher Speicher für Archivierung |
+| Referenz                          | IOPS/To        | Max. IOPS / Volume        | Max. Durchsatz / Volume     | Hauptanwendung                         |
+|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
+| **FLASH - Essential**             | 500            | 10 000 IOPS               | 512 Mo/s                    | Leichte Workloads                      |
+| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 Mo/s                   | Standard-Workloads                     |
+| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 Mo/s                   | Intensive Workloads                    |
+| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 Mo/s                   | Kritische Workloads                    |
+| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 Mo/s                   | Ultra-intensive Workloads              |
+| **MASS STORAGE - Archivierung**   | Nicht zutreffend | Nicht garantiert        | Nicht garantiert            | Kostengünstiger Speicher für die Archivierung |
 
-### Eigenschaften
+### Merkmale
 
-- **Technologie**: NVMe Flash mit **Distributed RAID 6** für erhöhte Ausfallsicherheit.
-- **Verfügbarkeit**: 99,99%, monatlich gemessen.
-- **Einschränkungen**: Keine Begrenzung bei Lese- oder Schreibvorgängen. Keine automatische Komprimierung oder Deduplizierung, was die vollständige Nutzung der reservierten Volumes gewährleistet.
+- **Performance** : Die effektive Leistung steigt linear mit dem zugewiesenen Volumen (selon le ratio IOPS/To), **bis zur oben definierten absoluten Hardware-Obergrenze**. (Par exemple, un volume de 10 To en classe Ultra sera physiquement limité à 30 000 IOPS et 1024 Mo/s).
+- **Technologie** : NVMe-Flash mit **Distributed RAID 6** für eine erhöhte Resilienz.
+- **Verfügbarkeit** : 99,99 %, monatlich gemessen.
+- **Einschränkungen** : Keine Begrenzung für Lese- oder Schreibvorgänge. Keine automatische Komprimierung oder Deduplizierung, um die vollständige Auslastung der reservierten Volumes zu gewährleisten.
+
+### Sicherheit und Verschlüsselung des Blockspeichers
+
+Um die Vertraulichkeit Ihrer Daten im Ruhezustand zu gewährleisten, integriert unsere gesamte Blockspeicher-Infrastruktur eine robuste Hardware-Verschlüsselung.
+
+- **Verschlüsselungstyp** : Die Daten werden direkt auf den Festplatten (`Data At Rest`) unter Verwendung des **XTS-AES 256**-Algorithmus verschlüsselt.
+- **Konformität** : Diese Verschlüsselungsmethode entspricht dem **FIPS 140-2**-Standard und gewährleistet ein hohes, validiertes Sicherheitsniveau.
+- **Funktionsweise** : Die Verschlüsselung wird zum Zeitpunkt des Schreibens der Daten auf das physische Speichermedium angewendet.
+
+:::warning[Hinweis zur Replikation]
+Es ist wichtig zu beachten, dass diese Verschlüsselung die auf den Festplatten gespeicherten Daten schützt. Sie ist nicht "on-the-fly" aktiv, was bedeutet, dass die Daten während der Speicherreplikationsvorgänge zwischen Verfügbarkeitszonen nicht verschlüsselt werden. Die Sicherheit der Übertragungen wird durch dedizierte und gesicherte Kommunikationskanäle gewährleistet.
+:::
 
 ---
 
-## Bare Metal Konsolenzugriff
+## Bare-Metal-Konsolenzugriff
 
-Der Zugriff auf Bare Metal-Server erfolgt direkt über die **Cloud Temple-Konsole**. Diese Funktion bietet vollständige Kontrolle über den Server-Lebenszyklus, einschließlich:
+Der Zugriff auf Bare-Metal-Server erfolgt direkt über die **Cloud Temple-Konsole**. Diese Funktion bietet vollständige Kontrolle über den Lebenszyklus der Server, einschließlich:
 
-- **KVM-Zugriff**: Eine direkte Schnittstelle zur Verwaltung von Servern, als ob Sie physisch vor Ort wären.
-- **Verwaltung von Routineoperationen**: Möglichkeit, Aktionen wie Stromverwaltung, Neustarts oder **ISO-Mapping** für die Betriebssysteminstallation durchzuführen.
+- **KVM-Zugriff** : Eine direkte Schnittstelle zur Verwaltung der Server, als wären Sie physisch vor Ort.
+- **Verwaltung gängiger Operationen** : Möglichkeit, Aktionen wie Stromversorgungsmanagement, Neustarts oder das **ISO-Mounting** zur Installation eines Betriebssystems durchzuführen.
 
-Diese Zugriffsebene gewährleistet maximale Flexibilität unter Berücksichtigung der Sicherheitsanforderungen.
+Diese Zugriffsebene gewährleistet maximale Flexibilität unter Einhaltung der Sicherheitsrichtlinien.
 
 ---
 
-## Netzwerkkonnektivität von Bare Metal-Servern
+## Netzwerkkonnektivität der Bare-Metal-Server
 
-Bare Metal-Server verfügen über erweiterte Netzwerkfunktionen.
+Bare-Metal-Server verfügen über erweiterte Netzwerkfunktionen.
 
-### Layer 2 VLAN
+### VLAN der Ebene 2
 
-Es ist möglich, **VLANs vom Typ Layer 2** auf den Netzwerkschnittstellen von Bare Metal-Servern zu konfigurieren.
+Es ist möglich, **VLANs der Ebene 2** auf den Netzwerkschnittstellen von Bare-Metal-Servern zu konfigurieren.
 Benutzer können:
 
-- **VLAN-Tagging aktivieren**, um ein oder mehrere VLANs mit derselben Schnittstelle zu verknüpfen.
-- **VLANs direkt** auf die Netzwerkschnittstellen der Server übertragen.
+- **VLAN-Tagging aktivieren**, um einen oder mehrere VLANs einer einzelnen Schnittstelle zuzuordnen.
+- **VLANs direkt auf die Netzwerkschnittstellen der Server propagieren**.
 
 ### Aggregation von Netzwerkschnittstellen
 
-Jeder Server ist mit **zwei Netzwerkschnittstellen** ausgestattet. Diese Schnittstellen können unabhängig voneinander oder kombiniert für bessere Leistung und Redundanz verwendet werden:
+Jeder Server ist mit **zwei Netzwerkschnittstellen** ausgestattet. Diese Schnittstellen können unabhängig voneinander oder kombiniert für eine höhere Leistung und Redundanz verwendet werden:
 
 ### Netzwerkleistung
 
-Die Leistung der Netzwerkschnittstellen hängt direkt mit der gewählten Blade-Klasse zusammen. Beispiel:
+Die Leistung der Netzwerkschnittstellen hängt direkt von der gewählten Blade-Klasse ab. Beispiel:
 
-- **ECO**-Blades bieten eine Konnektivität von 2 x 10 Gbit/s.
-- **STANDARD**-Blades und höher verfügen über eine Konnektivität von 2 x 25 Gbit/s.
+- Die **ECO**-Blades bieten eine Konnektivität von 2 x 10 Gbit/s.
+- **STANDARD**-Blades und höhere Klassen verfügen über eine Konnektivität von 2 x 25 Gbit/s.
 
-Diese Netzwerkoptionen gewährleisten eine zuverlässige, flexible Konnektivität, die an eine Vielzahl professioneller Workloads angepasst ist.
+Diese Netzwerkoptionen gewährleisten eine zuverlässige, flexible Konnektivität, die sich für eine Vielzahl professioneller Workloads eignet.
 
 ---

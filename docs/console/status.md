@@ -1,16 +1,16 @@
 ---
 title: Opérations planifiées et gestion des Incidents
 ---
-import shivaInterventionMenu01 from './images/shiva_intervention_menu01.png'
-import shivaInterventionMenu03 from './images/shiva_intervention_menu03.png'
-import shivaInterventionMenu04 from './images/shiva_intervention_menu04.png'
-import shivaInterventionMenu05 from './images/shiva_intervention_menu05.png'
-import shivaIncident_001 from './images/shiva_incident_001.png'
-import shivaIncident_002 from './images/shiva_incident_002.png'
-import shivaIncident_003 from './images/shiva_incident_003.png'
-import shivaIncident_004 from './images/shiva_incident_004.png'
-import shivaIncident_005 from './images/shiva_incident_005.png'
-import shivaIncident_006 from './images/shiva_incident_006.png'
+import shivaInterventionMenu01 from '@site/docs/console/images/shiva_intervention_menu01.png'
+import shivaInterventionMenu03 from '@site/docs/console/images/shiva_intervention_menu03.png'
+import shivaInterventionMenu04 from '@site/docs/console/images/shiva_intervention_menu04.png'
+import shivaInterventionMenu05 from '@site/docs/console/images/shiva_intervention_menu05.png'
+import shivaIncident_001 from '@site/docs/console/images/shiva_incident_001.png'
+import shivaIncident_002 from '@site/docs/console/images/shiva_incident_002.png'
+import shivaIncident_003 from '@site/docs/console/images/shiva_incident_003.png'
+import shivaIncident_004 from '@site/docs/console/images/shiva_incident_004.png'
+import shivaIncident_005 from '@site/docs/console/images/shiva_incident_005.png'
+import shivaIncident_006 from '@site/docs/console/images/shiva_incident_006.png'
 
 Comme toute plateforme d'infrastructure Cloud, la plateforme Cloud Temple fait l'objet de travaux et de maintenance matérielle et logicielle régulièrement.
 
@@ -22,19 +22,19 @@ L'icône de suivi des opérations permet de visualiser les opérations planifié
 
 Cette icône vise à fournir une visibilité sur les interventions planifiées, en cours et terminées et/ou les incidents sur le tenant.
 
-Quand des interventions et/ou incidents sont en cours, un nombre apparait sur l’icône.
+Quand des interventions et/ou incidents sont en cours, un nombre apparait sur l'icône.
 
-En cliquant sur visualisation rapide, vous trouverez les interventions en cours. Il est également possible de cliquer sur __‘Toutes les interventions’__ ou __‘Tous les incidents et rapports du tenant’__ pour afficher plus de détails.
+En cliquant sur visualisation rapide, vous trouverez les interventions en cours. Il est également possible de cliquer sur __'Toutes les interventions'__ ou __'Tous les incidents et rapports du tenant'__ pour afficher plus de détails.
 
 <img src={shivaInterventionMenu03} />
 
 ## Suivi des interventions planifiées
 
-La page Interventions est composée de deux onglets. Le premier onglet permet de visualiser les interventions prévues sur les 30 prochains jours et les interventions en cours.
+La page Interventions est composée de deux onglets. Le premier onglet permet de visualiser les interventions prévues sur les 60 prochains jours et les interventions en cours.
 
 <img src={shivaInterventionMenu04} />
 
-Les interventions terminées quant à elles sont visibles dans le second onglet ‘Terminé’
+Les interventions terminées quant à elles sont visibles dans le second onglet 'Terminé'. Les interventions terminées sont conservées et accessibles pendant 60 jours dans le passé, permettant un suivi complet de l'historique des opérations de maintenance.
 
 <img src={shivaInterventionMenu05} />
 
@@ -54,7 +54,7 @@ Un bouton __'En savoir plus'__ redirige vers la page publique de suivi des incid
 
 <img src={shivaIncident_002} />
 
-Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '__incident_management__'.
+Il est possible d'obtenir les rapports des incidents globaux. L'accès à ces rapports requiert la permission spécifique '__incident_management__'. Les rapports d'incidents globaux sont archivés et accessibles pendant 60 jours après leur résolution, garantissant une traçabilité complète des événements système.
 
 Voici un exemple de l'onglet affichant ces rapports :
 
@@ -64,7 +64,7 @@ Voici un exemple de l'onglet affichant ces rapports :
 
 La visibilité des incidents spécifiques à un périmètre client nécessite la permission __incident_read__. Ces incidents sont représentés par une icône dédiée, accompagnée d'un badge rouge indiquant le nombre d'incidents en cours.
 
-L'icône est cliquable, permettant de lister les tickets associés aux incidents. Chaque ticket inclut un lien vers les détails de l'incident, offrant la possibilité de suivre l'avancement de leur résolution :
+L'icône est cliquable, permettant de lister les tickets associés aux incidents. Chaque ticket inclut un lien vers les détails de l'incident, offrant la possibilité de suivre l'avancement de leur résolution. Les incidents résolus et leurs comptes-rendus (CRs) restent consultables pendant 60 jours, permettant une analyse rétrospective et un suivi des actions correctives mises en place.
 
 <img src={shivaIncident_004} />
 

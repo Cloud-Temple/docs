@@ -1,6 +1,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -8,30 +10,30 @@ const config: Config = {
   title: 'Documentation Cloud Temple',
   tagline: 'Tout ce dont vous avez besoin pour tirer le meilleur parti des produits Cloud Temple.  ',
   favicon: 'img/favicon.ico',
-  onBrokenLinks: 'log',
+  onBrokenLinks: 'throw',
 
   // enable faster build time https://docusaurus.io/blog/releases/3.6
-  // Temporarily disabled due to configuration error, will re-enable if needed
-  // future: {
-  //   experimental_faster: true,
-  //   v4: {
-  //     removeLegacyPostBuildHeadAttribute: true,
-  //   },
-  // },
+  future: {
+    faster: true,
+    v4: true,
+  },
 
   trailingSlash: false,
 
-  // Set the production url of your site here
-  url: 'https://github.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // Production URL of the documentation site
+  url: 'https://docs.cloud-temple.com',
+  // Default baseUrl for GitHub Pages deployment (/docs/ = repo name)
+  // Override with BASE_URL=/ environment variable for custom domain deployments
   baseUrl: process.env.BASE_URL ?? "/docs/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Cloud-Temple', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
-  onBrokenMarkdownLinks: 'warn',
+  // GitHub repository config (used for "Edit this page" links)
+  organizationName: 'Cloud-Temple',
+  projectName: 'docs',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -57,6 +59,20 @@ const config: Config = {
       },
     },
   },
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap',
+      type: 'text/css',
+    },
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   plugins: [
     [
       require.resolve('docusaurus-plugin-search-local'),
@@ -76,6 +92,8 @@ const config: Config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/Cloud-Temple/docs/edit/dev/',
@@ -84,6 +102,12 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
         blog: false, // Optional: disable the blog plugin
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+        },
       },
     ],
   ],
@@ -164,13 +188,28 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Contractual',
+          items: [
+            {
+              label: 'Contractual Documents',
+              to: '/contracts',
+            },
+            {
+              label: 'Shared Responsibility Model',
+              to: '/shared-responsibility',
+            },
+          ],
+        },
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="/governance">Contracts</a> |
-        <a href="/privacy">Privacy Policy</a>
+        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contracts</a> |
+        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
-        Copyright © ${new Date().getFullYear()} Cloud Temple.
+        Copyright © 2026 Cloud Temple.
+        <br />
+        <span style="font-size: 0.8em; color: var(--ifm-footer-link-color);">Version: ${process.env.APP_VERSION || 'dev'}</span>
       </div>
     `,
     },

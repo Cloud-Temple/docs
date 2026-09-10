@@ -1,15 +1,17 @@
+
+
 ---
-title: Managing a Virtual Machine
+title: Virtual Machine Management
 ---
-import open_iaas_vm_ha_enable from '../images/open_iaas_vm_ha_enable.png'
-import open_iaas_vm_ha_how_to_find from '../images/open_iaas_vm_ha_how_to_find.png'
-import open_iaas_vm_ha_how_to_update from '../images/open_iaas_vm_ha_how_to_update.png'
-import open_iaas_vm_ha_filter from '../images/open_iaas_vm_ha_filter.png'
-import open_iaas_vm_ha_errors from '../images/open_iaas_vm_ha_errors.png'
-import open_iaas_vm_ha_warning from '../images/open_iaas_vm_ha_warning.png'
+import open_iaas_vm_ha_enable from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_enable.png'
+import open_iaas_vm_ha_how_to_find from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_how_to_find.png'
+import open_iaas_vm_ha_how_to_update from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_how_to_update.png'
+import open_iaas_vm_ha_filter from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_filter.png'
+import open_iaas_vm_ha_errors from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_errors.png'
+import open_iaas_vm_ha_warning from '@site/docs/iaas_opensource/tutorials/images/open_iaas_vm_ha_warning.png'
 
 In addition to pool management, virtual machines must also be configured.
-To view the virtual machine configuration, go to the advanced options:
+To view the virtual machine configuration, simply navigate to the advanced options:
 <img src={open_iaas_vm_ha_how_to_find} />
 
 To modify this configuration:
@@ -19,6 +21,6 @@ To modify this configuration:
 To view all virtual machines without high availability configuration:
 <img src={open_iaas_vm_ha_filter} />
 
-To view all virtual machines that can prevent high availability activation on the pool:
+To view all virtual machines that could prevent high availability activation on the pool:
 <img src={open_iaas_vm_ha_errors} />
 <img src={open_iaas_vm_ha_warning} />

@@ -1,86 +1,78 @@
+---
+title: Tutorials
+---
+import sessions from '@site/docs/bastion/images/sessions.png'
+import sessions2 from '@site/docs/bastion/images/sessions2.png'
+import appliances from '@site/docs/bastion/images/appliances.png'
+import ouvrirAppliance from '@site/docs/bastion/images/ouvrir_appliance.png'
+import creerSession from '@site/docs/bastion/images/creer_session.png'
+import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
+import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
+import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
+import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
+import modifierSession from '@site/docs/bastion/images/modifier_session.png'
+import modifierSession2 from '@site/docs/bastion/images/modifier_session2.png'
+import supprimerSession from '@site/docs/bastion/images/supprimer_session.png'
+
+These tutorials help you deploy and manage a Bastion Cloud Temple from the Console.
+
+## Prerequisites
+
+1. Subscribe to the Cloud Temple product (Appliance Bastion subscription).
+2. The devices to be managed must be accessible from the network where the Appliance Bastion is deployed.
+3. Have permissions for the Bastion module.
+4. For an on-premise Appliance deployment, the corresponding traffic flows must be allowed.
+
+## Interface
+
+Once logged into the Console web portal, go to the "Bastion" tab in the left menu.
+
+<img src={sessions} />
+
+The « Devices » tab allows you to view the list of your devices. A device corresponds to a configuration of
+connection via a Bastion Appliance. For each device, its name, tags,
+description, associated Appliance, connection type (SSH ou RDP), host IP, and finally the keyboard layout are displayed.
+
+You can filter the list of your devices by their assigned tags, and a search bar allows you to search for a session by its name.
+
+<img src={sessions2} />
+
+The « Appliances » tab displays the list of your Bastion Appliances. For each Appliance, its name and description are specified.
+
+A search bar is available to allow you to search for an Appliance by its name.
+
+<img src={appliances} />
+
+## Deploy an Appliance
+
+Before you can deploy an Appliance, you must submit an Appliance subscription request via a support request.
+
 ## Open a connection to a device
 
 In the "Appliances" tab, click on the action bar of the Appliance you want to open. Then click the "Open" button.
 
 <img src={ouvrirAppliance} />
 
-Then fill in the necessary connection information:
+Then fill in the information required for the connection:
 
     - Protocol selection (SSH or RDP);
     - IP address of the host to manage;
     - Credentials;
-    - Keyboard configuration.
+    - Keyboard layout.
 
-Click "Connect" to open the Appliance. The console of the virtual machine to manage then opens.
+Then click "Connect" to open the Appliance. The console of the virtual machine to manage will then open.
 
-## Modify an equipment configuration
+## Register an Equipment
 
-Go to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to modify, and click the "Modify" button.
+To regularly access an equipment for administration, it is recommended to create an equipment configuration, which will only require your username and password upon each connection.
 
-<img src={modifierSession} />
-
-You can then modify the equipment name, its description, the associated Appliance, the protocol (SSH or RDP), the host's IP address or the keyboard language.
-
-<img src={modifierSession2} />
-
-## Prerequisites
-
-1. Have subscribed to the Cloud Temple offer (Bastion Appliance subscription).
-2. The equipment to manage must be accessible from the network where the Bastion Appliance is deployed.
-3. Have the rights on the Bastion module.
-4. In the case of an on-premise Appliance deployment, the corresponding flows must be opened.
-
-## Connect to a device
-
-Go to the "Devices" tab under the "Bastion" tab. Click on the action bar of the device you want to open, and click the "Open" button.
-
-<img src={ouvrirSession} />
-
-For each connection to the device, you only need to provide your authentication information.
-
-<img src={ouvrirSession2} />
-
-After entering your credentials, a notification confirming the start of the session appears, and the console to your virtual machine opens.
-
-## Deploy an Appliance
-
-Before being able to deploy an Appliance, a subscription request for an Appliance must be submitted through a support request.
-
----
-title: Tutorials
----
-import sessions from './images/sessions.png'
-import sessions2 from './images/sessions2.png'
-import appliances from './images/appliances.png'
-import ouvrirAppliance from './images/ouvrir_appliance.png'
-import creerSession from './images/creer_session.png'
-import creerSession2 from './images/creer_session2.png'
-import creerSession3 from './images/creer_session3.png'
-import ouvrirSession from './images/ouvrir_session.png'
-import ouvrirSession2 from './images/ouvrir_session2.png'
-import modifierSession from './images/modifier_session.png'
-import modifierSession2 from './images/modifier_session2.png'
-import supprimerSession from './images/supprimer_session.png'
-
-These tutorials help you deploy and manage a Cloud Temple Bastion from the Shiva portal.
-
-## Delete an equipment configuration
-
-Go to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to delete, and click on the "Delete" button.
-
-<img src={supprimerSession} />
-
-## Register a device
-
-To access a device to manage regularly, it is more appropriate to create a device configuration, which will only require your username and password at each connection.
-
-To do this, go to the "Devices" tab in the "Bastion" menu, then click the "New device" button.
+To do this, go to the « Equipment » tab in the « Bastion » menu, then click the « New equipment » button.
 
 <img src={creerSession} />
 
-Then fill in the necessary information to create your device:
+Then, fill in the information required to create your equipment:
 
-    - Device name;
+    - Equipment name;
     - Description;
     - Associated appliance;
     - Protocol type (SSH or RDP);
@@ -89,26 +81,36 @@ Then fill in the necessary information to create your device:
 
 <img src={creerSession2} />
 
-A notification indicating the creation of your device configuration should appear in the top right corner of the page. The configuration is then added to your list of devices.
+A notification indicating the creation of your equipment configuration should appear in the top right corner of the page. The configuration is then added to your equipment list.
 
-To create a new connection, you can also go through the "Appliances" tab by clicking the action bar of the appliance to which you want to associate a device configuration.
+To create a new connection, you can also go through the « Appliances » tab by clicking on the action bar of the Appliance to which you want to associate an equipment configuration.
 
 <img src={creerSession3} />
 
-## Interface
+## Connect to a device
 
-Once connected to the Shiva web portal, go to the "Bastion" tab in the left menu.
+Navigate to the "Devices" tab in the "Bastion" tab. Click on the action bar of the device you want to open, and click the "Open" button.
 
-<img src={sessions} />
+<img src={ouvrirSession} />
 
-The "Equipements" tab allows you to view your equipment list. An equipment corresponds to a connection configuration via a Bastion Appliance. For each equipment, its name, tags, description, associated Appliance, connection type (SSH or RDP), host IP, and keyboard configuration are indicated.
+Each time you connect to the device, you only need to provide your authentication credentials.
 
-You can filter your equipment list according to the tags assigned to them, and a search engine allows you to look for a session by its name.
+<img src={ouvrirSession2} />
 
-<img src={sessions2} />
+After entering your credentials, a notification confirming the start of the session appears, and the console to your virtual machine opens.
 
-The "Appliances" tab provides a list of your Bastion Appliances. For each Appliance, the Appliance's name and description are specified.
+## Modify an equipment configuration
 
-A search engine is available to help you search for an Appliance by its name.
+Navigate to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to modify, and click the "Edit" button.
 
-<img src={appliances} />
+<img src={modifierSession} />
+
+You can then modify the equipment name, its description, the associated Appliance, the protocol (SSH or RDP), the host IP address, or the keyboard language.
+
+<img src={modifierSession2} />
+
+## Delete an equipment configuration
+
+Go to the "Equipment" tab in the "Bastion" section, click on the action bar of the equipment you want to delete, and click the "Delete" button.
+
+<img src={supprimerSession} />

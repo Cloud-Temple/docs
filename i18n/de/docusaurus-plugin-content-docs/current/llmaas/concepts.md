@@ -3,153 +3,154 @@ title: Konzepte
 sidebar_position: 3
 ---
 
-# Konzepte und Architektur LLMaaS
+# Konzepte und Architektur von LLMaaS
 
 ## Übersicht
 
-Der **LLMaaS**-Dienst (Large Language Models als Service) von Cloud Temple bietet sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen mit der **SecNumCloud-Zertifizierung** der ANSSI.
+Der **LLMaaS**-Dienst (Large Language Models as a Service) von Cloud Temple bietet einen sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen, mit der **SecNumCloud-Qualifizierung** des ANSSI.
 
 ## 🏗️ Technische Architektur
 
-### Cloud Temple-Infrastruktur
+### Infrastruktur Cloud Temple
 
-import ArchitectureLLMaaS from './images/llmaas_architecture_001.png';
+import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001.png';
 
-<img src={ArchitectureLLMaaS} alt="Technische Architektur von LLMaaS Cloud Temple" />
+<img src={ArchitectureLLMaaS} alt="Technische Architektur LLMaaS Cloud Temple" />
 
 ### Hauptkomponenten
 
 #### 1. **API Gateway LLMaaS**
-- **Kompatibel mit OpenAI** : Transparente Integration in bestehende Ökosysteme
-- **Rate Limiting** : Quotenverwaltung pro Abrechnungstier
-- **Load Balancing** : Intelligente Verteilung auf 12 GPU-Maschinen
-- **Monitoring** : Echtzeit-Metriken und Alarmierung
+- **Compatible OpenAI** : Nahtlose Integration in das bestehende Ökosystem
+- **Rate Limiting** : Quotamanagement nach Abrechnungsebene
+- **Load Balancing** : Intelligente Verteilung auf 12 GPU-Systemen
+- **Monitoring** : Echtzeitmetriken und Alerting
 
 #### 2. **Authentifizierungsdienst**
 - **Sichere API-Tokens** : Automatische Rotation
-- **Zugriffssteuerung** : Granulare Berechtigungen pro Modell
-- **Audit-Protokolle** : Vollständige Nachverfolgbarkeit der Zugriffe
+- **Zugriffskontrolle** : Granulare Berechtigungen pro Modell
+- **Audit-Trails** : Vollständige Nachverfolgbarkeit der Zugriffe
 
 ## 🤖 Modelle und Tokens
 
-### Katalog der Modelle
+### Modellkatalog
 
-*Vollständiger Katalog : [Liste der Modelle](./models)*
+*Vollständiger Katalog : [Modellliste](./models)*
 
-### Token-Management
+### Token-Verwaltung
 
-#### **Typen von Tokens**
-- **Eingabetokens** : Ihr Prompt und Kontext
-- **Ausgabetokens** : Antwort, die vom Modell generiert wird
-- **Systemtokens** : Metadaten und Anweisungen
+#### **Token-Typen**
+- **Eingabe-Tokens** : Ihr Prompt und Kontext
+- **Ausgabe-Tokens** : Vom Modell generierte Antwort
+- **System-Tokens** : Metadaten und Anweisungen
 
 #### **Kostenberechnung**
 ```
-Gesamtkosten = (Tokens Eingang × 0,9€/M) + (Tokens Ausgang × 4€/M) +  (Tokens Ausgang Berechnung × 21€/M)
+Chat/Completion = (Tokens entrée × 1.8€/M) + (Tokens sortie × 8€/M) + (Tokens sortie Raisonnement × 8€/M)
+Reranking       = Documents rerankés × 4€/M
+Batch (async)   = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M)
+Audio (ASR)     = 0.01€ / minute de transcription
 ```
 
 #### **Optimierung**
-- **Kontextfenster** : Wiederverwenden Sie Gespräche, um zu sparen
-- **Passende Modelle** : Wählen Sie die Größe entsprechend der Komplexität aus
-- **Max. Tokens** : Begrenzen Sie die Länge der Antworten
+- **Context window** : Wiederverwenden Sie Konversationen, um Kosten zu sparen
+- **Geeignete Modelle** : Wählen Sie die Größe entsprechend der Komplexität
+- **Max tokens** : Begrenzen Sie die Länge der Antworten
 
 ### Tokenisierung
 
 ```python
-
-# Beispiel zur Token-Schätzung
+# Exemple d'estimation de tokens
 def estimate_tokens(text: str) -> int:
-    """Approximative Schätzung: 1 Token ≈ 4 Zeichen"""
+    """Estimation approximative : 1 token ≈ 4 caractères"""
     return len(text) // 4
 
-prompt = "Erklären Sie die Photosynthese"
-response_max = 200  # gewünschte maximale Tokens
+prompt = "Expliquez la photosynthèse"
+response_max = 200  # tokens max souhaités
 
-geschätzte_eingabe = estimate_tokens(prompt)  # ~6 Tokens
-gesamtkosten = (geschätzte_eingabe * 0.9 + response_max * 4) / 1_000_000
-print(f"Schätzkosten: {gesamtkosten:.6f}€")
+estimated_input = estimate_tokens(prompt)  # ~6 tokens
+total_cost = (estimated_input * 1.8 + response_max * 8) / 1_000_000
+print(f"Coût estimé: {total_cost:.6f}€")
 ```
 
-## 🔒 Sicherheit und Konformität
+## 🔒 Sicherheit und Compliance
 
-### Qualifikation SecNumCloud
+### SecNumCloud-Qualifikation
 
-Die LLMaaS-Dienstleistung wird auf einer technischen Infrastruktur berechnet, die über die **Qualifikation SecNumCloud 3.2** der ANSSI verfügt, die garantiert:
+Der LLMaaS-Dienst wird auf einer technischen Infrastruktur ausgeführt, die über die **SecNumCloud-Qualifikation 3.2** der ANSSI verfügt, was Folgendes garantiert:
 
-#### **DatenSchutz**
-- **End-to-End-Verschlüsselung** : TLS 1.3 für alle Kommunikationen
-- **Sichere Speicherung** : Daten, die im Ruhezustand verschlüsselt sind (AES-256)
-- **Isolation** : Dedizierte Umgebungen pro Mandant
+#### **Datenschutz**
+- **End-to-End-Verschlüsselung** : TLS 1.3 für alle Übertragungen
+- **Sichere Speicherung** : Verschlüsselte Daten im Ruhezustand (AES-256)
+- **Isolation** : Dedizierte Umgebungen pro Tenant
 
 #### **Digitale Souveränität**
-- **Hosting Frankreich** : zertifizierte Cloud Temple Datacenter
-- **französisches Recht** : native RGPD-Konformität
-- **Keine Exposition** : Kein Transfer zu ausländischen Clouds
+- **Hosting in Frankreich** : Zertifizierte Cloud Temple Rechenzentren
+- **Französisches Recht** : Native DSGVO-Konformität
+- **Keine Exposition** : Keine Übertragung zu ausländischen Clouds
 
-#### **Audit und Nachverfolgbarkeit**
-- **Vollständige Protokolle** : Alle Interaktionen werden protokolliert
-- **Aufbewahrung** : Aufbewahrung gemäß gesetzlichen Richtlinien
+#### **Audit und Rückverfolgbarkeit**
+- **Vollständige Logs** : Alle Interaktionen werden nachverfolgt
+- **Datenaufbewahrung** : Speicherung gemäß gesetzlichen Richtlinien
 - **Compliance** : Auditberichte verfügbar
 
 ### Sicherheitskontrollen
 
-import SecurityControls from './images/llmaas_security_002.png';
+import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
-<img src={SecurityControls} alt="Sicherheitskontrollen LLMaaS" />
+<img src={SecurityControls} alt="Contrôles de Sécurité LLMaaS" />
 
 ### Prompt-Sicherheit
 
-Die Prompt-Analyse ist eine **native und integrierte** Sicherheitsfunktion der LLMaaS-Plattform. Sie ist standardmäßig aktiviert und dient dazu, Versuche von "Jailbreak" oder schädlichen Prompt-Injektionen zu erkennen und zu verhindern, noch bevor sie das Modell erreichen. Diese Schutzmaßnahme basiert auf einer mehrschichtigen Herangehensweise.
+Die Prompt-Analyse ist eine **native und integrierte** Sicherheitsfunktion der LLMaaS-Plattform. Standardmäßig aktiviert, zielt sie darauf ab, "jailbreak"- oder bösartige Prompt-Injektionsversuche zu erkennen und zu verhindern, bevor sie das Modell erreichen. Dieser Schutz basiert auf einem mehrschichtigen Ansatz.
 
-:::tip Support kontaktieren, um die Deaktivierung zu beantragen
-Es ist möglich, diese Sicherheitsanalyse für sehr spezifische Anwendungsfälle deaktivieren, obwohl dies nicht empfohlen wird. Bei Fragen dazu oder um eine Deaktivierung zu beantragen, wenden Sie sich bitte an den Cloud Temple-Support.
+:::tip[Support kontaktieren zur Deaktivierung]
+Es ist möglich, diese Sicherheitsanalyse für sehr spezifische Anwendungsfälle zu deaktivieren, auch wenn dies nicht empfohlen wird. Für Fragen dazu oder um eine Deaktivierung anzufordern, wenden Sie sich bitte an den Cloud Temple Support.
 :::
 
 #### 1. Strukturelle Analyse (`check_structure`)
-- **Überprüfung auf fehlerhaften JSON**: Das System prüft, ob der Prompt mit einem `{` beginnt und versucht, ihn als JSON zu parsen. Wenn das Parsen erfolgreich ist und der JSON verdächtige Schlüsselwörter enthält (z. B. "system", "bypass"), oder wenn das Parsen unerwartet fehlschlägt, kann dies auf eine Injection-Attacke hinweisen.
-- **Unicode-Normalisierung**: Der Prompt wird mit `unicodedata.normalize('NFKC', prompt)` normalisiert. Wenn sich der ursprüngliche Prompt von der normalisierten Version unterscheidet, kann dies auf die Verwendung von täuschenden Unicode-Zeichen (Homoglyphen) zur Umgehung der Filter hinweisen. Zum Beispiel "аdmin" (kyrillisch) anstelle von "admin" (lateinisch).
+- **Erkennung von fehlerhaftem JSON**: Das System erkennt, ob der Prompt mit einem `{` beginnt, und versucht, ihn als JSON zu parsen. Wenn das Parsing erfolgreich ist und das JSON verdächtige Schlüsselwörter enthält (z. B. "system", "bypass"), oder wenn das Parsing unerwartet fehlschlägt, kann dies auf einen Injektionsversuch hindeuten.
+- **Unicode-Normalisierung**: Der Prompt wird mit `unicodedata.normalize('NFKC', prompt)` normalisiert. Wenn der ursprüngliche Prompt von seiner normalisierten Version abweicht, kann dies auf die Verwendung täuschender Unicode-Zeichen (Homoglyphe) zur Umgehung der Filter hindeuten. Zum Beispiel "аdmin" (kyrillisch) anstelle von "admin" (lateinisch).
 
-#### 2. Erkennung von verdächtigen Mustern (`check_patterns`)
-- Das System verwendet reguläre Ausdrücke (`regex`), um bekannte Muster von Prompt-Angriffen zu identifizieren, und zwar in mehreren Sprachen (französisch, englisch, chinesisch, japanisch).
-- **Beispiele für erkannte Muster**:
-    - **Systembefehle** : Schlüsselwörter wie "ignoriere die Anweisungen", "ignore instructions", "忽略指令", "指示を無視".
-    - **HTML-Injektion** : Versteckte oder schädliche HTML-Tags, z. B. `<div versteckt>`, `<hidden div>`.
-    - **Markdown-Injektion** : Schädliche Markdown-Links, z. B. `[texte](javascript:...)`, `[text](data:...)`.
-    - **Wiederholte Sequenzen** : Übermäßige Wiederholung von Wörtern oder Sätzen wie "vergiss vergiss vergiss", "forget forget forget".
-    - **Spezialzeichen/Mischungen** : Verwendung ungewöhnlicher Unicode-Zeichen oder Mischungen von Skripten, um Befehle zu verbergen (z. B. "s\u0443stème").
+#### 2. Erkennung verdächtiger Muster (`check_patterns`)
+- Das System verwendet reguläre Ausdrücke (`regex`), um bekannte Muster von Prompt-Angriffen zu identifizieren, und zwar in mehreren Sprachen (français, anglais, chinois, japonais).
+- **Beispiele für erkannte Muster** :
+    - **Systembefehle** : Schlüsselwörter wie "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
+    - **HTML-Injection** : Versteckte oder bösartige HTML-Tags, zum Beispiel `<div caché>`, `<hidden div>`.
+    - **Markdown-Injection** : Bösartige Markdown-Links, zum Beispiel `[texte](javascript:...)`, `[text](data:...)`.
+    - **Wiederholte Sequenzen** : Übermäßige Wiederholung von Wörtern oder Sätzen wie "oublie oublie oublie", "forget forget forget".
+    - **Spezielle/Gemischte Zeichen** : Verwendung ungewöhnlicher Unicode-Zeichen oder Mischung von Skripten, um Befehle zu verschleiern (ex: "s\u0443stème").
 
 #### 3. Verhaltensanalyse (`check_behavior`)
-- Der Load Balancer hält ein Protokoll der kürzlichen Prompts.
-- **Erkennung der Fragmentierung**: Er kombiniert kürzliche Prompts, um zu prüfen, ob ein Angriff über mehrere Anfragen fragmentiert ist. Zum Beispiel, wenn "ignore" in einem Prompt gesendet wird und "instructions" im nächsten, kann das System sie zusammen erkennen.
-- **Erkennung der Wiederholung**: Er identifiziert, ob derselbe Prompt zu häufig wiederholt wird. Der aktuelle Schwellwert für die Wiederholungserkennung beträgt **30 aufeinanderfolgende identische Prompts**.
+- Der Load Balancer speichert einen Verlauf der jüngsten Prompts.
+- **Fragmentierungserkennung** : Er kombiniert die jüngsten Prompts, um festzustellen, ob ein Angriff über mehrere Anfragen fragmentiert ist. Wenn beispielsweise "ignore" in einem Prompt und "instructions" im nächsten gesendet wird, kann das System sie gemeinsam erkennen.
+- **Wiederholungserkennung** : Er erkennt, ob derselbe Prompt übermäßig wiederholt wird. Der aktuelle Schwellenwert für die Wiederholungserkennung beträgt 30 identische aufeinanderfolgende Prompts.
 
-Diese mehrschichtige Herangehensweise ermöglicht die Erkennung einer breiten Palette von Prompt-Angriffen, von den einfachsten bis zu den komplexesten, indem sie die statische Inhaltsanalyse und die dynamische Verhaltensanalyse kombiniert.
+Dieser mehrschichtige Ansatz ermöglicht die Erkennung eines breiten Spektrums von Prompt-Angriffen, von den einfachsten bis zu den anspruchsvollsten, indem er die statische Inhaltsanalyse mit der dynamischen Verhaltensanalyse kombiniert.
 
-## 📈 Leistung und Skalierbarkeit
+## 📈 Performance und Skalierbarkeit
 
 ### Echtzeit-Monitoring
 
-Zugriff über **Console Cloud Temple**:
-- Nutzungsmetriken pro Modell
+Zugriff über **Console Cloud Temple** :
+- Auslastungsmetriken pro Modell
 - Latenz- und Durchsatzdiagramme
-- Benachrichtigungen bei Performance-Schwellenwerten
-- Anfragespeicher
+- Warnungen bei Leistungsschwellenwerten
+- Abfrageverlauf
 
 ## 🌐 Integration und Ökosystem
 
 ### OpenAI-Kompatibilität
 
-Der Dienst LLMaaS ist **kompatibel** mit der OpenAI-API : 
+Der LLMaaS-Dienst ist **kompatibel** mit der OpenAI-API:
 
 ```python
-
 # Transparente Migration
 from openai import OpenAI
 
-# Vor (OpenAI)
+# Vorher (OpenAI)
 client_openai = OpenAI(api_key="sk-...")
 
-# Nach (Cloud Temple LLMaaS)
+# Nachher (Cloud Temple LLMaaS)
 client_ct = OpenAI(
     api_key="votre-token-cloud-temple",
     base_url="https://api.ai.cloud-temple.com/v1"
@@ -157,7 +158,7 @@ client_ct = OpenAI(
 
 # Identischer Code!
 response = client_ct.chat.completions.create(
-    model="granite3.3:8b",  # Modèle Cloud Temple
+    model="gpt-oss:120b",  # Cloud Temple-Modell
     messages=[{"role": "user", "content": "Bonjour"}]
 )
 ```
@@ -166,11 +167,11 @@ response = client_ct.chat.completions.create(
 
 #### **KI-Frameworks**
 - ✅ **LangChain** : Native Integration
-- ✅ **Haystack** : Dokumenten-Pipeline
-- ✅ **Semantic Kernel** : Microsoft-Orchestration
-- ✅ **AutoGen** : Konversationelle Agenten
+- ✅ **Haystack** : Dokumentenpipeline
+- ✅ **Semantic Kernel** : Microsoft-Orchestrierung
+- ✅ **AutoGen** : Konversationsagenten
 
-#### **Entwicklungs-Tools**
+#### **Entwicklungstools**
 - ✅ **Jupyter** : Interaktive Notebooks
 - ✅ **Streamlit** : Schnelle Webanwendungen
 - ✅ **Gradio** : KI-Benutzeroberflächen
@@ -178,135 +179,206 @@ response = client_ct.chat.completions.create(
 
 #### **No-Code-Plattformen**
 - ✅ **Zapier** : Automatisierungen
-- ✅ **Make** : visuelle Integrationen
+- ✅ **Make** : Visuelle Integrationen
 - ✅ **Bubble** : Webanwendungen
 
 ## 🔄 Lebenszyklus der Modelle
 
-### Modell-Update
+### Aktualisierung der Modelle
 
-import ModelLifecycle from './images/llmaas_lifecycle_003.png';
+import ModelLifecycle from '@site/docs/llmaas/images/llmaas_lifecycle_003.png';
 
-<img src={ModelLifecycle} alt="Lebenszyklus der Modelle LLMaaS" />
+<img src={ModelLifecycle} alt="Cycle de Vie des Modèles LLMaaS" />
 
-### Versionspolitik
+### Versionsrichtlinie
 
-- **Stabile Modelle** : Feste Versionen, die 6 Monate verfügbar sind
-- **Experimentelle Modelle** : Beta-Versionen für Early Adopter
-- **Ablösung** : 3 Monate Vorankündigung vor der Entfernung
-- **Migration** : Professionelle Dienstleistungen verfügbar, um Ihre Übergänge zu sichern
+- **Stabile Modelle** : Fixe Versionen für 6 Monate verfügbar
+- **Experimentelle Modelle** : Beta-Versionen für Early Adopters
+- **Deprecation** : 3 Monate Vorankündigung vor Entfernung
+- **Migration** : Professionelle Dienstleistungen zur Unterstützung Ihrer Übergänge verfügbar
 
 ### Voraussichtlicher Lebenszyklusplan
 
-Der folgende Tabelle zeigt den voraussichtlichen Lebenszyklus unserer Modelle. Das Ökosystem der generativen KI entwickelt sich sehr schnell, was zu Lebenszyklen führt, die kurz erscheinen können. Unser Ziel ist es, Ihnen Zugang zu den leistungsstärksten Modellen derzeit zu gewähren.
+Die folgende Tabelle zeigt den voraussichtlichen Lebenszyklus unserer Modelle. Das Ökosystem der generativen KI entwickelt sich sehr schnell, was Lebenszyklen erklärt, die kurz erscheinen mögen. Unser Ziel ist es, Ihnen Zugang zu den aktuell leistungsstärksten Modellen zu gewähren.
 
-Wir verpflichten uns, die Modelle, die am häufigsten von unseren Kunden genutzt werden, über die Zeit zu erhalten. Für Anwendungsfälle, die eine langfristige Stabilität erfordern, sind **erweiterte Support-Phasen** möglich. Zögern Sie nicht, den **Support zu kontaktieren**, um Ihre spezifischen Anforderungen zu besprechen.
+Wir verpflichten uns jedoch, die von unseren Kunden am häufigsten genutzten Modelle langfristig zu erhalten. Für kritische Anwendungsfälle, die eine langfristige Stabilität erfordern, sind Phasen mit **erweiterter Unterstützung** möglich. Zögern Sie nicht, den **Support zu kontaktieren**, um Ihre spezifischen Anforderungen zu besprechen.
 
-Dieser Plan ist nur als Richtwert zu verstehen und wird zu Beginn jedes Quartals überarbeitet.
+Dieser Plan wird als Richtwert bereitgestellt und wird **zu Beginn jedes Quartals überprüft**.
 
-- **DMP (Datum der Produktion)** : Der Tag, an dem das Modell in die Produktion geht.
-- **DSP (Datum des Support-Endes)** : Das vorhergesagte Datum, ab dem das Modell nicht mehr gewartet wird. Ein Vorankündigungszeitraum von 3 Monaten wird eingehalten, bevor eine endgültige Löschung erfolgt.
+- **DMP (Date de Mise en Production)** : Datum, an dem das Modell produktiv verfügbar wird.
+- **DSP (Date de Fin de Support)** : Voraussichtliches Datum, ab dem das Modell nicht mehr gewartet wird. Vor einer tatsächlichen Entfernung wird eine Frist von 3 Monaten eingehalten.
 
-| Modell                 | Entwickler                | Phase      | DMP        | DSP        |
-| :--------------------- | :------------------------ | :--------- | :--------- | :--------- |
-| deepcoder:14b          | Agentica x Together AI    | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:14b             | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:32b             | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:3b              | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| cogito:8b              | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 |
-| deepseek-r1:14b        | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:32b        | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:671b       | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
-| deepseek-r1:70b        | DeepSeek AI               | Produktion | 13/06/2025 | 31/12/2025 |
-| foundation-sec:8b      | Foundation AI — Cisco     | Produktion | 13/06/2025 | 30/09/2025 |
-| gemma3:12b             | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:1b              | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:27b             | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| gemma3:4b              | Google                    | Produktion | 13/06/2025 | 31/12/2026 |
-| granite-embedding:278m | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:2b   | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3-guardian:8b   | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3.1-moe:3b      | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3.2-vision:2b   | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3.3:2b          | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| granite3.3:8b          | IBM                       | Produktion | 13/06/2025 | 31/12/2026 |
-| llama3.1:8b            | Meta                      | Produktion | 13/06/2025 | 31/12/2025 |
-| llama3.3:70b           | Meta                      | Produktion | 13/06/2025 | 31/12/2026 |
-| phi4-reasoning:14b     | Microsoft                 | Produktion | 13/06/2025 | 31/12/2025 |
-| magistral:24b          | Mistral AI                | Produktion | 13/06/2025 | 31/12/2026 |
-| mistral-small3.1:24b   | Mistral AI                | Produktion | 13/06/2025 | 31/12/2026 |
-| mistral-small3.2:24b   | Mistral AI                | Produktion | 23/06/2025 | 30/03/2026 |
-| devstral:24b           | Mistral AI & All Hands AI | Produktion | 13/06/2025 | 31/12/2026 |
-| lucie-instruct:7b      | OpenLLM-France            | Produktion | 13/06/2025 | 30/10/2025 |
-| qwen2.5:0.5b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
-| qwen2.5:1.5b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
-| qwen2.5:14b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
-| qwen2.5:32b            | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
-| qwen2.5:3b             | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
-| qwen2.5vl:32b          | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:3b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:72b          | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen2.5vl:7b           | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:0.6b             | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:1.7b             | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:14b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:30b-a3b          | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:4b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:8b               | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:32b              | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwen3:235b             | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2026 |
-| qwq:32b                | Qwen Team                 | Produktion | 13/06/2025 | 31/12/2025 |
+| Modell                                | Anbieter                    | Phase      | DMP        | DSP        | LTS | Empfohlene Migration |
+| :------------------------------------ | :------------------------ | :--------- | :--------- | :--------- | :-- | :------------------- |
+| cogito:32b                            | Deep Cogito               | Produktion | 13/06/2025 | 30/06/2026 | Nein | gpt-oss:120b         |
+| embeddinggemma:300m                   | Google                    | Produktion | 10/09/2025 | 30/06/2026 | Nein |                      |
+| gemma3:27b                            | Google                    | Produktion | 13/06/2025 | 30/06/2026 | Nein |                      |
+| glm-4.7-flash:30b                     | Zhipu AI                  | Produktion | 22/01/2026 | 30/06/2026 | Nein |                      |
+| ministral-3:14b                       | Mistral AI                | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| ministral-3:3b                        | Mistral AI                | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| ministral-3:8b                        | Mistral AI                | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| olmo-3:32b                            | AllenAI                   | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| olmo-3:7b                             | AllenAI                   | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| qwen3-omni:30b                        | Qwen Team                 | Produktion | 05/01/2026 | 30/06/2026 | Nein |                      |
+| qwen3-vl:2b                           | Qwen Team                 | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| qwen3-vl:32b                          | Qwen Team                 | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| qwen3-vl:8b                           | Qwen Team                 | Produktion | 05/01/2026 | 30/06/2026 | Nein |                      |
+| rnj-1:8b                              | Essential AI              | Produktion | 30/12/2025 | 30/06/2026 | Nein |                      |
+| devstral-small-2:24b                  | Mistral AI & All Hands AI | Produktion | 02/02/2026 | 30/09/2026 | Nein |                      |
+| gemma4:e2b                            | Google                    | Produktion | 19/04/2026 | 30/09/2026 | Nein |                      |
+| gemma4:e4b                            | Google                    | Produktion | 19/04/2026 | 30/09/2026 | Nein |                      |
+| gpt-oss:20b                           | OpenAI                    | Produktion | 08/08/2025 | 30/09/2026 | Nein |                      |
+| mistral-small3.2:24b                  | Mistral AI                | Produktion | 23/06/2025 | 30/09/2026 | Nein |                      |
+| qwen3.5:4b                            | Qwen Team                 | Produktion | 24/03/2026 | 30/09/2026 | Nein |                      |
+| qwen3.5:9b                            | Qwen Team                 | Produktion | 24/03/2026 | 30/09/2026 | Nein |                      |
+| bge-reranker-large                    | BAAI                      | Produktion | 13/05/2026 | 30/12/2026 | Nein |                      |
+| deepseek-ocr                          | DeepSeek AI               | Produktion | 22/11/2025 | 30/12/2026 | Nein |                      |
+| functiongemma:270m                    | Google                    | Produktion | 30/12/2025 | 30/12/2026 | Nein |                      |
+| gemma4:31b                            | Google                    | Produktion | 14/04/2026 | 30/12/2026 | Nein |                      |
+| granite3-guardian:2b                  | IBM                       | Produktion | 13/06/2025 | 30/12/2026 | Nein |                      |
+| granite3-guardian:8b                  | IBM                       | Produktion | 13/06/2025 | 30/12/2026 | Nein |                      |
+| granite3.2-vision:2b                  | IBM                       | Produktion | 13/06/2025 | 30/12/2026 | Nein |                      |
+| mistral-small4:119b                   | Mistral AI                | Produktion | 13/05/2026 | 30/12/2026 | Nein |                      |
+| nemotron-3-super:120b                 | NVIDIA                    | Produktion | 01/04/2026 | 30/12/2026 | Nein |                      |
+| nemotron-cascade:30b                  | NVIDIA                    | Produktion | 01/04/2026 | 30/12/2026 | Nein |                      |
+| nemotron3-nano:30b                    | NVIDIA                    | Produktion | 04/01/2026 | 30/12/2026 | Nein |                      |
+| qwen-coder-next:80b                   | Qwen Team                 | Produktion | 04/02/2026 | 30/12/2026 | Nein |                      |
+| qwen3-embedding:0.6b                  | Qwen Team                 | Produktion | 14/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3-embedding:4b                    | Qwen Team                 | Produktion | 14/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3-embedding:8b                    | Qwen Team                 | Produktion | 14/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3-next:80b                        | Qwen Team                 | Produktion | 02/02/2026 | 30/12/2026 | Nein |                      |
+| qwen3-reranker:0.6b                   | Qwen Team                 | Produktion | 13/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3-reranker:4b                     | Qwen Team                 | Produktion | 13/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3-vl:235b                         | Qwen Team                 | Produktion | 04/01/2026 | 30/12/2026 | Nein |                      |
+| qwen3-vl:30b                          | Qwen Team                 | Produktion | 30/12/2025 | 30/12/2026 | Nein |                      |
+| qwen3-vl:4b                           | Qwen Team                 | Produktion | 30/12/2025 | 30/12/2026 | Nein |                      |
+| qwen3.5:0.8b                          | Qwen Team                 | Produktion | 24/03/2026 | 30/12/2026 | Nein |                      |
+| qwen3.6:27b                           | Qwen Team                 | Produktion | 01/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3.6:35b                           | Qwen Team                 | Produktion | 01/05/2026 | 30/12/2026 | Nein |                      |
+| qwen3:0.6b                            | Qwen Team                 | Produktion | 13/06/2025 | 30/12/2026 | Ja  |                      |
+| translategemma:12b                    | Google                    | Produktion | 22/01/2026 | 30/12/2026 | Nein |                      |
+| translategemma:27b                    | Google                    | Produktion | 22/01/2026 | 30/12/2026 | Nein |                      |
+| translategemma:4b                     | Google                    | Produktion | 22/01/2026 | 30/12/2026 | Nein |                      |
+| voxtral                               | Mistral AI                | Produktion | 01/04/2026 | 30/12/2026 | Nein |                      |
+| z-image:16b                           | Community                 | Produktion | 01/04/2026 | 30/12/2026 | Nein |                      |
+| nvidia/llama-nemotron-rerank-vl-1b-v2 | NVIDIA                    | Produktion | 13/05/2026 | 30/06/2027 | Nein |                      |
+| bge-m3:567m                           | BAAI                      | Produktion | 18/10/2025 | 30/12/2027 | Ja  |                      |
+| gpt-oss:120b                          | OpenAI                    | Produktion | 11/11/2025 | 30/12/2027 | Ja  |                      |
+| granite-embedding:278m                | IBM                       | Produktion | 13/06/2025 | 30/12/2027 | Ja  |                      |
+| llama3.3:70b                          | Meta                      | Produktion | 13/06/2025 | 30/12/2027 | Ja  |                      |
+| qwen3-2507:235b                       | Qwen Team                 | Produktion | 04/01/2026 | 30/12/2027 | Ja  |                      |
+| qwen3-2507-think:4b                   | Qwen Team                 | Produktion | 31/08/2025 | 30/12/2027 | Ja  |                      |
 
-## 💡 Gute Praktiken
+### Legende
 
-Um das Beste aus der LLMaaS-API zu ziehen, ist es wichtig, Strategien zur Kostenoptimierung, Leistung und Sicherheit zu entwickeln.
+- **Phase**: Lebenszyklus des Modells (Evaluation, Produktion, Veraltet)
+- **DMP**: Datum der Produktionsaufnahme
+- **DSP**: Geplantes Löschen-Datum
+- **LTS**: Long Term Support. LTS-Modelle profitieren von garantierter Stabilität und erweitertem Support, ideal für kritische Anwendungen.
+- **Empfohlene Migration**: Empfohlenes Modell zur Ersetzung eines auslaufenden Modells.
+
+Um den Lebenszyklusstatus in Echtzeit zu verfolgen, besuchen Sie die Seite: [LLMaaS Status - Cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle)
+
+---
+
+## Abgekündigte Modelle
+
+Die Welt der LLMs entwickelt sich sehr schnell. Um unseren Kunden den Zugang zu den leistungsstärksten Technologien zu gewährleisten, kündigen wir regelmäßig Modelle ab, die nicht mehr den aktuellen Standards entsprechen oder nicht mehr verwendet werden. Die unten aufgeführten Modelle sind auf der öffentlichen Plattform nicht mehr verfügbar. Sie können jedoch auf Anfrage für spezifische Projekte wieder aktiviert werden.
+
+| Modell                   | Phase    | Abkündigungsdatum    |
+| :----------------------- | :------- | :------------------- |
+| devstral:24b             | Abgekündigt | 30/03/2026           |
+| granite3.1-moe:2b        | Abgekündigt | 30/03/2026           |
+| granite4-small-h:32b     | Abgekündigt | 15/05/2026           |
+| granite4-tiny-h:7b       | Abgekündigt | 15/05/2026           |
+| medgemma:27b             | Abgekündigt | 15/05/2026           |
+| qwen3-2507-gptq:235b     | Abgekündigt | 15/05/2026           |
+| qwen3-coder:30b          | Abgekündigt | 30/03/2026           |
+| qwen3:30b-a3b            | Abgekündigt | 30/03/2026           |
+| deepseek-r1:14b          | Abgekündigt | 30/12/2025           |
+| deepseek-r1:32b          | Abgekündigt | 30/12/2025           |
+| gemma3:1b                | Abgekündigt | 30/12/2025           |
+| gemma3:4b                | Abgekündigt | 30/12/2025           |
+| qwen3:1.7b               | Abgekündigt | 30/12/2025           |
+| qwen3:14b                | Abgekündigt | 30/12/2025           |
+| qwen3:4b                 | Abgekündigt | 30/12/2025           |
+| qwen3:8b                 | Abgekündigt | 30/12/2025           |
+| qwen3:32b                | Abgekündigt | 30/12/2025           |
+| qwq:32b                  | Abgekündigt | 30/12/2025           |
+| granite3.3:2b            | Abgekündigt | 30/12/2025           |
+| granite3.3:8b            | Abgekündigt | 30/12/2025           |
+| mistral-small3.1:24b     | Abgekündigt | 30/12/2025           |
+| qwen2.5vl:32b            | Abgekündigt | 30/12/2025           |
+| qwen2.5vl:3b             | Abgekündigt | 30/12/2025           |
+| qwen2.5vl:72b            | Abgekündigt | 30/12/2025           |
+| qwen2.5vl:7b             | Abgekündigt | 30/12/2025           |
+| cogito:8b                | Abgekündigt | 30/12/2025           |
+| deepcoder:14b            | Abgekündigt | 30/12/2025           |
+| cogito:3b                | Abgekündigt | 30/12/2025           |
+| qwen3:235b               | Abgekündigt | 22/11/2025           |
+| qwen3-2507-think:30b-a3b | Abgekündigt | 14/11/2025           |
+| gemma3:12b               | Abgekündigt | 21/11/2025           |
+| cogito:14b               | Abgekündigt | 17/10/2025           |
+| deepseek-r1:70b          | Abgekündigt | 17/10/2025           |
+| granite3.1-moe:3b        | Abgekündigt | 17/10/2025           |
+| llama3.1:8b              | Abgekündigt | 17/10/2025           |
+| phi4-reasoning:14b       | Abgekündigt | 17/10/2025           |
+| qwen2.5:0.5b             | Abgekündigt | 17/10/2025           |
+| qwen2.5:1.5b             | Abgekündigt | 17/10/2025           |
+| qwen2.5:14b              | Abgekündigt | 17/10/2025           |
+| qwen2.5:32b              | Abgekündigt | 17/10/2025           |
+| qwen2.5:3b               | Abgekündigt | 17/10/2025           |
+| deepseek-r1:671b         | Abgekündigt | 17/10/2025           |
+
+## 💡 Best Practices
+
+Um die LLMaaS-API optimal zu nutzen, ist es unerlässlich, Strategien zur Optimierung von Kosten, Leistung und Sicherheit zu verfolgen.
 
 ### Kostenoptimierung
 
-Die Kostenkontrolle basiert auf einer intelligenten Nutzung von Tokens und Modellen.
+Ein effektives Kostenmanagement basiert auf einer intelligenten Nutzung von Tokens und Modellen.
 
-1. **Modellauswahl**: Verwenden Sie nicht ein leistungsstarkes Modell für eine einfache Aufgabe. Ein größeres Modell ist leistungsfähiger, aber auch langsamer und verbraucht viel mehr Energie, was den Kosten direkt zugutekommt. Passen Sie die Modellgröße an die Komplexität Ihres Bedarfs an, um ein optimales Gleichgewicht zu erzielen.
+1.  **Modellauswahl** : Verwenden Sie kein überdimensioniertes Modell für eine einfache Aufgabe. Ein größeres Modell ist leistungsfähiger, aber auch langsamer und verbraucht deutlich mehr Energie, was sich direkt auf die Kosten auswirkt. Passen Sie die Modellgröße an die Komplexität Ihrer Anforderungen an, um ein optimales Gleichgewicht zu erzielen.
 
-   Beispielsweise verbraucht:
-   - **`Gemma 3 1B`** **0,15 kWh**.
-   - **`Llama 3.3 70B`** **11,75 kWh**, also **78-mal mehr**.
+    Zum Beispiel für die Verarbeitung einer Million Tokens:
+    - **`Gemma 3 1B`** verbraucht **0.15 kWh**.
+    - **`Llama 3.3 70B`** verbraucht **11.75 kWh**, was **78-mal mehr** entspricht.
 
-   ```python
-   # Für eine Sentimentanalyse ist ein kompaktes Modell ausreichend und kosteneffizient.
-   if task == "sentiment_analysis":
-       model = "granite3.3:2b"
-   # Für eine komplexe rechtliche Analyse ist ein größeres Modell erforderlich.
-   elif task == "legal_analysis":
-       model = "deepseek-r1:70b"
-   ```
+    ```python
+    # Für eine Sentiment-Klassifikation ist ein kompaktes Modell ausreichend und kostengünstig.
+    if task == "sentiment_analysis":
+        model = "qwen3.5:0.8b"
+    # Für eine komplexe juristische Analyse ist ein größeres Modell erforderlich.
+    elif task == "legal_analysis":
+        model = "gpt-oss:120b"
+    ```
 
-2. **Kontextverwaltung**: Der Chat-Verlauf (`messages`) wird bei jedem Aufruf zurückgegeben und verbraucht Eingabetokens. Bei langen Gesprächen sollten Sie Strategien zur Zusammenfassung oder Fensterung in Betracht ziehen, um nur relevante Informationen zu speichern.
-   ```python
-   # Bei langen Gesprächen kann man die ersten Austausche zusammenfassen.
-   messages = [
-       {"role": "system", "content": "Sie sind ein KI-Assistent."},
-       {"role": "user", "content": "Zusammenfassung der ersten 10 Austausche..."},
-       {"role": "assistant", "content": "Okay, ich habe den Kontext."},
-       {"role": "user", "content": "Hier ist meine neue Frage."}
-   ]
-   ```
+2.  **Kontextverwaltung** : Der Konversationsverlauf (`messages`) wird bei jedem Aufruf übergeben und verbraucht Eingabe-Tokens. Bei langen Konversationen sollten Sie Zusammenfassungs- oder Sliding-Window-Strategien in Betracht ziehen, um nur die relevanten Informationen zu behalten.
+    ```python
+    # Bei einer langen Konversation können die ersten Austausche zusammengefasst werden.
+    messages = [
+        {"role": "system", "content": "Vous êtes un assistant IA."},
+        {"role": "user", "content": "Résumé des 10 premiers échanges..."},
+        {"role": "assistant", "content": "Ok, j'ai le contexte."},
+        {"role": "user", "content": "Voici ma nouvelle question."}
+    ]
+    ```
 
-3. **Beschränkung der Ausgabetokens**: Verwenden Sie stets den Parameter `max_tokens`, um zu vermeiden, dass Antworten zu lang und teuer werden. Legen Sie eine realistische Grenze fest, basierend darauf, was Sie erwarten.
-   ```python
-   # Ein Zusammenfassung von maximal 100 Wörtern anfordern.
-   response = client.chat.completions.create(
-       model="granite3.3:8b",
-       messages=[{"role": "user", "content": "Zusammenfassen Sie dieses Dokument..."}],
-       max_tokens=150,  # Sicherheitspuffer für ~100 Wörter
-   )
-   ```
+3.  **Begrenzung der Ausgabe-Tokens** : Verwenden Sie immer den Parameter `max_tokens`, um übermäßig lange und kostspielige Antworten zu vermeiden. Legen Sie eine angemessene Grenze basierend auf Ihren Erwartungen fest.
+    ```python
+    # Um eine Zusammenfassung von maximal 100 Wörtern bitten.
+    response = client.chat.completions.create(
+        model="gpt-oss:120b",
+        messages=[{"role": "user", "content": "Résume ce document..."}],
+        max_tokens=150, # Sicherheitspuffer für ~100 Wörter
+    )
+    ```
 
 ### Leistung
 
 Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie die API-Aufrufe verwalten.
 
-1. **Asynchrone Anfragen**: Um mehrere Anfragen zu verarbeiten, ohne auf das Ende jeder einzelnen zu warten, verwenden Sie asynchrone Aufrufe. Dies ist besonders nützlich für Backend-Anwendungen, die einen großen Volumen an gleichzeitigen Anfragen verarbeiten.
-
+1.  **Asynchrone Anfragen** : Um mehrere Anfragen zu verarbeiten, ohne auf das Ende jeder einzelnen zu warten, verwenden Sie asynchrone Aufrufe. Dies ist besonders nützlich für Backend-Anwendungen, die ein großes Volumen an gleichzeitigen Anfragen verarbeiten.
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -315,7 +387,7 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie die API-Aufrufe
 
     async def process_prompt(prompt: str):
         # Verarbeitet eine einzelne Anfrage asynchron
-        response = await client.chat.completions.create(model="granite3.3:8b", messages=[{"role": "user", "content": prompt}])
+        response = await client.chat.completions.create(model="gpt-oss:120b", messages=[{"role": "user", "content": prompt}])
         return response.choices[0].message.content
 
     async def batch_requests(prompts: list):
@@ -324,17 +396,17 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie die API-Aufrufe
         return await asyncio.gather(*tasks)
     ```
 
-2. **Streaming für die Benutzererfahrung (UX)**: Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming entscheidend. Es ermöglicht die Anzeige der Modellantwort Wort für Wort und vermittelt das Gefühl einer sofortigen Reaktivität, anstatt auf die vollständige Antwort zu warten.
+2.  **Streaming für die Benutzererfahrung (UX)** : Für Benutzeroberflächen (Chatbots, Assistenten) ist Streaming unerlässlich. Es ermöglicht die wortweise Anzeige der Modellantwort und vermittelt so den Eindruck einer sofortigen Reaktionsfähigkeit, anstatt auf die vollständige Antwort zu warten.
     ```python
     # Zeigt die Antwort in Echtzeit in einer Benutzeroberfläche an
     response_stream = client.chat.completions.create(
-        model="granite3.3:8b",
-        messages=[{"role": "user", "content": "Erzähle mir eine Geschichte."}],
+        model="gpt-oss:120b",
+        messages=[{"role": "user", "content": "Raconte-moi une histoire."}],
         stream=True
     )
     for chunk in response_stream:
         if chunk.choices[0].delta.content:
-            # Den Textabschnitt in der UI anzeigen
+            # Zeigt den Textabschnitt in der UI an
             print(chunk.choices[0].delta.content, end="", flush=True)
     ```
 
@@ -342,30 +414,30 @@ Die Reaktionsfähigkeit Ihrer Anwendung hängt davon ab, wie Sie die API-Aufrufe
 
 Die Sicherheit Ihrer Anwendung ist von entscheidender Bedeutung, insbesondere wenn Sie Benutzereingaben verarbeiten.
 
-1. **Eingabeverifikation und -bereinigung (Sanitization)**: Vertrauen Sie niemals auf Benutzereingaben. Bereinigen Sie diese, bevor Sie sie an die API senden, um jeglichen potenziell schädlichen Code oder "Prompt-Injektions"-Anweisungen zu entfernen. Begrenzen Sie zudem ihre Größe, um Missbrauch zu vermeiden.
-   ```python
-   def sanitize_input(user_input: str) -> str:
-       # Einfaches Beispiel: Entfernen von Code-Formatierungen und Begrenzung der Länge.
-       # Robustere Bibliotheken können für eine erweiterte Bereinigung verwendet werden.
-       cleaned = user_input.replace("`", "").replace("'", "").replace("\"", "")
-       return cleaned[:2000]  # Begrenzung auf 2000 Zeichen
-   ```
+1.  **Validierung und Bereinigung der Eingaben (Sanitization)** : Vertrauen Sie niemals Benutzereingaben. Bevor Sie sie an die API senden, bereinigen Sie sie, um potenziell schädlichen Code oder "Prompt-Injection"-Anweisungen zu entfernen. Begrenzen Sie auch deren Größe, um Missbrauch zu vermeiden.
+    ```python
+    def sanitize_input(user_input: str) -> str:
+        # Einfaches Beispiel: Code-Demarkatoren entfernen und Länge begrenzen.
+        # Für eine erweiterte Sanitization können robustere Bibliotheken verwendet werden.
+        cleaned = user_input.replace("`", "").replace("'", "").replace("\"", "")
+        return cleaned[:2000]  # Begrenzt die Größe auf 2000 Zeichen
+    ```
 
-2. **Robuste Fehlerbehandlung**: Umgeben Sie immer Ihre API-Aufrufe mit `try...except`-Blöcken, um Netzwerkfehler, API-Fehler (z. B. 429 Rate Limit, 500 Internal Server Error) zu verarbeiten und eine degradierte, aber funktionale Benutzererfahrung zu gewährleisten.
-   ```python
-   from openai import APIError, APITimeoutError
+2.  **Robuste Fehlerbehandlung** : Schließen Sie Ihre API-Aufrufe immer in `try...except`-Blöcke ein, um Netzwerkfehler, API-Fehler (ex: 429 Rate Limit, 500 Internal Server Error) zu behandeln und eine eingeschränkte, aber funktionale Benutzererfahrung zu bieten.
+    ```python
+    from openai import APIError, APITimeoutError
 
-   try:
-       response = client.chat.completions.create(...)
-   except APITimeoutError:
-       # Behandeln Sie den Fall, in dem die Anfrage zu lange dauert
-       return "Der Dienst benötigt länger als erwartet, bitte versuchen Sie es erneut."
-   except APIError as e:
-       # Behandeln Sie spezifische API-Fehler
-       logger.error(f"Fehler API LLMaaS: {e.status_code} - {e.message}")
-       return "Es ist ein Fehler mit dem IA-Dienst aufgetreten."
-   except Exception as e:
-       # Behandeln Sie alle anderen Fehler (Netzwerk usw.)
-       logger.error(f"Eine unerwartete Fehler ist aufgetreten: {e}")
-       return "Es ist ein unerwarteter Fehler aufgetreten."
-   ```
+    try:
+        response = client.chat.completions.create(...)
+    except APITimeoutError:
+        # Fall behandeln, in dem die Anfrage zu lange dauert
+        return "Le service prend plus de temps que prévu, veuillez réessayer."
+    except APIError as e:
+        # API-spezifische Fehler behandeln
+        logger.error(f"Erreur API LLMaaS: {e.status_code} - {e.message}")
+        return "Désolé, une erreur est survenue avec le service d'IA."
+    except Exception as e:
+        # Alle anderen Fehler (Netzwerk usw.) behandeln
+        logger.error(f"Une erreur inattendue est survenue: {e}")
+        return "Désolé, une erreur inattendue est survenue."
+    ```

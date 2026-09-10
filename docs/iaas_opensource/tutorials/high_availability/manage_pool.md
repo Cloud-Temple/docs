@@ -1,12 +1,12 @@
 ---
 title: Gestion du Pool
 ---
-import open_iaas_pool_ha_how_to_find from '../images/open_iaas_pool_ha_how_to_find.png'
-import open_iaas_pool_enable_ha from '../images/open_iaas_pool_enable_ha.png'
-import open_iaas_pool_ha_enabled from '../images/open_iaas_pool_ha_enabled.png'
-import open_iaas_pool_ha_how_to_modify from '../images/open_iaas_pool_ha_how_to_modify.png'
-import open_iaas_pool_ha_error from '../images/open_iaas_pool_ha_error.png'
-import open_iaas_pool_ha_vm_errors from '../images/open_iaas_pool_ha_vm_errors.png'
+import open_iaas_pool_ha_how_to_find from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_ha_how_to_find.png'
+import open_iaas_pool_enable_ha from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_enable_ha.png'
+import open_iaas_pool_ha_enabled from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_ha_enabled.png'
+import open_iaas_pool_ha_how_to_modify from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_ha_how_to_modify.png'
+import open_iaas_pool_ha_error from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_ha_error.png'
+import open_iaas_pool_ha_vm_errors from '@site/docs/iaas_opensource/tutorials/images/open_iaas_pool_ha_vm_errors.png'
 
 Pour gérer la haute disponibilité d'un pool, il vous suffit d'aller sur la page du pool. L'état de la haute disponibilité est directement affiché :
 <img src={open_iaas_pool_ha_how_to_find} />

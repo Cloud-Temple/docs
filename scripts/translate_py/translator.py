@@ -36,7 +36,11 @@ class SimpleThrottler:
 
 
 class ContentSplitter:
-    """Utilitaire pour découper le contenu en blocs traduisibles en comptant les tokens."""
+    """Utilitaire pour découper le contenu en blocs traduisibles en comptant les tokens.
+    
+    IMPORTANT : Le découpage est code-block-aware — les blocs de code délimités
+    par des triple backticks (```) ne sont jamais coupés au milieu.
+    """
     
     def __init__(self, max_tokens: int = 8000, model_name: str = "gpt-4", model_type: str = "other"):
         """
@@ -63,66 +67,156 @@ class ContentSplitter:
             return len(self.encoding.encode(text))
         else:
             # Estimation pour les modèles non-OpenAI (environ 4 caractères par token pour l'anglais)
-            # C'est une heuristique, la précision peut varier selon la langue et le contenu.
             return len(text) // 4
 
+    def _find_code_block_ranges(self, text: str) -> List[Tuple[int, int]]:
+        """Identifie les plages (start, end) de tous les blocs de code ``` dans le texte.
+        
+        Gère les blocs avec ou sans spécificateur de langage (```python, ```json, etc.)
+        et les blocs de code imbriqués ou non fermés (traités comme allant jusqu'à la fin).
+        
+        Returns:
+            Liste de tuples (start, end) des blocs de code.
+        """
+        ranges = []
+        # Cherche les lignes qui commencent par ``` (avec éventuellement un langage après)
+        fence_pattern = re.compile(r'^(`{3,})', re.MULTILINE)
+        matches = list(fence_pattern.finditer(text))
+        
+        i = 0
+        while i < len(matches):
+            start = matches[i].start()
+            fence_marker = matches[i].group(1)
+            fence_len = len(fence_marker)
+            
+            # Chercher le prochain fence de fermeture de même longueur ou plus
+            found_end = False
+            for j in range(i + 1, len(matches)):
+                if len(matches[j].group(1)) >= fence_len:
+                    # Fin du bloc de code = fin de la ligne du fence de fermeture
+                    end_of_line = text.find('\n', matches[j].end())
+                    end = end_of_line if end_of_line != -1 else len(text)
+                    ranges.append((start, end))
+                    i = j + 1
+                    found_end = True
+                    break
+            
+            if not found_end:
+                # Bloc non fermé — va jusqu'à la fin du texte
+                ranges.append((start, len(text)))
+                break
+        
+        return ranges
+
+    def _is_inside_code_block(self, position: int, code_ranges: List[Tuple[int, int]]) -> bool:
+        """Vérifie si une position est à l'intérieur d'un bloc de code."""
+        for start, end in code_ranges:
+            if start <= position < end:
+                return True
+            if start > position:
+                break  # Les ranges sont triées, pas besoin de continuer
+        return False
+
+    def _find_safe_split_point(self, text: str, search_start: int, search_end: int, 
+                                code_ranges: List[Tuple[int, int]]) -> int:
+        """Trouve un point de coupure sûr (hors bloc de code) dans une zone de texte.
+        
+        Cherche en reculant depuis search_end vers search_start.
+        Priorité : ligne vide > fin de phrase > espace.
+        Ne coupe jamais à l'intérieur d'un bloc de code.
+        
+        Returns:
+            Position de coupure, ou -1 si aucun point sûr trouvé.
+        """
+        segment = text[search_start:search_end]
+        
+        # Priorité 1 : Couper sur une ligne vide (séparateur de paragraphe)
+        for match in reversed(list(re.finditer(r'\n\n', segment))):
+            abs_pos = search_start + match.end()
+            if not self._is_inside_code_block(abs_pos, code_ranges):
+                return abs_pos
+        
+        # Priorité 2 : Couper après une fin de phrase
+        for match in reversed(list(re.finditer(r'[.!?]\s', segment))):
+            abs_pos = search_start + match.end()
+            if not self._is_inside_code_block(abs_pos, code_ranges):
+                return abs_pos
+        
+        # Priorité 3 : Couper sur un saut de ligne simple
+        for match in reversed(list(re.finditer(r'\n', segment))):
+            abs_pos = search_start + match.end()
+            if not self._is_inside_code_block(abs_pos, code_ranges):
+                return abs_pos
+        
+        return -1
+
     def _split_large_block(self, block: str) -> List[str]:
-        """Sous-découpe un bloc qui dépasse la limite de tokens."""
+        """Sous-découpe un bloc qui dépasse la limite de tokens.
+        
+        Ne coupe jamais à l'intérieur d'un bloc de code ```.
+        """
+        code_ranges = self._find_code_block_ranges(block)
         sub_blocks = []
         current_pos = 0
+        
         while current_pos < len(block):
+            remaining = block[current_pos:]
+            
+            # Si le reste tient dans la limite, on le prend en entier
+            if self._count_tokens(remaining) <= self.max_tokens:
+                sub_blocks.append(remaining)
+                break
+            
             # Estimation du point de coupure en caractères
             estimated_end = current_pos + self.max_tokens * 4
+            estimated_end = min(estimated_end, len(block))
             
-            # Segment à analyser
-            segment = block[current_pos:estimated_end]
+            # Chercher un point de coupure sûr
+            split_pos = self._find_safe_split_point(block, current_pos, estimated_end, code_ranges)
             
-            # Si le segment est dans la limite, on le prend en entier
-            if self._count_tokens(segment) <= self.max_tokens:
-                sub_blocks.append(segment)
-                current_pos += len(segment)
-                continue
-
-            # Le segment est trop grand, il faut le couper
-            # On cherche le point de coupure idéal en reculant depuis la fin du segment
-            split_pos = len(segment)
+            if split_pos == -1 or split_pos <= current_pos:
+                # Pas de point de coupure sûr trouvé — on doit vérifier si on est dans un bloc de code
+                # Dans ce cas, chercher la fin du bloc de code et inclure tout
+                for cr_start, cr_end in code_ranges:
+                    if cr_start <= current_pos < cr_end:
+                        # On est dans un bloc de code, prendre tout le bloc de code
+                        split_pos = cr_end
+                        # Chercher la fin de ligne après le bloc de code
+                        next_newline = block.find('\n', split_pos)
+                        if next_newline != -1:
+                            split_pos = next_newline + 1
+                        break
+                
+                # Si toujours pas de point, prendre le segment tel quel (fallback)
+                if split_pos == -1 or split_pos <= current_pos:
+                    split_pos = estimated_end
             
-            # Priorité aux fins de phrase
-            sentence_enders = ['.', '!', '?']
-            best_split = -1
-            for p in sentence_enders:
-                pos = segment.rfind(p)
-                if pos > best_split:
-                    best_split = pos
-            
-            if best_split != -1:
-                split_pos = best_split + 1
-            else:
-                # Sinon, on cherche un espace
-                pos = segment.rfind(' ')
-                if pos != -1:
-                    split_pos = pos + 1
-            
-            sub_blocks.append(block[current_pos:current_pos + split_pos])
-            current_pos += split_pos
-            
-        return sub_blocks
+            sub_blocks.append(block[current_pos:split_pos])
+            current_pos = split_pos
+        
+        return [b for b in sub_blocks if b.strip()]
 
     def split_content(self, content: str) -> List[str]:
         """
         Découpe le contenu en blocs sémantiques basés sur les en-têtes Markdown.
-        Les blocs trop grands sont ensuite sous-découpés.
+        
+        IMPORTANT : Les en-têtes à l'intérieur des blocs de code (```) sont ignorés.
+        Les blocs trop grands sont ensuite sous-découpés sans casser les blocs de code.
         """
-        final_blocks = []
+        # 1. Identifier les zones de code pour les protéger
+        code_ranges = self._find_code_block_ranges(content)
         
-        # Découpage initial par en-têtes
+        # 2. Découpage par en-têtes (en ignorant ceux dans les blocs de code)
         header_pattern = re.compile(r'^(#+\s.*)', re.MULTILINE)
-        
-        # Trouver tous les en-têtes et leurs positions
         matches = list(header_pattern.finditer(content))
         
+        # Filtrer les headers qui sont à l'intérieur d'un bloc de code
+        safe_matches = [m for m in matches if not self._is_inside_code_block(m.start(), code_ranges)]
+        
+        final_blocks = []
         start_pos = 0
-        for match in matches:
+        
+        for match in safe_matches:
             # Bloc entre le dernier en-tête (ou le début) et le début du nouvel en-tête
             block_content = content[start_pos:match.start()]
             if block_content.strip():
@@ -136,7 +230,7 @@ class ContentSplitter:
         if last_block.strip():
             final_blocks.append(last_block)
             
-        # Sous-découpage des blocs trop grands
+        # 3. Sous-découpage des blocs trop grands (code-block-aware)
         processed_blocks = []
         for block in final_blocks:
             if self._count_tokens(block) > self.max_tokens:
@@ -271,7 +365,9 @@ class CloudTempleTranslator:
                 total_time += block_result.processing_time
         
         success = not errors
-        final_content = '\n\n'.join(translated_blocks) if success else None
+        # Réassemblage : on utilise '\n\n' comme séparateur entre blocs sémantiques
+        # car chaque bloc commence par un header ou un paragraphe distinct
+        final_content = '\n\n'.join(b.strip() for b in translated_blocks) if success else None
         error_message = '; '.join(errors) if errors else None
         
         return BlockTranslationResult(

@@ -2,11 +2,11 @@
 title: Concepts - Régions
 ---
 
-import iaasAz001 from './images/iaas_az_001.png';
+import iaasAz001 from '@site/docs/additional_content/images/iaas_az_001.png';
 
 ## Régions
 
-L'infrastructure Cloud Temple est prévue pour permettre la continuité d'activité de vos applications et de vos plateformes. 
+L'infrastructure Cloud Temple est prévue pour permettre la continuité d'activité de vos applications et de vos plateformes.
 Au sein d'une région, vous bénéficiez d'une continuité réseau de niveau 2.
 
 Ainsi, il est possible de définir une architecture technique sur la région Paris, utilisant 3 sites physiques pour permettre la mise en place d'une plateforme en haute disponibilité avec quorum.
@@ -17,7 +17,11 @@ En janvier 2024, la plateforme IaaS Cloud Temple dispose des régions suivantes 
 
 ### Région FR1
 
-La région FR1 est basée sur trois sites physiques en région parisienne. 
+La région FR1 est basée sur trois sites physiques en région parisienne:
+
+- FR1 - AZ05 (PAR7S)
+- FR1 - AZ06 (TH3S)
+- FR1 - AZ07 (DATA4)
 
 <img src={iaasAz001} />
 

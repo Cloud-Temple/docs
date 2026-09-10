@@ -1,13 +1,13 @@
 ---
 title: Erste Schritte
 ---
-import shivaInet_001 from './images/shiva_inet_001.png'
-import shivaInet_002 from './images/shiva_inet_002.png'
-import shivaInet_003 from './images/shiva_inet_003.png'
-import shivaInet_004 from './images/shiva_inet_004.png'
-import shivaInet_005 from './images/shiva_inet_005.png'
-import shivaInet_008 from './images/shiva_inet_008.png'
-import shivaInet_007 from './images/shiva_inet_007.png'
+import shivaInet_001 from '@site/docs/network/internet/images/shiva_inet_001.png'
+import shivaInet_002 from '@site/docs/network/internet/images/shiva_inet_002.png'
+import shivaInet_003 from '@site/docs/network/internet/images/shiva_inet_003.png'
+import shivaInet_004 from '@site/docs/network/internet/images/shiva_inet_004.png'
+import shivaInet_005 from '@site/docs/network/internet/images/shiva_inet_005.png'
+import shivaInet_008 from '@site/docs/network/internet/images/shiva_inet_008.png'
+import shivaInet_007 from '@site/docs/network/internet/images/shiva_inet_007.png'
 
 ## Verwaltung Ihrer Internetkonnektivität
 

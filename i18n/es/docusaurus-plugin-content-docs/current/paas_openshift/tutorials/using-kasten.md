@@ -29,6 +29,7 @@ En el contexto de esta configuración:
 ## Versiones de software
 
 Asegúrate de que las siguientes versiones de software y herramientas estén instaladas para garantizar una compatibilidad óptima:  
+
 - **Kasten K10**: v5.5.10 o superior  
 - **OpenShift CLI**: v4.15.6 o superior  
 - **Kubernetes**: v1.24 o superior (vía OpenShift)  
@@ -43,7 +44,7 @@ Para seguir esta guía, asegúrate de tener los siguientes elementos:
 2. **Claves S3 proporcionadas por Cloud Temple**:
    - Clave de acceso (Access Key)
    - Clave secreta (Secret Key)  
-3. **Bucket preconfigurado**: Un bucket en S3 Cloud Temple, por ejemplo: `demobackup`.   
+3. **Bucket preconfigurado**: Un bucket en S3 Cloud Temple, por ejemplo: `demobackup`.
 4. **Permisos de Kubernetes**: Debes tener permisos administrativos dentro del namespace de Kasten (`kasten-io`) para realizar configuraciones.  
 
 ---
@@ -61,6 +62,7 @@ Para seguir esta guía, asegúrate de tener los siguientes elementos:
 ## Archivos necesarios
 
 No se requiere ningún archivo específico para esta configuración, pero necesitarás la siguiente información proporcionada por Cloud Temple:  
+
 - **Clave de acceso S3**  
 - **Clave secreta S3**  
 - **URL del endpoint S3 SNC**: Por ejemplo, `xxxxx.s3.fr1.cloud-temple.com`.  
@@ -140,6 +142,7 @@ Para confirmar que la copia de seguridad está correctamente configurada:
 Siguiendo esta guía, has configurado con éxito una ubicación de copia de seguridad S3 compatible con SecNumCloud en Kasten con la infraestructura de Cloud Temple. Este flujo de trabajo permite gestionar eficazmente tus copias de seguridad, aprovechando un almacenamiento certificado y seguro.  
 
 Para ir más allá, puedes:  
+
 - Añadir otros workloads a respaldar.  
 - Configurar políticas de retención avanzadas en Kasten.  
 - Automatizar las pruebas de restauración para validar tus datos.  
