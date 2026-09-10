@@ -206,9 +206,7 @@ Diese Konfiguration stellt sicher, dass der Verkehr zur API und zu den internen 
     <h3>Tutorial: Bereitstellen Ihrer ersten Anwendung</h3>
   </div>
   <div class="card__body">
-    <p>
-      Folgen Sie unserem detaillierten Leitfaden, um zu lernen, wie Sie eine Anwendung über einen Ingress verfügbar machen.
-    </p>
+    <p>Folgen Sie unserem detaillierten Leitfaden, um zu lernen, wie Sie eine Anwendung über einen Ingress verfügbar machen.</p>
   </div>
   <div class="card__footer">
     <a href="./firstdeploy" class="button button--primary button--block">Tutorial ansehen →</a>

@@ -206,9 +206,7 @@ Questa configurazione garantisce che il traffico verso l'API e i servizi interni
     <h3>Tutorial : Distribuire la vostra prima applicazione</h3>
   </div>
   <div class="card__body">
-    <p>
-      Seguite la nostra guida dettagliata per imparare a esporre un'applicazione utilizzando un Ingress.
-    </p>
+    <p>Seguite la nostra guida dettagliata per imparare a esporre un'applicazione utilizzando un Ingress.</p>
   </div>
   <div class="card__footer">
     <a href="./firstdeploy" class="button button--primary button--block">Vedi il tutorial →</a>

@@ -62,9 +62,7 @@ Our advisory role is to support you in making this decision. Our architects are 
         <h3>PaaS OpenShift</h3>
       </div>
       <div className="card__body">
-        <p>
-          Discover our "as a Service" platform to modernize your applications on a SecNumCloud-certified foundation.
-        </p>
+        <p>Discover our "as a Service" platform to modernize your applications on a SecNumCloud-certified foundation.</p>
       </div>
       <div className="card__footer">
         <a href="./paas_openshift" className="button button--primary button--block">Learn more</a>
@@ -77,9 +75,7 @@ Our advisory role is to support you in making this decision. Our architects are 
         <h3>Managed (core) Kubernetes</h3>
       </div>
       <div className="card__body">
-        <p>
-          Explore our pure, portable, and unlayered Kubernetes product, hosted on a sovereign infrastructure.
-        </p>
+        <p>Explore our pure, portable, and unlayered Kubernetes product, hosted on a sovereign infrastructure.</p>
       </div>
       <div className="card__footer">
         <a href="./managed_kubernetes" className="button button--primary button--block">Learn more</a>
