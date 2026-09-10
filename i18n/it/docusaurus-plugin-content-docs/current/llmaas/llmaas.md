@@ -3,26 +3,50 @@ title: Panoramica
 sidebar_position: 1
 ---
 
-# LLM come Servizio (LLMaaS)
+# LLM as a Service (LLMaaS)
+
+LLMaaS fornisce accesso ai modelli di IA ospitati da Cloud Temple tramite un'API: assistenti conversazionali, programmazione e agenti, analisi delle immagini, ricerca semantica, reranking, traduzione e utilizzi audio/immagine.
+
+## Catalogo, novità e disponibilità
+
+- **[Catalogo e ciclo di vita dei modelli](https://llmaas.status.cloud-temple.app/lifecycle)** : modelli, contesto, stati LTS, fine del supporto e migrazioni consigliate.
+- **[Novità LLMaaS](https://llmaas.status.cloud-temple.app/changelog)** : aggiunta di modelli, evoluzioni del servizio e annunci di reindirizzamento.
+- **[Stato del servizio](https://llmaas.status.cloud-temple.app/)** e **[cronologia](https://llmaas.status.cloud-temple.app/history)** : disponibilità e prestazioni osservate.
+
+Per iniziare, seguite la [guida di avvio rapido](./quickstart.md). Per scegliere un modello, consultate la [guida al catalogo](./models.md).
+
+## Funzionalità
+
+| Utilizzo | Guida |
+|-------|-------|
+| Generazione di testo, streaming, chiamate a strumenti e visione | [API LLMaaS](./api.md) |
+| Ricerca aumentata dalla generazione | [Comprendere il RAG](./rag_explained.md) |
+| Ordinamento dei documenti per rilevanza | [Reranking](./rerank.md) |
+| Elaborazione asincrona di batch di richieste | [Batch](./batch.md) |
+| Cambio di modello e gestione dei vecchi identificatori | [Ciclo di vita e migrazione](./concepts.md#migrazione-a-un-altro-modello) |
+
+Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutane gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
 
 ## Accesso all'API
 
-L'API è accessibile tramite la Console Cloud Temple. Puoi gestire le tue chiavi API, monitorare il consumo e configurare i tier nelle impostazioni del tuo account. La console consente inoltre di visualizzare l'utilizzo dei tuoi modelli.
+L'API è accessibile tramite la Console Cloud Temple. È possibile gestire le chiavi API, monitorare il consumo e configurare i provider nelle impostazioni del proprio account. La console consente inoltre di visualizzare l'utilizzo dei modelli.
 
 ## Autenticazione
 
-Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la tua chiave API in formato Bearer token. Se utilizzi gli SDK client, la chiave verrà inclusa automaticamente in ogni richiesta. Se effettui l'integrazione direttamente con l'API, devi inviare questo header tu stesso.
+Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con la vostra chiave API in formato Bearer token. Se utilizzate i SDK client, la chiave verrà inclusa automaticamente in ogni richiesta. Se integrate direttamente con l'API, dovete inviare questo header voi stessi.
 
 ## Tipi di contenuto
 
-L'API LLMaaS accetta sempre JSON nel corpo delle richieste e restituisce JSON nel corpo delle risposte. È necessario inviare l'intestazione `content-type: application/json` nelle richieste. Se si utilizzano gli SDK client, ciò verrà gestito automaticamente.
+Le richieste di generazione del testo utilizzano JSON con l'header `Content-Type: application/json`. Lo streaming restituisce eventi SSE e la trascrizione di file audio utilizza `multipart/form-data`. Consulta la [documentazione API](./api.md) per il formato di ogni endpoint.
 
-## Intestazioni della risposta
+## Metadati delle risposte
 
-L'API LLMaaS include i seguenti header in ogni risposta :
+A seconda dell'endpoint, il corpo JSON della risposta può contenere i seguenti campi:
 
-- `id` : Un identificativo globalmente univoco per la richiesta
-- `backend` : Informazioni sull'infrastruttura utilizzata (engine_type, machine_name)
+- `id` : Identificatore della risposta.
+- `backend` : Informazioni sul motore e sull'istanza che ha elaborato la richiesta (`engine_type`, `machine_name`).
+
+Questi campi sono presenti nel corpo JSON, non negli header HTTP. Consulta il [riferimento API](./api.md) per il formato e i campi documentati di ciascun endpoint.
 
 ## Esempi
 
@@ -78,13 +102,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro     | Tipo    | Descrizione                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Il modello da utilizzare (vedere [catalogo dei modelli](./models.md)) |
-| `messages`    | array   | Elenco dei messaggi della conversazione                     |
-| `max_tokens`  | integer | Numero massimo di token da generare                         |
-| `temperature` | float   | Controlla la creatività (0.0-2.0)                           |
-| `top_p`       | float   | Controlla la diversità delle risposte                       |
-| `stream`      | boolean | Abilita lo streaming della risposta                         |
-| `user`        | string  | Identificativo univoco dell'utente finale                   |
+| `model`       | string  | Il modello da utilizzare (vedi [catalogo dei modelli](./models.md)) |
+| `messages`    | array   | Elenco dei messaggi della conversazione                         |
+| `max_tokens`  | integer | Numero massimo di token da generare                            |
+| `temperature` | float   | Controlla la creatività (0.0-2.0)                              |
+| `top_p`       | float   | Controlla la diversità delle risposte                            |
+| `stream`      | boolean | Attiva lo streaming della risposta                             |
+| `user`        | string  | Identificativo univoco dell'utente finale                     |
 
 ## URL di base
 
@@ -96,9 +120,10 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoint disponibili
 
 - `/chat/completions` : Generazione di risposte conversazionali
+- `/chat/completions/batch` : Elaborazione asincrona di più conversazioni ([guide Batch](./batch.md))
 - `/completions` : Completamento di testo semplice
 - `/embeddings` : Vettorizzazione per la ricerca semantica e RAG
-- `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatibile con SDK Cohere)
+- `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatible Cohere SDK)
 - `/audio/transcriptions` : Trascrizione audio batch (Whisper)
 - `/audio/speech` : Sintesi vocale (TTS)
 - `/images/generations` : Generazione di immagini
@@ -111,39 +136,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-**Risposta** :
-```json
-{
-  "object": "list",
-  "data": [
-    {
-      "id": "gpt-oss:120b",
-      "object": "model",
-      "created": 1749110897,
-      "owned_by": "CloudTemple",
-      "root": "gpt-oss:120b",
-      "aliases": ["gpt-oss:120b"],
-      "parent": null,
-      "max_model_len": 60000,
-      "permission": [
-        {
-          "id": "modelperm-granite3.3:8b-1749110897",
-          "object": "model_permission",
-          "created": 1749110897,
-          "allow_create_engine": false,
-          "allow_sampling": true,
-          "allow_logprobs": true,
-          "allow_search_indices": false,
-          "allow_view": true,
-          "allow_fine_tuning": false,
-          "organization": "*",
-          "group": null,
-          "is_blocking": false
-        }
-      ]
-    }
-  ]
-}
-```
-
-La risposta contiene tutti i modelli disponibili con le relative specifiche e autorizzazioni.
+La risposta fornisce gli identificatori esposti dall'API. Consultare inoltre il [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) per verificare le deprecazioni e i reindirizzamenti. I modelli utilizzati negli esempi sono illustrativi; verificare la loro disponibilità prima dell'esecuzione.

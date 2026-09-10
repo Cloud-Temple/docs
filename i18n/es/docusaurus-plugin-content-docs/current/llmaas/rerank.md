@@ -3,20 +3,20 @@ title: Reclasificación
 sidebar_position: 5
 ---
 
-# Reclasificación de Documentos
+# Reordenación de Documentos
 
-## ¿Qué es el reranking?
+## ¿Qué es el Reranking?
 
-El **reranking** es una etapa crucial en los pipelines RAG (Retrieval-Augmented Generation). Tras una búsqueda vectorial inicial (embedding), un modelo de reranking toma los `N` documentos candidatos y los **reordena** según una relevancia semántica fina respecto a la consulta del usuario.
+El **reranking** es una etapa crucial en los pipelines RAG (Retrieval-Augmented Generation). Después de una búsqueda vectorial inicial (embedding), un modelo de reranking toma los `N` documentos candidatos y los **reordena** por relevancia semántica fina con respecto a la consulta del usuario.
 
 ### ¿Por qué el Reranking mejora los resultados?
 
 ```
-Consulta del usuario
+Requête utilisateur
        │
        ▼
   ┌─────────────┐       ┌────────────────────────────────────┐
-  │  Embedding  │──────►│ Top-100 documentos (recherche      │
+  │  Embedding  │──────►│ Top-100 documents (recherche      │
   │  + Vector   │       │ vectorielle approximative/ANN)     │
   │  Search     │       └────────────────────────────────────┘
   └─────────────┘                         │
@@ -28,38 +28,37 @@ Consulta del usuario
                                └────────────────────┘
                                           │
                                           ▼
-                               Top-5 documentos ordenados
-                               por relevancia real
+                               Top-5 documents triés
+                               par pertinence réelle
 ```
 
 - La **búsqueda vectorial** (embedding) es rápida pero aproximada — calcula una similitud coseno en un espacio multidimensional
-- El **reranker** realiza un análisis cruzado fino de cada par (requête, document) y genera una puntuación de relevancia precisa
-- Resultado: un RAG con reranking tiene típicamente **+15 a +30 % de precisión** en las respuestas generadas
+- El **reranker** realiza un análisis cruzado detallado de cada par (consulta, documento) y produce una puntuación de relevancia precisa
+- Resultado: un RAG con reranking tiene típicamente **+15 a +30% de precisión** en las respuestas generadas
 
 ## Modelos Disponibles
 
-| Modelo | Editor | Contexto | LTS | Uso recomendado |
-|--------|---------|----------|-----|-----------------|
-| `nvidia/llama-nemotron-rerank-vl-1b-v2` | NVIDIA | 4 096 | No | **Recomendado** — precisión máxima, DSP 30/06/2027 |
-| `qwen3-reranker:4b` | Qwen Team | 4 096 | No | Alta calidad, comprensión contextual profunda |
-| `qwen3-reranker:0.6b` | Qwen Team | 4 096 | No | Compacto y rápido, ideal para baja latencia |
-| `bge-reranker-large` | BAAI | 512 | No | Multilingüe, alto rendimiento |
+Consulte el [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para los modelos de reranking, su contexto y sus fechas de descontinuación. Obtenga el identificador exacto expuesto por `GET /v1/models` ; los nombres pueden diferir de los nombres cortos utilizados en un anuncio.
 
-:::tip[¿Qué modelo elegir?]
-- **Producción RAG** : `nvidia/llama-nemotron-rerank-vl-1b-v2` — mayor precisión
-- **Baja latencia** : `qwen3-reranker:0.6b` — el más rápido
-- **Multilingüe** : `bge-reranker-large` — optimizado para múltiples idiomas
-:::
+Compare la relevancia del ranking en su corpus, los idiomas admitidos, la longitud de los documentos y la latencia. Los ejemplos a continuación utilizan `nvidia/llama-nemotron-rerank-vl-1b-v2` ; verifique su disponibilidad antes de la ejecución.
 
-## Tarificación
+## Tarifación
 
-**4,00 € / millón de tokens rerankeados** — aproximadamente **un 50% más económico** que los tokens de generación estándar.
+**4,00 € por millón de documentos procesados.** Una unidad de búsqueda (`search_unit`) corresponde a un documento sometido a reranking para una consulta.
 
-El número de tokens rerankeados corresponde a la suma de los tokens de la consulta y de cada documento procesado.
+Todos los documentos de la lista `documents` se cuentan. El parámetro `top_n` limita únicamente el número de resultados devueltos: no reduce el número de documentos procesados ni el costo de la consulta. Un mismo documento sometido en varias consultas se cuenta en cada procesamiento.
+
+```text
+Coût (€) = Nombre de documents traités × 4 / 1 000 000
+```
+
+**Ejemplo:** 1 000 consultas que contienen cada una 100 documentos representan 100 000 documentos procesados, lo que equivale a **0,40 €**, incluso si cada consulta solo devuelve los 5 primeros resultados (`top_n: 5`).
+
+Los contadores de tokens que eventualmente devuelva el motor no constituyen la unidad de facturación del reranking.
 
 ## Endpoints
 
-La API LLMaaS expone dos endpoints compatibles con el SDK Cohere:
+La API LLMaaS expone dos endpoints compatibles con el SDK de Cohere:
 
 | Endpoint | Versión | Compatible |
 |----------|---------|------------|
@@ -87,52 +86,63 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 ```
 
 ### Parámetros
+
 | Parámetro | Tipo | Obligatorio | Descripción |
 |-----------|------|-------------|-------------|
-| `model` | cadena | ✅ | ID del modelo de reranking |
-| `query` | cadena | ✅ | La consulta de búsqueda |
-| `documents` | array de cadenas | ✅ | Los documentos a reordenar |
-| `top_n` | entero | ❌ | Número de resultados a devolver (por defecto: todos) |
-| `return_documents` | booleano | ❌ | Incluir el texto de los documentos en la respuesta (por defecto: true) |
+| `model` | string | ✅ | ID del modelo de reranking |
+| `query` | string | ✅ | La consulta de búsqueda |
+| `documents` | array of strings | ✅ | Los documentos a reordenar |
+| `top_n` | integer | ❌ | Número de resultados a devolver (predeterminado: todos) |
+| `return_documents` | boolean | ❌ | Incluir el texto de los documentos en la respuesta (predeterminado: true) |
+
+### Formato de la Respuesta
+
+Extracto ilustrativo del formato Jina/vLLM descrito por el contrato de la plataforma. Las puntuaciones y contadores a continuación son ficticios. El proxy transmite la respuesta del motor y añade un bloque `backend`, omitido aquí.
 
 ```json
 {
-  "id": "rerank-7f3a2b1c4e5d",
+  "id": "score-8bb47ca195d8cb2f",
   "results": [
     {
       "index": 0,
-      "relevance_score": 0.9821,
+      "relevance_score": 0.0401,
       "document": {
-        "text": "Cloud Temple est hébergé exclusivement en France."
+        "text": "Cloud Temple est hébergé exclusivement en France.",
+        "multi_modal": null
       }
     },
     {
       "index": 2,
-      "relevance_score": 0.9743,
+      "relevance_score": 0.0253,
       "document": {
-        "text": "LLMaaS est qualifié SecNumCloud 3.2 par l'ANSSI."
+        "text": "LLMaaS est qualifié SecNumCloud 3.2 par l'ANSSI.",
+        "multi_modal": null
       }
     },
     {
       "index": 4,
-      "relevance_score": 0.9512,
+      "relevance_score": 0.0112,
       "document": {
-        "text": "Les données ne sont ni stockées ni transférées hors de France."
+        "text": "Les données ne sont ni stockées ni transférées hors de France.",
+        "multi_modal": null
       }
     }
   ],
   "usage": {
-    "billed_units": {
-      "search_units": 5
-    }
-  }
+    "prompt_tokens": 125,
+    "total_tokens": 125
+  },
+  "model": "nvidia/llama-nemotron-rerank-vl-1b-v2"
 }
 ```
 
 - `results` : Documentos ordenados por puntuación decreciente
 - `index` : Posición original en el array `documents` enviado
-- `relevance_score` : Puntuación de relevancia entre 0 y 1 (cuanto mayor sea, más relevante)
-- `search_units` : Número de documentos reordenados (para facturación)
+- `relevance_score` : Puntuación bruta del modelo (logit), no normalizada y no asimilable a una probabilidad. Una puntuación más alta indica un documento mejor clasificado para esta consulta; no se garantiza un rango universal de 0 a 1.
+- `document` : Texto y posibles datos multimodales del documento, cuando el motor los devuelve.
+- `usage.prompt_tokens` y `usage.total_tokens` : Contadores de tokens del motor. No constituyen la unidad de facturación del reranking.
+
+El número de documentos facturados no depende de la presencia de un campo `search_units` en la respuesta: todos los documentos enviados se cuentan, según la [tarification](#tarifación).
 
 ## Ejemplos de Implementación
 
@@ -196,7 +206,7 @@ for result in results:
 import cohere
 import os
 
-# El SDK de Cohere apunta a la API LLMaaS
+# El SDK Cohere apunta a la API LLMaaS
 co = cohere.Client(
     api_key=os.getenv("LLMAAS_API_KEY"),
     base_url="https://api.ai.cloud-temple.com"
@@ -245,7 +255,7 @@ def vector_search(query_vector: list[float], top_k: int = 20) -> list[str]:
     Retourne les top_k documents candidats.
     [Implémentation spécifique à votre stack vectorielle]
     """
-    # Ejemplo ficticio — reemplace por su lógica de búsqueda
+    # Ejemplo ficticio — reemplácelo con su lógica de búsqueda
     return [f"Document candidat {i}" for i in range(top_k)]
 
 def rerank_documents(query: str, documents: list[str], top_n: int = 5) -> list[str]:
@@ -307,7 +317,7 @@ def rag_pipeline(query: str) -> str:
     print("🔍 Recherche vectorielle (top-20)...")
     candidates = vector_search(query_vector, top_k=20)
     
-    # 3. Reordenamiento (selección de top-5)
+    # 3. Reranking (selección de top-5)
     print("📊 Reranking (→ top-5)...")
     top_docs = rerank_documents(query, candidates, top_n=5)
     
@@ -329,40 +339,31 @@ if __name__ == "__main__":
 ### Optimización de Costos
 
 ```python
-# ✅ CORRECTO: Rerankear un subconjunto razonable (20-50 docs)
+# ✅ BUENO : Reranker sobre un subconjunto razonable (20-50 docs)
 candidates = vector_search(query_vector, top_k=20)
 top_docs = rerank_documents(query, candidates, top_n=5)
 
-# ❌ INCORRECTO: Rerankear toda la base de datos (1000+ docs)
+# ❌ MALO : Reranker toda la base de datos (1000+ docs)
 # candidates = all_documents  # Demasiado lento y costoso
 ```
 
-### Selección de `top_n`
+### Elección de `top_n`
 
-| Caso de uso | `top_k` (búsqueda) | `top_n` (reclasificación) |
+| Caso de uso | `top_k` (search) | `top_n` (rerank) |
 |------------|-----------------|-----------------|
 | Chat/QA simple | 10-20 | 3-5 |
-| Análisis de documento | 20-50 | 5-10 |
+| Análisis de documentos | 20-50 | 5-10 |
 | Síntesis compleja | 50-100 | 10-15 |
 
 ### Umbral de Relevancia
 
-```python
-# Filtra los documentos poco relevantes (score < 0.3)
-RELEVANCE_THRESHOLD = 0.3
+Comience utilizando la clasificación relativa y `top_n` para seleccionar los documentos. No existe un umbral universal, como 0,3, aplicable a todos los modelos y corpus.
 
-def rerank_with_threshold(query: str, documents: list[str]) -> list[str]:
-    results = rerank_documents(query, documents, top_n=len(documents))
-    return [
-        documents[r["index"]] 
-        for r in results 
-        if r["relevance_score"] >= RELEVANCE_THRESHOLD
-    ]
-```
+Si su aplicación debe descartar los documentos poco relevantes, calibre un umbral en un conjunto representativo de consultas y documentos cuya relevancia haya sido evaluada. Mida los documentos relevantes conservados y aquellos eliminados por error. Reevalúe este umbral al cambiar de modelo o de corpus; no compare directamente las puntuaciones de modelos diferentes.
 
 ## Recursos
 
 - **Código de ejemplo completo** : [`exemples/simple_rerank/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rerank)
-- **Catálogo de modelos** : [Modelos de Reranking](./models#modelos-de-reranking)
+- **Catálogo de modelos** : [Modèles de Reranking](./models#modelos-de-reranking)
 - **Referencia de la API** : [POST /v1/rerank](./api#post-v1rerank)
-- **RAG Explicado** : [Guía completa de RAG](./rag_explained)
+- **RAG Explicado** : [Guide complet RAG](./rag_explained)

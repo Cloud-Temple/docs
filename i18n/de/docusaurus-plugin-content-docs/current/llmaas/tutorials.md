@@ -1,36 +1,59 @@
 ---
-title: Tutorials
+title: Tutorials 
 sidebar_position: 6
 ---
 
 # Tutorials LLMaaS
 
-## Overview
+:::info[Modelle auswählen, bevor Sie die Beispiele ausführen]
+Die verwendeten Kennungen veranschaulichen die Integrationen. Überprüfen Sie deren Verfügbarkeit mit `GET /v1/models`, deren Fähigkeiten und deren [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle). Passen Sie die Konfiguration an Ihre Nutzung an; ein älterer Name kann auf einen Nachfolger umgeleitet werden.
+:::
 
-These advanced tutorials cover integration, optimization, and best practices for fully leveraging LLMaaS Cloud Temple in production. Each tutorial includes tested code and real performance metrics.
+## Übersicht
 
-## 🚀 LangChain Integrations and Frameworks
+Diese Tutorials stellen Beispiele für die Integration mit LLMaaS vor. Der Umfang der Überprüfungen der LangChain-Beispiele wird unten erläutert; die Ergebnisse und Demonstrationsdaten stellen keine Leistungsmaße des Dienstes dar.
 
-### 1. Basic Integration with LangChain
+## 🚀 LangChain-Integrationen und Frameworks
 
-This first example demonstrates how to integrate our LLMaaS API with the popular framework LangChain by creating a custom "wrapper." A wrapper is a class that "wraps" our API to make it compatible with LangChain's internal mechanisms.
+### LangChain-Voraussetzungen
+
+Die LangChain-Beispiele 1 bis 4 sowie die der [API-Referenz](./api.md#langchain) wurden am 7. September 2026 mit Python 3.13.15 und den folgenden Versionen überprüft. Installieren Sie diese in einer dedizierten Umgebung :
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install \
+  langchain-classic==1.0.8 langchain-core==1.6.2 langchain-openai==1.6.0 \
+  langchain-community==0.4.2 langchain-text-splitters==1.1.2 \
+  langchain-qdrant==1.1.0 qdrant-client==1.19.0 faiss-cpu==1.15.0 \
+  pydantic==2.13.5 python-dotenv==1.2.3 requests==2.34.2 httpx==0.28.1
+```
+
+Diese Versionen definieren eine Referenzumgebung ; prüfen Sie die Beispiele erneut, bevor Sie die Abhängigkeiten aktualisieren.
+
+Die historischen Chains `LLMChain`, `RetrievalQA` und der ReAct-Agent in diesen Tutorials verwenden `langchain-classic`, gemäß dem [LangChain-Migrationsleitfaden](https://docs.langchain.com/oss/python/migrate/langchain-v1). Diese Entscheidung bewahrt die Struktur der bestehenden Beispiele ; einige Klassen geben Deprecation-Warnungen aus. Für ein neues Projekt konsultieren Sie die von LangChain aktuell empfohlenen Schnittstellen.
+
+**Durchgeführte Überprüfungen :** Laden der Beispiele, Aufruf des Wrappers, Suche und Generierung mit FAISS und Qdrant im Speicher, Ausführung eines Tools durch den Agenten, Chat und Embeddings der API-Referenz. Die HTTP-Antworten von LLMaaS wurden simuliert und der Netzwerkzugriff blockiert. Diese Überprüfungen validieren weder Produktionsmodelle noch die Verbindung zu einem entfernten Qdrant-Server.
+
+### 1. Grundlegende Integration mit LangChain
+
+Dieses erste Beispiel zeigt, wie unsere LLMaaS-API mit dem beliebten Framework LangChain integriert wird, indem ein benutzerdefinierter "Wrapper" erstellt wird. Ein Wrapper ist eine Klasse, die unsere API "umhüllt", um sie mit den internen Mechanismen von LangChain kompatibel zu machen.
 
 #### Der Code erklärt
 
-Der folgende Code definiert eine Klasse `CloudTempleLLM`, die von der Basisklasse `LLM` von LangChain erbt. Dadurch können wir ein maßgeschneidertes Verhalten definieren, während wir gleichzeitig mit dem LangChain-Ökosystem (Chains, Agents usw.) kompatibel bleiben.
+Der folgende Code definiert eine Klasse `CloudTempleLLM`, die von der Basisklasse `LLM` von LangChain erbt. Dies ermöglicht es uns, ein benutzerdefiniertes Verhalten zu definieren, während die Kompatibilität mit dem LangChain-Ökosystem (Chains, Agents usw.) erhalten bleibt.
 
-1. **`CloudTempleLLM(LLM)`** : Unsere Klasse erbt von `LLM`, was uns verpflichtet, bestimmte Methoden zu implementieren, insbesondere `_call`.
-2. **`_call(self, prompt: str, ...)`** : Dies ist das Herzstück unseres Wrappers. Jedes Mal, wenn LangChain unseren Sprachmodell aufrufen muss, ruft es diese Methode auf. Innerhalb dieser Methode formatieren wir eine standardmäßige HTTP-POST-Anfrage mit den richtigen Headern (`Authorization`) und dem erwarteten `payload` für unsere API `/v1/chat/completions`.
-3. **`beispiel_langchain_basic()`** : Diese Demonstrationsfunktion zeigt, wie man unseren Wrapper verwendet. Wir instanziieren ihn, erstellen ein `PromptTemplate`, um unsere Anfrage zu strukturieren, und kombinieren beides in einer `LLMChain`. Wenn wir die Kette ausführen (`chain.run(...)`), LangChain im Hintergrund die von uns definierte Methode `_call` aufruft.
+1. **`CloudTempleLLM(LLM)`** : Unsere Klasse erbt von `LLM`, was uns zur Implementierung bestimmter Methoden, insbesondere `_call`, verpflichtet.
+2. **`_call(self, prompt: str, ...)`** : Dies ist der Kern unseres Wrappers. Jedes Mal, wenn LangChain unser Sprachmodell aufrufen muss, wird diese Methode aufgerufen. Innerhalb dieser Methode formatieren wir eine standardmäßige HTTP-POST-Anfrage mit den richtigen Headern (`Authorization`) und der von unserer API `/v1/chat/completions` erwarteten `payload`.
+3. **`exemple_langchain_wrapper()`** : Diese Demonstrationsfunktion zeigt, wie unser Wrapper verwendet wird. Wir instanziieren ihn, erstellen ein `PromptTemplate`, um unsere Anfrage zu strukturieren, und kombinieren sie in einer `LLMChain`. Wenn wir die Chain ausführen (`chain.invoke(...)`), ruft LangChain im Hintergrund die von uns definierte `_call`-Methode auf.
 
-Diese Vorgehensweise ist nützlich, wenn Sie vollständige Kontrolle über die Interaktion von LangChain mit der API haben möchten, ist aber aufwändiger als die Verwendung des Clients `ChatOpenAI` (siehe [API-Referenz](./api#langchain)).
+Dieser Ansatz ist nützlich, wenn Sie die volle Kontrolle darüber haben möchten, wie LangChain mit der API interagiert, ist jedoch ausführlicher als die Verwendung des `ChatOpenAI`-Clients (siehe [API Reference](./api#langchain)).
 
 ```python
 # Installation der Abhängigkeiten
-# pip install langchain requests pydantic
+# Siehe die validierten Versionen in den LangChain-Voraussetzungen oben.
 
-from langchain.llms.base import LLM
-from langchain.schema import LLMResult, Generation
+from langchain_core.language_models.llms import LLM
 from typing import Optional, List, Any
 from pydantic import Field
 import requests
@@ -38,30 +61,30 @@ import json
 import os
 
 # --- Konfiguration ---
-# It is recommended to store your API key in an environment variable
-API_KEY = os.getenv("LLMAAS_API_KEY", "your-api-key-here")
+# Es wird empfohlen, Ihren API-Schlüssel in einer Umgebungsvariablen zu speichern
+API_KEY = os.getenv("LLMAAS_API_KEY", "votre-clé-api-ici")
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 class CloudTempleLLM(LLM):
     """
-    Custom LangChain wrapper for the Cloud Temple LLMaaS API.
-    This class enables using our API as a standard LLM within LangChain.
+    Wrapper LangChain personnalisé pour l'API LLMaaS de Cloud Temple.
+    Cette classe permet d'utiliser notre API comme un LLM standard dans LangChain.
     """
     
     api_key: str = Field(default="")
-    model_name: str = Field(default="granite3.3:8b")
+    model_name: str = Field(default="gpt-oss:120b")
     temperature: float = Field(default=0.7)
     max_tokens: int = Field(default=1000)
     
     @property
     def _llm_type(self) -> str:
-        """Unique identifier for our LLM type."""
+        """Identifiant unique pour notre type de LLM."""
         return "cloud_temple_llmaas"
     
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         """
-        Main method that makes the call to the LLMaaS API.
-        LangChain uses this method for each request to the model.
+        La méthode principale qui effectue l'appel à l'API LLMaaS.
+        LangChain utilise cette méthode pour chaque requête au modèle.
         """
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -78,7 +101,7 @@ class CloudTempleLLM(LLM):
         if stop:
             payload["stop"] = stop
         
-        # Execute POST request to the API
+        # Ausführung der POST-Anfrage an die API
         response = requests.post(
             f"{BASE_URL}/chat/completions",
             headers=headers,
@@ -86,33 +109,33 @@ class CloudTempleLLM(LLM):
             timeout=60
         )
         
-        response.raise_for_status()  # Raises an exception on HTTP error
+        response.raise_for_status()  # Lève une exception en cas d'erreur HTTP
         result = response.json()
         
-        # Returns the content of the assistant's message
+        # Gibt den Inhalt der Assistenten-Nachricht zurück
         return result['choices'][0]['message']['content']
 
-# --- Beispiel zur Verwendung ---
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
+# --- Beispielverwendung ---
+from langchain_classic.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
 
-def beispiel_langchain_wrapper():
-    """Zeigt die Verwendung des LLM-Wrappers mit einer LangChain-Kette."""
+def exemple_langchain_wrapper():
+    """Démontre l'utilisation du wrapper LLM avec une chaîne LangChain."""
     
-    # 1. Initialisierung unseres benutzerdefinierten LLMs
+    # 1. Initialisierung unseres benutzerdefinierten LLM
     llm = CloudTempleLLM(
         api_key=API_KEY,
-        model_name="granite3.3:8b"
+        model_name="gpt-oss:120b"
     )
     
-    # 2. Erstellung eines Prompt-Vorlage zum Strukturieren der Anfragen
+    # 2. Erstellung eines Prompt-Templates zur Strukturierung der Anfragen
     template = """
-    Sie sind ein Experte im Bereich {domaine}. 
-    Beantworten Sie die folgende Frage detailliert und professionell:
+    Tu es un expert en {domaine}. 
+    Réponds à cette question de manière détaillée et professionnelle :
     
-    Frage: {question}
+    Question: {question}
     
-    Antwort:
+    Réponse:
     """
     prompt = PromptTemplate(
         input_variables=["domaine", "question"],
@@ -123,43 +146,43 @@ def beispiel_langchain_wrapper():
     chain = LLMChain(llm=llm, prompt=prompt)
     
     # 4. Ausführung der Kette mit spezifischen Variablen
-    result = chain.run(
-        domaine="Cybersicherheit",
-        question="Welche sind die besten Praktiken zur Sicherung einer REST-API?"
-    )
+    result = chain.invoke({
+        "domaine": "cybersécurité",
+        "question": "Quelles sont les meilleures pratiques pour sécuriser une API REST ?"
+    })
     
-    return result
+    return result["text"]
 
-# --- Start the test ---
+# --- Teststart ---
 if __name__ == "__main__":
-    if API_KEY == "your-api-key-here":
-        print("Please set your LLMAAS_API_KEY in your environment variables.")
+    if API_KEY == "votre-clé-api-ici":
+        print("Veuillez configurer votre LLMAAS_API_KEY dans vos variables d'environnement.")
     else:
-        response = example_langchain_wrapper()
-        print("Response from the cybersecurity expert:\n")
-        print(response)
+        reponse = exemple_langchain_wrapper()
+        print("Réponse de l'expert en cybersécurité :\n")
+        print(reponse)
 ```
 
-### 2. RAG (Retrieval-Augmented Generation) with the LLMaaS API
+### 2. RAG (Retrieval-Augmented Generation) mit der LLMaaS-API
 
-RAG is a powerful technique that enables a large language model (LLM) to answer questions by leveraging an external knowledge base. This tutorial guides you through building a simple RAG pipeline using our API for embeddings and generation, and FAISS, a vector similarity library, to create an in-memory index.
+RAG ist eine leistungsstarke Technik, die es einem LLM ermöglicht, Fragen zu beantworten, indem er auf eine externe Wissensdatenbank zurückgreift. Dieses Tutorial führt Sie durch die Erstellung einer einfachen RAG-Pipeline unter Verwendung unserer API für Embeddings und Generierung sowie von FAISS, einer Bibliothek für Vektorsimilarität, um einen Index im Speicher zu erstellen.
 
 #### Der Code erklärt
 
-Der Pipeline besteht aus mehreren logischen Schritten:
+Der Pipeline gliedert sich in mehrere logische Schritte :
 
-1. **Konfiguration**: Wir importieren die erforderlichen Bibliotheken und laden unsere API-Schlüssel aus den Umgebungsvariablen. Wir definieren die zu verwendenden Modelle: `granite-embedding:278m` für die Vektorisierung und `granite3.3:8b` für die Antwortgenerierung.
-2. **`LLMaaSEmbeddings`**: Wie im vorherigen Beispiel benötigen wir einen Wrapper, um mit unserer Embeddings-API zu interagieren. Diese Klasse ist dafür verantwortlich, Textstücke (chunks) in numerische Vektoren (Embeddings) zu transformieren.
-3. **`setup_rag_pipeline`**: Diese Funktion orchestriert die Erstellung der Pipeline.
-    * **Dokumentenladen**: `DirectoryLoader` lädt die Textdateien unserer Wissensbasis.
-    * **Aufteilung in Chunks**: `RecursiveCharacterTextSplitter` teilt die Dokumente in kleinere Stücke auf. Dies ist entscheidend hat, damit das Embedding-Modell den Text effizient verarbeiten kann und die Ähnlichkeitssuche präzise ist.
-    * **Vektorisierung und Indizierung**: `FAISS.from_documents` ist ein entscheidender Schritt. Er nimmt die Textchunks, verwendet unsere Klasse `LLMaaSEmbeddings`, um die entsprechenden Vektoren über die API abzurufen, und speichert diese Vektoren im FAISS-Index im Speicher.
-    * **Konfiguration des LLM**: Wir verwenden `ChatOpenAI`, das nativ mit unserer API für die Antwortgenerierung kompatibel ist.
-    * **Erstellung der Chain `RetrievalQA`**: Dies ist die LangChain-Chain, die alle Komponenten verbindet. Wenn wir ihr eine Frage stellen, führt sie folgende Schritte aus:
-        a. Nutzt den `retriever` (basierend auf unserem FAISS-Index), um die relevantesten Textchunks zu finden.
-        b. „Füllt“ (stuff) diese Chunks zusammen mit der Frage in einen Prompt.
-        c. Sendet diesen erweiterten Prompt an das LLM, um eine kontextbasierte Antwort zu generieren.
-4. **Ausführung**: Die Funktion `main` simuliert eine reale Nutzung, indem sie temporäre Wissensdateien erstellt, die Pipeline aufbaut und eine Frage stellt.
+1. **Konfiguration** : Wir importieren die erforderlichen Bibliotheken und laden unseren API-Schlüssel aus den Umgebungsvariablen. Wir definieren die zu verwendenden Modelle : `granite-embedding:278m` für die Vektorisierung und `gpt-oss:120b` für die Generierung.
+2. **`OpenAIEmbeddings`** : Der Standardclient sendet die Texte an LLMaaS mit `check_embedding_ctx_length=False` und fordert numerische Vektoren mit `encoding_format="float"` an. Die Aufteilung der Dokumente erfolgt vor dem Aufruf ; siehe [réglages embeddings](./api.md#verwendung-von-embeddings).
+3. **`setup_rag_pipeline`** : Diese Funktion orchestriert die Erstellung des Pipelines.
+    * **Laden der Dokumente** : `DirectoryLoader` lädt die Textdateien aus unserem Wissensspeicher.
+    * **Aufteilung in Chunks** : `RecursiveCharacterTextSplitter` teilt die Dokumente in kleinere Abschnitte auf. Dies ist entscheidend, damit das Embedding-Modell den Text effizient verarbeiten und die Ähnlichkeitssuche präzise durchführen kann.
+    * **Vektorisierung und Indexierung** : `FAISS.from_documents` ist ein entscheidender Schritt. Er übernimmt die Text-Chunks, nutzt den `OpenAIEmbeddings`-Client, um die API aufzurufen und die entsprechenden Vektoren zu erhalten, und speichert diese anschließend in einem FAISS-Index im Arbeitsspeicher.
+    * **LLM-Konfiguration** : Wir verwenden `ChatOpenAI`, das nativ mit unserer API für den Antwortgenerierungsprozess kompatibel ist.
+    * **Erstellung der `RetrievalQA`-Kette** : Dies ist die LangChain-Kette, die alle Elemente verbindet. Wenn sie eine Frage gestellt bekommt, führt sie Folgendes aus :
+        a. Nutzt den `retriever` (basierend auf unserem FAISS-Index), um die relevantesten Text-Chunks zu finden.
+        b. "Stuff" (fügt) diese Chunks zusammen mit der Frage in einen Prompt ein.
+        c. Sendet diesen angereicherten Prompt an das LLM, um eine kontextbezogene Antwort zu generieren.
+4. **Ausführung** : Die Funktion `main` simuliert einen realen Einsatz, indem sie temporäre Wissensdateien erstellt, den Pipeline aufbaut und eine Frage stellt.
 
 ```python
 import os
@@ -167,117 +190,78 @@ import tempfile
 import shutil
 from pathlib import Path
 from dotenv import load_dotenv
-from typing import List
 
-# --- Imports LangChain ---
-from langchain_core.embeddings import Embeddings
-from langchain_openai import ChatOpenAI
+# --- LangChain-Importe ---
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain.chains import RetrievalQA
+from langchain_classic.chains import RetrievalQA
 
 # --- Konfiguration ---
-# Lädt Umgebungsvariablen (z. B. LLMAAS_API_KEY)
+# Lädt die Umgebungsvariablen (z. B. LLMAAS_API_KEY)
 load_dotenv()
 API_KEY = os.getenv("LLMAAS_API_KEY")
 BASE_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 EMBEDDING_MODEL = "granite-embedding:278m"
-LLM_MODEL = "granite3.3:8b"
-
-# --- Custom Embedding Class ---
-class LLMaaSEmbeddings(Embeddings):
-    """Custom embedding class for the Cloud Temple LLMaaS API."""
-    def __init__(self, api_key: str, model_name: str):
-        if not api_key:
-            raise ValueError("The LLMaaS API key cannot be empty.")
-        self.api_key = api_key
-        self.model_name = model_name
-        self.base_url = BASE_URL
-        self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-        }
-
-    def _embed(self, texts: List[str]) -> List[List[float]]:
-        import httpx
-        payload = {"input": texts, "model": self.model_name}
-        try:
-            with httpx.Client(timeout=60.0) as client:
-                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
-                response.raise_for_status()
-                data = response.json()['data']
-                data.sort(key=lambda e: e['index'])
-                return [item['embedding'] for item in data]
-        except httpx.HTTPStatusError as e:
-            print(f"HTTP error during embedding generation: {e.response.text}")
-            raise
-        except Exception as e:
-            print(f"An unexpected error occurred during embedding generation: {e}")
-            raise
-
-    def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        return self._embed(texts)
-
-    def embed_query(self, text: str) -> List[float]:
-        # The _embed method expects a list, so we wrap the single text.
-        return self._embed([text])[0]
+LLM_MODEL = "gpt-oss:120b"
 
 # --- RAG-Pipeline ---
 def setup_rag_pipeline(documents_path: str):
-    """Vollständige Konfiguration der RAG-Pipeline mit LLMaaS-Tools."""
-    print("1. Laden und Aufteilung der Dokumente...")
+    """Configuration complète du pipeline RAG avec les outils LLMaaS."""
+    print("1. Chargement et division des documents...")
     loader = DirectoryLoader(documents_path, glob="*.txt", loader_cls=TextLoader, loader_kwargs={'encoding': 'utf-8'})
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splits = text_splitter.split_documents(documents)
-    print(f"   -> {len(documents)} Dokument(e) geladen und in {len(splits)} Chunks aufgeteilt.")
-
-    print(f"2. Erstellung von Embeddings über LLMaaS (Modell: {EMBEDDING_MODEL})...")
-    embeddings = LLMaaSEmbeddings(api_key=API_KEY, model_name=EMBEDDING_MODEL)
-
-    print("3. Erstellung des vektorbasierten Index im Speicher (FAISS)...")
+    print(f"   -> {len(documents)} document(s) chargé(s) et divisé(s) en {len(splits)} chunks.")
+    
+    print(f"2. Création des embeddings via LLMaaS (modèle: {EMBEDDING_MODEL})...")
+    embeddings = OpenAIEmbeddings(
+        api_key=API_KEY,
+        base_url=BASE_URL,
+        model=EMBEDDING_MODEL,
+        check_embedding_ctx_length=False,
+        model_kwargs={"encoding_format": "float"},
+    )
+    
+    print("3. Création de l'index vectoriel en mémoire (FAISS)...")
     vectorstore = FAISS.from_documents(splits, embeddings)
-    print("   -> FAISS-Index erfolgreich erstellt.")
-
-    print(f"4. Konfiguration des LLM (Modell: {LLM_MODEL})...")
-    # Korrektur für Kompatibilität mit Pydantic/LangChain
-    from langchain_core.caches import BaseCache
-    from langchain_core.callbacks.base import Callbacks
-    ChatOpenAI.model_rebuild()
-
+    print("   -> Index FAISS créé avec succès.")
+    
+    print(f"4. Configuration du LLM (modèle: {LLM_MODEL})...")
     llm = ChatOpenAI(
         api_key=API_KEY,
         base_url=BASE_URL,
         model=LLM_MODEL,
         temperature=0.3,
-        model_kwargs={"max_tokens": 300}
+        max_tokens=300
     )
-
-    print("5. Erstellung der Frage-Antwort-Kette (RAG)...")
+    
+    print("5. Création de la chaîne de Question/Réponse (RAG)...")
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
         retriever=vectorstore.as_retriever(),
         return_source_documents=True
     )
-    print("   -> RAG-Pipeline ist bereit.")
+    print("   -> Pipeline RAG prêt.")
     return qa_chain
 
-# --- Execution ---
+# --- Ausführung ---
 def main():
-    """Hauptfunktion zum Ausführen des vollständigen RAG-Pipelines."""
+    """Fonction principale pour exécuter le pipeline RAG de bout en bout."""
     if not API_KEY:
-        print("Fehler: Die Umgebungsvariable LLMAAS_API_KEY ist nicht definiert.")
+        print("Erreur: La variable d'environnement LLMAAS_API_KEY n'est pas définie.")
         return
 
-    # Erstellen temporärer Testdokumente
+    # Temporäre Testdokumente erstellen
     temp_dir = tempfile.mkdtemp()
-    print(f"\nErstellung von Testdokumenten in: {temp_dir}")
+    print(f"\nCréation de documents de test dans: {temp_dir}")
     try:
         documents_content = {
-            "overview.txt": "Cloud Temple ist ein französischer Anbieter von souveränem Cloud-Computing mit der Zertifizierung SecNumCloud.",
-            "pricing.txt": "Die Preise für die LLMaaS-API betragen 1,90 € pro Million Eingabetokens und 8 € pro Million Ausgabetokens."
+            "overview.txt": "Cloud Temple est un fournisseur de cloud souverain français qualifié SecNumCloud.",
+            "pricing.txt": "Les tarifs de l'API LLMaaS sont de 1.9€/million de tokens en entrée et 8€/million en sortie."
         }
         for filename, content in documents_content.items():
             with open(Path(temp_dir) / filename, 'w', encoding='utf-8') as f:
@@ -286,124 +270,106 @@ def main():
         # Pipeline konfigurieren und ausführen
         rag_chain = setup_rag_pipeline(temp_dir)
         
-        print("\n--- Abfrage der RAG-Pipeline ---")
-        question = "Was sind die Preise für Ausgabetokens der LLMaaS-API von Cloud Temple?"
-        result = rag_chain({"query": question})
+        print("\n--- Interrogation du Pipeline RAG ---")
+        question = "Quel est le tarif des tokens en sortie sur l'API LLMaaS de Cloud Temple ?"
+        result = rag_chain.invoke({"query": question})
         
-        print(f"\nFrage: {question}")
-        print(f"Antwort: {result['result']}")
-        print("\nVerwendete Quellen für die Antwort:")
+        print(f"\nQuestion: {question}")
+        print(f"Réponse: {result['result']}")
+        print("\nSources utilisées pour la réponse:")
         for source in result["source_documents"]:
-            print(f"- Datei: {os.path.basename(source.metadata['source'])}")
-            print(f"  Inhalt: \"{source.page_content}\"")
+            print(f"- Fichier: {os.path.basename(source.metadata['source'])}")
+            print(f"  Contenu: \"{source.page_content}\"")
 
     finally:
-        # Temporäres Verzeichnis bereinigen
-        print(f"\nBereinigung des temporären Verzeichnisses: {temp_dir}")
+        # Temporären Ordner bereinigen
+        print(f"\nNettoyage du répertoire temporaire: {temp_dir}")
         shutil.rmtree(temp_dir)
 
 if __name__ == "__main__":
     main()
 ```
 
-### 3. Integration mit einer vektorbasierten Datenbank (Qdrant)
+### 3. Integration mit einer Vektordatenbank (Qdrant)
 
-Für RAG-Anwendungen in der Produktion wird die Verwendung einer spezialisierten vektorbasierten Datenbank wie **Qdrant** empfohlen. Im Gegensatz zu FAISS, das im Arbeitsspeicher arbeitet, bietet Qdrant Datenpersistenz, erweiterte Suchfunktionen und eine bessere Skalierbarkeit.
+Für RAG-Anwendungen in der Produktion wird die Verwendung einer dedizierten Vektordatenbank wie **Qdrant** empfohlen. Im Gegensatz zu FAISS, das im Speicher arbeitet, bietet Qdrant Datenpersistenz, erweiterte Suchfunktionen und eine bessere Skalierbarkeit.
 
-#### Code erläutert
+#### Der Code erklärt
 
-Dieses Tutorial passt den vorherigen RAG-Pipeline-Ansatz an, um Qdrant zu verwenden.
+Dieses Tutorial passt die vorherige RAG-Pipeline an, um Qdrant zu verwenden.
 
-1. **Voraussetzungen**: Der erste Schritt besteht darin, eine Qdrant-Instanz zu starten. Der einfachste Weg hierfür ist die Verwendung von Docker.
-2. **`setup_qdrant_rag_pipeline`**:
-    * **Embeddings und Dokumente**: Die Erstellung von Embeddings und Dokumenten bleibt identisch mit dem vorherigen Beispiel.
-    * **Verbindung zu Qdrant**: Anstelle eines FAISS-Indexes verwenden wir `Qdrant.from_documents`. Diese Methode von LangChain verarbeitet mehrere Schritte:
-        a. Sie verbindet sich mit Ihrer Qdrant-Instanz über die bereitgestellte URL.
-        b. Sie erstellt eine neue "Collection" (das Äquivalent einer Tabelle in einer SQL-Datenbank), falls sie noch nicht existiert.
-        c. Sie ruft unsere Klasse `LLMaaSEmbeddings` auf, um die Dokumente zu vektorisieren.
+1. **Voraussetzungen** : Der erste Schritt besteht darin, eine Qdrant-Instanz zu starten. Der einfachste Weg ist die Verwendung von Docker.
+2. **`setup_qdrant_rag_pipeline`** :
+    * **Embeddings und Dokumente** : Die Erstellung der Embeddings und Dokumente bleibt identisch mit dem vorherigen Beispiel.
+    * **Verbindung zu Qdrant** : Anstatt einen FAISS-Index zu erstellen, verwenden wir `QdrantVectorStore.from_documents`. Diese LangChain-Methode übernimmt mehrere Schritte:
+        a. Sie stellt eine Verbindung zu Ihrer Qdrant-Instanz über die bereitgestellte URL her.
+        b. Sie erstellt eine neue "Collection" (das Äquivalent zu einer Tabelle in einer SQL-Datenbank), falls sie nicht bereits existiert.
+        c. Sie ruft den `OpenAIEmbeddings`-Client auf, um die Dokumente zu vektoriisieren.
         d. Sie fügt die Dokumente und ihre Vektoren in die Qdrant-Collection ein.
-    * **`force_recreate=True`**: Für dieses Tutorial verwenden wir diesen Parameter, um sicherzustellen, dass die Collection bei jeder Ausführung leer ist. In der Produktion setzen Sie ihn auf `False`, um Ihre Daten beizubehalten.
-3. **Der Rest des Pipelines** (Konfiguration des LLM, Erstellung der Kette `RetrievalQA`) bleibt unverändert, was die Flexibilität von LangChain verdeutlicht: Es genügt, die Quelle des `retriever` (Informationsrecherche-Modul) zu wechseln, um von FAISS auf Qdrant zu wechseln.
+    * **`force_recreate=True`** : Für dieses Tutorial verwenden wir diesen Parameter, um sicherzustellen, dass die Collection bei jeder Ausführung leer ist. In der Produktion würden Sie ihn auf `False` setzen, um Ihre Daten zu behalten.
+3. **Der Rest der Pipeline** (Konfiguration des LLM, Erstellung der Chain `RetrievalQA`) ist identisch, was die Flexibilität von LangChain demonstriert: Es reicht aus, die Quelle des `retriever` (Retrievers) zu ändern, um von FAISS zu Qdrant zu wechseln.
 
-:::info[Voraussetzungen: Qdrant starten]
-Für dieses Tutorial benötigen Sie eine Qdrant-Instanz. Sie können sie einfach mit Docker starten:
+:::info[Prérequis : Lancer Qdrant]
+Für dieses Tutorial benötigen Sie eine Qdrant-Instanz. Sie können diese problemlos mit Docker starten:
 
 ```bash
-# 1. Download the latest Qdrant image  
+# 1. Télécharger la dernière image de Qdrant
 docker pull qdrant/qdrant
 
-# 2. Start the Qdrant container
+# 2. Démarrer le conteneur Qdrant
 docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
-
 :::
 
-The code below shows how to adapt the RAG pipeline to use Qdrant as the vector database.
+Der folgende Code zeigt, wie Sie die RAG-Pipeline anpassen, um Qdrant als Vektordatenbank zu verwenden. Die Demonstrationsdokumente sind kurz; für Ihre eigenen Dokumente wenden Sie eine vorherige Aufteilung an, wie im FAISS-Tutorial beschrieben.
 
 ```python
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-from langchain.chains import RetrievalQA
-from langchain_community.vectorstores import Qdrant
-from langchain.docstore.document import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from typing import List
-from langchain_core.embeddings import Embeddings
-
-# (The LLMaaSEmbeddings class is the same as in the previous example,
-# We reuse it here. Make sure it is defined in your script.)
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_classic.chains import RetrievalQA
+from langchain_qdrant import QdrantVectorStore
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # --- Konfiguration ---
 load_dotenv()
 API_KEY = os.getenv("LLMAAS_API_KEY")
 BASE_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 EMBEDDING_MODEL = "granite-embedding:278m"
-LLM_MODEL = "granite3.3:8b"
+LLM_MODEL = "gpt-oss:120b"
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_COLLECTION_NAME = "tutorial_collection"
 
-# --- Embedding Class (reused from previous example) ---
-class LLMaaSEmbeddings(Embeddings):
-    def __init__(self, api_key: str, model_name: str):
-        if not api_key: raise ValueError("API Key is required.")
-        self.api_key, self.model_name, self.base_url = api_key, model_name, BASE_URL
-        self.headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
-    def _embed(self, texts: List[str]) -> List[List[float]]:
-        import httpx
-        payload = {"input": texts, "model": self.model_name}
-        with httpx.Client(timeout=60.0) as client:
-            r = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
-            r.raise_for_status()
-            data = r.json()['data']
-            data.sort(key=lambda e: e['index'])
-            return [item['embedding'] for item in data]
-    def embed_documents(self, texts: List[str]) -> List[List[float]]: return self._embed(texts)
-    def embed_query(self, text: str) -> List[float]: return self._embed([text])[0]
-
 def setup_qdrant_rag_pipeline():
-    """Configure and return a RAG pipeline using Qdrant."""
-    print("1. Initializing LLMaaS embedding client...")
-    embeddings = LLMaaSEmbeddings(api_key=API_KEY, model_name=EMBEDDING_MODEL)
+    """Configure et retourne un pipeline RAG utilisant Qdrant."""
+    print("1. Initialisation du client d'embedding LLMaaS...")
+    embeddings = OpenAIEmbeddings(
+        api_key=API_KEY,
+        base_url=BASE_URL,
+        model=EMBEDDING_MODEL,
+        check_embedding_ctx_length=False,
+        model_kwargs={"encoding_format": "float"},
+    )
 
-    print("2. Preparing documents...")
+    print("2. Préparation des documents...")
     documents_content = [
-        "Cloud Temple is a French sovereign cloud provider with SecNumCloud certification.",
-        "LLMaaS pricing is 1.9€ for input and 8€ for output per million tokens."
+        "Cloud Temple est un fournisseur de cloud souverain français avec la qualification SecNumCloud.",
+        "Les tarifs LLMaaS sont de 1.9€ pour l'input et 8€ pour l'output par million de tokens."
     ]
     documents = [Document(page_content=d) for d in documents_content]
     
-    print(f"3. Connecting to Qdrant and populating collection '{QDRANT_COLLECTION_NAME}'...")
-    vectorstore = Qdrant.from_documents(
+    print(f"3. Connexion à Qdrant et peuplement de la collection '{QDRANT_COLLECTION_NAME}'...")
+    vectorstore = QdrantVectorStore.from_documents(
         documents,
         embeddings,
         url=QDRANT_URL,
         collection_name=QDRANT_COLLECTION_NAME,
-        force_recreate=True, # Ensures a clean collection for the tutorial
+        force_recreate=True, # Assure une collection propre pour le tutoriel
     )
-    print("   -> Collection created and populated successfully.")
+    print("   -> Collection créée et peuplée avec succès.")
 
-    print(f"4. Configuring LLM ({LLM_MODEL})...")
+    print(f"4. Configuration du LLM ({LLM_MODEL})...")
     llm = ChatOpenAI(
         api_key=API_KEY,
         base_url=BASE_URL,
@@ -411,134 +377,155 @@ def setup_qdrant_rag_pipeline():
         temperature=0.3
     )
 
-    print("5. Creating RAG chain...")
+    print("5. Création de la chaîne RAG...")
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         retriever=vectorstore.as_retriever(),
         return_source_documents=True
     )
-    print("   -> Qdrant-based RAG pipeline ready.")
+    print("   -> Pipeline RAG avec Qdrant prêt.")
     return qa_chain
 
-# --- Execution ---
+# --- Ausführung ---
 def main_qdrant():
-    """Hauptfunktion zum Ausführen des RAG-Pipelines mit Qdrant."""
+    """Fonction principale pour exécuter le pipeline RAG avec Qdrant."""
     if not API_KEY:
-        print("Fehler: Die Umgebungsvariable LLMAAS_API_KEY ist nicht definiert.")
+        print("Erreur: La variable d'environnement LLMAAS_API_KEY n'est pas définie.")
         return
         
     try:
         rag_chain = setup_qdrant_rag_pipeline()
-        question = "Was sind die Preise der LLMaaS-API von Cloud Temple?"
+        question = "Quels sont les tarifs de l'API LLMaaS de Cloud Temple ?"
+        
+        print(f"\n--- Interrogation du pipeline ---")
+        result = rag_chain.invoke({"query": question})
 
-        print(f"\n--- Abfrage der Pipeline ---")
-        result = rag_chain({"query": question})
-
-        print(f"\nFrage: {question}")
-        print(f"Antwort: {result['result']}")
-        print("\nVerwendete Quellen für die Antwort:")
+        print(f"\nQuestion: {question}")
+        print(f"Réponse: {result['result']}")
+        print("\nSources utilisées pour la réponse:")
         for source in result["source_documents"]:
-            print(f"- Inhalt: \"{source.page_content}\"")
+            print(f"- Contenu: \"{source.page_content}\"")
             
     except Exception as e:
-        print(f"\nEin Fehler ist aufgetreten: {e}")
-        print("Bitte stellen Sie sicher, dass der Qdrant-Container korrekt ausgeführt wird.")
+        print(f"\nUne erreur est survenue: {e}")
+        print("Veuillez vous assurer que le conteneur Qdrant est bien en cours d'exécution.")
 
 if __name__ == "__main__":
     main_qdrant()
 ```
 
-### 4. LangChain Agents with Tools
+### 4. LangChain-Agenten mit Tools
 
-An agent is an LLM that does more than simply answer a question—it can use a set of **tools** (functions, APIs, etc.) to build a more complex response. It can reason, break down a problem, select an appropriate tool, execute it, observe the result, and repeat this cycle until it arrives at a final answer.
+Ein Agent ist ein LLM, das sich nicht nur darauf beschränkt, auf eine Frage zu antworten, sondern das eine Reihe von **Tools** (fonctions, API, etc.) nutzen kann, um eine komplexere Antwort zu erstellen. Es kann logisch schlussfolgern, ein Problem zerlegen, ein Tool auswählen, dieses ausführen, das Ergebnis beobachten und diesen Zyklus wiederholen, bis eine endgültige Antwort vorliegt.
 
 #### Der Code erklärt
 
-Dieses Beispiel erstellt einen einfachen Agenten, der zwei Tools verwenden kann: eines zur Abfrage einer (simulierten) Cloud Temple-API und eines zur Durchführung von Berechnungen.
+Dieses Beispiel erstellt einen einfachen Agenten, der zwei Werkzeuge nutzen kann: eines zum Abfragen einer (simulée) Cloud Temple-API und eines für Berechnungen.
 
-1. **Definition der Tools**: Die Klassen `CloudTempleAPITool` und `CalculatorTool` erben von `BaseTool`. Jedes Tool verfügt über:
-    * Ein `name`: Ein einfacher und beschreibender Name.
-    * Ein `description`: **Kritisch** – dies ist der Text, den der LLM liest, um zu entscheiden, welches Tool verwendet werden soll. Sie muss sehr klar beschreiben, was das Tool tut und wann es verwendet werden sollte.
-    * Eine Methode `_run`: Der Code, der tatsächlich ausgeführt wird, wenn der Agent dieses Tool auswählt.
-
-2. **`create_agent_with_tools`**:
-    * **LLM Initialization**: Wir verwenden unseren Wrapper `CloudTempleLLM`, der im ersten Tutorial definiert wurde.
-    * **Tool List**: Wir geben dem Agenten die Liste der Tools, die er verwenden darf.
-    * **Agent Prompt**: Der Prompt ist sehr spezifisch. Es handelt sich um einen „Reasoning-Prompt“, der dem LLM anweist, wie er denken (`Thought`), eine Aktion wählen (`Action`), eine Eingabe für diese Aktion bereitstellen (`Action Input`) und das Ergebnis beobachten (`Observation`) soll. Dies ist das zentrale Mechanismus des ReAct-Frameworks (Reasoning and Acting) verwendet hier.
-    * **Agent Creation**: `create_react_agent` assembles the LLM, tools, and prompt to create the agent.
-    * **`AgentExecutor`**: Dies ist der Motor, der den Agenten in einer Schleife ausführt, bis er eine `Final Answer` produziert. Der Parameter `verbose=True` ist sehr nützlich, um den „inneren Dialog“ des Agenten zu sehen (seine Gedanken, Aktionen usw.).
+1. **Definition der Werkzeuge** : Die Klassen `CloudTempleAPITool` und `SimpleCalculatorTool` erben von `BaseTool`. Jedes Werkzeug verfügt über :
+    * Ein `name` : ein einfacher und beschreibender Name.
+    * Eine `description` : **entscheidend**, dies liest das LLM, um zu entscheiden, welches Werkzeug verwendet werden soll. Sie muss sehr klar beschreiben, was das Werkzeug tut und wann es verwendet werden soll.
+    * Eine Methode `_run` : der Code, der tatsächlich ausgeführt wird, wenn der Agent dieses Werkzeug auswählt.
+2. **`create_agent_with_tools`** :
+    * **Initialisierung des LLM** : Wir verwenden unseren Wrapper `CloudTempleLLM`, der im ersten Tutorial definiert wurde.
+    * **Werkzeugliste** : Wir stellen dem Agenten die Liste der Werkzeuge zur Verfügung, die er nutzen darf.
+    * **Agent-Prompt** : Der Prompt ist sehr spezifisch. Es handelt sich um einen "Reasoning-Prompt", der das LLM anweist, wie es denken (`Thought`), eine Aktion auswählen (`Action`), einen Eingabewert für diese Aktion bereitstellen (`Action Input`) und das Ergebnis beobachten (`Observation`) soll. Dies ist der zentrale Mechanismus des hier verwendeten ReAct-Frameworks (Reasoning and Acting).
+    * **Erstellung des Agenten** : `create_react_agent` kombiniert das LLM, die Werkzeuge und den Prompt, um den Agenten zu erstellen.
+    * **`AgentExecutor`** : Dies ist die Engine, die den Agenten in einer Schleife ausführt, bis er eine `Final Answer` erzeugt. Der Parameter `verbose=True` ist sehr nützlich, um den "inneren Monolog" des Agenten (seine Gedanken, Aktionen usw.) zu verfolgen.
 
 ```python
-from langchain.agents import Tool, AgentExecutor, create_react_agent
-from langchain.tools import BaseTool
-from langchain.prompts import PromptTemplate
+from langchain_classic.agents import AgentExecutor, create_react_agent
+from langchain_core.tools import BaseTool
+from langchain_core.prompts import PromptTemplate
 import requests
 import json
 import os
 
-# (The CloudTempleLLM class is the same as in the first example)
+# (Die Klasse CloudTempleLLM ist dieselbe wie im ersten Beispiel)
 
 # --- Definition der Werkzeuge ---
 
 class CloudTempleAPITool(BaseTool):
-    """Ein Werkzeug, das einen Aufruf an eine interne API simuliert, um Informationen über Dienste zu erhalten."""
-    name = "cloud_temple_api_checker"
-    description = "Nützlich, um Informationen über Dienste, Produkte und Angebote von Cloud Temple zu erhalten."
+    """Un outil qui simule un appel à une API interne pour obtenir des informations sur les services."""
+    name: str = "cloud_temple_api_checker"
+    description: str = "Utile pour obtenir des informations sur les services, produits et offres de Cloud Temple."
 
     def _run(self, query: str) -> str:
-        # In einem echten Fall würde hier eine echte API aufgerufen werden.
-        print(f"--- Werkzeug CloudTempleAPITool mit der Anfrage aufgerufen: '{query}' ---")
+        # In einem realen Szenario würde dies eine echte API aufrufen.
+        print(f"--- Outil CloudTempleAPITool appelé avec la requête: '{query}' ---")
         if "service" in query.lower():
-            return "Cloud Temple bietet folgende Dienste an: IaaS, PaaS, LLMaaS, Managed Security."
-        return "Information nicht gefunden."
+            return "Cloud Temple propose les services suivants : IaaS, PaaS, LLMaaS, Sécurité Managée."
+        return "Information non trouvée."
 
     async def _arun(self, query: str) -> str:
-        # Asynchrone Implementierung ist für dieses Beispiel nicht erforderlich.
-        raise NotImplementedError("Das API-Werkzeug unterstützt keine asynchrone Ausführung.")
+        # Asynchrone Implementierung für dieses Beispiel nicht erforderlich.
+        raise NotImplementedError("L'outil API ne supporte pas l'exécution asynchrone.")
 
 class SimpleCalculatorTool(BaseTool):
-    """Ein einfaches Werkzeug zur Durchführung einfacher mathematischer Berechnungen."""
-    name = "simple_calculator"
-    description = "Nützlich zur Durchführung einfacher mathematischer Berechnungen. Erwartet einen gültigen Python-Ausdruck."
+    """Un outil simple pour effectuer des calculs mathématiques."""
+    name: str = "simple_calculator"
+    description: str = (
+        "Effectue une opération entre deux nombres, séparés par des espaces : "
+        "par exemple '125 * 8'. Opérateurs autorisés : +, -, *, /. "
+        "Pour un calcul composé, appeler l'outil plusieurs fois."
+    )
 
     def _run(self, expression: str) -> str:
-        print(f"--- Werkzeug SimpleCalculatorTool mit dem Ausdruck aufgerufen: '{expression}' ---")
+        import math
+        import operator
+
+        operations = {
+            "+": operator.add,
+            "-": operator.sub,
+            "*": operator.mul,
+            "/": operator.truediv,
+        }
         try:
-            # WARNUNG: eval() ist in der Produktion gefährlich. Nur für die Demonstration.
-            return str(eval(expression))
-        except Exception as e:
-            return f"Fehler bei der Berechnung: {e}"
+            if len(expression) > 100:
+                raise ValueError("Entrée trop longue.")
+            left, symbol, right = expression.split()
+            if symbol not in operations:
+                raise ValueError("Opérateur autorisé : +, -, * ou /.")
+            left, right = float(left), float(right)
+            if not (math.isfinite(left) and math.isfinite(right)):
+                raise ValueError("Les nombres doivent être finis.")
+            result = operations[symbol](left, right)
+            if not math.isfinite(result):
+                raise ValueError("Résultat hors limites.")
+            return str(result)
+        except (ValueError, OverflowError, ZeroDivisionError) as e:
+            return f"Erreur de calcul: {e}"
 
     async def _arun(self, expression: str) -> str:
-        raise NotImplementedError("Das Rechenwerkzeug unterstützt keine asynchrone Ausführung.")
+        raise NotImplementedError("L'outil Calculatrice ne supporte pas l'exécution asynchrone.")
 
-# --- Agent Creation ---
+# --- Erstellung des Agenten ---
 
 def create_agent():
-    """Configure and return a LangChain agent with the defined tools."""
-    print("1. Initializing the LLM for the agent...")
-    llm = CloudTempleLLM(api_key=os.getenv("LLMAAS_API_KEY", "your-api-key-here"))
+    """Configure et retourne un agent LangChain avec les outils définis."""
+    print("1. Initialisation du LLM pour l'agent...")
+    llm = CloudTempleLLM(api_key=os.getenv("LLMAAS_API_KEY", "votre-clé-api-ici"))
 
     tools = [CloudTempleAPITool(), SimpleCalculatorTool()]
     
-    # The prompt template is crucial: it guides the LLM in its reasoning.
+    # Die Prompt-Vorlage ist entscheidend: Sie leitet das LLM bei seiner Schlussfolgerung.
     template = """
-    Answer the following questions as best as you can. You have access to the following tools:
+    Réponds aux questions suivantes du mieux que tu peux. Tu as accès aux outils suivants :
 
     {tools}
 
-    Use the following format:
+    Utilise le format suivant :
 
-    Question: the question you must answer
-    Thought: you must always think about what you will do
-    Action: the action to take, must be one of [{tool_names}]
-    Action Input: the input for the action
-    Observation: the result of the action
-    ... (this Thought/Action/Action Input/Observation sequence can repeat)
-    Thought: I now know the final answer.
-    Final Answer: the final answer to the original question
+    Question: la question à laquelle tu dois répondre
+    Thought: tu dois toujours réfléchir à ce que tu vas faire
+    Action: l'action à prendre, doit être l'un de [{tool_names}]
+    Action Input: l'entrée de l'action
+    Observation: le résultat de l'action
+    ... (cette séquence Thought/Action/Action Input/Observation peut se répéter)
+    Thought: Je connais maintenant la réponse finale.
+    Final Answer: la réponse finale à la question d'origine
 
-    Begin!
+    Commence !
 
     Question: {input}
     Thought:{agent_scratchpad}
@@ -546,33 +533,33 @@ def create_agent():
     
     prompt = PromptTemplate.from_template(template)
     
-    print("2. Creating the agent using the ReAct framework...")
+    print("2. Création de l'agent avec le framework ReAct...")
     agent = create_react_agent(llm, tools, prompt)
 
-    # The AgentExecutor is responsible for running the agent's cycles.
+    # Der AgentExecutor ist für die Ausführung der Agenten-Zyklen verantwortlich.
     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-    print("   -> Agent ready.")
+    print("   -> Agent prêt.")
     return agent_executor
 
-# --- Execution ---
+# --- Ausführung ---
 
 def run_agent():
-    """Führt den Agenten mit verschiedenen Fragen aus, um dessen Fähigkeiten zu testen."""
+    """Exécute l'agent avec différentes questions pour tester ses capacités."""
     if os.getenv("LLMAAS_API_KEY") is None:
-        print("Bitte konfigurieren Sie Ihre LLMAAS_API_KEY.")
+        print("Veuillez configurer votre LLMAAS_API_KEY.")
         return
         
     agent_executor = create_agent()
     
-    print("\n--- Test 1: Frage, die ein Informations-Tool erfordert ---")
-    question1 = "Welche Dienstleistungen bietet Cloud Temple?"
+    print("\n--- Test 1 : Question nécessitant un outil d'information ---")
+    question1 = "Quels sont les services offerts par Cloud Temple ?"
     response1 = agent_executor.invoke({"input": question1})
-    print(f"\nEndgültige Antwort des Agents: {response1['output']}")
+    print(f"\nRéponse finale de l'agent: {response1['output']}")
     
-    print("\n--- Test 2: Frage, die eine Berechnung erfordert ---")
-    question2 = "Was ergibt 125 * 8 + 50?"
+    print("\n--- Test 2 : Question nécessitant un calcul ---")
+    question2 = "Quel est le résultat de 125 * 8 + 50 ?"
     response2 = agent_executor.invoke({"input": question2})
-    print(f"\nEndgültige Antwort des Agents: {response2['output']}")
+    print(f"\nRéponse finale de l'agent: {response2['output']}")
 
 if __name__ == "__main__":
     run_agent()
@@ -580,14 +567,16 @@ if __name__ == "__main__":
 
 ### 5. OpenAI SDK-Integration
 
-**Nahtlose Migration von OpenAI**
+**Konfiguration des OpenAI-SDK für LLMaaS**
+
+Dieses Beispiel verwendet die von LLMaaS unterstützten Aufrufe. Um eine bestehende Anwendung anzupassen, konsultieren Sie die [dokumentierten Unterschiede](./api.md#openai-kompatibilität).
 
 ```python
 from openai import OpenAI
 
 # Konfiguration für Cloud Temple LLMaaS
 def setup_cloud_temple_client():
-    """Client-Konfiguration für OpenAI für Cloud Temple"""
+    """Configuration client OpenAI pour Cloud Temple"""
     
     client = OpenAI(
         api_key="your-cloud-temple-api-key",
@@ -597,28 +586,28 @@ def setup_cloud_temple_client():
     return client
 
 def test_openai_compatibility():
-    """Test der Kompatibilität mit dem OpenAI SDK"""
+    """Test de compatibilité avec SDK OpenAI"""
     
     client = setup_cloud_temple_client()
     
-    # Standard-Chat-Completion
+    # Standard Chat Completion
     response = client.chat.completions.create(
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         messages=[
-            {"role": "system", "content": "Du bist ein professioneller KI-Assistent."},
-            {"role": "user", "content": "Erkläre mir die Architektur von Cloud-Native-Systemen."}
+            {"role": "system", "content": "Tu es un assistant IA professionnel."},
+            {"role": "user", "content": "Explique-moi l'architecture cloud native."}
         ],
         max_tokens=300,
         temperature=0.7
     )
     
-    print(f"Antwort: {response.choices[0].message.content}")
+    print(f"Réponse: {response.choices[0].message.content}")
     
     # Streaming
     stream = client.chat.completions.create(
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         messages=[
-            {"role": "user", "content": "Schreibe ein Gedicht über KI."}
+            {"role": "user", "content": "Écris un poème sur l'IA."}
         ],
         stream=True,
         max_tokens=200
@@ -630,23 +619,23 @@ def test_openai_compatibility():
             print(chunk.choices[0].delta.content, end="")
     print()
 
-# Compatibility Test
+# Kompatibilitätstest
 test_openai_compatibility()
 ```
 
-### 5. Integration von Semantic Kernel (Microsoft)
+### 5. Integration Semantic Kernel (Microsoft)
 
-[Semantic Kernel](https://learn.microsoft.com/fr-fr/semantic-kernel/overview/) ist ein Open-Source-SDK von Microsoft, das die Integration von LLMs in .NET-, Python- und Java-Anwendungen ermöglicht. Obwohl er für die Azure OpenAI-Dienste optimiert ist, ermöglicht seine Flexibilität die Nutzung mit jeder OpenAI-kompatiblen API, einschließlich unserer eigenen.
+[Semantic Kernel](https://learn.microsoft.com/fr-fr/semantic-kernel/overview/) ist ein Open-Source-SDK von Microsoft, das die Integration von LLMs in .NET-, Python- und Java-Anwendungen ermöglicht. Obwohl es für die Azure OpenAI-Dienste optimiert ist, ermöglicht seine Flexibilität den Einsatz mit jeder OpenAI-kompatiblen API, einschließlich unserer.
 
 #### Der Code erklärt
 
-Dieses Beispiel benötigt nicht den vollständigen Semantic Kernel SDK. Es zeigt, wie das **Konzept einer „semantischen Funktion“** durch einen einfachen Aufruf unserer API implementiert werden kann. Eine semantische Funktion ist im Wesentlichen ein strukturierter Prompt, der an ein LLM gesendet wird, um eine spezifische Aufgabe zu erfüllen.
+Dieses Beispiel erfordert nicht das vollständige Semantic Kernel SDK. Es zeigt, wie das **Konzept der "semantischen Funktion"** durch einen einfachen Aufruf unserer API implementiert werden kann. Eine semantische Funktion ist im Wesentlichen ein strukturierter Prompt, der an ein LLM gesendet wird, um eine spezifische Aufgabe auszuführen.
 
-1. **`semantic_kernel_simple()`** : Diese Funktion simuliert eine „Zusammenfassungsfunktion“.
-2. **Strukturierter Prompt** : Wir verwenden eine `system`-Nachricht, um dem LLM eine Rolle zuzuweisen („Du bist ein Experte für Zusammenfassungen“), und eine `user`-Nachricht, die den zu summarisierenden Text enthält. Dies ist der Kern des Konzepts einer semantischen Funktion.
+1. **`semantic_kernel_simple()`** : Diese Funktion simuliert eine "Zusammenfassungsfunktion".
+2. **Strukturierter Prompt** : Wir verwenden eine `system`-Nachricht, um dem LLM eine Rolle zu geben ("Du bist ein Experte für Zusammenfassungen.") und eine `user`-Nachricht, die den zusammenzufassenden Text enthält. Dies ist der Kern des Konzepts der semantischen Funktion.
 3. **Direkter API-Aufruf** : Ein einfacher `requests.post`-Aufruf an unseren Endpunkt `/v1/chat/completions` reicht aus, um die Funktion auszuführen.
 
-Dieses Beispiel verdeutlicht, dass es nicht immer notwendig ist, ein schweres Framework zu verwenden. Für einfache und gut definierte Aufgaben ist ein direkter Aufruf der LLMaaS-API oft die effizienteste und leistungsfähigste Lösung.
+Dieses Beispiel verdeutlicht, dass es nicht immer erforderlich ist, ein schweres Framework zu verwenden. Für einfache und klar definierte Aufgaben ist ein direkter Aufruf der LLMaaS-API oft die effizienteste und leistungsfähigste Lösung.
 
 ```python
 import requests
@@ -655,12 +644,12 @@ from dotenv import load_dotenv
 
 def semantic_kernel_simulation():
     """
-    Simuliert eine „semantische Funktion“ zur Zusammenfassung durch direkten Aufruf der LLMaaS-API.
+    Simule une "fonction sémantique" de résumé en appelant directement l'API LLMaaS.
     """
     load_dotenv()
     api_key = os.getenv("LLMAAS_API_KEY")
     if not api_key:
-        print("Bitte setzen Sie die Umgebungsvariable LLMAAS_API_KEY.")
+        print("Veuillez définir la variable d'environnement LLMAAS_API_KEY.")
         return
 
     headers = {
@@ -669,18 +658,18 @@ def semantic_kernel_simulation():
     }
     
     text_to_summarize = """
-    Künstliche Intelligenz (KI) verändert zahlreiche industrielle Sektoren, indem sie Aufgaben automatisiert, 
-    Prozesse optimiert und fortgeschrittene prädiktive Analysen ermöglicht. 
-    Cloud Temple bietet mit seiner souveränen und SecNumCloud-zertifizierten LLMaaS-Angebot Unternehmen 
-    die Möglichkeit, diese KI-Fähigkeiten zu integrieren, während die Sicherheit und Vertraulichkeit ihrer Daten gewährleistet bleibt.
+    L'intelligence artificielle (IA) transforme de nombreux secteurs industriels en automatisant les tâches, 
+    en optimisant les processus et en permettant des analyses prédictives avancées. 
+    Cloud Temple, avec son offre LLMaaS souveraine et certifiée SecNumCloud, permet aux entreprises 
+    d'intégrer ces capacités d'IA tout en garantissant la sécurité et la confidentialité de leurs données.
     """
     
     # Der Prompt kombiniert eine Anweisung (Systemrolle) und Daten (Benutzerrolle)
     payload = {
-        "model": "granite3.3:8b",
+        "model": "gpt-oss:120b",
         "messages": [
-            {"role": "system", "content": "Du bist ein Assistent, der sich auf die Zusammenfassung technischer Dokumente spezialisiert hat."},
-            {"role": "user", "content": f"Fasse den folgenden Text in einer einzigen präzisen Satz zusammen: {text_to_summarize}"}
+            {"role": "system", "content": "Tu es un assistant expert en synthèse de documents techniques."},
+            {"role": "user", "content": f"Résume le texte suivant en une seule phrase concise: {text_to_summarize}"}
         ],
         "max_tokens": 100,
         "temperature": 0.5
@@ -697,12 +686,12 @@ def semantic_kernel_simulation():
         result = response.json()
         summary = result['choices'][0]['message']['content']
         
-        print("Ursprünglicher Text:\n", text_to_summarize)
-        print("\nGenerierter Zusammenfassung:\n", summary)
+        print("Texte original:\n", text_to_summarize)
+        print("\nRésumé généré:\n", summary)
         return summary
         
     except requests.exceptions.RequestException as e:
-        print(f"Ein API-Fehler ist aufgetreten: {e}")
+        print(f"Une erreur d'API est survenue: {e}")
 
 if __name__ == "__main__":
     semantic_kernel_simulation()
@@ -710,17 +699,17 @@ if __name__ == "__main__":
 
 ### 6. Framework Haystack
 
-[Haystack](https://haystack.deepset.ai/) ist ein weiterer leistungsstarker Open-Source-Framework zur Erstellung von Anwendungen für semantische Suche, RAG und Agenten. Wie beim Semantic Kernel kann unsere API direkt integriert werden.
+[Haystack](https://haystack.deepset.ai/) ist ein weiteres leistungsstarkes Open-Source-Framework zum Erstellen von Anwendungen für semantische Suche, RAG und Agenten. Wie bei Semantic Kernel kann unsere API direkt integriert werden.
 
 #### Der Code erklärt
 
-Dieses Beispiel simuliert einen grundlegenden „Pipeline“ von Haystack für die Antwortfindung im Kontext (Question Answering).
+Dieses Beispiel simuliert einen grundlegenden Haystack-"Pipeline" zur Antwortsuche in einem gegebenen Kontext (Question Answering).
 
-1. **`process_with_context`** : Diese Funktion stellt den Kern einer QA-Pipeline dar. Sie nimmt einen `Kontext` (z. B. einen Absatz aus einem Dokument) und eine `Frage` entgegen.
-2. **Kontextueller Prompt**: Der Prompt ist sorgfältig strukturiert, um sowohl den Kontext als auch die Frage einzuschließen. Dies ist eine zentrale Technik im RAG: Wir liefern dem LLM relevante Informationen, damit es eine faktengestützte Antwort formulieren kann.
-3. **API-Aufruf**: Ein einfacher `requests.post`-Aufruf an unsere API reicht aus. Das LLM erhält Kontext und Frage und hat die Aufgabe, eine Antwort basierend *ausschließlich* auf den bereitgestellten Informationen zu synthetisieren.
+1. **`process_with_context`** : Diese Funktion stellt das Kernstück eines QA-Pipelines dar. Sie übernimmt ein `contexte` (z. B. einen Dokumentenabschnitt) und eine `question`.
+2. **Kontextueller Prompt** : Der Prompt ist sorgfältig strukturiert, um sowohl den Kontext als auch die Frage einzubeziehen. Dies ist eine grundlegende Technik im RAG: Dem LLM werden die relevanten Informationen bereitgestellt, damit er eine faktenbasierte Antwort formulieren kann.
+3. **API-Aufruf** : Auch hier reicht ein einfacher `requests.post`-Aufruf an unsere API aus. Der LLM erhält den Kontext und die Frage, und seine Aufgabe besteht darin, eine Antwort zu synthetisieren, die *ausschließlich* auf den bereitgestellten Informationen basiert.
 
-Dieses Beispiel zeigt die Flexibilität der LLMaaS-API, die als Baustein für Textgenerierung in beliebigen Frameworks verwendet werden kann – selbst in solchen, für die keine offizielle Integration existiert.
+Dieses Beispiel veranschaulicht die Flexibilität der LLMaaS-API, die als Grundbaustein für die Textgenerierung in jedem Framework dienen kann, auch solchen, für die keine offizielle Integration existiert.
 
 ```python
 import requests
@@ -729,13 +718,13 @@ from dotenv import load_dotenv
 
 def haystack_simulation():
     """
-    Simuliert eine Question-Answering-Pipeline im Stil von Haystack,
-    indem direkt auf die LLMaaS-API zugegriffen wird.
+    Simule un pipeline de Question-Answering de type Haystack
+    en utilisant un appel direct à l'API LLMaaS.
     """
     load_dotenv()
     api_key = os.getenv("LLMAAS_API_KEY")
     if not api_key:
-        print("Bitte setzen Sie die Umgebungsvariable LLMAAS_API_KEY.")
+        print("Veuillez définir la variable d'environnement LLMAAS_API_KEY.")
         return
 
     headers = {
@@ -743,31 +732,34 @@ def haystack_simulation():
         "Content-Type": "application/json"
     }
     
-    # Der Kontext ist die Information, die das LLM verwenden darf.
+    # Der Kontext ist die Information, die der LLM verwenden darf.
     context = """
-    Ein souveräner Cloud-Service ist eine Cloud-Infrastruktur, die vollständig innerhalb der Grenzen eines bestimmten Landes liegt und dessen Gesetzen unterliegt. 
-    Die wichtigsten Vorteile sind die Gewährleistung der Datenlokalisierung, die Einhaltung lokaler Vorschriften (z. B. die DSGVO in Europa) sowie ein erhöhter Schutz vor Zugriffen durch ausländische Behörden gemäß extraterritorialen Gesetzen wie dem amerikanischen CLOUD Act.
+    Un cloud souverain est une infrastructure de cloud computing qui est entièrement contenue 
+    dans les frontières d'un pays spécifique et soumise à ses lois. 
+    Les principaux avantages sont la garantie de la résidence des données, la conformité avec 
+    les réglementations locales (comme le RGPD en Europe), et une protection accrue contre 
+    l'accès par des entités étrangères en vertu de lois extraterritoriales comme le CLOUD Act américain.
     """
     
-    question = "Welche Vorteile bietet ein souveräner Cloud-Service?"
-
-    # Der Prompt leitet das LLM an, seine Antwort ausschließlich auf dem bereitgestellten Kontext zu basieren.
+    question = "Quels sont les avantages d'un cloud souverain ?"
+    
+    # Der Prompt leitet den LLM an, seine Antwort auf dem bereitgestellten Kontext zu basieren.
     prompt = f"""
-    Beantworte die folgende Frage ausschließlich auf Grundlage des folgenden Kontexts.
-
-    Kontext:
+    En te basant uniquement sur le contexte suivant, réponds à la question.
+    
+    Contexte:
     ---
     {context}
     ---
     
-    Frage: {question}
+    Question: {question}
     """
     
     payload = {
-        "model": "granite3.3:8b",
+        "model": "gpt-oss:120b",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 200,
-        "temperature": 0.2  # Niedrige Temperatur für eine faktengestützte Antwort
+        "temperature": 0.2 # Niedrige Temperatur für eine faktenbasierte Antwort
     }
     
     try:
@@ -781,35 +773,35 @@ def haystack_simulation():
         result = response.json()
         answer = result['choices'][0]['message']['content']
         
-        print(f"Frage: {question}")
-        print("\nGenerierte Antwort:\n", answer)
+        print(f"Question: {question}")
+        print("\nRéponse générée:\n", answer)
         return answer
         
     except requests.exceptions.RequestException as e:
-        print(f"Ein API-Fehler ist aufgetreten: {e}")
+        print(f"Une erreur d'API est survenue: {e}")
 
 if __name__ == "__main__":
     haystack_simulation()
 ```
 
-### 7. Integration von LlamaIndex
+### 7. LlamaIndex-Integration
 
-[LlamaIndex](https://www.llamaindex.ai/) ist ein Framework, das speziell für die Entwicklung von RAG-Anwendungen (Retrieval-Augmented Generation) konzipiert wurde. Es bietet hochwertige Komponenten für die Dateninjektion, Indexierung und Abfrage. Unsere API ist mit der OpenAI-Schnittstelle kompatibel und lässt sich daher sehr einfach integrieren.
+[LlamaIndex](https://www.llamaindex.ai/) ist ein Framework, das sich auf die Entwicklung von RAG-Anwendungen spezialisiert. Es bietet High-Level-Komponenten für die Datenerfassung, Indizierung und Abfrage. Da unsere API mit der OpenAI-Schnittstelle kompatibel ist, lässt sie sich sehr einfach integrieren.
 
 #### Der Code erklärt
 
-Dieses Beispiel zeigt wie LlamaIndex so konfiguriert wird, dass die LLMaaS-API für die Textgenerierung verwendet wird, während gleichzeitig ein lokales Embedding-Modell für die Vektorisierung eingesetzt wird.
+Dieses Beispiel zeigt, wie LlamaIndex konfiguriert wird, um die LLMaaS-API für die Textgenerierung zu nutzen, während ein lokales Embedding-Modell für die Vektorisierung verwendet wird.
 
-1. **`setup_and_run_llamaindex`**: Diese einzige Funktion koordiniert den gesamten Prozess.
-    * **LLM-Konfiguration**: LlamaIndex bietet die Klasse `OpenAILike`, die es ermöglicht, mit jeder API zu kommunizieren, die das OpenAI-Format unterstützt. Es genügt, `api_base` und eine `api_key` bereitzustellen. Dies ist die einfachste Methode, um unseren LLM kompatibel zu machen.
-    * **Embedding-Konfiguration**: Für dieses Beispiel verwenden wir ein lokales Embedding-Modell (`HuggingFaceEmbedding`). Dies verdeutlicht die Flexibilität von LlamaIndex, das die Kombination verschiedener Komponenten erlaubt. Sie könnten genauso gut die Klasse `LLMaaSEmbeddings` aus den vorherigen Beispielen verwenden, um unsere Embedding-API zu nutzen.
-    * **`Settings`**: Das `Settings`-Objekt von LlamaIndex ist eine praktische Möglichkeit, Standardkomponenten (LLM, Embedding-Modell, Chunk-Größe usw.) zu konfigurieren, die von anderen LlamaIndex-Objekten verwendet werden.
-    * **Daten-Ingestion**: `SimpleDirectoryReader` lädt die Dokumente aus einem Verzeichnis.
-    * **Index-Erstellung**: `VectorStoreIndex.from_documents` ist die hochwertige Methode von LlamaIndex. Sie verwaltet automatisch das Zerlegen in Chunks, die Vektorisierung der Chunks (unter Verwendung des im `Settings` konfigurierten `embed_model`) und die Erstellung des Index im Speicher.
-    * **Abfrage-Engine**: `.as_query_engine()` erstellt eine einfache Schnittstelle, um Fragen an unseren Index zu stellen. Wenn Sie `.query()` aufrufen, wird Ihre Frage vektorisiert, die relevantesten Dokumente im Index gefunden und diese zusammen mit der Frage an den LLM (wie in `Settings` konfiguriert) gesendet, um eine Antwort zu generieren.
+1. **`setup_and_run_llamaindex`** : Diese einzelne Funktion orchestriert den gesamten Prozess.
+    * **LLM-Konfiguration** : LlamaIndex stellt eine Klasse `OpenAILike` bereit, die die Verbindung zu jeder API ermöglicht, die das OpenAI-Format unterstützt. Es reicht aus, unsere `api_base` und einen `api_key` bereitzustellen. Dies ist der einfachste Weg, unser LLM kompatibel zu machen.
+    * **Embedding-Konfiguration** : Für dieses Beispiel verwenden wir ein lokales Embedding-Modell (`HuggingFaceEmbedding`). Dies zeigt die Flexibilität von LlamaIndex, die das Kombinieren verschiedener Komponenten ermöglicht.
+    * **`Settings`** : Das `Settings`-Objekt von LlamaIndex ist eine praktische Möglichkeit, die Standardkomponenten (LLM, Embedding-Modell, Chunk-Größe usw.) zu konfigurieren, die von anderen LlamaIndex-Objekten verwendet werden.
+    * **Datenimport** : `SimpleDirectoryReader` lädt Dokumente aus einem Verzeichnis.
+    * **Indexerstellung** : `VectorStoreIndex.from_documents` ist die High-Level-Methode von LlamaIndex. Sie übernimmt automatisch das Aufteilen in Chunks, die Vektorisierung der Chunks (unter Verwendung des in `Settings` konfigurierten `embed_model`) und die Erstellung des Index im Speicher.
+    * **Abfrage-Engine** : `.as_query_engine()` erstellt eine einfache Schnittstelle, um Fragen an unseren Index zu stellen. Wenn Sie `.query()` aufrufen, vektorisiert die Engine Ihre Frage, findet die relevantesten Dokumente im Index und sendet sie zusammen mit der Frage an das LLM (konfiguriert in `Settings`), um eine Antwort zu generieren.
 
 ```python
-# Dependencies:
+# Dépendances:
 # pip install llama-index llama-index-llms-openai-like llama-index-embeddings-huggingface
 
 import os
@@ -817,128 +809,124 @@ from dotenv import load_dotenv
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.llms.openai_like import OpenAILike
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-import shutil
+from tempfile import TemporaryDirectory
 
 def setup_and_run_llamaindex():
     """
-    Configure and run a simple RAG pipeline with LlamaIndex and the LLMaaS API.
+    Configure et exécute un pipeline RAG simple avec LlamaIndex et l'API LLMaaS.
     """
     load_dotenv()
     api_key = os.getenv("LLMAAS_API_KEY")
     if not api_key:
-        print("Please set the LLMAAS_API_KEY environment variable.")
+        print("Veuillez définir la variable d'environnement LLMAAS_API_KEY.")
         return
 
-    # 1. Configure the LLM to use the LLMaaS API via the OpenAILike interface
-    print("1. Configuring the LLM to point to the LLMaaS API...")
+    # 1. Configuration du LLM pour utiliser l'API LLMaaS via l'interface OpenAILike
+    print("1. Configuration du LLM pour pointer vers l'API LLMaaS...")
     llm = OpenAILike(
         api_key=api_key,
         api_base="https://api.ai.cloud-temple.com/v1",
-        model="granite3.3:8b",
+        model="gpt-oss:120b",
         is_chat_model=True,
-        # Sometimes it's necessary to add context window parameters for certain models
+        # Il est parfois nécessaire d'ajouter des paramètres de contexte pour certains modèles
         # context_window=3900, 
     )
 
-    # 2. Configure the embedding model (local in this example for simplicity)
-    print("2. Configuring the local embedding model...")
+    # 2. Configuration du modèle d'embedding (local dans cet exemple pour la simplicité)
+    print("2. Configuration du modèle d'embedding local...")
     embed_model = HuggingFaceEmbedding(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    # 3. Apply configurations globally via LlamaIndex's Settings object
+    # 3. Application des configurations globales via l'objet Settings de LlamaIndex
     Settings.llm = llm
     Settings.embed_model = embed_model
-    print("   -> LLM and embedding model configured.")
+    print("   -> LLM et modèle d'embedding configurés.")
 
-    # 4. Create a simple knowledge base in a temporary directory
-    print("4. Creating and loading a temporary knowledge base...")
-    temp_dir = "temp_llama_data"
-    os.makedirs(temp_dir, exist_ok=True)
-    knowledge_file = os.path.join(temp_dir, "knowledge.txt")
-    with open(knowledge_file, "w", encoding="utf-8") as f:
-        f.write("The LLMaaS offering from Cloud Temple is a sovereign generative AI solution, "
-                "fully operated in France and certified SecNumCloud by ANSSI.")
-    
-    documents = SimpleDirectoryReader(temp_dir).load_data()
-    print(f"   -> {len(documents)} document(s) loaded.")
+    # 4. Création d'une base de connaissances simple dans un répertoire temporaire
+    print("4. Création et chargement d'une base de connaissances temporaire...")
+    with TemporaryDirectory(prefix="llmaas_llamaindex_") as temp_dir:
+        knowledge_file = os.path.join(temp_dir, "knowledge.txt")
+        with open(knowledge_file, "w", encoding="utf-8") as f:
+            f.write("L'offre LLMaaS de Cloud Temple est une solution d'IA générative souveraine, "
+                    "entièrement opérée en France et qualifiée SecNumCloud par l'ANSSI.")
 
-    # 5. Create the vector index. LlamaIndex handles chunking and embedding automatically.
-    print("5. Creating the vector index...")
+        documents = SimpleDirectoryReader(temp_dir).load_data()
+        print(f"   -> {len(documents)} document(s) chargé(s).")
+    # Les documents sont en mémoire ; le dossier temporaire est supprimé,
+    # y compris si l'écriture ou le chargement échoue.
+
+    # 5. Création de l'index vectoriel. LlamaIndex gère le chunking et l'embedding.
+    print("5. Création de l'index vectoriel...")
     index = VectorStoreIndex.from_documents(documents)
-    print("   -> Index created.")
+    print("   -> Index créé.")
 
-    # 6. Create the query engine and query the knowledge base
-    print("6. Creating the query engine and querying...")
+    # 6. Création du moteur de requête et interrogation de la base de connaissances
+    print("6. Création du moteur de requête et interrogation...")
     query_engine = index.as_query_engine()
-    question = "What are the sovereignty guarantees of the LLMaaS offering?"
+    question = "Quelles sont les garanties de souveraineté de l'offre LLMaaS ?"
     response = query_engine.query(question)
     
     print(f"\nQuestion: {question}")
-    print(f"Answer: {response}")
+    print(f"Réponse: {response}")
 
-    # Clean up the temporary directory
-    shutil.rmtree(temp_dir)
-    print(f"\nTemporary directory '{temp_dir}' deleted.")
 
 if __name__ == "__main__":
     setup_and_run_llamaindex()
 ```
 
-### 8. Setting up the CLINE extension for VSCode
+### 8. Konfiguration der CLINE-Erweiterung für VSCode
 
-This tutorial guides you through configuring the CLINE extension in Visual Studio Code to use Cloud Temple's language models directly from your editor.
+Dieses Tutorial führt Sie durch die Konfiguration der CLINE-Erweiterung in Visual Studio Code, um die Sprachmodelle von Cloud Temple direkt aus Ihrem Editor heraus zu nutzen.
 
-#### Konfigurations-Schritte
+#### Konfigurationsschritte
 
-1. **CLINE-Einstellungen öffnen**: Öffnen Sie in VSCode die Einstellungen der CLINE-Erweiterung.
-2. **Neues Modell erstellen**: Fügen Sie eine neue Modellkonfiguration hinzu.
-3. **Felder ausfüllen**: Konfigurieren Sie die Felder wie unten dargestellt, basierend auf dem Bild unten.
+1. **CLINE-Einstellungen öffnen** : Öffnen Sie in VSCode die Einstellungen der CLINE-Erweiterung.
+2. **Neues Modell erstellen** : Fügen Sie eine neue Modellkonfiguration hinzu.
+3. **Felder ausfüllen** : Konfigurieren Sie die Felder wie folgt, basierend auf dem untenstehenden Bild.
 
     ![CLINE-Konfiguration für LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
-    * **API-Anbieter**: Wählen Sie `OpenAI-kompatibel`.
-    * **Basis-URL**: Geben Sie den API-Endpunkt von LLMaaS von Cloud Temple ein: `https://api.ai.cloud-temple.com/v1`.
-    * **OpenAI-kompatible API-Schlüssel**: Fügen Sie den API-Schlüssel ein, den Sie über die Cloud Temple-Konsole generiert haben.
-
-    :::tip[API-Schlüssel generieren]
-    Um Ihren API-Schlüssel zu generieren, gehen Sie in die Cloud Temple-Konsole, Bereich **LLMaaS** > **API-Schlüssel**, und klicken Sie auf **"API-Schlüssel erstellen"**.
-
+    * **API Provider**: Wählen Sie `OpenAI Compatible`.
+    * **Base URL**: Geben Sie den Endpunkt der LLMaaS-API von Cloud Temple ein: `https://api.ai.cloud-temple.com/v1`.
+    * **OpenAI Compatible API Key**: Fügen Sie den API-Schlüssel ein, den Sie über die Cloud Temple-Konsole generiert haben.
+    
+    :::tip[Génération de la clé API]
+    Um Ihren API-Schlüssel zu generieren, gehen Sie in der Cloud Temple-Konsole zum Bereich **LLMaaS** > **API-Schlüssel** und klicken Sie auf **"API-Schlüssel erstellen"**.
+    
     ![Erstellung eines API-Schlüssels über die Konsole](@site/docs/llmaas/images/console_create_api_key.png)
     :::
+    
+    * **Model ID**: Geben Sie das Modell an, das Sie verwenden möchten, z. B. `qwen3.6:35b`. Die Liste der verfügbaren Modelle finden Sie im Abschnitt [Modèles](./models.md).
+    * **Model Configuration**:
+        * **Supports Images**: Aktivieren Sie dieses Kontrollkästchen, wenn das Modell Bilder unterstützt.
+        * **Supports browser use**: Aktivieren Sie dieses Kontrollkästchen.
+        * **Context Window Size**: Geben Sie die Größe des Kontextfensters des Modells an (ex: `128000`).
+        * **Max Output Tokens**: Lassen Sie den Wert auf `-1`, um standardmäßig eine unbegrenzte Ausgabe zu ermöglichen.
+        * **Temperature**: Stellen Sie die Temperatur nach Ihren Anforderungen ein (ex: `0`).
 
-    * **Modell-ID**: Geben Sie das Modell an, das Sie verwenden möchten, beispielsweise `qwen3-coder:30b`. Eine Liste der verfügbaren Modelle finden Sie im Abschnitt [Modelle](./models.md).
-    * **Modellkonfiguration**:
-        * **Unterstützt Bilder**: Aktivieren Sie dieses Feld, falls das Modell Bildunterstützung bietet.
-        * **Unterstützt Browser-Nutzung**: Aktivieren Sie dieses Feld.
-        * **Größe des Kontextfensters**: Geben Sie die Größe des Kontextfensters des Modells an (z. B. `128000`).
-        * **Maximale Ausgabetoken**: Belassen Sie den Wert auf `-1`, um eine unbeschränkte Ausgabe standardmäßig zu ermöglichen.
-        * **Temperatur**: Stellen Sie die Temperatur entsprechend Ihren Anforderungen ein (z. B. `0`).
+Sie können nun ein Modell in CLINE auswählen und es zur Codegenerierung, Beantwortung von Fragen usw. verwenden.
 
-Sie können nun ein Modell in CLINE auswählen und es zum Generieren von Code, Beantworten von Fragen usw. verwenden.
+---
 
-## 💡 Advanced Examples
+## 💡 Fortgeschrittene Beispiele
 
-The GitHub directory below contains a collection of code examples and scripts demonstrating the various features and use cases of Cloud Temple's LLM as a Service (LLMaaS) offering:
+Im folgenden GitHub-Repository finden Sie eine Sammlung von Codebeispielen und Skripten, die die verschiedenen Funktionen und Anwendungsfälle des LLM as a Service (LLMaaS)-Angebots von Cloud Temple demonstrieren:
 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
-You'll find practical guides for:
+Dort finden Sie praktische Anleitungen für:
+- __Informationsextraktion und Textanalyse:__ Fähigkeit, Dokumente zu analysieren und strukturierte Daten wie Entitäten, Ereignisse, Beziehungen und Attribute zu extrahieren, basierend auf domänenspezifischen Ontologien (ex: juridique, RH, IT).
 
-* **Information Extraction and Text Analysis:** Ability to analyze documents and extract structured data such as entities, events, relationships, and attributes, leveraging domain-specific ontologies (e.g., legal, HR, IT).
+- __Konversationale Interaktion und Chatbots:__ Entwicklung konversationeller Agenten, die in der Lage sind, zu kommunizieren, einen Gesprächsverlauf zu führen, Systemanweisungen (prompts système) zu verwenden und externe Tools aufzurufen.
 
-* **Conversational Interaction and Chatbots:** Development of conversational agents capable of dialogue, maintaining conversation history, using system prompts, and invoking external tools.
+- __Audiotranskription (Speech-to-Text):__ Umwandlung von Audioinhalten in Text, auch für große Dateien, mithilfe von Techniken zum Aufteilen, Normalisieren und Batch-Verarbeitung.
 
-* **Audio Transcription (Speech-to-Text):** Conversion of audio content into text, including for large files, using techniques such as segmentation, normalization, and batch processing.
+- __Textübersetzung:__ Übersetzung von Dokumenten von einer Sprache in eine andere, unter Berücksichtigung des Kontexts über mehrere Segmente hinweg zur Verbesserung der Kohärenz.
 
-* **Text Translation:** Translation of documents from one language to another, managing context across multiple segments to improve coherence.
+- __Modellverwaltung und -bewertung:__ Auflistung der über die API verfügbaren Sprachmodelle, Einsehen ihrer Spezifikationen und Durchführung von Tests zum Vergleich ihrer Leistung.
 
-* **Model Management and Evaluation:** Listing available language models via the API, reviewing their specifications, and running tests to compare performance.
-
-* **Real-Time Response Streaming:** Demonstration of the capability to receive and display model responses progressively (token by token), essential for interactive applications.
-
-* **RAG Pipeline with In-Memory Knowledge Base:** Educational RAG demonstrator illustrating the Retrieval-Augmented Generation process. Uses the LLMaaS API for embedding and generation, with vector storage in memory (FAISS) for clear understanding of the workflow.
-
-* **RAG Pipeline with Vector Database (Qdrant):** Complete, containerized RAG demonstrator using Qdrant as the vector database. The LLMaaS API is used for document embedding and generating augmented responses.
-
-* **OCR & Document Analysis (DeepSeek-OCR):** Comprehensive guide and demonstration tool to convert images and PDFs into structured Markdown, extract tables, and transcribe mathematical formulas. See the [dedicated documentation](./ocr).
+- __Echtzeit-Streaming von Antworten:__ Demonstration der Fähigkeit, Modellantworten schrittweise (token par token) zu empfangen und anzuzeigen, was für interaktive Anwendungen entscheidend ist.
+- __RAG-Pipeline mit speicherinterner Wissensdatenbank:__ Didaktischer RAG-Demonstrator zur Veranschaulichung der Funktionsweise von Retrieval-Augmented Generation. Verwendet die LLMaaS-API für Embeddings und Generierung, mit speicherinterner Vektorspeicherung (FAISS) für ein klares Verständnis des Prozesses.
+- __RAG-Pipeline mit Vektordatenbank (Qdrant):__ Vollständiger, containerisierter RAG-Demonstrator, der Qdrant als Vektordatenbank verwendet. Die LLMaaS-API wird für das Embedding von Dokumenten und die Generierung augmentierter Antworten genutzt.
+- __OCR & Dokumentenanalyse (DeepSeek-OCR):__ Umfassender Leitfaden und Demonstrationswerkzeug zur Konvertierung von Bildern und PDFs in strukturiertes Markdown, Extraktion von Tabellen und Transkription mathematischer Formeln. Siehe die [documentation dédiée](./ocr).

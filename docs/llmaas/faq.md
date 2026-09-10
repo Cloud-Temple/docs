@@ -6,23 +6,18 @@
 Notre service vous offre un accès **souverain et sécurisé** à un large catalogue de modèles d'IA de pointe, via une API compatible OpenAI. Nous gérons toute la complexité de l'infrastructure qualifiée **SecNumCloud 3.2**, vous permettant de vous concentrer sur la création de valeur pour vos applications, tout en maîtrisant vos coûts grâce à un modèle économique prévisible et en accélérant vos développements grâce à des standards ouverts.
 
 ### **Quel type de modèles proposez-vous et comment le catalogue évolue-t-il ?**
-Nous proposons un catalogue riche de **58 modèles open-source**, incluant les familles **Llama (Meta), Qwen, Mistral, Gemma (Google), NVIDIA Nemotron, Cogito et Granite (IBM)**. Nos modèles couvrent 8 catégories :
-*   **Chat & Raisonnement** — dialogue, analyse, agents avec function calling.
-*   **Programmation & Agents** — génération de code, refactoring, agents autonomes.
-*   **Vision & Multimodal** — analyse d'images, OCR, vidéo, contextes jusqu'à 1M tokens.
-*   **Embedding** — vectorisation pour RAG sémantique (BGE-M3, Granite, Qwen3-Embedding).
-*   **Reranking** — réordonnancement de résultats RAG (API compatible Cohere `/v1/rerank`).
-*   **Sécurité** — filtrage de contenus, guardrails (Granite3-Guardian).
-*   **Traduction** — 55 langues (TranslateGemma).
-*   **Audio & Image** — transcription temps réel (Voxtral), génération d'images (z-image).
+Le catalogue couvre le chat et le raisonnement, la programmation et les agents, la vision, les embeddings, le reranking, la sécurité, la traduction et les usages audio/image. Les modèles et leurs licences varient selon l'usage.
 
-Ce catalogue est **revu chaque trimestre** pour intégrer les modèles les plus performants, avec une politique de cycle de vie transparente (préavis de 3 mois avant tout retrait) pour garantir la stabilité de vos applications.
+Consultez le **[catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle)** pour la liste actuelle, les statuts LTS, les échéances et les migrations conseillées. Les nouveautés sont publiées dans le **[changelog LLMaaS](https://llmaas.status.cloud-temple.app/changelog)**.
+
+### **Un ancien nom de modèle peut-il continuer à fonctionner après une évolution du catalogue ?**
+Oui, certains identifiants sont redirigés vers un successeur. Cela préserve l'appel API mais peut modifier le comportement du modèle. Vérifiez la destination dans le cycle de vie, testez-la sur vos cas d'usage puis mettez à jour votre configuration. Consultez le [guide de migration](./concepts.md#migration-vers-un-autre-modèle).
 
 ### **Quelles sont les principales capacités fonctionnelles de votre API ?**
-Notre API, 100% compatible avec le standard OpenAI, vous permet de construire facilement des fonctionnalités avancées comme :
+Notre API compatible OpenAI vous permet de construire des fonctionnalités comme celles ci-dessous. Les endpoints et paramètres pris en charge sont précisés dans la [référence API](./api.md#compatibilité-openai).
 *   Des **chatbots/assistants** conversationnels avec streaming et function calling.
 *   Des systèmes de **Recherche Augmentée par Génération (RAG)** complets : embedding (`/v1/embeddings`) + reranking (`/v1/rerank`) + génération augmentée.
-*   Des applications d'**analyse d'images et de documents visuels** (OCR, graphiques, PDF) sans prétraitement.
+*   Des applications d'**analyse d'images et de documents visuels** (OCR, graphiques). Pour les PDF, convertissez préalablement les pages en images ; consultez les [prérequis du guide OCR](./ocr.md#prérequis--format-de-limage-et-dépendances).
 *   La **transcription audio** batch ou temps réel via WebSocket.
 *   Le **traitement en lot (Batch API)** asynchrone pour les workloads volumineux, avec une tarification réduite de 50%.
 *   La **génération d'images** via API compatible OpenAI.
@@ -31,7 +26,7 @@ Notre API, 100% compatible avec le standard OpenAI, vous permet de construire fa
 
 ### **Comment garantissez-vous la souveraineté et la confidentialité de nos données ?**
 La souveraineté est au cœur de notre offre. Elle repose sur plusieurs piliers :
-1.  **Hébergement en France** : Notre infrastructure est exclusivement en France, opérée par Cloud Temple, une société de droit français. Cela nous soustrait aux lois extraterritoriales comme le **CLOUD Act américain**.
+1.  **Hébergement et exploitation en France** : L’infrastructure LLMaaS est hébergée en France et opérée en France par Cloud Temple, société de droit français. Pour les garanties de souveraineté associées à la qualification, consultez [notre approche SecNumCloud](https://www.cloud-temple.com/notre-approche-secnumcloud/).
 2.  **Qualification SecNumCloud 3.2** : Le plus haut visa de sécurité de l'ANSSI garantit ce positionnement.
 3.  **Non-conservation des données** : Nous ne stockons **ni vos prompts, ni les réponses**. Les données sont traitées de manière volatile en mémoire le temps de l'inférence.
 4.  **Chiffrement de bout en bout** : Toutes les communications avec l'API sont chiffrées en **TLS 1.3**.
@@ -47,13 +42,15 @@ Nous appliquons une défense en profondeur :
 *   **Authentification forte** par clé d'API pour chaque requête.
 *   **Chiffrement TLS 1.3** de tous les flux.
 *   **Protection réseau** par pare-feu de nouvelle génération et systèmes de détection/prévention d'intrusion (IDS/IPS).
-*   **"Guardrails" applicatifs** pour se prémunir contre les menaces spécifiques aux LLMs, comme l'injection de prompts et les tentatives d'exploitation des modèles.
 *   **Tests d'intrusion réguliers** réalisés par des auditeurs qualifiés (PASSI) dans le cadre de notre qualification SecNumCloud 3.2.
+
+### **Les prompts sont-ils filtrés automatiquement ?**
+Non. La plateforme n'applique pas de filtrage automatique du contenu des prompts contre les injections ou les tentatives de contournement des instructions. Les contrôles de contenu relèvent de votre application. Vous pouvez intégrer explicitement un modèle de sécurité pour évaluer les entrées ou les réponses, selon vos critères métier. Consultez la [sécurité des prompts](./concepts.md#sécurité-des-prompts).
 
 ## Intégration et Usage
 
 ### **Comment s'intègre votre API ?**
-Notre service est "API-first". Étant **compatible avec l'API OpenAI**, vous pouvez utiliser tous les SDK (Python, Node.js, etc.) et frameworks standards du marché comme **LangChain** ou **LlamaIndex** pour une intégration rapide. Nous fournissons une documentation technique complète (OpenAPI) et des exemples de code.
+Notre service est "API-first". Son **API compatible OpenAI** permet d’utiliser les SDK OpenAI et des frameworks comme **LangChain** ou **LlamaIndex** pour les appels pris en charge. Configurez l’URL de base et votre clé LLMaaS, puis vérifiez les paramètres et les capacités du modèle choisi. Consultez les [différences documentées](./api.md#compatibilité-openai) et les [exemples d’intégration](./tutorials.md).
 
 ### **Peut-on personnaliser l'expérience utilisateur ?**
 Oui, totalement. Notre service étant une API "headless", vous avez un contrôle total sur l'interface et l'expérience de vos utilisateurs finaux, y compris l'intégration de votre charte graphique et l'affichage de messages de conformité, qui sont de votre responsabilité.
@@ -71,7 +68,7 @@ Notre modèle est basé sur la consommation réelle pour refléter le coût de c
 | **Tokens d'entrée (chat)** | 1.8 € / million |
 | **Tokens de sortie (chat)** | 8.0 € / million |
 | **Tokens de raisonnement** | 8.0 € / million |
-| **Reranking** | 4.0 € / million de tokens rerankés |
+| **Reranking** | 4,00 € / million de documents traités |
 | **Batch (entrée)** | 0.9 € / million (−50%) |
 | **Batch (sortie)** | 4.0 € / million (−50%) |
 | **Audio ASR** | 0.01 € / minute de transcription |

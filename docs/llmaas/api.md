@@ -5,6 +5,18 @@ sidebar_position: 2
 
 # Documentation API LLMaaS
 
+## Compatibilité OpenAI
+
+L’API LLMaaS est compatible OpenAI pour les appels documentés dans cette référence. Configurez l’URL de base `https://api.ai.cloud-temple.com/v1` et votre clé LLMaaS dans le client, puis vérifiez les capacités du modèle et les paramètres de l’endpoint utilisé.
+
+La compatibilité ne couvre pas l’ensemble des fonctionnalités OpenAI. Les différences documentées comprennent notamment :
+
+- **Complétions** : `/v1/completions` attend un tableau `messages`, comme le chat ; voir le [format de complétion](#post-v1completions).
+- **Embeddings** : les entrées doivent être du texte ; voir les [formats acceptés](#post-v1embeddings).
+- **Transcription audio** : les formats de réponse `text`, `srt` et `vtt` ne sont pas pris en charge ; voir les [paramètres de transcription](#post-v1audiotranscriptions).
+- **Batch** : le service utilise un [contrat spécifique](./batch.md), avec soumission directe des conversations en JSON sur `/v1/chat/completions/batch`.
+
+
 ## URL de Base
 
 ```
@@ -48,7 +60,7 @@ Le choix d'un tier est donc un équilibre entre l'investissement initial, le bud
 | **Tokens d'entrée**                    | 1.8 € / million                                  |
 | **Tokens de sortie (chat/completion)** | 8.00 € / million                                 |
 | **Tokens de raisonnement**             | 8.00 € / million                                 |
-| **Reranking**                          | 4.00 € / million de tokens rerankés              |
+| **Reranking**                          | 4,00 € / million de documents traités              |
 | **Batch asynchrone (entrée)**          | 0.9 € / million (−50% vs standard)               |
 | **Batch asynchrone (sortie)**          | 4.00 € / million (−50% vs standard)              |
 | **Transcription Audio**                | 0.01 € / minute (toute minute commencée est due) |
@@ -259,7 +271,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_TOKEN_API" \
   -d '{
-    "model": "gemma3:27b",
+    "model": "gemma4:31b",
     "messages": [
       {
         "role": "user",
@@ -390,7 +402,9 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 #### Réponse
 
-```json
+Extrait abrégé : les points de suspension représentent les autres composantes du vecteur. Ce bloc illustre la structure de la réponse et ne constitue pas un document JSON directement copiable.
+
+```text
 {
   "object": "list",
   "data": [
@@ -417,7 +431,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 Réordonne une liste de documents par pertinence par rapport à une requête. Compatible avec l'API Cohere (v1 et v2).
 
-**Facturation** : 4€ / million de tokens rerankés. Idéal pour améliorer la précision des pipelines RAG.
+**Facturation** : 4,00 € par million de documents traités. Tous les documents soumis sont comptés, même si `top_n` limite le nombre de résultats retournés. Voir le [détail du calcul](./rerank.md#tarification).
 
 #### Requête
 
@@ -448,32 +462,38 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 #### Réponse
 
+Extrait illustratif du format Jina/vLLM décrit par le contrat de la plateforme. Les scores et compteurs ci-dessous sont fictifs. Le proxy transmet la réponse du moteur et ajoute un bloc `backend`, omis ici.
+
 ```json
 {
-  "id": "rerank-7f3a2b1c",
+  "id": "score-8bb47ca195d8cb2f",
   "results": [
     {
       "index": 0,
-      "relevance_score": 0.9874,
+      "relevance_score": 0.0401,
       "document": {
-        "text": "Paris est la capitale et la plus grande ville de France."
+        "text": "Paris est la capitale et la plus grande ville de France.",
+        "multi_modal": null
       }
     },
     {
       "index": 2,
-      "relevance_score": 0.5231,
+      "relevance_score": 0.0253,
       "document": {
-        "text": "La France est un pays d'Europe occidentale."
+        "text": "La France est un pays d'Europe occidentale.",
+        "multi_modal": null
       }
     }
   ],
   "usage": {
-    "billed_units": {
-      "search_units": 3
-    }
-  }
+    "prompt_tokens": 39,
+    "total_tokens": 39
+  },
+  "model": "nvidia/llama-nemotron-rerank-vl-1b-v2"
 }
 ```
+
+Les `relevance_score` sont des scores bruts non normalisés, pas des probabilités entre 0 et 1. Utilisez leur ordre relatif ; tout seuil doit être [calibré sur votre modèle et votre corpus](./rerank.md#seuil-de-pertinence). Les compteurs `usage.prompt_tokens` et `usage.total_tokens` sont distincts de la facturation par document traité ; aucun champ `usage.billed_units.search_units` n’est requis pour calculer cette dernière.
 
 L'endpoint `/v2/rerank` (Cohere SDK v2) est également disponible avec le même format de requête.
 
@@ -503,9 +523,17 @@ for result in results.results:
     print(f"Index: {result.index}, Score: {result.relevance_score:.4f}")
 ```
 
+### POST /v1/chat/completions/batch
+
+Soumet plusieurs conversations indépendantes avec un modèle commun pour un traitement asynchrone. Le champ `messages` est un tableau de conversations. La réponse HTTP 202 contient l'identifiant du lot.
+
+Utilisez `GET /v1/chat/completions/batch/{id}` avec la même clé API pour suivre le traitement et récupérer les résultats. Consultez le [guide Batch](./batch.md) pour le format, les limites et un exemple complet.
+
 ### GET /v1/models
 
-Liste des modèles disponibles.
+Liste des identifiants de modèles exposés par l'API. Utilisez cette réponse pour renseigner le paramètre `model`.
+
+Consultez aussi le [cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle) pour les dépréciations, dates de fin de support et migrations. Un identifiant peut être conservé comme redirection vers un successeur ; sa présence dans cette liste ne garantit pas le maintien du modèle d'origine.
 
 #### Requête
 
@@ -515,6 +543,8 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 #### Réponse
+
+Cet extrait est illustratif : les identifiants et les valeurs de métadonnées, notamment `max_model_len`, ne constituent pas les caractéristiques actuelles du service. Utilisez la réponse de `GET /v1/models` pour obtenir les valeurs effectives.
 
 ```json
 {
@@ -773,15 +803,21 @@ chatCompletion('Bonjour !').then(response => {
 });
 ```
 
-### JavaScript avec Fetch (Browser)
+### JavaScript avec Fetch (Node.js côté serveur)
+
+Exécutez cet exemple côté serveur avec Node.js disposant de `fetch` natif. Définissez `LLMAAS_API_KEY` dans l'environnement du serveur. Pour une interface web, le navigateur appelle votre backend, qui authentifie l'utilisateur et contrôle ses droits avant d'appeler LLMaaS. La clé de service reste exclusivement côté serveur et ne doit pas être intégrée au code envoyé au navigateur.
 
 ```javascript
 async function fetchCompletion(message) {
+    const apiKey = process.env.LLMAAS_API_KEY;
+    if (!apiKey) {
+        throw new Error('La variable LLMAAS_API_KEY doit être définie côté serveur.');
+    }
     const response = await fetch('https://api.ai.cloud-temple.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`
+            'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
             model: 'gpt-oss:120b',
@@ -838,7 +874,7 @@ def safe_api_call(payload):
 
 ## SDK et Intégrations
 
-L'API LLMaaS est compatible avec les SDK OpenAI existants en modifiant l'URL de base :
+Pour les appels pris en charge, configurez le SDK OpenAI avec l’URL de base et la clé LLMaaS. Consultez la [portée de la compatibilité](#compatibilité-openai) avant de migrer une intégration :
 
 ### OpenAI Python SDK
 
@@ -869,9 +905,11 @@ except Exception as e:
 
 ### LangChain
 
+Utilisez les [versions validées et prérequis LangChain](./tutorials.md#prérequis-langchain). Les exemples ci-dessous ont été vérifiés avec des réponses LLMaaS simulées.
+
 ```python
 from langchain_openai import ChatOpenAI
-from langchain.schema import HumanMessage
+from langchain_core.messages import HumanMessage
 
 # Configuration du chat model (compatible avec LLMaaS)
 # Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
@@ -880,9 +918,7 @@ chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="gpt-oss:120b",
-    # Note: Les paramètres comme max_tokens sont passés via model_kwargs
-    # pour assurer la compatibilité entre les versions de LangChain.
-    model_kwargs={"max_tokens": 200}
+    max_tokens=200
 )
 
 try:
@@ -901,64 +937,29 @@ except Exception as e:
 
 #### Utilisation des Embeddings
 
-:::warning[Incompatibilité avec les clients LangChain standards]
-Actuellement, l'utilisation de l'endpoint d'embedding via les classes standards de LangChain (`langchain_openai.OpenAIEmbeddings` ou `langchain_community.OllamaEmbeddings`) présente des incompatibilités avec notre API.
-
-- `OpenAIEmbeddings` envoie des tokens pré-calculés au lieu de texte brut, ce qui est rejeté.
-- `OllamaEmbeddings` ne gère pas l'authentification par Bearer Token requise.
-
-En attendant une solution pérenne, il est recommandé de créer une classe d'embedding personnalisée ou d'appeler l'API directement, comme démontré dans l'exemple `exemples/simple-rag-demo`.
-:::
+Utilisez `OpenAIEmbeddings` avec `check_embedding_ctx_length=False` pour envoyer les textes directement, sans pré-tokenisation locale. Ce réglage est [documenté par LangChain](https://reference.langchain.com/python/langchain-openai/embeddings/base/OpenAIEmbeddings). Le paramètre `encoding_format="float"`, transmis via `model_kwargs`, demande des vecteurs numériques.
 
 ```python
-from langchain.embeddings.base import Embeddings
-from typing import List
-import httpx
+import os
+from langchain_openai import OpenAIEmbeddings
 
-class LLMaaSEmbeddings(Embeddings):
-    """
-    Classe d'embedding personnalisée pour interagir avec l'API LLMaaS de Cloud Temple.
-    Cette classe est conçue pour être compatible avec l'interface `Embeddings` de LangChain,
-    permettant son utilisation dans des pipelines LangChain tout en appelant notre API spécifique.
-    """
-    def __init__(self, api_key: str, base_url: str = "https://api.ai.cloud-temple.com/v1", model_name: str = "granite-embedding:278m"):
-        self.api_key = api_key
-        self.base_url = base_url
-        self.model_name = model_name
-        self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-        }
+embeddings = OpenAIEmbeddings(
+    api_key=os.environ["LLMAAS_API_KEY"],
+    base_url="https://api.ai.cloud-temple.com/v1",
+    model="granite-embedding:278m",
+    check_embedding_ctx_length=False,
+    model_kwargs={"encoding_format": "float"},
+)
 
-    def _embed(self, texts: List[str]) -> List[List[float]]:
-        payload = {"input": texts, "model": self.model_name}
-        try:
-            with httpx.Client(timeout=30.0) as client:
-                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
-                response.raise_for_status()
-                data = response.json()['data']
-                # Trier les embeddings par leur index pour garantir l'ordre
-                data.sort(key=lambda e: e['index'])
-                return [item['embedding'] for item in data]
-        except httpx.HTTPStatusError as e:
-            print(f"Erreur HTTP lors de la récupération de l'embedding : {e.response.status_code}")
-            print(f"Réponse : {e.response.text}")
-            return []
-
-    def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        return self._embed(texts)
-
-    def embed_query(self, text: str) -> List[float]:
-        return self._embed([text])[0]
-
-# Utilisation
-# embeddings = LLMaaSEmbeddings(
-#     api_key="VOTRE_TOKEN_API",
-#     base_url="https://api.ai.cloud-temple.com/v1",
-#     model_name="granite-embedding:278m"
-# )
-# vector = embeddings.embed_query("Mon texte à vectoriser")
+vectors = embeddings.embed_documents(["Premier document", "Deuxième document"])
+query_vector = embeddings.embed_query("Ma question")
 ```
+
+Ce réglage désactive aussi le découpage automatique des textes selon la fenêtre de contexte par ce client. Découpez les documents avant l’appel et respectez la limite du modèle choisi, comme dans le [tutoriel RAG](./tutorials.md#2-rag-retrieval-augmented-generation-avec-lapi-llmaas).
+
+Les erreurs de l’API remontent sous forme d’exceptions : elles ne sont pas remplacées par une liste vide. Traitez-les au niveau de votre application avant de poursuivre l’indexation ou la recherche.
+
+**Validation :** format des requêtes comparé au contrat et au code du proxy ; envoi de textes seuls et en lots, authentification, lecture des vecteurs et propagation des erreurs HTTP vérifiés avec des réponses simulées. Aucun appel de production n’a été effectué pour cette validation.
 
 ## Support
 

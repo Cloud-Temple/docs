@@ -121,6 +121,7 @@ class TranslationUI:
         config_table.add_column("Valeur", style="white", width=60)
         
         config_table.add_row("🤖 Modèle", f"[green]{config.model}[/green]")
+        config_table.add_row("Effort de raisonnement", config.reasoning_effort)
         config_table.add_row("🌐 API", f"[blue]{config.api_url}[/blue]")
         config_table.add_row("⚡ Concurrence", f"[yellow]{config.concurrent_translations}[/yellow]")
         config_table.add_row("📁 Dossier Docs", f"[green]{paths.get('docs', 'N/A')}[/green]")

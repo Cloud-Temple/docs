@@ -3,26 +3,50 @@ title: Übersicht
 sidebar_position: 1
 ---
 
-# LLM als Dienstleistung (LLMaaS)
+# LLM as a Service (LLMaaS)
+
+LLMaaS bietet Zugriff auf von Cloud Temple gehostete KI-Modelle über eine API: Konversationsassistenten, Programmierung und Agenten, Bildanalyse, semantische Suche, Reranking, Übersetzung sowie Audio- und Bildanwendungen.
+
+## Katalog, Neuigkeiten und Verfügbarkeit
+
+- **[Katalog und Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)** : Modelle, Kontext, LTS-Status, Supportende und empfohlene Migrationen.
+- **[Neuigkeiten zu LLMaaS](https://llmaas.status.cloud-temple.app/changelog)** : Neue Modelle, Service-Updates und Umleitungsankündigungen.
+- **[Service-Status](https://llmaas.status.cloud-temple.app/)** und **[Verlauf](https://llmaas.status.cloud-temple.app/history)** : Verfügbarkeit und beobachtete Leistung.
+
+Um zu beginnen, folgen Sie der [Schnellstartanleitung](./quickstart.md). Um ein Modell auszuwählen, konsultieren Sie den [Katalogleitfaden](./models.md).
+
+## Funktionen
+
+| Verwendung | Leitfaden |
+|-------|-------|
+| Textgenerierung, Streaming, Tool-Aufrufe und Vision | [API LLMaaS](./api.md) |
+| Generativ erweiterte Suche | [Comprendre le RAG](./rag_explained.md) |
+| Dokumenten-Ranking nach Relevanz | [Reranking](./rerank.md) |
+| Asynchrone Batch-Verarbeitung von Anfragen | [Batch](./batch.md) |
+| Modellwechsel und Verwaltung veralteter IDs | [Cycle de vie et migration](./concepts.md#migration-zu-einem-anderen-modell) |
+
+Inferenzoptimierungen, einschließlich der im Changelog angekündigten Mehrfach-Token-Vorhersage (*MTP*), werden serverseitig durchgeführt. Bewerten Sie deren Auswirkungen auf Ihre eigenen Anfragen anhand der Monitoring-Metriken.
 
 ## Zugriff auf die API
 
-Die API ist über die Cloud Temple-Konsole zugänglich. Sie können Ihre API-Schlüssel verwalten, Ihren Verbrauch überwachen und Ihre Drittanbieter in den Kontoeinstellungen konfigurieren. Die Konsole ermöglicht zudem die Anzeige der Nutzung Ihrer Modelle.
+Die API ist über die Cloud Temple-Konsole zugänglich. Sie können Ihre API-Schlüssel verwalten, Ihre Nutzung überwachen und Drittanbieter in den Kontoeinstellungen konfigurieren. Die Konsole ermöglicht es Ihnen außerdem, die Nutzung Ihrer Modelle zu visualisieren.
 
 ## Authentifizierung
 
-Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Schlüssel im Bearer-Token-Format enthalten. Wenn Sie die Client-SDKs verwenden, wird der Schlüssel automatisch in jede Anfrage eingebunden. Bei einer direkten Integration mit der API müssen Sie diesen Header selbst senden.
+Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Schlüssel im Bearer-Token-Format enthalten. Wenn Sie die Client-SDKs verwenden, wird der Schlüssel automatisch in jede Anfrage aufgenommen. Wenn Sie direkt mit der API integrieren, müssen Sie diesen Header selbst senden.
 
 ## Inhaltstypen
 
-Die LLMaaS-API akzeptiert stets JSON im Anfragetext und gibt JSON im Antworttext zurück. Sie müssen den Header `content-type: application/json` in Ihren Anfragen senden. Bei Verwendung der Client-SDKs wird dies automatisch verwaltet.
+Textgenerierungsanfragen verwenden JSON mit dem Header `Content-Type: application/json`. Das Streaming gibt SSE-Ereignisse zurück und die Transkription von Audiodateien verwendet `multipart/form-data`. Siehe die [documentation API](./api.md) für das Format jedes Endpunkts.
 
-## Antwort-Header
+## Antwortmetadaten
 
-Die LLMaaS-API enthält die folgenden Header in jeder Antwort:
+Je nach Endpoint kann der JSON-Body der Antwort die folgenden Felder enthalten:
 
-- `id` : Eine global eindeutige ID für die Anfrage
-- `backend` : Informationen zur verwendeten Infrastruktur (engine_type, machine_name)
+- `id` : Antwortkennung.
+- `backend` : Informationen zur Engine und zur Instanz, die die Anfrage verarbeitet hat (`engine_type`, `machine_name`).
+
+Diese Felder befinden sich im JSON-Body, nicht in den HTTP-Headern. Siehe die [API-Referenz](./api.md) für das Format und die dokumentierten Felder jedes Endpoints.
 
 ## Beispiele
 
@@ -76,15 +100,15 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 ### Verfügbare Parameter
 
-| Parameter     | Typ     | Beschreibung                                                |
-| ------------- | ------- | ----------------------------------------------------------- |
-| `model`       | string  | Das zu verwendende Modell (siehe [Modellkatalog](./models.md)) |
-| `messages`    | array   | Liste der Nachrichten der Konversation                      |
-| `max_tokens`  | integer | Maximale Anzahl der zu generierenden Tokens                 |
-| `temperature` | float   | Steuert die Kreativität (0.0-2.0)                           |
-| `top_p`       | float   | Steuert die Vielfalt der Antworten                         |
-| `stream`      | boolean | Aktiviert das Streaming der Antwort                         |
-| `user`        | string  | Eindeutige ID des Endbenutzers                              |
+| Parameter     | Typ     | Beschreibung                                                   |
+| ------------- | ------- | ------------------------------------------------------------- |
+| `model`       | string  | Das zu verwendende Modell (siehe [catalogue des modèles](./models.md)) |
+| `messages`    | array   | Liste der Nachrichten im Gespräch                         |
+| `max_tokens`  | integer | Maximale Anzahl der zu generierenden Tokens                            |
+| `temperature` | float   | Steuert die Kreativität (0.0-2.0)                              |
+| `top_p`       | float   | Steuert die Vielfalt der Antworten                            |
+| `stream`      | boolean | Aktiviert das Streaming der Antwort                             |
+| `user`        | string  | Eindeutige Kennung des Endbenutzers                     |
 
 ## Basis-URL
 
@@ -95,55 +119,21 @@ https://api.ai.cloud-temple.com/v1/
 
 ## Verfügbare Endpunkte
 
-- `/chat/completions` : Generierung von Chat-Antworten
+- `/chat/completions` : Generierung konversationeller Antworten
+- `/chat/completions/batch` : Asynchrone Verarbeitung mehrerer Konversationen ([guide Batch](./batch.md))
 - `/completions` : Einfache Textvervollständigung
 - `/embeddings` : Vektorisierung für semantische Suche und RAG
-- `/rerank` und `/v2/rerank` : Neuanordnung von Ergebnissen (kompatibel mit Cohere SDK)
-- `/audio/transcriptions` : Batch-Audio-Transkription (Whisper)
+- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (compatible Cohere SDK)
+- `/audio/transcriptions` : Batch-Audiotranskription (Whisper)
 - `/audio/speech` : Sprachsynthese (TTS)
 - `/images/generations` : Bildgenerierung
 - `/models` : Liste der verfügbaren Modelle
 
-### Beispiel: Modellliste
+### Beispiel: Liste der Modelle
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-**Antwort** :
-```json
-{
-  "object": "list",
-  "data": [
-    {
-      "id": "gpt-oss:120b",
-      "object": "model",
-      "created": 1749110897,
-      "owned_by": "CloudTemple",
-      "root": "gpt-oss:120b",
-      "aliases": ["gpt-oss:120b"],
-      "parent": null,
-      "max_model_len": 60000,
-      "permission": [
-        {
-          "id": "modelperm-granite3.3:8b-1749110897",
-          "object": "model_permission",
-          "created": 1749110897,
-          "allow_create_engine": false,
-          "allow_sampling": true,
-          "allow_logprobs": true,
-          "allow_search_indices": false,
-          "allow_view": true,
-          "allow_fine_tuning": false,
-          "organization": "*",
-          "group": null,
-          "is_blocking": false
-        }
-      ]
-    }
-  ]
-}
-```
-
-Die Antwort enthält alle verfügbaren Modelle mit ihren Spezifikationen und Berechtigungen.
+Die Antwort enthält die von der API bereitgestellten Identifikatoren. Siehe auch den [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle), um Deprekationen und Weiterleitungen zu überprüfen. Die in den Beispielen verwendeten Modelle dienen nur der Veranschaulichung; prüfen Sie ihre Verfügbarkeit vor der Ausführung.

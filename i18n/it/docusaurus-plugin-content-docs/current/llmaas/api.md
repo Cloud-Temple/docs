@@ -5,7 +5,18 @@ sidebar_position: 2
 
 # Documentazione API LLMaaS
 
-## URL di base
+## Compatibilità OpenAI
+
+L'API LLMaaS è compatibile con OpenAI per le chiamate documentate in questo riferimento. Configurate l'URL base `https://api.ai.cloud-temple.com/v1` e la vostra chiave LLMaaS nel client, quindi verificate le capacità del modello e i parametri dell'endpoint utilizzato.
+
+La compatibilità non copre l'intero set di funzionalità OpenAI. Le differenze documentate includono in particolare :
+
+- **Completions** : `/v1/completions` si aspetta un array `messages`, come nel chat ; vedere il [formato di completion](#post-v1completions).
+- **Embeddings** : gli input devono essere testo ; vedere i [formati accettati](#post-v1embeddings).
+- **Trascrizione audio** : i formati di risposta `text`, `srt` e `vtt` non sono supportati ; vedere i [parametri di trascrizione](#post-v1audiotranscriptions).
+- **Batch** : il servizio utilizza un [contratto specifico](./batch.md), con invio diretto delle conversazioni in JSON su `/v1/chat/completions/batch`.
+
+## URL di Base
 
 ```
 https://api.ai.cloud-temple.com/v1
@@ -13,7 +24,7 @@ https://api.ai.cloud-temple.com/v1
 
 ## Autenticazione
 
-Tutte le richieste richiedono un header `Authorization` con il token API:
+Tutte le richieste richiedono un header `Authorization` con il vostro token API:
 
 ```
 Authorization: Bearer VOTRE_TOKEN_API
@@ -21,37 +32,37 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ## Rate Limiting e Fatturazione
 
-### Il Principio dei Tier: Livello di Accesso, Budget e Capacità
+### Il Principio dei Livelli: Livello di Accesso, Budget e Capacità
 
-Il nostro sistema di tier è progettato come **pacchetti di servizio completi** che definiscono tre aspetti chiave del vostro utilizzo:
+Il nostro sistema a livelli è progettato come **pacchetti di servizio completi** che definiscono tre aspetti chiave del vostro utilizzo:
 
-1.  **Un Livello di Accesso (Credito d'Acquisto)** : Per i Tier da 1 a 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e budgetarie del livello scelto.
+1.  **Un Livello di Accesso (Credito di Acquisto)** : Per i Livelli 1 a 4, si tratta di un importo da saldare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e di budget del livello scelto.
 2.  **Un Limite di Budget Mensile** : È il tetto del vostro consumo mensile, garantendovi un controllo totale sui costi.
-3.  **Una Capacità Tecnica** : Sono i limiti di throughput (token al giorno e all'ora) che garantiscono prestazioni stabili e prevedibili per il vostro volume di chiamate.
+3.  **Una Capacità Tecnica** : Si tratta dei limiti di throughput (token al giorno e all'ora) che garantiscono prestazioni stabili e prevedibili per il vostro volume di chiamate.
 
-La scelta di un tier è quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. Il vostro consumo all'interno di questo pacchetto viene quindi fatturato secondo le tariffe vigenti.
+La scelta di un livello rappresenta quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. Il vostro consumo all'interno di questo pacchetto viene quindi fatturato secondo le tariffe in vigore.
 
-### Tabella dei Piani
+### Tabella dei Tier
 
-| Piano                      | Credito di Acquisto | Limite Mensile | Token di Output/Ora | Token di Output/Giorno | Descrizione          |
-| ------------------------- | -------------- | ---------------- | ------------------- | ------------------ | -------------------- |
-| **Piano 1**                | 200 €          | 1 000 €          | 150 000             | 3 600 000          | Utilizzo standard |
-| **Piano 2**                | 500 €          | 3 000 €          | 300 000             | 7 200 000          | Uso professionale  |
-| **Piano 3**                | 1 000 €        | 5 000 €          | 450 000             | 10 800 000         | Alto volume         |
-| **Piano 4**                | 4 000 €        | 10 000 €         | 600 000             | 14 400 000         | Azienda           |
-| **Fatturazione Mensile** | N/A            | Illimitata        | Priorità elevata     | Priorità elevata    | Contatto commerciale   |
+| Tier                      | Credito di Acquisto | Limite Mensile | Token Output/Ora | Token Output/Giorno | Descrizione          |
+| ------------------------- | ------------------- | -------------- | ---------------- | ------------------- | -------------------- |
+| **Tier 1**                | 200 €               | 1 000 €        | 150 000          | 3 600 000           | Utilizzo standard    |
+| **Tier 2**                | 500 €               | 3 000 €        | 300 000          | 7 200 000           | Uso professionale    |
+| **Tier 3**                | 1 000 €             | 5 000 €        | 450 000          | 10 800 000          | Volume elevato       |
+| **Tier 4**                | 4 000 €             | 10 000 €       | 600 000          | 14 400 000          | Impresa              |
+| **Fatturazione Mensile**   | N/A                 | Illimitata     | Priorità elevata | Priorità elevata    | Contatto commerciale |
 
-**Nota** : I limiti di frequenza sono calcolati in base ai token di output. I prezzi variano in base all'uso :
+**Nota** : I limiti di throughput sono calcolati sulla base dei token in uscita. La tariffazione varia in base all'utilizzo :
 
 | Tipo di utilizzo                           | Tariffa                                            |
-| -------------------------------------- | ------------------------------------------------ |
-| **Token di input**                    | 1.8 € / milione                                  |
-| **Token di output (chat/completamento)** | 8.00 € / milione                                 |
-| **Token di ragionamento**             | 8.00 € / milione                                 |
-| **Reranking**                          | 4.00 € / milione di token riordinati              |
-| **Batch asincrono (input)**          | 0.9 € / milione (−50% rispetto allo standard)               |
-| **Batch asincrono (output)**          | 4.00 € / milione (−50% rispetto allo standard)              |
-| **Trascrizione Audio**                | 0.01 € / minuto (ogni minuto iniziato è dovuto) |
+| ------------------------------------------ | -------------------------------------------------- |
+| **Token in ingresso**                      | 1.8 € / milione                                    |
+| **Token in uscita (chat/completion)**      | 8.00 € / milione                                   |
+| **Token di ragionamento**                  | 8.00 € / milione                                   |
+| **Reranking**                              | 4,00 € / milione di documenti elaborati              |
+| **Batch asincrono (ingresso)**             | 0.9 € / milione (−50% vs standard)                 |
+| **Batch asincrono (uscita)**               | 4.00 € / milione (−50% vs standard)                |
+| **Trascrizione Audio**                     | 0.01 € / minuto (ogni minuto iniziato è fatturabile) |
 
 ### Intestazioni di Limite
 
@@ -100,20 +111,20 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   }'
 ```
 
-#### Paramètres
+#### Parametri
 
-| Paramètre           | Tipo          | Obbligatorio | Descrizione                                                                                                                  |
-| ------------------- | ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `model`             | string        | ✅          | ID del modello (vedi [catalogo](./models))                                                                                    |
-| `messages`          | array         | ✅          | Conversazione (ruolo: system/user/assistant)                                                                                   |
-| `stream`            | boolean       | ❌          | Attiva lo streaming (predefinito: false)                                                                                          |
-| `temperature`       | float         | ❌          | Creatività 0.0-2.0 (predefinito: 0.7)                                                                                             |
-| `max_tokens`        | integer       | ❌          | Limite di token (predefinito: 1024)                                                                                              |
-| `top_p`             | float         | ❌          | Campionamento nucleus 0.0-1.0 (predefinito: 1.0)                                                                                |
-| `presence_penalty`  | float         | ❌          | Penalità presenza da -2.0 a 2.0 (predefinito: 0)                                                                                     |
-| `frequency_penalty` | float         | ❌          | Penalità frequenza da -2.0 a 2.0 (predefinito: 0)                                                                                    |
-| `user`              | string        | ❌          | ID utente univoco                                                                                                        |
-| `tools`             | array         | ❌          | Elenco degli strumenti che il modello può chiamare.                                                                                 |
+| Parametro           | Tipo          | Obbligatorio | Descrizione                                                                                                                  |
+| ------------------- | ------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `model`             | string        | ✅          | ID del modello (vedi [catalogue](./models))                                                                                   |
+| `messages`          | array         | ✅          | Conversazione (role: system/user/assistant)                                                                                   |
+| `stream`            | boolean       | ❌          | Attiva lo streaming (défaut: false)                                                                                           |
+| `temperature`       | float         | ❌          | Creatività 0.0-2.0 (défaut: 0.7)                                                                                             |
+| `max_tokens`        | integer       | ❌          | Limite di token (défaut: 1024)                                                                                               |
+| `top_p`             | float         | ❌          | Campionamento nucleus 0.0-1.0 (défaut: 1.0)                                                                                  |
+| `presence_penalty`  | float         | ❌          | Penalità di presenza -2.0 a 2.0 (défaut: 0)                                                                                  |
+| `frequency_penalty` | float         | ❌          | Penalità di frequenza -2.0 a 2.0 (défaut: 0)                                                                                 |
+| `user`              | string        | ❌          | ID utente univoco                                                                                                             |
+| `tools`             | array         | ❌          | Elenco degli strumenti che il modello può chiamare.                                                                          |
 | `tool_choice`       | string/object | ❌          | Controlla se il modello deve chiamare uno strumento. "none", "auto", o `{"type": "function", "function": {"name": "my_function"}}`. |
 
 #### Risposta Standard
@@ -142,9 +153,9 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 }
 ```
 
-#### Risposta con Chiamata di Strumento
+#### Risposta con Chiamata di Strumenti
 
-Se il modello decide di chiamare uno strumento, la risposta avrà un `finish_reason` di `tool_calls` e il messaggio conterrà un array `tool_calls`.
+Se il modello decide di invocare uno strumento, la risposta avrà un `finish_reason` di `tool_calls` e il messaggio conterrà un array `tool_calls`.
 
 ```json
 {
@@ -180,7 +191,7 @@ Se il modello decide di chiamare uno strumento, la risposta avrà un `finish_rea
 }
 ```
 
-Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strumento sul tuo lato, quindi inviare il risultato al modello utilizzando un messaggio con `role: "tool"`.
+Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strumento sul proprio lato, quindi restituire il risultato al modello utilizzando un messaggio con `role: "tool"`.
 
 ```json
 {
@@ -216,7 +227,7 @@ Dopo aver ricevuto una risposta `tool_calls`, è necessario eseguire lo strument
 
 Con `"stream": true`, la risposta arriva token per token :
 
-**Header di risposta :**
+**Intestazioni di risposta :**
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
@@ -240,26 +251,26 @@ data: [DONE]
 
 ### Richieste Multimodali (Vision)
 
-Per analizzare le immagini, è possibile inviare una richiesta in cui il campo `content` di un messaggio utente è un array (array) contenente sia testo che immagini.
+Per analizzare le immagini, è possibile inviare una richiesta in cui il campo `content` di un messaggio utente è un array contenente sia testo che immagini.
 
-Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` contenente l'URL dell'immagine nel formato `data URI` (base64).
+Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` contenente l'URL dell'immagine in formato `data URI` (base64).
 
-:::info[Nota sulla Compatibilità]
-Sebbene il formato standard e consigliato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta anche, per flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Si consiglia tuttavia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
+:::info[Note de Compatibilité]
+Sebbene il formato standard e consigliato sia `{"type": "image_url", "image_url": {"url": "data:..."}}`, l'API supporta inoltre, per flessibilità, un formato semplificato `{"type": "image", "image": "data:..."}`. Si consiglia tuttavia di utilizzare il formato standard `image_url` per una migliore compatibilità con l'ecosistema OpenAI.
 :::
 
-:::tip[OCR e Analisi dei Documenti]
-Per attività specifiche di analisi dei documenti (PDF, scans, tableaux), raccomandiamo l'utilizzo del modello specializzato **DeepSeek-OCR**. Consulta la [documentazione dedicata](./ocr).
+:::tip[OCR et Analyse de Documents]
+Per compiti specifici di analisi dei documenti (PDF, scansioni, tabelle), consigliamo l'utilizzo del modello specializzato **DeepSeek-OCR**. Vedi la [documentation dédiée](./ocr).
 :::
 
-#### Esempio di Richiesta Visione
+#### Esempio di Richiesta Vision
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer VOTRE_TOKEN_API" \
   -d '{
-    "model": "gemma3:27b",
+    "model": "gemma4:31b",
     "messages": [
       {
         "role": "user",
@@ -285,10 +296,10 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 :::warning
 **Nota** : L'endpoint `/v1/completions` utilizza lo stesso formato di `/v1/chat/completions` con i messaggi. 
-Per la completione di testo semplice, utilizza un messaggio utente con il tuo prompt.
+Per il completamento del testo semplice, utilizza un messaggio user con il tuo prompt.
 :::
 
-Completioni di testo tramite formato chat.
+Completazioni di testo tramite formato chat.
 
 #### Richiesta
 
@@ -311,7 +322,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/completions" \
 
 #### Parametri
 
-Uguali a `/v1/chat/completions` - vedere la sezione precedente.
+Identici a `/v1/chat/completions` - vedere la sezione precedente.
 
 #### Risposta
 
@@ -319,7 +330,7 @@ Formato identico a `/v1/chat/completions`.
 
 ### POST /v1/audio/transcriptions
 
-Trascrizione da audio a testo (Whisper).
+Trascrizione audio in testo (Whisper).
 
 #### Richiesta
 
@@ -335,11 +346,11 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 | Parametro         | Tipo   | Obbligatorio | Descrizione                                                                                                        |
 | ----------------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `file`            | binary | ✅           | File audio (wav, mp3, m4a).                                                                                     |
-| `language`        | string | ❌           | Codice lingua ISO 639-1 (ex: "fr"). Rilevamento automatico se non fornito.                                             |
-| `initial_prompt`  | string | ❌           | Contesto o parole specifiche per migliorare la precisione della trascrizione.                                      |
-| `task`            | string | ❌           | Attività da eseguire: `transcribe` (défaut) o `translate` (traduire en anglais).                                    |
-| `response_format` | string | ❌           | `json` (défaut, équivalent à `verbose_json`). I formati `text`, `srt`, `vtt` non sono attualmente supportati. |
+| `file`            | binary | ✅          | File audio (wav, mp3, m4a).                                                                                         |
+| `language`        | string | ❌          | Codice lingua ISO 639-1 (es: "fr"). Rilevamento automatico se non fornito.                                          |
+| `initial_prompt`  | string | ❌          | Contesto o parole specifiche per migliorare la precisione della trascrizione.                                       |
+| `task`            | string | ❌          | Compito da eseguire: `transcribe` (predefinito) o `translate` (tradurre in inglese).                                |
+| `response_format` | string | ❌          | `json` (predefinito, equivalente a `verbose_json`). I formati `text`, `srt`, `vtt` non sono attualmente supportati. |
 
 #### Risposta (`json`)
 
@@ -384,12 +395,14 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 | Parametro | Tipo                       | Obbligatorio | Descrizione                                           |
 | --------- | -------------------------- | ------------ | ----------------------------------------------------- |
-| `model`   | string                     | ✅           | ID del modello di embedding (vedi [catalogo](./models)) |
-| `input`   | stringa o array di stringhe | ✅           | Il testo o l'elenco di testi da vettorizzare.         |
+| `model`   | string                     | ✅          | ID del modello di embedding (vedi [catalogue](./models)) |
+| `input`   | string or array of strings | ✅          | Il testo o l'elenco di testi da vettorizzare.          |
 
 #### Risposta
 
-```json
+Estratto abbreviato: i puntini di sospensione rappresentano le altre componenti del vettore. Questo blocco illustra la struttura della risposta e non costituisce un documento JSON direttamente copiabile.
+
+```text
 {
   "object": "list",
   "data": [
@@ -414,9 +427,9 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 ### POST /v1/rerank
 
-Riordina un elenco di documenti in base alla pertinenza rispetto a una query. Compatibile con l'API Cohere (v1 e v2).
+Riordina un elenco di documenti in base alla rilevanza rispetto a una query. Compatibile con l'API Cohere (v1 e v2).
 
-**Fatturazione** : 4€ / milione di token riordinati. Ideale per migliorare la precisione delle pipeline RAG.
+**Fatturazione** : 4,00 € per milione di documenti elaborati. Tutti i documenti inviati vengono conteggiati, anche se `top_n` limita il numero di risultati restituiti. Vedi il [dettaglio del calcolo](./rerank.md#tariffazione).
 
 #### Richiesta
 
@@ -440,41 +453,47 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 | Parametro   | Tipo    | Obbligatorio | Descrizione                                                                 |
 | ----------- | ------- | ------------ | --------------------------------------------------------------------------- |
-| `model`     | string  | ✅           | ID del modello di reranking (vedere [catalogo](./models#modelli-di-reranking)) |
-| `query`     | string  | ✅           | La query di ricerca                                                         |
-| `documents` | array   | ✅           | Elenco dei documenti da riordinare                                           |
-| `top_n`     | integer | ❌           | Numero di risultati da restituire (predefinito: tutti)                      |
+| `model`     | string  | ✅          | ID del modello di reranking (vedi [catalogo](./models#modelli-di-reranking)) |
+| `query`     | string  | ✅          | La query di ricerca                                                         |
+| `documents` | array   | ✅          | Elenco dei documenti da riordinare                                          |
+| `top_n`     | integer | ❌          | Numero di risultati da restituire (predefinito: tutti)                       |
 
 #### Risposta
 
+Estratto illustrativo del formato Jina/vLLM descritto dal contratto della piattaforma. I punteggi e i contatori di seguito sono fittizi. Il proxy trasmette la risposta del motore e aggiunge un blocco `backend`, omesso qui.
+
 ```json
 {
-  "id": "rerank-7f3a2b1c",
+  "id": "score-8bb47ca195d8cb2f",
   "results": [
     {
       "index": 0,
-      "relevance_score": 0.9874,
+      "relevance_score": 0.0401,
       "document": {
-        "text": "Paris est la capitale et la plus grande ville de France."
+        "text": "Paris est la capitale et la plus grande ville de France.",
+        "multi_modal": null
       }
     },
     {
       "index": 2,
-      "relevance_score": 0.5231,
+      "relevance_score": 0.0253,
       "document": {
-        "text": "La France est un pays d'Europe occidentale."
+        "text": "La France est un pays d'Europe occidentale.",
+        "multi_modal": null
       }
     }
   ],
   "usage": {
-    "billed_units": {
-      "search_units": 3
-    }
-  }
+    "prompt_tokens": 39,
+    "total_tokens": 39
+  },
+  "model": "nvidia/llama-nemotron-rerank-vl-1b-v2"
 }
 ```
 
-L'endpoint `/v2/rerank` (Cohere SDK v2) è disponibile anche con lo stesso formato di richiesta.
+I `relevance_score` sono punteggi grezzi non normalizzati, non probabilità comprese tra 0 e 1. Utilizzate il loro ordine relativo; ogni soglia deve essere [calibré sur votre modèle et votre corpus](./rerank.md#soglia-di-rilevanza). I contatori `usage.prompt_tokens` e `usage.total_tokens` sono distinti dalla fatturazione per documento elaborato; non è richiesto alcun campo `usage.billed_units.search_units` per calcolare quest'ultima.
+
+L'endpoint `/v2/rerank` (Cohere SDK v2) è inoltre disponibile con lo stesso formato di richiesta.
 
 #### Esempio Python (SDK Cohere)
 
@@ -502,9 +521,17 @@ for result in results.results:
     print(f"Index: {result.index}, Score: {result.relevance_score:.4f}")
 ```
 
+### POST /v1/chat/completions/batch
+
+Invia più conversazioni indipendenti con un modello comune per un'elaborazione asincrona. Il campo `messages` è un array di conversazioni. La risposta HTTP 202 contiene l'identificatore del batch.
+
+Utilizza `GET /v1/chat/completions/batch/{id}` con la stessa chiave API per monitorare l'elaborazione e recuperare i risultati. Consulta il [guide Batch](./batch.md) per il formato, i limiti e un esempio completo.
+
 ### GET /v1/models
 
-Elenco dei modelli disponibili.
+Elenco degli ID dei modelli esposti dall'API. Utilizzate questa risposta per specificare il parametro `model`.
+
+Consultate anche il [ciclo di vita dei modelli](https://llmaas.status.cloud-temple.app/lifecycle) per deprecazioni, date di fine supporto e migrazioni. Un identificatore può essere mantenuto come reindirizzamento verso un successore; la sua presenza in questo elenco non garantisce il mantenimento del modello originale.
 
 #### Richiesta
 
@@ -514,6 +541,8 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 #### Risposta
+
+Questo estratto è a scopo illustrativo: gli identificatori e i valori dei metadati, in particolare `max_model_len`, non rappresentano le caratteristiche attuali del servizio. Utilizzate la risposta di `GET /v1/models` per ottenere i valori effettivi.
 
 ```json
 {
@@ -543,7 +572,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 
 ## Codici di Errore
 
-### 400 - Richiesta non valida
+### 400 - Richiesta Non Valida
 
 ```json
 {
@@ -579,7 +608,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 429 - Limite di Velocità
+### 429 - Limite di Rate
 
 ```json
 {
@@ -591,7 +620,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-### 500 - Errore del Server
+### 500 - Errore del server
 
 ```json
 {
@@ -613,7 +642,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 }
 ```
 
-## Esempi per linguaggio
+## Esempi per Linguaggio
 
 ### Python con requests
 
@@ -622,7 +651,7 @@ import requests
 import json
 
 # Configurazione
-# Si consiglia di proteggere la propria chiave API utilizzando variabili d'ambiente.
+# Si consiglia di proteggere la chiave API utilizzando variabili d'ambiente.
 # Esempio: API_KEY = os.getenv("LLMAAS_API_KEY")
 API_KEY = "VOTRE_TOKEN_API" 
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -632,7 +661,7 @@ headers = {
     "Authorization": f"Bearer {API_KEY}"
 }
 
-# Completamento chat
+# Completazione chat
 payload = {
     "model": "gpt-oss:120b",
     "messages": [
@@ -670,7 +699,7 @@ import requests
 import json
 
 def stream_chat(message, model="gpt-oss:120b"):
-    # Si consiglia di proteggere la propria chiave API utilizzando variabili di ambiente.
+    # Si consiglia di proteggere la chiave API utilizzando variabili d'ambiente.
     # Esempio: API_KEY = os.getenv("LLMAAS_API_KEY")
     API_KEY = "VOTRE_TOKEN_API"
     BASE_URL = "https://api.ai.cloud-temple.com/v1"
@@ -713,7 +742,7 @@ def stream_chat(message, model="gpt-oss:120b"):
                     except json.JSONDecodeError:
                         print(f"Erreur de décodage JSON dans le stream: {data}")
                         continue
-        print() # Nuova riga dopo lo stream
+        print() # Nuova riga dopo lo streaming
     except requests.exceptions.HTTPError as e:
         print(f"Erreur HTTP: {e.response.status_code} - {e.response.text}")
     except requests.exceptions.RequestException as e:
@@ -772,15 +801,21 @@ chatCompletion('Bonjour !').then(response => {
 });
 ```
 
-### JavaScript con Fetch (Browser)
+### JavaScript con Fetch (Node.js lato server)
+
+Eseguite questo esempio lato server con Node.js dotato di `fetch` nativo. Definite `LLMAAS_API_KEY` nell'ambiente del server. Per un'interfaccia web, il browser chiama il vostro backend, che autentica l'utente e ne controlla i diritti prima di chiamare LLMaaS. La chiave di servizio rimane esclusivamente lato server e non deve essere integrata nel codice inviato al browser.
 
 ```javascript
 async function fetchCompletion(message) {
+    const apiKey = process.env.LLMAAS_API_KEY;
+    if (!apiKey) {
+        throw new Error('La variable LLMAAS_API_KEY doit être définie côté serveur.');
+    }
     const response = await fetch('https://api.ai.cloud-temple.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`
+            'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
             model: 'gpt-oss:120b',
@@ -800,7 +835,7 @@ async function fetchCompletion(message) {
 }
 ```
 
-## Migliori Pratiche
+## Buone Pratiche
 
 ### Gestione degli Errori
 
@@ -813,8 +848,8 @@ def safe_api_call(payload):
     except requests.exceptions.HTTPError as e:
         if response.status_code == 429:
             print("Rate limit atteint, attendre...")
-            time.sleep(60)  # Attendere 1 minuto
-            return safe_api_call(payload)  # Riprova
+            time.sleep(60)  # Attendre 1 minute
+            return safe_api_call(payload)  # Retry
         else:
             print(f"Erreur HTTP: {e}")
     except requests.exceptions.RequestException as e:
@@ -823,28 +858,28 @@ def safe_api_call(payload):
 
 ### Ottimizzazione dei Costi
 
-1. **Utilizza modelli appropriati** : Modelli più piccoli per i test
-2. **Limita max_tokens** : Evita risposte troppo lunghe
-3. **Riutilizza le conversazioni** : Finestra di contesto efficiente
-4. **Monitoraggio** : Monitora il tuo utilizzo nella Console
+1. **Utilizzate modelli appropriati** : Modelli più piccoli per i test
+2. **Limitate max_tokens** : Evitate risposte troppo lunghe
+3. **Riutilizzate le conversazioni** : Finestra di contesto efficace
+4. **Monitoraggio** : Monitorate il vostro utilizzo nella Console
 
 ### Sicurezza
 
 1. **Proteggi il tuo token** : Variabili d'ambiente
-2. **Rotazione regolare** : Modifica le tue chiavi periodicamente
-3. **Validazione input** : Pulisci i dati utente
-4. **Limitazione della velocità client** : Implementa i tuoi limiti
+2. **Rotazione regolare** : Cambia le tue chiavi periodicamente
+3. **Validazione input** : Pulisci i dati degli utenti
+4. **Rate limiting client** : Implementa i tuoi limiti
 
 ## SDK e Integrazioni
 
-L'API LLMaaS è compatibile con gli SDK OpenAI esistenti modificando l'URL di base :
+Per le chiamate supportate, configura il SDK OpenAI con l'URL base e la chiave LLMaaS. Consulta l'[ambito di compatibilità](#compatibilità-openai) prima di migrare un'integrazione:
 
-### SDK Python di OpenAI
+### OpenAI Python SDK
 
 ```python
 from openai import OpenAI
 
-# Si consiglia di proteggere la propria chiave API utilizzando variabili di ambiente.
+# Si consiglia di proteggere la chiave API utilizzando variabili d'ambiente.
 # Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="VOTRE_TOKEN_API",
@@ -868,20 +903,20 @@ except Exception as e:
 
 ### LangChain
 
+Utilizzate le [versions validées et prérequis LangChain](./tutorials.md#prerequisiti-langchain). Gli esempi seguenti sono stati verificati con risposte LLMaaS simulate.
+
 ```python
 from langchain_openai import ChatOpenAI
-from langchain.schema import HumanMessage
+from langchain_core.messages import HumanMessage
 
-# Configurazione del modello di chat (compatibile con LLMaaS)
-# Si consiglia di proteggere la propria chiave API utilizzando variabili di ambiente.
+# Configurazione del chat model (compatibile con LLMaaS)
+# Si consiglia di proteggere la chiave API utilizzando variabili d'ambiente.
 # Esempio: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
     model="gpt-oss:120b",
-    # Nota: i parametri come max_tokens vengono passati tramite model_kwargs
-    # per garantire la compatibilità tra le versioni di LangChain.
-    model_kwargs={"max_tokens": 200}
+    max_tokens=200
 )
 
 try:
@@ -898,69 +933,35 @@ except Exception as e:
     print(f"Erreur LangChain: {e}")
 ```
 
-#### Utilizzo degli Embedding
+#### Utilizzo degli Embeddings
 
-:::warning[Incompatibilità con i client standard di LangChain]
-Attualmente, l'utilizzo dell'endpoint di embedding tramite le classi standard di LangChain (`langchain_openai.OpenAIEmbeddings` o `langchain_community.OllamaEmbeddings`) presenta incompatibilità con la nostra API.
-
-- `OpenAIEmbeddings` invia token pre-calcolati invece di testo grezzo, che viene rifiutato.
-- `OllamaEmbeddings` non gestisce l'autenticazione tramite Bearer Token richiesta.
-
-In attesa di una soluzione duratura, si consiglia di creare una classe di embedding personalizzata o di chiamare l'API direttamente, come dimostrato nell'esempio `exemples/simple-rag-demo`.
-:::
+Utilizzare `OpenAIEmbeddings` con `check_embedding_ctx_length=False` per inviare i testi direttamente, senza pre-tokenizzazione locale. Questa impostazione è [documentata da LangChain](https://reference.langchain.com/python/langchain-openai/embeddings/base/OpenAIEmbeddings). Il parametro `encoding_format="float"`, passato tramite `model_kwargs`, richiede vettori numerici.
 
 ```python
-from langchain.embeddings.base import Embeddings
-from typing import List
-import httpx
+import os
+from langchain_openai import OpenAIEmbeddings
 
-class LLMaaSEmbeddings(Embeddings):
-    """
-    Classe d'embedding personnalisée pour interagir avec l'API LLMaaS de Cloud Temple.
-    Cette classe est conçue pour être compatible avec l'interface `Embeddings` de LangChain,
-    permettant son utilisation dans des pipelines LangChain tout en appelant notre API spécifique.
-    """
-    def __init__(self, api_key: str, base_url: str = "https://api.ai.cloud-temple.com/v1", model_name: str = "granite-embedding:278m"):
-        self.api_key = api_key
-        self.base_url = base_url
-        self.model_name = model_name
-        self.headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-        }
+embeddings = OpenAIEmbeddings(
+    api_key=os.environ["LLMAAS_API_KEY"],
+    base_url="https://api.ai.cloud-temple.com/v1",
+    model="granite-embedding:278m",
+    check_embedding_ctx_length=False,
+    model_kwargs={"encoding_format": "float"},
+)
 
-    def _embed(self, texts: List[str]) -> List[List[float]]:
-        payload = {"input": texts, "model": self.model_name}
-        try:
-            with httpx.Client(timeout=30.0) as client:
-                response = client.post(f"{self.base_url}/embeddings", headers=self.headers, json=payload)
-                response.raise_for_status()
-                data = response.json()['data']
-                # Ordina gli embedding per indice per garantire l'ordine
-                data.sort(key=lambda e: e['index'])
-                return [item['embedding'] for item in data]
-        except httpx.HTTPStatusError as e:
-            print(f"Erreur HTTP lors de la récupération de l'embedding : {e.response.status_code}")
-            print(f"Réponse : {e.response.text}")
-            return []
-
-    def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        return self._embed(texts)
-
-    def embed_query(self, text: str) -> List[float]:
-        return self._embed([text])[0]
-
-# Utilizzo
-# embeddings = LLMaaSEmbeddings(
-#     api_key="VOTRE_TOKEN_API",
-#     base_url="https://api.ai.cloud-temple.com/v1",
-#     model_name="granite-embedding:278m"
-# )
-# vector = embeddings.embed_query("Mon texte à vectoriser")
+vectors = embeddings.embed_documents(["Premier document", "Deuxième document"])
+query_vector = embeddings.embed_query("Ma question")
 ```
 
+Questa impostazione disabilita anche la suddivisione automatica dei testi in base alla finestra di contesto da parte di questo client. Suddividere i documenti prima della chiamata e rispettare il limite del modello scelto, come nel [tutorial RAG](./tutorials.md#2-rag-retrieval-augmented-generation-con-lapi-llmaas).
+
+Gli errori dell'API vengono sollevati come eccezioni: non vengono sostituiti da un elenco vuoto. Gestirli a livello di applicazione prima di procedere con l'indicizzazione o la ricerca.
+
+**Validazione:** formato delle richieste confrontato con il contratto e il codice del proxy; invio di testi singoli e in batch, autenticazione, lettura dei vettori e propagazione degli errori HTTP verificati con risposte simulate. Nessuna chiamata di produzione è stata eseguita per questa validazione.
+
 ## Supporto
-- **Documentazione** : [Guida rapida all'avvio](./quickstart)
-- **Catalogo modelli** : [Elenco completo](./models)
+
+- **Documentazione** : [Guide de démarrage rapide](./quickstart)
+- **Catalogo modelli** : [Liste complète](./models)
 - **Console** : Gestione e monitoraggio tramite Console Cloud Temple
 - **Supporto** : Tramite la Console Cloud Temple

@@ -46,7 +46,8 @@ LIEN = re.compile(r"(?:\]\(|href=[\"']?)([^)\"'\s>]*?)#([^)\"'\s>]+)")
 def slug(texte: str) -> str:
     """Slug d'un titre, tel que github-slugger le produit pour Docusaurus."""
     s = re.sub(r"[^\w\s-]", "", texte.strip().lower(), flags=re.UNICODE)
-    return re.sub(r"\s+", "-", s)
+    # github-slugger remplace chaque espace, sans fusionner les espaces voisins.
+    return re.sub(r"\s", "-", s)
 
 
 def titres(chemin: Path) -> list[tuple[int, str]]:
