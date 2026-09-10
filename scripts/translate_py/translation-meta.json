@@ -787,10 +787,10 @@
       "it": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340"
     },
     "public_cloud/vm_instances/concepts.md": {
-      "en": "a4d9196a7f2941d958eec26312fdd12aeffc3df05c2de87f587078c79bb40d44",
-      "de": "a4d9196a7f2941d958eec26312fdd12aeffc3df05c2de87f587078c79bb40d44",
-      "es": "a4d9196a7f2941d958eec26312fdd12aeffc3df05c2de87f587078c79bb40d44",
-      "it": "a4d9196a7f2941d958eec26312fdd12aeffc3df05c2de87f587078c79bb40d44"
+      "en": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "de": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "es": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "it": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c"
     },
     "public_cloud/vm_instances/quickstart.md": {
       "en": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
@@ -949,6 +949,6 @@
       "it": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3"
     }
   },
-  "last_update": "2026-09-05T00:33:57.637481",
+  "last_update": "2026-09-10T16:32:34.450686",
   "version": "2.0"
 }
