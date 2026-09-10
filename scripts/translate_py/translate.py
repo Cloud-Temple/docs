@@ -602,7 +602,8 @@ def ecart_structurel(source: str, traduction: str) -> Optional[str]:
 @click.option('--test-api', is_flag=True, help='Test la connexion API et sort')
 @click.option('--token', help='Token Bearer Cloud Temple LLMaaS. Prioritaire sur CLOUDTEMPLE_API_KEY.')
 @click.option('--url', 'api_url', default=None, help='URL de l’API de traduction. Par défaut: https://api.ai.cloud-temple.com/v1/chat/completions')
-@click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.6:27b')
+@click.option('--model', 'model_name', default=None, help='Modèle de traduction. Par défaut: qwen3.8:27b')
+@click.option('--reasoning-effort', default=None, help='Effort de raisonnement. Par défaut: low. Prioritaire sur TRANSLATION_REASONING_EFFORT.')
 @click.option('--prune', is_flag=True,
               help='Supprime les fichiers de i18n/ sans source française. Sans ce drapeau, ils sont seulement signalés.')
 @click.option('--concurrency', 'concurrency', type=int, default=None,
@@ -623,7 +624,8 @@ def main(
     model_name: Optional[str],
     path_filters: tuple,
     concurrency: Optional[int],
-    prune: bool
+    prune: bool,
+    reasoning_effort: Optional[str]
 ) -> None:
     """
     Système de traduction automatique pour la documentation Cloud Temple.
@@ -643,6 +645,7 @@ def main(
         token=token,
         api_url=api_url,
         model_name=model_name,
+        reasoning_effort=reasoning_effort,
         path_filters=list(path_filters),
         concurrency=concurrency,
         prune=prune
@@ -663,7 +666,8 @@ async def _async_main(
     model_name: Optional[str],
     path_filters: Optional[list] = None,
     concurrency: Optional[int] = None,
-    prune: bool = False
+    prune: bool = False,
+    reasoning_effort: Optional[str] = None
 ) -> None:
     """Version asynchrone du main."""
     
@@ -674,7 +678,7 @@ async def _async_main(
     try:
         # Chargement de la configuration
         config = load_config(api_key=token, api_url=api_url, model=model_name,
-                             path_filters=path_filters)
+                             path_filters=path_filters, reasoning_effort=reasoning_effort)
         # Le .env est chargé avec override=True et gagne donc sur l'environnement :
         # l'option CLI est appliquée après, conformément au contrat annoncé.
         if concurrency is not None:

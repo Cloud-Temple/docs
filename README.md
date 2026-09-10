@@ -158,22 +158,25 @@ docker inspect docs:v3 --format '{{ json .Config.Labels }}' | jq
 
 This project includes several scripts to automate documentation and translation tasks. For complete technical details on all scripts, please refer to the [__Scripts README__](./scripts/README.md).
 
-## 📜 LLMaaS Model Documentation Generator
+## LLMaaS documentation maintenance
 
-This Python script automatically generates the `models.md` page from a YAML configuration file.
+`docs/llmaas/models.md` is a selection guide. It links to the maintained catalogue instead of duplicating model counts, performance tables and lifecycle dates.
 
-- __Source__: `memory-bank/models_config.yaml`
-- __Output__: `docs/llmaas/models.md`
+| Information | Maintained source |
+|-------------|-------------------|
+| Published lifecycle, LTS, retirement dates and migration targets | [LLMaaS lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) (`status/web/src/data/lifecycle.ts`) |
+| Product announcements | [LLMaaS changelog](https://llmaas.status.cloud-temple.app/changelog) (`status/web/src/data/changelog.ts`) |
+| Model descriptions and capabilities | LLMaaS repository: `scripts/models_information/models_config.yaml` |
+| Identifiers exposed by the service | Authenticated `GET /v1/models` |
+| Availability and observed performance | [LLMaaS status](https://llmaas.status.cloud-temple.app/) |
 
-### Usage
+The published lifecycle is authoritative for lifecycle dates, LTS status and migration targets. If model inventories or historical copies disagree, reconcile their lifecycle fields with this source; do not copy conflicting dates into these docs. Technical capabilities must be checked against the effective service configuration and exposed API metadata.
 
-To update the model documentation, run the following command from the project root:
+For each model release, update the model metadata and published lifecycle in their owning repositories together. Check agreement on identifiers, support dates and migration targets before release. Update this documentation only when usage changes (API contract, capability, integration or migration procedure), then regenerate translations and build the site.
 
-```bash
-yarn generate:models
-# or directly:
-python scripts/generate_models_doc/generate_models_doc.py
-```
+Keep example model IDs in configuration where practical; validate them against the API and lifecycle when changing a guide. Do not recreate exhaustive model lists in the overview, FAQ or concepts pages.
+
+The former `memory-bank/models_config.yaml` is a historical copy, not a current catalogue. `yarn generate:models` / `yarn generate:docs` and the old Python entry point now exit with an explanatory error, without overwriting the selection guide.
 
 ## 🌍 Translation System
 

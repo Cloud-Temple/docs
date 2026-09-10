@@ -458,6 +458,7 @@ class CloudTempleTranslator:
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
+            "reasoning_effort": self.config.reasoning_effort,
             "temperature": self.config.temperature,
             "top_p": self.config.top_p,
             "stream": False,

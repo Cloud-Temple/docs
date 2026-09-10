@@ -22,11 +22,11 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 #### 1. **API Gateway LLMaaS**
 - **Compatible OpenAI** : Intégration transparente avec écosystème existant
 - **Rate Limiting** : Gestion des quotas par tier de facturation
-- **Load Balancing** : Distribution intelligente sur 12 machines GPU
+- **Load Balancing** : Distribution des requêtes sur les ressources d'inférence
 - **Monitoring** : Métriques temps réel et alerting
 
 #### 2. **Service d'Authentification**
-- **Tokens API sécurisés** : Rotation automatique
+- **Clés API** : Création, rotation et révocation sous la responsabilité du client. Voir le [partage des responsabilités (RACI)](../contractual/llmaas/raci.md).
 - **Contrôle d'accès** : Permissions granulaires par modèle
 - **Audit trails** : Traçabilité complète des accès
 
@@ -34,7 +34,7 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Catalogue de Modèles
 
-*Catalogue complet : [Liste des modèles](./models)*
+*Consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) et le [guide de choix](./models.md).*
 
 ### Gestion des Tokens
 
@@ -46,7 +46,7 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 #### **Calcul des Coûts**
 ```
 Chat/Completion = (Tokens entrée × 1.8€/M) + (Tokens sortie × 8€/M) + (Tokens sortie Raisonnement × 8€/M)
-Reranking       = Documents rerankés × 4€/M
+Reranking (€)   = Nombre de documents traités × 4 / 1 000 000
 Batch (async)   = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M)
 Audio (ASR)     = 0.01€ / minute de transcription
 ```
@@ -81,7 +81,6 @@ Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie 
 #### **Protection des Données**
 - **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
 - **Stockage sécurisé** : Données chiffrées au repos (AES-256)
-- **Isolation** : Environnements dédiés par tenant
 
 #### **Souveraineté Numérique**
 - **Hébergement France** : Datacenters Cloud Temple certifiés
@@ -101,31 +100,11 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 ### Sécurité des Prompts
 
-L'analyse des prompts est une fonctionnalité de sécurité **native et intégrée** à la plateforme LLMaaS. Activée par défaut, elle vise à détecter et prévenir les tentatives de "jailbreak" ou d'injection de prompts malveillants avant même qu'ils n'atteignent le modèle. Cette protection repose sur une approche multicouche.
+La plateforme LLMaaS n'applique pas de filtrage automatique du contenu des prompts contre les injections ou les tentatives de contournement des instructions (*jailbreaks*).
 
-:::tip[Contacter le support pour la désactivation]
-Il est possible de désactiver cette analyse de sécurité pour des cas d'usage très spécifiques, bien que cela ne soit pas recommandé. Pour toute question à ce sujet ou pour demander une désactivation, veuillez contacter le support Cloud Temple.
-:::
+Les contrôles de contenu sont à mettre en œuvre dans votre application selon votre cas d'usage. Vous pouvez appeler explicitement un [modèle de sécurité du catalogue](./models.md#sécurité-et-guardrails) pour évaluer les entrées ou les réponses. Ces modèles ne sont pas exécutés automatiquement sur les requêtes adressées aux autres modèles.
 
-#### 1. Analyse Structurelle (`check_structure`)
-- **Vérification JSON malformé** : Le système détecte si le prompt commence par un `{` et tente de le parser comme du JSON. Si le parsing réussit et que le JSON contient des mots-clés suspects (ex: "system", "bypass"), ou si le parsing échoue de manière inattendue, cela peut indiquer une tentative d'injection.
-- **Normalisation Unicode** : Le prompt est normalisé en utilisant `unicodedata.normalize('NFKC', prompt)`. Si le prompt original diffère de sa version normalisée, cela peut indiquer l'utilisation de caractères Unicode trompeurs (homoglyphes) pour contourner les filtres. Par exemple, "аdmin" (cyrillique) au lieu de "admin" (latin).
-
-#### 2. Détection de Patterns Suspects (`check_patterns`)
-- Le système utilise des expressions régulières (`regex`) pour identifier des motifs connus d'attaques de prompts, et ce, dans plusieurs langues (français, anglais, chinois, japonais).
-- **Exemples de patterns détectés** :
-    - **Commandes Système** : Mots-clés comme "ignore les instructions", "ignore instructions", "忽略指令", "指示を無視".
-    - **Injection HTML** : Balises HTML cachées ou malveillantes, par exemple `<div caché>`, `<hidden div>`.
-    - **Injection Markdown** : Liens Markdown malveillants, par exemple `[texte](javascript:...)`, `[text](data:...)`.
-    - **Séquences Répétées** : Répétition excessive de mots ou de phrases comme "oublie oublie oublie", "forget forget forget".
-    - **Caractères Spéciaux/Mixtes** : Utilisation de caractères Unicode inhabituels ou mélange de scripts pour masquer des commandes (ex: "s\u0443stème").
-
-#### 3. Analyse Comportementale (`check_behavior`)
-- Le load balancer maintient un historique des prompts récents.
-- **Détection de Fragmentation** : Il combine les prompts récents pour voir si une attaque est fragmentée sur plusieurs requêtes. Par exemple, si "ignore" est envoyé dans un prompt et "instructions" dans le suivant, le système peut les détecter ensemble.
-- **Détection de Répétition** : Il identifie si le même prompt est répété de manière excessive. Le seuil actuel pour la détection de répétition est de 30 prompts consécutifs identiques.
-
-Cette approche multicouche permet de détecter un large éventail d'attaques de prompts, des plus simples aux plus sophistiquées, en combinant l'analyse statique du contenu et l'analyse dynamique du comportement.
+Définissez les critères de filtrage et le traitement des résultats avec vos équipes métier, puis testez-les sur vos données, notamment pour mesurer les faux positifs. Le [partage des responsabilités](../contractual/llmaas/raci.md) précise les rôles du client et de Cloud Temple.
 
 ## 📈 Performance et Scalabilité
 
@@ -184,151 +163,34 @@ response = client_ct.chat.completions.create(
 
 ## 🔄 Cycle de Vie des Modèles
 
-### Mise à Jour des Modèles
+Le **[cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle)** publie les statuts, échéances et migrations conseillées. Consultez-le avant de choisir un modèle et pendant l'exploitation de votre application.
 
-import ModelLifecycle from '@site/docs/llmaas/images/llmaas_lifecycle_003.png';
+### Lire le cycle de vie
 
-<img src={ModelLifecycle} alt="Cycle de Vie des Modèles LLMaaS" />
+- **DMP** : date de mise en production.
+- **DSP** : date de sortie de production (fin de support) annoncée pour le modèle.
+- **LTS (Long Term Support)** : modèle bénéficiant d'un support étendu ; vérifiez la date publiée pour le modèle concerné.
+- **Production** : modèle indiqué en production dans le catalogue.
+- **Deprecated** : modèle déprécié pour lequel une migration doit être préparée. Ce statut ne signifie pas nécessairement que les appels API sont déjà interrompus.
+- **Planned** : modèle annoncé, dont la disponibilité doit être vérifiée avant utilisation.
 
-### Politique de Versioning
+Les annonces d'ajout, de redirection et de retrait sont publiées dans le [changelog du service](https://llmaas.status.cloud-temple.app/changelog). Pour un besoin de stabilité ou de support particulier, contactez le support afin de préciser les modalités applicables.
 
-- **Modèles stables** : Versions fixes disponibles 6 mois
-- **Modèles expérimentaux** : Versions bêta pour early adopters
-- **Dépréciation** : Préavis 3 mois avant retrait
-- **Migration** : Services professionnels disponibles pour assurer vos transitions
+### Redirections et anciens identifiants
 
-### Planning Prévisionnel du Cycle de Vie
+Certains anciens identifiants sont redirigés vers un modèle successeur. Une requête peut donc continuer à fonctionner tout en étant traitée par un autre modèle. La continuité de l'appel API ne garantit pas des réponses identiques, ni les mêmes capacités, latences ou limites de contexte.
 
-Le tableau ci-dessous présente le cycle de vie prévisionnel de nos modèles. L'écosystème de l'IA générative évolue très rapidement, ce qui explique des cycles de vie qui peuvent paraître courts. Notre volonté est de vous donner accès aux modèles les plus performants du moment.
+### Migration vers un autre modèle
 
-Cependant, nous nous engageons à préserver dans le temps les modèles qui sont les plus utilisés par nos clients. Pour des cas d'usage critiques nécessitant une stabilité à long terme, des phases de **support étendu** sont possibles. N'hésitez pas à **contacter le support** pour discuter de vos besoins spécifiques.
+1. Repérez le modèle concerné, l'échéance et le successeur conseillé dans le [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle).
+2. Vérifiez l'identifiant du successeur avec `GET /v1/models` et ses capacités : vision, appels d'outils, raisonnement et contexte selon votre usage.
+3. Testez le successeur sur un échantillon représentatif de vos requêtes : qualité, formats de sortie, outils, latence et consommation.
+4. Mettez à jour le paramètre `model` dans la configuration de votre application après validation, puis surveillez les résultats.
+5. Pour les embeddings, prévoyez de recalculer les vecteurs et de reconstruire l'index si le modèle change.
 
-Ce planning est fourni à titre indicatif et est **revu au début de chaque trimestre**.
+### Modèles dépréciés
 
-- **DMP (Date de Mise en Production)** : Date à laquelle le modèle devient disponible en production.
-- **DSP (Date de Fin de Support)** : Date prévisionnelle à partir de laquelle le modèle ne sera plus maintenu. Un préavis de 3 mois est respecté avant toute suppression effective.
-
-| Modèle                                | Éditeur                   | Phase      | DMP        | DSP        | LTS | Migration conseillée |
-| :------------------------------------ | :------------------------ | :--------- | :--------- | :--------- | :-- | :------------------- |
-| cogito:32b                            | Deep Cogito               | Production | 13/06/2025 | 30/06/2026 | Non | gpt-oss:120b         |
-| embeddinggemma:300m                   | Google                    | Production | 10/09/2025 | 30/06/2026 | Non |                      |
-| gemma3:27b                            | Google                    | Production | 13/06/2025 | 30/06/2026 | Non |                      |
-| glm-4.7-flash:30b                     | Zhipu AI                  | Production | 22/01/2026 | 30/06/2026 | Non |                      |
-| ministral-3:14b                       | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| ministral-3:3b                        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| ministral-3:8b                        | Mistral AI                | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| olmo-3:32b                            | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| olmo-3:7b                             | AllenAI                   | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-omni:30b                        | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
-| qwen3-vl:2b                           | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-vl:32b                          | Qwen Team                 | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| qwen3-vl:8b                           | Qwen Team                 | Production | 05/01/2026 | 30/06/2026 | Non |                      |
-| rnj-1:8b                              | Essential AI              | Production | 30/12/2025 | 30/06/2026 | Non |                      |
-| devstral-small-2:24b                  | Mistral AI & All Hands AI | Production | 02/02/2026 | 30/09/2026 | Non |                      |
-| gemma4:e2b                            | Google                    | Production | 19/04/2026 | 30/09/2026 | Non |                      |
-| gemma4:e4b                            | Google                    | Production | 19/04/2026 | 30/09/2026 | Non |                      |
-| gpt-oss:20b                           | OpenAI                    | Production | 08/08/2025 | 30/09/2026 | Non |                      |
-| mistral-small3.2:24b                  | Mistral AI                | Production | 23/06/2025 | 30/09/2026 | Non |                      |
-| qwen3.5:4b                            | Qwen Team                 | Production | 24/03/2026 | 30/09/2026 | Non |                      |
-| qwen3.5:9b                            | Qwen Team                 | Production | 24/03/2026 | 30/09/2026 | Non |                      |
-| bge-reranker-large                    | BAAI                      | Production | 13/05/2026 | 30/12/2026 | Non |                      |
-| deepseek-ocr                          | DeepSeek AI               | Production | 22/11/2025 | 30/12/2026 | Non |                      |
-| functiongemma:270m                    | Google                    | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| gemma4:31b                            | Google                    | Production | 14/04/2026 | 30/12/2026 | Non |                      |
-| granite3-guardian:2b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
-| granite3-guardian:8b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
-| granite3.2-vision:2b                  | IBM                       | Production | 13/06/2025 | 30/12/2026 | Non |                      |
-| mistral-small4:119b                   | Mistral AI                | Production | 13/05/2026 | 30/12/2026 | Non |                      |
-| nemotron-3-super:120b                 | NVIDIA                    | Production | 01/04/2026 | 30/12/2026 | Non |                      |
-| nemotron-cascade:30b                  | NVIDIA                    | Production | 01/04/2026 | 30/12/2026 | Non |                      |
-| nemotron3-nano:30b                    | NVIDIA                    | Production | 04/01/2026 | 30/12/2026 | Non |                      |
-| qwen-coder-next:80b                   | Qwen Team                 | Production | 04/02/2026 | 30/12/2026 | Non |                      |
-| qwen3-embedding:0.6b                  | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
-| qwen3-embedding:4b                    | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
-| qwen3-embedding:8b                    | Qwen Team                 | Production | 14/05/2026 | 30/12/2026 | Non |                      |
-| qwen3-next:80b                        | Qwen Team                 | Production | 02/02/2026 | 30/12/2026 | Non |                      |
-| qwen3-reranker:0.6b                   | Qwen Team                 | Production | 13/05/2026 | 30/12/2026 | Non |                      |
-| qwen3-reranker:4b                     | Qwen Team                 | Production | 13/05/2026 | 30/12/2026 | Non |                      |
-| qwen3-vl:235b                         | Qwen Team                 | Production | 04/01/2026 | 30/12/2026 | Non |                      |
-| qwen3-vl:30b                          | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| qwen3-vl:4b                           | Qwen Team                 | Production | 30/12/2025 | 30/12/2026 | Non |                      |
-| qwen3.5:0.8b                          | Qwen Team                 | Production | 24/03/2026 | 30/12/2026 | Non |                      |
-| qwen3.6:27b                           | Qwen Team                 | Production | 01/05/2026 | 30/12/2026 | Non |                      |
-| qwen3.6:35b                           | Qwen Team                 | Production | 01/05/2026 | 30/12/2026 | Non |                      |
-| qwen3:0.6b                            | Qwen Team                 | Production | 13/06/2025 | 30/12/2026 | Oui |                      |
-| translategemma:12b                    | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| translategemma:27b                    | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| translategemma:4b                     | Google                    | Production | 22/01/2026 | 30/12/2026 | Non |                      |
-| voxtral                               | Mistral AI                | Production | 01/04/2026 | 30/12/2026 | Non |                      |
-| z-image:16b                           | Community                 | Production | 01/04/2026 | 30/12/2026 | Non |                      |
-| nvidia/llama-nemotron-rerank-vl-1b-v2 | NVIDIA                    | Production | 13/05/2026 | 30/06/2027 | Non |                      |
-| bge-m3:567m                           | BAAI                      | Production | 18/10/2025 | 30/12/2027 | Oui |                      |
-| gpt-oss:120b                          | OpenAI                    | Production | 11/11/2025 | 30/12/2027 | Oui |                      |
-| granite-embedding:278m                | IBM                       | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
-| llama3.3:70b                          | Meta                      | Production | 13/06/2025 | 30/12/2027 | Oui |                      |
-| qwen3-2507:235b                       | Qwen Team                 | Production | 04/01/2026 | 30/12/2027 | Oui |                      |
-| qwen3-2507-think:4b                   | Qwen Team                 | Production | 31/08/2025 | 30/12/2027 | Oui |                      |
-
-### Légende
-
-- **Phase**: Cycle de vie du modèle (Évaluation, Production, Déprécié)
-- **DMP**: Date de Mise en Production
-- **DSP**: Date de Suppression Prévisionnelle
-- **LTS**: Long Term Support. Les modèles LTS bénéficient d'une stabilité garantie et d'un support étendu, idéal pour les applications critiques.
-- **Migration conseillée**: Modèle recommandé pour remplacer un modèle en fin de vie.
-
-Pour suivre l'état du cycle de vie en temps réel, consultez la page : [LLMaaS Status - Cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle)
-
----
-
-## Modèles Dépréciés
-
-Le monde des LLMs évolue très rapidement. Pour garantir à nos clients l'accès aux technologies les plus performantes, nous déprécions régulièrement les modèles qui ne sont plus au niveau des standards actuels ou qui ne sont pas utilisés. Les modèles listés ci-dessous ne sont plus disponibles sur la plateforme publique. Ils peuvent cependant être réactivés pour des projets spécifiques, à la demande.
-
-| Modèle                   | Phase    | Date de Dépréciation |
-| :----------------------- | :------- | :------------------- |
-| devstral:24b             | Déprécié | 30/03/2026           |
-| granite3.1-moe:2b        | Déprécié | 30/03/2026           |
-| granite4-small-h:32b     | Déprécié | 15/05/2026           |
-| granite4-tiny-h:7b       | Déprécié | 15/05/2026           |
-| medgemma:27b             | Déprécié | 15/05/2026           |
-| qwen3-2507-gptq:235b     | Déprécié | 15/05/2026           |
-| qwen3-coder:30b          | Déprécié | 30/03/2026           |
-| qwen3:30b-a3b            | Déprécié | 30/03/2026           |
-| deepseek-r1:14b          | Déprécié | 30/12/2025           |
-| deepseek-r1:32b          | Déprécié | 30/12/2025           |
-| gemma3:1b                | Déprécié | 30/12/2025           |
-| gemma3:4b                | Déprécié | 30/12/2025           |
-| qwen3:1.7b               | Déprécié | 30/12/2025           |
-| qwen3:14b                | Déprécié | 30/12/2025           |
-| qwen3:4b                 | Déprécié | 30/12/2025           |
-| qwen3:8b                 | Déprécié | 30/12/2025           |
-| qwen3:32b                | Déprécié | 30/12/2025           |
-| qwq:32b                  | Déprécié | 30/12/2025           |
-| granite3.3:2b            | Déprécié | 30/12/2025           |
-| granite3.3:8b            | Déprécié | 30/12/2025           |
-| mistral-small3.1:24b     | Déprécié | 30/12/2025           |
-| qwen2.5vl:32b            | Déprécié | 30/12/2025           |
-| qwen2.5vl:3b             | Déprécié | 30/12/2025           |
-| qwen2.5vl:72b            | Déprécié | 30/12/2025           |
-| qwen2.5vl:7b             | Déprécié | 30/12/2025           |
-| cogito:8b                | Déprécié | 30/12/2025           |
-| deepcoder:14b            | Déprécié | 30/12/2025           |
-| cogito:3b                | Déprécié | 30/12/2025           |
-| qwen3:235b               | Déprécié | 22/11/2025           |
-| qwen3-2507-think:30b-a3b | Déprécié | 14/11/2025           |
-| gemma3:12b               | Déprécié | 21/11/2025           |
-| cogito:14b               | Déprécié | 17/10/2025           |
-| deepseek-r1:70b          | Déprécié | 17/10/2025           |
-| granite3.1-moe:3b        | Déprécié | 17/10/2025           |
-| llama3.1:8b              | Déprécié | 17/10/2025           |
-| phi4-reasoning:14b       | Déprécié | 17/10/2025           |
-| qwen2.5:0.5b             | Déprécié | 17/10/2025           |
-| qwen2.5:1.5b             | Déprécié | 17/10/2025           |
-| qwen2.5:14b              | Déprécié | 17/10/2025           |
-| qwen2.5:32b              | Déprécié | 17/10/2025           |
-| qwen2.5:3b               | Déprécié | 17/10/2025           |
-| deepseek-r1:671b         | Déprécié | 17/10/2025           |
+La liste et les destinations de migration sont disponibles dans le [catalogue de cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle). Si aucune migration n'est indiquée, contactez le support avant l'échéance pour choisir une solution adaptée.
 
 ## 💡 Bonnes Pratiques
 
@@ -338,20 +200,7 @@ Pour tirer le meilleur parti de l'API LLMaaS, il est essentiel d'adopter des str
 
 La maîtrise des coûts repose sur une utilisation intelligente des tokens et des modèles.
 
-1.  **Choix du Modèle** : N'utilisez pas un modèle surpuissant pour une tâche simple. Un modèle plus grand est plus capable, mais il est aussi plus lent et consomme beaucoup plus d'énergie, ce qui impacte directement le coût. Adaptez la taille du modèle à la complexité de votre besoin pour un équilibre optimal.
-
-    Par exemple, pour traiter un million de tokens :
-    - **`Gemma 3 1B`** consomme **0.15 kWh**.
-    - **`Llama 3.3 70B`** consomme **11.75 kWh**, soit **78 fois plus**.
-
-    ```python
-    # Pour une classification de sentiment, un modèle compact est suffisant et économique.
-    if task == "sentiment_analysis":
-        model = "qwen3.5:0.8b"
-    # Pour une analyse juridique complexe, un modèle plus grand est nécessaire.
-    elif task == "legal_analysis":
-        model = "gpt-oss:120b"
-    ```
+1.  **Choix du Modèle** : Comparez plusieurs modèles sur des exemples représentatifs de votre usage. Retenez celui qui répond à vos exigences de qualité et de latence, puis mesurez sa consommation de tokens. Consultez le [catalogue de cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) pour identifier les modèles disponibles et leurs successeurs. La facturation dépend du tarif applicable et des volumes consommés ; la taille du modèle seule ne détermine pas le coût facturé.
 
 2.  **Gestion du Contexte** : L'historique de la conversation (`messages`) est renvoyé à chaque appel, consommant des tokens d'entrée. Pour des conversations longues, envisagez des stratégies de résumé ou de fenêtrage pour ne conserver que les informations pertinentes.
     ```python

@@ -5,6 +5,28 @@ sidebar_position: 1
 
 # LLM as a Service (LLMaaS)
 
+LLMaaS donne accès aux modèles d'IA hébergés par Cloud Temple via une API : assistants conversationnels, programmation et agents, analyse d'images, recherche sémantique, reranking, traduction et usages audio/image.
+
+## Catalogue, nouveautés et disponibilité
+
+- **[Catalogue et cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle)** : modèles, contexte, statuts LTS, fins de support et migrations conseillées.
+- **[Nouveautés LLMaaS](https://llmaas.status.cloud-temple.app/changelog)** : ajouts de modèles, évolutions du service et annonces de redirection.
+- **[État du service](https://llmaas.status.cloud-temple.app/)** et **[historique](https://llmaas.status.cloud-temple.app/history)** : disponibilité et performances observées.
+
+Pour démarrer, suivez le [guide de démarrage](./quickstart.md). Pour choisir un modèle, consultez le [guide du catalogue](./models.md).
+
+## Fonctionnalités
+
+| Usage | Guide |
+|-------|-------|
+| Génération de texte, streaming, appels d'outils et vision | [API LLMaaS](./api.md) |
+| Recherche augmentée par génération | [Comprendre le RAG](./rag_explained.md) |
+| Classement des documents par pertinence | [Reranking](./rerank.md) |
+| Traitement asynchrone de lots de requêtes | [Batch](./batch.md) |
+| Changement de modèle et gestion des anciens identifiants | [Cycle de vie et migration](./concepts.md#migration-vers-un-autre-modèle) |
+
+Les optimisations d'inférence, dont la prédiction de plusieurs tokens (*MTP*) annoncée dans le changelog, sont réalisées côté service. Évaluez leurs effets sur vos propres requêtes à partir des mesures de supervision.
+
 ## Accès à l'API
 
 L'API est accessible via la Console Cloud Temple. Vous pouvez gérer vos clés API, surveiller votre consommation et configurer vos tiers dans les paramètres de votre compte. La console permet également de visualiser l'usage de vos modèles.
@@ -15,14 +37,16 @@ Toutes les requêtes vers l'API LLMaaS doivent inclure un header `Authorization`
 
 ## Types de contenu
 
-L'API LLMaaS accepte toujours du JSON dans le corps des requêtes et retourne du JSON dans le corps des réponses. Vous devez envoyer le header `content-type: application/json` dans vos requêtes. Si vous utilisez les SDK clients, ceci sera géré automatiquement.
+Les requêtes de génération de texte utilisent du JSON avec le header `Content-Type: application/json`. Le streaming renvoie des événements SSE et la transcription de fichiers audio utilise `multipart/form-data`. Consultez la [documentation API](./api.md) pour le format de chaque endpoint.
 
-## Headers de réponse
+## Métadonnées des réponses
 
-L'API LLMaaS inclut les headers suivants dans chaque réponse :
+Selon l’endpoint, le corps JSON de la réponse peut contenir les champs suivants :
 
-- `id` : Un identifiant globalement unique pour la requête
-- `backend` : Informations sur l'infrastructure utilisée (engine_type, machine_name)
+- `id` : Identifiant de la réponse.
+- `backend` : Informations sur le moteur et l’instance ayant traité la requête (`engine_type`, `machine_name`).
+
+Ces champs se lisent dans le corps JSON, pas dans les en-têtes HTTP. Consultez la [référence API](./api.md) pour le format et les champs documentés de chaque endpoint.
 
 ## Exemples
 
@@ -96,6 +120,7 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoints disponibles
 
 - `/chat/completions` : Génération de réponses conversationnelles
+- `/chat/completions/batch` : Traitement asynchrone de plusieurs conversations ([guide Batch](./batch.md))
 - `/completions` : Complétion de texte simple
 - `/embeddings` : Vectorisation pour la recherche sémantique et RAG
 - `/rerank` et `/v2/rerank` : Réordonnancement de résultats (compatible Cohere SDK)
@@ -111,39 +136,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-**Réponse** :
-```json
-{
-  "object": "list",
-  "data": [
-    {
-      "id": "gpt-oss:120b",
-      "object": "model",
-      "created": 1749110897,
-      "owned_by": "CloudTemple",
-      "root": "gpt-oss:120b",
-      "aliases": ["gpt-oss:120b"],
-      "parent": null,
-      "max_model_len": 60000,
-      "permission": [
-        {
-          "id": "modelperm-granite3.3:8b-1749110897",
-          "object": "model_permission",
-          "created": 1749110897,
-          "allow_create_engine": false,
-          "allow_sampling": true,
-          "allow_logprobs": true,
-          "allow_search_indices": false,
-          "allow_view": true,
-          "allow_fine_tuning": false,
-          "organization": "*",
-          "group": null,
-          "is_blocking": false
-        }
-      ]
-    }
-  ]
-}
-```
-
-La réponse contient tous les modèles disponibles avec leurs spécifications et permissions.
+La réponse fournit les identifiants exposés par l'API. Consultez également le [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) pour vérifier les dépréciations et redirections. Les modèles utilisés dans les exemples sont illustratifs ; vérifiez leur disponibilité avant exécution.

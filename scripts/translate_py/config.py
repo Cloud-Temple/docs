@@ -27,8 +27,13 @@ class TranslationConfig(BaseModel):
     
     # Configuration modèle
     model: str = Field(
-        default="qwen3.6:27b",
+        default="qwen3.8:27b",
         description="Modèle utilisé pour la traduction"
+    )
+    reasoning_effort: str = Field(
+        default="low",
+        min_length=1,
+        description="Effort de raisonnement transmis au modèle de traduction"
     )
     model_type: str = Field(
         default="other", # "openai" ou "other" pour la gestion du tokenizer
@@ -126,7 +131,8 @@ def load_config(
     api_key: Optional[str] = None,
     api_url: Optional[str] = None,
     model: Optional[str] = None,
-    path_filters: Optional[List[str]] = None
+    path_filters: Optional[List[str]] = None,
+    reasoning_effort: Optional[str] = None
 ) -> TranslationConfig:
     """
     Charge la configuration depuis les variables d'environnement.
@@ -135,6 +141,7 @@ def load_config(
         api_key: Clé API fournie en ligne de commande. Prioritaire sur l'environnement.
         api_url: URL API fournie en ligne de commande. Prioritaire sur l'environnement.
         model: Modèle fourni en ligne de commande. Prioritaire sur l'environnement.
+        reasoning_effort: Effort fourni en CLI, prioritaire sur l’environnement.
         path_filters: Restreint le périmètre à ces chemins (relatifs à docs/).
 
     Returns:
@@ -160,6 +167,7 @@ def load_config(
         'api_url': api_url or os.getenv('CLOUDTEMPLE_API_URL'),
         'api_key': api_key or os.getenv('CLOUDTEMPLE_API_KEY'),
         'model': model or os.getenv('TRANSLATION_MODEL'),
+        'reasoning_effort': reasoning_effort or os.getenv('TRANSLATION_REASONING_EFFORT'),
         'model_type': os.getenv('MODEL_TYPE'),
         'temperature': _get_float_env('TRANSLATION_TEMPERATURE'),
         'top_p': _get_float_env('TRANSLATION_TOP_P'),

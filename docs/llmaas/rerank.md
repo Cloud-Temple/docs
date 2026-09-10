@@ -38,24 +38,23 @@ Requête utilisateur
 
 ## Modèles Disponibles
 
-| Modèle | Éditeur | Contexte | LTS | Usage recommandé |
-|--------|---------|----------|-----|-----------------|
-| `nvidia/llama-nemotron-rerank-vl-1b-v2` | NVIDIA | 4 096 | Non | **Recommandé** — précision maximale, DSP 30/06/2027 |
-| `qwen3-reranker:4b` | Qwen Team | 4 096 | Non | Haute qualité, compréhension contextuelle approfondie |
-| `qwen3-reranker:0.6b` | Qwen Team | 4 096 | Non | Compact et rapide, idéal pour faible latence |
-| `bge-reranker-large` | BAAI | 512 | Non | Multilingue, haute performance |
+Consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) pour les modèles de reranking, leur contexte et leurs échéances. Récupérez l'identifiant exact exposé par `GET /v1/models` ; les noms peuvent différer des noms courts utilisés dans une annonce.
 
-:::tip[Quel modèle choisir ?]
-- **Production RAG** : `nvidia/llama-nemotron-rerank-vl-1b-v2` — meilleure précision
-- **Faible latence** : `qwen3-reranker:0.6b` — le plus rapide
-- **Multilingue** : `bge-reranker-large` — optimisé pour de nombreuses langues
-:::
+Comparez la pertinence du classement sur votre corpus, les langues prises en charge, la longueur des documents et la latence. Les exemples ci-dessous utilisent `nvidia/llama-nemotron-rerank-vl-1b-v2` ; vérifiez sa disponibilité avant exécution.
 
 ## Tarification
 
-**4.00 € / million de tokens rerankés** — environ **50% moins cher** que les tokens de génération standard.
+**4,00 € par million de documents traités.** Une unité de recherche (`search_unit`) correspond à un document soumis au reranking pour une requête.
 
-Le nombre de tokens rerankés correspond à la somme des tokens de la requête et de chaque document traité.
+Tous les documents du tableau `documents` sont comptés. Le paramètre `top_n` limite uniquement le nombre de résultats retournés : il ne réduit pas le nombre de documents traités ni le coût de la requête. Un même document soumis dans plusieurs requêtes est compté à chaque traitement.
+
+```text
+Coût (€) = Nombre de documents traités × 4 / 1 000 000
+```
+
+**Exemple :** 1 000 requêtes contenant chacune 100 documents représentent 100 000 documents traités, soit **0,40 €**, même si chaque requête ne retourne que les 5 premiers résultats (`top_n: 5`).
+
+Les compteurs de tokens éventuellement renvoyés par le moteur ne constituent pas l'unité de facturation du reranking.
 
 ## Endpoints
 
@@ -98,44 +97,52 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 ### Format de la Réponse
 
+Extrait illustratif du format Jina/vLLM décrit par le contrat de la plateforme. Les scores et compteurs ci-dessous sont fictifs. Le proxy transmet la réponse du moteur et ajoute un bloc `backend`, omis ici.
+
 ```json
 {
-  "id": "rerank-7f3a2b1c4e5d",
+  "id": "score-8bb47ca195d8cb2f",
   "results": [
     {
       "index": 0,
-      "relevance_score": 0.9821,
+      "relevance_score": 0.0401,
       "document": {
-        "text": "Cloud Temple est hébergé exclusivement en France."
+        "text": "Cloud Temple est hébergé exclusivement en France.",
+        "multi_modal": null
       }
     },
     {
       "index": 2,
-      "relevance_score": 0.9743,
+      "relevance_score": 0.0253,
       "document": {
-        "text": "LLMaaS est qualifié SecNumCloud 3.2 par l'ANSSI."
+        "text": "LLMaaS est qualifié SecNumCloud 3.2 par l'ANSSI.",
+        "multi_modal": null
       }
     },
     {
       "index": 4,
-      "relevance_score": 0.9512,
+      "relevance_score": 0.0112,
       "document": {
-        "text": "Les données ne sont ni stockées ni transférées hors de France."
+        "text": "Les données ne sont ni stockées ni transférées hors de France.",
+        "multi_modal": null
       }
     }
   ],
   "usage": {
-    "billed_units": {
-      "search_units": 5
-    }
-  }
+    "prompt_tokens": 125,
+    "total_tokens": 125
+  },
+  "model": "nvidia/llama-nemotron-rerank-vl-1b-v2"
 }
 ```
 
 - `results` : Documents triés par score décroissant
 - `index` : Position originale dans le tableau `documents` envoyé
-- `relevance_score` : Score de pertinence entre 0 et 1 (plus c'est élevé, plus c'est pertinent)
-- `search_units` : Nombre de documents rerankés (pour la facturation)
+- `relevance_score` : Score brut du modèle (logit), non normalisé et non assimilable à une probabilité. Un score plus élevé indique un document mieux classé pour cette requête ; aucune plage universelle de 0 à 1 n'est garantie.
+- `document` : Texte et éventuelles données multimodales du document, lorsque le moteur les retourne.
+- `usage.prompt_tokens` et `usage.total_tokens` : Compteurs de tokens du moteur. Ils ne constituent pas l’unité de facturation du reranking.
+
+Le nombre de documents facturés ne dépend pas de la présence d’un champ `search_units` dans la réponse : tous les documents soumis sont comptés, selon la [tarification](#tarification).
 
 ## Exemples d'Implémentation
 
@@ -350,18 +357,9 @@ top_docs = rerank_documents(query, candidates, top_n=5)
 
 ### Seuil de Pertinence
 
-```python
-# Filtre les documents peu pertinents (score < 0.3)
-RELEVANCE_THRESHOLD = 0.3
+Commencez par utiliser le classement relatif et `top_n` pour sélectionner les documents. Il n’existe pas de seuil universel, tel que 0,3, applicable à tous les modèles et corpus.
 
-def rerank_with_threshold(query: str, documents: list[str]) -> list[str]:
-    results = rerank_documents(query, documents, top_n=len(documents))
-    return [
-        documents[r["index"]] 
-        for r in results 
-        if r["relevance_score"] >= RELEVANCE_THRESHOLD
-    ]
-```
+Si votre application doit écarter les documents peu pertinents, calibrez un seuil sur un jeu représentatif de requêtes et de documents dont la pertinence a été évaluée. Mesurez les documents pertinents conservés et ceux éliminés à tort. Réévaluez ce seuil lors d’un changement de modèle ou de corpus ; ne comparez pas directement les scores de modèles différents.
 
 ## Ressources
 

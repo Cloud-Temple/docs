@@ -7,55 +7,54 @@ sidebar_position: 5
 
 ## Was ist Reranking?
 
-Das **Reranking** ist ein entscheidender Schritt in RAG-Pipelines (Retrieval-Augmented Generation). Nach einer initialen Vektorsuche (Embedding) nimmt ein Reranking-Modell die `N` Kandidatendokumente und **ordnet** sie nach ihrer präzisen semantischen Relevanz zur Benutzeranfrage neu.
+Das **Reranking** ist ein entscheidender Schritt in RAG-Pipelines (Retrieval-Augmented Generation). Nach einer initialen Vektorsuche (embedding) nimmt ein Reranking-Modell die `N` Kandidatendokumente und **sortiert sie neu** nach ihrer präzisen semantischen Relevanz in Bezug auf die Benutzeranfrage.
 
 ### Warum verbessert Reranking die Ergebnisse?
 
 ```
-Nutzeranfrage
+Requête utilisateur
        │
        ▼
   ┌─────────────┐       ┌────────────────────────────────────┐
-  │  Embedding  │──────►│ Top-100 Dokumente (approximative   │
-  │  + Vektor   │       │ Vektorsuche/ANN)                   │
-  │  Suche      │       └────────────────────────────────────┘
+  │  Embedding  │──────►│ Top-100 documents (recherche      │
+  │  + Vector   │       │ vectorielle approximative/ANN)     │
+  │  Search     │       └────────────────────────────────────┘
   └─────────────┘                         │
                                           ▼
                                ┌────────────────────┐
                                │    Reranker         │
-                               │  (präzise Analyse   │
-                               │   Anfrage↔Dokument)  │
+                               │  (analyse précise   │
+                               │   requête↔document) │
                                └────────────────────┘
                                           │
                                           ▼
-                               Top-5 Dokumente nach
-                               tatsächlicher Relevanz sortiert
+                               Top-5 documents triés
+                               par pertinence réelle
 ```
 
-- Die **Vektorsuche** (Embedding) ist schnell, aber approximativ — sie berechnet eine Kosinus-Ähnlichkeit in einem multidimensionalen Raum
-- Der **Reranker** führt eine detaillierte Kreuzanalyse jedes Paares (Anfrage, Dokument) durch und erzeugt einen präzisen Relevanzscore
-- Ergebnis: Ein RAG mit Reranking weist typischerweise **+15 bis +30 % mehr Präzision** bei den generierten Antworten auf
+- Die **Vektorsuche** (Embedding) ist schnell, aber ungenau — sie berechnet eine Kosinusähnlichkeit in einem mehrdimensionalen Raum
+- Der **Reranker** führt eine detaillierte Analyse jedes Paares (Abfrage, Dokument) durch und erzeugt einen präzisen Relevanzscore
+- Ergebnis: Ein RAG-System mit Reranking weist typischerweise eine **+15 bis +30 % höhere Genauigkeit** bei den generierten Antworten auf
 
 ## Verfügbare Modelle
 
-| Modell | Herausgeber | Kontext | LTS | Empfohlene Verwendung |
-|--------|---------|---------|-----|-----------------------|
-| `nvidia/llama-nemotron-rerank-vl-1b-v2` | NVIDIA | 4 096 | Nein | **Empfohlen** — maximale Genauigkeit, DSP 30/06/2027 |
-| `qwen3-reranker:4b` | Qwen Team | 4 096 | Nein | Hohe Qualität, tiefes kontextuelles Verständnis |
-| `qwen3-reranker:0.6b` | Qwen Team | 4 096 | Nein | Kompakt und schnell, ideal für niedrige Latenz |
-| `bge-reranker-large` | BAAI | 512 | Nein | Mehrsprachig, hohe Leistung |
+Siehe [Katalog und Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) für Reranking-Modelle, deren Kontext und Ablaufdaten. Rufen Sie die genaue ID ab, die von `GET /v1/models` zurückgegeben wird ; die Namen können von den Kurzbezeichnungen in Ankündigungen abweichen.
 
-:::tip[Welches Modell soll ich wählen?]
-- **RAG-Produktion** : `nvidia/llama-nemotron-rerank-vl-1b-v2` — höchste Genauigkeit
-- **Niedrige Latenz** : `qwen3-reranker:0.6b` — am schnellsten
-- **Mehrsprachig** : `bge-reranker-large` — optimiert für viele Sprachen
-:::
+Vergleichen Sie die Relevanz des Rankings auf Ihrem Korpus, die unterstützten Sprachen, die Dokumentenlänge und die Latenz. Die folgenden Beispiele verwenden `nvidia/llama-nemotron-rerank-vl-1b-v2` ; prüfen Sie die Verfügbarkeit vor der Ausführung.
 
 ## Preisgestaltung
 
-**4,00 € / Million neu gerankter Tokens** — etwa **50 % günstiger** als die Tokens der Standard-Generierung.
+**4,00 € pro Million verarbeiteter Dokumente.** Eine Sucheinheit (`search_unit`) entspricht einem Dokument, das für eine Abfrage dem Reranking unterzogen wird.
 
-Die Anzahl der neu gerankten Tokens entspricht der Summe der Tokens der Anfrage und jedes verarbeiteten Dokuments.
+Alle Dokumente im Array `documents` werden angerechnet. Der Parameter `top_n` begrenzt ausschließlich die Anzahl der zurückgegebenen Ergebnisse: Er reduziert weder die Anzahl der verarbeiteten Dokumente noch die Kosten der Abfrage. Dasselbe Dokument, das in mehreren Abfragen eingereicht wird, wird bei jeder Verarbeitung angerechnet.
+
+```text
+Coût (€) = Nombre de documents traités × 4 / 1 000 000
+```
+
+**Beispiel:** 1 000 Abfragen, die jeweils 100 Dokumente enthalten, entsprechen 100 000 verarbeiteten Dokumenten, also **0,40 €**, selbst wenn jede Abfrage nur die ersten 5 Ergebnisse zurückgibt (`top_n: 5`).
+
+Ggf. vom Engine zurückgegebene Token-Zähler bilden nicht die Abrechnungseinheit für das Reranking.
 
 ## Endpunkte
 
@@ -63,10 +62,10 @@ Die LLMaaS-API stellt zwei Endpunkte bereit, die mit dem Cohere-SDK kompatibel s
 
 | Endpunkt | Version | Kompatibel |
 |----------|---------|------------|
-| `POST /v1/rerank` | Cohere v1 | SDK Cohere v4, direkte Aufrufe |
-| `POST /v2/rerank` | Cohere v2 | SDK Cohere v5+ |
+| `POST /v1/rerank` | Cohere v1 | Cohere-SDK v4, direkte Aufrufe |
+| `POST /v2/rerank` | Cohere v2 | Cohere-SDK v5+ |
 
-## Format der Anfrage
+## Anfrageformat
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
@@ -89,57 +88,65 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 ### Parameter
 
 | Parameter | Typ | Erforderlich | Beschreibung |
-|-----------|-----|--------------|--------------|
+|-----------|------|-------------|-------------|
 | `model` | string | ✅ | ID des Reranking-Modells |
 | `query` | string | ✅ | Die Suchanfrage |
-| `documents` | Array von Strings | ✅ | Die neu zu sortierenden Dokumente |
+| `documents` | String-Array | ✅ | Die zu rerankenden Dokumente |
 | `top_n` | integer | ❌ | Anzahl der zurückzugebenden Ergebnisse (Standard: alle) |
-| `return_documents` | boolean | ❌ | Dokumententext in der Antwort enthalten (Standard: true) |
+| `return_documents` | boolean | ❌ | Den Text der Dokumente in die Antwort aufnehmen (Standard: true) |
 
-### Format der Antwort
+### Antwortformat
+
+Beispielhafter Ausschnitt des im Plattformvertrag beschriebenen Jina/vLLM-Formats. Die unten aufgeführten Scores und Zähler sind fiktiv. Der Proxy leitet die Antwort des Engines weiter und fügt einen Block `backend` hinzu, der hier weggelassen wurde.
 
 ```json
 {
-  "id": "rerank-7f3a2b1c4e5d",
+  "id": "score-8bb47ca195d8cb2f",
   "results": [
     {
       "index": 0,
-      "relevance_score": 0.9821,
+      "relevance_score": 0.0401,
       "document": {
-        "text": "Cloud Temple wird ausschließlich in Frankreich gehostet."
+        "text": "Cloud Temple est hébergé exclusivement en France.",
+        "multi_modal": null
       }
     },
     {
       "index": 2,
-      "relevance_score": 0.9743,
+      "relevance_score": 0.0253,
       "document": {
-        "text": "LLMaaS ist von der ANSSI als SecNumCloud 3.2 qualifiziert."
+        "text": "LLMaaS est qualifié SecNumCloud 3.2 par l'ANSSI.",
+        "multi_modal": null
       }
     },
     {
       "index": 4,
-      "relevance_score": 0.9512,
+      "relevance_score": 0.0112,
       "document": {
-        "text": "Die Daten werden weder gespeichert noch außerhalb Frankreichs übertragen."
+        "text": "Les données ne sont ni stockées ni transférées hors de France.",
+        "multi_modal": null
       }
     }
   ],
   "usage": {
-    "billed_units": {
-      "search_units": 5
-    }
-  }
+    "prompt_tokens": 125,
+    "total_tokens": 125
+  },
+  "model": "nvidia/llama-nemotron-rerank-vl-1b-v2"
 }
 ```
 
-- `results` : Dokumente, sortiert nach absteigendem Score
+- `results` : Nach absteigendem Score sortierte Dokumente
 - `index` : Ursprüngliche Position im gesendeten `documents`-Array
-- `relevance_score` : Relevanzscore zwischen 0 und 1 (je höher, desto relevanter)
-- `search_units` : Anzahl der neu bewerteten Dokumente (zur Abrechnung)
+- `relevance_score` : Roher Modell-Score (Logit), nicht normalisiert und nicht als Wahrscheinlichkeit interpretierbar. Ein höherer Score kennzeichnet ein für diese Abfrage besser eingestuften Dokument; ein universeller Wertebereich von 0 bis 1 ist nicht garantiert.
+- `document` : Text und ggf. multimodale Daten des Dokuments, sofern sie vom Engine zurückgegeben werden.
+- `usage.prompt_tokens` und `usage.total_tokens` : Token-Zähler des Engines. Sie bilden nicht die Abrechnungseinheit für das Reranking.
+
+Die Anzahl der in Rechnung gestellten Dokumente hängt nicht vom Vorhandensein eines Feldes `search_units` in der Antwort ab: Alle eingereichten Dokumente werden gezählt, gemäß der [tarification](#preisgestaltung).
 
 ## Implementierungsbeispiele
 
-### Python — Direkter Aufruf (httpx)
+### Python — Direktaufruf (httpx)
 
 ```python
 import httpx
@@ -199,7 +206,7 @@ for result in results:
 import cohere
 import os
 
-# Das Cohere SDK verweist auf die LLMaaS-API
+# Das Cohere SDK zeigt auf die LLMaaS-API
 co = cohere.Client(
     api_key=os.getenv("LLMAAS_API_KEY"),
     base_url="https://api.ai.cloud-temple.com"
@@ -302,7 +309,7 @@ def rag_pipeline(query: str) -> str:
     """Pipeline RAG complet : Embed → Search → Rerank → Generate."""
     print(f"📝 Requête : {query}")
     
-    # 1. Vektorisierung der Anfrage
+    # 1. Vektorisierung der Abfrage
     print("🔢 Vectorisation...")
     query_vector = embed_query(query)
     
@@ -314,7 +321,7 @@ def rag_pipeline(query: str) -> str:
     print("📊 Reranking (→ top-5)...")
     top_docs = rerank_documents(query, candidates, top_n=5)
     
-    # 4. Antwortgenerierung
+    # 4. Generierung der Antwort
     print("✍️ Génération de la réponse...")
     answer = generate_answer(query, top_docs)
     
@@ -336,36 +343,27 @@ if __name__ == "__main__":
 candidates = vector_search(query_vector, top_k=20)
 top_docs = rerank_documents(query, candidates, top_n=5)
 
-# ❌ SCHLECHT: Reranker der gesamten Datenbank (1000+ Dokumente)
-# candidates = all_documents  # Zu langsam und kostspielig
+# ❌ SCHLECHT: Reranker auf der gesamten Datenbank (1000+ Dokumente)
+# candidates = all_documents  # Zu langsam und teuer
 ```
 
 ### Auswahl von `top_n`
 
-| Anwendungsfall | `top_k` (search) | `top_n` (rerank) |
+| Anwendungsfall | `top_k` (Suche) | `top_n` (Reranking) |
 |------------|-----------------|-----------------|
 | Einfacher Chat/QA | 10-20 | 3-5 |
 | Dokumentenanalyse | 20-50 | 5-10 |
 | Komplexe Zusammenfassung | 50-100 | 10-15 |
 
-### Relevanzschwelle
+### Relevanzschwellenwert
 
-```python
-# Filtert Dokumente mit geringer Relevanz (Score < 0.3)
-RELEVANCE_THRESHOLD = 0.3
+Beginnen Sie damit, die relative Rangfolge und `top_n` zur Auswahl der Dokumente zu verwenden. Es gibt keinen universellen Schwellenwert wie 0,3, der auf alle Modelle und Korpora anwendbar ist.
 
-def rerank_with_threshold(query: str, documents: list[str]) -> list[str]:
-    results = rerank_documents(query, documents, top_n=len(documents))
-    return [
-        documents[r["index"]] 
-        for r in results 
-        if r["relevance_score"] >= RELEVANCE_THRESHOLD
-    ]
-```
+Wenn Ihre Anwendung weniger relevante Dokumente ausschließen muss, kalibrieren Sie einen Schwellenwert anhand eines repräsentativen Datensatzes von Abfragen und Dokumenten, deren Relevanz bewertet wurde. Messen Sie die beibehaltenen relevanten Dokumente und die fälschlicherweise entfernten. Überprüfen Sie diesen Schwellenwert erneut bei einem Wechsel des Modells oder Korpus; vergleichen Sie die Scores verschiedener Modelle nicht direkt.
 
 ## Ressourcen
 
 - **Vollständiger Beispielcode** : [`exemples/simple_rerank/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rerank)
 - **Modellkatalog** : [Reranking-Modelle](./models#reranking-modelle)
 - **API-Referenz** : [POST /v1/rerank](./api#post-v1rerank)
-- **RAG-Erklärung** : [Vollständiger RAG-Leitfaden](./rag_explained)
+- **RAG erklärt** : [Umfassender RAG-Leitfaden](./rag_explained)

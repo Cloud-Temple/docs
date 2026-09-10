@@ -5,532 +5,249 @@ sidebar_position: 6
 
 # Batch API — Asynchrone Verarbeitung
 
-:::info[Verfügbarkeit]
-Die Batch API wird **stufenweise eingeführt**. Prüfen Sie die Verfügbarkeit auf Ihrem Konto in der [Cloud Temple Console](https://console.cloud-temple.com) oder kontaktieren Sie den kommerziellen Support.
-:::
+Die Batch-API verarbeitet mehrere unabhängige Konversationen mit demselben Modell asynchron. Sie eignet sich für verzögerte Aufgaben wie Klassifizierung, Zusammenfassung oder Textextraktion.
 
-## Was ist die Batch API?
+Sie senden die Konversationen direkt als JSON an `POST /v1/chat/completions/batch` und rufen anschließend deren Status und Ergebnisse mit `GET /v1/chat/completions/batch/{id}` ab. Dieser API-Vertrag ist spezifisch für LLMaaS: Er basiert nicht auf den Datei- und Batch-Endpunkten des OpenAI-SDKs.
 
-Die **Batch API** ermöglicht das Einreichen großer Mengen von Anfragen **asynchron**, die in Schwachlastzeiten verarbeitet werden. Im Austausch für eine Toleranz bei der Verarbeitungszeit (einige Stunden) profitieren Sie von einer **Preissenkung um 50 %** auf die Standardtarife.
+## Funktionsweise
 
-### Wann sollte die Batch API verwendet werden?
+1. Bereiten Sie ein Array von Conversations mit einem gemeinsamen Modell und gemeinsamen Parametern vor.
+2. Senden Sie den Batch ein: Die API gibt **HTTP 202**, eine `id` und den Status `queued` zurück.
+3. Speichern Sie diese ID und fragen Sie den Status alle 30 bis 60 Sekunden ab.
+4. Rufen Sie das `results`-Array ab, sobald die Verarbeitung abgeschlossen ist, und speichern Sie die Ergebnisse in Ihrer Anwendung.
 
-| Anwendungsfall | Geeignet für Batch? |
-|-------------|-------------------|
-| Klassifizierung/Labeling von Millionen Dokumenten | ✅ Ideal |
-| Massengenerierung von Zusammenfassungen | ✅ Ideal |
-| Entitätsextraktion über große Korpora | ✅ Ideal |
-| Vektorisierung (Embedding) in großem Umfang | ✅ Ideal |
-| Modellbewertung (Benchmarks) | ✅ Ideal |
-| Echtzeit-Chatbot | ❌ Verwenden Sie `/v1/chat/completions` |
-| Interaktive Antwort < 2 Sekunden | ❌ Verwenden Sie die Standard-API |
-| SSE-Streaming | ❌ Verwenden Sie die Standard-API |
+Verwenden Sie denselben **API-Schlüssel**, um den Batch einzureichen und abzufragen. Ein anderer Schlüssel, auch wenn er demselben Konto zugeordnet ist, ermöglicht es nicht, die Ergebnisse abzurufen.
 
-## Preisgestaltung
+## Batch einreichen
 
-| Nutzung | Batch | Standard | Einsparung |
-|-------|-------|----------|---------|
-| **Eingabetokens** | **0,9 € / Million** | 1,8 € / Million | −50% |
-| **Ausgabetokens** | **4,0 € / Million** | 8,0 € / Million | −50% |
+### POST /v1/chat/completions/batch
 
-### Beispiel für Einsparungen
-
-Zum Verarbeiten von 1 Million Dokumenten mit je 500 Tokens und Antworten von 200 Tokens:
-- **Standard** : (500 × 1.8 + 200 × 8) / 1 = 2 500 €
-- **Batch** : (500 × 0.9 + 200 × 4) / 1 = 1 250 €
-- **Einsparung : 1 250 € (−50%)**
-
-## Architektur der Batch-Pipeline
-
-```
-1. Vorbereitung              2. Einreichung            3. Verarbeitung
-────────────────────────    ─────────────────────    ─────────────────────
-Erstellen einer JSONL-Datei  →   POST /v1/batches      →  Asynchrone Verarbeitung
-mit N Anfragen             (gibt batch_id zurück)       in Schwachlastzeiten
-
-4. Polling                  5. Abruf
-─────────────────────────   ─────────────────────────
-GET /v1/batches/{id}     →  GET /v1/files/{file_id} →  JSONL-Ergebnisse
-(Status: validating,        (Ergebnisse herunterladen
-in_progress, completed)      Ergebnisse))
-```
-
-## Format der Eingabedatei (JSONL)
-
-Jede Zeile der Datei ist eine unabhängige JSON-Anfrage:
-
-```json
-{"custom_id": "req-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "gpt-oss:120b", "messages": [{"role": "user", "content": "Résume ce texte : L'IA générative est..."}], "max_tokens": 200}}
-{"custom_id": "req-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "gpt-oss:120b", "messages": [{"role": "user", "content": "Classifie ce ticket : Mon accès VPN ne fonctionne plus."}], "max_tokens": 50}}
-{"custom_id": "req-3", "method": "POST", "url": "/v1/embeddings", "body": {"model": "granite-embedding:278m", "input": "Texte à vectoriser pour la recherche sémantique."}}
-```
-
-### Erforderliche Felder pro Zeile
-
-| Feld | Typ | Beschreibung |
-|-------|------|-------------|
-| `custom_id` | string | Eindeutige Kennung Ihrer Anfrage (zur Ergebnisabfrage) |
-| `method` | string | Immer `"POST"` |
-| `url` | string | Ziel-Endpoint (z. B. `/v1/chat/completions`, `/v1/embeddings`) |
-| `body` | object | Anfragekörper (im gleichen Format wie ein direkter Aufruf) |
-
-## API-Endpunkte
-
-### POST /v1/batches — Batch einreichen
+Das Feld `messages` ist ein **Array von Arrays**: Jedes Unterarray enthält die Nachrichten einer unabhängigen Konversation. Die anderen Parameter gelten für alle Konversationen gemeinsam.
 
 ```bash
-# 1. Upload du fichier JSONL
-curl -X POST "https://api.ai.cloud-temple.com/v1/files" \
-  -H "Authorization: Bearer VOTRE_TOKEN_API" \
-  -F "purpose=batch" \
-  -F "file=@requests.jsonl"
-```
-
-```json
-{
-  "id": "file-abc123xyz",
-  "object": "file",
-  "purpose": "batch",
-  "filename": "requests.jsonl",
-  "bytes": 4096,
-  "created_at": 1749110753
-}
-```
-
-```bash
-# 2. Soumission du batch
-curl -X POST "https://api.ai.cloud-temple.com/v1/batches" \
+curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
+  -H "Authorization: Bearer $LLMAAS_API_KEY" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer VOTRE_TOKEN_API" \
   -d '{
-    "input_file_id": "file-abc123xyz",
-    "endpoint": "/v1/chat/completions",
-    "completion_window": "24h"
+    "model": "gpt-oss:120b",
+    "messages": [
+      [
+        {"role": "system", "content": "Classe le ticket : Réseau, Logiciel ou Autre."},
+        {"role": "user", "content": "Mon accès VPN ne fonctionne plus."}
+      ],
+      [
+        {"role": "system", "content": "Classe le ticket : Réseau, Logiciel ou Autre."},
+        {"role": "user", "content": "Mon application se ferme au démarrage."}
+      ]
+    ],
+    "max_tokens": 200,
+    "temperature": 0.0
   }'
 ```
 
+Überprüfen Sie die Modell-ID mit `GET /v1/models` und deren [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) vor der Ausführung.
+
+| Feld | Beschreibung |
+|-------|-------------|
+| `model` | Modell-ID, die für alle Konversationen verwendet wird. |
+| `messages` | Nicht leeres Array von Konversationen, wobei jede durch ein Array von Nachrichten dargestellt wird. |
+| `max_tokens`, `temperature`, `top_p`, etc. | Parameter, die auf jede Konversation angewendet werden, abhängig von den Fähigkeiten des Modells. |
+| `tools`, `tool_choice`, `response_format` | Parameter, die an das Modell übergeben werden, wenn sie verwendet werden; die Ausführung der Tools bleibt in der Verantwortung Ihrer Anwendung. |
+
+Die Verarbeitung erzwingt `stream: false`. Die Konversationen und ihre Ergebnisse werden über ihre Position in den Arrays verknüpft; stellen Sie sicher, dass diese Zuordnung in Ihrer Anwendung beibehalten wird.
+
+Beispielhafter Auszug aus der Antwort zur Erstellung:
+
 ```json
 {
-  "id": "batch-def456uvw",
+  "id": "batch-instance-exemple-identifiant",
   "object": "batch",
-  "endpoint": "/v1/chat/completions",
-  "input_file_id": "file-abc123xyz",
-  "status": "validating",
-  "created_at": 1749110800,
+  "status": "queued",
+  "model": "gpt-oss:120b",
+  "model_requested": "gpt-oss:120b",
   "request_counts": {
-    "total": 100,
+    "total": 2,
     "completed": 0,
     "failed": 0
   }
 }
 ```
 
-### GET /v1/batches/\{batch_id\} — Status prüfen
+`model_requested` gibt den angeforderten Namen an; `model` gibt das aufgelöste Modell an, das im Falle eines Aliases abweichen kann. Verwenden Sie die tatsächlich vom Dienst zurückgegebene `id` erneut, ohne sie neu zu konstruieren.
+
+## Verarbeitung verfolgen und Ergebnisse abrufen
+
+### GET /v1/chat/completions/batch/\{id\}
 
 ```bash
-curl -X GET "https://api.ai.cloud-temple.com/v1/batches/batch-def456uvw" \
-  -H "Authorization: Bearer VOTRE_TOKEN_API"
+curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch/$BATCH_ID" \
+  -H "Authorization: Bearer $LLMAAS_API_KEY"
 ```
 
-**Mögliche Status:**
+| Status | Bedeutung |
+|--------|---------------|
+| `queued` | Wartet auf Verarbeitung oder Wiederaufnahme im nächsten Verarbeitungsfenster. |
+| `in_progress` | Verarbeitung läuft. |
+| `completed` | Verarbeitung abgeschlossen; prüfen Sie jedes Ergebnis auf individuelle Fehler. |
+| `failed` | Globaler Fehler; prüfen Sie `error` und die ggf. verfügbaren Ergebnisse. |
+| `expired` | Ablaufstatus; nach der Bereinigung gibt die GET-Anfrage HTTP 404 zurück. |
 
-| Status | Beschreibung |
-|--------|-------------|
-| `validating` | Validierung der Eingabedatei läuft |
-| `in_progress` | Verarbeitung der Anfragen läuft |
-| `finalizing` | Zusammenstellung der Ergebnisse läuft |
-| `completed` | Alle Ergebnisse sind verfügbar |
-| `failed` | Gesamtfehler (siehe `errors`) |
-| `cancelled` | Vom Benutzer abgebrochen |
+Die Tabelle `results` wird für die Status `completed` und `failed` angehängt. Jedes Element ist entweder eine Chat-Antwort oder ein `error`-Objekt. Es gibt keine Ausgabedatei zum Download.
+
+Beispielhafter Auszug mit einem Erfolg und einem Fehler:
 
 ```json
 {
-  "id": "batch-def456uvw",
+  "id": "batch-instance-exemple-identifiant",
+  "object": "batch",
   "status": "completed",
-  "output_file_id": "file-ghi789rst",
   "request_counts": {
-    "total": 100,
-    "completed": 99,
+    "total": 2,
+    "completed": 1,
     "failed": 1
   },
-  "completed_at": 1749118000
+  "results": [
+    {
+      "choices": [
+        {"message": {"role": "assistant", "content": "Réseau"}, "finish_reason": "stop"}
+      ],
+      "usage": {"prompt_tokens": 30, "completion_tokens": 4, "total_tokens": 34}
+    },
+    {
+      "error": {
+        "type": "BatchSubRequestError",
+        "message": "Échec du traitement de la conversation.",
+        "index": 1
+      }
+    }
+  ]
 }
 ```
 
-### GET /v1/files/\{file_id\}/content — Ergebnisse abrufen
-
-```bash
-curl -X GET "https://api.ai.cloud-temple.com/v1/files/file-ghi789rst/content" \
-  -H "Authorization: Bearer VOTRE_TOKEN_API" \
-  -o results.jsonl
-```
-
-**Format der Ergebnisse (JSONL):**
-
-```json
-{"id": "batch-def456uvw", "custom_id": "req-1", "response": {"status_code": 200, "body": {"id": "chatcmpl-...", "choices": [{"message": {"role": "assistant", "content": "Résumé : L'IA générative..."}}], "usage": {"prompt_tokens": 45, "completion_tokens": 87}}}}
-{"id": "batch-def456uvw", "custom_id": "req-2", "response": {"status_code": 200, "body": {"id": "chatcmpl-...", "choices": [{"message": {"role": "assistant", "content": "Catégorie: Réseau/VPN"}}], "usage": {"prompt_tokens": 22, "completion_tokens": 8}}}}
-{"id": "batch-def456uvw", "custom_id": "req-3", "error": {"code": "server_error", "message": "Processing failed"}}
-```
+**`completed` bedeutet nicht, dass alle Gespräche erfolgreich waren.** Sobald der Batch verarbeitet wurde, entspricht `results[i]` dem Gespräch `messages[i]`. Um die fehlgeschlagenen Anfragen erneut zu verarbeiten, erstellen Sie einen neuen Batch, der nur die betroffenen Gespräche enthält.
 
 ## Vollständiges Python-Beispiel
 
+Installieren Sie `httpx`, setzen Sie `LLMAAS_API_KEY` in Ihrer Umgebung, speichern Sie das Skript als `batch_demo.py` und führen Sie `python batch_demo.py` aus.
+
+```bash
+pip install httpx
+```
+
 ```python
-"""
-Exemple complet d'utilisation de la Batch API LLMaaS.
-Cas d'usage : classification de tickets de support en masse.
-"""
-import httpx
 import json
-import time
 import os
-from pathlib import Path
+import time
 
-API_KEY = os.getenv("LLMAAS_API_KEY")
+import httpx
+
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
-HEADERS = {
-    "Authorization": f"Bearer {API_KEY}",
-    "Content-Type": "application/json"
-}
+MODEL = os.getenv("LLMAAS_MODEL", "gpt-oss:120b")
 
 
-# ══════════════════════════════════════════════════════
-# SCHRITT 1 : Anfragen im JSONL-Format vorbereiten
-# ══════════════════════════════════════════════════════
-
-def create_batch_file(tickets: list[str], output_path: str = "batch_input.jsonl") -> str:
-    """
-    Crée un fichier JSONL avec une requête de classification par ticket.
-    
-    Args:
-        tickets: Liste des tickets à classifier
-        output_path: Chemin du fichier JSONL de sortie
-    
-    Returns:
-        Chemin du fichier créé
-    """
-    with open(output_path, "w", encoding="utf-8") as f:
-        for i, ticket in enumerate(tickets):
-            request = {
-                "custom_id": f"ticket-{i:04d}",
-                "method": "POST",
-                "url": "/v1/chat/completions",
-                "body": {
-                    "model": "gpt-oss:120b",
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": (
-                                "Tu es un expert en support IT. "
-                                "Classifie le ticket dans une seule catégorie parmi : "
-                                "Réseau, Sécurité, Logiciel, Matériel, Accès, Autre. "
-                                "Réponds uniquement avec le nom de la catégorie."
-                            )
-                        },
-                        {
-                            "role": "user",
-                            "content": ticket
-                        }
-                    ],
-                    "max_tokens": 10,
-                    "temperature": 0.0
-                }
-            }
-            f.write(json.dumps(request, ensure_ascii=False) + "\n")
-    
-    print(f"✅ Fichier JSONL créé : {output_path} ({len(tickets)} requêtes)")
-    return output_path
-
-
-# ══════════════════════════════════════════════════════
-# SCHRITT 2 : Datei hochladen
-# ══════════════════════════════════════════════════════
-
-def upload_batch_file(file_path: str) -> str:
-    """
-    Upload le fichier JSONL vers l'API.
-    
-    Returns:
-        file_id retourné par l'API
-    """
-    print(f"📤 Upload de {file_path}...")
-    
-    with open(file_path, "rb") as f:
-        with httpx.Client(timeout=60.0) as client:
-            response = client.post(
-                f"{BASE_URL}/files",
-                headers={"Authorization": f"Bearer {API_KEY}"},
-                files={"file": (Path(file_path).name, f, "application/jsonl")},
-                data={"purpose": "batch"}
-            )
-            response.raise_for_status()
-    
-    file_id = response.json()["id"]
-    print(f"✅ Fichier uploadé : {file_id}")
-    return file_id
-
-
-# ══════════════════════════════════════════════════════
-# SCHRITT 3 : Batch einreichen
-# ══════════════════════════════════════════════════════
-
-def submit_batch(file_id: str) -> str:
-    """
-    Soumet un batch pour traitement asynchrone.
-    
-    Returns:
-        batch_id retourné par l'API
-    """
-    print(f"🚀 Soumission du batch (fichier: {file_id})...")
-    
-    with httpx.Client(timeout=30.0) as client:
-        response = client.post(
-            f"{BASE_URL}/batches",
-            headers=HEADERS,
-            json={
-                "input_file_id": file_id,
-                "endpoint": "/v1/chat/completions",
-                "completion_window": "24h"
-            }
-        )
+def wait_for_batch(client, batch_id):
+    # Wartezeitlimit dieses Skripts, keine Service-Zeitgarantie.
+    deadline = time.monotonic() + 24 * 60 * 60
+    while time.monotonic() < deadline:
+        response = client.get(f"/chat/completions/batch/{batch_id}")
         response.raise_for_status()
-    
-    data = response.json()
-    batch_id = data["id"]
-    print(f"✅ Batch soumis : {batch_id} (statut: {data['status']})")
-    return batch_id
-
-
-# ══════════════════════════════════════════════════════
-# SCHRITT 4 : Polling bis zur Fertigstellung
-# ══════════════════════════════════════════════════════
-
-def wait_for_completion(batch_id: str, poll_interval: int = 30) -> dict:
-    """
-    Interroge l'API jusqu'à la complétion du batch.
-    
-    Args:
-        batch_id: L'identifiant du batch
-        poll_interval: Intervalle de polling en secondes
-    
-    Returns:
-        Le statut final du batch
-    """
-    print(f"⏳ En attente de la complétion du batch {batch_id}...")
-    
-    terminal_statuses = {"completed", "failed", "cancelled", "expired"}
-    
-    while True:
-        with httpx.Client(timeout=30.0) as client:
-            response = client.get(
-                f"{BASE_URL}/batches/{batch_id}",
-                headers=HEADERS
-            )
-            response.raise_for_status()
-        
         batch = response.json()
-        status = batch["status"]
-        counts = batch.get("request_counts", {})
-        
-        print(
-            f"  Statut: {status} | "
-            f"Complétées: {counts.get('completed', 0)}/{counts.get('total', 0)} | "
-            f"Échouées: {counts.get('failed', 0)}"
-        )
-        
-        if status in terminal_statuses:
+        print(f"Statut : {batch['status']}", flush=True)
+        if batch["status"] in {"completed", "failed", "expired"}:
             return batch
-        
-        time.sleep(poll_interval)
+        time.sleep(30)
+    raise TimeoutError(
+        f"Attente locale terminée. Reprenez le suivi par GET avec l'id {batch_id}. "
+        "Le traitement du batch n'est pas annulé."
+    )
 
-
-# ══════════════════════════════════════════════════════
-# SCHRITT 5 : Ergebnisse abrufen und parsen
-# ══════════════════════════════════════════════════════
-
-def download_results(output_file_id: str, save_path: str = "batch_output.jsonl") -> list[dict]:
-    """
-    Télécharge et parse les résultats du batch.
-    
-    Returns:
-        Liste des résultats par custom_id
-    """
-    print(f"📥 Téléchargement des résultats ({output_file_id})...")
-    
-    with httpx.Client(timeout=60.0) as client:
-        response = client.get(
-            f"{BASE_URL}/files/{output_file_id}/content",
-            headers={"Authorization": f"Bearer {API_KEY}"}
-        )
-        response.raise_for_status()
-    
-    # Sauvegarder le fichier brut
-    with open(save_path, "wb") as f:
-        f.write(response.content)
-    
-    # Parser les résultats
-    results = []
-    for line in response.text.strip().split("\n"):
-        if line:
-            results.append(json.loads(line))
-    
-    print(f"✅ {len(results)} résultats récupérés → {save_path}")
-    return results
-
-
-# ══════════════════════════════════════════════════════
-# HAUPTPROGRAMM
-# ══════════════════════════════════════════════════════
 
 def main():
-    # Beispiele für IT-Support-Tickets
+    api_key = os.environ["LLMAAS_API_KEY"]
     tickets = [
-        "Mon accès VPN ne fonctionne plus depuis ce matin.",
-        "L'imprimante du 3ème étage n'imprime plus en couleur.",
-        "Je ne peux pas me connecter à mon compte Office 365.",
-        "Mon ordinateur est très lent depuis la mise à jour d'hier.",
-        "Le site web de facturation interne affiche une erreur 500.",
-        "Besoin d'accès au dossier partagé RH sur le serveur.",
-        "Mon badge ne fonctionne plus à l'entrée du datacenter.",
-        "Outlook ne reçoit plus d'emails depuis 2 heures.",
+        "Mon accès VPN ne fonctionne plus.",
+        "Mon application se ferme au démarrage.",
     ]
-    
-    print(f"🎯 Traitement de {len(tickets)} tickets en mode Batch\n")
-    
-    # Vollständiger Pipeline
-    jsonl_file = create_batch_file(tickets)
-    file_id = upload_batch_file(jsonl_file)
-    batch_id = submit_batch(file_id)
-    
-    final_status = wait_for_completion(batch_id, poll_interval=30)
-    
-    if final_status["status"] != "completed":
-        print(f"❌ Batch terminé avec statut : {final_status['status']}")
-        return
-    
-    output_file_id = final_status.get("output_file_id")
-    if not output_file_id:
-        print("❌ Aucun fichier de sortie disponible.")
-        return
-    
-    results = download_results(output_file_id)
-    
-    # Ergebnisse anzeigen
-    print("\n" + "═" * 60)
-    print("📊 RÉSULTATS DE CLASSIFICATION")
-    print("═" * 60)
-    
-    for result in results:
-        custom_id = result["custom_id"]
-        idx = int(custom_id.split("-")[1])
-        
-        if "error" in result:
-            category = f"ERREUR: {result['error']['message']}"
+    conversations = [
+        [
+            {"role": "system", "content": "Classe le ticket : Réseau, Logiciel ou Autre."},
+            {"role": "user", "content": ticket},
+        ]
+        for ticket in tickets
+    ]
+    with httpx.Client(
+        base_url=BASE_URL,
+        headers={"Authorization": f"Bearer {api_key}"},
+        timeout=60.0,
+    ) as client:
+        response = client.post(
+            "/chat/completions/batch",
+            json={
+                "model": MODEL,
+                "messages": conversations,
+                "max_tokens": 200,
+                "temperature": 0.0,
+            },
+        )
+        response.raise_for_status()
+        batch_id = response.json()["id"]
+        print(f"Batch accepté. Conservez cet identifiant : {batch_id}", flush=True)
+        batch = wait_for_batch(client, batch_id)
+
+    # Speichern Sie auch Fehler und mögliche Teilergebnisse.
+    with open(f"{batch_id}.json", "w", encoding="utf-8") as output:
+        json.dump(batch, output, ensure_ascii=False, indent=2)
+
+    print(f"Statut final : {batch['status']}")
+    if batch.get("error"):
+        print(f"Erreur globale : {batch['error']}")
+    for index, result in enumerate(batch.get("results", [])):
+        if result.get("error"):
+            print(f"Ticket {index + 1} en erreur : {result['error']}")
         else:
-            category = result["response"]["body"]["choices"][0]["message"]["content"].strip()
-        
-        ticket_text = tickets[idx] if idx < len(tickets) else "?"
-        print(f"[{custom_id}] {category:12s} | {ticket_text[:60]}...")
+            print(f"Ticket {index + 1} : {result['choices'][0]['message']}")
 
 
 if __name__ == "__main__":
     main()
 ```
 
-## Behandlung partieller Fehler
+Falls das Skript nach dem Einreichen stoppt, setzen Sie die Überwachung mit der GET-Anfrage und der angezeigten ID fort. Reichen Sie dasselbe Batch nicht automatisch nach einem Verbindungsabbruch erneut ein: Es könnte bereits akzeptiert worden sein, was zu Duplikaten führen würde.
 
-Der Batch kann **teilweise erfolgreich** sein: Einige Anfragen werden erfolgreich verarbeitet, andere schlagen fehl.
+## Limits und Aufbewahrung
 
-```python
-def process_results(results: list[dict]) -> tuple[list, list]:
-    """Sépare les succès des échecs dans les résultats."""
-    successes = []
-    failures = []
-    
-    for result in results:
-        if "error" in result:
-            failures.append({
-                "custom_id": result["custom_id"],
-                "error": result["error"]
-            })
-        else:
-            response_body = result["response"]["body"]
-            successes.append({
-                "custom_id": result["custom_id"],
-                "content": response_body["choices"][0]["message"]["content"],
-                "usage": response_body.get("usage", {})
-            })
-    
-    print(f"✅ Succès : {len(successes)} | ❌ Échecs : {len(failures)}")
-    return successes, failures
-```
+Die unten aufgeführten Werte sind die Standardparameter des Dienstes; sie können über die Konfiguration angepasst werden.
 
-## Limitationen und Einschränkungen
+| Parameter | Standardwert |
+|-----------|-------------------|
+| Konversationen pro Batch | maximal 1.000 |
+| Warteschlangenkapazität | 100 Batches pro Verarbeitungsinstanz; dies ist kein Kontingent pro Konto |
+| Verarbeitungsfenster | 22–7 Uhr unter der Woche, ganztägig am Wochenende, gemäß der Zeitzone des Dienstes |
+| Aufbewahrung nach der Verarbeitung | 24 Stunden nach Abschluss, anschließend automatische Löschung |
 
-| Einschränkung | Wert |
-|-----------|--------|
-| **Maximale Dateigröße der JSONL-Datei** | 100 MB |
-| **Maximale Anzahl von Anfragen pro Batch** | 50 000 |
-| **Garantierte Verarbeitungsdauer** | < 24h (typischerweise 2-4h) |
-| **Aufbewahrungsdauer der Ergebnisdateien** | 7 Tage |
-| **Gleichzeitige Batches pro Konto** | 10 |
+Ein Batch kann außerhalb des Verarbeitungsfensters in der Warteschlange verbleiben und pausiert sowie fortgesetzt werden, wenn das Fenster endet. **Die 24-stündige Aufbewahrung stellt keine Garantie für eine Verarbeitung innerhalb von 24 Stunden dar.**
 
-:::warning[Asynchrone Verarbeitung]
-Der Batch garantiert keine bestimmte Reihenfolge der Verarbeitung. Die Ergebnisse können in einer anderen Reihenfolge als der Eingabereihenfolge zurückgegeben werden. Verwenden Sie das Feld `custom_id`, um jedes Ergebnis der ursprünglichen Anfrage zuzuordnen.
-:::
+Der Status des Batches (Warteschlange, Fortschritt und über GET abfragbare Ergebnisse) wird im Arbeitsspeicher der Verarbeitungsinstanz gespeichert, ohne Persistenz auf Festplatte. Ein Neustart dieser Instanz führt zum Verlust dieses Status. Rufen Sie Ihre Ergebnisse ab und sichern Sie diese, bevor sie ablaufen. Bewahren Sie den Schlüssel, mit dem der Batch erstellt wurde, bis zur Abrufung der Ergebnisse auf.
 
-## Erweiterte Anwendungsfälle
+Dieser API-Vertrag befasst sich mit Chat-Konversationen. Er unterstützt keinen JSONL-Upload, keine Batch-Verarbeitung von Embeddings, keine Auflistung der Batches oder keine Stornierung über die API.
 
-### Masseneinbettung
+## Häufige Fehler
 
-```python
-# Vectorisation de 10 000 documents en batch
-def create_embedding_batch(documents: list[str]) -> str:
-    with open("embed_batch.jsonl", "w") as f:
-        for i, doc in enumerate(documents):
-            request = {
-                "custom_id": f"doc-{i:05d}",
-                "method": "POST",
-                "url": "/v1/embeddings",
-                "body": {
-                    "model": "granite-embedding:278m",
-                    "input": doc[:500]  # Limite de contexte du modèle
-                }
-            }
-            f.write(json.dumps(request) + "\n")
-return "embed_batch.jsonl"
-```
+| HTTP-Code | Ursache oder Maßnahme |
+|-----------|-----------------|
+| `400` | Fehlerhafte Anfrage, fehlende oder falsch strukturierte Konversationen, maximale Größe überschritten. Korrigieren Sie den gesendeten Request-Body. |
+| `401` | Ungültige Authentifizierung. Überprüfen Sie Ihren API-Schlüssel. |
+| `403` | Der zum Abrufen des Batches verwendete Schlüssel unterscheidet sich von dem, der ihn erstellt hat. |
+| `404` | Unbekannte Kennung, abgelaufener Batch oder nach dem Neustart verlorener Status. |
+| `501` | Batch-Verarbeitung auf der betreffenden Instanz deaktiviert. Kontaktieren Sie den Support. |
+| `503` | Warteschlange gesättigt oder Verarbeitungsinstanz nicht verfügbar. Versuchen Sie es später erneut, wie in der zurückgegebenen Meldung angegeben. |
 
-### Abbruch eines Batches
+Konversationsspezifische Fehler finden Sie in `results[].error`, auch wenn die GET-Anfrage HTTP 200 zurückgegeben hat.
 
-```python
-def cancel_batch(batch_id: str) -> dict:
-    with httpx.Client(timeout=30.0) as client:
-        response = client.post(
-            f"{BASE_URL}/batches/{batch_id}/cancel",
-            headers=HEADERS
-        )
-        response.raise_for_status()
-    return response.json()
-```
+## Preisgestaltung und Ressourcen
 
-### Batch-Liste
+Die Generierungsparameter gelten für jede Konversation. Für Batch-Tarife finden Sie die [grille de tarification de l'API](./api.md#rate-limiting-und-abrechnung).
 
-```python
-def list_batches(limit: int = 20) -> list[dict]:
-    with httpx.Client(timeout=30.0) as client:
-        response = client.get(
-            f"{BASE_URL}/batches",
-            headers=HEADERS,
-            params={"limit": limit}
-        )
-        response.raise_for_status()
-    return response.json()["data"]
-```
-
-## Ressourcen
-
-- **Vollständiger Beispielcode** : [`exemples/simple_batch/`](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_batch)
-- **Modellkatalog** : [Batch-kompatible Modelle](./models)
-- **API-Referenz** : [Vollständige API-Dokumentation](./api)
-- **Detaillierte Preisgestaltung** : [LLMaaS-Preise](./api#ratenbegrenzung-und-abrechnung)
+- [API de génération de chat](./api.md#post-v1chatcompletions)
+- [Choisir un modèle](./models.md)
+- [Cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle)

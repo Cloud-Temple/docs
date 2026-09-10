@@ -3,106 +3,99 @@ title: Tutorial OCR
 sidebar_position: 4
 ---
 
-# Guida: Dominare l'OCR con DeepSeek
+# Guida : Padroneggiare l'OCR con DeepSeek
 
-Questa guida dettaglia l'uso del modello **DeepSeek-OCR**, una soluzione di vanguardia per la compressione ottica di contesto e l'analisi di documenti.
+Questa guida descrive in dettaglio l'utilizzo del modello **DeepSeek-OCR**, una soluzione all'avanguardia per la compressione ottica del contesto e l'analisi dei documenti.
+
+:::info[Disponibilità del modello OCR]
+Questa guida descrive l'integrazione di DeepSeek-OCR. Prima di utilizzarlo, verifica che il modello sia esposto tramite `GET /v1/models` e consulta il [catalogo e ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle). Se non è disponibile, seleziona un modello di visione adatto e utilizza il formato della richiesta corrispondente; i parametri specifici di questa guida non sono universali.
+:::
 
 ## Architettura e funzionamento
 
-A differenza degli OCR tradizionali, DeepSeek-OCR è un modello di visione-linguaggio di estremo a estremo progettato per "leggere" e "comprendere" visivamente i documenti.
+A differenza degli OCR tradizionali, DeepSeek-OCR è un modello Vision-Language end-to-end progettato per "leggere" e "comprendere" visivamente i documenti.
 
 ### Architettura tecnica
-
 Combina due componenti innovativi:
+1.  **DeepEncoder (380M)** : Un encoder visivo ibrido che combina **SAM-base** (per la percezione locale) e **CLIP-large** (per la conoscenza globale), collegati da un compressore convoluzionale 16x. Ciò consente di elaborare immagini ad alta risoluzione con un numero molto ridotto di token visivi.
+2.  **Decoder MoE (3B)** : Basato su DeepSeek3B-MoE (570M parametri attivi), genera il testo strutturato a partire dai token visivi compressi.
 
-1. **DeepEncoder (380M)**: Un codificatore visuale ibrido che combina **SAM-base** (per la percezione locale) e **CLIP-large** (per la conoscenza globale), collegati mediante un compressore convoluzionale di 16x. Questo consente di processare immagini ad alta risoluzione con pochissimi token visuali.
-2. **Decodificatore MoE (3B)**: Basato su DeepSeek3B-MoE (570M parametri attivi), genera testo strutturato a partire dai token visuali compressi.
+### Modalità di risoluzione e consumo
+Il modello adatta il consumo di token alla risoluzione dell'immagine. Più l'immagine è grande, più consuma token, ma maggiore è la precisione.
 
-### Modos de resolución y consumo  
-
-Il modello adatta il suo consumo di token in base alla risoluzione dell'immagine. Maggiore è l'immagine, maggiore è il consumo di token, ma maggiore è anche la precisione.
-
-| Modo | Risoluzione (px) | Token di visione | Uso raccomandato |
+| Modalità | Risoluzione (px) | Token di visione | Utilizzo consigliato |
 | :--- | :--- | :--- | :--- |
-| **Tiny** | 512 x 512 | 64 | Diapositive, testo molto grande |
-| **Small** | 640 x 640 | 100 | Documenti semplici, biglietti |
+| **Tiny** | 512 x 512 | 64 | Presentazioni, testo molto grande |
+| **Small** | 640 x 640 | 100 | Documenti semplici, scontrini |
 | **Base** | 1024 x 1024 | 256 | Pagine A4 standard |
 | **Large** | 1280 x 1280 | 400 | Documenti densi, caratteri piccoli |
-| **Gundam** | Dinamico | ~800 | Giornali, progetti, scansioni complesse |
+| **Gundam** | Dinamica | ~800 | Giornali, piante, scansioni complesse |
 
-:::tip[Ottimizzazione  ]
-Per ottimizzare i costi e la latenza, ridimensionate le immagini alla risoluzione minima necessaria affinché il testo rimanga leggibile.  
+:::tip[Ottimizzazione]
+Per ottimizzare i costi e la latenza, ridimensionate le immagini alla risoluzione minima necessaria affinché il testo rimanga leggibile.
 :::
 
 ### Supporto multilingue
-
-Il modello è stato addestrato su un vasto corpus di documenti multilingue e supporta il riconoscimento di quasi **100 lingue** (tra cui francese, inglese, cinese, arabo, ecc.), con o senza conservazione del layout.
+Il modello è stato addestrato su un vasto corpus di documenti multilingue e supporta il riconoscimento di quasi **100 lingue** (tra cui francese, inglese, cinese, arabo, ecc.), con o senza preservazione del layout.
 
 ## Guida ai prompt (Prompt engineering)
 
 La qualità del risultato dipende direttamente dal prompt utilizzato. DeepSeek-OCR risponde a istruzioni specifiche per attivare le sue diverse capacità.
 
 ### 1. OCR standard (Markdown)
-
 Per estrarre il testo con la sua struttura (titoli, paragrafi, tabelle).
 
-**Prompt:**
-> `Converti il documento in markdown.`
+**Prompt :**
+> `Convert the document to markdown.`
 
-**Risultato:** Testo strutturato, tabelle formattate, layout conservato.
+**Risultato :** Testo strutturato, tabelle formattate, impaginazione preservata.
 
-### 2. "Analisi profonda" (Figure, grafici, formule)
-
+### 2. "Deep parsing" (Figure, grafici, formule)
 Per analizzare il contenuto semantico di grafici, formule chimiche o geometriche.
 
-**Prompt:**
-> `Analizza la figura.`
+**Prompt :**
+> `Parse the figure.`
 
-**Capacità:**
-
-- **Grafici (a barre/a linee/a torta)** : Converte in tabella HTML o Markdown.
-- **Formule chimiche** : Converte in formato SMILES.
-- **Geometria** : Descrive gli elementi geometrici.
+**Capacità :**
+-   **Grafici (Bar/Line/Pie)** : Converte in tabella HTML o Markdown.
+-   **Formule Chimiche** : Converte in formato SMILES.
+-   **Geometria** : Descrive gli elementi geometrici.
 
 ### 3. Grounding (localizzazione)
-
 Per trovare le coordinate di un elemento specifico nell'immagine.
 
-**Prompt:**
-> `Localizza <|ref|>elemento da trovare<|/ref|> nell'immagine.`
+**Prompt :**
+> `Locate <|ref|>élément à trouver<|/ref|> in the image.`
 
-**Esempio:** `Localizza <|ref|>Totale<|/ref|> nell'immagine.`
-**Risultato:** Restituisce le coordinate del riquadro di delimitazione (bounding box) dell'elemento.
+**Esempio :** `Locate <|ref|>Total<|/ref|> in the image.`
+**Risultato :** Restituisce le coordinate della bounding box dell'elemento.
 
-### 4. Rilevamento di oggetti  
-
+### 4. Rilevamento degli oggetti
 Per elencare e localizzare tutti gli oggetti visibili.
 
-**Prompt:**  
-> `Identifica tutti gli oggetti nell'immagine e visualizzali in riquadri di delimitazione.`
+**Prompt :**
+> `Identify all objects in the image and output them in bounding boxes.`
 
 ## Tutorial di implementazione (Python)
 
 Ecco un esempio completo che mostra come strutturare la chiamata API per utilizzare queste funzionalità.
 
-### Prerequisiti: formato immagine e dipendenze
+### Prerequisiti: formato dell'immagine e dipendenze
+-   **Formato** : JPEG o PNG.
+-   **Modalità** : RGB (senza trasparenza Alpha).
+-   **PDF** : Devono essere convertiti in immagini preventivamente (150-300 DPI).
+-   **Dimensione** : Si consiglia di ridimensionare le immagini ad altissima risoluzione per evitare errori di limite di dimensione (413 Payload Too Large).
 
-- **Formato**: JPEG o PNG.
-- **Modalità**: RGB (nessuna trasparenza Alpha).
-- **PDF**: Devono essere convertiti in immagini in anticipo (150-300 DPI).
-- **Dimensione**: Si consiglia di ridimensionare le immagini ad altissima risoluzione per evitare errori di limite di dimensione (413 Payload Too Large).
-
-Installare le librerie richieste:
-
+Installare le librerie necessarie :
 ```bash
 pip install requests Pillow
 ```
 
-### Codice: Analisi documenti (OCR)
+### Codice: analisi del documento (OCR)
 
-Prendiamo ad esempio questa ricevuta svizzera:
+Prendiamo ad esempio questo scontrino svizzero:
 
-![Esempio di ricevuta](@site/docs/llmaas/images/ReceiptSwiss.jpg)
+![Scontrino di esempio](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
 Ecco uno script robusto che gestisce il ridimensionamento e la codifica ottimale dell'immagine:
 
@@ -113,13 +106,13 @@ import requests
 from PIL import Image
 
 # Configurazione
-API_KEY = "IL_TUO_TOKEN_API"
+API_KEY = "VOTRE_TOKEN_API"
 API_URL = "https://api.ai.cloud-temple.com/v1/chat/completions"
-IMAGE_PATH = "ReceiptSwiss.jpg"  # Assicurati che l'immagine sia nella directory corrente
+IMAGE_PATH = "ReceiptSwiss.jpg" # Assicurarsi che l'immagine si trovi nella cartella corrente
 
 def encode_image_optimized(path):
     """
-    Ottimizza l'immagine (ridimensionamento + compressione JPEG) per l'API.
+    Optimise l'image (redimensionnement + compression JPEG) pour l'API.
     """
     with Image.open(path) as img:
         # 1. Conversione RGB (per evitare problemi PNG/Alpha)
@@ -127,7 +120,7 @@ def encode_image_optimized(path):
             img = img.convert('RGB')
         
         # 2. Ridimensionamento intelligente se troppo grande (> 2048px)
-        # Questo previene errori 413 (Payload Too Large) e velocizza l'elaborazione
+        # Questo evita l'errore 413 (Payload Too Large) e accelera l'elaborazione
         max_size = 2048
         if max(img.size) > max_size:
             img.thumbnail((max_size, max_size))
@@ -149,7 +142,7 @@ payload = {
             "content": [
                 {
                     "type": "text",
-                    "text": "Converti il documento in markdown."  # Prompt OCR standard
+                    "text": "Convert the document to markdown." # Prompt OCR Standard
                 },
                 {
                     "type": "image_url",
@@ -160,12 +153,12 @@ payload = {
             ]
         }
     ],
-    "temperature": 0.0,  # CRUCIALE: 0.0 per la fedeltà
+    "temperature": 0.0, # CRUCIALE: 0.0 per la fedeltà
     "max_tokens": 4096
 }
 
-# 2. Invia
-print("Invio della richiesta...")
+# 2. Invio
+print("Envoi de la requête...")
 response = requests.post(
     API_URL, 
     headers={"Authorization": f"Bearer {API_KEY}"}, 
@@ -174,39 +167,37 @@ response = requests.post(
 
 # 3. Risultato
 if response.status_code == 200:
-    print("\n--- Risultato OCR ---\n")
+    print("\n--- Résultat OCR ---\n")
     print(response.json()['choices'][0]['message']['content'])
 else:
-    print(f"Errore {response.status_code}: {response.text}")
+    print(f"Erreur {response.status_code}: {response.text}")
 ```
 
 **Esempio di output:**
-
 ```markdown
-
 # Berghotel
 **Grosse Scheidegg**
 3818 Grindelwald
-Famiglia R. Müller
+Famille R. Müller
 
-N. fattura  4572
-Bar    Tavolo   7/01
+Rech. Nr.  4572
+Bar    Tisch   7/01
 
-2xLatte Macchiato    a   4.50 CHF   9.00
-1xGloki    a   5.00 CHF   5.00
+2xLatte Macchiato    à   4.50 CHF   9.00
+1xGloki    à   5.00 CHF   5.00
 ...
 
-**Totale:** CHF **54.50**
-**Incl. 7.6% IVA** 54.50 CHF: 3.85
+**Total :** CHF **54.50**
+**Incl. 7.6% MwSt** 54.50 CHF: 3.85
+```
 
-### Codice: analisi grafica (analisi approfondita)
+### Codice: analisi del grafico (deep parsing)
 
-Per analizzare un grafico finanziario in un rapporto, è sufficiente modificare il testo del prompt nel payload sopra:
+Per analizzare un grafico finanziario in un report, modificare semplicemente il testo del prompt nel payload sopra:
 
 ```python
-# ... nel payload ...
-"text": "Analizza la figura."
-
+# ... dans le payload ...
+"text": "Parse the figure." 
 # ...
 ```
 
@@ -214,63 +205,64 @@ Il modello restituirà una rappresentazione testuale o tabellare dei dati del gr
 
 ## Casi d'uso avanzati
 
-### Estrazione di tabelle complesse  
-
+### Estrazione di tabelle complesse
 DeepSeek-OCR eccelle nella conversione di tabelle, anche senza linee di demarcazione chiare.
 
-**Immagine di input:**
+**Immagine di Input :**
 
 ![Tabella finanziaria](@site/docs/llmaas/images/tableau.png)
 
-**Output del modello (Prompt: "Convert the document to markdown table."):**
-
+**Output del Modello (Prompt: "Convert the document to markdown table.") :**
 ```markdown
+# RESSOURCES PaaS
 
+## Unités d'œuvre laaS Redhat Openshift - à la demande - réservation 12 mois - Hors licence Openshift
 
-# RISORSE PAAS
-
-## Unità di lavoro laaS Redhat Openshift - su richiesta - prenotazione 12 mesi - Licenza Openshift esclusa
-
-|    | Unità    | Prezzo unitario € IVA escl. / mese | Impegno |
+|    | Unité    | Prix unitaire € HT/mois | Engagement |
 |---|---|---|---|
-| OPENSHIFT - Piano di controllo - 3 nodi - Regione FR1    | 1 piano dedicato    | 1.956,81 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - TINY - 3 x (10 core / 20 thread - 64 GB di ram - 512 Gio FLASH 1500 ips) | 3 worker dedicati    | 834,62 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - SMALL - 3 x (20 core / 40 thread - 128 GB di ram - 512 Gio FLASH 1500 ips) | 3 worker dedicati    | 2.756,21 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - STANDARD - 3 x (32 core / 64 thread - 384 GB di ram - 512 Gio FLASH 1500 ips) | 3 worker dedicati    | 5.812,82 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - ADVANCED - 3 x (48 core / 96 thread - 768 GB di ram - 512 Gio FLASH 1500 ips) | 3 worker dedicati    | 8.413,27 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - PERF - 3 x (56 core / 112 thread - 1.5 TB di ram - 512 Gio FLASH 1500 ips) | 3 worker dedicati    | 13.835,78 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - GPU - 3 x (32 core / 64 thread - 512 GB di ram - 512 Gio FLASH 1500 ips - 2xNVIDIA L40S 48GB) | 3 worker dedicati + GPU    | 13.378,32 €    | 12 mesi    |
-| OPENSHIFT - NODI WORKER - GPU - 3 x (32 core / 64 thread - 512 GB di ram - 512 Gio FLASH 1500 ips - 2xNVIDIA H100 80GB) | 3 worker dedicati + GPU    | 26.954,41 €    | 24 mesi    |
+| OPENSHIFT - Plan de contrôle - 3 nœuds - Région FR1    | 1 plan dédié    | 1 956,81 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - TINY - 3 x (10 cores / 20 threads - 64 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 834,62 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - SMALL - 3 x (20 cores / 40 threads - 128 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 2 756,21 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - STANDARD - 3 x (32 cores / 64 threads - 384 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 5 812,82 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - ADVANCED - 3 x (48 cores / 96 threads - 768 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 8 413,27 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - PERF - 3 x (56 cores / 112 threads - 1.5 To de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 13 835,78 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - GPU - 3 x (32 cores / 64 threads - 512 Go de ram - 512 Gio FLASH 1500 ips - 2xNVIDIA L40S 48GO) | 3 workers dédiés + GPU    | 13 378,32 €    | 12 mois    |
+| OPENSHIFT - WORKER NODES - GPU - 3 x (32 cores / 64 threads - 512 Go de ram - 512 Gio FLASH 1500 ips - 2xNVIDIA H100 80GO) | 3 workers dédiés + GPU    | 26 954,41 €    | 24 mois    |
 
-## Unità di lavoro Kubernetes Manage - (esclusa l'infrastruttura)
+---
 
-|    | Unità    | Prezzo unitario € IVA esclusa/mese | Impegno |
+## Unités d'œuvre Kubernetes Manage - (hors infrastructure)
+
+|    | Unité    | Prix unitaire € HT/mois | Engagement |
 |---|---|---|---|
-| KUBERNETES MANAGE - PRODUZIONE (include 3 nodi worker)    | 1 cluster virtuale    | 2.250,00 €    | 1 mese    |
-| KUBERNETES MANAGE - SVILUPPO/TEST/COLLAUDO (include 3 nodi worker)    | 1 cluster virtuale    | 1.500,00 €    | 1 mese    |
-| NODO WORKER aggiuntivo per Kubernetes Manage - PRODUZIONE    | 1 nodo worker aggiuntivo    | 450,00 €    | 1 mese    |
-| NODO WORKER aggiuntivo per Kubernetes Manage - SVILUPPO/TEST/COLLAUDO    | 3 nodi worker aggiuntivi    | 300,00 €    | 1 mese    |
+| KUBERNETES MANAGE - PRODUCTION (incluant 3 Worker Nodes)    | 1 cluster virtuel    | 2 250,00 €    | 1 mois    |
+| KUBERNETES MANAGE - DEV/TEST/RECETTE (incluant 3 Worker Nodes)    | 1 cluster virtuel    | 1 500,00 €    | 1 mois    |
+| WORKER NODE additionnel pour Kubernetes Manage - PRODUCTION    | 1 worker node additionnel    | 450,00 €    | 1 mois    |
+| WORKER NODE additionnel pour Kubernetes Manage - DEV/TEST/RECETTE    | 3 worker node additionnel    | 300,00 €    | 1 mois    |
 
-## Unità di lavoro IA - LLMaaS
+---
 
-|    | Unità    | Prezzo unitario € IVA escl. / mese | Impegno |
+## Unités d'œuvre IA - LLMaas
+
+|    | Unité    | Prix unitaire € HT/mois | Engagement |
 |---|---|---|---|
-| LLMaaS - token in ingresso / milioni    | 1 milione di token    | 0,90 €    | N/A    |
-| LLMaaS - token in uscita / milioni    | 1 milione di token    | 4,00 €    | N/A    |
-| LLMaaS - token di ragionamento / milioni    | 1 milione di token    | 21,00 €    | N/A    |
-| LLMaaS - voce-testo / minuto    | 1 minuto    | 0,010 €    | N/A    |
-| LLMaaS - testo-voce / minuto    | 1 minuto    | 0,010 €    | N/A    |
+| LLMaas - tokens ingéré (input) / millions    | 1 million tokens    | 0,90 €    | N/A    |
+| LLMaas - tokens généré (output) / millions    | 1 million tokens    | 4,00 €    | N/A    |
+| LLMaas - tokens de raisonnement / millions    | 1 million tokens    | 21,00 €    | N/A    |
+| LLMaas - voix vers texte / minute    | 1 minute    | 0,010 €    | N/A    |
+| LLMaas - texte vers voix / minute    | 1 minute    | 0,010 €    | N/A    |
+```
 
 ### Formule matematiche (LaTeX)
-Ideale per documenti accademici. Il modello riconosce le equazioni e le esporta in sintassi LaTeX standard.
+Ideale per documenti accademici. Il modello riconosce le equazioni e le restituisce in sintassi LaTeX standard.
 
-**Immagine di input:**
+**Immagine di Input :**
 
-![Equazione](@site/docs/llmaas/images/equation.png)
+![Equation](@site/docs/llmaas/images/equation.png)
 
-**Output del modello (Prompt: "Convert to latex.") :**
+**Output del Modello (Prompt: "Convert to latex.") :**
 
-> Ecco il rendering matematico del risultato OCR:
+> Ecco la resa matematica del risultato OCR :
 
 Errore quadratico medio:
 
@@ -278,7 +270,7 @@ $$
 \frac{1}{T} \int_{-T/2}^{T/2} \left[ f(t) - T_N(t) \right]^2 dt = E_N \left( a_0, \ldots, a_N; b_1, \ldots, b_N \right)
 $$
 
-Condizione per il minimo di $E_N$:
+Condizione per il minimo di $E_N$ in:
 
 $$
 \frac{\partial E_N}{\partial a_0} = 0, \frac{\partial E_N}{\partial a_i} = 0, \ldots, \frac{\partial E_N}{\partial b_N} = 0
@@ -300,6 +292,6 @@ $$
 
 ## Limitazioni note
 
--   **Orientamento**: Il modello non gestisce la rotazione automatica. Assicurati che le tue immagini siano correttamente orientate (testo orizzontale).
--   **Testo manoscritto**: Sebbene sia efficiente, il tasso di errore è più elevato sulla scrittura corsiva complessa rispetto al testo stampato.
--   **Risoluzione molto alta**: Le immagini che superano le dimensioni della modalità "Gundam" (~2000x2000) vengono ridimensionate, il che può rendere il testo microscopico illeggibile. Dividi le immagini molto grandi in più parti.
+-   **Orientazione** : Il modello non gestisce la rotazione automatica. Assicurati che le immagini siano correttamente orientate (testo orizzontale).
+-   **Testo manoscritto** : Sebbene performante, il tasso di errore è più elevato sulla scrittura corsiva complessa rispetto al testo stampato.
+-   **Risoluzione molto elevata** : Le immagini che superano le dimensioni della modalità "Gundam" (~2000x2000) vengono ridimensionate, il che può rendere illeggibile il testo microscopico. Taglia le aree molto ampie in più immagini.

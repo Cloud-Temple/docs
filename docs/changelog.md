@@ -5,9 +5,27 @@ sidebar_position: 2
 
 # Suivi des Changements
 
+### 10 Septembre 2026 : Documentation LLMaaS actualisée
+
+- **Choisir et suivre ses modèles** : Accès direct au [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) pour consulter les modèles disponibles, les échéances de support et les migrations conseillées.
+- **Prendre en main le service** : Guides de démarrage et exemples d’intégration actualisés pour faciliter les premiers usages et l’intégration dans vos applications.
+- **Comprendre les usages et la facturation** : Documentation clarifiée sur les traitements en lot, la recherche documentaire et les modalités de facturation du reranking.
+
 ### 20 Août 2026 : Harmonisation du libellé de maturité des bases de données managées
 
 - **Navigation — Databases** : Suppression du badge **Beta** sur les entrées **MariaDB Managé** et **PostgreSQL Managé** du menu latéral et sur les cartes de la page Databases. Les deux services affichaient simultanément deux libellés de maturité contradictoires : *Beta* dans la navigation, *Preview* sur le titre de leurs pages produit. Seul le badge **Preview** est conservé, comme source unique de vérité sur le niveau de maturité de ces services. Traductions disponibles EN/DE/ES/IT.
+
+### 17 Août 2026 : Actualisation des alertes de sécurité
+
+- **Sécurité** : De nouveaux [avis de sécurité](./console/security/security_alarms.md) sont disponibles pour les environnements VMware, OpenShift, XCP-ng et Dell, afin de vous aider à identifier les produits concernés et les actions recommandées.
+
+### 14 Août 2026 : Clarification de la gestion des accès
+
+- **Console — Gestion des accès** : Le [guide des identités et permissions](./console/iam/concepts.md) distingue les actions à effectuer au niveau de l’organisation et de chaque tenant, pour faciliter l’attribution des accès et la gestion des propriétaires.
+
+### 7 Août 2026 : Guide de la vue organisation
+
+- **Console — Organisation** : Le [guide de démarrage](./console/console_quickstart.md) présente la vue organisation et la gestion des tenants. La documentation précise également le rôle des propriétaires et les démarches pour faire évoluer leurs accès.
 
 ### 15 Juillet 2026 : Précision sur le chiffrement Object Storage
 

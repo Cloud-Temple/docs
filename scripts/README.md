@@ -4,51 +4,11 @@ Ce dossier contient les scripts d'automatisation pour la génération et la main
 
 ## 📋 Liste des Scripts
 
-### 🚀 `generate_models_doc.py`
+### Ancien générateur LLMaaS (désactivé)
 
-**Générateur automatique de documentation LLMaaS**
+`generate_models_doc/generate_models_doc.py` et les commandes `generate:models` / `generate:docs` s'arrêtent avec un message explicatif sans modifier les fichiers. Le catalogue statique alimenté par `memory-bank/models_config.yaml` a été remplacé par un guide pointant vers le [cycle de vie publié](https://llmaas.status.cloud-temple.app/lifecycle).
 
-Génère automatiquement la documentation Markdown des modèles LLM as a Service à partir du fichier de configuration YAML.
-
-#### Utilisation
-
-```bash
-# Via Python directement
-python scripts/generate_models_doc.py
-```
-
-#### Fonctionnalités
-
-- ✅ **36 modèles** automatiquement documentés
-- ✅ **Formatage Docusaurus** avec métadonnées
-- ✅ **Logging coloré** avec indicateurs de progression
-- ✅ **Gestion d'erreurs** robuste
-- ✅ **Types Python** pour la qualité du code
-- ✅ **Documentation auto-générée** avec timestamp
-
-#### Source et Sortie
-
-- **Entrée** : `memory-bank/models_config.yaml`
-- **Sortie** : `docs/llmaas/models.md`
-
-#### Exemple de sortie
-
-```bash
-🚀 Générateur de Documentation LLMaaS Cloud Temple
-============================================================
-
-ℹ️ Lecture du fichier memory-bank/models_config.yaml
-✅ Configuration chargée: 36 modèles trouvés
-ℹ️ 🔨 Génération de la documentation en cours...
-✅ Documentation générée : docs/llmaas/models.md
-ℹ️ 📊 6 modèles de grande taille
-ℹ️ 🔧 34 modèles spécialisés
-ℹ️ 🎯 6 cas d'usage documentés
-
-🎉 Documentation générée avec succès !
-```
-
----
+Les sources et le processus de maintenance sont décrits dans le [README principal](../README.md#llmaas-documentation-maintenance). Ne pas relancer une génération à partir de la copie historique de la Memory Bank.
 
 ### 🐍 `translate_py/translate.py` (Recommandé)
 
@@ -95,7 +55,8 @@ Les options CLI sont prioritaires sur les variables d'environnement :
 
 - `--token` : token Bearer Cloud Temple LLMaaS
 - `--url` : URL API, par défaut `https://api.ai.cloud-temple.com/v1/chat/completions`
-- `--model` : modèle de traduction, par défaut `qwen3.6:27b`
+- `--model` : modèle de traduction, par défaut `qwen3.8:27b`
+- `--reasoning-effort` : effort de raisonnement, par défaut `low` ; prioritaire sur `TRANSLATION_REASONING_EFFORT`.
 
 Les commandes qui ne font pas d'appel API (`--dry-run`, `--init` sans `--translate-missing`) restent utilisables sans token.
 
@@ -111,6 +72,16 @@ cp .env.example .env
 
 > 💡 **Source unique** : le fichier `.env.example` est la référence pour les noms de variables, leurs défauts et leurs plages valides. Ne pas dupliquer cette liste dans le README pour éviter les divergences avec le code (`config.py`).
 
+Après chaque traduction, réalignez les liens vers les sections traduites avec l’outil existant, puis vérifiez le résultat :
+
+```bash
+python3 scripts/fix_i18n_anchors.py
+python3 scripts/fix_i18n_anchors.py --check
+npm run build
+```
+
+Les identifiants de titre `{#identifiant}` ne sont pas compatibles avec la configuration MDX actuelle de ce projet.
+
 #### Utilisation
 
 ```bash
@@ -123,7 +94,7 @@ python translate.py --force                      # Force retraduction
 python translate.py --lang=en                    # Traduction anglaise uniquement
 python translate.py --debug                      # Mode debug avec logs détaillés
 python translate.py --test-api                   # Test de connexion API
-python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.6:27b
+python translate.py --token "$CLOUDTEMPLE_API_KEY" --model qwen3.8:27b
 ```
 
 #### Options Disponibles
@@ -353,7 +324,7 @@ Les scripts sont intégrés dans `package.json` pour faciliter l'utilisation :
 ```json
 {
   "scripts": {
-    "generate:models": "python scripts/generate_models_doc.py",
+    "generate:models": "python scripts/generate_models_doc/generate_models_doc.py",
     "generate:docs": "yarn generate:models"
   }
 }
@@ -368,7 +339,7 @@ scripts/
 ├── changelog_editorial.json         # ✍️  Réécritures client-facing + exclusions
 ├── changelog_extra.json             # 📅 Jalons des produits hors version Console
 ├── generate_models_doc/
-│   └── generate_models_doc.py       # 🚀 Générateur doc LLMaaS
+│   └── generate_models_doc.py       # Ancienne commande désactivée
 └── translate_py/                    # 🐍 Système de traduction
     ├── translate.py                 # 🚀 Script principal
     ├── translation-meta.json        # 🔍 Métadonnées et hash SHA-256
@@ -384,11 +355,11 @@ scripts/
 
 ## 🎯 Workflow de Documentation
 
-### Génération LLMaaS
+### Maintenance LLMaaS
 
-1. **Éditer** : `memory-bank/models_config.yaml`
-2. **Générer** : `yarn generate:models`
-3. **Vérifier** : Documentation mise à jour dans `docs/llmaas/models.md`
+1. Mettre à jour les métadonnées modèles et le cycle de vie dans leurs dépôts sources, puis vérifier leur cohérence avant publication.
+2. Modifier les guides français si les usages ou l'API changent. Les ajouts et retraits de modèles restent dans le catalogue et le changelog du service.
+3. Générer les traductions puis vérifier le build Docusaurus.
 
 ### Processus de Traduction
 
@@ -396,66 +367,9 @@ scripts/
 2. **Traduire** : `python scripts/translate_py/translate.py`
 3. **Vérifier** : Contenu traduit dans `/i18n/[langue]/`
 
-## 🐍 Dépendances Python
+## Validation
 
-Le script `generate_models_doc.py` nécessite :
-
-```bash
-# Dépendances requises
-pip install pyyaml
-
-# Ou via requirements.txt (à créer si nécessaire)
-pip install -r requirements.txt
-```
-
-## 🔍 Dépannage
-
-### Erreurs communes
-
-#### `FileNotFoundError: models_config.yaml`
-
-```bash
-# Vérifier que le fichier existe
-ls memory-bank/models_config.yaml
-
-# S'assurer d'être dans le bon répertoire
-cd /path/to/docs/
-yarn generate:models
-```
-
-#### `ModuleNotFoundError: No module named 'yaml'`
-
-```bash
-# Installer PyYAML
-pip install pyyaml
-```
-
-#### `Permission denied`
-
-```bash
-# Rendre le script exécutable
-chmod +x scripts/generate_models_doc.py
-```
-
-### Validation de sortie
-
-Le fichier généré `docs/llmaas/models.md` doit contenir :
-
-- ✅ En-tête Docusaurus avec métadonnées
-- ✅ Avertissement de génération automatique
-- ✅ Statistiques globales (36 modèles)
-- ✅ Sections "Modèles de Grande Taille" et "Modèles Spécialisés"
-- ✅ Cas d'usage recommandés
-- ✅ Informations de génération en pied de page
-
-## 📊 Métriques de Performance
-
-### Script generate_models_doc.py
-
-- **Temps d'exécution** : < 5 secondes
-- **Fichiers traités** : 1 YAML → 1 Markdown
-- **Taille sortie** : ~150KB (36 modèles documentés)
-- **Encoding** : UTF-8 (support multilingue)
+Utiliser les dépendances et commandes de la section traduction ci-dessus. Valider les changements avec `npm run build` et vérifier que les liens du catalogue, du cycle de vie et du changelog aboutissent.
 
 ## 🚀 Évolutions Futures
 
