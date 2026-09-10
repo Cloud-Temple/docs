@@ -8,19 +8,16 @@ import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.pn
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
 import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Tenant
 
 ### Tenant Creation
 
-Tenant creation is performed via a service request indicating:
+Tenant creation is done __in self-service__ from the Console, with no prior service request. From __'Administration > Tenants'__, the __'New tenant'__ button opens a two-part form: the tenant identity (name and description) and the products to activate on it.
 
-    Your Organization's name
-    A contact name, email address, and phone number to finalize the configuration
-    The tenant name
-    The desired availability zone, or alternatively, the physical site for the tenant
+The detailed procedure is described in the [Console Quickstart](../console_quickstart.md).
 
 ### Selecting a Tenant
 
@@ -151,13 +148,13 @@ The user must provide two distinct proofs of identity. In the case of the Consol
 
 ## Access Management and Authentication
 
-### Access Authorization to a Tenant: Allowed IPs
+### Console Access Authorization: Allowed IPs
 
 Access to the cloud management console is strictly limited to previously authorized IP addresses, in compliance with the SecNumCloud certification requirements. This restriction ensures a heightened level of security by allowing access only from specified IP ranges, thereby minimizing the risk of unauthorized access and protecting the cloud infrastructure according to the highest security standards.
 
-It is now possible to view the list of authorized public IP addresses for the tenant and to add a new public IP address directly from the __Administration > Access__ tab.
+The list belongs to the __organization__: an address added from any tenant authorizes access to the Console for the whole organization. It can be viewed and extended from the __'Administration > Access'__ tab.
 
-<img src={shivaIpAccessManagement_01} />
+<img src={shivaOrgAccess} />
 
 To perform these actions, the user must have the `console_public_access_read` permission to view the allowed IPs, and the `console_public_access_write` permission to add a public IP address to the list.
 
