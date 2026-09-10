@@ -86,7 +86,7 @@ Password : **opnsense**
 
 </div>
 
-:::warning Changez le mot de passe tout de suite
+:::warning[Changez le mot de passe tout de suite]
 Avant d'aller plus loin, remplacez le mot de passe `root` par défaut.
 :::
 
@@ -120,7 +120,7 @@ Renseignez ensuite les informations de connexion vers les route servers :
 - les IP des route servers ;
 - le numéro d'AS partenaire.
 
-:::info Pourquoi le multi-hop ?
+:::info[Pourquoi le multi-hop ?]
 Cochez la case **multi-hop**. Les route servers sont à plus d'un saut, or une session eBGP a un TTL de 1 par défaut : sans multi-hop, les paquets n'atteindraient jamais les serveurs.
 :::
 

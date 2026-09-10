@@ -93,7 +93,7 @@ Password : **admin**
 
 </div>
 
-:::warning Changez le mot de passe tout de suite
+:::warning[Changez le mot de passe tout de suite]
 Avant d'aller plus loin, remplacez le mot de passe `admin` par défaut.
 :::
 
@@ -101,7 +101,7 @@ Avant d'aller plus loin, remplacez le mot de passe `admin` par défaut.
 
 Tout se passe désormais dans l'interface web, sous **Configuration > Réseau**.
 
-:::info Les adresses IP sont des objets
+:::info[Les adresses IP sont des objets]
 Sur SNS, on ne saisit pas une adresse IP directement dans les champs des routes, des règles de filtrage ou du NAT : il faut d'abord la déclarer comme objet réseau dans Configuration > Objets > Objets réseau, puis la sélectionner ensuite.  
   
  Créez donc au fur et à mesure les objets dont vous avez besoin (passerelle, route servers, préfixe public, réseaux LAN et WAN).
@@ -213,7 +213,7 @@ protocol bgp RS2 {
 
 Cliquez sur **Vérifier la configuration** puis **Appliquer**.
 
-:::info Pourquoi le multi-hop ?
+:::info[Pourquoi le multi-hop ?]
 Les route servers sont à plus d'un saut, or une session eBGP a un TTL de 1 par défaut : sans `multihop`, les paquets n'atteindraient jamais les serveurs.
 :::
 
