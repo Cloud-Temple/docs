@@ -2,9 +2,9 @@
 title: Vue d'ensemble
 ---
 
-# VM Instances <span class="title-preview-badge">Preview</span>
+# VM Instances
 
-Le service **VM Instances** de Cloud Temple permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante. Ce produit combine la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
+Le service **VM Instances** de Cloud Temple est qualifié **SecNumCloud**. Il permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante, en combinant la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
 
 Elle s'adapte à tous les besoins grâce à ses différentes classes de service — du développement économique à la production critique — tout en s'intégrant nativement à l'écosystème Cloud Temple.
 
@@ -25,5 +25,10 @@ Elle s'adapte à tous les besoins grâce à ses différentes classes de service 
     <h3>Tutoriels</h3>
     <p>Guides pratiques : créer une VM, gérer les disques, prendre des snapshots.</p>
     <a href="./vm_instances/tutorials" class="card-link">Voir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>FAQ</h3>
+    <p>Réponses aux questions fréquentes sur les familles, les flavors et la résilience.</p>
+    <a href="./vm_instances/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>

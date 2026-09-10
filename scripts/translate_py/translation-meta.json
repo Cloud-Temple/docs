@@ -49,10 +49,10 @@
       "it": "0d0a3df86445f345db7fbb8de31b8e0b44e504e957d82629d79fa4433a6a7cd1"
     },
     "compute_overview.md": {
-      "en": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01",
-      "de": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01",
-      "es": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01",
-      "it": "5e40ef26288ad3029a528496323d15b2bcc534408f885b47eaf79cd00336db01"
+      "en": "4850977f583bbf489e4654526092e49707a973606a051fec0c19e04eb97d9896",
+      "de": "4850977f583bbf489e4654526092e49707a973606a051fec0c19e04eb97d9896",
+      "es": "4850977f583bbf489e4654526092e49707a973606a051fec0c19e04eb97d9896",
+      "it": "4850977f583bbf489e4654526092e49707a973606a051fec0c19e04eb97d9896"
     },
     "console/api.md": {
       "en": "87953a72824a374ac202485fa4653090bef714a8d6810133d7d91c8830dc3bd9",
@@ -253,10 +253,10 @@
       "it": "86de3978e89198f284d81e1945653f7fd46a485c35802dc22e8ef819733c90ee"
     },
     "faq.md": {
-      "en": "eeaf1b1166b80e987ff2c2f45a74c310e1365ad7beefd17dc4c55f29b684cbc9",
-      "de": "eeaf1b1166b80e987ff2c2f45a74c310e1365ad7beefd17dc4c55f29b684cbc9",
-      "es": "eeaf1b1166b80e987ff2c2f45a74c310e1365ad7beefd17dc4c55f29b684cbc9",
-      "it": "eeaf1b1166b80e987ff2c2f45a74c310e1365ad7beefd17dc4c55f29b684cbc9"
+      "en": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
+      "de": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
+      "es": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
+      "it": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7"
     },
     "home.md": {
       "en": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea",
@@ -721,10 +721,10 @@
       "it": "3933c1edafe5f2e1772e6ecc4edad38190f9ba7e67c6ef88bdea56e15c7705d3"
     },
     "network/vpc/concepts.md": {
-      "en": "c91f7cd71bbd913ac81a7bac9d74981833ac963de7a45e61a059e971aa7f5dcc",
-      "de": "c91f7cd71bbd913ac81a7bac9d74981833ac963de7a45e61a059e971aa7f5dcc",
-      "es": "c91f7cd71bbd913ac81a7bac9d74981833ac963de7a45e61a059e971aa7f5dcc",
-      "it": "c91f7cd71bbd913ac81a7bac9d74981833ac963de7a45e61a059e971aa7f5dcc"
+      "en": "037125535aafc05db0ef96cbd19b89c3a4896af8df645acb49e7f931a92373ff",
+      "de": "037125535aafc05db0ef96cbd19b89c3a4896af8df645acb49e7f931a92373ff",
+      "es": "037125535aafc05db0ef96cbd19b89c3a4896af8df645acb49e7f931a92373ff",
+      "it": "037125535aafc05db0ef96cbd19b89c3a4896af8df645acb49e7f931a92373ff"
     },
     "network/vpc/quickstart.md": {
       "en": "ff3813024ada853fdec473faf2bfed40f882105fa8684727c475ee9dff64c6fc",
@@ -739,10 +739,10 @@
       "it": "6882a28d4350a654fc6baf49447ecabdcdf75a80d9b00b6d88e80dc0d3465bc9"
     },
     "network/vpc/vpc.md": {
-      "en": "4af72079050e593421703c11097d64b39446b9c119d639e49b21968c80bd9f5c",
-      "de": "4af72079050e593421703c11097d64b39446b9c119d639e49b21968c80bd9f5c",
-      "es": "4af72079050e593421703c11097d64b39446b9c119d639e49b21968c80bd9f5c",
-      "it": "4af72079050e593421703c11097d64b39446b9c119d639e49b21968c80bd9f5c"
+      "en": "bd4f0bc628a1685b709e0477e465dcd6bc5e0e1912998ac7b7eababaecce085e",
+      "de": "bd4f0bc628a1685b709e0477e465dcd6bc5e0e1912998ac7b7eababaecce085e",
+      "es": "bd4f0bc628a1685b709e0477e465dcd6bc5e0e1912998ac7b7eababaecce085e",
+      "it": "bd4f0bc628a1685b709e0477e465dcd6bc5e0e1912998ac7b7eababaecce085e"
     },
     "paas_openshift/concepts.md": {
       "en": "04d6e5feb80daa7f960e27605f8b0e6c9e3a1f438af1c00fcfdddbbe492c97cc",
@@ -787,10 +787,10 @@
       "it": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340"
     },
     "public_cloud/vm_instances/concepts.md": {
-      "en": "29c3fedef926cd78990f059fa6e782bbd6083216528cae955f9ef59e30cd8d9d",
-      "de": "29c3fedef926cd78990f059fa6e782bbd6083216528cae955f9ef59e30cd8d9d",
-      "es": "29c3fedef926cd78990f059fa6e782bbd6083216528cae955f9ef59e30cd8d9d",
-      "it": "29c3fedef926cd78990f059fa6e782bbd6083216528cae955f9ef59e30cd8d9d"
+      "en": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "de": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "es": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
+      "it": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c"
     },
     "public_cloud/vm_instances/quickstart.md": {
       "en": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
@@ -817,10 +817,10 @@
       "it": "2da542f659db017607d84a58f67a927e4894ad588eb9ba97c22cd6c077af596d"
     },
     "public_cloud/vm_instances/vm_instances.md": {
-      "en": "bd2ea57b6e1c4038032988b8b7b4cf98f872ac8d6180a5d8a67e7a593cc11efd",
-      "de": "bd2ea57b6e1c4038032988b8b7b4cf98f872ac8d6180a5d8a67e7a593cc11efd",
-      "es": "bd2ea57b6e1c4038032988b8b7b4cf98f872ac8d6180a5d8a67e7a593cc11efd",
-      "it": "bd2ea57b6e1c4038032988b8b7b4cf98f872ac8d6180a5d8a67e7a593cc11efd"
+      "en": "d0828fea3e98ea7b39da83a928a3ceecd96da8d1c4f9a141fa58779693f9e7cf",
+      "de": "d0828fea3e98ea7b39da83a928a3ceecd96da8d1c4f9a141fa58779693f9e7cf",
+      "es": "d0828fea3e98ea7b39da83a928a3ceecd96da8d1c4f9a141fa58779693f9e7cf",
+      "it": "d0828fea3e98ea7b39da83a928a3ceecd96da8d1c4f9a141fa58779693f9e7cf"
     },
     "security_identity_overview.md": {
       "en": "a343d105f9bf1da4ddcdd3e3ed9162e3fceceeb312e006e7e03fb5507f60077c",
@@ -942,6 +942,12 @@
       "es": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     },
+    "public_cloud/vm_instances/faq.md": {
+      "es": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
+      "de": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
+      "en": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
+      "it": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3"
+    },
     "console/onboarding.md": {
       "en": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
       "de": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
@@ -949,6 +955,6 @@
       "it": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b"
     }
   },
-  "last_update": "2026-08-25T14:46:19.768977",
+  "last_update": "2026-09-10T16:32:34.450686",
   "version": "2.0"
 }
