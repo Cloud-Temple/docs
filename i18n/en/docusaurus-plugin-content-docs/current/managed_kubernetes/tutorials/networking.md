@@ -206,9 +206,7 @@ This configuration ensures that traffic to the API and internal services remains
     <h3>Tutoriel : Déployer votre première application</h3>
   </div>
   <div class="card__body">
-    <p>
-      Suivez notre guide détaillé pour apprendre à exposer une application en utilisant un Ingress.
-    </p>
+    <p>Suivez notre guide détaillé pour apprendre à exposer une application en utilisant un Ingress.</p>
   </div>
   <div class="card__footer">
     <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel →</a>

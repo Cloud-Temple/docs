@@ -82,9 +82,7 @@ Alcune azioni non sono consentite:
         <h3>Tutorial : Distribuire la tua prima applicazione</h3>
       </div>
       <div className="card__body">
-        <p>
-          Segui una guida dettagliata per connetterti, distribuire un'applicazione "Hello World" ed esporla su Internet.
-        </p>
+        <p>Segui una guida dettagliata per connetterti, distribuire un'applicazione "Hello World" ed esporla su Internet.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/firstdeploy" className="button button--primary button--block">Inizia il tutorial →</a>
@@ -97,9 +95,7 @@ Alcune azioni non sono consentite:
         <h3>Tutorial : Comprendere la rete</h3>
       </div>
       <div className="card__body">
-        <p>
-          Scopri il piano di indirizzamento, gli Ingress Controller e come esporre i tuoi servizi in modo sicuro.
-        </p>
+        <p>Scopri il piano di indirizzamento, gli Ingress Controller e come esporre i tuoi servizi in modo sicuro.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/networking" className="button button--primary button--block">Vedi il tutorial sulla rete →</a>
@@ -112,9 +108,7 @@ Alcune azioni non sono consentite:
         <h3>Tutorial : Gestire le autorizzazioni con Capsule</h3>
       </div>
       <div className="card__body">
-        <p>
-          Impara a utilizzare Capsule per creare tenant e delegare le autorizzazioni ai tuoi team.
-        </p>
+        <p>Impara a utilizzare Capsule per creare tenant e delegare le autorizzazioni ai tuoi team.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/usingcapsule" className="button button--primary button--block">Scopri Capsule →</a>

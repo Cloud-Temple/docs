@@ -41,6 +41,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'console/console' },
       items: [
         'console/console',
+        'console/onboarding',
         'console/console_quickstart',
         'console/status',
         'console/orders',
@@ -168,12 +169,12 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'VM Instances',
-          className: 'sidebar-preview',
           link: { type: 'doc', id: 'public_cloud/vm_instances/vm_instances' },
           items: [
             'public_cloud/vm_instances/vm_instances',
             'public_cloud/vm_instances/concepts',
             'public_cloud/vm_instances/quickstart',
+            'public_cloud/vm_instances/faq',
             {
               type: 'category',
               label: 'Tutoriels',
@@ -266,7 +267,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'VPC',
-          className: 'sidebar-preview',
           link: { type: 'doc', id: 'network/vpc/vpc' },
           items: [
             'network/vpc/vpc',

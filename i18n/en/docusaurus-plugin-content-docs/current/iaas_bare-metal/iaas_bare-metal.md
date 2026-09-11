@@ -37,20 +37,12 @@ Direct access to your servers is provided via the Cloud Temple console, offering
 
   <div class="platform-card">
     <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
-    <p>
-      <a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer">
-        UGAP public procurement platform
-      </a>
-    </p>
+    <p><a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer"> UGAP public procurement platform</a></p>
   </div>
 
   <div class="platform-card">
       <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
-    <p>
-      <a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer">
-        CAIH contract for the medical sector
-      </a>
-    </p>
+    <p><a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer"> CAIH contract for the medical sector</a></p>
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">

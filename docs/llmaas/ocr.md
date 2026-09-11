@@ -7,6 +7,10 @@ sidebar_position: 4
 
 Ce guide détaille l'utilisation du modèle **DeepSeek-OCR**, une solution de pointe pour la compression optique de contexte et l'analyse de documents.
 
+:::info[Disponibilité du modèle OCR]
+Ce guide décrit l'intégration de DeepSeek-OCR. Avant de l'utiliser, vérifiez que le modèle est exposé par `GET /v1/models` et consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle). S'il n'est pas disponible, sélectionnez un modèle de vision adapté et utilisez le format de requête correspondant ; les paramètres spécifiques de ce guide ne sont pas universels.
+:::
+
 ## Architecture et fonctionnement
 
 Contrairement aux OCR traditionnels, DeepSeek-OCR est un modèle Vision-Langage de bout en bout conçu pour "lire" et "comprendre" visuellement les documents.

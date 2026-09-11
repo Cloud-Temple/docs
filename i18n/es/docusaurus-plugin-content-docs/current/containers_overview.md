@@ -62,9 +62,7 @@ Nuestro rol de asesoramiento es acompañarle en esta decisión. Nuestros arquite
         <h3>PaaS OpenShift</h3>
       </div>
       <div className="card__body">
-        <p>
-          Descubra nuestra plataforma "como servicio" para modernizar sus aplicaciones sobre una base certificada SecNumCloud.
-        </p>
+        <p>Descubra nuestra plataforma "como servicio" para modernizar sus aplicaciones sobre una base certificada SecNumCloud.</p>
       </div>
       <div className="card__footer">
         <a href="./paas_openshift" className="button button--primary button--block">Más información</a>
@@ -77,9 +75,7 @@ Nuestro rol de asesoramiento es acompañarle en esta decisión. Nuestros arquite
         <h3>Managed (core) Kubernetes</h3>
       </div>
       <div className="card__body">
-        <p>
-          Explore nuestro producto Kubernetes puro, portátil y sin sobrecapa, alojado en una infraestructura soberana.
-        </p>
+        <p>Explore nuestro producto Kubernetes puro, portátil y sin sobrecapa, alojado en una infraestructura soberana.</p>
       </div>
       <div className="card__footer">
         <a href="./managed_kubernetes" className="button button--primary button--block">Más información</a>

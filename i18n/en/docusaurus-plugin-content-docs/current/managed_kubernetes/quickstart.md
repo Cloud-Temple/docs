@@ -82,9 +82,7 @@ Some actions are not permitted:
         <h3>Tutorial: Deploy your first application</h3>
       </div>
       <div className="card__body">
-        <p>
-          Follow a detailed guide to connect, deploy a "Hello World" application, and expose it to the Internet.
-        </p>
+        <p>Follow a detailed guide to connect, deploy a "Hello World" application, and expose it to the Internet.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/firstdeploy" className="button button--primary button--block">Start the tutorial →</a>
@@ -97,9 +95,7 @@ Some actions are not permitted:
         <h3>Tutorial: Understand the network</h3>
       </div>
       <div className="card__body">
-        <p>
-          Discover the addressing plan, Ingress Controllers, and how to securely expose your services.
-        </p>
+        <p>Discover the addressing plan, Ingress Controllers, and how to securely expose your services.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/networking" className="button button--primary button--block">View the networking tutorial →</a>
@@ -112,9 +108,7 @@ Some actions are not permitted:
         <h3>Tutorial: Manage permissions with Capsule</h3>
       </div>
       <div className="card__body">
-        <p>
-          Learn how to use Capsule to create tenants and delegate permissions to your teams.
-        </p>
+        <p>Learn how to use Capsule to create tenants and delegate permissions to your teams.</p>
       </div>
       <div className="card__footer">
         <a href="./tutorials/usingcapsule" className="button button--primary button--block">Discover Capsule →</a>
