@@ -322,6 +322,8 @@ const sidebars: SidebarsConfig = {
                 'network/private_backbone/tutorials',
                 'network/internet/tutorials/forti',
                 'network/internet/tutorials/pfSense',
+		'network/internet/tutorials/opensense',
+		'network/internet/tutorials/stormchield',
               ],
             },
           ],
