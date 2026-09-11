@@ -953,8 +953,14 @@
       "de": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
       "es": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
       "it": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b"
+    },
+    "network/internet/tutorials/opensense.md": {
+      "en": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8"
+    },
+    "network/internet/tutorials/stormchield.md": {
+      "en": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-09-10T16:32:34.450686",
+  "last_update": "2026-09-11T10:35:02.728942",
   "version": "2.0"
 }
