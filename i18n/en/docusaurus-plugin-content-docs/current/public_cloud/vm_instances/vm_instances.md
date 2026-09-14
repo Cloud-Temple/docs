@@ -2,13 +2,13 @@
 title: Overview
 ---
 
-# VM Instances <span class="title-preview-badge">Preview</span>
+# VM Instances
 
-The **VM Instances** service from Cloud Temple enables rapid deployment of virtual machines on a shared, high-performance infrastructure. This product combines the flexibility of public cloud with the security guarantees of a sovereign cloud.
+The **VM Instances** service by Cloud Temple is **SecNumCloud** certified. It enables the rapid deployment of virtual machines on a shared, high-performance infrastructure, combining the flexibility of a public cloud with the security guarantees of a sovereign cloud.
 
-It adapts to all needs through its various service classes — from cost-effective development to critical production — while natively integrating with the Cloud Temple ecosystem.
+It adapts to all needs through its various service classes — from cost-effective development to critical production — while natively integrating into the Cloud Temple ecosystem.
 
-![VM Instances list in the Cloud Temple Console](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
+![List of VM Instances in the Cloud Temple Console](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 <div class="card-grid">
   <div class="card">
@@ -18,12 +18,17 @@ It adapts to all needs through its various service classes — from cost-effecti
   </div>
   <div class="card">
     <h3>Quickstart</h3>
-    <p>Deploy your first virtual machine in minutes from the Cloud Temple Marketplace.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Start the Quickstart &rarr;</a>
+    <p>Deploy your first virtual machine in just a few minutes from the Cloud Temple Marketplace.</p>
+    <a href="./vm_instances/quickstart" class="card-link">Launch Quickstart &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
     <p>Practical guides: create a VM, manage disks, take snapshots.</p>
     <a href="./vm_instances/tutorials" class="card-link">View tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>FAQ</h3>
+    <p>Answers to frequently asked questions about families, flavors, and resilience.</p>
+    <a href="./vm_instances/faq" class="card-link">Consult the FAQ &rarr;</a>
   </div>
 </div>

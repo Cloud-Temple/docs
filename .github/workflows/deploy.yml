@@ -8,6 +8,10 @@ on:
     tags:
       - "*"
 
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Garde-fou : bloque tout build/déploiement si une admonition utilise la
   # syntaxe Docusaurus 2 (`:::type Titre`), non reconnue en MDX v3 et rendue en
@@ -32,9 +36,12 @@ jobs:
     needs: lint-admonitions
     if: github.ref == 'refs/heads/dev'
     permissions:
+      contents: read
       pages: write
       id-token: write
-    environment: dev # Ensure this matches your GitHub environment name
+    environment:
+      name: dev
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -50,6 +57,8 @@ jobs:
 
       - name: Build Documentation
         env:
+          BASE_URL: "/docs/"
+          SITE_URL: "https://cloud-temple.github.io"
           APP_VERSION: ${{ github.sha }}
         run: yarn build
 

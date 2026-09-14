@@ -26,6 +26,21 @@ Retrouvez ci-dessous les questions fréquemment posées sur les produits et serv
 
 ---
 
+## Compute
+
+<div class="book-grid">
+  <a class="book-card book-card--blue" href="./public_cloud/vm_instances/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">VM Instances</div>
+      <div class="book-card-desc">Questions sur les familles d'instances, les flavors custom, le déploiement et la résilience.</div>
+      <div class="book-card-cta">Consulter la FAQ →</div>
+    </div>
+  </a>
+</div>
+
+---
+
 ## Stockage
 
 <div class="book-grid">

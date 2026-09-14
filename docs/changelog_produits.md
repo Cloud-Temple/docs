@@ -8,6 +8,11 @@ sidebar_position: 999
 > Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
 > Les corrections de bugs sont volontairement exclues.
 
+## v4.49.3 — 2026-09-09
+
+### [Bare Metal](/iaas_bare-metal)
+- Ajout de la colonne « Fabric » dans l'onglet réseau d'un serveur Bare Metal
+- 
 ## v4.49.0 — 2026-08-31
 
 ### [Console](/console)
@@ -44,7 +49,8 @@ sidebar_position: 999
 ### [VPC](/network/vpc)
 - Le bouton « Nouveau VPC » de la liste est désormais grisé lorsque la limite de VPC est atteinte
 
-### [IaaS Bare Metal](/iaas_bare-metal)
+### [Bare Metal](/iaas_bare-metal)
+
 - Affichage du type de lame plutôt que sa description dans la « Classe » des serveurs Bare Metal
 
 ## v4.48.0 — 2026-08-13
@@ -87,7 +93,6 @@ sidebar_position: 999
 
 ### [Housing (Colocation)](/housing)
 - Ajout des types d'interface 1000BASE-SX et 10GBASE-SR à la réservation d'emplacement en colocation
-
 
 ## v4.47.0 — 2026-07-30
 

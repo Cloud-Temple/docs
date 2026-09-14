@@ -693,6 +693,33 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   text-decoration: none !important;
 }
 
+/* Variante page documentaire : les chips ci-dessus sont blanches et ne sont
+   lisibles que sur le fond sombre du .hero-banner. Sur une page de contenu au
+   fond clair, utiliser .cert-row--doc. */
+.cert-row--doc .cert-chip {
+  border-color: rgba(46, 133, 85, 0.35);
+  background: rgba(46, 133, 85, 0.08);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.cert-row--doc .cert-chip:hover {
+  background: rgba(46, 133, 85, 0.16);
+  border-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .cert-row--doc .cert-chip {
+  border-color: rgba(37, 194, 160, 0.45);
+  background: rgba(37, 194, 160, 0.12);
+  color: var(--ifm-color-primary-lighter);
+}
+
+[data-theme='dark'] .cert-row--doc .cert-chip:hover {
+  background: rgba(37, 194, 160, 0.22);
+  border-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-primary-lightest);
+}
+
 /* Lien "Toutes nos certifications" — chip outline tiretée, aligné à droite */
 .cert-row-link {
   display: inline-flex;

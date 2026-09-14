@@ -41,7 +41,7 @@ Le VPC garantit une isolation stricte :
 
 * Chaque VPC est une entité réseau indépendante.
 * Le déploiement se fait sur des ressources dédiées (pour les clients IaaS Open Source), assurant qu'aucune ressource réseau n'est partagée.
-* Le service est en cours de qualification **SecNumCloud**.
+* Le service est qualifié **SecNumCloud**.
 
 ## Fonctionnalités Principales
 

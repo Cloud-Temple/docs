@@ -2,28 +2,33 @@
 title: Übersicht
 ---
 
-# VM Instances <span class="title-preview-badge">Preview</span>
+# VM Instances
 
-Der **VM Instances**-Dienst von Cloud Temple ermöglicht die schnelle Bereitstellung von virtuellen Maschinen auf einer leistungsstarken, geteilten Infrastruktur. Dieses Produkt verbindet die Flexibilität einer Public Cloud mit den Sicherheitsgarantien einer souveränen Cloud.
+Der Dienst **VM Instances** von Cloud Temple ist als **SecNumCloud** zertifiziert. Er ermöglicht die schnelle Bereitstellung virtueller Maschinen auf einer leistungsstarken, geteilten Infrastruktur und kombiniert dabei die Flexibilität einer Public Cloud mit den Sicherheitsgarantien einer souveränen Cloud.
 
-Er passt sich dank seiner verschiedenen Service-Klassen an alle Anforderungen an – von kostengünstiger Entwicklung bis hin zur kritischen Produktion – und integriert sich nativ in das Cloud Temple-Ökosystem.
+Er passt sich dank verschiedener Serviceklassen – von der kosteneffizienten Entwicklung bis zur kritischen Produktion – an alle Anforderungen an und integriert sich nahtlos in das Cloud-Temple-Ökosystem.
 
-![VM Instances-Liste in der Cloud Temple Console](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
+![Liste des VM Instances dans la Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die Architektur, Service-Klassen und Funktionen des VM Instances-Dienstes.</p>
+    <p>Entdecken Sie die Architektur, die Serviceklassen und die Funktionen des VM-Instances-Dienstes.</p>
     <a href="./vm_instances/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Stellen Sie Ihre erste virtuelle Maschine in wenigen Minuten aus dem Cloud Temple Marketplace bereit.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <h3>Schnellstart</h3>
+    <p>Stellen Sie Ihre erste virtuelle Maschine in wenigen Minuten über den Cloud-Temple-Marktplatz bereit.</p>
+    <a href="./vm_instances/quickstart" class="card-link">Schnellstart ausführen &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Praxisanleitungen: VM erstellen, Festplatten verwalten, Snapshots aufnehmen.</p>
+    <p>Praktische Anleitungen: Erstellen einer VM, Verwalten von Festplatten, Erstellen von Snapshots.</p>
     <a href="./vm_instances/tutorials" class="card-link">Tutorials ansehen &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>FAQ</h3>
+    <p>Antworten auf häufig gestellte Fragen zu Familien, Flavors und Resilienz.</p>
+    <a href="./vm_instances/faq" class="card-link">FAQ einsehen &rarr;</a>
   </div>
 </div>

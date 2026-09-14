@@ -2,140 +2,140 @@
 title: Conceptos
 ---
 
-El servicio **VM Instances** de Cloud Temple es una oferta de cómputo compartido que permite desplegar máquinas virtuales bajo demanda, sin gestionar la infraestructura subyacente. Esta página presenta los conceptos fundamentales del servicio.
+El servicio **VM Instances** de Cloud Temple es un producto de computación compartida certificado **SecNumCloud**, que permite desplegar máquinas virtuales bajo demanda, sin necesidad de gestionar la infraestructura subyacente. Esta página presenta los conceptos fundamentales del servicio.
 
 ## Regiones y zonas de disponibilidad
 
-El servicio VM Instances se despliega en la región **FR1**. Al crear una máquina virtual, puede elegir la **zona de disponibilidad (AZ)** en la que se alojará.
+El servicio VM Instances está desplegado en la región **FR1**. Al crear una máquina virtual, puede elegir la **zona de disponibilidad (AZ)** en la que se alojará.
 
-Para más información sobre las zonas de disponibilidad y las regiones de Cloud Temple, consulte:
+Para obtener más información sobre las zonas de disponibilidad y las regiones de Cloud Temple, consulte:
 
 - [Conceptos de zonas de disponibilidad](../../additional_content/concepts_az.md)
-- [Conceptos regionales](../../additional_content/concepts_regional.md)
+- [Conceptos de regiones](../../additional_content/concepts_regional.md)
 
 ## Clases de servicio
 
 El servicio ofrece tres clases de servicio adaptadas a diferentes tipos de cargas de trabajo:
 
 | Clase | Descripción | Recursos |
-|-------|-------------|----------|
-| **Development** | Costo optimizado, para entornos de prueba, integración y staging. Adecuado para cargas no críticas con uso variable. | Compartidos |
-| **General Purpose** | Equilibrio óptimo vCPU/RAM para cargas de trabajo estándar (aplicaciones web, micro-servicios, bases de datos de tamaño moderado). | Compartidos |
-| **Performance** | Diseñado para cargas de trabajo intensivas que requieren alto rendimiento de CPU. **Las vCPU son dedicadas** para garantizar un rendimiento constante. | vCPU dedicadas |
+|--------|-------------|------------|
+| **Development** | Coste optimizado, para entornos de prueba, integración y aceptación. Adecuado para cargas no críticas con uso variable. | Compartidos |
+| **General Purpose** | Equilibrio óptimo vCPU/RAM para cargas de trabajo estándar (aplicaciones web, microservicios, bases de datos de tamaño moderado). | Compartidos |
+| **Performance** | Diseñado para cargas de trabajo intensivas que requieren alto rendimiento de CPU. **Los vCPU son dedicados** para garantizar un rendimiento constante. | vCPU dedicados |
 
-## Flavors
+## Sabores (Flavors)
 
-Se ofrecen flavors predefinidos para cada clase de servicio. También es posible crear **flavors personalizados** eligiendo libremente el número de vCPU y la cantidad de RAM.
+Se ofrecen sabores predefinidos para cada clase de servicio. También es posible crear **sabores personalizados** eligiendo libremente el número de vCPU y la cantidad de RAM.
 
-### Development
+### Desarrollo
 
-Optimizado para entornos de prueba, integración y staging con costos controlados.
+Optimizado para entornos de prueba, integración y preproducción con un costo controlado.
 
-| Flavor | vCPU | RAM | Uso típico |
+| Sabor | vCPU | RAM | Tipo de uso |
 |--------|------|-----|------------|
 | dev.small | 1 | 2 GB | Pruebas unitarias, CI ligera |
 | dev.medium | 2 | 4 GB | Integración, herramientas internas |
-| dev.large | 4 | 8 GB | Entorno de staging |
+| dev.large | 4 | 8 GB | Entorno de preproducción |
 
-### General Purpose
+### Propósito General
 
-Adecuado para aplicaciones web, micro-servicios y bases de datos de tamaño moderado.
+Adecuado para aplicaciones web, microservicios y bases de datos de tamaño moderado.
 
-| Flavor | vCPU | RAM | Uso típico |
+| Sabor | vCPU | RAM | Tipo de uso |
 |--------|------|-----|------------|
-| gp.small | 1 | 4 GB | Micro-servicio, pruebas funcionales |
+| gp.small | 1 | 4 GB | Microservicio, prueba funcional |
 | gp.medium | 2 | 8 GB | Servidor web, aplicación ligera |
 | gp.large | 4 | 16 GB | Aplicación estándar |
-| gp.xlarge | 8 | 32 GB | Base de datos mediana |
+| gp.xlarge | 8 | 32 GB | Base de datos de tamaño medio |
 | gp.2xlarge | 16 | 64 GB | Aplicación crítica |
 
-### Performance
+### Rendimiento
 
-Las **vCPU son dedicadas** para garantizar un rendimiento constante, incluso bajo alta carga.
+Los **vCPU están dedicados** para garantizar un rendimiento constante, incluso bajo carga elevada.
 
-| Flavor | vCPU | RAM | Uso típico |
+| Flavor | vCPU | RAM | Tipo de uso |
 |--------|------|-----|------------|
-| perf.medium | 2 | 4 GB | Cómputo ligero, CI/CD |
-| perf.large | 4 | 8 GB | Procesamiento batch, codificación |
-| perf.xlarge | 8 | 16 GB | Cómputo intensivo |
-| perf.2xlarge | 16 | 32 GB | Simulación, analytics |
+| perf.medium | 2 | 4 GB | Cálculo ligero, CI/CD |
+| perf.large | 4 | 8 GB | Procesamiento por lotes, codificación |
+| perf.xlarge | 8 | 16 GB | Cálculo intensivo |
+| perf.2xlarge | 16 | 32 GB | Simulación, análisis |
 
-### Flavors personalizados
+### Plantillas personalizadas
 
-Es posible crear un flavor personalizado seleccionando libremente:
+Es posible crear una plantilla personalizada seleccionando libremente:
 
 - El número de vCPU
 - La cantidad de RAM
 
-Esta flexibilidad permite adaptar con precisión el dimensionamiento a los requisitos de la aplicación mientras se optimizan los costos.
+Esta flexibilidad permite adaptar con precisión el dimensionamiento a las necesidades de la aplicación, optimizando al mismo tiempo los costos.
 
 :::note
-Las especificaciones de los flavors pueden evolucionar. Consulte la consola de Cloud Temple para obtener la lista actualizada.
+Las especificaciones de las plantillas pueden cambiar. Consulte la consola de Cloud Temple para obtener la lista actualizada.
 :::
 
 ## Almacenamiento
 
-Todos los volúmenes del servicio VM Instances son **volúmenes Flash persistentes montados en red** (*network-attached*). No existe almacenamiento local efímero: sus datos se conservan independientemente del estado de la máquina virtual.
+Todos los volúmenes del servicio Instancias de VM son **volúmenes Flash persistentes montados en red** (*network-attached*). No existe almacenamiento local efímero: sus datos se conservan independientemente del estado de la máquina virtual.
 
-### Disco del sistema
+### Disco de sistema
 
-Cada máquina virtual dispone de un **disco del sistema Flash incluido por defecto**, cuyo tamaño depende del sistema operativo elegido:
+Cada máquina virtual cuenta con un **disco de sistema Flash incluido por defecto**, cuyo tamaño depende del sistema operativo elegido:
 
-- Tamaño: entre **15 y 100 GB** según el SO seleccionado.
+- Tamaño: entre **15 y 100 Go** según el SO seleccionado.
 
 ### Volúmenes adicionales
 
-Es posible añadir volúmenes de almacenamiento adicionales a cada máquina virtual:
+Es posible agregar volúmenes de almacenamiento adicionales a cada máquina virtual:
 
-- **Tamaño máximo**: 2 TB por volumen
-- **Número máximo**: 16 volúmenes por VM
-- **Granularidad**: asignación en GB
-- **Facturación**: por GB asignado, con elección de clase de almacenamiento
+- **Tamaño máximo** : 2 To por volumen
+- **Número máximo** : 16 volúmenes por VM
+- **Granularidad** : asignación por Go
+- **Facturación** : por Go asignado, con elección de la clase de almacenamiento
 
 ## Red
 
 ### Interfaz de red
 
-Cada VM instance dispone de **una única interfaz de red**.
+Cada instancia de VM puede tener de **1 a 7 tarjetas de red**. Cada tarjeta de red está asociada a **una sola red**.
 
 ### Compatibilidad de red
 
-Esta interfaz puede conectarse a dos tipos de redes Cloud Temple:
+Esta interfaz puede conectarse a dos tipos de redes de Cloud Temple:
 
-- **Red privada de backbone**: red privada compartida con aislamiento lógico estricto entre tenants. Ideal para interconectar sus recursos Cloud Temple en un entorno controlado. [Más información](../../network/private_network/private_network.md)
-- **VPC (Virtual Private Cloud)**: red privada completamente gestionada que permite una segmentación avanzada y una configuración de red detallada de sus entornos. [Más información](../../network/vpc/vpc.md)
+- **Red troncal privada**: red privada compartida con aislamiento lógico estricto entre tenants. Ideal para interconectar sus recursos de Cloud Temple en un entorno controlado. [En savoir plus](../../network/private_network/private_network.md)
+- **VPC (Virtual Private Cloud)**: red privada completamente gestionada que permite una segmentación avanzada y una configuración de red granular de sus entornos. [En savoir plus](../../network/vpc/vpc.md)
 
 ### IP flotante (Floating IP)
 
-En una red **VPC**, es posible asociar una **IP flotante** a una VM instance. Una IP flotante es una dirección IP pública que puede adjuntar o separar libremente de una instancia, independientemente de su ciclo de vida.
+En una red **VPC**, es posible asociar una **IP flotante** a una instancia de VM. Una IP flotante es una dirección IP pública que puede asociar o disociar libremente de una instancia, independientemente de su ciclo de vida.
 
 ## Despliegue e imágenes
 
-Las VM Instances se despliegan desde las **imágenes oficiales del Marketplace de Cloud Temple**. Este catálogo de imágenes seleccionadas garantiza entornos probados, mantenidos y listos para usar para cada sistema operativo compatible.
+Las instancias de VM se despliegan desde las **imágenes oficiales de la Marketplace de Cloud Temple**. Las plantillas disponibles son las de la [Marketplace filtrada para OpenIaaS](https://www.cloud-temple.com/marketplace/?m_deployment%5B%5D=openiaas&post_type=marketplace). Este catálogo de imágenes seleccionadas garantiza entornos probados, mantenidos y listos para usar para cada sistema operativo compatible.
 
-El servicio soporta **Cloud-init** para la preconfiguración automática de instancias en el arranque (inyección de claves SSH, configuración de red, scripts de inicialización, etc.).
+El servicio es compatible con **Cloud-init** para la preconfiguración automática de las instancias en el arranque (inyección de claves SSH, configuración de red, scripts de inicialización, etc.).
 
 ## Protección de datos
 
 ### Copia de seguridad (opcional)
 
-Hay disponible una opción de copia de seguridad con retención configurable. Esta opción se **factura por separado**.
+Están disponibles dos políticas de copia de seguridad: **`No Backup`** y **`Backup 30 snapshots`**. Con `Backup 30 snapshots`, se crea automáticamente un snapshot cada noche entre las **20 h y las 22 h**. Si el cliente inicia un backup adicional durante el día, se crean dos snapshots el mismo día: la retención activa cubre entonces **29 días** en lugar de 30. Esta opción se **factura adicionalmente**.
 
 :::info
-La replicación de VM no está incluida por defecto. Su estudio está previsto para el segundo semestre de 2026.
+La replicación de VM no está incluida de forma predeterminada. Su evaluación está prevista para el segundo semestre de 2026.
 :::
 
 ## SLA y disponibilidad
 
 | Compromiso | Valor |
-|------------|-------|
+|------------|--------|
 | Disponibilidad de la infraestructura | 99,95% (medida mensualmente) |
 | Garantía de recursos | Según la clase de servicio elegida |
 
 ## Automatización
 
-El servicio es completamente gestionable mediante:
+El servicio es completamente administrable mediante :
 
-- **Consola Cloud Temple**: interfaz gráfica para la gestión diaria
-- **API REST Cloud Temple**: control programático del ciclo de vida de las VM
-- **Proveedor Terraform Cloud Temple**: Infrastructure as Code
+- **Console Cloud Temple** : interfaz gráfica para la gestión diaria
+- **API REST Cloud Temple** : control programático del ciclo de vida de las VMs
+- **Provider Terraform Cloud Temple** : Infraestructura como Código

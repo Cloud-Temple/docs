@@ -8,19 +8,16 @@ import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.pn
 import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
 import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
-import shivaIpAccessManagement_01 from '@site/docs/console/iam/images/shiva_ip_access_management_01.png'
+import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
 import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
 ## Inquilino
 
 ### Creación de un tenant
 
-La creación de un tenant se realiza mediante una solicitud de servicio que indica:
+La creación de un tenant se realiza __en autoservicio__ desde la Consola, sin solicitud de servicio previa. Desde __'Administración > Tenants'__, el botón __'Nuevo tenant'__ abre un formulario en dos partes: la identidad del tenant (nombre y descripción) y los productos que se van a activar en él.
 
-    El nombre de su Organización
-    El nombre de un contacto con su correo electrónico y número de teléfono para finalizar la configuración
-    El nombre del tenant
-    La zona de disponibilidad o, de no existir, el sitio físico deseado para el tenant
+El procedimiento detallado se describe en el [Quickstart de la Consola](../console_quickstart.md).
 
 ### Selección de un tenant
 
@@ -150,13 +147,13 @@ El usuario debe proporcionar dos pruebas de identidad distintas. En el caso de l
 
 ## Gestión de accesos y autenticación
 
-### Acceso al inquilino mediante direcciones IP autorizadas
+### Acceso a la Consola mediante direcciones IP autorizadas
 
 El acceso a la consola de gestión en la nube está estrictamente limitado a las direcciones IP previamente autorizadas, conforme a los requisitos de la certificación SecNumCloud. Esta restricción garantiza un nivel de seguridad reforzado al permitir el acceso únicamente a usuarios procedentes de rangos de IP específicos, minimizando así los riesgos de acceso no autorizado y protegiendo la infraestructura en la nube según los estándares de seguridad más elevados.
 
-Ahora es posible visualizar la lista de direcciones IP públicas autorizadas para el inquilino y añadir una nueva dirección IP pública a esta lista directamente desde la pestaña "Administración > Acceso".
+La lista es la de la __organización__: una dirección añadida desde cualquier tenant autoriza el acceso a la Consola para toda la organización. Se consulta y se amplía desde la pestaña __'Administración > Acceso'__.
 
-<img src={shivaIpAccessManagement_01} />
+<img src={shivaOrgAccess} />
 
 Para ello, el usuario debe contar con el permiso `console_public_access_read` para consultar las IPs autorizadas, y el permiso `console_public_access_write` para añadir una dirección IP pública a la lista.
 

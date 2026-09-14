@@ -20,8 +20,9 @@ const config: Config = {
 
   trailingSlash: false,
 
-  // Production URL of the documentation site
-  url: 'https://docs.cloud-temple.com',
+  // Production URL of the documentation site. GitHub Pages sets SITE_URL to
+  // keep canonical and social URLs on the DEV host.
+  url: process.env.SITE_URL ?? 'https://docs.cloud-temple.com',
   // Default baseUrl for GitHub Pages deployment (/docs/ = repo name)
   // Override with BASE_URL=/ environment variable for custom domain deployments
   baseUrl: process.env.BASE_URL ?? "/docs/",

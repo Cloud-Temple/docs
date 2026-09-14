@@ -9,8 +9,8 @@ Les services Compute de Cloud Temple vous permettent de déployer et d'opérer d
 
 <div class="card-grid">
   <div class="card">
-    <h3>VM Instances <span class="title-preview-badge">Preview</span></h3>
-    <p>Instances cloud mutualisées, déployées en quelques minutes depuis le Marketplace. Idéal pour les workloads flexibles.</p>
+    <h3>VM Instances</h3>
+    <p>Instances cloud mutualisées qualifiées SecNumCloud, déployées en quelques minutes depuis le Marketplace. Idéal pour les workloads flexibles.</p>
     <a href="./public_cloud/vm_instances" class="card-link">Découvrir VM Instances →</a>
   </div>
   <div class="card">
