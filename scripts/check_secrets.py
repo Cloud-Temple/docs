@@ -21,8 +21,14 @@ Trois contrôles, du plus décisif au plus heuristique :
      raté par-dessus un correctif de sécurité peut le réintroduire en silence
      (c'est arrivé ici sur `test_rag_simple.py`, laissé invalide en Python).
   3. MOTIFS DE SECRETS — formats de jetons à forte signature uniquement.
+  4. VALEUR À FORTE ENTROPIE affectée à une variable au nom sensible. La même
+     clé LLMaaS avait aussi été codée en DUR dans `test_rag_simple.py` et
+     `test_rag_pipeline_detailed.py` (commit 523325b0), en valeur de repli de
+     `os.getenv(...)`. Ce jeton n'a aucun préfixe reconnaissable : le contrôle
+     n°3 le laisse passer. Sans ce quatrième contrôle, la moitié des formes
+     prises par l'incident échapperait au garde-fou.
 
-Le contrôle n°3 est volontairement CONSERVATEUR. Ce dépôt est de la
+Les contrôles n°3 et n°4 sont volontairement CONSERVATEURS. Ce dépôt est de la
 documentation : il regorge d'exemples `curl` et de jetons factices. Un garde-fou
 qui crie au loup serait désactivé en une semaine. On n'y met donc que des
 formats non ambigus, et toute valeur ressemblant à un gabarit
@@ -31,8 +37,10 @@ depuis un terminal réel, pas l'exemple pédagogique.
 
 Limites assumées : ce script ne lit que le contenu TEXTE des fichiers SUIVIS au
 HEAD. Il ne voit ni l'historique, ni les captures d'écran, ni les secrets d'un
-format inconnu. Il empêche une NOUVELLE fuite d'entrer ; il ne dit rien de
-celles déjà présentes dans l'historique.
+format inconnu. Le contrôle n°4 ignore les chaînes purement hexadécimales (SHA
+Git, sommes de contrôle), très majoritairement du bruit ici : une clé en hexa
+pur passerait donc au travers. Il empêche une NOUVELLE fuite d'entrer ; il ne
+dit rien de celles déjà présentes dans l'historique.
 
 Usage :
     python3 scripts/check_secrets.py           # scanne les fichiers suivis
@@ -42,9 +50,11 @@ Usage :
 import base64
 import binascii
 import json
+import math
 import re
 import subprocess
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -79,6 +89,21 @@ PATTERNS = {
 }
 
 JWT = re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.([A-Za-z0-9_-]{8,})\.[A-Za-z0-9_-]{8,}\b")
+
+# --- Contrôle 4 : valeur à forte entropie en contexte sensible ---------------
+
+# Contexte : la ligne doit parler de secret. Sans cette contrainte, le contrôle
+# se déclencherait sur chaque identifiant de build ou chaîne base64 de la doc.
+SENSITIVE_CONTEXT = re.compile(
+    r"(?i)(api[_-]?key|secret|token|password|passwd|credential|bearer|auth[_-]?key)"
+)
+# Valeur entre guillemets, assez longue pour porter un secret réel.
+QUOTED_VALUE = re.compile(r"[\"']([A-Za-z0-9+/=_-]{24,})[\"']")
+# Un jeton aléatoire dépasse 4 bits/caractère ; une phrase ou un slug restent
+# en dessous. L'hexadécimal pur plafonne à 4.0 : on l'exclut plutôt que de
+# risquer de signaler chaque SHA Git.
+ENTROPY_THRESHOLD = 4.0
+HEX_ONLY = re.compile(r"^[0-9a-fA-F]+$")
 
 # Une valeur contenant l'un de ces fragments est un gabarit de documentation.
 PLACEHOLDER_HINTS = (
@@ -125,6 +150,15 @@ def is_demo_jwt(payload_b64: str) -> bool:
     return claims.get("sub") == "1234567890" or claims.get("name") == "John Doe"
 
 
+def shannon_entropy(value: str) -> float:
+    """Entropie de Shannon en bits par caractère (0 si chaîne vide)."""
+    if not value:
+        return 0.0
+    counts = Counter(value)
+    n = len(value)
+    return -sum((c / n) * math.log2(c / n) for c in counts.values())
+
+
 def scan_env(paths):
     """Contrôle 1 : un `.env` réel ne doit jamais être suivi par Git."""
     return [
@@ -158,6 +192,13 @@ def scan_content(paths):
             m = JWT.search(line)
             if m and not is_demo_jwt(m.group(1)) and not is_placeholder(m.group(0)):
                 violations.append((p, i, "JWT", m.group(0)))
+
+            if SENSITIVE_CONTEXT.search(line):
+                for value in QUOTED_VALUE.findall(line):
+                    if HEX_ONLY.match(value) or is_placeholder(value):
+                        continue
+                    if shannon_entropy(value) >= ENTROPY_THRESHOLD:
+                        violations.append((p, i, "valeur à forte entropie", value))
     return violations
 
 
