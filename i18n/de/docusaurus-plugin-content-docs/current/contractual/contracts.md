@@ -42,18 +42,7 @@ Hier finden Sie alle Vertragsdokumente von Cloud Temple: Allgemeine Geschäftsbe
 
 ## Allgemeine Bedingungen
 
-<div class="book-grid">
-  <ContractCard
-    href="./contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
-    title="Allgemeine Verkaufs- und Nutzungsbedingungen (AVB)"
-    desc="Allgemeine Bedingungen, die alle Cloud Temple-Dienste regeln."
-  />
-  <ContractCard
-    href="./contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
-    title="Datenschutzvereinbarung (DPA)"
-    desc="Vereinbarung zur Regelung der Verarbeitung personenbezogener Daten gemäß der DSGVO."
-  />
-</div>
+[Vertragsdokumente von Cloud Temple einsehen →](https://www.cloud-temple.com/contracts)
 
 ---
 

@@ -42,18 +42,7 @@ Retrouvez ici l'ensemble des documents contractuels Cloud Temple : conditions g�
 
 ## Conditions générales
 
-<div class="book-grid">
-  <ContractCard
-    href="./contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
-    title="Conditions Générales de Vente et Utilisation (CGVU)"
-    desc="Conditions générales encadrant l'ensemble des services Cloud Temple."
-  />
-  <ContractCard
-    href="./contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
-    title="Data Processing Agreement (DPA)"
-    desc="Accord encadrant le traitement des données personnelles conformément au RGPD."
-  />
-</div>
+[Consulter les documents contractuels Cloud Temple →](https://www.cloud-temple.com/contracts)
 
 ---
 

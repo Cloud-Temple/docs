@@ -42,18 +42,7 @@ Find all Cloud Temple contractual documents here: general terms and conditions, 
 
 ## General Conditions
 
-<div class="book-grid">
-  <ContractCard
-    href="./contractual/files/CT.AM.JUR.CGVU_Conditions%20Generales%20de%20Vente%20et%20d'Utilisation_v1.pdf"
-    title="General Terms and Conditions of Sale and Use (CGVU)"
-    desc="General terms governing all Cloud Temple services."
-  />
-  <ContractCard
-    href="./contractual/files/CT.AM.JANX%20-%20Annexe_DPA_v1.pdf"
-    title="Data Processing Agreement (DPA)"
-    desc="Agreement governing the processing of personal data in compliance with the GDPR."
-  />
-</div>
+[View Cloud Temple contractual documents →](https://www.cloud-temple.com/contracts)
 
 ---
 
