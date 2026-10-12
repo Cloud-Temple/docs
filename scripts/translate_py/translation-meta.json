@@ -162,12 +162,6 @@
       "es": "3455e89b5c737ff78d53d8ba3825ac7dea4e236c142819ff9dbabe3d05f50c49",
       "it": "3455e89b5c737ff78d53d8ba3825ac7dea4e236c142819ff9dbabe3d05f50c49"
     },
-    "contractual/contracts.md": {
-      "en": "beb2f04e6cebfade24a0b6fbb822c342e8e0999b47aceb910e43fbe075714491",
-      "de": "beb2f04e6cebfade24a0b6fbb822c342e8e0999b47aceb910e43fbe075714491",
-      "es": "beb2f04e6cebfade24a0b6fbb822c342e8e0999b47aceb910e43fbe075714491",
-      "it": "beb2f04e6cebfade24a0b6fbb822c342e8e0999b47aceb910e43fbe075714491"
-    },
     "contractual/iaas/raci.md": {
       "en": "3ad2843c031be51ceefc33d1c065a0c605a0599e91c136a816ca0422e1305d71",
       "de": "3ad2843c031be51ceefc33d1c065a0c605a0599e91c136a816ca0422e1305d71",
@@ -204,12 +198,6 @@
       "es": "73a4f685dbf730240c7744ae3b050eb640fb0212d6a670109bac0b94329ccbc4",
       "it": "73a4f685dbf730240c7744ae3b050eb640fb0212d6a670109bac0b94329ccbc4"
     },
-    "contractual/network/sla_vpc.md": {
-      "en": "7970b289ea93a811a164250325463bcbd9273ec7a8c7ffab6d842315b58d8feb",
-      "de": "7970b289ea93a811a164250325463bcbd9273ec7a8c7ffab6d842315b58d8feb",
-      "es": "7970b289ea93a811a164250325463bcbd9273ec7a8c7ffab6d842315b58d8feb",
-      "it": "7970b289ea93a811a164250325463bcbd9273ec7a8c7ffab6d842315b58d8feb"
-    },
     "contractual/paas/mco_mcs.md": {
       "en": "da9967b689e29f99dddb4276ac77d2f26083c9a6844c5e112c510fe02e758306",
       "de": "da9967b689e29f99dddb4276ac77d2f26083c9a6844c5e112c510fe02e758306",
@@ -239,12 +227,6 @@
       "de": "c2e322cb1fd622a663747b5dc92ecb6ec4a91e1375a9eb54d3d6579ca3ad88e2",
       "es": "c2e322cb1fd622a663747b5dc92ecb6ec4a91e1375a9eb54d3d6579ca3ad88e2",
       "it": "c2e322cb1fd622a663747b5dc92ecb6ec4a91e1375a9eb54d3d6579ca3ad88e2"
-    },
-    "contractual/vm-instances/sla_vm-instances.md": {
-      "en": "1b9e3a667de23bcdf9181e21783a44b8a0ae42e684f42f9aacfbd6cf7668a4b0",
-      "de": "1b9e3a667de23bcdf9181e21783a44b8a0ae42e684f42f9aacfbd6cf7668a4b0",
-      "es": "1b9e3a667de23bcdf9181e21783a44b8a0ae42e684f42f9aacfbd6cf7668a4b0",
-      "it": "1b9e3a667de23bcdf9181e21783a44b8a0ae42e684f42f9aacfbd6cf7668a4b0"
     },
     "databases_overview.md": {
       "en": "86de3978e89198f284d81e1945653f7fd46a485c35802dc22e8ef819733c90ee",
@@ -949,10 +931,10 @@
       "it": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3"
     },
     "console/onboarding.md": {
-      "en": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
-      "de": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
-      "es": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b",
-      "it": "34548ceb49a302a69b7660d2838797a194b1919ff73008160cbd14be9c029c0b"
+      "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "de": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "es": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "it": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321"
     },
     "network/internet/tutorials/opensense.md": {
       "en": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
@@ -967,6 +949,6 @@
       "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-09-15T19:07:07.615398",
+  "last_update": "2026-10-12T16:32:19.662370",
   "version": "2.0"
 }

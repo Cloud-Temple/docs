@@ -201,7 +201,6 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contracts</a> |
         <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
         Copyright © 2026 Cloud Temple.

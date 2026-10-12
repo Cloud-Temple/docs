@@ -30,8 +30,8 @@ function ContractualBreadcrumb(): React.ReactElement {
           </Link>
         </li>
         <li className="breadcrumbs__item">
-          <Link className="breadcrumbs__link" href="/contracts">
-            Contractuel
+          <Link className="breadcrumbs__link" href="/shared-responsibility">
+            Responsabilités partagées
           </Link>
         </li>
         <li className="breadcrumbs__item breadcrumbs__item--active">
@@ -47,8 +47,8 @@ function ContractualBreadcrumb(): React.ReactElement {
 export default function DocBreadcrumbsWrapper(props: Props): React.ReactElement {
   const { pathname } = useLocation();
 
-  // Pages contractuelles (sous /contractual/) SAUF la hub page /contracts
-  if (pathname.includes('/contractual/') && !pathname.endsWith('/contracts')) {
+  // Pages de responsabilités partagées (sous /contractual/)
+  if (pathname.includes('/contractual/')) {
     return <ContractualBreadcrumb />;
   }
 

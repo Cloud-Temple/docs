@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Erstellen Sie Ihre Organisation, richten Sie Ihre Umgebungen ein und aktivieren Sie Ihre Produkte. Die Einrichtung auf der Cloud Temple-Plattform, von der Registrierung bis zur ersten Bereitstellung."
+description: "Erstellen Sie Ihre Organisation, öffnen Sie Ihre Umgebungen und aktivieren Sie Ihre Produkte. Die Einrichtung auf der Cloud Temple-Plattform, von der Registrierung bis zur ersten Bereitstellung."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -14,7 +14,7 @@ import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_produ
 
 Bei Cloud Temple warten Sie nicht auf Ihre Cloud: Sie erstellen sie.
 
-Sie erstellen Ihre Organisation über ein Online-Formular in wenigen Minuten. Ihre Umgebungen werden anschließend mit einem Klick über die Konsole bereitgestellt. Sie können Produkte vollständig autonom aktivieren und deaktivieren, die nutzungsbasiert abgerechnet werden. All dies auf einer souveränen Infrastruktur, die in Frankreich betrieben wird. Die Konsole kennzeichnet Tenant für Tenant und Produkt für Produkt, was unter die **SecNumCloud**-Qualifizierung fällt.
+Sie erstellen Ihre Organisation über ein Online-Formular in wenigen Minuten. Ihre Umgebungen werden anschließend mit einem Klick aus der Konsole erstellt. Sie können Produkte vollständig autonom aktivieren und deaktivieren, abgerechnet nach Nutzung. Das alles auf einer souveränen Infrastruktur, betrieben in Frankreich. Die Konsole zeigt Tenant für Tenant und Produkt für Produkt an, was unter die Qualifikation **SecNumCloud** fällt.
 
 <div class="cert-row cert-row--doc">
   <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
@@ -26,10 +26,10 @@ Sie erstellen Ihre Organisation über ein Online-Formular in wenigen Minuten. Ih
 
 ## Was Sie bei der Registrierung erhalten
 
-- **Ohne Wartezeit** : Ein Formular genügt. Ihre Organisation wird automatisch in wenigen Minuten erstellt, ohne dass unsere Teams eingreifen müssen.
-- **Ohne Volumenverpflichtung** : Die Self-Service-Produkte werden nach Verbrauch abgerechnet.
-- **Ohne Vertragsänderung** : Richten Sie neue Umgebungen unter Ihrem bestehenden Vertrag ein, gemäß den darin festgelegten Bedingungen.
-- **Souverän durch Design** : Infrastruktur, die in Frankreich betrieben wird, und ein in der Konsole ausgewiesener **SecNumCloud**-Qualifizierungsumfang.
+- **Ohne Wartezeit** : Ein Formular genügt. Ihre Organisation wird automatisch in wenigen Minuten erstellt, ohne Eingriff unserer Teams.
+- **Ohne Mengenverpflichtung** : Self-Service-Produkte werden nach Nutzung abgerechnet.
+- **Ohne Nachtrag** : Eröffnen Sie neue Umgebungen unter Ihrem bestehenden Vertrag, zu den darin vorgesehenen Bedingungen.
+- **Souverän by Design** : In Frankreich betriebene Infrastruktur und ein in der Console identifizierter **SecNumCloud**-Qualifizierungsbereich.
 
 ## Die drei Pfade
 
@@ -38,128 +38,128 @@ Diese Seite beschreibt diese Einrichtung von Anfang bis Ende.
 <div class="card-grid">
   <div class="card">
     <h3>Ihre Organisation erstellen</h3>
-    <p>Das Online-Registrierungsformular und die dahinterliegenden Prozesse.</p>
-    <a href="#pfad-1-ihre-organisation-erstellen" class="card-link">Starten &rarr;</a>
+    <p>Das Online-Anmeldeformular und was dahinter abläuft.</p>
+    <a href="#parcours-1-créer-votre-organisation" class="card-link">Starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung hinzufügen</h3>
     <p>Ein neuer Tenant über die Konsole, in wenigen Minuten und eigenständig.</p>
-    <a href="#pfad-2-eine-umgebung-hinzufügen" class="card-link">Anleitung ansehen &rarr;</a>
+    <a href="#parcours-2-ajouter-un-environnement" class="card-link">So geht's &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung weiterentwickeln</h3>
-    <p>Ein Produkt aktivieren, Zugriffsrechte gewähren, die Verwaltung an einen Drittanbieter delegieren.</p>
-    <a href="#pfad-3-eine-umgebung-weiterentwickeln" class="card-link">Erkunden &rarr;</a>
+    <p>Ein Produkt aktivieren, einen Zugriff eröffnen, die Verwaltung an Dritte delegieren.</p>
+    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Entdecken &rarr;</a>
   </div>
 </div>
 
-## Die Terminologie, auf zwei Begriffe
+## Die Vokabeln, in zwei Wörtern
 
 Die gesamte Plattform basiert auf zwei Ebenen.
 
-**Ihre Organisation**, das sind Sie: Ihr Unternehmen. Sie ist Vertrags- und Abrechnungsträger.
+**Ihre Organisation**, das sind Sie: Ihr Unternehmen. Sie trägt Ihren Vertrag und Ihre Abrechnung.
 
-**Ein Tenant** ist eine Arbeitsumgebung innerhalb Ihrer Organisation. Sie können mehrere davon betreiben, die voneinander isoliert sind.
+**Ein Tenant** ist eine Arbeitsumgebung innerhalb Ihrer Organisation. Sie können mehrere haben, die voneinander isoliert sind.
 
 ```
-Ihre Organisation
-├── Tenant „production“
-├── Tenant „recette“
-└── Tenant „lab“
+Votre organisation
+├── Tenant « production »
+├── Tenant « recette »
+└── Tenant « lab »
 ```
 
-Konkret: Sie schließen **einen** Vertrag und richten Ihre Umgebungen unter den darin festgelegten Bedingungen ein, ohne Ihre Daten dabei jemals zu vermischen. Das Abgrenzen einer Testumgebung, das Isolieren einer Tochtergesellschaft oder das Einrichten eines Labs erfordert keine Vertragsänderung.
+Konkret: Sie schließen **einen** Vertrag und eröffnen Ihre Umgebungen unter den darin vorgesehenen Bedingungen, ohne Ihre Daten jemals untereinander zu vermischen. Eine Testumgebung abzugrenzen, eine Tochtergesellschaft zu isolieren oder ein Lab einzurichten erfordert keinen Vertragszusatz.
 
-Zwei Rollen erhalten Zugriffsrechte:
+Zwei Rollen erhalten Zugriffe:
 
-- der **Organisationsinhaber** hat Zugriff auf alles und lädt andere Benutzer ein
-- der **Tenant-Inhaber** hat Zugriff auf diese Umgebung
+- der **Organisationsbesitzer** hat Zugriff auf alles und lädt andere Benutzer ein
+- der **Tenant-Besitzer** hat Zugriff auf diese Umgebung
 
-Dies kann dieselbe Person sein.
+Das kann dieselbe Person sein.
 
 ---
 
-## Pfad 1. Ihre Organisation erstellen
+## Pfad 1. Erstellen Sie Ihre Organisation
 
-Dies ist Ihr Einstiegspunkt in die Plattform. Dieser Vorgang findet nur einmal statt und erfolgt online.
+Dies ist Ihr Einstiegspunkt auf der Plattform. Es erfolgt nur einmal und wird online durchgeführt.
 
 ### Das Registrierungsformular
 
-Ihr Setup beginnt mit einem **Online-Registrierungsformular**, dessen Zugangsdaten Ihnen Ihr Ansprechpartner bei Cloud Temple übermittelt.
+Ihre Einrichtung beginnt mit einem **Online-Registrierungsformular**, dessen Zugang Ihnen Ihr Ansprechpartner bei Cloud Temple mitteilt.
 
-Es ist kurz und wird in einem Schritt ausgefüllt. Es erfordert vier Angaben.
+Es ist kurz und wird auf einmal ausgefüllt. Es fragt Sie nach vier Dingen.
 
-**Wer Sie sind.** Der Name Ihrer Organisation, ihre Rechtsform, das Sitzland und Ihre SIREN-Nummer.
+**Wer Sie sind.** Der Name Ihrer Organisation, ihre Rechtsform, ihr Sitzland und ihre SIREN-Nummer.
 
-**Wer die Plattform verwalten wird.** Der Name, Vorname und die geschäftliche E-Mail-Adresse der Person, die **Organisationsinhaber** sein wird. Diese Person erhält die Zugangsdaten und lädt anschließend die Mitarbeiter ein.
+**Wer die Plattform steuern wird.** Der Name, der Vorname und die berufliche E-Mail-Adresse der Person, die **Eigentümer der Organisation** sein wird. Diese Person erhält die Zugänge und lädt anschließend ihre Kollegen ein.
 
-**Was Sie dort speichern werden.** Ihr Wirtschaftszweig und die Art der Daten, mit denen Ihr Projekt arbeitet: Gesundheitsdaten, personenbezogene Daten, Finanzdaten, sensible Daten.
+**Was Sie darauf ablegen werden.** Ihr Tätigkeitsbereich und die Art der Daten, die Ihr Projekt verarbeitet: Gesundheitsdaten, personenbezogene Daten, Finanzdaten, sensible Daten.
 
-**Von wo aus Sie sich verbinden werden.** Die öffentlichen IP-Adressen, die zum Zugriff auf Ihre Konsole berechtigt sind.
+**Von wo Sie sich verbinden werden.** Die öffentlichen IP-Adressen, die zum Zugriff auf Ihre Konsole berechtigt sind.
 
 :::caution[IP-Adressen sind nicht optional]
-Nur die von Ihnen angegebenen Adressen können auf die Konsole zugreifen.
+Nur die von Ihnen deklarierten Adressen können auf die Konsole zugreifen.
 
-Achten Sie darauf, **alle** Ihre Standorte und VPN-Ausgänge einzuschließen. Ein Versehen ist nicht endgültig: Die Liste kann anschließend eigenständig über die Konsole erweitert werden.
+Denken Sie daran, **alle** Ihre Standorte und VPN-Ausgänge einzubeziehen. Ein Versehen ist nicht endgültig: Die Liste kann anschließend eigenständig über die Konsole ergänzt werden.
 :::
 
-Abschließend bestätigen Sie, dass Sie bevollmächtigt sind, Ihre Organisation rechtlich zu binden, und akzeptieren die **[conditions générales](/contracts)**.
+Sie schließen ab, indem Sie bestätigen, dass Sie befugt sind, Ihre Organisation zu verpflichten, und die **[Allgemeinen Geschäftsbedingungen](https://www.cloud-temple.com/contracts)** akzeptieren.
 
 ### Was als Nächstes passiert
 
-Alles läuft automatisch ab. Ihre Organisation wird basierend auf den von Ihnen eingegebenen Informationen erstellt, und Ihr Workspace wird in den folgenden Minuten aufgebaut: Ihr Identitätsverzeichnis, Ihre erste Umgebung, Ihre Zugänge.
+Alles ist automatisch. Ihre Organisation wird auf Basis der von Ihnen eingegebenen Informationen erstellt, und Ihr Arbeitsbereich wird in den folgenden Minuten aufgebaut: Ihr Identitätsverzeichnis, Ihre erste Umgebung, Ihre Zugänge.
 
-Währenddessen müssen Sie keine weiteren Schritte unternehmen.
+Sie müssen in dieser Zeit keine Maßnahmen ergreifen.
 
-:::tip[Diese erste Umgebung wird zunächst leer bereitgestellt]
-Die durch Ihre Registrierung erstellte Umgebung hat **keine aktivierten Produkte**: Sie wird von unserem Automatisierungssystem ohne Formular bereitgestellt, sodass keine Auswahl möglich ist. Dies ist beabsichtigt: es fallen keine Kosten an, solange Sie kein Produkt selbst aktivieren.
+:::tip[Diese erste Umgebung wird leer bereitgestellt]
+Die Umgebung, die durch Ihre Registrierung erstellt wird, hat **kein aktiviertes Produkt**: Sie wird von unserem Automatisierungssystem eingerichtet, ohne Formular, daher ohne Auswahlmöglichkeit. Das ist beabsichtigt: Es wird nichts abgerechnet, solange Sie kein Produkt selbst aktiviert haben.
 
-Die vier Self-Service-Produkte sind in Ihrer Konsole **verfügbar**, sobald Sie diese öffnen. Verfügbar bedeutet nicht aktiviert: Sie aktivieren sie, wenn Sie es wünschen. Siehe [Les produits](#die-produkte).
+Die vier Self-Service-Produkte sind **verfügbar** in Ihrer Konsole ab dem ersten Öffnen. Verfügbar bedeutet nicht aktiviert: Sie aktivieren sie, wenn Sie es entscheiden, siehe [Les produits](#les-produits).
 :::
 
 ### Was Sie erhalten
 
-Eine E-Mail zur **Kontoerstellung**, die an den angegebenen Besitzer gesendet wird. Dort legen Sie Ihr Passwort fest und aktivieren Ihren zweiten Authentifizierungsfaktor.
+Eine E-Mail zur **Kontoerstellung**, adressiert an den benannten Inhaber. Dort definieren Sie Ihr Passwort und aktivieren Ihren zweiten Authentifizierungsfaktor.
 
-Details: [Die E-Mails, die Sie erhalten](#die-e-mails-die-sie-erhalten).
+Details: [Die E-Mails, die Sie erhalten](#les-courriels-que-vous-recevez).
 
 ### Sie sind angemeldet
 
-Sie gelangen zur Konsole unter der Adresse [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Sie können nun Ihre Mitarbeiter einladen und ihnen Rechte zuweisen: siehe [Identités et accès](/console/iam).
+Sie gelangen zur Konsole unter der Adresse [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Sie können ab jetzt Ihre Mitarbeiter einladen und ihnen Berechtigungen zuweisen: siehe [Identitäten und Zugriffe](/console/iam).
 
 <img src={shivaLogin} />
 
 <img src={shivaHome} />
 
 :::tip[Und der vertragliche Teil?]
-Dies hält Sie nicht auf. Die administrativen und Abrechnungsinformationen: Abrechnungsadresse, Zahlungsart, Bestellnummer werden parallel mit Ihrem Ansprechpartner bei Cloud Temple ergänzt. Sie müssen nicht warten, bis diese abgeschlossen sind, um die Plattform zu nutzen.
+Er blockiert Sie nicht. Die administrativen und Abrechnungsdaten: Rechnungsadresse, Zahlungsart, Bestellreferenz werden parallel mit Ihrem Ansprechpartner bei Cloud Temple ergänzt. Sie warten nicht darauf, dass diese finalisiert sind, um die Plattform in Betrieb zu nehmen.
 :::
 
 ---
 
 ## Pfad 2. Eine Umgebung hinzufügen
 
-Sie verfügen bereits über eine Organisation und möchten eine neue Umgebung erstellen, etwa für eine Testumgebung, ein neues Projekt oder eine Niederlassung.
+Sie haben bereits eine Organisation und möchten eine neue Umgebung, für eine Testumgebung, ein neues Projekt oder eine Tochtergesellschaft.
 
-**Sie erledigen alles über die Konsole, im Rahmen Ihres Vertrags. Es sind keine weiteren Schritte oder Kontaktaufnahmen mit uns erforderlich.**
+**Sie erledigen alles über die Konsole, unter den Bedingungen Ihres Vertrags. Kein Kontakt mit uns ist erforderlich.**
 
 ### Die Schritte
 
-1. Erstellen Sie in der Konsole einen **neuen Tenant** über den Tab **Tenants**.
-2. Geben Sie ihm einen aussagekräftigen **Namen**: *Produktion*, *Abnahme*, den Namen eines Projekts.
-3. Der Ersteller des Tenants wird standardmäßig zum Eigentümer. Er kann anschließend weitere Verantwortliche über den Tab **Benutzer** hinzufügen, sobald er im Tenant angemeldet ist.
-4. Wählen Sie die **Produkte** aus, die dort aktiviert werden sollen.
+1. Erstellen Sie über die Konsole einen **neuen Tenant** über den Tab **Tenants**.
+2. Vergeben Sie einen aussagekräftigen **Namen**: *production*, *recette*, der Name eines Projekts.
+3. Der Ersteller des Tenants wird standardmäßig dessen Eigentümer. Er kann anschließend weitere Verantwortliche über den Tab **Benutzer** hinzufügen, nachdem er sich im Tenant angemeldet hat.
+4. Wählen Sie die **Produkte** aus, die darin aktiviert werden sollen.
 
 <img src={tenantNew} />
 
 ### Was als Nächstes passiert
 
-Ihre Umgebung wird automatisch in wenigen Minuten bereitgestellt. Sie müssen nichts tun.
+Ihre Umgebung wird automatisch in wenigen Minuten aufgebaut. Sie müssen nichts tun.
 
-Wenn der Tenant-Inhaber noch kein Konto besitzt, erhält er eine E-Mail zur Kontoregistrierung. Falls er bereits eines hat, kann er auf die neue Umgebung zugreifen, ohne eine neue Einladung zu benötigen.
+Falls der Tenant-Besitzer noch kein Konto hat, erhält er seine E-Mail zur Kontonerstellung. Falls er bereits eines hat, erhält er Zugriff auf die neue Umgebung ohne neue Einladung.
 
 :::tip[Nichts wird standardmäßig aktiviert]
-Sie wählen die Tenant-Produkte **bereits im Erstellungsformular** (Schritt 4 oben) und können diesen Umfang jederzeit anpassen. Kein Produkt wird aktiviert, ohne dass Sie es explizit ausgewählt haben: Sie zahlen nur für das, was Sie tatsächlich nutzen.
+Sie wählen die Produkte des Tenants bereits im Erstellungsformular (Schritt 4 oben) aus und können diesen Umfang jederzeit anpassen. Kein Produkt wird geöffnet, ohne dass Sie es ausgewählt haben: Sie zahlen nur, was Sie verbrauchen.
 :::
 
 ---
@@ -170,163 +170,163 @@ Ihre Anforderungen ändern sich. Hier erfahren Sie, wie Sie eine bestehende Umge
 
 ### Ein Produkt aktivieren
 
-Wenn das Produkt Teil Ihres Katalogs ist, wird es in der Konsole angezeigt: **aktivieren Sie es vollständig eigenständig** im betreffenden Tenant. Rechnen Sie mit einigen Minuten, bis es nutzbar ist.
+Wenn das Produkt Teil Ihres Katalogs ist, wird es in der Konsole angezeigt: **aktivieren Sie es vollständig autonom** auf dem betreffenden Tenant. Rechnen Sie mit einigen Minuten, bis es verfügbar ist.
 
-Über die Liste Ihrer Tenants öffnet die Aktion **« Produkte bearbeiten »** den Katalog. Setzen Sie ein Häkchen bei den Produkten, die Sie aktivieren möchten, entfernen Sie das Häkchen bei den Produkten, die Sie stoppen möchten, und klicken Sie anschließend auf **Speichern**.
+In der Liste Ihrer Tenant öffnet die Aktion **„Produkte bearbeiten"** den Katalog. Aktivieren Sie die Produkte, die Sie öffnen möchten, und deaktivieren Sie die, die Sie stoppen möchten, und klicken Sie dann auf **Speichern**.
 
-Falls es nicht angezeigt wird, ist es noch nicht in Ihrem Katalog enthalten: siehe [Demander un produit supplémentaire](#ein-zusätzliches-produkt-anfordern).
+Wenn es nicht angezeigt wird, ist es noch nicht in Ihrem Katalog: siehe [Demander un produit supplémentaire](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
 ### Ein Produkt stoppen
 
-Sie können ein Produkt deaktivieren, das Sie nicht mehr verwenden, und die Abrechnung endet gleichzeitig.
+Sie können ein Produkt deaktivieren, das Sie nicht mehr verwenden, und die Abrechnung wird damit gestoppt.
 
-Zuvor wird eine Überprüfung durchgeführt: Wenn noch Ressourcen verbraucht werden, wird die Deaktivierung abgelehnt und die Konsole zeigt Ihnen an, was den Vorgang blockiert. Löschen Sie diese Ressourcen und wiederholen Sie den Vorgang.
+Vorher wird eine Überprüfung durchgeführt: Wenn noch Ressourcen verbraucht werden, wird die Deaktivierung abgelehnt und die Konsole zeigt an, was blockiert. Löschen Sie diese Ressourcen und wiederholen Sie den Vorgang.
 
-Dies dient als Schutz: Er verhindert, dass ein noch genutzter Dienst gestoppt und die zugehörigen Daten verloren gehen.
+Dies ist ein Schutzmechanismus: Er verhindert, dass ein noch genutzter Service unterbrochen wird und Daten verloren gehen.
 
 ### Eine IP-Adresse hinzufügen
 
-Das **Hinzufügen** erfolgt über die Konsole unter **Administration > Zugriff**. Die Seite listet die zugelassenen öffentlichen Adressen auf; mit der Schaltfläche **« IP-Adresse hinzufügen »** wird eine neue Adresse in CIDR-Notation mit einer Beschreibung hinzugefügt.
+Das **Hinzufügen** erfolgt über die Konsole, unter **Administration > Zugriff**. Die Seite listet die autorisierten öffentlichen Adressen auf; der Button **„IP-Adresse hinzufügen"** deklariert eine neue in CIDR-Notation, mit einer Beschreibung.
 
-Sie benötigen die Berechtigung `console_public_access_read`, um die Liste einzusehen, und `console_public_access_write`, um sie zu ergänzen.
+Sie benötigen das Recht `console_public_access_read`, um die Liste einzusehen, und `console_public_access_write`, um sie zu ergänzen.
 
-Rechnen Sie mit einer **Wartezeit von etwa zehn Minuten**, bis die neue Adresse wirksam wird.
+Rechnen Sie mit etwa **zehn Minuten**, bis die neue Adresse wirksam ist.
 
-:::caution[Diese Liste gilt für Ihre gesamte Organisation]
-Es gibt nur eine einzige Liste für die gesamte Organisation. Die Seite ist von einem Tenant aus erreichbar, aber **eine dort hinzugefügte Adresse gewährt den Zugriff auf die Konsole für die gesamte Organisation**, nicht nur für diesen Tenant.
+:::caution[Diese Liste gehört zu Ihrer Organisation]
+Es gibt nur eine Liste für die gesamte Organisation. Die Seite ist über einen Tenant erreichbar, aber **eine dort hinzugefügte Adresse autorisiert den Zugriff auf die Konsole für die gesamte Organisation**, nicht nur für diesen Tenant.
 :::
 
-Das **Löschen** einer Adresse erfolgt hingegen über eine **Supportanfrage** in der Konsole. Dies ist beabsichtigt: Das Entfernen eines Zugriffs ist für die dahinter verbundenen Nutzer ein irreversibler Vorgang.
+Die **Löschung** einer Adresse erfolgt über eine **Support-Anfrage** aus der Konsole. Dies ist bewusst so gestaltet: Der Entzug eines Zugriffs ist für diejenigen, die sich dahinter anmelden, eine irreversible Operation.
 
 <img src={orgAccess} />
 
 ### Einen Verantwortlichen ändern
 
-Der Organisationsinhaber verwaltet die Benutzer und deren Berechtigungen direkt über die Konsole: siehe [Identités et accès](/console/iam).
+Der Eigentümer der Organisation verwaltet die Benutzer und deren Berechtigungen direkt über die Konsole: siehe [Identités et accès](/console/iam).
 
-Er kann seine Rechte auch an einen externen Partner oder einen Cloud Temple-Projektleiter **delegieren**: nützlich, wenn Sie den Betrieb an ein Drittanbieterunternehmen übergeben.
+Er kann seine Berechtigungen auch an einen externen Partner oder einen Cloud-Temple-Projektleiter **delegieren**: nützlich, wenn Sie den Betrieb an einen Dritten auslagern.
 
 ---
 
-## Die E-Mails, die Sie erhalten
+## Die E-Mails, die Sie erhalten {/* #les-courriels-que-vous-recevez */}
 
-Nur eine E-Mail erfordert eine Aktion von Ihrer Seite.
+Nur eine E-Mail erfordert eine Aktion von Ihnen.
 
 ### Die E-Mail zur Kontenerstellung
 
 | | |
 | --- | --- |
 | **Absender** | `shiva.support@cloud-temple.com` |
-| **Empfänger** | Der Organisationsinhaber, anschließend jeder Tenant-Inhaber, der noch kein Konto besitzt |
-| **Inhalt** | Ein Link zum Festlegen Ihres Passworts und zur Aktivierung des zweiten Faktors (OTP) |
-| **Wann** | Einige Minuten nach der Erstellung |
+| **Empfänger** | Der Eigentümer der Organisation, dann jeder Tenant-Eigentümer, der noch kein Konto hat |
+| **Inhalt** | Ein Link zum Festlegen Ihres Passworts und zur Aktivierung Ihres zweiten Faktors (OTP) |
+| **Wann** | Wenige Minuten nach der Erstellung |
 | **Gültigkeit** | **96 Stunden** |
 
 :::warning[Link abgelaufen?]
-Nach Ablauf von 96 Stunden funktioniert der Link nicht mehr. Dies ist eine Sicherheitsmaßnahme und kein Ausfall.
+Nach 96 Stunden funktioniert der Link nicht mehr. Dies ist eine Sicherheitsmaßnahme, kein Fehler.
 
-Schreiben Sie an **`shiva.support@cloud-temple.com`** : wir senden Ihnen einen neuen zu.
+Schreiben Sie an **`shiva.support@cloud-temple.com`**: Wir senden Ihnen einen neuen zu.
 
-Dies ist der einzige zu diesem Zeitpunkt nutzbare Kanal: Ohne Zugriff auf die Konsole können Sie dort noch keinen Supportantrag stellen.
+Dies ist der einzige verfügbare Kanal zu diesem Zeitpunkt: Ohne Zugriff auf die Konsole können Sie dort noch keine Anfrage stellen.
 :::
 
 :::note[Nichts erhalten?]
-Überprüfen Sie Ihren Spam-Ordner: Die Nachricht wird manchmal gefiltert. Sie wird von **`shiva.support@cloud-temple.com`** gesendet : erlauben Sie diese Adresse in Ihrem E-Mail-Programm. Wenn Sie innerhalb der folgenden Stunde nichts erhalten haben, kontaktieren Sie uns unter derselben Adresse.
+Prüfen Sie Ihren Spam-Ordner: Die Nachricht wird manchmal gefiltert. Sie wird von **`shiva.support@cloud-temple.com`** gesendet: Erlauben Sie diese Adresse in Ihrem E-Mail-Programm. Falls Sie innerhalb der folgenden Stunde nichts erhalten haben, kontaktieren Sie uns unter derselben Adresse.
 :::
 
 ---
 
-## Die Produkte
+## Die Produkte {/* #les-produits */}
 
 ### Was Sie selbst aktivieren
 
-Kein Produkt wird standardmäßig aktiviert, weder bei der Erstellung Ihrer Organisation noch bei der eines Tenants. Vier Produkte sind jedoch **verfügbar** in Ihrer Konsole direkt nach der Anmeldung: Sie aktivieren sie selbst auf dem Tenant Ihrer Wahl. Sie werden **nutzungsabhängig abgerechnet**, ohne Mindestmengenverpflichtung und ohne zu verhandelnde Preisstufen: Sie zahlen nur das, was Sie tatsächlich verbrauchen.
+Kein Produkt wird standardmäßig aktiviert, weder bei der Erstellung Ihrer Organisation noch bei der eines Tenants. Vier Produkte sind hingegen in Ihrer Console bereits ab der Eröffnung **verfügbar**: Sie aktivieren sie selbst auf dem Tenant Ihrer Wahl. Sie werden **nach Nutzung abgerechnet**, ohne Volumenverpflichtung oder zu verhandelnde Stufen: Sie zahlen nur, was Sie verbrauchen.
 
-| Produkt | Verwendungszweck | Mehr erfahren |
+| Produkt | Wofür es dient | Weitere Informationen |
 | --- | --- | --- |
-| **VM Instances** | Virtuelle Maschinen nach Bedarf | [Documentation](/public_cloud/vm_instances) |
-| **VPC** | Ein privates virtuelles Netzwerk | [Documentation](/network/vpc) |
+| **VM Instances** | Virtuelle Maschinen auf Abruf | [Documentation](/public_cloud/vm_instances) |
+| **VPC** | Ein virtuelles privates Netzwerk | [Documentation](/network/vpc) |
 | **LLMaaS** | Souveräne KI-Modelle | [Documentation](/llmaas) |
 | **Object Storage** | S3-kompatibler Speicher | [Documentation](/storage/oss) |
 
-### Der Rest des Katalogs
+### Der restliche Katalog
 
-Diese Produkte werden im Rahmen Ihres Vertrags mit Ihrem Vertriebskontakt freigeschaltet:
+Diese Produkte werden im Rahmen Ihres Vertrags mit Ihrem Vertriebspartner geöffnet:
 
 - [IaaS VMware](/iaas_vmware) und [IaaS OpenSource](/iaas_opensource)
 - [Bare metal](/iaas_bare-metal)
 - [PaaS OpenShift](/paas_openshift) und [Kubernetes managé](/managed_kubernetes)
-- Managed Datenbanken : [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
+- Verwaltete Datenbanken: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
 - [Bastion](/bastion)
 - [Housing](/housing)
 - [Backbone privé](/network/private_backbone) und [Internet](/network/internet)
 - [Marketplace](/marketplace)
 
-Übersicht : [nos produits](/managedproducts_overview).
+Übersicht: [nos produits](/managedproducts_overview).
 
 ---
 
-## Ein zusätzliches Produkt anfordern
+## Ein zusätzliches Produkt anfordern {/* #demander-un-produit-supplémentaire */}
 
-Das gewünschte Produkt wird nicht in Ihrer Konsole angezeigt? Es ist noch nicht in Ihrem Katalog enthalten.
+Das Produkt, das Sie wünschen, erscheint nicht in Ihrer Konsole? Es befindet sich noch nicht in Ihrem Katalog.
 
-1. Erstellen Sie in der Konsole eine **Supportanfrage**
-2. Geben Sie das betroffene **Produkt** sowie das voraussichtliche Volumen an, falls bekannt
-3. Wir melden uns bei Ihnen bezüglich der Konditionen
-4. Nach der Freigabe wird das Produkt in Ihrer Konsole angezeigt
-5. Sie können es für einen oder mehrere Tenants aktivieren
+1. Erstellen Sie aus der Konsole heraus eine **Support-Anfrage**
+2. Geben Sie das betreffende **Produkt** und das geplante Volumen an, sofern Sie es kennen
+3. Wir melden uns bei Ihnen mit den Bedingungen
+4. Sobald es genehmigt wurde, erscheint das Produkt in Ihrer Konsole
+5. Sie können es auf einem oder mehreren Tenants aktivieren
 
 <img src={supportSelectProduct} />
 
-### Support-Level wechseln
+### Supportstufe ändern
 
-Es gibt drei Stufen, die auf [unserer Website](https://www.cloud-temple.com/produits/niveaux-de-support) dargestellt werden.
+Es gibt drei Stufen, vorgestellt auf [unserer Website](https://www.cloud-temple.com/produits/niveaux-de-support).
 
-Sie können das Support-Level herauf- oder herabstufen: Stellen Sie dazu eine Anfrage über den Support in der Konsole oder wenden Sie sich an Ihren Vertriebsansprechpartner.
+Sie können die Stufe erhöhen oder senken: Stellen Sie die Anfrage über den Support aus der Konsole heraus oder an Ihren zuständigen Vertriebsmitarbeiter.
 
 ---
 
 ## Häufig gestellte Fragen
 
 **Wie lange dauert die Erstellung einer Umgebung?**
-Einige Minuten, in allen drei Fällen. Die Erstellung erfolgt automatisch, sowohl bei Ihrer ersten Anmeldung als auch für eine neue Umgebung.
+Einige Minuten, in allen drei Fällen. Die Erstellung erfolgt automatisch, sowohl bei Ihrem ersten Zugang als auch bei einer neuen Umgebung.
 
 **Wie viele Tenants kann ich erstellen?**
-So viele wie erforderlich, innerhalb der Rahmenbedingungen Ihres Vertrags.
+So viele wie nötig, innerhalb der Bedingungen Ihres Vertrags.
 
 **Mein Projekt enthält Gesundheitsdaten oder sensible Daten. Kann ich mich online registrieren?**
-Ja. Geben Sie dies im Formular an: Ihre Organisation wird wie gewohnt erstellt, und unsere Teams unterstützen Sie bei der Aktivierung der betreffenden Dienste.
+Ja. Geben Sie dies im Formular an: Ihre Organisation wird normal erstellt, und unsere Teams begleiten Sie bei der Aktivierung der betreffenden Dienste.
 
-**Kann ich die Verwaltung an einen Dienstleister übergeben?**
-Ja. Der Inhaber der Organisation kann seine Rechte an einen externen Partner oder einen Cloud Temple-Projektleiter delegieren.
+**Kann ich die Verwaltung an einen Dienstleister delegieren?**
+Ja. Der Eigentümer der Organisation kann seine Rechte an einen externen Partner oder an einen Cloud-Temple-Projektleiter delegieren.
 
-**Ich habe eine IP-Adresse vergessen und kann mich nicht mehr anmelden.**
-Wenn ein Kollege in Ihrer Organisation noch Zugriff auf die Konsole hat, kann er die Adresse unter **Administration > Zugriff** hinzufügen. Wenn niemand mehr darauf zugreifen kann, schreiben Sie an **`shiva.support@cloud-temple.com`**: Dies ist der Notfallkanal, wenn die Konsole nicht mehr erreichbar ist.
+**Ich habe eine IP-Adresse vergessen, ich kann mich nicht mehr anmelden.**
+Wenn ein Kollege Ihrer Organisation noch Zugriff auf die Konsole hat, fügt er die Adresse über **Administration > Zugriff** hinzu. Wenn niemand mehr darauf zugreifen kann, schreiben Sie an **`shiva.support@cloud-temple.com`**: Das ist der Notkanal, wenn die Konsole nicht erreichbar ist.
 
-**Ich habe gerade ein Produkt aktiviert, sehe es aber noch nicht.**
-Bitte warten Sie einige Minuten. Sollte es weiterhin nicht angezeigt werden, kontaktieren Sie den Support.
+**Ich habe gerade ein Produkt aktiviert, ich sehe es noch nicht.**
+Bitte warten Sie einige Minuten. Wenn es immer noch nicht erscheint, kontaktieren Sie den Support.
 
 ---
 
-## Weiterführende Informationen
+## Mehr erfahren
 
 <div class="card-grid">
   <div class="card">
-    <h3>Konsole kennenlernen</h3>
-    <p>Umfassender Überblick über die Oberfläche: Tenants, Benutzer, Zugriffsrechte, Kosten.</p>
+    <h3>Einführung in die Konsole</h3>
+    <p>Ein vollständiger Überblick über die Oberfläche: Tenants, Benutzer, Zugriffe, Kosten.</p>
     <a href="./console_quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
   <div class="card">
-    <h3>Identitäten und Zugriffsverwaltung</h3>
-    <p>Laden Sie Ihre Mitarbeiter ein und weisen Sie ihnen Tenant-spezifische Berechtigungen zu.</p>
+    <h3>Identitäten und Zugriffe</h3>
+    <p>Laden Sie Ihre Mitarbeiter ein und weisen Sie ihnen Berechtigungen zu, Tenant für Tenant.</p>
     <a href="./iam" class="card-link">IAM erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Ressourcen bestellen</h3>
-    <p>Stellen Sie Ihre ersten Ressourcen bereit und verfolgen Sie deren Verfügbarkeit.</p>
-    <a href="./orders" class="card-link">Bestellungen anzeigen &rarr;</a>
+    <p>Bereitstellen Sie Ihre ersten Ressourcen und verfolgen Sie deren Verfügbarkeit.</p>
+    <a href="./orders" class="card-link">Bestellungen ansehen &rarr;</a>
   </div>
   <div class="card">
     <h3>Abrechnung</h3>
@@ -334,13 +334,13 @@ Bitte warten Sie einige Minuten. Sollte es weiterhin nicht angezeigt werden, kon
     <a href="./billing/concepts" class="card-link">Zum Modul wechseln &rarr;</a>
   </div>
   <div class="card">
-    <h3>Gemeinsame Verantwortung</h3>
+    <h3>Geteilte Verantwortung</h3>
     <p>Was Cloud Temple betreibt und was in Ihrer Verantwortung liegt.</p>
     <a href="../shared-responsibility" class="card-link">Modell lesen &rarr;</a>
   </div>
   <div class="card">
     <h3>Verpflichtungen und SLA</h3>
-    <p>Servicelevels, Verfügbarkeit und vertragliche Bedingungen.</p>
-    <a href="../contracts" class="card-link">Verpflichtungen einsehen &rarr;</a>
+    <p>Service-Level, Verfügbarkeit und vertragliche Bedingungen.</p>
+    <a href="https://www.cloud-temple.com/contracts" class="card-link">Verpflichtungen einsehen &rarr;</a>
   </div>
 </div>

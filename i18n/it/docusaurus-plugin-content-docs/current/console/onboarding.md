@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-description: "Crea la tua organizzazione, configura i tuoi ambienti e attiva i tuoi prodotti: il processo di configurazione sulla piattaforma Cloud Temple, dalla registrazione al primo deployment."
+description: "Crea la tua organizzazione, apri i tuoi ambienti e attiva i tuoi prodotti. La configurazione sulla piattaforma Cloud Temple, dall'iscrizione al primo deployment."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
@@ -14,7 +14,7 @@ import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_produ
 
 Con Cloud Temple, non aspetti il tuo cloud: lo crei.
 
-Crei la tua organizzazione tramite un modulo online, in pochi minuti. I tuoi ambienti vengono quindi creati con un clic dalla Console. Puoi attivare e disattivare prodotti in completa autonomia, fatturati in base all'utilizzo. Il tutto su un'infrastruttura sovrana, gestita in Francia. La Console indica, tenant per tenant e prodotto per prodotto, ciò che rientra nella qualificazione **SecNumCloud**.
+Crei la tua organizzazione tramite un modulo online, in pochi minuti. I tuoi ambienti vengono poi creati con un clic dalla Console. Puoi attivare e disattivare prodotti in completa autonomia, con fatturazione a consumo. Il tutto su un'infrastruttura sovrana, operata in Francia. La Console segnala, tenant per tenant e prodotto per prodotto, ciò che rientra nella qualificazione **SecNumCloud**.
 
 <div class="cert-row cert-row--doc">
   <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
@@ -24,12 +24,12 @@ Crei la tua organizzazione tramite un modulo online, in pochi minuti. I tuoi amb
   <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
 </div>
 
-## Cosa ottieni iscrivendoti
+## Ciò che ottieni iscrivendoti
 
 - **Senza attese** : basta un modulo. La tua organizzazione viene creata automaticamente, in pochi minuti, senza intervento dei nostri team.
 - **Senza impegno di volume** : i prodotti in self-service sono fatturati in base all'utilizzo.
-- **Senza addendum** : apri nuovi ambienti con il tuo contratto esistente, nelle condizioni da esso previste.
-- **Sovrano per progettazione** : infrastruttura gestita in Francia e un perimetro di qualificazione **SecNumCloud** identificato nella Console.
+- **Senza addendum** : apri nuovi ambienti sotto il tuo contratto esistente, nelle condizioni che esso prevede.
+- **Sovrano per costruzione** : infrastruttura operata in Francia, e un perimetro di qualificazione **SecNumCloud** identificato nella Console.
 
 ## I tre percorsi
 
@@ -39,17 +39,17 @@ Questa pagina descrive questa configurazione, dall'inizio alla fine.
   <div class="card">
     <h3>Creare la vostra organizzazione</h3>
     <p>Il modulo di registrazione online e ciò che viene attivato in background.</p>
-    <a href="#percorso-1-creare-la-vostra-organizzazione" class="card-link">Inizia &rarr;</a>
+    <a href="#parcours-1-créer-votre-organisation" class="card-link">Inizia &rarr;</a>
   </div>
   <div class="card">
     <h3>Aggiungere un ambiente</h3>
     <p>Un nuovo tenant dalla Console, in pochi minuti e in autonomia.</p>
-    <a href="#percorso-2-aggiungere-un-ambiente" class="card-link">Scopri come &rarr;</a>
+    <a href="#parcours-2-ajouter-un-environnement" class="card-link">Scopri come &rarr;</a>
   </div>
   <div class="card">
     <h3>Fare evolvere un ambiente</h3>
     <p>Attivare un prodotto, aprire un accesso, delegare la gestione a un terzo.</p>
-    <a href="#percorso-3-fare-evolvere-un-ambiente" class="card-link">Esplora &rarr;</a>
+    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Esplora &rarr;</a>
   </div>
 </div>
 
@@ -57,109 +57,109 @@ Questa pagina descrive questa configurazione, dall'inizio alla fine.
 
 L'intera piattaforma si basa su due livelli.
 
-**La vostra organizzazione** siete voi: la vostra azienda. Su di essa è registrato il contratto e la fatturazione.
+**La tua organizzazione**, sei tu: la tua azienda. Essa gestisce il tuo contratto e la tua fatturazione.
 
-**Un tenant** è un ambiente di lavoro all'interno della vostra organizzazione. È possibile averne più di uno, isolati gli uni dagli altri.
+**Un tenant** è un ambiente di lavoro all'interno della tua organizzazione. Puoi averne più di uno, isolati tra loro.
 
 ```
-La vostra organizzazione
-├── Tenant «production»
-├── Tenant «recette»
-└── Tenant «lab»
+Votre organisation
+├── Tenant « production »
+├── Tenant « recette »
+└── Tenant « lab »
 ```
 
-Nello specifico: firmate **un** contratto e create i vostri ambienti nelle condizioni da esso previste, senza mai mescolare i dati tra di essi. Creare un ambiente di test, isolare una filiale o allestire un laboratorio non richiede alcun addendum contrattuale.
+Concretamente: firmi **un** contratto e apri i tuoi ambienti nelle condizioni che esso prevede, senza mai mescolare i tuoi dati tra loro. Separare un ambiente di test, isolare una filiale o creare un lab non richiede alcuna modifica contrattuale.
 
-Due ruoli ricevono gli accessi:
+Due ruoli ricevono degli accessi:
 
 - il **proprietario dell'organizzazione** accede a tutto e invita gli altri utenti
-- il **proprietario di un tenant** accede a questo ambiente
+- il **proprietario di un tenant** accede a quell'ambiente
 
-Può trattarsi della stessa persona.
+Può essere la stessa persona.
 
 ---
 
 ## Percorso 1. Creare la vostra organizzazione
 
-Questo è il vostro punto di accesso alla piattaforma. Si verifica una sola volta e viene eseguito online.
+Questo è il vostro punto di ingresso sulla piattaforma. Avviene solo una volta e si svolge online.
 
 ### Il modulo di registrazione
 
-La vostra configurazione inizia con un **modulo di registrazione online**, a cui il vostro referente Cloud Temple vi fornirà l'accesso.
+La vostra configurazione inizia con un **modulo di registrazione online**, a cui il vostro interlocutore Cloud Temple vi comunica l'accesso.
 
-È breve e si compila in un solo passaggio. Vi richiede quattro informazioni.
+È breve e si compila in un'unica volta. Vi chiede quattro cose.
 
-**Chi siete.** Il nome della vostra organizzazione, la sua forma giuridica, il paese di stabilimento e il numero SIREN.
+**Chi siete.** Il nome della vostra organizzazione, la sua forma giuridica, il suo paese di stabilimento e il suo numero SIREN.
 
-**Chi gestirà la piattaforma.** Nome, cognome e indirizzo email professionale della persona che sarà **proprietaria dell'organizzazione**. Sarà questa persona a ricevere le credenziali di accesso e a invitare successivamente i propri collaboratori.
+**Chi gestirà la piattaforma.** Il nome, il cognome e l'indirizzo e-mail professionale della persona che sarà **proprietaria dell'organizzazione**. Sarà lei a ricevere gli accessi e a invitare successivamente i propri collaboratori.
 
-**Cosa vi inserirete.** Il vostro settore di attività e la natura dei dati che il vostro progetto elaborerà: dati sanitari, dati personali, dati finanziari, dati sensibili.
+**Cosa ci inserirete.** Il vostro settore di attività e la natura dei dati che il vostro progetto elabora: dati sanitari, dati personali, dati finanziari, dati sensibili.
 
-**Da dove vi connetterete.** Gli indirizzi IP pubblici autorizzati ad accedere alla vostra Console.
+**Da dove vi connetterete.** Gli indirizzi IP pubblici autorizzati a raggiungere la vostra Console.
 
-:::caution[Gli indirizzi IP non sono facoltativi]
+:::caution[Les adresses IP ne sont pas optionnelles]
 Solo gli indirizzi che dichiarerete potranno accedere alla Console.
 
-Ricordatevi di includere **tutti** i vostri siti e le uscite VPN. Un'omissione non è definitiva: l'elenco potrà essere successivamente aggiornato autonomamente dalla Console.
+Ricordate di includere **tutti** i vostri siti e le vostre uscite VPN. Un'omissione non è definitiva: l'elenco viene successivamente arricchito dalla Console, in autonomia.
 :::
 
-Concluderete attestando di essere autorizzati a impegnare la vostra organizzazione e accettando le **[conditions générales](/contracts)**.
+Concludete attestando di essere abilitati a impegnare la vostra organizzazione e accettando le **[conditions générales](https://www.cloud-temple.com/contracts)**.
 
-### Cosa succede successivamente
+### Cosa succede dopo
 
-Tutto è automatico. La vostra organizzazione viene creata in base alle informazioni che avete inserito e il vostro spazio viene configurato nei minuti successivi : la vostra directory delle identità, il vostro primo ambiente, i vostri accessi.
+Tutto è automatico. La tua organizzazione viene creata a partire dalle informazioni che hai inserito e il tuo spazio viene costruito nei minuti successivi: il tuo directory delle identità, il tuo primo ambiente, i tuoi accessi.
 
-Non è necessario compiere alcuna azione durante questo periodo.
+Non devi effettuare alcuna operazione durante questo tempo.
 
-:::tip[Questo primo ambiente viene fornito vuoto]
-L'ambiente creato dalla vostra registrazione non ha **nessun prodotto attivato** : viene configurato dal nostro sistema automatizzato, senza modulo, quindi senza possibilità di selezione. È una scelta deliberata: non inizierà alcuna fatturazione finché non attiverete personalmente un prodotto.
+:::tip[Questo primo ambiente arriva vuoto]
+L'ambiente creato dalla tua registrazione non ha **nessun prodotto attivato**: viene montato dalla nostra automazione, senza modulo, quindi senza selezione possibile. È deliberato: nulla inizia a essere fatturato finché non hai attivato tu stesso un prodotto.
 
-I quattro prodotti in self-service sono **disponibili** nella vostra Console fin dall'apertura. Disponibile non significa attivato : li attivate quando lo decidete, vedere [Les produits](#i-prodotti).
+I quattro prodotti in self-service sono **disponibili** nella tua Console sin dall'apertura. Disponibile non significa attivato: li attivi quando lo decidi, vedere [Les produits](#les-produits).
 :::
 
-### Cosa riceverai
+### Ciò che ricevi
 
-Un'e-mail di **creazione account**, indirizzata al proprietario designato. In essa imposterai la tua password e attiverai il secondo fattore di autenticazione.
+Un'email di **creazione dell'account**, indirizzato al proprietario designato. In esso definisci la tua password e attivi il tuo secondo fattore di autenticazione.
 
-Dettagli: [Le e-mail che ricevi](#le-e-mail-che-ricevi).
+Dettagli: [Les courriels que vous recevez](#les-courriels-que-vous-recevez).
 
 ### Sei connesso
 
-Accedi alla Console all'indirizzo [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Puoi quindi invitare i tuoi collaboratori e assegnare loro dei diritti: vedi [Identità e accessi](/console/iam).
+Arrivi sulla Console, all'indirizzo [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Puoi quindi invitare i tuoi collaboratori e assegnare loro dei diritti: vedi [Identités et accès](/console/iam).
 
 <img src={shivaLogin} />
 
 <img src={shivaHome} />
 
 :::tip[E la parte contrattuale?]
-Non ti impedisce di procedere. Le informazioni amministrative e di fatturazione: dati di fatturazione, modalità di pagamento e riferimento dell'ordine di acquisto vengono completate in parallelo con il tuo referente Cloud Temple. Non è necessario attendere che vengano finalizzate per iniziare a utilizzare la piattaforma.
+Non ti blocca. Le informazioni amministrative e di fatturazione: coordinate di fatturazione, modalità di pagamento, riferimento dell'ordine di acquisto vengono completate in parallelo, con il tuo referente Cloud Temple. Non devi aspettare che vengano finalizzate per prendere in mano la piattaforma.
 :::
 
 ---
 
 ## Percorso 2. Aggiungere un ambiente
 
-Hai già un'organizzazione e desideri un nuovo ambiente, per un ambiente di test, un nuovo progetto o una filiale.
+Avete già un'organizzazione e desiderate un nuovo ambiente, per un test, un nuovo progetto o una filiale.
 
-**Esegui tutto dalla Console, secondo le condizioni del tuo contratto. Non è necessario alcun contatto con il nostro supporto.**
+**Effettuate tutto dalla Console, nelle condizioni del vostro contratto. Non è necessaria alcuna richiesta da parte nostra.**
 
-### I passaggi
+### Le passaggi
 
-1. Dalla Console, creare un **nuovo tenant** dalla scheda **Tenants**.
-2. Assegnargli un **nome** significativo: *produzione*, *test*, il nome di un progetto.
-3. Il creatore del tenant ne diventa automaticamente il proprietario. Potrà aggiungere altri responsabili successivamente, tramite la scheda **Utenti**, una volta connesso al tenant.
-4. Selezionare i **prodotti** da attivare.
+1. Dalla Console, create un **nuovo tenant** dalla scheda **Tenants**.
+2. Assegnategli un **nome** significativo: *production*, *staging*, il nome di un progetto.
+3. Il creatore del tenant ne diventa proprietario di default. Potrà aggiungere altri responsabili in seguito, tramite la scheda **Utenti**, una volta connesso al tenant.
+4. Scegliete i **prodotti** da attivare.
 
 <img src={tenantNew} />
 
-### Cosa succede successivamente
+### Cosa succede in seguito
 
-Il tuo ambiente viene configurato automaticamente in pochi minuti. Non devi fare nulla.
+Il tuo ambiente viene costruito automaticamente in pochi minuti. Non devi fare nulla.
 
-Se il proprietario del tenant non dispone ancora di un account, riceverà l'email per la creazione dell'account. Se ne possiede già uno, accederà al nuovo ambiente senza necessità di un nuovo invito.
+Se il proprietario del tenant non ha ancora un account, riceve la sua e-mail di creazione account. Se ne ha già uno, accede al nuovo ambiente senza nuova invito.
 
-:::tip[Nessun prodotto è attivato automaticamente]
-Selezioni i prodotti del tenant **già nel modulo di creazione** (il passaggio 4 sopra) e puoi modificare questo perimetro in qualsiasi momento. Nessun prodotto viene abilitato senza che tu lo abbia selezionato: paghi solo ciò che consumi.
+:::tip[Niente viene attivato di default]
+Scegli i prodotti del tenant **fin dal modulo di creazione** (il passaggio 4 sopra), e puoi modificare questo perimetro in qualsiasi momento. Nessun prodotto viene attivato senza che tu lo abbia selezionato: paghi solo ciò che consumi.
 :::
 
 ---
@@ -170,35 +170,35 @@ Le vostre esigenze cambiano. Ecco come fare evolvere un ambiente esistente.
 
 ### Attivare un prodotto
 
-Se il prodotto fa parte del vostro catalogo, viene visualizzato nella Console: **attivatelo in completa autonomia** sul tenant interessato. Attendete alcuni minuti prima che sia utilizzabile.
+Se il prodotto fa parte del vostro catalogo, viene visualizzato nella Console : **attivatelo in completa autonomia** sul tenant interessato. Aspettate alcuni minuti prima che sia utilizzabile.
 
-Dall'elenco dei vostri tenant, l'azione **« Modifica prodotti »** apre il catalogo. Selezionate quelli che volete attivare, deselezionate quelli che volete disattivare, quindi **Salva**.
+Dall'elenco dei vostri tenant, l'azione **« Modifica i prodotti »** apre il catalogo. Spuntate quelli che volete attivare, deselezionate quelli che volete disattivare, poi **Salvate**.
 
-Se non viene visualizzato, significa che non è ancora presente nel vostro catalogo: vedere [Richiedere un prodotto aggiuntivo](#richiedere-un-prodotto-aggiuntivo).
+Se non viene visualizzato, significa che non è ancora presente nel vostro catalogo : vedere [Demander un produit supplémentaire](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
-### Disattivare un prodotto
+### Fermare un prodotto
 
-È possibile disattivare un prodotto che non si utilizza più e la fatturazione si interrompe di conseguenza.
+È possibile disattivare un prodotto di cui non si fa più uso e la fatturazione si interrompe di conseguenza.
 
-Viene effettuata una verifica preliminare: se le risorse sono ancora in consumo, la disattivazione viene rifiutata e la Console indica il motivo del blocco. Eliminate queste risorse, quindi riprovate.
+Viene eseguita una verifica preliminare: se delle risorse sono ancora in consumo, la disattivazione viene rifiutata e la Console indica cosa sta bloccando l'operazione. Eliminare queste risorse, quindi riprovare.
 
-Si tratta di una misura di protezione: evita di interrompere un servizio ancora in uso e di perdere i relativi dati.
+Si tratta di una misura di protezione: evita di interrompere un servizio ancora in uso e di perderne i dati.
 
 ### Aggiungere un indirizzo IP
 
-L'**aggiunta** viene effettuata dalla Console, in **Amministrazione > Accesso**. La pagina elenca gli indirizzi pubblici autorizzati; il pulsante **« Aggiungi un IP »** ne dichiara uno nuovo, in notazione CIDR, con una descrizione.
+L'**aggiunta** si effettua dalla Console, in **Amministrazione > Accesso**. La pagina elenca gli indirizzi pubblici autorizzati; il pulsante **« Aggiungi un IP »** ne dichiara uno nuovo, in notazione CIDR, con una descrizione.
 
-È necessario il permesso `console_public_access_read` per visualizzare l'elenco e `console_public_access_write` per ampliarlo.
+È necessario il diritto `console_public_access_read` per consultare l'elenco e `console_public_access_write` per arricchirlo.
 
-Prevedere circa **dieci minuti** prima che il nuovo indirizzo diventi effettivo.
+Contate circa **una decina di minuti** prima che il nuovo indirizzo diventi effettivo.
 
-:::caution[Questo elenco è relativo alla vostra organizzazione]
-Esiste un unico elenco per l'intera organizzazione. La pagina è accessibile da un tenant, ma **un indirizzo aggiunto qui autorizza l'accesso alla Console per l'intera organizzazione**, non solo per questo tenant.
+:::caution[Questa lista è quella della vostra organizzazione]
+Esiste un solo elenco per l'intera organizzazione. La pagina è raggiungibile da un tenant, ma **un indirizzo aggiunto lì autorizza l'accesso alla Console per l'intera organizzazione**, non solo per quel tenant.
 :::
 
-La **rimozione** di un indirizzo, invece, avviene tramite una **richiesta di supporto** dalla Console. È una scelta deliberata: revocare un accesso è un'operazione irreversibile per gli utenti che si connettono da tale indirizzo.
+La **rimozione** di un indirizzo, invece, passa tramite una **richiesta di supporto** dalla Console. È una scelta deliberata: revocare un accesso è un'operazione irreversibile per chi si connette dietro quell'indirizzo.
 
 <img src={orgAccess} />
 
@@ -206,77 +206,77 @@ La **rimozione** di un indirizzo, invece, avviene tramite una **richiesta di sup
 
 Il proprietario dell'organizzazione gestisce gli utenti e i loro diritti direttamente dalla Console: vedere [Identités et accès](/console/iam).
 
-Può anche **delegare** i propri diritti a un partner esterno o a un responsabile di progetto Cloud Temple: utile se si affida la gestione operativa a un terzo.
+Può anche **delegare** i propri diritti a un partner esterno o a un project manager di Cloud Temple: utile se si affida la gestione a un terzo.
 
 ---
 
-## Le e-mail che ricevi
+## Le e-mail che ricevete {/* #les-courriels-que-vous-recevez */}
 
-Solo un'e-mail richiede un'azione da parte tua.
+Un'unica e-mail richiede un'azione da parte vostra.
 
-### L'e-mail di creazione account
+### L'email di creazione account
 
 | | |
 | --- | --- |
 | **Mittente** | `shiva.support@cloud-temple.com` |
-| **Destinatari** | Il proprietario dell'organizzazione, quindi ogni proprietario di tenant che non ha ancora un account |
-| **Contenuto** | Un link per scegliere la password e attivare il secondo fattore (OTP) |
+| **Chi lo riceve** | Il proprietario dell'organizzazione, poi ogni proprietario di tenant che non ha ancora un account |
+| **Cosa contiene** | Un link per scegliere la password e attivare il secondo fattore (OTP) |
 | **Quando** | Qualche minuto dopo la creazione |
 | **Validità** | **96 ore** |
 
-:::warning[Link scaduto ?]
-Dopo 96 ore, il link non funziona più. Si tratta di una misura di sicurezza, non di un guasto.
+:::warning[Link scaduto?]
+Oltre le 96 ore, il link non funziona più. Si tratta di una misura di sicurezza, non di un guasto.
 
-Scrivete a **`shiva.support@cloud-temple.com`** : ve ne invieremo uno nuovo.
+Scrivi a **`shiva.support@cloud-temple.com`** : te ne inviamo uno nuovo.
 
-È l'unico canale utilizzabile a questo stadio: senza accesso alla Console, non potete ancora aprire una richiesta.
+È l'unico canale utilizzabile a questo stadio: senza accesso alla Console, non puoi ancora aprire una richiesta.
 :::
 
-:::note[Niente ricevuto ?]
-Controllate la cartella spam: il messaggio viene a volte filtrato. Viene inviato da **`shiva.support@cloud-temple.com`**: autorizzate questo indirizzo nella vostra casella di posta. Se non avete ricevuto nulla entro un'ora, contattateci allo stesso indirizzo.
+:::note[Niente ricevuto?]
+Controlla la posta indesiderata: il messaggio viene talvolta filtrato. Viene inviato da **`shiva.support@cloud-temple.com`** : autorizza questo indirizzo nella tua casella di posta. Se non hai ricevuto nulla entro un'ora, contattaci allo stesso indirizzo.
 :::
 
 ---
 
-## I prodotti
+## I prodotti {/* #les-produits */}
 
-### Cosa attivate voi stessi
+### Quello che attivate voi stessi
 
-Nessun prodotto è attivato automaticamente, né alla creazione della vostra organizzazione, né a quella di un tenant. Quattro prodotti sono invece **disponibili** nella vostra Console fin dall'accesso: li attivate voi stessi, sul tenant di vostra scelta. Sono **fatturati a consumo**, senza impegno sul volume né soglie da negoziare: pagate solo ciò che consumate.
+Nessun prodotto viene attivato di default, né alla creazione della vostra organizzazione, né a quella di un tenant. Quattro prodotti sono invece **disponibili** nella vostra Console sin dall'apertura: li attivate voi stessi, sul tenant di vostra scelta. Sono **fatturati in base all'utilizzo**, senza impegno di volume né soglia da negoziare: pagate solo ciò che consumate.
 
-| Prodotto | A cosa serve | Ulteriori informazioni |
+| Prodotto | A cosa serve | Maggiori informazioni |
 | --- | --- | --- |
-| **VM Instances** | Macchine virtuali a richiesta | [Documentation](/public_cloud/vm_instances) |
-| **VPC** | Una rete privata virtuale | [Documentation](/network/vpc) |
-| **LLMaaS** | Modelli di IA sovrani | [Documentation](/llmaas) |
-| **Object Storage** | Archiviazione compatibile S3 | [Documentation](/storage/oss) |
+| **VM Instances** | Macchine virtuali on demand | [Documentazione](/public_cloud/vm_instances) |
+| **VPC** | Una rete privata virtuale | [Documentazione](/network/vpc) |
+| **LLMaaS** | Modelli di IA sovrani | [Documentazione](/llmaas) |
+| **Object Storage** | Archiviazione compatibile S3 | [Documentazione](/storage/oss) |
 
 ### Il resto del catalogo
 
-Questi prodotti sono attivabili nell'ambito del vostro contratto, in collaborazione con il vostro referente commerciale:
+Questi prodotti vengono attivati nell'ambito del vostro contratto, con il vostro referente commerciale:
 
-- [IaaS VMware](/iaas_vmware) e [IaaS OpenSource](/iaas_opensource)
+- [IaaS VMware](/iaas_vmware) et [IaaS OpenSource](/iaas_opensource)
 - [Bare metal](/iaas_bare-metal)
-- [PaaS OpenShift](/paas_openshift) e [Kubernetes managé](/managed_kubernetes)
-- Database gestiti: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
+- [PaaS OpenShift](/paas_openshift) et [Kubernetes managé](/managed_kubernetes)
+- Database gestiti : [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
 - [Bastion](/bastion)
 - [Housing](/housing)
-- [Backbone privé](/network/private_backbone) e [Internet](/network/internet)
+- [Backbone privé](/network/private_backbone) et [Internet](/network/internet)
 - [Marketplace](/marketplace)
 
-Panoramica: [nos produits](/managedproducts_overview).
+Panoramica : [nos produits](/managedproducts_overview).
 
 ---
 
-## Richiedere un prodotto aggiuntivo
+## Richiedere un prodotto aggiuntivo {/* #demander-un-produit-supplémentaire */}
 
-Il prodotto che desideri non appare nella tua Console? Non è ancora presente nel tuo catalogo.
+Il prodotto che desiderate non compare nella vostra Console? Non è ancora presente nel vostro catalogo.
 
-1. Dalla Console, crea una **richiesta di supporto**
-2. Indica il **prodotto** interessato e il volume previsto, se lo conosci
-3. Ti ricontatteremo per le condizioni
-4. Una volta convalidato, il prodotto apparirà nella tua Console
-5. Puoi attivarlo su uno o più tenant
+1. Dalla Console, create una **richiesta di supporto**
+2. Indicate il **prodotto** interessato e il volume previsto, se lo conoscete
+3. Vi ricontatteremo per le condizioni
+4. Una volta validato, il prodotto comparirà nella vostra Console
+5. Potete attivarlo su uno o più tenant
 
 <img src={supportSelectProduct} />
 
@@ -284,63 +284,63 @@ Il prodotto che desideri non appare nella tua Console? Non è ancora presente ne
 
 Esistono tre livelli, presentati sul [nostro sito](https://www.cloud-temple.com/produits/niveaux-de-support).
 
-È possibile passare a un livello superiore o inferiore: effettuate la richiesta tramite il supporto dalla Console o al vostro referente commerciale.
+È possibile salire o scendere di livello: fatene richiesta tramite il supporto dalla Console, oppure al vostro referente commerciale.
 
 ---
 
 ## Domande frequenti
 
-**Quanto tempo richiede la creazione di un ambiente ?**
-Pochi minuti, in tutti e tre i casi. La creazione è automatica, sia per il primo accesso che per un nuovo ambiente.
+**Quanto tempo richiede la creazione di un ambiente?**
+Alcuni minuti, in tutti e tre i casi. La creazione è automatica, sia per il vostro primo accesso che per un nuovo ambiente.
 
-**Quanti tenant posso creare ?**
-Tanti quanti ne servono, nel rispetto delle condizioni del vostro contratto.
+**Quanti tenant posso creare?**
+Quanti ne sono necessari, nelle condizioni del vostro contratto.
 
-**Il mio progetto contiene dati sanitari o dati sensibili. Posso registrarmi online ?**
-Sì. Segnalatelo nel modulo : la vostra organizzazione verrà creata normalmente e i nostri team vi assisteranno nell'attivazione dei servizi interessati.
+**Il mio progetto contiene dati sanitari o dati sensibili. Posso iscrivermi online?**
+Sì. Segnalatelo nel modulo: la vostra organizzazione viene creata normalmente e i nostri team vi accompagneranno nell'apertura dei servizi interessati.
 
-**Posso affidare la gestione a un fornitore esterno ?**
-Sì. Il proprietario dell'organizzazione può delegare i propri diritti a un partner esterno o a un project manager di Cloud Temple.
+**Posso delegare la gestione a un fornitore esterno?**
+Sì. Il proprietario dell'organizzazione può delegare i propri diritti a un partner esterno o a un project manager Cloud Temple.
 
-**Ho dimenticato un indirizzo IP, non riesco più ad accedere.**
-Se un collega della vostra organizzazione ha ancora accesso alla Console, può aggiungere l'indirizzo da **Amministrazione > Accesso**. Se nessuno può più accedervi, scrivete a **`shiva.support@cloud-temple.com`** : è il canale di emergenza quando la Console non è accessibile.
+**Ho dimenticato un indirizzo IP, non riesco più a connettermi.**
+Se un collega della vostra organizzazione ha ancora accesso alla Console, aggiunge l'indirizzo da **Amministrazione > Accessi**. Se nessuno ha più accesso, scrivete a **`shiva.support@cloud-temple.com`**: è il canale di emergenza quando la Console è irraggiungibile.
 
-**Ho appena attivato un prodotto, ma non lo vedo ancora.**
-Attendete qualche minuto. Se non dovesse comparire, contattate il supporto.
+**Ho appena attivato un prodotto, non lo vedo ancora.**
+Aspettate qualche minuto. Se non compare ancora, contattate il supporto.
 
 ---
 
-## Per saperne di più
+## Andare oltre
 
 <div class="card-grid">
   <div class="card">
-    <h3>Introduzione alla Console</h3>
-    <p>Una panoramica completa dell'interfaccia: tenant, utenti, accessi, costi.</p>
-    <a href="./console_quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <h3>Prima presa in mano della Console</h3>
+    <p>Un tour completo dell'interfaccia: tenant, utenti, accessi, costi.</p>
+    <a href="./console_quickstart" class="card-link">Avviare il Quickstart &rarr;</a>
   </div>
   <div class="card">
     <h3>Identità e accessi</h3>
-    <p>Invita i tuoi collaboratori e assegna i loro diritti, tenant per tenant.</p>
-    <a href="./iam" class="card-link">Esplora l'IAM &rarr;</a>
+    <p>Invitate i vostri collaboratori e assegnate i loro diritti, tenant per tenant.</p>
+    <a href="./iam" class="card-link">Esplorare l'IAM &rarr;</a>
   </div>
   <div class="card">
     <h3>Ordinare risorse</h3>
-    <p>Distribuisci le tue prime risorse e monitora la loro disponibilità.</p>
-    <a href="./orders" class="card-link">Visualizza gli ordini &rarr;</a>
+    <p>Distribuite le vostre prime risorse e seguite la loro disponibilità.</p>
+    <a href="./orders" class="card-link">Vedere gli ordini &rarr;</a>
   </div>
   <div class="card">
     <h3>Fatturazione</h3>
-    <p>Monitora il tuo consumo per tenant e per prodotto, nel corso del mese.</p>
-    <a href="./billing/concepts" class="card-link">Accedi al modulo &rarr;</a>
+    <p>Seguite il vostro consumo per tenant e per prodotto, nel corso del mese.</p>
+    <a href="./billing/concepts" class="card-link">Accedere al modulo &rarr;</a>
   </div>
   <div class="card">
     <h3>Responsabilità condivise</h3>
-    <p>Cosa gestisce Cloud Temple e cosa rimane a tuo carico.</p>
-    <a href="../shared-responsibility" class="card-link">Leggi il modello &rarr;</a>
+    <p>Quello che Cloud Temple gestisce, ciò che resta a vostro carico.</p>
+    <a href="../shared-responsibility" class="card-link">Leggere il modello &rarr;</a>
   </div>
   <div class="card">
     <h3>Impegni e SLA</h3>
     <p>Livelli di servizio, disponibilità e condizioni contrattuali.</p>
-    <a href="../contracts" class="card-link">Consulta gli impegni &rarr;</a>
+    <a href="https://www.cloud-temple.com/contracts" class="card-link">Consultare gli impegni &rarr;</a>
   </div>
 </div>
