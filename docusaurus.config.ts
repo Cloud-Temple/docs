@@ -193,6 +193,11 @@ const config: Config = {
           title: 'Contractual',
           items: [
             {
+              label: 'Contractual Documents',
+              href: 'https://www.cloud-temple.com/contracts',
+              target: '_self',
+            },
+            {
               label: 'Shared Responsibility Model',
               to: '/shared-responsibility',
             },
