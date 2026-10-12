@@ -103,7 +103,7 @@ Seules les adresses que vous déclarez pourront accéder à la Console.
 Pensez à inclure **tous** vos sites et vos sorties VPN. Un oubli n'est pas définitif : la liste s'enrichit ensuite depuis la Console, en autonomie.
 :::
 
-Vous terminez en attestant que vous êtes habilité à engager votre organisation, et en acceptant les **[conditions générales](/contracts)**.
+Vous terminez en attestant que vous êtes habilité à engager votre organisation, et en acceptant les **[conditions générales](https://www.cloud-temple.com/contracts)**.
 
 ### Ce qui se passe ensuite
 
@@ -210,7 +210,7 @@ Il peut aussi **déléguer** ses droits à un partenaire externe ou à un chef d
 
 ---
 
-## Les courriels que vous recevez
+## Les courriels que vous recevez {/* #les-courriels-que-vous-recevez */}
 
 Un seul courriel demande une action de votre part.
 
@@ -238,7 +238,7 @@ Regardez vos courriers indésirables : le message est parfois filtré. Il est ex
 
 ---
 
-## Les produits
+## Les produits {/* #les-produits */}
 
 ### Ce que vous activez vous-même
 
@@ -268,7 +268,7 @@ Vue d'ensemble : [nos produits](/managedproducts_overview).
 
 ---
 
-## Demander un produit supplémentaire
+## Demander un produit supplémentaire {/* #demander-un-produit-supplémentaire */}
 
 Le produit que vous voulez n'apparaît pas dans votre Console ? Il n'est pas encore à votre catalogue.
 
@@ -341,6 +341,6 @@ Patientez quelques minutes. S'il n'apparaît toujours pas, contactez le support.
   <div class="card">
     <h3>Engagements et SLA</h3>
     <p>Niveaux de service, disponibilité et conditions contractuelles.</p>
-    <a href="../contracts" class="card-link">Consulter les engagements &rarr;</a>
+    <a href="https://www.cloud-temple.com/contracts" class="card-link">Consulter les engagements &rarr;</a>
   </div>
 </div>
