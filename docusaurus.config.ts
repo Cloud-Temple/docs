@@ -193,10 +193,6 @@ const config: Config = {
           title: 'Contractual',
           items: [
             {
-              label: 'Contractual Documents',
-              to: '/contracts',
-            },
-            {
               label: 'Shared Responsibility Model',
               to: '/shared-responsibility',
             },
