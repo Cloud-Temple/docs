@@ -247,10 +247,10 @@
       "it": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea"
     },
     "housing/concepts.md": {
-      "en": "e3ce71f562b91e34265a313d4410bdad5b70349836857b036cf386edf2d74728",
-      "de": "e3ce71f562b91e34265a313d4410bdad5b70349836857b036cf386edf2d74728",
-      "es": "e3ce71f562b91e34265a313d4410bdad5b70349836857b036cf386edf2d74728",
-      "it": "e3ce71f562b91e34265a313d4410bdad5b70349836857b036cf386edf2d74728"
+      "en": "f1157e8a60e027374d94a4a80bbe8db8684c73baf35bda1717f8dcdf23c3a661",
+      "de": "f1157e8a60e027374d94a4a80bbe8db8684c73baf35bda1717f8dcdf23c3a661",
+      "es": "f1157e8a60e027374d94a4a80bbe8db8684c73baf35bda1717f8dcdf23c3a661",
+      "it": "f1157e8a60e027374d94a4a80bbe8db8684c73baf35bda1717f8dcdf23c3a661"
     },
     "housing/housing.md": {
       "en": "6a5be1fdca2211fd66909921a34026fd578ab5bf5398bbd10d8ba7db739613c5",
@@ -295,10 +295,10 @@
       "it": "ea2704db25b3315a99e4bdeb594d743d88f73da8e62a9fe353088a673131f852"
     },
     "iaas_opensource/concepts.md": {
-      "en": "bc465ec35458a22da2e944ba5774c740b19e7f103f2254c0d5444a958e06d1d3",
-      "de": "bc465ec35458a22da2e944ba5774c740b19e7f103f2254c0d5444a958e06d1d3",
-      "es": "bc465ec35458a22da2e944ba5774c740b19e7f103f2254c0d5444a958e06d1d3",
-      "it": "bc465ec35458a22da2e944ba5774c740b19e7f103f2254c0d5444a958e06d1d3"
+      "en": "ae3a4b3e9aa0e4e78aa8b73d4dad788762ee96695d6fb363209dedef035a421d",
+      "de": "ae3a4b3e9aa0e4e78aa8b73d4dad788762ee96695d6fb363209dedef035a421d",
+      "es": "ae3a4b3e9aa0e4e78aa8b73d4dad788762ee96695d6fb363209dedef035a421d",
+      "it": "ae3a4b3e9aa0e4e78aa8b73d4dad788762ee96695d6fb363209dedef035a421d"
     },
     "iaas_opensource/iaas_opensource.md": {
       "en": "4d27fd397c405d991e5198494e7d40b293a2eb2223c26e7d55a4371e2c796d87",
@@ -769,10 +769,10 @@
       "it": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340"
     },
     "public_cloud/vm_instances/concepts.md": {
-      "en": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c",
-      "de": "f8c59310feb1c223378427770cf0b972ccbbaba70115917bb8aedf677c193bab",
-      "es": "f8c59310feb1c223378427770cf0b972ccbbaba70115917bb8aedf677c193bab",
-      "it": "2cb5594163c9219724c1b6b400a91c880dc0c467495f675a0e5ea3d25c99989c"
+      "en": "7efe13afe71c88bf3a6e3a6b4c25d8ed2a94f216114583039e39a587770f076a",
+      "de": "7efe13afe71c88bf3a6e3a6b4c25d8ed2a94f216114583039e39a587770f076a",
+      "es": "7efe13afe71c88bf3a6e3a6b4c25d8ed2a94f216114583039e39a587770f076a",
+      "it": "7efe13afe71c88bf3a6e3a6b4c25d8ed2a94f216114583039e39a587770f076a"
     },
     "public_cloud/vm_instances/quickstart.md": {
       "en": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
@@ -925,10 +925,10 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     },
     "public_cloud/vm_instances/faq.md": {
-      "es": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
-      "de": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
-      "en": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3",
-      "it": "b032b8d27f88de329e76cd7e4239216c93e50f187d0db4bd40acddbcc4b6d0d3"
+      "es": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
+      "de": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
+      "en": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
+      "it": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b"
     },
     "console/onboarding.md": {
       "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
@@ -949,6 +949,6 @@
       "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-10-12T16:32:19.662370",
+  "last_update": "2026-10-13T13:33:07.597466",
   "version": "2.0"
 }

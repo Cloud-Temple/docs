@@ -7,7 +7,7 @@ title: Concepts
 - __hébergement physique au 'U'__ en baie mutualisée et espace mutualisé,
 - __hébergement dédié par rack__ d'au minimum 42 'U' en espace mutualisé.
 
-La demande d'hébergement physique est réalisée par __une demande de service__ indiquant :
+Les commandes Housing prises en charge sont accessibles dans le module __Commandes (Order)__ de la console Cloud Temple : réservation d’emplacement, installation et dérackage, accompagnement technique, smart hands et câblage/décâblage. Pour les opérations non prises en charge par la console, contactez le support. La demande doit notamment préciser :
 
     Le nom de votre Organisation
     Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
@@ -39,7 +39,7 @@ Si vous souhaitez pour votre équipement bénéficier d'une puissance de 1500W, 
 
 La connectivité réseau est à souscrire en parallèle par type de port attendu et bande passante souhaitée, voici les options possibles par port réseau :
 
-- Cuivre 100MBps/1Gbps,
+- Cuivre `100MBps/1Gbps`,
 - Fibre 1Gbps/10Gbps via un module SFP fournit pour la connectivité coté Cloud Temple.
 
 Pour ces unités d'oeuvre, le refroidissement se fait nécessairement depuis la face avant de la baie, vers la face arrière, et __l'appliance prend sa connectivité réseau face avant de la baie.__

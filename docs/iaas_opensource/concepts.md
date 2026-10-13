@@ -227,7 +227,7 @@ L'offre OpenIaaS repose sur du stockage Bloc à haute performance (Fibre Channel
 | Snapshot temporaire créé durant l'export | 50 Go |
 | **Total requis durant la fenêtre de sauvegarde** | **jusqu'à 150 Go** |
 
-**Règle de dimensionnement recommandée** : prévoir **au minimum 50% d'espace libre** sur le stockage de production par rapport au volume total des VMs sauvegardées, afin de supporter cette surcharge inhérente au stockage bloc haute performance.
+**Règle de dimensionnement recommandée** : pour dimensionner prudemment le stockage de production lors de sauvegardes ou de snapshots manuels, prévoir **2,5 fois la taille de la VM**. Cette marge tient compte de la consommation nominale des snapshots ; elle ne constitue pas un coefficient général de facturation ou de capacité. Le pic de la fenêtre de sauvegarde décrit dans l’exemple ci-dessus peut atteindre **3 fois la taille du disque** : il doit être couvert par la capacité disponible, même lorsque le dimensionnement nominal retenu est de 2,5 fois.
 :::
 
 ---
@@ -383,6 +383,14 @@ Dans la vue détaillée d'un template de machine virtuelle, vous pouvez consulte
 
 Lorsque le nombre de disques virtuels est indiqué comme étant 0, cela signifie qu'il s'agit d'un template de configuration sans système d'exploitation préinstallé, vous permettant ainsi de déployer votre propre environnement personnalisé.
 
+<a id="réplication-de-machines-virtuelles"></a>
+<a id="virtual-machine-replication"></a>
+<a id="replikation-virtueller-maschinen"></a>
+<a id="réplication-de-máquinas-virtuales"></a>
+<a id="replicazione-di-macchine-virtuali"></a>
+
+<a id="vm-replication"></a>
+
 ## Réplication de machines virtuelles
 
 La __réplication de machines virtuelles__ de Cloud Temple garantit la protection et la continuité de vos données critiques grâce à une copie automatisée de vos environnements vers une zone de disponibilité distincte. Cette fonctionnalité, intégrée nativement à le produit IaaS Open Source, répond aux exigences les plus strictes de continuité d'activité et de reprise après sinistre.
@@ -482,6 +490,8 @@ __Remarque importante :__
 
 *La réplication ne remplace pas une stratégie de sauvegarde complète. Elle constitue un complément essentiel pour assurer la continuité d'activité en cas d'incident majeur sur votre site principal.*
 
+<a id="hochverfügbarkeit"></a>
+
 ## Haute disponibilité
 
 La haute disponibilité permet d'assurer la continuité de service des machines virtuelles (VM) en cas de défaillance d'un host physique au sein d'un pool OpenIaaS.
@@ -501,6 +511,6 @@ Chaque VM doit être configurée avec un niveau de priorité de redémarrage en 
 
   En cas de défaillance de l'hôte, la machine virtuelle sera automatiquement redémarrée dès que des ressources seront disponibles dans le pool. Les machines virtuelles configurées en mode "restart" sont traitées en priorité, avant celles configurées en mode "best-effort".
 
-#### Best-Effort  
+#### Best-Effort
 
   En cas de défaillance de l'hôte, la machine virtuelle ne sera automatiquement redémarrée que si des ressources restent disponibles après le traitement de toutes les machines virtuelles configurées en mode "restart". Le mode "Best-effort" ne fait qu'une seule tentative, donc si les ressources sont insuffisantes, la machine virtuelle ne sera pas redémarrée.

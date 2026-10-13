@@ -79,9 +79,11 @@ Tous les volumes du service VM Instances sont des **volumes Flash persistants mo
 
 ### Disque système
 
-Chaque machine virtuelle dispose d'un **disque système Flash inclus par défaut**, dont la taille dépend du système d'exploitation choisi :
+Chaque machine virtuelle dispose automatiquement d'un **disque système Flash** pour héberger le système d'exploitation. Ce disque est une ressource de stockage du service et n'est pas gratuit ; sa taille dépend du système d'exploitation choisi :
 
 - Taille : entre **15 et 100 Go** selon l'OS sélectionné.
+
+Le disque système est facturé au **Go** selon le catalogue tarifaire VM Instances. Sa création automatique avec la VM signifie qu'il est nécessaire au déploiement de l'OS, et non qu'il est inclus gratuitement.
 
 ### Volumes additionnels
 
@@ -89,6 +91,7 @@ Il est possible d'ajouter des volumes de stockage supplémentaires à chaque mac
 
 - **Taille** : de **1 à 2 048 Go** par volume
 - **Nombre maximum** : 16 volumes par VM
+- **Plafond par famille** : **2 To par VM** en Development et General Purpose ; **16 To par VM** en Enterprise
 - **Granularité** : allocation au Go
 - **Facturation** : au Go alloué, avec choix de la classe de stockage
 
@@ -118,11 +121,21 @@ Cette interface peut être connectée à deux types de réseaux Cloud Temple :
 
 Sur un réseau **VPC**, il est possible d'associer une **IP flottante** à une VM instance. Une IP flottante est une adresse IP publique que vous pouvez attacher ou détacher librement d'une instance, indépendamment de son cycle de vie.
 
+### Appliances virtuelles
+
+Les appliances virtuelles **Stormshield** et **FortiVM** sont compatibles avec la **famille Enterprise**, sous réserve du respect des prérequis techniques et du périmètre de support applicable.
+
 ## Déploiement et images
 
 Les VM Instances sont déployées depuis les **images officielles de la Marketplace Cloud Temple**. Les templates disponibles sont ceux de la [Marketplace filtrée pour OpenIaaS](https://www.cloud-temple.com/marketplace/?m_deployment%5B%5D=openiaas&post_type=marketplace). Ce catalogue d'images sélectionnées garantit des environnements testés, maintenus et prêts à l'emploi pour chaque système d'exploitation supporté.
 
 Le service supporte **Cloud-init** pour la pré-configuration automatique des instances au démarrage (injection de clés SSH, configuration réseau, scripts d'initialisation, etc.).
+
+### Migration d'un OS hors Marketplace
+
+Un système d'exploitation qui n'est pas disponible dans la Marketplace peut faire l'objet d'une migration par restauration **Veeam en mode Bare Metal Recovery**, sous réserve de validation technique. Cloud Temple garantit alors le fonctionnement de l'infrastructure VM, mais ne garantit pas le bon fonctionnement de l'OS invité, de ses applications ou des agents nécessaires lorsque ceux-ci ne sont pas installés ou configurés correctement. Le support de l'OS invité est alors limité.
+
+Une seconde méthode est prévue avec l'import de disques **VHD/VMDK**, afin de créer une VM à partir d'une image existante. Cette fonctionnalité est en développement et ciblée pour le **quatrième trimestre 2026** ; elle n'est pas disponible dans le service actuel.
 
 ## Protection des données
 

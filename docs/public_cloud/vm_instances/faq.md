@@ -35,6 +35,22 @@ dans la Console Cloud Temple avant tout engagement.
 
 Voir le [guide de démarrage](./quickstart).
 
+## Peut-on migrer une VM avec un OS qui n'est pas disponible dans la Marketplace ?
+
+Oui, une migration peut être étudiée par restauration **Veeam en mode Bare Metal Recovery**. Cette procédure permet notamment de traiter un OS qui n'est pas proposé dans le catalogue standard.
+
+Pour une VM restaurée depuis un environnement client, le support porte sur l'infrastructure VM. Le bon fonctionnement de l'OS invité, des applications et des agents nécessaires n'est pas garanti si ceux-ci ne sont pas installés ou configurés correctement. Le support de l'OS invité est alors limité.
+
+Une seconde méthode, par import de disques **VHD/VMDK**, est en développement et ciblée pour le **quatrième trimestre 2026**. Elle permettra de créer une VM à partir d'une image existante, mais n'est pas encore disponible.
+
+## Le disque système est-il inclus gratuitement ?
+
+Non. Un disque système est créé automatiquement avec chaque VM pour héberger l'OS, mais il s'agit d'une ressource de stockage facturée au **Go** selon le catalogue tarifaire VM Instances. Les ressources vCPU, RAM et stockage sont facturées séparément. Les volumes additionnels et les sauvegardes activées sont également facturés selon le catalogue applicable.
+
+## Stormshield et FortiVM sont-ils compatibles avec VM Instances ?
+
+Oui, les appliances virtuelles Stormshield et FortiVM sont compatibles avec la **famille Enterprise**, sous réserve du respect des prérequis techniques et du périmètre de support applicable.
+
 ## La réplication automatique d'une VM entre zones de disponibilité est-elle incluse ?
 
 Non. La réplication de VM n'est pas incluse par défaut dans VM Instances. Son
