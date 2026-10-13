@@ -114,4 +114,4 @@ Les services suivants s'appuient sur le Private Backbone :
 
 Les circuits dédiés sont livrés sur **deux chemins optiques diversifiés** avec un engagement minimum de **36 mois**.
 
-→ **[Tarifs officiels sur cloud-temple.com](https://www.cloud-temple.com/produits/)**
+→ **[Tarifs publics sur le site Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/)**

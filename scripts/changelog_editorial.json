@@ -415,8 +415,8 @@
       "en": "Infrastructure provisioning actions now take business roles (compute, network, VPC, bare metal…) into account in addition to order permissions"
     },
     "4.45.4|AI|ecd9eae70091": {
-      "fr": "Le montant minimum d'un crédit LLMaaS est abaissé à 100 €",
-      "en": "The minimum LLMaaS credit amount is lowered to €100"
+      "fr": "Le montant minimum d’un crédit LLMaaS évolue ; consultez le catalogue tarifaire officiel Cloud Temple : https://www.cloud-temple.com/nos-tarifs-publics/",
+      "en": "The minimum LLMaaS credit amount changes; refer to the official Cloud Temple rates: https://www.cloud-temple.com/en/our-public-rates/"
     },
     "4.46.0|HOUSING|c81f52556bb1": {
       "fr": "Les commandes Colocation sont désormais disponibles : réservation d'emplacement, installation et dérackage d'équipements",

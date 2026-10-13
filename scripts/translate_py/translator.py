@@ -35,6 +35,45 @@ class SimpleThrottler:
         self.semaphore.release()
 
 
+def localize_public_rates_links(content: str, target_lang: str) -> str:
+    """Use the English rates page only for English; retain FR elsewhere."""
+    if target_lang != "en":
+        return content
+    return re.sub(
+        r"https://www\.cloud-temple\.com/nos-tarifs-publics/(?=[\s)\"'<>]|$)",
+        "https://www.cloud-temple.com/en/our-public-rates/",
+        content,
+    )
+
+
+def preserve_fenced_code(original: str, translated: str) -> str:
+    """Keep executable examples verbatim even if the model translates them."""
+    pattern = re.compile(r"^(`{3,}|~{3,})[^\n]*\n.*?^\1[ \t]*(?=\n|$)", re.MULTILINE | re.DOTALL)
+    source_blocks = [match.group(0) for match in pattern.finditer(original)]
+    translated_blocks = list(pattern.finditer(translated))
+    if len(source_blocks) != len(translated_blocks):
+        raise ValueError("Translation changed the number of fenced code blocks")
+    source_iter = iter(source_blocks)
+    return pattern.sub(lambda _: next(source_iter), translated)
+
+
+def preserve_markdown_structure(original: str, translated: str) -> str:
+    """Preserve code, heading levels and link destinations; translate labels."""
+    translated = preserve_fenced_code(original, translated)
+    headings = re.compile(r"^(#{1,6})(?=\s+\S)", re.MULTILINE)
+    links = re.compile(r"(\]\()([^\n)]*)(\))")
+    for pattern, group in ((headings, 1), (links, 2)):
+        values = [match.group(group) for match in pattern.finditer(original)]
+        if len(values) != len(list(pattern.finditer(translated))):
+            raise ValueError("Translation changed the Markdown heading or link count")
+        source_iter = iter(values)
+        if group == 1:
+            translated = pattern.sub(lambda _: next(source_iter), translated)
+        else:
+            translated = pattern.sub(lambda match: match.group(1) + next(source_iter) + match.group(3), translated)
+    return translated
+
+
 class ContentSplitter:
     """Utilitaire pour découper le contenu en blocs traduisibles en comptant les tokens.
     
@@ -238,7 +277,20 @@ class ContentSplitter:
             else:
                 processed_blocks.append(block)
 
-        return [b for b in processed_blocks if b.strip()]
+        # Pack adjacent complete sections to avoid one API call per short heading.
+        # Existing split boundaries remain safe for fenced code blocks.
+        packed_blocks = []
+        pending = ""
+        for block in processed_blocks:
+            if not block.strip():
+                continue
+            if pending and self._count_tokens(pending + block) > self.max_tokens:
+                packed_blocks.append(pending)
+                pending = ""
+            pending += block
+        if pending:
+            packed_blocks.append(pending)
+        return packed_blocks
 
 
 class TranslationPromptGenerator:
@@ -328,6 +380,9 @@ class CloudTempleTranslator:
 
         if total_blocks == 1:
             result = await self._translate_block(blocks[0], target_lang_name, 1, 1)
+            if result.success and result.translated_text:
+                result.translated_text = localize_public_rates_links(
+                    preserve_markdown_structure(content, result.translated_text), target_lang)
             if progress_callback:
                 progress_callback(1, 1, result)
             return result
@@ -368,6 +423,9 @@ class CloudTempleTranslator:
         # Réassemblage : on utilise '\n\n' comme séparateur entre blocs sémantiques
         # car chaque bloc commence par un header ou un paragraphe distinct
         final_content = '\n\n'.join(b.strip() for b in translated_blocks) if success else None
+        if final_content is not None:
+            final_content = localize_public_rates_links(
+                preserve_markdown_structure(content, final_content), target_lang)
         error_message = '; '.join(errors) if errors else None
         
         return BlockTranslationResult(
@@ -464,7 +522,7 @@ class CloudTempleTranslator:
             "stream": False,
             "max_tokens": max_completion_tokens # Ajout du paramètre max_tokens
         }
-        
+
         headers = {
             "Authorization": f"Bearer {self.config.api_key}",
             "Content-Type": "application/json"

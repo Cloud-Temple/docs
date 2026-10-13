@@ -3,413 +3,413 @@ title: Produktneuheiten
 sidebar_position: 999
 ---
 
-# Produktneuheiten & Weiterentwicklungen
+# Produktneuheiten & Entwicklungen
 
-> Dieses Changelog enthält neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.
-> Fehlerbehebungen sind ab Version 4.50.0 enthalten.
+> Dieses Changelog listet die neuen Funktionen und signifikanten Entwicklungen der Cloud Temple-Plattform auf.
+> Bugfixes sind ab Version 4.50.0 enthalten.
 
 ## v4.52.0 — 2026-10-06
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Wiederherstellung einer virtuellen Maschine, deren Datenträger auf mehrere Datastores verteilt sind: Auswahl eines Ziel-Datastores für jeden Quell-Datastore
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Wiederherstellung einer virtuellen Maschine, deren Festplatten auf mehrere Datastores verteilt sind: Auswahl eines Ziel-Datastores für jeden Quell-Datastore
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Tab Snapshots: Identifizierung des Typs jedes Snapshots (manuell, Sicherung, Replikation, verwaist)
-- Neuplatzierung einer virtuellen Maschine: Möglichkeit, den ursprünglichen Host beizubehalten, um nur den Speicher zu migrieren, der nun auch auf einem Ein-Host-Pool verfügbar ist
-- Korrektur des Kontrollkästchens „cloud-init-Konfiguration nach dem Start löschen", das beim Bereitstellen einer virtuellen Maschine aus einer Vorlage keine Wirkung hatte
+- Reiter Snapshots: Identifizierung des Typs jedes Snapshots (manuell, Sicherung, Replikation, verwaist)
+- Neupositionierung einer virtuellen Maschine: Möglichkeit, den ursprünglichen Host beizubehalten, um nur den Speicher zu migrieren; nun auch in einem Single-Host-Pool verwendbar
+- Korrektur des Kontrollkästchens „Cloud-init-Konfiguration nach dem Start zerstören“, das bei der Bereitstellung einer VM aus einem Template keine Wirkung zeigte
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Master-Host: Entfernung der Wartungsaktionen und Angabe des Weges zu seiner Löschung (Löschung seines Pools)
-- Speicher: Wartungsmodus aktivieren und beenden für einen Block Storage über die Konsole
+- Master-Host: Entfernung der Wartungsaktionen und Hinweis auf den Weg zur Löschung (Löschung des Pools)
+- Speicher: Wartungsmodus und Beendigung des Wartungsmodus für einen Block Storage über die Konsole
 
-### [IaaS OpenSource — Backup](/iaas_opensource)
-- Sicherungsberichte: Die Ausführungen einer Richtlinie werden nach Startdatum sortiert, von der neuesten zur ältesten
-- Sicherungsberichte: Verschiedene Korrekturen auf dem Bildschirm (Aktualisierung, Sortierung und Paginierung der Ausführungen)
+### [IaaS OpenSource — Sicherung](/iaas_opensource)
+- Sicherungsberichte: Ausführungen einer Richtlinie werden nach Startdatum sortiert, von der neuesten zur ältesten
+- Sicherungsberichte: Verschiedene Korrekturen am Bildschirm (Aktualisierung, Sortierung und Paginierung der Ausführungen)
 
 ### [Marketplace](/marketplace)
-- Bereitstellung eines Images: Vorausfüllen der cloud-init-Konfiguration (user-data und Netzwerkkonfiguration), die vom Image bereitgestellt wird, vor der Bereitstellung änderbar
+- Bereitstellung eines Images: Vorbelegung der Cloud-init-Konfiguration (user-data und Netzwerkkonfiguration), die vom Image bereitgestellt wird, vor der Bereitstellung änderbar
 
 ## v4.51.0 — 2026-09-18
 
-### [Console — Organisation](/console/iam/concepts)
-- Hinzufügen einer Spalte „Typ" (SecNumCloud / Legacy) in der Tenant-Liste
-- Der Favorit eines Tenants wird nun durch ein Badge „Favorit" in der Tenant-Liste angezeigt
+### [Konsole — Organisation](/console/iam/concepts)
+- Hinzufügen einer Spalte „Typ“ (SecNumCloud / Legacy) in der Liste der Tenants
+- Die Kennzeichnung eines Tenants als Favorit wird nun durch ein Badge „Favorit“ in der Tenant-Liste angezeigt
 
 ### [Identität & Zugriff (IAM)](/console/iam)
-- Klärung der Auswirkungen der Neuregistrierung eines Benutzers: Das Bestätigungsdialogfeld gibt an, dass ihm eine neue Registrierungs-E-Mail gesendet wird
+- Klarstellung der Auswirkungen der erneuten Registrierung eines Benutzers: Das Bestätigungsdialogfeld gibt an, dass eine neue Registrierungs-E-Mail gesendet wird
 
 ### [Support](/console)
-- Neu-Anzeige des Support-Informationen-Blocks im Organisationsmodus
+- Wiederanzeige des Support-Info-Blocks im Organisationsmodus
 
 ### [Metriken](/console/metrics/concepts)
-- Korrektur der Legenden der Metrik-Diagramme der virtuellen Maschinen
+- Korrektur der Legenden der Metrikdiagramme für virtuelle Maschinen
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Korrektur des vMotion-Assistenten: Die Schaltfläche „Weiter" blieb nach einem Host-Kompatibilitätsfehler blockiert, wenn zu einem vorherigen Schritt zurückgegangen wurde
-- Weiterleitung der System-Tastenkürzel (Alt+Tab, ⌘, Esc…) an die Konsole der virtuellen Maschine im Vollbildmodus (Keyboard Lock API, Chromium-Browser)
-- Korrektur der VMware-Konsole (WMKS): Alt+Tab ließ die Alt-Taste auf der virtuellen Maschine als gedrückt gelten
+- Korrektur des vMotion-Assistenten: Die Schaltfläche „Weiter“ blieb nach einem Host-Kompatibilitätsfehler blockiert, wenn man zu einem vorherigen Schritt zurückkehrte
+- Senden von System-Tastenkombinationen (Alt+Tab, ⌘, Esc…) an die Vollbild-Konsole der virtuellen Maschine (API Keyboard Lock, Chromium-Browser)
+- Korrektur der VMware-Konsole (WMKS): Ein Alt+Tab ließ die Alt-Taste auf der Seite der virtuellen Maschine als gedrückt gelten
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Klärung der Warnung beim Verschieben eines virtuellen Datenträgers: Die zugehörigen virtuellen Maschinen werden nicht mehr als angehalten angekündigt, nur bestimmte Aktionen sind vorübergehend nicht verfügbar
+- Klarstellung der Warnung beim Verschieben einer virtuellen Festplatte: Assoziierte virtuelle Maschinen werden nicht mehr als „angehalten“ gekennzeichnet, sondern nur bestimmte Aktionen sind vorübergehend nicht verfügbar
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Pool-Details: Anzeige und Verwaltung von Block Storage aus Compute und von Hosts aus Storage (kreuzweise Tabs)
+- Detailansicht eines Pools: Anzeige und Verwaltung von Block Storage über Compute und von Hosts über Storage (kreuzverknüpfte Reiter)
 
 ## v4.50.0 — 2026-09-10
 
-### [Console](/console)
-- Aktualisierung der angezeigten Quoten-Einheiten (GiB)
+### [Konsole](/console)
+- Aktualisierung der angezeigten Quota-Einheiten (GiB)
 
-### [Console — Organisation](/console/iam/concepts)
-- Anzeige des Vorbereitungsfortschritts eines Tenants bei seiner Erstellung
+### [Konsole — Organisation](/console/iam/concepts)
+- Anzeige des Vorbereitungsstatus eines Tenants bei dessen Erstellung
 
 ### [Bestellungen](/console/orders)
-- Hinzufügen der Bestellung zur Löschung einer öffentlichen VPC-IP
-- Hinzufügen der Bestellung zur Löschung einer Private-Backbone-IP
+- Hinzufügen des Befehls zur Löschung einer öffentlichen VPC-IP
+- Hinzufügen des Befehls zur Löschung einer Private Backbone-IP
 
 ### [VPC](/network/vpc)
-- Anzeige des Konfigurationsstatus und Auswahl einer statischen IP bei Operationen an virtuellen Maschinen
-- Möglichkeit, ein VPC-Netzwerk auszuwählen und darin eine statische IP zu konfigurieren, in allen Formularen, die eine Netzwerkkonfiguration auf einer virtuellen Maschine erfordern (Erstellung, Bereitstellung, Migration, Wiederherstellung, Export)
+- Anzeige des Konfigurationsstatus und Auswahl einer statischen IP bei VM-Operationen
+- Möglichkeit, ein VPC-Netzwerk auszuwählen und darin eine statische IP zu konfigurieren in allen Formularen, die eine Netzwerkkonfiguration für eine VM erfordern (Erstellung, Bereitstellung, Migration, Wiederherstellung, Export)
 
 ## v4.49.3 — 2026-09-09
 
 ### [Bare Metal](/iaas_bare-metal)
-- Hinzufügen der Spalte „Fabric“ in der Registerkarte Netzwerk eines Bare-Metal-Servers
+- Hinzufügen der Spalte „Fabric“ im Netzwerkreiter eines Bare-Metal-Servers
 
 ## v4.49.1 — 2026-09-03
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Die Aktion „Öffentliche IP zuordnen" im Tab „Netzwerkkarten" ist ausgegraut, wenn das Gateway des VPC nicht aktiviert ist
+- Die Aktion „Öffentliche IP zuweisen“ im Reiter „Netzwerkkarten“ ist ausgegraut, wenn die VPC-Gateway nicht aktiviert ist
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Die Aktion „Öffentliche IP zuordnen" im Tab „Netzwerkkarten" ist ausgegraut, wenn das Gateway des VPC nicht aktiviert ist
+- Die Aktion „Öffentliche IP zuweisen“ im Reiter „Netzwerkkarten“ ist ausgegraut, wenn die VPC-Gateway nicht aktiviert ist
 
 ### [VM Instances](/public_cloud/vm_instances)
-- Die Aktion „Öffentliche IP zuordnen" im Tab „Netzwerkkarten" ist ausgegraut, wenn das Gateway des VPC nicht aktiviert ist
+- Die Aktion „Öffentliche IP zuweisen“ im Reiter „Netzwerkkarten“ ist ausgegraut, wenn die VPC-Gateway nicht aktiviert ist
 
 ## v4.49.0 — 2026-08-31
 
-### [Console](/console)
-- Automatischer Start des Willkommens-Tutorials bei der ersten Anmeldung eines Benutzers
-- Entfernen der Fehlerbenachrichtigungen beim Laden des Dashboards, wenn die Umgebungen nicht bereitgestellt sind
+### [Konsole](/console)
+- Automatischer Start des Willkommens-Tutorials beim ersten Login eines Benutzers
+- Entfernung von Fehlerbenachrichtigungen beim Laden des Dashboards, wenn die Umgebungen nicht bereitgestellt sind
 
-### [Console — Organisation](/console/iam/concepts)
-- Anzeige des Aktivierungspreises eines Tenants im Erstellungsmodal im Organisationsmodus
+### [Konsole — Organisation](/console/iam/concepts)
+- Anzeige des Aktivierungspreises eines Tenants im Erstellungsdialogfeld im Organisationsmodus
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Verknüpfung und Trennung einer öffentlichen IP-Adresse im Tab „Netzwerkkarten“ einer virtuellen Maschine, die mit einem VPC verbunden ist
+- Zuweisung und Trennung einer öffentlichen IP über den Reiter „Netzwerkkarten“ einer an ein VPC angeschlossenen VM
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Anzeige des Blade-Typs anstelle seiner Beschreibung in der „Klasse" der Cluster
+- Anzeige des Bladentyps anstelle der Beschreibung in der „Klasse“ der Cluster
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Die beim Ändern der Größe einer virtuellen Maschine angebotene Anzahl an vCPUs ist nun auf ihre maximale Kapazität begrenzt
-- Verknüpfung und Trennung einer öffentlichen IP-Adresse im Tab „Netzwerkkarten“ einer virtuellen Maschine, die mit einem VPC verbunden ist
+- Die Anzahl der vCPUs, die beim Ändern der Größe einer VM angeboten wird, ist nun durch ihre maximale Kapazität begrenzt
+- Zuweisung und Trennung einer öffentlichen IP über den Reiter „Netzwerkkarten“ einer an ein VPC angeschlossenen VM
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Anzeige des Blade-Typs anstelle der Beschreibung in der « Klasse » der Pools
+- Anzeige des Bladentyps anstelle der Beschreibung in der „Klasse“ der Pools
 
-### [IaaS OpenSource — Backup](/iaas_opensource)
-- Hinweis bei der Wiederherstellung, dass die ursprüngliche virtuelle Maschine nicht ersetzt wird: Es wird eine neue, mit Datum versehene virtuelle Maschine erstellt
+### [IaaS OpenSource — Sicherung](/iaas_opensource)
+- Hinweis bei der Wiederherstellung, der präzisiert, dass die ursprüngliche VM nicht ersetzt wird: Es wird eine neue, datierte VM erstellt
 
 ### [VM Instances](/public_cloud/vm_instances)
-- Ausblenden von Feldern und explizite Meldung, wenn kein Speicher verfügbar ist, beim Hinzufügen und Erweitern eines Datenträgers
-- Verknüpfung und Trennung einer öffentlichen IP-Adresse im Tab „Netzwerkkarten“ einer virtuellen Maschine, die mit einem VPC verbunden ist
-- Möglichkeit, eine benutzerdefinierte Konfiguration (vCPU und RAM frei wählbar, innerhalb der Grenzen der Instanzfamilie) bei der Erstellung, Wiederherstellung und Größenänderung einer VM-Instanz auszuwählen
+- Ausblenden der Felder und explizite Meldung, wenn kein Speicher verfügbar ist, beim Hinzufügen und Erweitern einer Festplatte
+- Zuweisung und Trennung einer öffentlichen IP über den Reiter „Netzwerkkarten“ einer an ein VPC angeschlossenen VM
+- Möglichkeit, ein benutzerdefiniertes Template (freie vCPUs und RAM, innerhalb der Grenzen der Instanzfamilie) bei der Erstellung, Wiederherstellung und Größenänderung einer VM Instance auszuwählen
 
 ### [Bare Metal](/iaas_bare-metal)
-- Anzeige des Blade-Typs anstelle der Beschreibung in der « Klasse » der Bare-Metal-Server
+- Anzeige des Bladentyps anstelle der Beschreibung in der „Klasse“ der Bare-Metal-Server
 
 ### [Netzwerk](/network/network_overview)
-- IP-Reservierung für Interconnect: Sperren von Netzwerk- und Broadcast-Adressen sowie Kennzeichnung „Reserviert“ für reservierte IP-Adressen
+- Interco-IP-Reservierung: Blockierung von Netzwerk- und Broadcast-Adressen sowie Indikator „Reserviert“ für reservierte IPs
 
 ### [VPC](/network/vpc)
-- Die Schaltfläche „Neuer VPC“ in der Liste ist nun ausgegraut, wenn das VPC-Limit erreicht ist.
+- Die Schaltfläche „Neuer VPC“ in der Liste ist nun ausgegraut, wenn das VPC-Limit erreicht ist
 
 ## v4.48.0 — 2026-08-13
 
-### [Console](/console)
-- Verbesserung der Persistenz der Sprachauswahl, die nun mit dem Benutzerprofil verknüpft ist
+### [Konsole](/console)
+- Verbesserung der Persistenz der Sprachauswahl, nun an das Benutzerprofil gebunden
 
-### [Console — Organisation](/console/iam/concepts)
-- Die Produkte eines Tenants werden nun gruppiert, je nachdem, ob sie bearbeitbar, nicht deaktivierbar oder nicht verfügbar sind, jeweils mit Angabe des Sperrgrunds.
+### [Konsole — Organisation](/console/iam/concepts)
+- Die Produkte eines Tenants werden nun danach gruppiert, ob sie änderbar, nicht deaktivierbar oder nicht verfügbar sind, mit Angabe des Sperrgrunds
 
 ### [Kostenmanager](/console/billing/concepts)
-- Der Abschnitt Kostenmanager wird auf dem Organisations-Dashboard nicht mehr angezeigt, wenn die Organisation dafür nicht berechtigt ist.
-- Anzeige einer Fehlerkarte anstelle von Kosten von 0 €, wenn der Abruf der Verbrauchskosten auf dem Organisations-Dashboard fehlschlägt.
-- Die Zeilen für Supportpläne werden nun unter « Support » in den Kosten pro Tenant zusammengefasst, anstatt unter einem Tenant « Unbekannt ».
+- Der Abschnitt Kostenmanager wird im Organisations-Dashboard nicht mehr angezeigt, wenn die Organisation dafür nicht berechtigt ist
+- Anzeige einer Fehlerkarte anstelle einer Null-Kostenanzeige, wenn die Erfassung der Verbrauchswerte im Organisations-Dashboard fehlschlägt
+- Support-Plan-Zeilen werden nun unter „Support“ in den Kosten pro Tenant zusammengefasst, anstelle eines Tenants „Unbekannt“
 
 ### [Bestellungen](/console/orders)
-- Klare Meldung, wenn bei der Bestellung einer Verfügbarkeitszone oder eines Pools nicht mehr genügend Speicherplatz für einen Speichertyp verfügbar ist.
+- Explizite Meldung, wenn nicht mehr genug Speicherplatz für einen Speichertyp verfügbar ist, bei der Bestellung einer Verfügbarkeitszone oder eines Pools
 
 ### [Support](/console)
-- Beschreibungen und Post-Incident-Berichte werden auf der Seite Incidents nun formatiert (markdown)
+- Beschreibungen und Post-Incident-Berichte werden auf der Seite „Vorfälle“ nun formatiert (Markdown) dargestellt
 - Globale Support-Nachrichten werden nun im Organisationsmodus angezeigt
 
 ### [VM Instances](/public_cloud/vm_instances)
-- Die bei der Erstellung einer VM-Instanz angezeigten geschätzten Kosten sind nun monatlich, auf Basis von 730 h/Monat.
+- Der bei der Erstellung einer VM Instance angezeigte geschätzte Kostenbetrag ist nun monatlich, basierend auf 730 h/Monat
 
 ### [VPC](/network/vpc)
-- Der VPC-Name wird nun vor dem Netzwerknamen in der Netzwerkauswahl angezeigt
-- Der VPC-Name steht nun vor dem Netzwerknamen in der Registerkarte Netzwerkadapter der virtuellen Maschinen
-- Angleichung der Farben der VPC-Typ-Labels (geteilt, dediziert) an die der Netzwerke
-- Die Option VM-Instanzen ist nun über das Formular zur Zuweisung einer statischen IP verfügbar
-- Netzwerkadapter, die bereits einer statischen IP zugeordnet sind, werden im Zuweisungsformular nun ausgegraut
+- Der VPC-Name wird nun vor dem Netzwerknamen in den Netzwerkauswahlfeldern angezeigt
+- Der VPC-Name geht dem Netzwerknamen im Reiter „Netzwerkadapter“ der virtuellen Maschinen voraus
+- Harmonisierung der Farben der VPC-Typ-Labels (gemeinsam genutzt, dediziert) mit denen der Netzwerke
+- Die Option VM Instances ist nun im Formular zur Zuweisung einer statischen IP verfügbar
+- Netzwerkkarten, die bereits einer statischen IP zugeordnet sind, sind im Zuweisungsformular ausgegraut
 
 ### [Object Storage](/storage/oss)
 - Auswahl des Adressierungsstils (path-style oder virtual-hosted) bei der Generierung eines Freigabelinks für eine Datei
-- Warnung für Buckets, deren Name nicht DNS-kompatibel ist: Nur der path-style-Zugriff ist möglich
+- Warnung bei Buckets, deren Name nicht DNS-kompatibel ist: Nur der path-style-Zugriff ist möglich
 
 ### [Marketplace](/marketplace)
-- Nur die mit dem ausgewählten Image kompatiblen Verfügbarkeitszonen werden nun bei der Bereitstellung aus dem Marketplace angeboten.
-- Der Preis eines Marketplace-Produkts, das als VM-Instanz bereitgestellt wird, gibt nun an, dass er basierend auf CPU, RAM und Speicher berechnet wird.
+- Bei der Bereitstellung über den Marketplace werden nun nur noch Verfügbarkeitszonen angeboten, die mit dem ausgewählten Image kompatibel sind
+- Der Preis eines als VM Instance bereitgestellten Marketplace-Produkts gibt nun an, dass er basierend auf CPU, RAM und Speicher berechnet wird
 
 ### [Housing (Colocation)](/housing)
-- Hinzufügen der Schnittstellentypen 1000BASE-SX und 10GBASE-SR zur Colocation-Platzbuchung
+- Hinzufügen der Schnittstellentypen 1000BASE-SX und 10GBASE-SR zur Reservierung von Colocation-Plätzen
 
 ## v4.47.0 — 2026-07-30
 
-### [Console](/console)
-- Die Swagger-Dokumentation des Moduls Commandes ist jetzt verfügbar
+### [Konsole](/console)
+- Die Swagger-Dokumentation des Moduls Bestellungen ist nun verfügbar
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Beim Bereitstellen einer virtuellen Maschine werden nunmehr nur noch die bereitstellbaren Katalogelemente (OVF und VM-Vorlagen) angeboten
+- Bei der Bereitstellung einer VM werden nun nur noch deploybare Elemente des Katalogs (OVF und VM-Templates) angeboten
 
 ### [VM Instances](/public_cloud/vm_instances)
-- Die geschätzten Kosten (stündlich) werden nun bei der Instanzerstellung angezeigt, mit einer Aufschlüsselung nach Komponente (vCPU, RAM, Festplatten)
+- Der geschätzte (stündliche) Kostenbetrag wird nun bei der Erstellung einer Instanz angezeigt, mit Aufschlüsselung nach Komponenten (vCPU, RAM, Festplatten)
 
 ### [VPC](/network/vpc)
-- Bei der Bestellung eines neuen VPC können Sie nun zwischen einer Bereitstellung in einer dedizierten Umgebung (Ihre OpenIaaS-Infrastruktur) oder in einer geteilten Umgebung (unter Vorbehalt eines Abonnements für das Produkt VM Instances) wählen.
+- Bei der Bestellung eines neuen VPC können Sie nun eine Bereitstellung in einer dedizierten Umgebung (Ihre OpenIaaS-Infrastruktur) oder in einer gemeinsam genutzten Umgebung (unter Vorbehalt eines Abonnements für das Produkt VM Instances) wählen
 
 ### [Object Storage](/storage/oss)
-- Großbuchstaben werden im Bucket-Namen nun nicht mehr akzeptiert, gemäß den Namenskonventionen.
+- Großbuchstaben werden im Bucket-Namen nun abgelehnt, gemäß den Namensrichtlinien
 
 ### [Marketplace](/marketplace)
-- Sie können nun eine VM-Instanz (Public Cloud) direkt von der Produktdetailseite eines Marketplace-Produkts bereitstellen.
+- Sie können nun eine VM Instance (Public Cloud) direkt aus der Produktseite eines Marketplace-Produkts bereitstellen
 
-## 2026-07-27 — Managed Datenbanken (Preview)
+## 2026-07-27 — Managed Databases (Preview)
 
-### [Managed MariaDB](/managed_mariadb)
+### [MariaDB Managé](/managed_mariadb)
 - Das Bereitstellungsmodell Distributed wurde in MultiAZ umbenannt
-- Die Instanzgrößen reichen nun bis zu 6X-Large (32 vCPU und 128 GiB Arbeitsspeicher) und der online-erweiterbare Speicher bis zu 512 GiB
-- Veröffentlichung von Empfehlungen zur Dimensionierung, die die Einstellung der Engine-Parameter erläutern, mit einer Warnung zur Aktivierung von `performance_schema` unterhalb der X-Large-Größe
-- Die Point-in-Time-Wiederherstellung wird nicht mehr angeboten: Die Sicherungen basieren nun auf täglichen physischen Backups und logischen Exports, ohne kontinuierliche Archivierung der Transaktionsprotokolle
+- Instanz-Templates reichen nun bis 6X-Large (32 vCPUs und 128 GiB Speicher) und der Speicher ist auf bis zu 512 GiB hot-erweiterbar
+- Veröffentlichung von Dimensionierungsempfehlungen, die die Kalibrierung der Engine-Parameter erklären, mit einer Warnung zur Aktivierung von `performance_schema` unterhalb des X-Large-Templates
+- Die Wiederherstellung zu einem bestimmten Zeitpunkt wird nicht mehr angeboten: Sicherungen basieren nun auf täglichen physischen Sicherungen und logischen Exports, ohne kontinuierliche Archivierung der Transaktions-Logs
 
-### [Managed PostgreSQL](/managed_postgresql)
-- Neue Architektur basierend auf dem Kubernetes-Operator CloudNative-PG und dem Sicherungs-Plugin Barman Cloud
-- Drei Bereitstellungsmodelle: StandAlone mit einer einzelnen Instanz, Replica mit drei asynchron replizierten Instanzen mit automatischem Failover und Enterprise mit drei synchron replizierten Instanzen auf mindestens zwei Knoten, wobei die Persistenz ohne Blockierung bei Ausfall eines Knotens garantiert ist
-- Deklaratives Deployment über benutzerdefinierte Kubernetes-Ressourcen, nutzbar über Terraform oder Helm, sowie nativer Export von Metriken an Prometheus
+### [PostgreSQL Managen](/managed_postgresql)
+- Neue Architektur basierend auf dem Kubernetes-Operator CloudNative-PG und dem Backup-Plugin Barman Cloud
+- Drei Bereitstellungsmodelle: StandAlone als einzelne Instanz, Replica als drei asynchron replizierte Instanzen mit automatischem Failover, und Enterprise als drei synchron replizierte Instanzen auf mindestens zwei Knoten, wobei die Dauerhaftigkeit ohne Blockierung bei Ausfall eines Knotens gewährleistet ist
+- Deklarative Bereitstellung über Kubernetes Custom Resources, nutzbar über Terraform oder Helm, und native Exportierung von Metriken an Prometheus
 
 ## v4.46.0 — 2026-07-24
 
-### [Console — Organisation](/console/iam/concepts)
-- Sie können nun einen Tenant direkt auf der Seite Tenants erstellen, indem Sie die zugehörigen Produkte auswählen.
+### [Konsole — Organisation](/console/iam/concepts)
+- Sie können nun direkt auf der Seite „Tenants“ einen Tenant erstellen, indem Sie die zugehörigen Produkte auswählen
 
-### [Console — Aktivitäten](/console)
-- Die Aktivitätsprotokolle können nun nach Modul gefiltert werden
+### [Konsole — Aktivitäten](/console)
+- Aktivitätsprotokolle können nun nach Modul gefiltert werden
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Die öffentliche IP-Adresse wird nun in der Liste der Netzwerkschnittstellen einer mit einem VPC verbundenen virtuellen Maschine angezeigt.
-- Ein Tab „Gesundheitszustand“ ist nun im Detail einer virtuellen Maschine verfügbar, der über die Liste aufgerufen werden kann.
+- Die öffentliche IP-Adresse wird nun in der Liste der Netzwerkschnittstellen einer an ein VPC angeschlossenen virtuellen Maschine angezeigt
+- Im Detail einer virtuellen Maschine ist nun ein Tab „Gesundheit“ verfügbar, der über die Liste erreichbar ist
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
 - Sie können nun eine VMware-Replikation zwischen Verfügbarkeitszonen bestellen
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
 - Die Liste der Netzwerkschnittstellen einer an ein VPC angeschlossenen virtuellen Maschine zeigt nun die öffentliche IP-Adresse an
-- Ein Tab „Gesundheit“ ist nun im Detail einer virtuellen Maschine verfügbar, die aus der Liste geöffnet wurde
+- Im Detail einer virtuellen Maschine, das über die Liste geöffnet wurde, ist nun ein Tab „Gesundheit“ verfügbar
 
-### [VM Instances](/public_cloud/vm_instances)
-- Die öffentliche IP-Adresse wird nun in der Liste der Netzwerkadapter einer mit einem VPC verbundenen Instanz angezeigt
-- Ein Tab „Gesundheit“ ist nun im Instanzdetail verfügbar, der über die Liste zugänglich ist
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Die öffentliche IP-Adresse wird nun in der Liste der Netzwerkadapter einer an ein VPC angeschlossenen Instanz angezeigt
+- Im Detail einer Instanz ist nun ein Tab „Gesundheit“ verfügbar, der über die Liste erreichbar ist
 
 ### [Housing (Colocation)](/housing)
-- Colocation-Bestellungen sind jetzt verfügbar: Platzreservierung, Installation und Demontage von Geräten
-- Colocation-Serviceaufträge sind jetzt verfügbar: technische Unterstützung und Smart Hands
-- Colocation-Bestellungen für Verkabelung und Dekabelung (CPE) sind jetzt verfügbar
-- Colocation-Bestellungen, die nicht über die Konsole unterstützt werden, sind jetzt klar gekennzeichnet, mit der Aufforderung, den Support zu kontaktieren
+- Colocation-Bestellungen sind nun verfügbar: Platzreservierung, Installation und Auspacken von Geräten
+- Colocation-Einsatzbestellungen sind nun verfügbar: technische Betreuung und Smart Hands
+- Colocation-Kabel- und Entkabelungsbefehle (CPE) sind nun verfügbar
+- Bestellungen, die von der Konsole nicht unterstützt werden, werden nun klar gekennzeichnet, mit der Aufforderung, den Support zu kontaktieren
 
 ## v4.45.5 — 2026-07-23
 
-### [VM Instances](/public_cloud/vm_instances)
-- Die Erstellung einer Instanz basiert nun auf der Auswahl eines Systemimages, das die Templates ersetzt.
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Die Erstellung einer Instanz basiert nun auf der Auswahl eines System-Images, das die Vorlagen ersetzt
 
 ## v4.45.4 — 2026-07-22
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Bei der Konfiguration der Kerne pro Socket einer OpenIaaS-Virtuellen Maschine wird die CPU-Topologie (Anzahl der Sockets und Kerne pro Socket) nun explizit angezeigt.
+- Bei der Konfiguration der Kerne pro Socket einer OpenIaaS-Virtual Machine wird die Prozessor-Topologie (Anzahl der Sockets und Kerne pro Socket) nun explizit angezeigt
 
 ### [LLMaaS](/llmaas)
-- Der Mindestbetrag eines LLMaaS-Guthabens wird auf 100 € gesenkt.
+- Der Mindestbetrag für LLMaaS-Guthaben ändert sich; siehe den [offiziellen Cloud Temple-Preisliste](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ## v4.45.3 — 2026-07-21
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Beim Bereitstellen einer virtuellen Maschine wird nun die Meldung „Kein Modell verfügbar“ angezeigt, wenn der Katalog leer ist.
+- Bei der Bereitstellung einer virtuellen Maschine wird nun die Meldung „Keine Vorlage verfügbar“ angezeigt, wenn der Katalog leer ist
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Bei der Bereitstellung einer virtuellen Maschine wird nun die Meldung „Kein Modell verfügbar“ angezeigt, wenn der Katalog leer ist.
+- Bei der Bereitstellung einer virtuellen Maschine wird nun die Meldung „Keine Vorlage verfügbar“ angezeigt, wenn der Katalog leer ist
 
 ## v4.45.2 — 2026-07-17
 
-### [Console](/console)
+### [Konsole](/console)
 - Geringfügige technische Verbesserungen
 
 ## v4.45.0 — 2026-07-10
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Während einer blockierenden Operation zeigen virtuelle Maschinen nun einen expliziten Status an: Sicherung, Snapshot oder laufende Wiederherstellung
-- Die Bearbeitung der CPU-Einstellungen passt sich nun an die Option für das Hinzufügen von CPUs im laufenden Betrieb (CPU hot add) und an den Status der virtuellen Maschine an
+- Während einer blockierenden Operation zeigen virtuelle Maschinen nun einen expliziten Status an: Sicherung, Snapshot oder Wiederherstellung läuft
+- Die CPU-Bearbeitung passt sich nun der Option zum Hinzufügen von CPUs im laufenden Betrieb (CPU Hot Add) und dem Status der virtuellen Maschine an
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Während eines blockierenden Vorgangs zeigen virtuelle Maschinen nun einen eindeutigen Status an (laufende Sicherung, Snapshot oder Wiederherstellung)
-- Die Detailansicht einer virtuellen Maschine enthält nun eine Übersicht zur Ressourcennutzung (CPU, RAM, Speicher)
+- Während einer blockierenden Operation zeigen virtuelle Maschinen nun einen expliziten Status an (Sicherung, Snapshot oder Wiederherstellung läuft)
+- Das Detail einer virtuellen Maschine zeigt nun eine Zusammenfassung der Nutzung (CPU, RAM, Speicher)
 
-### [VM Instances](/public_cloud/vm_instances)
+### [VM-Instanzen](/public_cloud/vm_instances)
 - Instanzen zeigen während einer blockierenden Operation nun einen expliziten Status an (Sicherung, Snapshot oder Wiederherstellung läuft)
-- Echtzeit-Nutzungsmetriken (CPU, RAM, Speicher) werden nun für jede Instanz angezeigt
-- Die Eindeutigkeit des Namens wird nun sowohl bei der Erstellung als auch bei der Wiederherstellung einer Instanz geprüft
+- Sofortige Nutzungsmetriken (CPU, RAM, Speicher) werden nun für jede Instanz angezeigt
+- Die Einzigartigkeit des Namens wird nun bei der Erstellung und Wiederherstellung einer Instanz überprüft
 
 ### [Netzwerk](/network/network_overview)
-- Bei einer Bestellung, die einen Propagierungsschritt enthält, werden neue Netzwerke erst bei der endgültigen Bestätigung der Bestellung erstellt.
+- Bei einer Bestellung mit einem Propagationsschritt werden neue Netzwerke erst bei der endgültigen Bestätigung der Bestellung erstellt
 
 ## v4.44.2 — 2026-07-03
 
-### [VM Instances](/public_cloud/vm_instances)
-- Der Netzwerktyp (privates Backbone) wird nun auf den Netzwerkadaptern einer Instanz angezeigt, auch ohne die VPC-Funktion.
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Der Netzwerktyp (privater Backbone) wird nun auf den Netzwerkadaptern einer Instanz angezeigt, auch ohne VPC-Funktion
 
 ## v4.44.1 — 2026-07-02
 
-### [Console](/console)
+### [Konsole](/console)
 - Geringfügige technische Verbesserungen
 
 ## v4.44.0 — 2026-07-02
 
 ### [Bestellungen](/console/orders)
-- Die Infrastrukturbereitstellungsaktionen berücksichtigen nun die fachlichen Rollen (Compute, Netzwerk, VPC, Bare Metal…) ergänzend zu den Bestellberechtigungen.
+- Infrastruktur-Bereitstellungsaktionen berücksichtigen nun Geschäftsrollen (Berechnung, Netzwerk, VPC, Bare Metal…) zusätzlich zu den Bestellrechten
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Das Tracking der Übertragung von ISO- und OVF-Dateien wurde verbessert und es ist nun möglich, eine laufende Übertragung abzubrechen.
+- Die Verfolgung des ISO- und OVF-Datei-Uploads wurde verbessert, und es ist nun möglich, einen laufenden Upload abzubrechen
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Die Überwachung des Uploads von ISO- und XVA-Dateien wurde verbessert und es ist nun möglich, einen laufenden Upload abzubrechen
+- Die Verfolgung des ISO- und XVA-Datei-Uploads wurde verbessert, und es ist nun möglich, einen laufenden Upload abzubrechen
 
-### [VM Instances](/public_cloud/vm_instances)
-- Datenträgergrößen akzeptieren keine Dezimalwerte mehr, weder bei der Erstellung einer Instanz noch beim Hinzufügen oder Erweitern eines Datenträgers.
-- Die Verarbeitungsindikatoren für Instanzen und deren Ressourcen werden nach einem Neuladen der Seite nun korrekt wiederhergestellt.
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Die Festplattengrößen akzeptieren keine Dezimalwerte mehr, weder bei der Erstellung einer Instanz noch beim Hinzufügen oder Erweitern einer Festplatte
+- Die Indikatoren für die Verarbeitung von Instanzen und ihren Ressourcen werden nach einem Seiten-Refresh nun korrekt wiederhergestellt
 
 ### [VPC](/network/vpc)
-- Über die Netzwerkkarte einer an ein VPC-Netzwerk angebundenen virtuellen Maschine können Sie nun direkt auf das zugehörige VPC zugreifen (VMware, OpenIaaS und VM-Instanzen)
-- Bestimmte VPC-Operationen können nun parallel ausgeführt werden: Hinzufügen eines Gateways während der Erstellung eines privaten Netzwerks (und umgekehrt), sowie das gleichzeitige Löschen mehrerer privater Netzwerke
+- Über das Netzwerk einer an ein VPC-Netzwerk angeschlossenen virtuellen Maschine können Sie nun direkt auf das betreffende VPC zugreifen (VMware, OpenIaaS und VM-Instanzen)
+- Bestimmte VPC-Bestellungen können nun parallel ausgeführt werden: Hinzufügen eines Gateways während der Erstellung eines privaten Netzwerks (und umgekehrt) sowie mehrere gleichzeitige Löschungen privater Netzwerke
 
 ## 2026-06-30 — Metriken-API
 
 ### [Metriken](/console/metrics/concepts)
-- Ein Zugriffstoken kann nun die Verfügbarkeit des Metriken-Dienstes über den API-Endpunkt `HEAD /v1/configuration` überprüfen
+- Ein Zugriffstoken kann nun die Verfügbarkeit des Metrikdiensts über den API-Endpunkt `HEAD /v1/configuration` überprüfen
 
 ## v4.43.0 — 2026-06-30
 
-### [Console](/console)
-- Die Netzwerkauswahl unterscheidet nun visuell zwischen VPC- und privaten Backbone-Netzwerken
-- Ein interaktives Tutorial ist nun auf der Benutzerseite verfügbar
+### [Konsole](/console)
+- Netzwerkauswähler unterscheiden nun visuell zwischen VPC- und privatem Backbone-Netzwerken
+- Auf der Seite „Benutzer“ ist nun ein interaktives Tutorial verfügbar
 
-### [Console — Aktivitäten](/console)
-- Sie können nun die Details einer Aktivität anzeigen, indem Sie deren Zeile in den Listen „Kürzlich“ und „Archiviert“ aufklappen
-- Jede Aktivität verfügt nun über eine dedizierte Detailseite, die über einen direkten Link zugänglich ist
-- Die Details einer Aktivität sind nun über die Erfolgs- und Fehlerbenachrichtigungen aufrufbar
-- Sie können nun das vollständige JSON einer Aktivität anzeigen, kopieren oder herunterladen
+### [Konsole — Aktivitäten](/console)
+- Sie können nun die Details einer Aktivität einsehen, indem Sie ihre Zeile in den Listen „Aktuell“ und „Archiviert“ aufklappen
+- Jede Aktivität verfügt nun über eine dedizierte Detailseite, die über einen direkten Link erreichbar ist
+- Die Details einer Aktivität sind nun über Erfolgs- und Fehlerbenachrichtigungen erreichbar
+- Sie können nun das vollständige JSON einer Aktivität einsehen, kopieren oder herunterladen
 - Die Liste der archivierten Aktivitäten kann nun nach Erstellungsdatum sortiert werden
 
 ### [Bestellungen](/console/orders)
-- Die Anzeige des Bestellfortschritts wurde überarbeitet
+- Die Anzeige des Fortschritts einer Bestellung wurde überarbeitet
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Die Details einer virtuellen Maschine werden nun in einer neuen Ansicht angezeigt
-- Bei Änderungen zur Laufzeit wird die Konsistenz zwischen CPUs und Kernen pro Socket geprüft: Es werden Warnungen angezeigt und ungültige Werte werden nicht akzeptiert
+- Das Detail einer virtuellen Maschine wird nun in einer neuen Ansicht angezeigt
+- Bei der Hot-Änderung wird die Konsistenz zwischen CPU und Kernen pro Socket überprüft: Warnungen werden angezeigt, und ungültige Werte werden nicht akzeptiert
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Sie können nun die Löschung einer IaaS-Umgebung beantragen
+- Sie können nun die Löschung einer IaaS-Umgebung anfordern
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Eine neue Detailansicht ist für virtuelle Maschinen verfügbar
-- Sie können die Liste der virtuellen Maschinen nun nach Verfügbarkeitszone (AZ) filtern
+- Für virtuelle Maschinen ist eine neue Detailansicht verfügbar
+- Sie können nun die Liste der virtuellen Maschinen nach Verfügbarkeitszone (AZ) filtern
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Die Seite eines Storage Repositorys zeigt nun das Erstellungsdatum des Snapshots eines Datenträgers an.
+- Die Seite eines Storage Repository zeigt nun das Datum der Erstellung eines Festplattensnapshots an
 
-### [VM Instances](/public_cloud/vm_instances)
-- Die Details einer Instanz werden in einer neuen Ansicht angezeigt
-- Die Schaltfläche „Jetzt Sicherung starten“ ist nun deaktiviert, wenn die Sicherung nicht verfügbar ist
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Das Detail einer Instanz wird in einer neuen Ansicht angezeigt
+- Die Schaltfläche „Jetzt eine Sicherung starten“ ist nun deaktiviert, wenn die Sicherung nicht verfügbar ist
 
 ### [VPC](/network/vpc)
-- Die Beschreibung der öffentlichen IP-Adresse wird nun bei der Zuordnung zu einem privaten Netzwerk angezeigt.
+- Die Beschreibung der öffentlichen IP-Adresse wird nun bei ihrer Zuordnung zu einem privaten Netzwerk angezeigt
 
 ### [Object Storage](/storage/oss)
-- Sie können nun eine Beschreibung zu den erlaubten IP-Adressen (whitelist) eines Buckets hinzufügen
+- Sie können nun eine Beschreibung zu den erlaubten IP-Adressen (Whitelist) eines Buckets hinzufügen
 
 ## v4.42.0 — 2026-06-22
 
-### [Console](/console)
+### [Konsole](/console)
 - Der Abschnitt „Datenschutz“ wurde aktualisiert
 
 ### [Object Storage](/storage/oss)
-- Die Verfügbarkeit des TLS-Wildcard-Zertifikats für den S3-Zugriff im host-style wird nun angezeigt
-- Sie können nun Dateien über eine präsignierte URL auf S3 hochladen
-- Sie können nun die Versionierung für einen Bucket aktivieren
+- Die Verfügbarkeit des Wildcard-TLS-Zertifikats für den hostbasierten S3-Zugang wird nun angezeigt
+- Sie können nun eine Datei über eine vor-signierte URL auf S3 hochladen
+- Sie können nun die Versionsverwaltung für einen Bucket aktivieren
 - Sie können nun die Versionen einer Datei verwalten
 
 ## v4.41.1 — 2026-06-11
 
 ### [Bestellungen](/console/orders)
-- Das bei der Bestellung eines Block Storage verfügbare Maximum wurde aktualisiert.
+- Das verfügbare Maximum bei der Bestellung eines Block Storage wurde aktualisiert
 
 ## v4.41.0 — 2026-06-08
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Die Meldungen zu den Lagerbeständen sind nun präziser bei der Bestellung von Hypervisoren oder bei der Erhöhung des RAM-Speichers eines Clusters.
+- Die Meldungen zu Lagerbeständen sind nun präziser bei der Bestellung von Hypervisoren oder der RAM-Erhöhung eines Clusters
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Beim Hinzufügen eines vorhandenen Datenträgers zu einer virtuellen Maschine wird die UUID des Datenträgers nun angezeigt, wenn mehrere Datenträger denselben Namen tragen.
+- Beim Hinzufügen einer vorhandenen Festplatte zu einer virtuellen Maschine wird die UUID der Festplatte nun angezeigt, wenn mehrere Festplatten denselben Namen tragen
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Eine Warnung wird nun bei der Anforderung eines Updates für den Master-Host eines Pools angezeigt.
+- Bei der Anforderung der Aktualisierung des Master-Hosts eines Pools wird nun eine Warnung angezeigt
 
 ### [VPC](/network/vpc)
-- Die Anforderung eines VPC erfordert nun, dass eine OpenIaaS-Verfügbarkeitszone bereitgestellt ist.
+- Die Bestellung eines VPC erfordert nun, dass eine OpenIaaS-Verfügbarkeitszone bereitgestellt ist
 
-## 2026-06-06 — MCP-Server der Console
+## 2026-06-06 — Konsole MCP-Server
 
-- Hilferessource zur Authentifizierung, die die Erstellung eines persönlichen Zugriffstokens und das erwartete Header-Format beschreibt; Authentifizierungsfehler geben nun die Ursache und die entsprechenden Lösungsschritte an
-- Konfigurationsänderung mit Auswirkung: Die in der Serverkonfiguration hinterlegte API-URL muss nun das Segment `/api` enthalten. Diese muss vor dem Deployment dieser Version aktualisiert werden, um 404-Fehler zu vermeiden. Die URL wird beim Start überprüft und die Public-Key-Infrastruktur (PKI) wird unterstützt.
+- Hilfsressource zur Authentifizierung, die die Erlangung eines persönlichen Zugriffstokens und das erwartete Header-Format beschreibt; Authentifizierungsfehler geben nun die Ursache und die nächsten Schritte an
+- Konfigurationsänderung mit Auswirkungen: Die in der Serverkonfiguration angegebene API-URL muss nun den Segment `/api` enthalten, was vor der Bereitstellung dieser Version aktualisiert werden muss, um 404-Fehler zu vermeiden. Die URL wird beim Start überprüft, und die Infrastruktur der privaten öffentlichen Schlüssel wird unterstützt
 
-## 2026-06-05 — MCP-Server der Console
+## 2026-06-05 — Konsole MCP-Server
 
-- Abfrage des Namens und der Version des bereitgestellten Servers
+- Anzeige des Namens und der Version des bereitgestellten Servers
 
 ## v4.40.0 — 2026-06-02
 
-### [Console](/console)
-- Ein interaktiver Onboarding-Workflow ist jetzt verfügbar
+### [Konsole](/console)
+- Ein interaktiver Willkommenspfad ist nun verfügbar
 
-### [Console — Organisation](/console/iam/concepts)
+### [Konsole — Organisation](/console/iam/concepts)
 - Der Kostenmanager ist nun in der Organisationsansicht verfügbar
-- Die Organisationsansicht verfügt nun über eine dedizierte Ansicht
+- Die Organisationsansicht verfügt nun über eine dedizierte Anzeige
 
 ### [Bestellungen](/console/orders)
-- Der Netzwerkschritt wird in den Bestellungen nicht mehr angezeigt, wenn nur das VPC-Produkt aktiviert ist.
+- Der Netzwerkschritt erscheint nicht mehr in Bestellungen, wenn nur das VPC-Produkt aktiviert ist
 
 ### [Support](/console)
-- Die Support-Pläne und Support-Kontakte wurden aktualisiert
+- Die Supportpläne und -kontakte wurden aktualisiert
 
 ### [Support-Tickets](/console)
-- Die Managed-Service-Funktionen wurden aus den Supporttickets entfernt.
+- Die Managed-Services-Funktionen wurden aus den Support-Tickets entfernt
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
 - Die Funktionen der öffentlichen Inhaltsbibliothek wurden entfernt
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Der Standardwert des CloudInit-Schritts wurde für OpenIaaS-Bereitstellungen aus dem Marketplace aktualisiert.
-- Das Senden von Sonderzeichen aus der Zwischenablage der Konsole einer virtuellen Maschine wurde verbessert.
+- Der Standardwert des CloudInit-Schritts wurde für OpenIaaS-Bereitstellungen über den Marktplatz aktualisiert
+- Das Senden von Sonderzeichen aus der Zwischenablage der Konsole einer virtuellen Maschine wurde verbessert
 
 ### [Netzwerk](/network/network_overview)
 - Sie können nun die Beschreibung einer IP-Adresse löschen
@@ -417,248 +417,248 @@ sidebar_position: 999
 - Sie können nun das Feld `description` bei der Änderung eines virtuellen Netzwerks ausfüllen
 
 ### [VPC](/network/vpc)
-- Die Beschreibung einer VPC-Floating-IP wird nun angezeigt
-- Sie können nun die Beschreibung einer VPC-Floating-IP bearbeiten
+- Die Beschreibung einer VPC-Float-IP wird nun angezeigt
+- Sie können die Beschreibung einer VPC-Float-IP nun ändern
 
-## 2026-05-25 — MCP-Server der Console
+## 2026-05-25 — Console MCP-Server
 
-- Jede Berechtigungsverweigerung gibt nun das betroffene Produkt und den genauen Namen der Berechtigung an, die im persönlichen Zugriffstoken aktiviert werden muss.
+- Jede Berechtigungsablehnung zeigt nun das betroffene Produkt und den genauen Namen der Berechtigung an, die im persönlichen Zugriffstoken aktiviert werden muss
 
-## 2026-05-24 — MCP-Server der Console
+## 2026-05-24 — Console MCP-Server
 
-- Supportverwaltung über einen Agenten: Liste und Details der Tickets, Erstellung, Kommentierung, Schließung, Einsehen geplanter Wartungen und ihrer Kategorien, Tenant-Störungen und Plattformstörungen
-- Option zur Löschung nach dem Start bei der Bereitstellung aus dem Marketplace
-- Geführter Bereitstellungsablauf für eine Linux-VM
-- Direkt einsehbare Ressourcen: Glossar für OpenSource-IaaS-Begriffe, Pool-Topologie, die Hosts, Speicherdepots, Netzwerke und Metriken auf einen Blick zusammenfasst, sowie Marketplace-Katalog, gefiltert auf OpenSource-IaaS
+- Support-Verwaltung über einen Agenten: Liste und Details der Tickets, Erstellung, Kommentar, Schließung, Anzeige geplanter Wartungen und ihrer Kategorien, Tenant-Vorfälle und Plattform-Vorfälle
+- Option zur Zerstörung nach dem Start bei der Bereitstellung über den Marketplace
+- Geführter Bereitstellungsprozess für eine Linux-VM
+- Direkt einsehbare Ressourcen: Glossar der IaaS-OpenSource-Begriffe, Topologie eines Pools, der Hosts, Speicherdepots, Netzwerke und Indikatoren in einer einzigen Leseoperation zusammenfasst, sowie auf IaaS OpenSource gefilterter Marketplace-Katalog
 
-## 2026-05-23 — MCP-Server der Console
+## 2026-05-23 — Console MCP-Server
 
-- Durchsuchen des Marketplace-Katalogs mit Filtern sowie technische Datenblätter für IaaS OpenSource (XVA) und VMware (OVF) mit Details zu Prozessoren, Arbeitsspeicher, Festplatten und exakten Namen der Netzwerkschnittstellen
-- Bereitstellung einer IaaS OpenSource-virtuellen Maschine aus einem Katalogelement, idempotent nach Name
-- Power-Management von IaaS OpenSource-virtuellen Maschinen — Einschalten, Ausschalten, Neustart, Pause, Aussetzen und Fortsetzen — idempotent nach Status
-- Verfolgung langer Operationen über Aktivitäten
+- Durchsuchen des Marketplace-Katalogs mit Filtern sowie detaillierte technische Datenblätter für IaaS OpenSource (XVA) und VMware (OVF), die Prozessoren, Speicher, Festplatten und die genauen Namen der Netzwerkschnittstellen auflisten
+- Bereitstellung einer IaaS OpenSource-VM aus einem Katalogelement, idempotent nach Name
+- Steuerung der Stromversorgung von IaaS OpenSource-VMs — Einschalten, Ausschalten, Neustart, Pause, Suspendierung und Fortsetzung — idempotent nach Zustand
+- Verfolgung langer Operationen über die Aktivitäten
 
-## 2026-05-22 — MCP-Server der Console
+## 2026-05-22 — Console MCP-Server
 
-- Erweiterte Abfrage des Open-Source-IaaS: Pools, Hosts, virtuelle Maschinen, Snapshots, Netzwerkadapter mit Erkennung doppelter MAC-Adressen, virtuelle Festplatten und Replikationsstatus, wobei alle diese Operationen schreibgeschützt sind
-- Serverseitig anwendbare Filter auf alle diese Listen
+- Erweiterte Ansicht der IaaS OpenSource: Pools, Hosts, VMs, Snapshots, Netzwerkanpassungen mit Erkennung doppelter MAC-Adressen, virtuelle Festplatten und Replikationsstatus, wobei alle diese Operationen schreibgeschützt sind
+- Serverseitig anwendbare Filter auf all diese Listen
 
 ## v4.39.2 — 2026-05-22
 
 ### [Netzwerk](/network/network_overview)
-- Sie können nun den PTR-Eintrag einer öffentlichen IP-Adresse oder einer Interconnect-IP-Adresse löschen.
+- Sie können den PTR-Eintrag einer öffentlichen IP-Adresse oder einer Interconnect-IP-Adresse nun löschen
 
 ## v4.39.1 — 2026-05-20
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Die Benennungsregeln für Snapshots virtueller Maschinen wurden geändert
+- Die Namensregeln für VM-Snapshots wurden geändert
 
 ### [Bare Metal](/iaas_bare-metal)
-- Sie können nun die Beschreibung eines Bare-Metal-Servers bearbeiten
+- Sie können die Beschreibung eines Bare-Metal-Server-Moduls nun ändern
 
 ### [Netzwerk](/network/network_overview)
-- Sie können nun den PTR-Eintrag einer Interconnect-IP-Adresse ändern
+- Sie können den PTR-Eintrag einer Interconnect-IP-Adresse nun ändern
 
 ## v4.39.0 — 2026-04-23
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Bestehende Festplatten werden nun beim Hinzufügen einer neuen Festplatte angezeigt.
-- Beim Verschieben (vMotion) einer virtuellen Maschine im Modus „Nur Rechenressource“ kann nun ein Cluster ausgewählt werden
+- Bestehende Festplatten werden nun beim Hinzufügen einer neuen Festplatte angezeigt
+- Beim Verschieben (vMotion) einer VM im Modus „Nur Compute-Ressource“ kann nun ein Cluster ausgewählt werden
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Bestehende Festplatten werden nun beim Hinzufügen einer neuen Festplatte angezeigt.
+- Bestehende Festplatten werden nun beim Hinzufügen einer neuen Festplatte angezeigt
 
-### [VM Instances](/public_cloud/vm_instances)
+### [VM-Instanzen](/public_cloud/vm_instances)
 - Die Liste der VM-Instanzen kann nun im CSV-Format exportiert werden
 - Die Anzeige der Häufigkeit einer Sicherungsrichtlinie wurde überarbeitet
 
 ### [Bare Metal](/iaas_bare-metal)
-- Die Auswahl der Netzwerke ist nun obligatorisch bei der Propagation eines Netzwerks auf einem Bare Metal
+- Die Auswahl der Netzwerke ist nun obligatorisch bei der Propagierung eines Netzwerks auf ein Bare-Metal-System
 
-## 2026-04-20 — Managed Datenbanken (Preview)
+## 2026-04-20 — Managed Databases (Preview)
 
 ### [Managed MariaDB](/managed_mariadb)
-- Veröffentlichung der Engine-Parameter, die jedem Instanztyp zugeordnet sind: `innodb_buffer_pool_size`, `innodb_buffer_pool_instances`, `max_allowed_packet` und `table_open_cache`
-- Überarbeitung der Instanzvorlagen: Die Obergrenze wird auf 3X-Large (8 vCPU und 32 Gio Arbeitsspeicher) gesenkt und die maximal online erweiterbare Speicherkapazität wird von 512 Gio auf 128 Gio reduziert.
+- Veröffentlichung der motorbezogenen Parameter für jeden Instanz-Typ: `innodb_buffer_pool_size`, `innodb_buffer_pool_instances`, `max_allowed_packet` und `table_open_cache`
+- Überarbeitung der Instanz-Typen: Das Maximum wurde auf 3X-Large (8 vCPU und 32 GiB Speicher) reduziert, und der maximal erweiterbare Hot-Storage wurde von 512 GiB auf 128 GiB geändert
 
 ### [Managed PostgreSQL](/managed_postgresql)
-- Veröffentlichung der Engine-Parameter für jede Instanzvorlage: `shared_buffers`, `effective_cache_size`, `work_mem` und `max_connections`
-- Überarbeitung der Instanzvorlagen: Die Obergrenze wird auf 3X-Large (8 vCPU und 32 Gio Arbeitsspeicher) gesenkt und die maximal online erweiterbare Speicherkapazität wird von 512 Gio auf 128 Gio reduziert.
+- Veröffentlichung der motorbezogenen Parameter für jeden Instanz-Typ: `shared_buffers`, `effective_cache_size`, `work_mem` und `max_connections`
+- Überarbeitung der Instanz-Typen: Das Maximum wurde auf 3X-Large (8 vCPU und 32 GiB Speicher) reduziert, und der maximal erweiterbare Hot-Storage wurde von 512 GiB auf 128 GiB geändert
 
 ## v4.38.1 — 2026-04-18
 
-### [VM Instances](/public_cloud/vm_instances)
-- Die angebotenen Netzwerke werden nun sowohl bei der Erstellung einer Instanz als auch bei der Änderung eines Netzwerkadapters gefiltert.
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Die angebotenen Netzwerke werden nun bei der Erstellung einer Instanz sowie bei der Änderung eines Netzwerkanpassers gefiltert
 
 ## v4.38.0 — 2026-04-17
 
 ### [Identität & Zugriff (IAM)](/console/iam)
 - Sechs neue Berechtigungen sind verfügbar: `billing_read`, `vpc_read`, `vpc_write`, `public_cloud_vm_instances_read`, `public_cloud_vm_instances_management` und `public_cloud_vm_instances_console_access`
-- Der Name des betreffenden Produkts wird nun am Anfang der Beschreibung jeder Berechtigung angezeigt.
+- Der Name des betroffenen Produkts wird nun an erster Stelle der Beschreibung jeder Berechtigung angezeigt
 
 ### [Kostenmanager](/console/billing/concepts)
-- Die Oberfläche des Kostenmanagers wurde verbessert
+- Die Benutzeroberfläche des Kostenmanagers wurde verbessert
 - Die in den Verbrauchsdiagrammen angezeigte Einheit wurde aktualisiert
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Beim Bereitstellen einer virtuellen Maschine wurde der Schritt zur Auswahl eines Marketplace-Images überarbeitet.
+- Bei der Bereitstellung einer VM wurde der Schritt zur Auswahl eines Marketplace-Images überarbeitet
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Sie können die Anzeige der Katalogseite nun zwischen Kachel- und Tabellenansicht umschalten
-- Der Schritt zur Auswahl eines Marketplace-Images beim Bereitstellen einer virtuellen Maschine wurde aktualisiert
+- Sie können die Anzeige der Katalogseite nun zwischen Raster- und Tabellenansicht umschalten
+- Der Schritt zur Auswahl eines Marketplace-Images bei der Bereitstellung einer VM wurde aktualisiert
 
-### [VM Instances](/public_cloud/vm_instances)
-- Das Dashboard zeigt nun die Nutzung der VM-Instanz-Quoten an
-- Eine neue Seite zeigt die Liste der VM-Instanzen an
+### [VM-Instanzen](/public_cloud/vm_instances)
+- Das Dashboard zeigt nun die VM-Instanz-Quota-Nutzung an
+- Eine neue Seite zeigt die Liste der VM-Instanzen
 - Sie können nun eine neue Instanz erstellen
-- Sie können nun die Datenträger, Netzwerkadapter und Snapshots einer Instanz einsehen und verwalten
-- Sie können nun die Ressourcen einer Instanz aktualisieren und ihren Status ändern
+- Sie können nun die Festplatten, Netzwerkanpassungen und Snapshots einer Instanz einsehen und verwalten
+- Sie können nun die Kapazitäten einer Instanz aktualisieren und ihren Status ändern
 - Sie können nun auf die Konsole einer Instanz zugreifen
 
 ### [LLMaaS](/llmaas)
-- Die Preisanzeige in der Verbrauchsansicht und das Formular zur Guthabenaufladung wurden aktualisiert
+- Die Preisanzeige in der Verbrauchsansicht und im Formular zur Gutschrift-Auffüllung wurde aktualisiert
 
-## 2026-04-15 — Managed Datenbanken (Preview)
+## 2026-04-15 — Managed Databases (Preview)
 
 ### [Managed MariaDB](/managed_mariadb)
-- Start der Preview für MariaDB Managé: StandAlone- und Distributed-Modelle als Cluster mit drei Knoten hinter einem Proxy, replizierter Speicher über drei Verfügbarkeitszonen und eine Verfügbarkeitsgarantie von 99,9 %
+- Preview-Veröffentlichung von Managed MariaDB: StandAlone- und Distributed-Modelle in einem Drei-Knoten-Cluster hinter einem Proxy, replizierter Speicher über drei Verfügbarkeitszonen und Verfügbarkeitszusicherung von 99,9 %
 
 ### [Managed PostgreSQL](/managed_postgresql)
-- Preview-Start von Managed PostgreSQL: StandAlone- und Distributed-Modelle als Drei-Knoten-Cluster hinter einem Proxy, synchrone Multi-Zonen-Replikation ohne Datenverlust und Point-in-Time-Wiederherstellung
+- Preview-Veröffentlichung von Managed PostgreSQL: StandAlone- und Distributed-Modelle in einem Drei-Knoten-Cluster hinter einem Proxy, synchrone Multi-Zonen-Replikation ohne Datenverlust und Point-in-Time-Wiederherstellung
 
 ## v4.37.0 — 2026-04-02
 
 ### [Kostenmanager](/console/billing/concepts)
-- Hinzufügung des prognostizierten Betrags auf der Verbrauchsseite für das Diagramm und den Trend
-- Visuelle Verbesserung bei Fehlern oder zu wenigen Daten zum Verbrauch des aktuellen Monats
+- Hinzufügen des prognostizierten Betrags auf der Verbrauchsseite für das Diagramm und den Trend
+- Visuelle Verbesserung bei Fehlern oder zu wenigen Daten zum aktuellen Monatsverbrauch
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Verbesserung des Formulars zum Bereitstellen einer virtuellen Maschine aus einem Katalogeintrag
-- Hinzufügung der Möglichkeit, den Ansichtstyp (Raster oder Tabelle) auf der Katalogseite zu ändern
+- Verbesserung des Formulars zur Bereitstellung einer VM aus einem Katalogelement
+- Hinzufügen der Möglichkeit, den Visualisierungstyp (Raster oder Tabelle) auf der Katalogseite zu ändern
 
 ## v4.36.0 — 2026-03-27
 
-### [Console](/console)
-- Aktualisierung der Metriken- und Verbrauchsdiagramme
+### [Konsole](/console)
+- Aktualisierung der Metrik- und Verbrauchsdiagramme
 
 ### [Kostenmanager](/console/billing/concepts)
-- Hinzufügen der Seite „Kostenmanager“
-- Möglichkeit zur Anzeige der Kosten des aktuellen Monats
-- Möglichkeit zur Anzeige der Kosten über einen Datumsbereich hinweg und zum Vergleich von Trends
+- Hinzufügen der Kostenmanager-Seite
+- Möglichkeit, die Kosten des aktuellen Monats anzuzeigen
+- Möglichkeit, die Kosten über ein Datumsintervall anzuzeigen und Trends zu vergleichen
 
 ### [Bestellungen](/console/orders)
-- Verhinderung der Deprovisionierung eines Hypervisor-Clusters, wenn ein Speichercluster angehängt ist
+- Blockierung der Deprovisionierung eines Hypervisor-Clusters, wenn ein Speichercluster angehängt ist
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Hinzufügen von Filter- und Sortieroptionen für die Festplattenliste über die Details eines Block Storages
+- Hinzufügen von Filtern und Sortierungen für die Festplattenliste auf den Details einer Block Storage
 
 ### [VPC](/network/vpc)
 - Verbesserung der Benutzeroberfläche beim Laden von Daten in Formularen
 
 ## v4.35.4 — 2026-03-18
 
-### [Console](/console)
-- Verbesserung der Wiederverbindung zu WebSockets
+### [Konsole](/console)
+- Verbesserung der WebSocket-Wiederverbindung
 
 ### [Support](/console)
-- Hinzufügen einer Fallback-Lösung zur Erstellung eines Support-Tickets, wenn die WebSocket-Verbindung unterbrochen ist
+- Hinzufügen einer Fallback-Lösung zur Erstellung eines Support-Tickets, wenn Websockets getrennt sind
 
 ## v4.35.3 — 2026-03-17
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Aktualisierung der Festplattenwiederherstellung beim Laden von Replikaten aus dem Replikations-Tab
+- Aktualisierung der Festplattenerfassung beim Laden der Replikate über den Replikations-Tab
 
 ## v4.35.0 — 2026-03-11
 
 ### [Bestellungen](/console/orders)
-- Hinzufügen der Bestellung zur Löschung eines cpool/spool-Mappings
-- Hinzufügen der Bestellung zum De-Provisioning des privaten VPC-Netzwerks
-- Anpassungen an der Bestellung zum De-Provisioning eines Bare-Metal-Volumes: Die Löschung kann nun direkt aus der Volumenliste angefordert werden
-- Hinzufügen der Bestellung zur Löschung des Bare-Metal-Volumen-Mappings
-- Hinzufügen der Bestellung zum De-Provisioning von VPC
-- Blockierung des De-Provisionings eines Datastores, sofern er der letzte in einem Datastore-Cluster ist
+- Hinzufügen des Befehls zum Löschen eines cpool/spool-Mappings
+- Hinzufügen des Befehls zur Deprovisionierung eines privaten VPC-Netzwerks
+- Änderungen am Befehl zur Deprovisionierung eines Bare-Metal-Volumes: Die Löschung kann nun aus der Volumenliste befohlen werden
+- Hinzufügen des Befehls zum Löschen eines Bare-Metal-Volumen-Mappings
+- Hinzufügen des Befehls zur Deprovisionierung eines VPC
+- Blockierung der Deprovisionierung eines Datastores, wenn er der letzte eines Datastore-Clusters ist
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Möglichkeit, ein RAM-Limit für eine virtuelle Maschine festzulegen
+- Möglichkeit, ein RAM-Limit für eine VM festzulegen
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Aktualisierung von VMware Multi vMotion, um das Verschieben von VMs von einem Cluster zu einem anderen zu ermöglichen
+- Aktualisierung des VMware Multi-vMotion, um VMs von einem Cluster in einen anderen zu verschieben
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
 - Hinzufügen der Möglichkeit, einen Host zu aktualisieren
 - Anzeige der Update-Informationen eines Hosts
 
 ### [Netzwerk](/network/network_overview)
-- Deaktivierung des Löschbuttons für die Netzwerkpropagation, wenn keine Propagation bereitgestellt wird
+- Deaktivierung der Schaltfläche zum Löschen der Netzwerkpropagierung, wenn keine Propagierung bereitgestellt wurde
 
 ### [LLMaaS](/llmaas)
-- Anzeige des Verbrauchs, gruppiert nach Token-Typ
+- Anzeige des Verbrauchs gruppiert nach Token-Typ
 
 ## v4.34.0 — 2026-02-18
 
-### [Console](/console)
-- Hauptupdate der Rendering-Engine der Anwendung
-- Die VMware- und OpenIaaS-Menüs werden nicht angezeigt, wenn nur das Metrikenmodul aktiviert ist.
+### [Konsole](/console)
+- Großes Update der Anwendungs-Rendering-Engine
+- Die VMware- und OpenIaaS-Menüs werden nicht angezeigt, wenn nur das Metrikmodul aktiviert ist
 
 ### [Metriken](/console/metrics/concepts)
-- Möglichkeit, von den Metriken-Seiten für VMware und OpenIaaS in CSV zu exportieren
+- Möglichkeit, von den VMware- und OpenIaaS-Metriken-Seiten als CSV zu exportieren
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Bei der Verschiebung einer virtuellen Maschine ist es nicht möglich, denselben Zielhost wie den aktuellen Host der virtuellen Maschine auszuwählen.
-- Hinzufügen der Schaltfläche 'Neuer Katalog' auf der Seite VMware-Katalog
+- Bei einer VM-Verschiebung kann nicht derselbe Ziel-Host wie der aktuelle Host der VM ausgewählt werden
+- Hinzufügen der Schaltfläche „Neuer Katalog“ auf der VMware-Katalogseite
 
-## 2026-02-04 — MCP-Server der Console
+## 2026-02-04 — Console MCP-Server
 
-- Abfrage der virtuellen Maschinen-Modelle, der Netzwerke, der Hosts und der Open-Source-IaaS-Speicherdepots
+- Anzeige der VM-Vorlagen, Netzwerke, Hosts und Speicherdepots der IaaS OpenSource
 
-## 2026-02-03 — MCP-Server der Console
+## 2026-02-03 — Console MCP-Server
 
-- Bereitstellung des MCP-Servers (Model Context Protocol) der Konsole, authentifiziert mit einem persönlichen Zugriffstoken
-- Abfrage und Steuerung von VMware-VMs über einen Agenten: Liste, Details, virtuelle Rechenzentren, Starten und Stoppen
+- Bereitstellung des Console MCP-Servers (Model Context Protocol), authentifiziert durch persönliches Zugriffstoken
+- Anzeige und Steuerung von VMware-VMs über einen Agenten: Liste, Details, virtuelle Datacenters, Einschalten und Ausschalten
 
 ## v4.33.0 — 2026-01-21
 
 ### [Bestellungen](/console/orders)
-- Hinzufügen des Befehls zum Löschen einer Netzwerkpropagation auf OpenIaaS
+- Hinzufügen des Befehls zum Löschen einer OpenIaaS-Netzwerkpropagierung
 
 ### [Metriken](/console/metrics/concepts)
-- Hinzufügen von Filtern für die Metriken-Seiten von VMWare und OpenIaaS
+- Hinzufügen von Filtern für die VMware- und OpenIaaS-Metriken-Seiten
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen der Metriken-Seite 'Virtuelle Maschinen'
-- Hinzufügen der Metrik-Detailsseite für jede VM
+- Hinzufügen der Metriken-Seite „Virtuelle Maschinen“
+- Hinzufügen der Detailseite der Metriken für jede VM
 
 ## v4.32.0 — 2026-01-14
 
 ### [Support](/console)
 - Aktualisierung des Modals zum Schließen eines Support-Tickets
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Bei der Zuweisung einer Sicherungsrichtlinie an einen Datenträger wird nun vorgeschlagen, diesen zu inventarisieren, falls er von der Sicherungslösung nicht erkannt wird.
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Bei der Zuweisung einer Sicherungsrichtlinie zu einer Festplatte wird nun angeboten, die Festplatte zu inventarisieren, wenn sie von der Sicherungslösung nicht erkannt wird
 
 ### [Bare Metal](/iaas_bare-metal)
-- Die Löschung eines BFS-Volumes auf einem Bare Metal ist nun blockiert; das Volume wird bei der Löschung des Bare Metals entfernt.
-- Bei der Bestellung eines Bare Metals wird das erste Volume nun in 'BFS-Volume' umbenannt.
+- Die Löschung eines BFS-Volumes auf einem Bare-Metal-System ist nun blockiert; das Volume wird bei der Löschung des Bare-Metal-Systems gelöscht
+- Bei der Bestellung eines Bare-Metal-Systems wird das erste Volume nun in „BFS-Volume“ umbenannt
 
 ## v4.31.0 — 2026-01-07
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Aktualisierung der Tooltip-Erklärungen zu den verfügbaren Optionen bei der Wiederherstellung einer virtuellen Maschine
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Aktualisierung der Tooltip-Erklärungen zu den verfügbaren Optionen bei der Wiederherstellung einer VM
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Die Snapshots im Zusammenhang mit Sicherungsrichtlinien sind nun sichtbar
-- Anzeige des Hosts, der mit dem Speicherort einer ISO verknüpft ist, beim Upload und auf der Katalogseite
+- Snapshots, die mit Sicherungsrichtlinien verknüpft sind, sind nun sichtbar
+- Anzeige des Hosts, der mit dem Speicherort einer ISO-Datei beim Upload und auf der Katalogseite verknüpft ist
 
 ### [Object Storage](/storage/oss)
-- Anzeige einer Informationskarte im Tab für unvollständige MPUs, wenn die IP-Adresse der Konsole nicht autorisiert ist und dadurch die Anzeige des Tabs verhindert wird.
+- Anzeige einer erklärenden Karte über den Tab „Unvollständige MPU“, wenn die IP der Konsole nicht autorisiert ist und die Anzeige des Tabs verhindert
 
 ### [Marketplace](/marketplace)
-- Anzeige der Fehlerkarte beim Zugriff auf eine nicht vorhandene Marketplace-Seite
+- Anzeige der Fehlerkarte beim Zugriff auf eine nicht existierende Marketplace-Seite
 
 ## v4.30.1 — 2025-12-16
 
 ### [Console](/console)
-- Verbesserung der Anzeige bei leeren Fehlermeldungen durch standardmäßige Anzeige des zurückgegebenen HTTP-Status
+- Verbesserung der Anzeige leerer Fehlermeldungen durch standardmäßige Anzeige des zurückgegebenen HTTP-Status
 
 ## v4.30.0 — 2025-12-12
 
@@ -666,118 +666,118 @@ sidebar_position: 999
 - Möglichkeit, eine statische IP-Adresse einer benutzerdefinierten MAC-Adresse zuzuordnen
 
 ### [LLMaaS](/llmaas)
-- Bei den Verbrauchsmetriken: Filterung der Serien mit Nullwerten
+- Bei den Verbrauchsmetriken: Filtern der Zeitreihen mit Werten von 0
 
 ## v4.29.0 — 2025-12-09
 
 ### [VPC](/network/vpc)
 - Verbesserung der Synchronisierung von Aktionen auf den VPC-Seiten
-- Hinzufügen der Zuordnung einer statischen IP zu einer öffentlichen IP aus der Liste der statischen IPs
+- Hinzufügen der Zuordnung einer statischen IP-Adresse zu einer öffentlichen IP-Adresse aus der Liste der statischen IPs
 
-### [Speicher](/storage/oss)
-- Hinzufügen unvollständiger MPU von der Bucket-Seite aus
-- Möglichkeit, einen unvollständigen MPU zu löschen
+### [Storage](/storage/oss)
+- Hinzufügen unvollständiger MPUs von der Bucket-Seite aus
+- Möglichkeit, eine unvollständige MPU zu löschen
 
 ## v4.28.0 — 2025-11-21
 
 ### [Console](/console)
 - Hinzufügen der Möglichkeit, globale Informationsmeldungen anzuzeigen, die in der gesamten Anwendung sichtbar sind
 
-### [Bestellungen](/console/orders)
-- Möglichkeit, eine LLMaaS-Kreditaufladung für den Tenant zu bestellen
+### [Orders](/console/orders)
+- Möglichkeit, einen LLMaaS-Guthaben-Zuschlag für den Tenant zu bestellen
 - Möglichkeit, einen VPC zu bestellen
 - Möglichkeit, ein privates Netzwerk in einem VPC zu bestellen
 - Möglichkeit, eine öffentliche IP-Adresse für das VPC-Produkt zu bestellen
 - Möglichkeit, das Gateway für einen VPC zu aktivieren
-- Hinzufügung der Möglichkeit, die Löschung eines Tenants zu bestellen
+- Hinzufügen der Möglichkeit, die Löschung eines Tenants zu bestellen
 
-### [Metriken](/console/metrics/concepts)
-- Verbesserung der Tooltip-Anzeige auf Metriken-Diagrammen: Sie können nun auf einen Punkt klicken, um den Tooltip einzufrieren und alle Daten einzuzeigen
+### [Metrics](/console/metrics/concepts)
+- Verbesserung der Anzeige von Tooltips auf Metrikg diagrams: Es ist nun möglich, auf einen Punkt zu klicken, um den Tooltip einzufrieren und alle Daten einzusehen
 
-### [Netzwerk](/network/network_overview)
-- Zusammenführung der Seiten Netzwerke und Internet unter einem einzigen Produkt: Privates Backbone
-- Hinzufügen der Verwaltung von PTR-Einträgen bei der Änderung einer öffentlichen IP-Adresse
-- Blockierung der Freigabe für bestimmte Netzwerktypen
+### [Network](/network/network_overview)
+- Zusammenfassung der Seiten Netzwerke und Internet unter einem einzigen Produkt: Privates Backbone
+- Hinzufügen der Verwaltung der PTR-Eintragung bei der Änderung einer öffentlichen IP-Adresse
+- Blockieren der Freigabe für bestimmte Netzwerktypen
 
 ### [VPC](/network/vpc)
 - Integration des VPC-Produkts
 - Hinzufügen einer Seite zur Auflistung der VPCs
-- Hinzufügen einer Detailseite für eine VPC
-- Möglichkeit zur Verwaltung privater Netzwerke, öffentlicher IPs und des Gateways einer VPC
-- Möglichkeit, eine statische IP eines VPC-Privatnetzes einem VMware- oder OpenIaaS-Netzwerkadapter zuzuordnen
-- Möglichkeit, eine statische IP mit einer öffentlichen IP einer VPC zu verknüpfen
+- Hinzufügen einer Detailseite für einen VPC
+- Möglichkeit, die privaten Netzwerke, öffentlichen IP-Adressen und das Gateway eines VPCs zu verwalten
+- Möglichkeit, eine statische IP-Adresse eines privaten VPC-Netzwerks einem VMware- oder OpenIaaS-Netzwerkadapter zuzuordnen
+- Möglichkeit, eine statische IP-Adresse mit einer öffentlichen IP-Adresse eines VPCs zu verknüpfen
 
 ### [LLMaaS](/llmaas)
-- Hinzufügen eines Abrechnungstabs auf der LLMaaS-Seite für Tenants mit aktiviertem Prepaid-Modus
-- Anzeige des verbleibenden Guthabens für Tenants im Prepaid-Modus auf dem Dashboard und im Abrechnungstab
+- Hinzufügen einer Registerkarte „Abrechnung“ auf der LLMaaS-Seite für Tenants mit aktivierter Vorauszahlung
+- Anzeige des verbleibenden Guthabens für Tenants im Vorauszahlungsmodus auf dem Dashboard und über die Registerkarte „Abrechnung“
 
 ## v4.27.0 — 2025-11-12
 
-### [Bestellungen](/console/orders)
-- Hinzufügen einer Prüfung des verfügbaren Bestands bei der Bestellung von Ressourcen
-- Hinzufügen eines Filters nach Bestelltyp und Produkt in der Bestellungsliste
+### [Orders](/console/orders)
+- Hinzufügen einer Überprüfung der verfügbaren Lagerbestände bei der Bestellung von Ressourcen
+- Hinzufügen eines Filters nach Bestelltyp und Produkt in der Bestellliste
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Verbesserung der Konsole für virtuelle Maschinen. Verbesserte Tastatursteuerung und Hinzufügen einer Zwischenablage.
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Verbesserung der VM-Konsole. Bessere Tastaturverwaltung und Hinzufügen einer Zwischenablage
 
 ### [IaaS VMware — Backup](/iaas_vmware)
-- Hinzufügen einer Warnung im Dashboard für SPP-Sicherungs-VSnaps mit zu hoher Auslastung
+- Hinzufügen einer Warnung auf dem Dashboard für SPP-Sicherungs-VSnap mit zu hoher Auslastung
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Verbesserung der Konsole für virtuelle Maschinen. Verbesserte Tastatursteuerung und Hinzufügen einer Zwischenablage.
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Verbesserung der VM-Konsole. Bessere Tastaturverwaltung und Hinzufügen einer Zwischenablage
 
 ### [Marketplace](/marketplace)
-- Hinzufügen der Möglichkeit, die technischen Details eines Images anzuzeigen
+- Hinzufügen der Möglichkeit, technische Details eines Images anzuzeigen
 
 ## v4.26.5 — 2025-11-04
 
 ### [Console](/console)
-- Verbesserung der Größe der Dashboard-Diagramme beim Ändern der Fenstergröße
+- Verbesserung der Größe der Diagramme im Dashboard beim Ändern der Fenstergröße
 
 ## v4.26.3 — 2025-10-31
 
-### [Metriken](/console/metrics/concepts)
-- Änderung des Namens der in den Diagrammen angezeigten Metrikexporte
+### [Metrics](/console/metrics/concepts)
+- Änderung des Namens der in den Diagrammen angezeigten Metrik-Exports
 
 ## v4.26.0 — 2025-10-22
 
 ### [Console](/console)
-- Hinzufügen eines Buttons zum Kopieren der UUID des aktuellen Bereichs aus dem Benutzerprofil
-- Vollständige Neugestaltung des Dashboards
-- Hinzufügen einer automatischen Wiederverbindung zum Activity-Tracking bei Verbindungsunterbrechung
+- Hinzufügen einer Schaltfläche zum Kopieren der UUID des aktuellen Bereichs aus dem Benutzerprofil
+- Komplettüberarbeitung des Dashboards
+- Hinzufügen einer automatischen Wiederherstellung der Verbindung zur Aktivitätsverfolgung, wenn die Verbindung unterbrochen wird
 
-### [Bestellungen](/console/orders)
-- Aktualisierung der Bestellformulare, um sie auf den verschiedenen betroffenen Seiten hinzuzufügen (exemple nouveau Datastore depuis la page Stockage)
+### [Orders](/console/orders)
+- Aktualisierung der Bestellformulare, um sie auf den entsprechenden Seiten hinzuzufügen (z. B. neuer Datastore von der Speicherseite aus)
 
 ### [Support](/console)
-- Hinzufügen der E-Mail-Adresse der Person, die das Ticket geschlossen hat, zur Bewertung des Support-Tickets
+- Hinzufügen der E-Mail-Adresse der Person, die das Ticket geschlossen hat, zur Ticketbewertung im Support
 
-### [Metriken](/console/metrics/concepts)
-- Überarbeitung der Erfassung der VMware-Metriken, die URL der Seite lautet nun /iaas/metrics
-- Hinzufügen eines Tabs für VMware-Infrastrukturmetriken im Bereich Compute
-- Hinzufügen eines Tabs für VMware-Infrastrukturmetriken im Bereich Storage
-- Hinzufügen einer Metriken-Seite für OpenIaaS
-- Hinzufügen eines Tabs für OpenIaaS-Infrastrukturmetriken im Bereich Compute
-- Hinzufügen eines Tabs für OpenIaaS-Infrastrukturmetriken im Bereich Storage
+### [Metrics](/console/metrics/concepts)
+- Überarbeitung der VMware-Metrikerfassung, die URL der Seite ist nun /iaas/metrics
+- Hinzufügen einer Registerkarte für VMware-Infrastrukturmetriken auf der Berechnungsseite
+- Hinzufügen einer Registerkarte für VMware-Infrastrukturmetriken auf der Speicherseite
+- Hinzufügen einer Metrikseite für OpenIaaS
+- Hinzufügen einer Registerkarte für OpenIaaS-Infrastrukturmetriken auf der Berechnungsseite
+- Hinzufügen einer Registerkarte für OpenIaaS-Infrastrukturmetriken auf der Speicherseite
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
 - Hinzufügen der neuen extra_config-Schlüssel (guestinfo.metadata, guestinfo.metadata.encoding, guestinfo.userdata, guestinfo.userdata.encoding)
-- Blockierung der Auswahl eines Hostclusters ohne aktiven Host
-- Bei der Erstellung einer virtuellen VMware-Maschine erfolgt die Auswahl des Vcenters nun basierend auf der ausgewählten Verfügbarkeitszone
-- Hinzufügen von Beschränkungen für Namen und Beschreibungen beim Hochladen einer Datei auf VMware
+- Blockieren der Auswahl eines Hostclusters ohne aktiven Host
+- Bei der Erstellung einer VMware-VM erfolgt die Auswahl des Vcenters nun basierend auf der ausgewählten Verfügbarkeitszone
+- Hinzufügen von Begrenzungen für Namen und Beschreibungen beim Hochladen einer Datei auf VMware
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Beim Hinzufügen eines OpenIaaS-Datenträgers werden Speicher, die nicht zum Pool der virtuellen Maschine gehören, nun ausgefiltert
-- Beim Erstellen eines Snapshots ist die Option zum Mitspeichern des Arbeitsspeichers standardmäßig nun deaktiviert
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Beim Hinzufügen einer OpenIaaS-Festplatte werden nun Speichermedien, die nicht zum Pool der virtuellen Maschine gehören, gefiltert
+- Bei einem Snapshot ist die Option zur Erfassung des Arbeitsspeichers nun standardmäßig deaktiviert
 
 ### [IaaS OpenSource — Backup](/iaas_opensource)
-- Hinzufügen der Möglichkeit, eine Sicherung über den Tab „Sicherungen“ einer OpenIaaS-VM zu starten
+- Hinzufügen der Möglichkeit, ein Backup über die Registerkarte „Backups“ einer OpenIaaS-VM auszuführen
 
-### [Netzwerk](/network/network_overview)
-- Entfernung der Einschränkung, die die Auswahl mehrerer Netzwerktypen auf der Seite für virtuelle Netzwerke verhinderte
+### [Network](/network/network_overview)
+- Entfernen der Einschränkung, die die Auswahl mehrerer Netzwerktypen auf der Seite für virtuelle Netzwerke verhinderte
 
 ### [Object Storage](/storage/oss)
-- Optimierung des Abrufs von Dateien aus einem Bucket
+- Optimierung der Dateiabholung aus einem Bucket
 
 ### [PaaS OpenShift](/paas_openshift)
 - Hinzufügen einer Seite zur Auflistung der OpenShift-Cluster
@@ -789,264 +789,264 @@ sidebar_position: 999
 ## v4.25.0 — 2025-10-16
 
 ### [Marketplace](/marketplace)
-- Aktualisierung der Verwendung der erweiterten Konfiguration und der OVF-Eigenschaften bei der Bereitstellung einer VMware-Virtual Machine
+- Aktualisierung der Verwendung der erweiterten Konfiguration und der OVF-Eigenschaften beim Bereitstellen einer VMware-VM
 
 ## v4.24.0 — 2025-09-24
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Möglichkeit, ein Image einer virtuellen Maschine aus der Liste der virtuellen Maschinen bereitzustellen
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Möglichkeit, ein VM-Image aus der Liste der virtuellen Maschinen bereitzustellen
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Möglichkeit, ein Image einer virtuellen Maschine aus der Liste der virtuellen Maschinen bereitzustellen
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Möglichkeit, ein VM-Image aus der Liste der virtuellen Maschinen bereitzustellen
 
-### [Netzwerk](/network/network_overview)
-- Hinzufügen einer Validierung, um das Löschen der Netzwerkfreigabe zu verhindern, wenn das Netzwerk in einem anderen Tenant propagiert ist
+### [Network](/network/network_overview)
+- Hinzufügen einer Validierung, um die Löschung der Netzwerkfreigabe zu blockieren, wenn das Netzwerk in einem anderen Tenant propagiert wird
 
 ### [Marketplace](/marketplace)
 - Hinzufügen des Marketplace-Produkts
-- Hinzufügen einer Seite, die die im Katalog verfügbaren Lösungen auflistet
-- Hinzufügen einer Seite zum Anzeigen der Details einer Lösung
-- Möglichkeit, ein Image einer virtuellen Maschine in einer OpenIaaS- oder VMware-Umgebung von den Lösungsdetails aus zu bereitstellen
-- Möglichkeit, einen Partner für eine Managed-Services-Lösung zu kontaktieren
+- Hinzufügen einer Seite zur Auflistung der im Katalog verfügbaren Lösungen
+- Hinzufügen einer Seite zur Anzeige der Details einer Lösung
+- Möglichkeit, ein VM-Image auf einer OpenIaaS- oder VMware-Umgebung aus den Details einer Lösung bereitzustellen
+- Möglichkeit, einen Partner für eine Managed-Service-Lösung zu kontaktieren
 
 ## v4.23.0 — 2025-09-12
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Unterstützung für 4 neue extra-config-Werte hinzugefügt
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Hinzufügen der Unterstützung für 4 neue extra-config-Werte
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- HA-Alarm für betroffene VMs nicht anzeigen, wenn das lokale ISO nicht gemountet ist
-- Bei der Hinzufügung oder Größenänderung einer Festplatte angeben, ob das zugehörige SR für eine Replikationskonfiguration verwendet wird
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Die HA-Warnung nicht für betroffene VMs anzeigen, wenn das lokale ISO nicht gemountet ist
+- Beim Hinzufügen oder Ändern der Größe einer Festplatte angeben, ob das verknüpfte SR für eine Replikationskonfiguration verwendet wird
 
 ### [IaaS OpenSource — Backup](/iaas_opensource)
-- Hinzufügen des AZ-Namens zum Sicherungsbericht
+- Hinzufügen des AZ-Namens auf dem Backup-Bericht
 
 ### [Object Storage](/storage/oss)
-- Aktualisierung der Informationen zum Lebenszyklus eines Buckets
+- Aktualisierung der Informationen zum Bucket-Lebenszyklus
 
 ### [LLMaaS](/llmaas)
-- Hinzufügen des Produkts LLMaaS
+- Hinzufügen des LLMaaS-Produkts
 - Hinzufügen der Liste der verfügbaren Modelle
 - Hinzufügen der Liste der API-Schlüssel mit der Möglichkeit, neue zu erstellen
-- Hinzufügen des Verbrauchs nach Modellen und Schlüsseln
+- Hinzufügen des Verbrauchs nach Modellen und nach Schlüsseln
 - Hinzufügen der Details eines Modells
 - Möglichkeit, ein Modell zu testen
 
 ## v4.22.1 — 2025-09-10
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Änderung der Warnungen zur gewählten Datenträgerformatkonfiguration während eines VMotion mit Storage-Migration
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Änderung der Warnungen bezüglich der gewählten Festplattenformatkonfiguration bei einem VMotion, der Storage einschließt
 
 ## v4.22.0 — 2025-09-02
 
-### [Bestellungen](/console/orders)
-- Hinzufügen des Befehls zur Löschung der Netzwerkpropagation von der Seite mit allen Befehlen, alle verfügbaren Befehle sind nun von dieser Seite aus zugänglich.
+### [Orders](/console/orders)
+- Hinzufügen des Befehls zur Löschung einer Netzwerkpropagierung von der Seite aller Bestellungen aus, alle verfügbaren Bestellungen sind nun von dieser Seite aus zugänglich
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Aktualisierung der Bedingungen für die Änderung des Datenträgerformats beim Verschieben einer virtuellen Maschine und Hinzufügen von Informationen zum aktuellen Datenträgerformat bei einer diskbasierten Konfiguration
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Aktualisierung der Bedingungen für die Änderung des Festplattenformats beim Verschieben einer virtuellen Maschine und Hinzufügen von Informationen zum aktuellen Festplattenformat bei der konfigurationsbasierten Einstellung
 
 ## v4.21.0 — 2025-08-22
 
 ### [Console](/console)
-- Aktualisierung der Anzeige, wenn keine Daten erstellt/provisioniert werden oder beim Abrufen von Informationen ein Fehler auftritt.
+- Aktualisierung der Anzeige, wenn keine Daten erstellt/bereitgestellt wurden oder wenn ein Fehler beim Abrufen von Informationen auftritt.
 
 ### [Support](/console)
-- Öffnen der Support-Modals mit dem zugehörigen vorauselektierten Service
-- Hinzufügen eines Badges im Menü und in der Navbar, wenn ein Support-Ticket eine Antwort erfordert
+- Öffnen der Support-Modals mit dem vorab ausgewählten zugehörigen Service
+- Hinzufügen eines Badges im Menü und in der Navigationsleiste, wenn ein Support-Ticket eine Antwort erfordert
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
 - Hinzufügen der Möglichkeit, die Liste der VMware-Replikate als CSV zu exportieren
-- Verbesserung des Schiebereglers zur RAM-Auswahl bei bestimmten Bestellungen
-- Hinzufügen der Verwaltung der Optionen Static differed and immediate für vMotion
+- Verbesserung des RAM-Auswahlschiebereglers bei bestimmten Befehlen
+- Hinzufügen der Verwaltung der Optionen „Static differed“ und „immediate“ für vMotion
 
-### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Blockierung der Löschung eines nicht leeren Clusters oder eines Clusters mit Hosts/Datastores, die sich nicht im Wartungsmodus befinden
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Blockieren der Löschung eines nicht leeren Clusters oder eines Clusters mit Hosts/Datastores, die nicht im Wartungsmodus sind
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen der Möglichkeit, die Liste der OpenIaaS-Replikate und der zugehörigen Richtlinien als CSV zu exportieren
-- Hinzufügen von Details zu den von virtuellen Maschinen verwendeten Tools (pvDrivers, managementAgent et tools)
-- Hinzufügen von Überprüfungen für die hohe Verfügbarkeit (HA)
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Hinzufügen der Möglichkeit, die Liste der OpenIaaS-Replikate und die zugehörigen Richtlinien als CSV zu exportieren
+- Hinzufügen von Präzisierungen zu den von den virtuellen Maschinen verwendeten Tools (pvDrivers, managementAgent und tools)
+- Hinzufügen von Überprüfungen für die Hochverfügbarkeit (HA)
 
-### [Netzwerk](/network/network_overview)
-- Änderung der Auswahl einer IPv4-Adresse mit einer verfügbaren Liste
+### [Network](/network/network_overview)
+- Änderung der Auswahl einer IPv4-Adresse durch eine verfügbare Liste
 
 ## v4.20.0 — 2025-07-29
 
-### [Bestellungen](/console/orders)
-- Hinzufügen von Informationen zu limitierten Kapazitäten und Ausverkauftem für Rechenressourcen bei der Bestellung einer neuen Verfügbarkeitszone
+### [Orders](/console/orders)
+- Hinzufügen von Informationen zu begrenzten und ausverkauften Lagerbeständen bei der Bestellung von Compute-Ressourcen für eine neue Verfügbarkeitszone
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen einer VMware Tools-Option zur Synchronisierung der Uhrzeit mit dem Host
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Hinzufügen einer VMware-Tools-Option zur Synchronisierung der Uhrzeit mit dem Host
 - Aktualisierung der Bedingungen für die Verschlüsselung einer virtuellen Maschine
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Entfernung der Informationen zur letzten Ausführung der Replikationsrichtlinien, die zu Verlangsamungen führten
-- Verwaltung des TX-Checksumming für Netzwerkkarten
-- Hinzufügen einer Warnung zur OpenIaaS-Replikation, wenn die Anzahl der AZ unter 2 liegt
-- Hinzufügen der hohen Verfügbarkeit (HA) für Pools und virtuelle Maschinen
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Entfernen der Informationen zur letzten Ausführung der Replikationsrichtlinien, die zu Verzögerungen führen
+- Verwaltung der TX-Checksummenbildung für Netzwerkadapter
+- Hinzufügen einer Warnung zur OpenIaaS-Replikation, wenn die Anzahl der AZs weniger als 2 beträgt
+- Hinzufügen der Hochverfügbarkeit (HA) für Pools und virtuelle Maschinen
 
 ## v4.19.0 — 2025-07-24
 
-### [Bestellungen](/console/orders)
-- Aktualisierung der Bestellung öffentlicher IPs mit der Möglichkeit, ein IPv6-Präfix zu bestellen
-- Aktualisierung der Anzeige der verfügbaren Bestellungen, wenn keine Umgebung bereitgestellt ist
+### [Orders](/console/orders)
+- Aktualisierung der Bestellung öffentlicher IP-Adressen mit der Möglichkeit, ein IPv6-Präfix zu bestellen
+- Aktualisierung der Anzeige der verfügbaren Bestellungen, wenn keine Umgebung bereitgestellt wurde
 
-### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen eines Replikationsfilters zur Liste der virtuellen Maschinen
-- Aktualisierung des Dialogs zur Erstellung einer virtuellen Maschine
+### [IaaS VMware — Virtual Machines](/iaas_vmware)
+- Hinzufügen eines Replikationsfilters in der Liste der virtuellen Maschinen
+- Aktualisierung des Modals zur Erstellung einer virtuellen Maschine
 
-### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen eines Replikationsfilters zur Liste der virtuellen Maschinen
+### [IaaS OpenSource — Virtual Machines](/iaas_opensource)
+- Hinzufügen eines Replikationsfilters in der Liste der virtuellen Maschinen
 
-### [Netzwerk](/network/network_overview)
-- Aktualisierung der Internet-Seite mit der Hinzufügung der IPv6-Verwaltung
+### [Network](/network/network_overview)
+- Aktualisierung der Internetseite mit der Hinzufügung der IPv6-Verwaltung
 
 ## v4.18.0 — 2025-07-15
 
 ### [Console](/console)
-- Aktualisierung der Anzeige, wenn keine Daten erstellt/provisioniert werden oder beim Abrufen von Informationen ein Fehler auftritt.
+- Aktualisierung der Anzeige, wenn keine Daten erstellt/bereitgestellt wurden oder wenn ein Fehler beim Abrufen von Informationen auftritt.
 
-### [Bestellungen](/console/orders)
+### [Orders](/console/orders)
 - Aktualisierung der Internet-Schritte bei der Bestellung einer neuen Verfügbarkeitszone oder eines neuen Pools
 
 ### [Support](/console)
-- Hinzufügen eines Sicherheitsservices für jedes Produkt bei der Erstellung eines Supporttickets
+- Hinzufügen eines Sicherheits-Services für jedes Produkt bei der Erstellung eines Support-Tickets
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen eines Links von einem auf einem Controller montierten ISO zum entsprechenden Element im Katalog
+- Hinzufügen eines Links zu einer auf einem Controller eingehängten ISO-Datei zum entsprechenden Element im Katalog
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer OpenIaaS-Replikationsseite mit der Liste der Replikate und Replikationsrichtlinien
-- Möglichkeit, eine Replikationskonfiguration für eine virtuelle Maschine OpenIaaS hinzuzufügen und zu entfernen
+- Hinzufügen einer Seite zur OpenIaaS-Replikation mit der Liste der Replikate und der Replikationsrichtlinien
+- Möglichkeit, eine Replikationskonfiguration zu einer OpenIaaS-Virtual Machine hinzuzufügen oder zu löschen
 - Möglichkeit, eine Replikationsrichtlinie zu erstellen und zu löschen
 - Möglichkeit, ein Replikat wiederherzustellen
 - Möglichkeit, virtuelle Maschinen im CSV-Format zu exportieren.
 
 ## v4.17.0 — 2025-06-20
 
-### [Bestellungen](/console/orders)
+### [Befehle](/console/orders)
 - Möglichkeit, einen OpenIaaS-Pool zu bestellen
-- Möglichkeit, die Zuordnung eines vorhandenen Volumes zu einem vorhandenen Bare-Metal-Server von der Bare-Metal-Seite, von der Volume-Seite und von der Bestellseite aus zu bestellen
+- Möglichkeit, die Zuordnung eines vorhandenen Volumes zu einem vorhandenen Bare-Metal-Server über die Seite eines Bare-Metal-Servers, die Seite eines Volumes und die Seite der Bestellungen zu bestellen
 
 ### [Support](/console)
-- Möglichkeit, eine Datei in einem Support-Ticket zu löschen
-- Die Beschreibung zur Zufriedenheit bei der Schließung eines Tickets ist jetzt optional
+- Möglichkeit, eine Datei auf einem Support-Ticket zu löschen
+- Die Beschreibung zur Zufriedenheitsbewertung bei Schließung eines Tickets ist nun optional
 
 ## v4.16.0 — 2025-06-04
 
-### [Console](/console)
-- Hinzufügen der englischen Übersetzungen auf der Verbrauchsberichtsseite des Bestellmenüs
+### [Konsole](/console)
+- Hinzufügen der englischen Übersetzungen auf der Seite der Verbrauchsberichte im Menü Bestellungen
 
-### [Bestellungen](/console/orders)
-- Möglichkeit zur Bestellung der Größenerweiterung eines Bare-Metal-Volumes
-- Möglichkeit zur Bestellung der Größenerweiterung eines Block Storage OpenIaaS
+### [Befehle](/console/orders)
+- Möglichkeit, die Vergrößerung der Größe eines Bare-Metal-Volumes zu bestellen
+- Möglichkeit, die Vergrößerung der Größe eines OpenIaaS-Block Storage zu bestellen
 
 ### [Support](/console)
-- Neugestaltung der Support-Ticket-Erstellung
-- Markdown-Rendering in Support-Tickets und Aktualisierung der Anzeigereihenfolge der Kommentare
+- Überarbeitung der Erstellung eines Support-Tickets
+- Interpretation von Markdown auf einem Support-Ticket und Aktualisierung der Anzeigereihenfolge der Kommentare
 - Hinzufügen eines Feedbacks bei der Schließung eines Support-Tickets
-- Aktualisierung der Symbolanzeige entsprechend der Auswirkung eines globalen Vorfalls
+- Aktualisierung der Anzeige der Symbole basierend auf der Auswirkung eines globalen Vorfalls
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen einer Option zur Beibehaltung der Konfiguration einer virtuellen Maschine bei einer Wiederherstellung in der Produktion auf dem ursprünglichen Cluster
+- Hinzufügen einer Option zum Beibehalten der Konfiguration einer virtuellen Maschine bei einer Wiederherstellung in der Produktion auf dem ursprünglichen Cluster
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer Warnmeldung bei knappem Speicherplatz auf einem Block Storage (90 % belegt) und Warnhinweis bei der Ausführung von Befehlen
+- Hinzufügen einer Warnmeldung bei Platzmangel auf einem Block Storage (90 % belegt) und Warnung bei Bestellungen
 
 ### [Object Storage](/storage/oss)
-- Hinzufügen der Beschreibung der S3-Rollen bei der Zuweisung zu einem Bucket
+- Hinzufügen der Beschreibung der S3-Rollen bei der Zuweisung an einen Bucket
 
 ## v4.15.1 — 2025-05-27
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Anzeige eines Fehlers, wenn ein Netzwerk auf einem Netzwerkadapter einer virtuellen Maschine falsch konfiguriert ist, was ebenfalls den Start der virtuellen Maschine verhindert
+- Anzeige eines Fehlers, wenn ein Netzwerk auf einem Netzwerkadapter einer virtuellen Maschine falsch konfiguriert ist, was auch den Start der virtuellen Maschine verhindert
 
 ## v4.15.0 — 2025-05-13
 
-### [Console](/console)
-- Anpassung der angezeigten Einheiten für Infrastrukturressourcen: GiB (Gibibyte) anstelle von GB (Gigabyte)
+### [Konsole](/console)
+- Anpassung der angezeigten Einheiten für Infrastrukturressourcen: GiB (Gibibyte) statt GB (Gigabyte)
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Möglichkeit, einen OpenIaaS-Datenträger zu verschieben
-- Möglichkeit, einen OpenIaaS-Datenträger zu verbinden und zu trennen
-- Anzeige des Verbindungsstatus (verbunden/getrennt) eines Datenträgers
-- Möglichkeit, die UUID eines Datenträgers, virtuellen Netzwerks oder Snapshots zu kopieren
-- Möglichkeit, den Namen einer virtuellen Maschine bei der Bereitstellung einer XVA-Datei festzulegen
-- Hinzufügung der Möglichkeit, beim Starten einer virtuellen Maschine eine Sicherungsrichtlinie zuzuweisen, falls keine vorhanden ist.
+- Möglichkeit, eine OpenIaaS-Festplatte zu verschieben
+- Möglichkeit, eine OpenIaaS-Festplatte anzuschließen und zu trennen
+- Anzeige des Status „angeschlossen/getrennt“ einer Festplatte
+- Möglichkeit, die UUID einer Festplatte, eines virtuellen Netzwerks oder eines Snapshots zu kopieren
+- Möglichkeit, den Namen einer virtuellen Maschine bei der Bereitstellung einer XVA-Datei auszuwählen
+- Hinzufügen der Möglichkeit, einer virtuellen Maschine zum Zeitpunkt des Starts eine Sicherungsrichtlinie zuzuweisen, wenn sie keine hat.
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Hinzufügen von Aktionen, die auf einer Festplatte über einen Block Storage verfügbar sind
+- Hinzufügen von Aktionen, die auf einer Festplatte von einem Block Storage aus verfügbar sind
 
 ### [Bare Metal](/iaas_bare-metal)
-- Hinzufügen von MAC-Adressen zur Schnittstellentabelle eines Bare Metal
-- Hinzufügen einer Seite mit den Details eines Bare Metal-Volumes
+- Hinzufügen der MAC-Adressen in der Tabelle der Schnittstellen eines Bare-Metal-Servers
+- Hinzufügen einer Seite mit Details zu einem Bare-Metal-Volume
 
 ## v4.14.0 — 2025-04-28
 
-### [Console](/console)
-- Möglichkeit, Seiten im Menü anzupinnen
+### [Konsole](/console)
+- Möglichkeit, Seiten im Menü anzuheften
 - Aktualisierung der Darstellung der API-Dokumentationen
 
-### [Bestellungen](/console/orders)
-- Möglichkeit, die Löschung eines OpenIaaS Block Storages zu bestellen
-- Möglichkeit, die Hinzufügung eines Block Storages zu einem OpenIaaS-Pool zu bestellen
-- Möglichkeit, die Löschung eines OpenIaaS Hosts zu bestellen
-- Hinzufügen der Informationen zum betroffenen Produkt zur Bestellungsliste
+### [Befehle](/console/orders)
+- Möglichkeit, die Löschung eines OpenIaaS-Block Storage zu bestellen
+- Möglichkeit, die Hinzufügung eines Block Storage zu einem OpenIaaS-Pool zu bestellen
+- Möglichkeit, die Löschung eines OpenIaaS-Hosts zu bestellen
+- Hinzufügen der Information zum betroffenen Produkt auf der Bestellliste
 - Möglichkeit, die Hinzufügung eines Hosts zu einem OpenIaaS-Pool zu bestellen
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
 - Möglichkeit, einen Host in den Wartungsmodus zu versetzen
 - Möglichkeit, die Beschreibung eines Modells zu bearbeiten
 - Möglichkeit, einen Host beim Start einer virtuellen Maschine auszuwählen
-- Hinzufügen einer Eindeutigkeitsregel für die Namen der OpenIaaS-Virtual Machines
+- Hinzufügen einer Eindeutigkeitsregel für die Namen von OpenIaaS-Virtual Machines
 
 ## v4.13.0 — 2025-04-08
 
-### [Console](/console)
-- Hinzufügen von Statistiken und Kontaktdaten auf der Support-Seite
+### [Konsole](/console)
+- Hinzufügen von Statistiken und Kontaktinformationen auf der Support-Seite
 
-### [Bestellungen](/console/orders)
+### [Befehle](/console/orders)
 - Überarbeitung der Anzeige der Bestelldetails
-- Überarbeitung der Anzeige der Bestelloptionen
+- Überarbeitung der Anzeige der Bestellmöglichkeiten
 - Aktualisierung der Anzeige zur Bestellung des ersten Bare-Metal-Servers, wenn keiner vorhanden ist
-- Aktualisierung der Bestellung eines Bare-Metal-Servers mit der Auswahl der Netzwerkzuweisung auf den Bare-Metal-Schnittstellen
+- Aktualisierung der Bestellung eines Bare-Metal-Servers mit der Auswahl der Netzwerkpropagierung auf den Schnittstellen des Bare-Metal-Servers
 - Möglichkeit, ein VLAN auf einem Bare-Metal-Server zu propagieren
-- Möglichkeit, einem Bare-Metal-Server ein Volume hinzuzufügen
+- Möglichkeit, ein Volume zu einem Bare-Metal-Server hinzuzufügen
 - Möglichkeit, ein Volume von einem Bare-Metal-Server zu deprovisionieren
 - Möglichkeit, einen Bare-Metal-Server zu deprovisionieren
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen einer Schaltfläche zum Kopieren der UUID für VMware-Netzwerke und -Kataloge
+- Hinzufügen einer Schaltfläche „UUID kopieren“ auf VMware-Netzwerken und -Katalogen
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer UUID-Kopier-Schaltfläche für OpenIaaS-Netzwerke und -Kataloge
-- Hinzufügen einer UUID-Kopier-Schaltfläche für Bare-Metal-Server
+- Hinzufügen einer Schaltfläche „UUID kopieren“ auf OpenIaaS-Netzwerken und -Katalogen
+- Hinzufügen einer Schaltfläche „UUID kopieren“ auf einem Bare-Metal-Server
 
 ### [Bare Metal](/iaas_bare-metal)
 - Hinzufügen der Anzeige der Netzwerkschnittstellen und der darauf propagierten Netzwerke auf einem Bare-Metal-Server
-- Hinzufügen der Aktionen zum Einschalten, Neustarten und Ausschalten eines Bare-Metal-Servers
+- Hinzufügen der Aktionen Einschalten, Neustarten und Ausschalten eines Bare-Metal-Servers
 
 ### [Netzwerk](/network/network_overview)
-- Möglichkeit, die Propagierungen auf einem Bare Metal eines Netzwerks zu visualisieren
+- Möglichkeit, die Propagierungen eines Netzwerks auf einem Bare-Metal-Server anzuzeigen
 
 ## v4.12.0 — 2025-03-25
 
-### [Console](/console)
+### [Konsole](/console)
 - Möglichkeit, eine IP-Whitelist von der Zugriffsseite zu löschen
 
 ### Tags
-- Hinzufügen von Tags zu virtuellen OpenIaaS-Maschinen
+- Hinzufügen von Tags zu OpenIaaS-Virtual Machines
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Aktualisierung des Abrufs der API-Empfehlungen für die Affinitäts-/Anti-Affinitätsregeln eines HostClusters
+- Aktualisierung der Abrufung von API-Empfehlungen zu Affinitäts-/Anti-Affinitätsregeln eines HostClusters
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Importierung eines XVA OpenIaaS in der Downloadliste anzeigen
+- Anzeige des Imports einer OpenIaaS-XVA-Datei in der Liste der Downloads
 - Möglichkeit, eine vorhandene Festplatte an eine virtuelle Maschine anzuhängen
-- Möglichkeit, eine vorhandene Festplatte von einer virtuellen Maschine abzutrennen
+- Möglichkeit, eine vorhandene Festplatte von einer virtuellen Maschine zu trennen
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Aktualisierung der Anzeige der Datenträger eines Block Storage OpenIaaS
+- Aktualisierung der Anzeige der Festplatten eines OpenIaaS-Block Storage
 
 ## v4.11.3 — 2025-03-21
 
@@ -1055,52 +1055,52 @@ sidebar_position: 999
 
 ## v4.11.1 — 2025-03-12
 
-### [Bestellungen](/console/orders)
+### [Befehle](/console/orders)
 - Aktualisierung der Namen der Verfügbarkeitszonen bei einer Bestellung
-- Änderung des Datastore-Minimums bei der Bestellung eines datastoreCluster
+- Änderung des Mindestwerts für Datastores bei der Bestellung eines DatastoreClusters
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Wenn das Feld „label“ für hostCluster und datastoreCluster auf leer gesetzt wird, wird der technische Name standardmäßig angewendet.
+- Wenn das Feld „Label“ für HostClusters und DatastoreClusters auf leer geändert wird, wird standardmäßig der technische Name angewendet
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Wenn das Label-Feld der Pools entleert wird, wird der technische Name standardmäßig angewendet
-- Hinzufügen einer Informationsblase auf der Katalogseite und beim ISO-Import, um anzuzeigen, dass XVA bei der Erstellung einer virtuellen Maschine unterstützt wird
+- Wenn das Feld „Label“ für Pools auf leer geändert wird, wird standardmäßig der technische Name angewendet
+- Hinzufügen einer Informationsblase auf der Katalogseite und beim ISO-Import, um anzugeben, dass XVA bei der Erstellung einer virtuellen Maschine unterstützt wird
 
 ## v4.11.0 — 2025-03-10
 
-### [Bestellungen](/console/orders)
-- Aktualisierung der zulässigen Netzwerktypen bei der Erstellung einer AZ
-- Aktualisierung der mindestens zu provisionierenden Ressourcen bei der Bestellung einer neuen Verfügbarkeitszone
+### [Befehle](/console/orders)
+- Aktualisierung der bei der Erstellung einer AZ zulässigen Netzwerktypen
+- Aktualisierung der Mindestressourcen, die bei der Bestellung einer neuen Verfügbarkeitszone bereitgestellt werden müssen
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
 - Anzeige des Namens der virtuellen Maschine im Konsolen-Tab für VMware
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Hinzufügung der Labelverwaltung für VMware Datastore-Cluster und Host-Cluster
+- Hinzufügen der Verwaltung von Labels auf VMware-Datastore-Clustern und Host-Clustern
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Ermöglicht die Bereitstellung einer virtuellen Maschine über XVA-Import für OpenIaaS
-- Hinzufügen der Labelverwaltung für OpenIaaS-Pools
+- Ermöglichen der Bereitstellung einer virtuellen Maschine über XVA-Import für OpenIaaS
+- Hinzufügen der Verwaltung von Labels auf OpenIaaS-Pools
 - Anzeige des Namens der virtuellen Maschine im Konsolen-Tab für OpenIaaS
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Aktualisierung der CPU-Informationen der Hosts und OpenIaaS-Pools
+- Aktualisierung der CPU-Informationen von Hosts und Pools von OpenIaaS
 
 ### [Bare Metal](/iaas_bare-metal)
-- Hinzufügen von IOPS/TO für Bare-Metal-Volumes
+- Hinzufügen von IOPS/TO auf Bare-Metal-Volumes
 
 ## v4.10.0 — 2025-03-04
 
-### [Console](/console)
+### [Konsole](/console)
 - Aktualisierung der Links zur neuen öffentlichen Dokumentation
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer Warnung, um Benutzer bei doppelten MAC-Adressen in der Liste der virtuellen Maschinen sowie beim Erstellen oder Bearbeiten von Netzwerkadaptern zu informieren
-- Hinzufügen einer Option zum Erzwingen des Herunterfahrens oder Neustarts einer virtuellen Maschine
-- Der Arbeitsspeicher wird bei einem Snapshot standardmäßig nicht mehr aufgenommen, wenn die virtuelle Maschine nicht eingeschaltet ist
-- Möglichkeit zum Umbenennen und Ändern der Größe einer Festplatte
-- Hinzufügen der Möglichkeit, ISO-Images und Vorlagen über die Katalogseite zu löschen
-- Hinzufügen der Möglichkeit, die 'Cloud Init'-Konfigurationsfestplatte bei der Bereitstellung einer virtuellen Maschine zu löschen
+- Hinzufügen einer Warnung, um Benutzer im Falle von doppelten MAC-Adressen in der Liste der virtuellen Maschinen und bei der Erstellung oder Änderung von Netzwerkadaptern zu informieren
+- Hinzufügen einer Option zum Erzwingen des Stoppens oder Neustartens einer virtuellen Maschine
+- Der Arbeitsspeicher wird standardmäßig nicht mehr in einen Snapshot einbezogen, wenn die virtuelle Maschine nicht eingeschaltet ist
+- Möglichkeit, eine Festplatte umzubenennen und in der Größe zu ändern
+- Hinzufügen der Löschung von ISOs und Modellen von der Katalogseite
+- Hinzufügen der Möglichkeit, die Konfigurationsfestplatte „Cloud Init“ bei der Bereitstellung einer virtuellen Maschine zu löschen
 
 ## v4.9.1 — 2025-02-27
 
@@ -1108,44 +1108,44 @@ sidebar_position: 999
 - Möglichkeit, einen Netzwerkadapter auf einer eingeschalteten virtuellen Maschine zu bearbeiten
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen von Einschränkungen für die zulässigen Zeichen in den Namen der OpenIaaS-Virtuellen Maschinen
+- Hinzufügen von Einschränkungen für die in den Namen von OpenIaaS-Virtual Machines zulässigen Zeichen
 
 ## v4.9.0 — 2025-02-21
 
-### [Console](/console)
-- Namen in Tabellen klickbar machen, wenn eine verknüpfte Seite vorhanden ist
-- Die Öffnung der Konsolen verbessern, um das Öffnen mehrerer Tabs zu vermeiden, wenn mehrere Fenster auf derselben Seite geöffnet sind
-- Eine Fehlermeldung anzeigen, wenn eine Konsole geöffnet wird und der Browser keine Weiterleitungen zur Anwendung zulässt
+### [Konsole](/console)
+- Machen der Namen in Tabellen klickbar, wenn eine verknüpfte Seite existiert
+- Verbesserung des Öffnens von Konsolen, um zu vermeiden, dass mehrere Tabs geöffnet werden, wenn mehrere Fenster auf derselben Seite geöffnet sind
+- Anzeige eines Fehlers beim Öffnen einer Konsole, wenn der Browser keine Weiterleitungen in der Anwendung zulässt
 
 ### [Metriken](/console/metrics/concepts)
-- RAM-Einheit auf der Statusseite der virtuellen Maschinen anzeigen
+- Anzeige der RAM-Einheit auf der Seite zur Gesundheit der virtuellen Maschinen
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Blockieren der Erstellung einer virtuellen Maschine, wenn auf den ausgewählten Block Storages nicht genügend Speicherplatz verfügbar ist
-- Löschen der Standard-MAC-Adressen bei der Erstellung einer virtuellen OpenIaaS-Maschine
+- Blockieren der Erstellung einer virtuellen Maschine, wenn der Platz auf den ausgewählten Block Storage-Systemen nicht ausreicht
+- Löschen der Standard-MAC-Adressen bei der Erstellung einer OpenIaaS-Virtual Machine
 
 ### [Speicher](/storage/oss)
-- S3-Endpunkt in die Zwischenablage kopieren können
+- Möglichkeit, einen S3-Endpunkt in die Zwischenablage zu kopieren
 
 ## v4.8.0 — 2025-02-14
 
-### [Bestellungen](/console/orders)
-- Hinzufügen der Bestellung zur Verteilung eines Netzwerks auf OpenIaaS-Pools
-- Hinzufügen der Netzwerkverteilungsbestellungen auf der Seite aller Bestellungen
+### [Befehle](/console/orders)
+- Hinzufügen der Bestellung der Netzwerkpropagierung auf OpenIaaS-Pools
+- Hinzufügen der Befehle zur Netzwerkpropagierung auf der Seite aller Bestellungen
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Anzeige der Anzahl der zugewiesenen und verfügbaren Festplatten pro Controller auf einer virtuellen Maschine
-- Aktualisierung der Bedingungen für die Anzahl der auf Para-Virtualisierten SCSI-Controllern hinzuzufügenden Festplatten in Abhängigkeit von der Hardware-Version der virtuellen Maschine
+- Anzeige der Anzahl der pro Controller zugewiesenen und verfügbaren Festplatten auf einer virtuellen Maschine
+- Aktualisierung der Bedingungen für die Anzahl der Festplatten, die auf SCSI Para Virtual-Controllern hinzugefügt werden können, basierend auf der Hardwareversion der virtuellen Maschine
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Möglichkeit, Cloud-Init-Optionen bei der Erstellung einer OpenIaaS-Virtuellen Maschine hinzuzufügen
-- Anzeige der Datenträger auf der Seite eines Block Storage
-- Möglichkeit, die Boot-Firmware-Konfiguration einer OpenIaaS-Virtuellen Maschine zu aktualisieren
-- Möglichkeit, eine OpenIaaS-Virtuelle Maschine zu klonen
+- Möglichkeit, Cloud Init-Optionen bei der Erstellung einer OpenIaaS-Virtual Machine hinzuzufügen
+- Anzeige der Festplatten auf der Seite eines Block Storage
+- Möglichkeit, die Boot-Firmware-Konfiguration einer OpenIaaS-Virtual Machine zu aktualisieren
+- Möglichkeit, eine OpenIaaS-Virtual Machine zu klonen
 
 ### [Netzwerk](/network/network_overview)
-- Aktualisierung der Visualisierung der Netzwerkpropagationen und Hinzufügen von OpenIaaS-Propagationen
-- Aktualisierung der Netzwerkerstellung und Möglichkeit, das Netzwerk bereits bei der Erstellung auf der OpenIaaS-Infrastruktur zu propagieren
+- Aktualisierung der Visualisierung der Propagierungen eines Netzwerks und Hinzufügen von OpenIaaS-Propagierungen
+- Aktualisierung der Erstellung eines Netzwerks und Möglichkeit, das Netzwerk bei seiner Erstellung auf die OpenIaaS-Infrastruktur zu propagieren
 
 ## v4.7.0 — 2025-02-03
 
@@ -1153,178 +1153,178 @@ sidebar_position: 999
 - Der OVF-Export ist blockiert, wenn die virtuelle Maschine verschlüsselt ist
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Anzeigen der Beziehungen zwischen Datastore-Clustern und Host-Clustern auf den Seiten Compute und Storage
+- Anzeige der Beziehungen zwischen Datastore-Clustern und Host-Clustern auf den Seiten Berechnung und Speicher
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Änderung der Boot-Option nach der Wiederherstellung für eine SecNumCloud-Umgebung bei der Wiederherstellung im Clone- oder Produktionsmodus auf einem alternativen Host oder Cluster
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Änderung der Startoption nach der Wiederherstellung für eine SecNumCloud-Umgebung bei der Wiederherstellung im Klon- oder Produktionsmodus auf einem alternativen Host oder Cluster
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Schaltflächen zum Einbinden und Aushängen eines OpenIaaS-ISOs in der Aktionsleiste einer virtuellen Maschine hinzufügen
+- Hinzufügen der Schaltflächen zum Einhängen und Aushängen einer OpenIaaS-ISO in die Aktionsleiste einer virtuellen Maschine
 
 ### [Netzwerk](/network/network_overview)
-- Verbesserung der Anzeige von Netzwerkpropagationen bei ausstehenden Löschanträgen für Propagationen.
+- Verbesserung der Anzeige von Netzwerk-Propagationen, wenn Löschanfragen für Propagationen ausstehen
 
 ## v4.6.0 — 2025-01-30
 
-### [Console](/console)
-- Entfernen der bei der Autovervollständigung angezeigten Zeichen beim Hinzufügen von Beobachtern bei der Erstellung eines Support-Tickets
-- Aktualisierung der Anzeige des Menüs und der verfügbaren Seiten für die VMware- und OpenIaaS-Angebote in einer neuen Umgebung ohne bereitgestellte Verfügbarkeitszonen
+### [Konsole](/console)
+- Entfernen der angezeigten Zeichen bei der Autovervollständigung beim Hinzufügen von Beobachtern zur Erstellung eines Support-Tickets
+- Aktualisierung der Anzeige des Menüs und der verfügbaren Seiten für VMware- und OpenIaaS-Angebote in einer neuen Umgebung ohne provisionierte Verfügbarkeitszonen
 
-### [Console — Benachrichtigungen](/console)
+### [Konsole — Benachrichtigungen](/console)
 - Aktualisierung der Anzeige der Benachrichtigungsabonnements auf der Profilseite
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Möglichkeit zur Verschlüsselung einer virtuellen Maschine hinzufügen
+- Hinzufügen der Möglichkeit, eine virtuelle Maschine zu verschlüsseln
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen des Exports einer virtuellen Maschine als Modell
+- Hinzufügen des Exports einer virtuellen Maschine als Vorlage
 
 ## v4.5.0 — 2025-01-17
 
-### [Console](/console)
+### [Konsole](/console)
 - Hinzufügen der Beschreibung bei der Erstellung und Anzeige von Whitelists
-- Möglichkeit zur Änderung der Beschreibung einer Whitelist
+- Möglichkeit, die Beschreibung einer Whitelist zu ändern
 
 ### [Bestellungen](/console/orders)
-- Hinzufügen einer Bestellung für eine neue OpenIaaS-Verfügbarkeitszone
-- Hinzufügen einer Bestellung für Bare Metal
-- Hypervisor-Cluster mit einem Storage-Cluster verknüpfen
+- Hinzufügen eines Auftrags für eine neue OpenIaaS-Verfügbarkeitszone
+- Hinzufügen eines Auftrags für Bare Metal
+- Verknüpfen eines Hypervisor-Clusters mit einem Speicherspeichercluster
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Verbleibende Größe in Klammern in den Speicherauswahlbäumen anzeigen
+- Anzeigen der verbleibenden Größe in Klammern in den Speicher-Auswahlbäumen
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Hinzufügen des Worst-Case-Szenarios für die Speicherzuweisung auf einem VMware hostCluster
+- Hinzufügen der Worst-Case-Speicherzuweisung auf einem VMware-HostCluster
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen des ISO-Uploads zu den OpenIaaS-Katalogen
-- Hinzufügen der Verschiebung von OpenIaaS-Virtuellen Maschinen
-- Möglichkeit, Festplatten und Netzwerke bei der Erstellung einer OpenIaaS-Virtuellen Maschine auszuwählen
+- Hinzufügen des ISO-Uploads in die OpenIaaS-Kataloge
+- Hinzufügen der Verschiebung von OpenIaaS-Virtual-Machines
+- Möglichkeit, bei der Erstellung einer OpenIaaS-Virtual-Machine Festplatten und Netzwerke auszuwählen
 
 ### [Bare Metal](/iaas_bare-metal)
-- Hinzufügen einer Seite zur Auflistung von Bare Metal
-- Hinzufügen einer Seite zur Auflistung von Bare Metal-Volumes
-- Hinzufügen einer Seite mit den Details eines Bare Metal
-- Hinzufügen der Möglichkeit, eine Bare Metal-Konsole zu öffnen
+- Hinzufügen einer Seite zur Auflistung von Bare-Metal-Systemen
+- Hinzufügen einer Seite zur Auflistung von Bare-Metal-Volumes
+- Hinzufügen einer Seite mit den Details eines Bare-Metal-Systems
+- Hinzufügen der Möglichkeit, eine Bare-Metal-Konsole zu öffnen
 
 ## v4.4.0 — 2025-01-13
 
-### [Console](/console)
+### [Konsole](/console)
 - Technische Änderungen während des Authentifizierungsprozesses
 
 ## v4.3.0 — 2024-12-19
 
-### [Console — Aktivitäten](/console)
-- Hinzufügen von Links "Zur Ressource wechseln" für Aktivitäten, die mit XOA und Object-Storage verknüpft sind
+### [Konsole — Aktivitäten](/console)
+- Hinzufügen der Links „Zur Ressource wechseln“ zu Aktivitäten, die sich auf XOA und Object-Storage beziehen
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
 - Hinzufügen der Tags und der IP-Adresse der virtuellen Maschine zum CSV-Export der virtuellen Maschinen
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Option hinzufügen, im CSV-Export der Sicherungsberichte im Unter-Tab Virtuelle Maschinen nur die gefilterten Elemente zu exportieren
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Vorschlag, nur die gefilterten Elemente beim CSV-Export der Sicherungsberichte im Unterreiter „Virtuelle Maschinen“ zu exportieren
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Hinzufügen von XOA-VM-Templates über die Katalogseite
+- Hinzufügen der XOA-VM-Vorlagen ab der Katalogseite
 
 ### [Object Storage](/storage/oss)
-- Globale Zugriffsschlüssel aus den Speicherkonten erstellen und zurücksetzen
+- Möglichkeit, den globalen Zugriffsschlüssel aus den Speicherkonten zu erstellen und zurückzusetzen
 
 ## v4.2.0 — 2024-12-10
 
-### [Console](/console)
-- Weiterleitungen zur Statusseite hinzufügen
+### [Konsole](/console)
+- Hinzufügen von Weiterleitungen zur Statusseite
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Elemente, die bereits in 'Mein Katalog' vorhanden sind, werden nun weiterhin im 'Öffentlichen Katalog' angezeigt
-- Hinzufügen von Weiterleitungen für die in einem VMware-Katalogeintrag genannten Komponenten
+- Elemente, die sich bereits in „Mein Katalog“ befinden, werden nun auch im „Öffentlichen Katalog“ angezeigt
+- Hinzufügen von Weiterleitungen zu den Komponenten, die in einem VMware-Katalogelement erwähnt werden
 - Aktualisierung der RAM-Anzeige auf einem Hypervisor-Cluster
-- Entfernung der Option zur automatischen Replikation neuer Festplatten, die zu Fehlern führte
-- Hinzufügen von Validierungen für die Replikation einer virtuellen Maschine
-- Hinzufügen neuer extra config PCIPassthru über die erweiterte Konfiguration einer virtuellen Maschine zur GPU-Verwaltung
-- Möglichkeit, einen PCI-Controller auf virtuellen Maschinen hinzuzufügen
+- Entfernen der Option zur automatischen Replikation neuer Festplatten, die Fehler verursachte
+- Hinzufügen von Validierungen zur Replikation einer virtuellen Maschine
+- Hinzufügen neuer extra config PCIPassthru aus der erweiterten Konfiguration einer virtuellen Maschine für das GPU-Management
+- Möglichkeit, einen PCI-Controller zu virtuellen Maschinen hinzuzufügen
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Anzeige der DRS-Empfehlungen und -Fehler für einen Hypervisor-Cluster
-- Neuer Status für Hypervisoren und Datastores bei laufender Wartungsanforderung
+- Anzeige von DRS-Empfehlungen und -Störungen ab einem Hypervisor-Cluster
+- Neuer Status für Hypervisor und Datastores, wenn eine Wartungsanfrage aussteht
 - Hinzufügen von Informationen zur GPU eines Hypervisors
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Mehrere nicht funktionierende Backup-Optionen auf virtuellen Maschinen im Testmodus entfernen
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Entfernen mehrerer nicht funktionsfähiger Backup-Optionen für virtuelle Maschinen im Testmodus
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer Backup-Seite für den OpenIaas-Backup-Bereich, die Fehler, Richtlinien und Backup-Berichte auflistet und die Wiederherstellung gelöschter virtueller Maschinen ermöglicht.
+- Hinzufügen einer Sicherungsseite für den OpenIaaS-Teil, die Fehler, Richtlinien, Sicherungsberichte auflistet und die Wiederherstellung gelöschter virtueller Maschinen ermöglicht
 
 ### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
-- Hinzufügen einer Seite zum Auflisten der OpenIaas-Verfügbarkeitszonen
-- Hinzufügen einer Speicherseite für den OpenIaas-Bereich
-- Hinzufügen einer Compute-Seite für den OpenIaas-Bereich
+- Hinzufügen einer Seite zur Auflistung der OpenIaaS-Verfügbarkeitszonen
+- Hinzufügen einer Speicherseite für den OpenIaaS-Teil
+- Hinzufügen einer Berechnungsseite für den OpenIaaS-Teil
 
 ### [Housing (Colocation)](/housing)
-- Änderung der auf der Geräte-Seite angezeigten Informationen
+- Änderung der auf der Geräteseite angezeigten Informationen
 
 ## v4.1.1 — 2024-11-18
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Verbesserung der Bearbeitung des Arbeitsspeichers, die Umrechnung erfolgt auf die nächstgelegene ganzzahlige Einheit
-- Bei der Snapshot-Erstellung ist die Schaltfläche zum Speichern des Arbeitsspeichers deaktiviert, wenn die virtuelle Maschine ausgeschaltet ist
-- Wenn mehrere virtuelle Maschinen aufgeklappt werden, wird die Liste der Festplatten nicht sofort angezeigt
+- Verbesserung der Bearbeitung des Speichers; die Konversion erfolgt in die Einheit mit dem letzten ganzzahligen Wert
+- Bei einer Snapshot ist die Schaltfläche zum Sichern des RAMs deaktiviert, wenn die virtuelle Maschine ausgeschaltet ist
+- Wenn mehrere virtuelle Maschinen aufgeklappt sind, wird die Festplattenliste nicht sofort angezeigt
 
-### [IaaS VMware — Backup](/iaas_vmware)
-- Hinzufügen der CSV-Export-Schaltfläche im Tab „Virtuelle Maschinen“ auf der Seite der Sicherungsberichte
+### [IaaS VMware — Sicherung](/iaas_vmware)
+- Hinzufügen der CSV-Export-Schaltfläche im Reiter „Virtuelle Maschinen“ der Sicherungsberichtsseite
 
 ## v4.1.0 — 2024-11-13
 
-### [Console](/console)
-- Möglichkeit, eine Datei beim Feedback zu senden
+### [Konsole](/console)
+- Möglichkeit, eine Datei während eines Feedbacks zu senden
 
 ### [Identität & Zugriff (IAM)](/console/iam)
-- Deaktivierung der Möglichkeit, einen Besitzer zu löschen
+- Deaktivierung der Möglichkeit, einen Eigentümer zu löschen
 
 ### [Bestellungen](/console/orders)
-- Hinzufügen der Verwaltung zum Hinzufügen, Löschen und Bearbeiten eines Datastores von der Bestellseite aus
+- Hinzufügen des Managements zum Hinzufügen, Löschen und Bearbeiten eines Datastores ab der Bestellseite
 - Hinzufügen der Möglichkeit, einen Host zu löschen
 
 ### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
-- Hinzufügen von Snapshot-Aktivitäten im Snapshot-Tab einer VM
+- Hinzufügen der Snapshot-Aktivitäten zum Snapshot-Reiter einer VM
 - Anzeige der tatsächlichen Größe der virtuellen Maschinen im CSV-Export
 
 ### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Auf den Seiten Rechenleistung und Speicher gilt der Filter für die Verfügbarkeitszonen ebenfalls für die Cluster-Registerkarten
-- Anzeige der Auslastungsprozentsätze auf den Verbrauchsleisten (CPU / RAM / Stockage)
+- Auf den Berechnungs- und Speicherseiten gilt der Filter für Verfügbarkeitszonen auch für die Cluster-Reiter
+- Anzeige der Nutzungsprozente auf den Verbrauchsbalken (CPU / RAM / Speicher)
 
 ### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
-- Hinzufügen einer Validierung zum Vorhandensein von Backup-Richtlinien für die automatische Startoption
-- Hinzufügen einer Option zum Erzwingen des Stopps/Neustarts virtueller Maschinen ohne installierte Guest-Tools
-- Verbesserung der Ausführungsmeldung einer OpenIaas-Richtlinie auf einer bestimmten virtuellen Maschine
+- Hinzufügen einer Validierung zur Anwesenheit von Sicherungspolitiken bei der Option für den automatischen Start
+- Hinzufügen einer Option zum Erzwingen des Stopp/Neustarts von virtuellen Maschinen ohne installierte Guest-Tools
+- Verbesserung der Meldung zur Ausführung einer OpenIaaS-Richtlinie auf einer bestimmten virtuellen Maschine
 
 ### [Bastion](/bastion)
-- Hinzufügung einer Validierung für das Host-Feld eines Geräts
+- Hinzufügen einer Validierung für das Host-Feld eines Geräts
 
 ## v4.0.3 — 2024-11-04
 
-### [Console](/console)
-- Verbesserungen und Fehlerbehebungen für das neue Design
+### [Konsole](/console)
+- Verbesserungen und Korrekturen im Zusammenhang mit dem neuen Design
 
 ## v4.0.2 — 2024-10-30
 
-### [Console](/console)
-- Verbesserungen und Fehlerbehebungen für das neue Design
+### [Konsole](/console)
+- Verbesserungen und Korrekturen im Zusammenhang mit dem neuen Design
 
 ## v4.0.1 — 2024-10-25
 
-### [Console](/console)
-- Verbesserungen und Fehlerbehebungen für das neue Design
+### [Konsole](/console)
+- Verbesserungen und Korrekturen im Zusammenhang mit dem neuen Design
 
 ## v4.0.0 — 2024-10-18
 
-### [Console](/console)
+### [Konsole](/console)
 - Neues Design der Konsole
 - Überarbeitung der Infrastruktur- und Sicherungsseiten
 
 ---
 
-:::info[Frühere Historie]
+:::info[Vorherige Historie]
 
-Die vollständige Historie der Versionen vor v4.0 (v1.0 bis v3.38.1, von Februar 2019 bis Oktober 2024) ist in der [Git-Historie](https://github.com/Cloud-Temple/docs) des Projekts verfügbar.
+Die vollständige Historie der Versionen vor v4.0 (v1.0 bis v3.38.1, von Februar 2019 bis Oktober 2024) ist im [Git-Verlauf](https://github.com/Cloud-Temple/docs) des Projekts verfügbar.
 
 :::

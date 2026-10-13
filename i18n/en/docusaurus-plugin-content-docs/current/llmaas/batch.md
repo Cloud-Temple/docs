@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Batch API — Asynchronous Processing
 
-The Batch API processes multiple independent conversations with the same model asynchronously. It is well-suited for deferred tasks such as classification, summarization, or text extraction.
+The Batch API processes multiple independent conversations with the same model asynchronously. It is suitable for deferred tasks such as classification, summarization, or text extraction.
 
 You send the conversations directly as JSON to `POST /v1/chat/completions/batch`, then retrieve their status and results with `GET /v1/chat/completions/batch/{id}`. This contract is specific to LLMaaS: it does not rely on the file and batch endpoints of the OpenAI SDK.
 
@@ -13,12 +13,12 @@ You send the conversations directly as JSON to `POST /v1/chat/completions/batch`
 
 1. Prepare an array of conversations with a common model and parameters.
 2. Submit the batch: the API returns **HTTP 202**, an `id` identifier, and the `queued` status.
-3. Keep this identifier and poll the status every 30 to 60 seconds.
-4. Retrieve the `results` array when processing is complete, then save the results to your application.
+3. Keep this identifier and query the status every 30 to 60 seconds.
+4. Retrieve the `results` array when processing is complete, then save the results in your application.
 
-Use the **same API key** to submit and check the batch. Another key, even if associated with the same account, cannot be used to retrieve its results.
+Use the **same API key** to submit and query the batch. Another key, even if associated with the same account, will not allow you to retrieve its results.
 
-## Submit a batch
+## Submitting a batch
 
 ### POST /v1/chat/completions/batch
 
@@ -54,9 +54,9 @@ Verify the model identifier with `GET /v1/models` and its [lifecycle](https://ll
 | `max_tokens`, `temperature`, `top_p`, etc. | Parameters applied to each conversation, depending on the model's capabilities. |
 | `tools`, `tool_choice`, `response_format` | Parameters passed to the model when used; tool execution remains the responsibility of your application. |
 
-Processing forces `stream: false`. Conversations and their results are matched by their position in the arrays; maintain this mapping in your application.
+Processing forces `stream: false`. Conversations and their results are associated by their position in the arrays; maintain this mapping in your application.
 
-Illustrative excerpt of the creation response:
+Illustrative excerpt from the creation response:
 
 ```json
 {
@@ -73,9 +73,9 @@ Illustrative excerpt of the creation response:
 }
 ```
 
-`model_requested` indicates the requested name; `model` indicates the resolved model, which may differ in case of an alias. Reuse the `id` identifier actually returned by the service, without reconstructing it.
+`model_requested` indicates the requested name; `model` indicates the resolved model, which may differ in case of an alias. Reuse the `id` identifier actually returned by the service, do not reconstruct it.
 
-## Monitor Processing and Retrieve Results
+## Tracking processing and retrieving results
 
 ### GET /v1/chat/completions/batch/\{id\}
 
@@ -85,16 +85,16 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch/$BATCH_ID" \
 ```
 
 | Status | Meaning |
-|--------|---------------|
-| `queued` | Waiting to be processed or resumed in the next processing window. |
+|--------|---------|
+| `queued` | Waiting for processing or resumption at the next processing window. |
 | `in_progress` | Processing in progress. |
-| `completed` | Processing completed; inspect each result to detect individual errors. |
+| `completed` | Processing complete; inspect each result to detect individual errors. |
 | `failed` | Global failure; inspect `error` and any available results. |
-| `expired` | Expired state; after purging, the GET request returns HTTP 404. |
+| `expired` | Expiration state; after purging, GET returns HTTP 404. |
 
-The `results` array is included for `completed` and `failed` statuses. Each item is either a chat response or an `error` object. There is no output file to download.
+The `results` array is attached for `completed` and `failed` statuses. Each element is either a chat response or an `error` object. There is no output file to download.
 
-Illustrative excerpt with one success and one error:
+Illustrative excerpt with a success and an error:
 
 ```json
 {
@@ -124,9 +124,9 @@ Illustrative excerpt with one success and one error:
 }
 ```
 
-**`completed` does not mean that all conversations succeeded.** Once the batch is processed, `results[i]` corresponds to the conversation `messages[i]`. To retry errors, build a new batch containing only the affected conversations.
+**`completed` does not mean that all conversations succeeded.** Once the batch is processed, `results[i]` corresponds to conversation `messages[i]`. To handle errors, create a new batch containing only the affected conversations.
 
-## Complete Python Example
+## Complete Python example
 
 Install `httpx`, set `LLMAAS_API_KEY` in your environment, then save the script as `batch_demo.py` and run `python batch_demo.py`.
 
@@ -146,7 +146,7 @@ MODEL = os.getenv("LLMAAS_MODEL", "gpt-oss:120b")
 
 
 def wait_for_batch(client, batch_id):
-    # Wait limit for this script, not a service SLA commitment.
+    # Limite d'attente de ce script, pas un engagement de délai du service.
     deadline = time.monotonic() + 24 * 60 * 60
     while time.monotonic() < deadline:
         response = client.get(f"/chat/completions/batch/{batch_id}")
@@ -194,7 +194,7 @@ def main():
         print(f"Batch accepté. Conservez cet identifiant : {batch_id}", flush=True)
         batch = wait_for_batch(client, batch_id)
 
-    # Also save errors and any partial results.
+    # Sauvegarder aussi les erreurs et les éventuels résultats partiels.
     with open(f"{batch_id}.json", "w", encoding="utf-8") as output:
         json.dump(batch, output, ensure_ascii=False, indent=2)
 
@@ -212,41 +212,41 @@ if __name__ == "__main__":
     main()
 ```
 
-If the script stops after submission, resume tracking with the GET request and the displayed ID. Do not automatically resubmit the same batch after a connection loss: it may have already been accepted, which would create a duplicate.
+If the script stops after submission, resume tracking with the GET request and the displayed identifier. Do not automatically resubmit the same batch after a connection loss: it may have been accepted, which would create a duplicate.
 
-## Limits and Retention
+## Limits and retention
 
-The values below are the service's default settings; they can be adjusted via configuration.
+The values below are the service's default parameters; they can be adjusted via configuration.
 
 | Parameter | Default Value |
-|-----------|-------------------|
+|-----------|---------------|
 | Conversations per batch | 1,000 maximum |
 | Queue capacity | 100 batches per processing instance; this is not a per-account quota |
-| Processing window | 10 PM–7 AM on weekdays, all day on weekends, based on the service's time zone |
-| Retention after processing | 24 hours after completion, followed by automatic purging |
+| Processing window | 10 PM–7 AM on weekdays, all day on weekends, according to the service's time zone |
+| Retention after processing | 24 hours after completion, then automatic purge |
 
-A batch may remain pending outside the processing window and be suspended and then resumed when the window closes. **The 24-hour retention does not guarantee processing within 24 hours.**
+A batch may remain pending outside the processing window and be suspended then resumed if this window ends. **The 24-hour retention does not guarantee processing within 24 hours.**
 
-The batch state (queue, progress, and results accessible via GET) is kept in memory on the processing instance, with no disk-based recovery mechanism. Restarting this instance results in the loss of this state. Retrieve and back up your results before they expire. Keep the key that created the batch until they are retrieved.
+The batch state (queue, progress, and results retrievable via GET) is kept in memory on the processing instance, without a disk-based recovery mechanism. Restarting this instance results in the loss of this state. Retrieve and save your results before they expire. Keep the key that created the batch until their retrieval.
 
-This contract handles chat conversations. It does not support JSONL upload, batch embedding processing, batch listing, or cancellation via API.
+This contract handles chat conversations. It does not offer JSONL upload, batch embedding processing, batch listing, or cancellation via API.
 
-## Common Errors
+## Common errors
 
 | HTTP Code | Cause or Action |
 |-----------|-----------------|
-| `400` | Invalid request, missing or malformed conversations, maximum size exceeded. Correct the request body. |
+| `400` | Incorrect request, missing or malformed conversations, maximum size exceeded. Correct the sent body. |
 | `401` | Invalid authentication. Check your API key. |
 | `403` | The key used to query the batch differs from the one that created it. |
 | `404` | Unknown identifier, expired batch, or state lost after restart. |
-| `501` | Batch processing disabled on the relevant instance. Contact support. |
-| `503` | Queue saturated or processing instance unavailable. Try again later according to the returned message. |
+| `501` | Batch processing disabled on the concerned instance. Contact support. |
+| `503` | Queue full or processing instance unavailable. Retry later according to the returned message. |
 
-Conversation-specific errors are located in `results[].error`, even if the GET returned HTTP 200.
+Errors specific to a conversation are found in `results[].error`, even if the GET returned HTTP 200.
 
-## Pricing and Resources
+## Pricing and resources
 
-Generation settings apply to each conversation. For Batch pricing, refer to the [API pricing table](./api.md#rate-limiting-and-billing).
+Generation parameters apply to each conversation. For Batch pricing, consult the [official Cloud Temple pricing catalog](https://www.cloud-temple.com/en/our-public-rates/).
 
 - [Chat generation API](./api.md#post-v1chatcompletions)
 - [Choosing a model](./models.md)

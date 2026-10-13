@@ -218,7 +218,7 @@ def create_knowledge_base():
         {
             "content": """
             L'API LLMaaS de Cloud Temple permet d'accéder à 36 modèles d'intelligence artificielle.
-            Les tarifs sont de 0.9€ pour l'input et 4€ pour l'output par million de tokens.
+            Les tarifs publics sont disponibles sur https://www.cloud-temple.com/nos-tarifs-publics/
             Le service inclut des modèles comme Granite 3.3, Qwen3, DeepSeek-R1, et Gemma 3.
             Tous les modèles sont hébergés en France avec conformité SecNumCloud.
             L'API est compatible avec le standard OpenAI pour faciliter l'intégration.
@@ -293,7 +293,7 @@ def test_rag_pipeline():
         },
         {
             "question": "Combien coûte l'API LLMaaS ?",
-            "expected_keywords": ["0.9", "4", "euro", "token", "tarif"],
+            "expected_keywords": ["tarifs", "cloud-temple.com"],
             "category": "Tarification"
         },
         {

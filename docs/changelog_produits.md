@@ -136,7 +136,7 @@ sidebar_position: 999
 
 ### [Gestionnaire des coûts](/console/billing/concepts)
 - La section Gestionnaire des coûts n'apparaît plus sur le tableau de bord Organisation lorsque l'organisation n'y est pas éligible
-- Affichage d'une carte d'erreur, au lieu d'un coût à 0 €, lorsque la récupération des consommations échoue sur le tableau de bord Organisation
+- Affichage d'une carte d'erreur, au lieu d'un coût nul, lorsque la récupération des consommations échoue sur le tableau de bord Organisation
 - Les lignes de plan de support sont désormais regroupées sous « Support » dans le coût par tenant, au lieu d'un tenant « Inconnu »
 
 ### [Commandes](/console/orders)
@@ -240,7 +240,7 @@ sidebar_position: 999
 - Lors de la configuration des cœurs par socket d'une machine virtuelle OpenIaaS, la topologie processeur (nombre de sockets et cœurs par socket) est désormais affichée explicitement
 
 ### [LLMaaS](/llmaas)
-- Le montant minimum d'un crédit LLMaaS est abaissé à 100 €
+- Le montant minimum de crédit LLMaaS évolue ; consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ## v4.45.3 — 2026-07-21
 

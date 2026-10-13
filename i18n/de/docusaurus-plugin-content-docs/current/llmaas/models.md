@@ -3,57 +3,57 @@ title: Katalog der KI-Modelle
 sidebar_position: 2
 ---
 
-# Katalog der LLM-Modelle als Service
+# Katalog der LLM-as-a-Service-Modelle
 
 ## Den aktuellen Katalog einsehen
 
-Der **[Modellkatalog und Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle)** ist die Referenz für Produktionsmodelle, Deprekationen, Support-Enddaten, LTS-Status und empfohlene Migrationen. Nutzen Sie die Filter und Suchfunktion, um ein neues Projekt vorzubereiten oder die Modelle Ihrer Anwendungen zu verfolgen. Bei Lebenszyklusdaten und Migrationen gelten die auf dieser Seite veröffentlichten Informationen als maßgeblich, falls Abweichungen zu älteren Beispielen oder Katalogkopien bestehen.
+Der **[Katalog und Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)** ist die Referenz für Modelle in der Produktion, Deprecations, End-of-Support-Daten, LTS-Status und empfohlene Migrationen. Nutzen Sie die Filter und die Suche, um ein neues Projekt vorzubereiten oder die Modelle Ihrer Anwendungen zu verfolgen. Bei Lebenszyklusdaten und Migrationen haben die auf dieser Seite veröffentlichten Informationen Vorrang vor älteren Beispielen oder Kopien des Katalogs.
 
-Diese Seite erläutert, wie Sie ein Modell auswählen und verwenden. Inventare, Daten und Leistungskennzahlen können direkt in den folgenden Quellen eingesehen werden:
+Diese Seite erläutert, wie man ein Modell auswählt und verwendet. Inventare, Daten und Leistungsmesswerte können direkt in den folgenden Quellen eingesehen werden:
 
-| Anforderung | Quelle |
+| Bedarf | Zu konsultierende Quelle |
 |--------|--------------------|
-| Modell auswählen, Kontext und Lebenszyklus prüfen | [Modellkatalog und Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) |
-| Von der API bereitgestellte Identifikatoren abrufen | `GET /v1/models` ([Dokumentation](./api.md)) |
-| Verfügbarkeit und beobachtete Leistung prüfen | [Service-Status](https://llmaas.status.cloud-temple.app/) |
-| Service-Updates und Migrationsankündigungen einsehen | [LLMaaS Changelog](https://llmaas.status.cloud-temple.app/changelog) |
-| Vergangene Messwerte prüfen | [Überwachungshistorie](https://llmaas.status.cloud-temple.app/history) |
+| Ein Modell auswählen, seinen Kontext und Lebenszyklus überprüfen | [Katalog und Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) |
+| Von der API bereitgestellte Identifikatoren erhalten | `GET /v1/models` ([Dokumentation](./api.md)) |
+| Verfügbarkeit und beobachtete Leistung überprüfen | [Dienststatus](https://llmaas.status.cloud-temple.app/) |
+| Dienstentwicklungen und Migrationsankündigungen einsehen | [LLMaaS-Changelog](https://llmaas.status.cloud-temple.app/changelog) |
+| Vergangene Messwerte untersuchen | [Überwachungshistorie](https://llmaas.status.cloud-temple.app/history) |
 
-## Auswahl entsprechend Ihrer Nutzung
+## Auswahl basierend auf der Nutzung
 
-Der Dienst deckt die unten aufgeführten Verwendungszwecke ab. Überprüfen Sie die Fähigkeiten des gewählten Modells vor der Integration: Nicht alle Modelle unterstützen dieselben Eingaben oder Funktionen.
+Der Dienst deckt die unten aufgeführten Anwendungsfälle ab. Überprüfen Sie vor der Integration die Fähigkeiten des ausgewählten Modells: Nicht alle Modelle unterstützen dieselben Eingaben oder Funktionen.
 
 ### Chat und Reasoning
 
-Für Assistenten, Zusammenfassungen oder Analysen vergleichen Sie die Qualität der Antworten auf Ihren eigenen Dokumenten, die Antwortzeit und die erforderliche Kontextgröße. Für eine langfristig geplante Anwendung prüfen Sie den **LTS**-Status und das angekündigte Ende des Supports.
+Für Assistenten, Zusammenfassungen oder Analysen vergleichen Sie die Antwortqualität mit Ihren eigenen Dokumenten, die Antwortzeit und die erforderliche Kontextgröße. Für eine langlebige Anwendung prüfen Sie den **LTS**-Status und das veröffentlichte End-of-Support-Datum.
 
-### Programmierung und Agenten
+### Programmierung und Agents
 
-Um Code zu generieren oder einen Agenten zu erstellen, prüfen Sie die Unterstützung für Tool-Aufrufe (*tool calling*) und testen Sie vollständige Ausführungssequenzen. Der [Schnellstart-Leitfaden](./quickstart.md) enthält ein Beispiel für einen Funktionsaufruf.
+Zur Codegenerierung oder zum Aufbau eines Agents überprüfen Sie die Unterstützung von Tool-Aufrufen (*Tool Calling*) und testen Sie vollständige Ausführungsszenarien. Der [Quickstart-Leitfaden](./quickstart.md) zeigt ein Beispiel für einen Funktionsaufruf.
 
-### Vision und Multimodalität
+### Vision und Multimodal
 
-Wählen Sie ein Modell, das Bilder für die visuelle Analyse und Textextraktion akzeptiert. Überprüfen Sie die von der API unterstützten Formate und die Kontextkapazität; die Unterstützung von Text impliziert nicht automatisch die Unterstützung von Bildern. Siehe Beispiele für [multimodale Anfragen](./api.md).
+Wählen Sie ein Modell, das Bilder akzeptiert, für die visuelle Analyse und Textextraktion. Überprüfen Sie die von der API akzeptierten Formate und die Kontextkapazität; die Unterstützung von Text impliziert nicht die von Bildern. Sehen Sie sich die Beispiele für [multimodale Anfragen](./api.md) an.
 
-### Embeddings und semantische Suche
+### Embedding und semantische Suche
 
-Embeddings wandeln Text in Vektoren um, die für die Suche verwendet werden. Vergleichen Sie die sprachliche Abdeckung, die akzeptierte Textlänge und die Relevanz auf Ihrem Korpus. Ein Modellwechsel kann erfordern, dass die Vektoren neu berechnet und der Index neu aufgebaut werden: Mischen Sie keine Embeddings verschiedener Modelle. Siehe [guide RAG](./rag_explained.md).
+Embeddings transformieren Text in Vektoren, die von der Suche verwendet werden. Vergleichen Sie die Sprachabdeckung, die Länge der akzeptierten Texte und die Relevanz für Ihre Datenmenge. Ein Modellwechsel kann eine Neuberechnung der Vektoren und den Neuaufbau des Index erfordern: Mischen Sie keine Embeddings unterschiedlicher Modelle. Sehen Sie sich den [RAG-Leitfaden](./rag_explained.md) an.
 
 ## Reranking-Modelle
 
-Reranking ordnet die gefundenen Dokumente basierend auf ihrer Relevanz für eine Frage neu. Es ergänzt die Vektorsuche vor der Generierung der Antwort. Die Endpunkte `/v1/rerank` und `/v2/rerank` werden im [guide Reranking](./rerank.md) vorgestellt.
+Das Reranking ordnet die gefundenen Dokumente neu nach ihrer Relevanz für eine Frage. Es ergänzt die Vektorsuche vor der Antwortgenerierung. Die Endpunkte `/v1/rerank` und `/v2/rerank` werden im [Reranking-Leitfaden](./rerank.md) vorgestellt.
 
 ### Sicherheit und Guardrails
 
-Sicherheitsmodelle ermöglichen die Bewertung von Inhalten innerhalb eines Anwendungspfads. Definieren Sie die Filterkriterien, Schwellenwerte und die Behandlung von Grenzfällen gemeinsam mit Ihren Fachabteilungen; validieren Sie diese anhand Ihrer Daten.
+Sicherheitsmodelle ermöglichen die Bewertung von Inhalten in einem Anwendungspfad. Definieren Sie mit Ihren Fachabteilungen die Filterkriterien, Schwellenwerte und die Behandlung von Grenzfällen; validieren Sie diese an Ihren Daten.
 
 ### Übersetzung
 
-Testen Sie bei einer mehrsprachigen Anwendung die betroffenen Sprachen, Ihre Terminologie und die Beibehaltung der Formatierung. Die Qualität muss anhand der tatsächlich verarbeiteten Dokumente bewertet werden.
+Testen Sie für eine mehrsprachige Anwendung die betroffenen Sprachen, Ihre Terminologie und die Erhaltung des Formats. Die Qualität muss an den tatsächlich verarbeiteten Dokumenten bewertet werden.
 
 ### Audio und Bild
 
-Der Katalog umfasst Anwendungsfälle für die Audio-Transkription und die Bildgenerierung. Überprüfen Sie das für jeden Anwendungsfall erforderliche Modell und das Protokoll, insbesondere die Unterscheidung zwischen der Transkription von Dateien und der Echtzeit-Transkription.
+Der Katalog umfasst Anwendungsfälle für Audio-Transkription und Bildgenerierung. Überprüfen Sie für jeden Anwendungsfall das erforderliche Modell und Protokoll, insbesondere den Unterschied zwischen der Transkription von Dateien und der Echtzeit-Transkription.
 
 ## Identifikatoren über die API abrufen
 
@@ -62,16 +62,16 @@ curl "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer VOTRE_CLE_API"
 ```
 
-Verwenden Sie die von der API zurückgegebene exakte ID im Parameter `model`. Das Vorhandensein einer ID garantiert nicht, dass sie sich noch auf das ursprüngliche Modell bezieht: Ein alter Name kann auf einen Nachfolger umgeleitet werden. Überprüfen Sie auch seinen [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle).
+Verwenden Sie den von der API zurückgegebenen exakten Identifikator im Parameter `model`. Das Vorhandensein eines Identifikators garantiert nicht, dass er noch das ursprüngliche Modell bezeichnet: Ein alter Name kann auf einen Nachfolger umgeleitet werden. Überprüfen Sie auch seinen [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle).
 
-## Vorbereitung der Produktion
+## Produktionsvorbereitung
 
-1. Wählen Sie ein für Ihren Anwendungsfall geeignetes Modell und überprüfen Sie dessen Lizenz.
-2. Informieren Sie sich über den Status, das Supportende und die empfohlene Migration.
-3. Testen Sie Qualität, Latenz, Kosten und die erforderlichen Kapazitäten anhand Ihrer realen Anwendungsfälle.
-4. Speichern Sie die Modell-ID in der Konfiguration Ihrer Anwendung, um eine Migration zu erleichtern.
-5. Verfolgen Sie das Changelog und wenden Sie den [Migrationsleitfaden](./concepts.md#migration-zu-einem-anderen-modell) an, sobald eine Änderung angekündigt wird.
+1. Wählen Sie ein für Ihren Anwendungsfall geeignetes Modell aus und überprüfen Sie dessen Lizenz.
+2. Sehen Sie sich den Status, das End-of-Support-Datum und die empfohlene Migration an.
+3. Testen Sie Qualität, Latenz, Kosten und erforderliche Fähigkeiten an Ihren realen Anwendungsfällen.
+4. Speichern Sie den Modellidentifikator in der Konfiguration Ihrer Anwendung, um eine Migration zu erleichtern.
+5. Verfolgen Sie das Changelog und wenden Sie den [Migrationsleitfaden](./concepts.md#migration-zu-einem-anderen-modell) an, wenn eine Änderung angekündigt wird.
 
-Die beobachteten Geschwindigkeiten hängen unter anderem von der Auslastung, der Länge der Anfragen und dem Generierungsmodus ab. Sie dienen als Richtwerte und stellen keine Durchsatzgarantien für Ihre Anwendung dar.
+Die beobachteten Geschwindigkeiten hängen unter anderem von der Auslastung, der Länge der Anfragen und dem Generierungsmodus ab. Sie dienen als Richtwerte, nicht als Durchsatzgarantien für Ihre Anwendung.
 
-Für Preise und Zugriffsstufen finden Sie Informationen in der [API-Dokumentation](./api.md). Für verzögerte Verarbeitungsaufträge finden Sie Informationen im [Batch-Modus](./batch.md).
+Um die aktuellen öffentlichen Preise zu erfahren und Ihre Schätzung zu erstellen, konsultieren Sie den [offiziellen Cloud Temple Preiskatalog](https://www.cloud-temple.com/nos-tarifs-publics/). Für technische Stufen konsultieren Sie die [API-Dokumentation](./api.md). Für asynchrone Verarbeitung konsultieren Sie den [Batch-Modus](./batch.md).

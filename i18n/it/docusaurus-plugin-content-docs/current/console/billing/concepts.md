@@ -11,49 +11,49 @@ import billingPricesList from '@site/docs/console/billing/images/billing_prices_
 
 ## Panoramica
 
-Il **Gestore dei costi** è il modulo della Console Cloud Temple dedicato alla **visibilità dei vostri consumi**. Vi consente di monitorare in tempo reale l'utilizzo delle vostre risorse cloud all'interno di un tenant e di avere una visione chiara delle vostre spese.
+Il **Gestore dei costi** è il modulo della Console Cloud Temple dedicato alla **visibilità del tuo consumo**. Ti consente di monitorare in tempo reale l'utilizzo delle tue risorse cloud all'interno di un tenant e di avere una visione chiara delle tue spese.
 
-Questo modulo risponde a un'esigenza fondamentale: **comprendere cosa consumate, quando lo consumate e a quale costo**, senza dover navigare in tabelle complesse o fatture dettagliate.
+Questo modulo risponde a un'esigenza fondamentale: **comprendere cosa consumi, quando lo consumi e a quale costo**, senza dover navigare in tabelle complesse o fatture dettagliate.
 
 :::info
-Il Gestore dei costi mostra il **consumo effettivo** delle vostre risorse sul tenant selezionato. I dati vengono aggiornati regolarmente per riflettere il vostro utilizzo corrente.
+Il Gestore dei costi visualizza il **consumo effettivo** delle tue risorse sul tenant selezionato. I dati vengono aggiornati regolarmente per riflettere il tuo utilizzo corrente.
 :::
 
 ## Dashboard principale
 
-La pagina iniziale del Gestore dei costi offre una sintesi visiva dei tuoi consumi. All'apertura, hai a disposizione una panoramica che ti consente di identificare rapidamente le tendenze dei consumi e le voci più rilevanti.
+La pagina iniziale del Gestore dei costi presenta una sintesi visiva del tuo consumo. All'apertura, hai a disposizione una panoramica che ti permette di identificare rapidamente le tendenze di consumo e le voci più significative.
 
 <img src={billingDashboardPreview} />
 
-La dashboard è organizzata attorno a diverse sezioni complementari, accessibili tramite le schede disponibili nella parte superiore della pagina.
+La dashboard è organizzata attorno a diversi assi complementari, accessibili tramite le schede disponibili nella parte superiore della pagina.
 
 ## Consumo totale
 
-La scheda **Consumo totale** offre una vista aggregata di tutti i tuoi consumi nel periodo selezionato. Questo grafico ti permette di osservare l'andamento delle tue spese nel tempo e di identificare eventuali picchi o tendenze.
+La scheda **Consumo totale** offre una vista aggregata di tutto il tuo consumo nel periodo selezionato. Questo grafico ti consente di osservare l'evoluzione delle tue spese nel tempo e di identificare eventuali picchi o tendenze.
 
 <img src={billingDashboardConsumptionTotal} />
 
-Puoi regolare il **periodo di visualizzazione** per affinare la tua analisi: giorno, settimana, mese o intervallo personalizzato. La curva del consumo totale è di immediata lettura e non richiede competenze tecniche particolari.
+Puoi regolare la **periodo di visualizzazione** per affinare la tua analisi: giorno, settimana, mese o intervallo personalizzato. La curva del consumo totale è direttamente leggibile e non richiede competenze tecniche specifiche.
 
 ## Consumo per prodotto
 
-La scheda **Consumo per prodotto** suddivide il tuo consumo in base alle principali famiglie di servizi Cloud Temple a cui hai sottoscritto: compute, storage, rete, ecc.
+La scheda **Consumo per prodotto** scompone il tuo consumo in base alle grandi famiglie di servizi Cloud Temple a cui ti sei abbonato: compute, storage, rete, ecc.
 
 <img src={billingDashboardConsumptionPerProduct} />
 
-Questa vista è particolarmente utile per **identificare le voci di spesa più significative** e orientare le decisioni di ottimizzazione. Ogni prodotto è rappresentato con la propria quota relativa nel consumo complessivo, facilitando la lettura e il confronto.
+Questa vista è particolarmente utile per **identificare le voci di spesa più significative** e orientare le decisioni di ottimizzazione. Ogni prodotto è rappresentato con la sua quota relativa nel consumo globale, facilitando la lettura e il confronto.
 
 ## Consumo per servizio
 
-La scheda **Consumo per servizio** offre un livello di dettaglio aggiuntivo suddividendo il consumo per **servizio specifico** all'interno di ciascun prodotto.
+La scheda **Consumo per servizio** offre un livello di dettaglio aggiuntivo ventilando il consumo per **servizio specifico** all'interno di ogni prodotto.
 
 <img src={billingDashboardConsumptionPerService} />
 
-Questo livello di granularità consente di approfondire l'analisi: è possibile ad esempio distinguere il consumo delle macchine virtuali, dello storage a blocchi, degli snapshot o della banda di rete, e così identificare con precisione le risorse che generano i costi maggiori.
+Questo livello di granularità ti permette di approfondire l'analisi: puoi ad esempio distinguere il consumo delle tue macchine virtuali, del tuo storage block, dei tuoi snapshot o della tua banda passante di rete, identificando così con precisione le risorse che generano i costi maggiori.
 
-## Dettaglio dei consumi
+## Dettaglio del consumo
 
-La vista **Dettaglio dei consumi** presenta una tabella esaustiva che elenca tutte le risorse consumate nel periodo. Ogni riga corrisponde a una risorsa identificabile (macchina virtuale, volume di archiviazione, indirizzo IP pubblico, ecc.) con il relativo livello di consumo.
+La vista **Dettaglio del consumo** presenta una tabella esaustiva che elenca tutte le risorse consumate nel periodo. Ogni riga corrisponde a una risorsa identificabile (macchina virtuale, volume di storage, indirizzo IP pubblico, ecc.) con il relativo livello di consumo.
 
 <img src={billingConsumptionDetails} />
 
@@ -61,7 +61,7 @@ Questo dettaglio è prezioso per i team che desiderano effettuare una **ripartiz
 
 ## Griglia tariffaria
 
-La scheda **Griglia tariffaria** (o **Elenco prezzi**) elenca tutti i prezzi unitari applicabili alle risorse disponibili nel tuo tenant. Si tratta del catalogo dei prezzi in vigore che ti consente di prevedere il costo di nuove risorse prima della loro implementazione.
+La scheda **Griglia tariffaria** (o **Lista dei prezzi**) elenca tutti i prezzi unitari applicabili alle risorse disponibili nel tuo tenant. Si tratta del catalogo dei prezzi vigente che ti permette di anticipare il costo di nuove risorse prima del loro deployment.
 
 <img src={billingPricesList} />
 
@@ -72,14 +72,14 @@ Ogni voce della griglia indica:
 - Il **prezzo unitario** applicabile
 
 :::tip
-La griglia tariffaria è il tuo riferimento per **simulare il costo** di un'infrastruttura prima di ordinarla. Combina queste informazioni con i dati di consumo per individuare le leve di ottimizzazione.
+Per i prezzi pubblici vigenti, consulta il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). La griglia visualizzata nella Console presenta i prezzi applicabili al tuo tenant; combina queste informazioni con i dati di consumo per identificare i leve di ottimizzazione.
 :::
 
 ## Buone pratiche
 
-Per sfruttare al meglio il Gestore dei costi, ecco alcune raccomandazioni:
+Per trarre il massimo vantaggio dal Gestore dei costi, ecco alcune raccomandazioni:
 
-- **Consultare regolarmente** i consumi per rilevare rapidamente eventuali scostamenti di budget.
-- **Confrontare i periodi** : lo strumento consente di analizzare l'andamento mese per mese per identificare le tendenze.
-- **Utilizzare la vista per servizio** per identificare risorse sottoutilizzate o dimenticate (snapshot obsoleti, volumi scollegati, ecc.).
-- **Confrontare con la griglia tariffaria** per valutare l'impatto finanziario di qualsiasi modifica all'infrastruttura prima di attuarla.
+- **Consulta regolarmente** il tuo consumo per rilevare rapidamente eventuali derive di budget.
+- **Confronta i periodi**: lo strumento ti permette di analizzare l'evoluzione mese per mese per identificare le tendenze.
+- **Utilizza la vista per servizio** per identificare risorse sotto-utilizzate o dimenticate (snapshot vecchi, volumi scollegati, ecc.).
+- **Incrocia con la griglia tariffaria** per valutare l'impatto finanziario di qualsiasi cambiamento infrastrutturale prima di realizzarlo.

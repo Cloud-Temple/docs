@@ -23,7 +23,7 @@ Per iniziare, seguite la [guida di avvio rapido](./quickstart.md). Per scegliere
 | Ricerca aumentata dalla generazione | [Comprendere il RAG](./rag_explained.md) |
 | Ordinamento dei documenti per rilevanza | [Reranking](./rerank.md) |
 | Elaborazione asincrona di batch di richieste | [Batch](./batch.md) |
-| Cambio di modello e gestione dei vecchi identificatori | [Ciclo di vita e migrazione](./concepts.md#migrazione-a-un-altro-modello) |
+| Cambio di modello e gestione dei vecchi identificatori | [Ciclo di vita e migrazione](./concepts.md#migrazione-verso-un-altro-modello) |
 
 Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutane gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
 

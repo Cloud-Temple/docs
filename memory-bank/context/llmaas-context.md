@@ -36,11 +36,11 @@ Point 3 à arbitrer : le proxy contient aussi `encrypted_logging`, activé par d
 
 ## Suivi — RFC journalisation
 
-Christophe confirme que la RFC SRE sur la journalisation est en cours et demande de poursuivre les autres points. Ne pas clore le point 3 ni affirmer une absence de stockage des contenus avant le retour SRE. Prochain point : unité et tarif du reranking ; RFC-0084 classée FAIT et migration SQL indiquent 4 €/million de documents, à soumettre à Christophe avant correction documentaire.
+Christophe confirme que la RFC SRE sur la journalisation est en cours et demande de poursuivre les autres points. Ne pas clore le point 3 ni affirmer une absence de stockage des contenus avant le retour SRE. Prochain point : unité et tarif du reranking ; RFC-0084 classée FAIT et migration SQL indiquent [montant historique retiré]/million de documents, à soumettre à Christophe avant correction documentaire.
 
 ## Remédiation validée — tarif reranking
 
-Christophe confirme 4 € par million de documents traités (search_units), conforme à la RFC-0084 classée FAIT et à la migration SQL. Sources FR API, FAQ, Concepts et Reranking corrigées. `top_n` ne réduit pas le nombre de documents facturés. Exemple : 1 000 requêtes × 100 documents = 100 000 unités = 0,40 €. Supprimer toute assimilation aux tokens et comparaison « 50 % moins cher que la génération ». Ne pas confondre cette validation tarifaire avec la résolution de la divergence logicielle compteur/dashboard ; traductions et schémas de réponse restent à traiter. Prochain point à soumettre : 5, exemples risqués.
+Christophe confirme [montant historique retiré] par million de documents traités (search_units), conforme à la RFC-0084 classée FAIT et à la migration SQL. Sources FR API, FAQ, Concepts et Reranking corrigées. `top_n` ne réduit pas le nombre de documents facturés. Exemple : 1 000 requêtes × 100 documents = 100 000 unités = [montant historique retiré]. Supprimer toute assimilation aux tokens et comparaison « 50 % moins cher que la génération ». Ne pas confondre cette validation tarifaire avec la résolution de la divergence logicielle compteur/dashboard ; traductions et schémas de réponse restent à traiter. Prochain point à soumettre : 5, exemples risqués.
 
 ## Remédiation validée — exemples risqués
 
@@ -141,3 +141,6 @@ Christophe demande qwen3.8:27b par défaut et gestion de l’effort réglé sur 
 ## Validation avant commit — 10 septembre 2026
 
 Christophe confirme la traduction du changelog et autorise retest, rebuild et commit si les contrôles passent. 48 empreintes/structures de traduction concordent ; fix_i18n_anchors.py --check sans écart ; 3 tests traduction et 6 tests admonitions réussis ; scénarios Batch, LangChain/FAISS/Qdrant mémoire, embeddings et calculatrice repassés avec HTTP simulé. Build BASE_URL=/ dans les cinq langues réussi sans liens/ancres cassés. Les espaces de fin de ligne conservés par les traductions sont cosmétiques ; aucun autre défaut dans git diff --check. Reconstruction de l’image de prévisualisation et commit local des changements validés, sans push. Points 21–23 et précisions résiduelles du point 3 restent à traiter séparément.
+
+
+**Politique du 13 octobre 2026** : les montants historiques ont été retirés de cette copie. Les constats d’audit datés ci-dessus restent historiques ; les prix en vigueur sont publiés exclusivement dans le [catalogue officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).

@@ -44,12 +44,10 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 - **Tokens système** : Metadata et instructions
 
 #### **Calcul des Coûts**
-```
-Chat/Completion = (Tokens entrée × 1.8€/M) + (Tokens sortie × 8€/M) + (Tokens sortie Raisonnement × 8€/M)
-Reranking (€)   = Nombre de documents traités × 4 / 1 000 000
-Batch (async)   = (Tokens entrée × 0.9€/M) + (Tokens sortie × 4€/M)
-Audio (ASR)     = 0.01€ / minute de transcription
-```
+
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+
+Le coût dépend des volumes consommés (tokens, documents ou durée audio) et des unités de facturation applicables.
 
 #### **Optimisation**
 - **Context window** : Réutilisez les conversations pour économiser
@@ -68,8 +66,7 @@ prompt = "Expliquez la photosynthèse"
 response_max = 200  # tokens max souhaités
 
 estimated_input = estimate_tokens(prompt)  # ~6 tokens
-total_cost = (estimated_input * 1.8 + response_max * 8) / 1_000_000
-print(f"Coût estimé: {total_cost:.6f}€")
+print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
 ```
 
 ## 🔒 Sécurité et Conformité

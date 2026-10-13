@@ -104,7 +104,7 @@ sidebar_position: 2
 
 ### 10 Février 2026 : Mise à jour des tarifs LLMaaS
 
-- **LLMaaS** : Mise à jour globale des tarifs de l'API (Input : 1,9€/M, Output : 8€/M, Raisonneur : 8€/M) dans l'ensemble de la documentation technique et commerciale.
+- **LLMaaS** : Mise à jour des conditions tarifaires de l’API. Les tarifs en vigueur sont disponibles dans le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ### 5 Février 2026 : Précisions sur les engagements de service (SLA)
 

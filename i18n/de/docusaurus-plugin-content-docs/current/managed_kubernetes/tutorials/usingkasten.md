@@ -1,5 +1,5 @@
 ---
-title: Sichern Ihrer Anwendungen mit Veeam Kasten
+title: Sichern Sie Ihre Anwendungen mit Veeam Kasten
 ---
 
 
@@ -10,50 +10,50 @@ import k10policies from '@site/docs/managed_kubernetes/tutorials/images/k10polic
 
 ## Einführung
 
-Veeam Kasten K10 ist eine Sicherungs- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Managed Kubernetes-Produkt von Cloud Temple ist Kasten integriert, um Ihnen zu ermöglichen, Ihre Anwendungen zu schützen, Daten bei Bedarf wiederherzustellen und die Geschäftskontinuität zu gewährleisten.
+Veeam Kasten K10 ist eine Backup- und Wiederherstellungslösung, die speziell für Kubernetes-Umgebungen entwickelt wurde. Im Produkt Managed Kubernetes von Cloud Temple ist Kasten integriert, damit Sie Ihre Anwendungen schützen, Daten bei Bedarf wiederherstellen und die Geschäftskontinuität gewährleisten können.
 
 Dieses Tutorial führt Sie durch die grundlegenden Schritte zum Sichern und Wiederherstellen einer Anwendung mit Kasten.
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Stellen Sie vor dem Start sicher, dass Sie über Folgendes verfügen:
 
-- Ein aktiver Managed Kubernetes-Cluster.
+- Einen aktiven Managed Kubernetes-Cluster.
 - Die Cluster-ID (z. B. `ctodev`).
 - Eine in Ihrem Cluster bereitgestellte Anwendung, die Sie sichern möchten.
 
 ## 1. Zugriff auf das Kasten-Dashboard
 
-Das Kasten-Dashboard ist über eine sichere URL erreichbar, die auf der Basis Ihrer Cluster-ID aufgebaut ist.
+Das Kasten-Dashboard ist über eine sichere URL zugänglich, die aus der ID Ihres Clusters erstellt wird.
 
-1. **Erstellen Sie die Zugriffs-URL** :
-   Die URL basiert auf folgendem Muster: `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
+1. **Erstellen Sie die Zugriffs-URL**:
+   Die URL basiert auf dem folgenden Muster: `https://k10.external-secured.<identifiant>.mk.ms-cloud-temple.com/k10/`
    Ersetzen Sie `<identifiant>` durch die ID Ihres Clusters. Wenn Ihre ID beispielsweise `ctodev` lautet, lautet die URL: `https://k10.external-secured.ctodev.mk.ms-cloud-temple.com/k10/`.
 2. **Rufen Sie die URL** in Ihrem Browser auf.
 
-   > ℹ️Sicherheitshinweis
-   > Der Zugriff auf diese URL ist auf die von Ihnen angegebenen öffentlichen IP-Adressen beschränkt. Wenn Sie sich nicht verbinden können, stellen Sie sicher, dass Ihre IP-Adresse freigeschaltet ist, indem Sie den Cloud Temple-Support kontaktieren.
+   > ℹ️Hinweis zur Sicherheit
+   > Der Zugriff auf diese URL ist auf die öffentlichen IP-Adressen beschränkt, die Sie angegeben haben. Wenn Sie sich nicht anmelden können, stellen Sie sicher, dass Ihre IP-Adresse autorisiert ist, indem Sie den Cloud Temple-Support kontaktieren.
    >
 
 <img src={k10dashboard} alt="Kasten dahsboard"/>
 
-> ℹ️[Integrierte Schnellstartanleitung] Die Kasten-Konsole enthält auf der Startseite eine interaktive Schnellstartanleitung. Folgen Sie ihr gerne für eine erste Einführung direkt über die Benutzeroberfläche.
+> ℹ️[Integrierter Schnellstart-Leitfaden] Die Kasten-Konsole enthält auf ihrer Startseite einen interaktiven Schnellstart-Leitfaden. Nutzen Sie diesen gerne für den ersten Einstieg direkt über die Benutzeroberfläche.
 
-## 2. Das Backup-Speicherverfahren verstehen
+## 2. Verständnis der Backup-Speicherung
 
-Standardmäßig ist Kasten so vor konfiguriert, dass er den Objektspeicher (S3) von Cloud Temple verwendet, um Ihre Backups sicher und dauerhaft zu speichern.
+Standardmäßig ist Kasten so vorkonfiguriert, dass es den Objektspeicherdienst (S3) von Cloud Temple zur sicheren und dauerhaften Speicherung Ihrer Backups verwendet.
 
-Sie müssen keine Konfiguration vornehmen. Der Speicherort ist bereits im Kasten-Dashboard unter **Settings > Locations** festgelegt. Diese Konfiguration stellt sicher, dass Ihre Daten auf einer souveränen Infrastruktur gespeichert werden.
+Sie müssen keine Konfiguration vornehmen. Der Speicherort ist im Kasten-Dashboard unter **Settings > Locations** bereits festgelegt. Diese Konfiguration gewährleistet, dass Ihre Daten auf einer souveränen Infrastruktur gespeichert werden.
 
 <img src={k10s3location} alt="Kasten S3 configuration"/>
 
-> ℹ️[Modèle de coût] Der Veeam Kasten-Dienst ist im Managed Kubernetes-Produkt enthalten. Die Speicherung von Backups auf unserem souveränen S3 wird nach Verbrauch abgerechnet. Weitere Details finden Sie in unserer Preistabelle.
+> ℹ️[Kostenmodell] Der Veeam Kasten-Dienst ist im Produkt Managed Kubernetes enthalten. Die Speicherung der Backups auf unserem souveränen S3 wird nach Verbrauch abgerechnet. Weitere Details finden Sie in den [öffentlichen Preisen auf der Cloud Temple-Website](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-## 3. Eine Backup-Richtlinie erstellen
+## 3. Erstellen einer Backup-Richtlinie
 
-Eine Backup-Richtlinie (`Policy`) ist eine Sammlung von Regeln, die festlegen, wann und wie Ihre Anwendungen gesichert werden.
+Eine Backup-Richtlinie (`Policy`) ist eine Reihe von Regeln, die festlegen, wann und wie Ihre Anwendungen gesichert werden.
 
-⚠[Vorhandene Backup-Richtlinie] Eine Backup-Richtlinie mit dem Namen `infra-backups` ist bereits in Ihrer Kasten-Instanz konfiguriert. Diese Richtlinie sichert die mit dem Cluster ausgelieferten Kernkomponenten.
+⚠[Bestehende Backup-Richtlinie] Eine Backup-Richtlinie mit dem Namen `infra-backups` ist in Ihrer Kasten-Instanz bereits konfiguriert. Diese Richtlinie sichert die wesentlichen Komponenten, die mit dem Cluster geliefert werden.
 
 <img src={k10infrabackups} alt="Kasten infra backups"/>
 
@@ -61,54 +61,56 @@ Eine Backup-Richtlinie (`Policy`) ist eine Sammlung von Regeln, die festlegen, w
 
 Sie müssen Ihre eigenen Richtlinien erstellen, um die von Ihnen bereitgestellten Anwendungen zu sichern.
 
-1. Navigieren Sie im Kasten-Dashboard zum Abschnitt **Policies** und klicken Sie auf **Create New Policy**.
-2. **Nennen Sie Ihre Richtlinie** : Vergeben Sie einen beschreibenden Namen, z. B. `backup-my-app-daily`.
-3. **Legen Sie die Häufigkeit (Action) fest** :
+1. Gehen Sie im Kasten-Dashboard zum Bereich **Policies** und klicken Sie auf **Create New Policy**.
+2. **Benennen Sie Ihre Richtlinie**: Geben Sie einen beschreibenden Namen ein, z. B. `backup-my-app-daily`.
+3. **Legen Sie die Häufigkeit (Action) fest**:
 
-   - **Action**: `Snapshot` (Schnappschuss).
-   - **Frequency**: Wählen Sie die für Sie passende Häufigkeit (z. B. `Daily` um `02:00`).
-4. **Wählen Sie die zu sichernden Ressourcen aus** :
+   - **Action**: `Snapshot` (Momentaufnahme).
+   - **Frequency**: Wählen Sie die gewünschte Häufigkeit (z. B. `Daily` um `02:00`).
+4. **Wählen Sie die zu sichernden Ressourcen aus**:
 
    - **Select resources by**: Sie können Anwendungen nach Name (`Application Name`), nach Namespace (`Namespace`) oder nach Labels auswählen.
    - Um alle Anwendungen eines Namespaces zu sichern, wählen Sie `Namespace` und wählen Sie den gewünschten Namespace aus.
 5. **Klicken Sie auf `Create Policy`**, um zu speichern.
 
-Die Richtlinie wird automatisch mit der festgelegten Häufigkeit ausgeführt. Sie können auch eine manuelle Ausführung starten, indem Sie auf die Schaltfläche "Play" (▶️) neben der Richtlinie klicken.
+Die Richtlinie wird automatisch im festgelegten Intervall ausgeführt. Sie können auch eine manuelle Ausführung starten, indem Sie auf die Schaltfläche "Play" (▶️) neben der Richtlinie klicken.
 
-### Schnelle Sicherungsrichtlinien
 
-Um den Einstieg in Kasten zu erleichtern, hat Cloud-Temple *24 Sicherungsrichtlinien* bereitgestellt, die zu festen Uhrzeiten Backups durchführen und eine Aufbewahrungsfrist von 7 Tagen in S3 vorsehen.
+### Schnelle Backup-Richtlinien
+
+Um den Einstieg in Kasten zu erleichtern, hat Cloud-Temple *24 Backup-Richtlinien* bereitgestellt, die zu einer festen Uhrzeit ein Backup durchführen und eine Aufbewahrungsfrist von 7 Tagen im S3-Storage vorsehen.
 
 <img src={k10policies} alt="Kasten policies"/>
 
-Diese Richtlinien gelten für **Namespaces, die über ein Label verfügen, das angibt, welche Richtlinie(n) angewendet werden soll(en).**
+Diese Richtlinien gelten für **Namespaces, die über ein Label verfügen, das angibt, welche(n) Richtlinie(n) angewendet werden sollen.**
 
-Beispielsweise wird ein Namespace mit dem Label **kasten-daily05-r7d = true** täglich um 05:00 Uhr UTC in S3 gesichert, mit einer Aufbewahrungsfrist von 7 Tagen.
+Ein Namespace mit dem Label **kasten-daily05-r7d = true** wird beispielsweise täglich um 05:00 Uhr UTC in den S3-Storage gesichert, mit einer Aufbewahrungsfrist von 7 Tagen.
 
-## 4. Eine Anwendung wiederherstellen
 
-Kasten erleichtert die Wiederherstellung einer Anwendung in ihren vorherigen Zustand aus einem Wiederherstellungspunkt.
+## 4. Wiederherstellen einer Anwendung
 
-1. Navigieren Sie im Dashboard zum Bereich **Anwendungen**. Dort sehen Sie die Liste Ihrer Anwendungen sowie deren Konformitätsstatus in Bezug auf die Sicherungsrichtlinien.
+Kasten erleichtert die Wiederherstellung einer Anwendung auf ihren vorherigen Zustand aus einem Wiederherstellungspunkt.
+
+1. Gehen Sie im Dashboard zum Bereich **Applications**. Dort sehen Sie die Liste Ihrer Anwendungen und deren Konformitätsstatus im Hinblick auf die Backup-Richtlinien.
 2. **Wählen Sie die Anwendung** aus, die Sie wiederherstellen möchten.
-3. **Wählen Sie einen Wiederherstellungspunkt** :
-   Die Anwendungsdetailseite zeigt eine Liste der verfügbaren Wiederherstellungspunkte. Wählen Sie den gewünschten Punkt aus und klicken Sie auf **Restore**.
-4. **Konfigurieren Sie die Wiederherstellung** :
+3. **Wählen Sie einen Wiederherstellungspunkt**:
+   Die Anwendungsseite zeigt eine Liste der verfügbaren Wiederherstellungspunkte. Wählen Sie den gewünschten Punkt aus und klicken Sie auf **Restore**.
+4. **Konfigurieren Sie die Wiederherstellung**:
 
-   - Sie können wählen, ob Sie in einem neuen Namespace wiederherstellen oder die vorhandene Anwendung ersetzen möchten. Für dieses Tutorial ersetzen wir die vorhandene Anwendung.
+   - Sie können wählen, ob in einem neuen Namespace wiederhergestellt oder die vorhandene Anwendung überschrieben werden soll. Für dieses Tutorial werden wir die vorhandene Anwendung überschreiben.
    - Klicken Sie auf **Restore**, um den Prozess zu starten.
 
-Kasten stellt nun die Anwendung im im Snapshot festgehaltenen Zustand wieder her. Sie können den Fortschritt im Dashboard verfolgen.
+Kasten stellt die Anwendung nun auf den Zustand wieder her, der in der Momentaufnahme erfasst wurde. Den Fortschritt können Sie im Dashboard verfolgen.
 
-## 5. Sicherheit der Datensicherungen
+## 5. Sicherheit der Backups
 
-Der Schutz Ihrer Sicherungsdaten hat höchste Priorität. Die Integration von Kasten in das Managed-Kubernetes-Produkt entspricht den höchsten Sicherheitsstandards.
+Der Schutz Ihrer Backup-Daten hat Priorität. Die Integration von Kasten in das Produkt Managed Kubernetes entspricht den höchsten Sicherheitsstandards.
 
-- **Verschlüsselung** : Gemäß den SecNumCloud-Anforderungen sind alle Ihre Sicherungen verschlüsselt. Die Daten werden während der Übertragung zum S3-Speicher mit dem Protokoll **TLS 1.3** und im Ruhezustand in den Storage-Buckets mit dem Algorithmus **AES-256** verschlüsselt.
-- **Berechtigungsverwaltung** : Der Zugriff auf die Kasten-Oberfläche und ihre Funktionen wird durch ein auf Kubernetes-RBAC basierendes Berechtigungssystem gesteuert. Nur autorisierte Benutzer können Sicherungs- und Wiederherstellungsrichtlinien erstellen, ändern oder ausführen, was eine strikte Governance Ihrer Sicherungsoperationen gewährleistet.
+- **Verschlüsselung**: Gemäß den SecNumCloud-Anforderungen werden alle Ihre Backups verschlüsselt. Die Daten werden während der Übertragung zum S3-Speicher mit dem Protokoll **TLS 1.3** und im Ruhezustand in den Storage-Buckets mit dem Algorithmus **AES-256** verschlüsselt.
+- **Berechtigungsmanagement**: Der Zugriff auf die Kasten-Oberfläche und ihre Funktionen wird durch ein Berechtigungssystem gesteuert, das auf dem RBAC von Kubernetes basiert. Nur autorisierte Benutzer können Backup- und Wiederherstellungsrichtlinien erstellen, ändern oder ausführen, was eine strenge Governance Ihrer Backup-Vorgänge gewährleistet.
 
 ## Fazit
 
-Sie haben gelernt, Veeam Kasten für grundlegende Sicherungs- und Wiederherstellungsvorgänge in Ihrem Managed Kubernetes-Cluster zu verwenden. Kasten bietet zahlreiche erweiterte Funktionen, wie z. B. die Migration von Anwendungen zwischen Clustern und granulare Aufbewahrungsrichtlinien, die Sie erkunden können, um Ihre Strategie zum Schutz Ihrer Daten zu stärken.
+Sie haben gelernt, wie Sie Veeam Kasten für grundlegende Backup- und Wiederherstellungsvorgänge in Ihrem Managed Kubernetes-Cluster verwenden. Kasten bietet viele erweiterte Funktionen, wie die Migration von Anwendungen zwischen Clustern und granulare Aufbewahrungsrichtlinien, die Sie erkunden können, um Ihre Datenschutzstrategie zu stärken.
 
-Weitere Informationen finden Sie in der [offiziellen Dokumentation zu Kasten K10](https://docs.kasten.io/latest/).
+Weitere Informationen finden Sie in der [offiziellen Dokumentation von Kasten K10](https://docs.kasten.io/latest/).

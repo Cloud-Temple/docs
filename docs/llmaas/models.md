@@ -74,4 +74,4 @@ Utilisez l'identifiant exact renvoyé par l'API dans le paramètre `model`. La p
 
 Les vitesses observées dépendent notamment de la charge, de la longueur des requêtes et du mode de génération. Elles servent de repères, pas de garanties de débit pour votre application.
 
-Pour les tarifs et les paliers d'accès, consultez la [documentation API](./api.md). Pour les traitements différés, consultez le [mode Batch](./batch.md).
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Pour les paliers techniques, consultez la [documentation API](./api.md). Pour les traitements différés, consultez le [mode Batch](./batch.md).
