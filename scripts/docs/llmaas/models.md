@@ -21,11 +21,7 @@ Cloud Temple LLMaaS propose **40 modèles de langage large** soigneusement séle
 
 ### Tarification
 
-| Type d'utilisation | Prix |
-|-------------------|------|
-| **Tokens d'entrée** | 0.9€ / million de tokens |
-| **Tokens de sortie** | 4€ / million de tokens |
-| **Raisonnement avancé** | 21€ / million de tokens |
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ## Modèles de Grande Taille
 
@@ -1084,3 +1080,6 @@ Applications nécessitant une empreinte minimale en ressources, déploiement sur
 - Granite Guardian
 - Granite 3.3
 
+
+
+Référence tarifaire : [catalogue officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).

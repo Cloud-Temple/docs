@@ -44,15 +44,13 @@ Comparez la pertinence du classement sur votre corpus, les langues prises en cha
 
 ## Tarification
 
-**4,00 € par million de documents traités.** Une unité de recherche (`search_unit`) correspond à un document soumis au reranking pour une requête.
+Une unité de recherche (`search_unit`) correspond à un document soumis au reranking pour une requête.
 
 Tous les documents du tableau `documents` sont comptés. Le paramètre `top_n` limite uniquement le nombre de résultats retournés : il ne réduit pas le nombre de documents traités ni le coût de la requête. Un même document soumis dans plusieurs requêtes est compté à chaque traitement.
 
-```text
-Coût (€) = Nombre de documents traités × 4 / 1 000 000
-```
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-**Exemple :** 1 000 requêtes contenant chacune 100 documents représentent 100 000 documents traités, soit **0,40 €**, même si chaque requête ne retourne que les 5 premiers résultats (`top_n: 5`).
+**Exemple :** 1 000 requêtes contenant chacune 100 documents représentent 100 000 documents traités, même si chaque requête ne retourne que les 5 premiers résultats (`top_n: 5`).
 
 Les compteurs de tokens éventuellement renvoyés par le moteur ne constituent pas l'unité de facturation du reranking.
 
@@ -76,7 +74,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
     "query": "Quelles sont les garanties de souveraineté de LLMaaS ?",
     "documents": [
       "Cloud Temple est hébergé exclusivement en France.",
-      "Les tarifs débutent à 1.8€ par million de tokens.",
+        "Les tarifs publics Cloud Temple sont disponibles sur https://www.cloud-temple.com/nos-tarifs-publics/",
       "LLMaaS est qualifié SecNumCloud 3.2 par l'\''ANSSI.",
       "L'\''API est compatible avec le standard OpenAI.",
       "Les données ne sont ni stockées ni transférées hors de France."

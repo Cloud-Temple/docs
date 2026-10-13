@@ -1,28 +1,28 @@
 ---
-title: API por lotes
+title: Batch API
 sidebar_position: 6
 ---
 
 # Batch API — Procesamiento Asíncrono
 
-La Batch API procesa varias conversaciones independientes con el mismo modelo, de forma asíncrona. Es adecuada para tareas diferidas de clasificación, síntesis o extracción de texto.
+La Batch API procesa varias conversaciones independientes con el mismo modelo de forma asíncrona. Es adecuada para tareas diferidas de clasificación, síntesis o extracción de texto.
 
-Envía las conversaciones directamente en JSON a `POST /v1/chat/completions/batch`, y luego recupera su estado y resultados con `GET /v1/chat/completions/batch/{id}`. Este contrato es específico de LLMaaS: no se basa en los endpoints de archivos y batches del SDK de OpenAI.
+Envía las conversaciones directamente en JSON a `POST /v1/chat/completions/batch`, y luego recupera su estado y resultados con `GET /v1/chat/completions/batch/{id}`. Este contrato es específico de LLMaaS: no se basa en los endpoints de archivos y lotes del SDK de OpenAI.
 
 ## Funcionamiento
 
-1. Prepare una lista de conversaciones con un modelo y parámetros comunes.
-2. Envíe el lote: la API devuelve **HTTP 202**, un identificador `id` y el estado `queued`.
-3. Conserve este identificador y consulte el estado cada 30 a 60 segundos.
-4. Recupere el array `results` cuando finalice el procesamiento y luego guarde los resultados en su aplicación.
+1. Prepara un array de conversaciones con un modelo y parámetros comunes.
+2. Envía el lote: la API devuelve **HTTP 202**, un identificador `id` y el estado `queued`.
+3. Guarda este identificador y consulta el estado cada 30 a 60 segundos.
+4. Recupera el array `results` cuando el procesamiento haya terminado, y guarda los resultados en tu aplicación.
 
-Utilice la **misma clave de API** para enviar y consultar el lote. Otra clave, incluso si está asociada a la misma cuenta, no permite recuperar sus resultados.
+Utiliza la **misma clave API** para enviar y consultar el lote. Otra clave, incluso si está asociada a la misma cuenta, no permite recuperar sus resultados.
 
 ## Enviar un lote
 
 ### POST /v1/chat/completions/batch
 
-El campo `messages` es un **array de arrays**: cada subarray contiene los mensajes de una conversación independiente. Los demás parámetros son comunes a todas las conversaciones.
+El campo `messages` es un **array de arrays**: cada sub-array contiene los mensajes de una conversación independiente. Los demás parámetros son comunes a todas las conversaciones.
 
 ```bash
 curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
@@ -45,16 +45,16 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
   }'
 ```
 
-Verifique el identificador del modelo con `GET /v1/models` y su [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) antes de la ejecución.
+Verifica el identificador del modelo con `GET /v1/models` y su [ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) antes de ejecutar.
 
 | Campo | Descripción |
 |-------|-------------|
 | `model` | Identificador del modelo utilizado para todas las conversaciones. |
 | `messages` | Array no vacío de conversaciones, cada una representada por un array de mensajes. |
 | `max_tokens`, `temperature`, `top_p`, etc. | Parámetros aplicados a cada conversación, según las capacidades del modelo. |
-| `tools`, `tool_choice`, `response_format` | Parámetros transmitidos al modelo cuando se utilizan; la ejecución de las herramientas sigue siendo responsabilidad de su aplicación. |
+| `tools`, `tool_choice`, `response_format` | Parámetros transmitidos al modelo cuando se utilizan; la ejecución de herramientas sigue siendo responsabilidad de tu aplicación. |
 
-El procesamiento fuerza `stream: false`. Las conversaciones y sus resultados se asocian por su posición en los arrays; conserve esta correspondencia en su aplicación.
+El procesamiento fuerza `stream: false`. Las conversaciones y sus resultados se asocian por su posición en los arrays; conserva esta correspondencia en tu aplicación.
 
 Fragmento ilustrativo de la respuesta de creación:
 
@@ -73,7 +73,7 @@ Fragmento ilustrativo de la respuesta de creación:
 }
 ```
 
-`model_requested` indica el nombre solicitado; `model` indica el modelo resuelto, que puede diferir en caso de alias. Reutilice el identificador `id` efectivamente devuelto por el servicio, sin reconstruirlo.
+`model_requested` indica el nombre solicitado; `model` indica el modelo resuelto, que puede diferir en caso de alias. Reutiliza el identificador `id` efectivamente devuelto por el servicio, sin reconstruirlo.
 
 ## Seguir el procesamiento y recuperar los resultados
 
@@ -86,15 +86,15 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch/$BATCH_ID" \
 
 | Estado | Significado |
 |--------|---------------|
-| `queued` | En espera de procesamiento o de reanudación en la siguiente ventana de procesamiento. |
+| `queued` | En espera de procesamiento o reanudación en la próxima ventana de procesamiento. |
 | `in_progress` | Procesamiento en curso. |
-| `completed` | Procesamiento finalizado; inspeccione cada resultado para detectar errores individuales. |
-| `failed` | Fallo general; inspeccione `error` y los resultados eventualmente disponibles. |
-| `expired` | Estado de expiración; después de la purga, GET devuelve HTTP 404. |
+| `completed` | Procesamiento terminado; inspecciona cada resultado para detectar errores individuales. |
+| `failed` | Fallo global; inspecciona `error` y los resultados eventualmente disponibles. |
+| `expired` | Estado de expiración; tras la purga, el GET devuelve HTTP 404. |
 
-La tabla `results` se incluye para los estados `completed` y `failed`. Cada elemento es ya sea una respuesta de chat o un objeto `error`. No hay ningún archivo de salida para descargar.
+El array `results` se adjunta para los estados `completed` y `failed`. Cada elemento es o bien una respuesta de chat, o bien un objeto `error`. No hay archivo de salida para descargar.
 
-Extracto ilustrativo con un éxito y un error:
+Fragmento ilustrativo con un éxito y un error:
 
 ```json
 {
@@ -124,11 +124,11 @@ Extracto ilustrativo con un éxito y un error:
 }
 ```
 
-**`completed` no significa que todas las conversaciones hayan tenido éxito.** Una vez procesado el lote, `results[i]` corresponde a la conversación `messages[i]`. Para reintentar los errores, construya un nuevo lote que contenga únicamente las conversaciones correspondientes.
+**`completed` no significa que todas las conversaciones hayan tenido éxito.** Una vez procesado el lote, `results[i]` corresponde a la conversación `messages[i]`. Para reanudar los errores, construye un nuevo lote que contenga únicamente las conversaciones afectadas.
 
 ## Ejemplo completo en Python
 
-Instale `httpx`, defina `LLMAAS_API_KEY` en su entorno, luego guarde el script como `batch_demo.py` y ejecute `python batch_demo.py`.
+Instala `httpx`, define `LLMAAS_API_KEY` en tu entorno, y guarda el script como `batch_demo.py` ejecutando `python batch_demo.py`.
 
 ```bash
 pip install httpx
@@ -146,7 +146,7 @@ MODEL = os.getenv("LLMAAS_MODEL", "gpt-oss:120b")
 
 
 def wait_for_batch(client, batch_id):
-    # Límite de espera de este script, no es un compromiso de plazo del servicio.
+    # Limite d'attente de ce script, pas un engagement de délai du service.
     deadline = time.monotonic() + 24 * 60 * 60
     while time.monotonic() < deadline:
         response = client.get(f"/chat/completions/batch/{batch_id}")
@@ -194,7 +194,7 @@ def main():
         print(f"Batch accepté. Conservez cet identifiant : {batch_id}", flush=True)
         batch = wait_for_batch(client, batch_id)
 
-    # Guarde también los errores y los posibles resultados parciales.
+    # Sauvegarder aussi les erreurs et les éventuels résultats partiels.
     with open(f"{batch_id}.json", "w", encoding="utf-8") as output:
         json.dump(batch, output, ensure_ascii=False, indent=2)
 
@@ -212,41 +212,41 @@ if __name__ == "__main__":
     main()
 ```
 
-Si el script se detiene después del envío, reanude el seguimiento con la solicitud GET y el identificador mostrado. No envíe automáticamente el mismo lote después de una pérdida de conexión: podría haber sido aceptado, lo que crearía un duplicado.
+Si el script se detiene después del envío, reanuda el seguimiento con el GET y el identificador mostrado. No envíes automáticamente el mismo lote tras una pérdida de conexión: puede haber sido aceptado, lo que crearía un duplicado.
 
 ## Límites y retención
 
-Los valores a continuación son los parámetros predeterminados del servicio; pueden ajustarse mediante configuración.
+Los valores siguientes son los parámetros por defecto del servicio; pueden ajustarse por configuración.
 
-| Parámetro | Valor predeterminado |
+| Parámetro | Valor por defecto |
 |-----------|-------------------|
-| Conversaciones por lote | 1 000 como máximo |
-| Capacidad de la cola | 100 lotes por instancia de procesamiento; no es una cuota por cuenta |
-| Ventana de procesamiento | 22 h–7 h entre semana, todo el día los fines de semana, según la zona horaria del servicio |
-| Retención después del procesamiento | 24 h después de la finalización, seguida de purga automática |
+| Conversaciones por lote | 1 000 máximo |
+| Capacidad de la cola | 100 lotes por instancia de procesamiento; no es un cupo por cuenta |
+| Ventana de procesamiento | 22 h–7 h entre semana, todo el día el fin de semana, según la zona horaria del servicio |
+| Retención tras el procesamiento | 24 h tras la finalización, luego purga automática |
 
-Un lote puede permanecer en espera fuera de la ventana de procesamiento y suspenderse y reanudarse cuando finalice dicha ventana. **La retención de 24 h no constituye una garantía de procesamiento en menos de 24 h.**
+Un lote puede permanecer en espera fuera de la ventana de procesamiento y ser suspendido y luego reanudado si esta ventana termina. **La retención de 24 h no constituye una garantía de procesamiento en 24 h.**
 
-El estado del lote (cola de espera, progreso y resultados consultables mediante GET) se conserva en memoria en la instancia de procesamiento, sin mecanismo de recuperación en disco. Un reinicio de esta instancia provoca la pérdida de este estado. Recupere y guarde sus resultados antes de que expiren. Conserve la clave que creó el lote hasta su recuperación.
+El estado del lote (cola, progreso y resultados consultables por GET) se conserva en memoria en la instancia de procesamiento, sin mecanismo de recuperación en disco. Un reinicio de esta instancia provoca la pérdida de este estado. Recupera y guarda tus resultados antes de su expiración. Conserva la clave que creó el lote hasta su recuperación.
 
-Este contrato trata sobre conversaciones de chat. No ofrece carga de JSONL, procesamiento de embeddings en lotes, listado de lotes ni cancelación mediante API.
+Este contrato trata de conversaciones de chat. No ofrece subida JSONL, procesamiento de embeddings en lote, lista de lotes o cancelación vía API.
 
 ## Errores comunes
 
 | Código HTTP | Causa o acción |
 |-----------|-----------------|
-| `400` | Solicitud incorrecta, conversaciones ausentes o mal estructuradas, tamaño máximo excedido. Corrija el cuerpo enviado. |
-| `401` | Autenticación inválida. Verifique su clave API. |
+| `400` | Solicitud incorrecta, conversaciones ausentes o mal estructuradas, tamaño máximo superado. Corrige el cuerpo enviado. |
+| `401` | Autenticación inválida. Verifica tu clave API. |
 | `403` | La clave utilizada para consultar el lote difiere de la que lo creó. |
-| `404` | Identificador desconocido, lote expirado o estado perdido tras el reinicio. |
-| `501` | Procesamiento Batch desactivado en la instancia correspondiente. Contacte al soporte. |
-| `503` | Cola saturada o instancia de procesamiento no disponible. Inténtelo de nuevo más tarde según el mensaje devuelto. |
+| `404` | Identificador desconocido, lote expirado o estado perdido tras reinicio. |
+| `501` | Procesamiento Batch desactivado en la instancia concernida. Contacta con soporte. |
+| `503` | Cola saturada o instancia de procesamiento no disponible. Reintenta más tarde según el mensaje devuelto. |
 
-Los errores propios de una conversación se encuentran en `results[].error`, incluso si la solicitud GET devolvió HTTP 200.
+Los errores propios de una conversación se encuentran en `results[].error`, incluso si el GET devolvió HTTP 200.
 
-## Precios y recursos
+## Tarifas y recursos
 
-Los parámetros de generación se aplican a cada conversación. Para las tarifas Batch, consulte la [tabla de precios de la API](./api.md#rate-limiting-y-facturación).
+Los parámetros de generación se aplican a cada conversación. Para las tarifas Batch, consulta el [catálogo tarifario oficial Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 - [API de generación de chat](./api.md#post-v1chatcompletions)
 - [Elegir un modelo](./models.md)

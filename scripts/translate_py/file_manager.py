@@ -613,6 +613,10 @@ class FileManager:
         """
         # Création du dossier parent
         file_path.parent.mkdir(parents=True, exist_ok=True)
+        # Avoid trailing whitespace in generated Markdown while preserving indentation.
+        content = '\n'.join(line.rstrip(' \t') for line in content.splitlines()) + '\n'
+        if content.lstrip('\r\n').startswith('---\n'):
+            content = content.lstrip('\r\n')
         
         async with aiofiles.open(file_path, 'w', encoding='utf-8') as f:
             await f.write(content)

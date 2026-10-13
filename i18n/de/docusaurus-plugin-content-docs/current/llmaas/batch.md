@@ -5,24 +5,24 @@ sidebar_position: 6
 
 # Batch API — Asynchrone Verarbeitung
 
-Die Batch-API verarbeitet mehrere unabhängige Konversationen mit demselben Modell asynchron. Sie eignet sich für verzögerte Aufgaben wie Klassifizierung, Zusammenfassung oder Textextraktion.
+Die Batch API verarbeitet mehrere unabhängige Konversationen mit demselben Modell asynchron. Sie eignet sich für nachgelagerte Aufgaben wie Klassifizierung, Zusammenfassung oder Textextraktion.
 
-Sie senden die Konversationen direkt als JSON an `POST /v1/chat/completions/batch` und rufen anschließend deren Status und Ergebnisse mit `GET /v1/chat/completions/batch/{id}` ab. Dieser API-Vertrag ist spezifisch für LLMaaS: Er basiert nicht auf den Datei- und Batch-Endpunkten des OpenAI-SDKs.
+Sie senden die Konversationen direkt als JSON an `POST /v1/chat/completions/batch` und rufen ihren Status und ihre Ergebnisse mit `GET /v1/chat/completions/batch/{id}` ab. Dieser Vertrag ist spezifisch für LLMaaS: Er basiert nicht auf den Datei- und Batch-Endpunkten des OpenAI SDK.
 
 ## Funktionsweise
 
-1. Bereiten Sie ein Array von Conversations mit einem gemeinsamen Modell und gemeinsamen Parametern vor.
-2. Senden Sie den Batch ein: Die API gibt **HTTP 202**, eine `id` und den Status `queued` zurück.
-3. Speichern Sie diese ID und fragen Sie den Status alle 30 bis 60 Sekunden ab.
-4. Rufen Sie das `results`-Array ab, sobald die Verarbeitung abgeschlossen ist, und speichern Sie die Ergebnisse in Ihrer Anwendung.
+1. Bereiten Sie ein Array von Konversationen mit einem gemeinsamen Modell und gemeinsamen Parametern vor.
+2. Übermitteln Sie den Batch: Die API gibt **HTTP 202**, eine `id` und den Status `queued` zurück.
+3. Bewahren Sie diese ID auf und fragen Sie den Status alle 30 bis 60 Sekunden ab.
+4. Rufen Sie das `results`-Array ab, wenn die Verarbeitung abgeschlossen ist, und speichern Sie die Ergebnisse in Ihrer Anwendung.
 
-Verwenden Sie denselben **API-Schlüssel**, um den Batch einzureichen und abzufragen. Ein anderer Schlüssel, auch wenn er demselben Konto zugeordnet ist, ermöglicht es nicht, die Ergebnisse abzurufen.
+Verwenden Sie denselben **API-Schlüssel** zum Übermitteln und Abfragen des Batches. Ein anderer Schlüssel, selbst wenn er demselben Konto zugeordnet ist, ermöglicht keinen Zugriff auf die Ergebnisse.
 
-## Batch einreichen
+## Einen Batch übermitteln
 
 ### POST /v1/chat/completions/batch
 
-Das Feld `messages` ist ein **Array von Arrays**: Jedes Unterarray enthält die Nachrichten einer unabhängigen Konversation. Die anderen Parameter gelten für alle Konversationen gemeinsam.
+Das Feld `messages` ist ein **Array von Arrays**: Jedes Unteraarray enthält die Nachrichten einer unabhängigen Konversation. Die anderen Parameter gelten für alle Konversationen.
 
 ```bash
 curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
@@ -45,18 +45,18 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
   }'
 ```
 
-Überprüfen Sie die Modell-ID mit `GET /v1/models` und deren [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) vor der Ausführung.
+Überprüfen Sie die Modell-ID mit `GET /v1/models` und seinen [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) vor der Ausführung.
 
 | Feld | Beschreibung |
 |-------|-------------|
-| `model` | Modell-ID, die für alle Konversationen verwendet wird. |
-| `messages` | Nicht leeres Array von Konversationen, wobei jede durch ein Array von Nachrichten dargestellt wird. |
-| `max_tokens`, `temperature`, `top_p`, etc. | Parameter, die auf jede Konversation angewendet werden, abhängig von den Fähigkeiten des Modells. |
-| `tools`, `tool_choice`, `response_format` | Parameter, die an das Modell übergeben werden, wenn sie verwendet werden; die Ausführung der Tools bleibt in der Verantwortung Ihrer Anwendung. |
+| `model` | ID des Modells, das für alle Konversationen verwendet wird. |
+| `messages` | Nicht-leeres Array von Konversationen, wobei jede durch ein Array von Nachrichten dargestellt wird. |
+| `max_tokens`, `temperature`, `top_p`, etc. | Parameter, die auf jede Konversation angewendet werden, je nach Modellfähigkeiten. |
+| `tools`, `tool_choice`, `response_format` | Parameter, die an das Modell übergeben werden, wenn sie verwendet werden; die Ausführung von Tools bleibt Aufgabe Ihrer Anwendung. |
 
-Die Verarbeitung erzwingt `stream: false`. Die Konversationen und ihre Ergebnisse werden über ihre Position in den Arrays verknüpft; stellen Sie sicher, dass diese Zuordnung in Ihrer Anwendung beibehalten wird.
+Die Verarbeitung erzwingt `stream: false`. Konversationen und ihre Ergebnisse werden durch ihre Position in den Arrays verknüpft; bewahren Sie diese Zuordnung in Ihrer Anwendung auf.
 
-Beispielhafter Auszug aus der Antwort zur Erstellung:
+Beispielhafter Auszug aus der Erstellungsantwort:
 
 ```json
 {
@@ -73,7 +73,7 @@ Beispielhafter Auszug aus der Antwort zur Erstellung:
 }
 ```
 
-`model_requested` gibt den angeforderten Namen an; `model` gibt das aufgelöste Modell an, das im Falle eines Aliases abweichen kann. Verwenden Sie die tatsächlich vom Dienst zurückgegebene `id` erneut, ohne sie neu zu konstruieren.
+`model_requested` gibt den angeforderten Namen an; `model` gibt das aufgelöste Modell an, das im Falle eines Aliases abweichen kann. Verwenden Sie die tatsächlich vom Dienst zurückgegebene `id`, ohne sie neu zu konstruieren.
 
 ## Verarbeitung verfolgen und Ergebnisse abrufen
 
@@ -89,10 +89,10 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch/$BATCH_ID" \
 | `queued` | Wartet auf Verarbeitung oder Wiederaufnahme im nächsten Verarbeitungsfenster. |
 | `in_progress` | Verarbeitung läuft. |
 | `completed` | Verarbeitung abgeschlossen; prüfen Sie jedes Ergebnis auf individuelle Fehler. |
-| `failed` | Globaler Fehler; prüfen Sie `error` und die ggf. verfügbaren Ergebnisse. |
-| `expired` | Ablaufstatus; nach der Bereinigung gibt die GET-Anfrage HTTP 404 zurück. |
+| `failed` | Globaler Fehler; prüfen Sie `error` und ggf. verfügbare Ergebnisse. |
+| `expired` | Ablaufstatus; nach der Bereinigung gibt GET HTTP 404 zurück. |
 
-Die Tabelle `results` wird für die Status `completed` und `failed` angehängt. Jedes Element ist entweder eine Chat-Antwort oder ein `error`-Objekt. Es gibt keine Ausgabedatei zum Download.
+Das Array `results` ist für die Status `completed` und `failed` angehängt. Jedes Element ist entweder eine Chat-Antwort oder ein `error`-Objekt. Es gibt keine Ausgabedatei zum Herunterladen.
 
 Beispielhafter Auszug mit einem Erfolg und einem Fehler:
 
@@ -124,11 +124,11 @@ Beispielhafter Auszug mit einem Erfolg und einem Fehler:
 }
 ```
 
-**`completed` bedeutet nicht, dass alle Gespräche erfolgreich waren.** Sobald der Batch verarbeitet wurde, entspricht `results[i]` dem Gespräch `messages[i]`. Um die fehlgeschlagenen Anfragen erneut zu verarbeiten, erstellen Sie einen neuen Batch, der nur die betroffenen Gespräche enthält.
+**`completed` bedeutet nicht, dass alle Konversationen erfolgreich waren.** Sobald der Batch verarbeitet wurde, entspricht `results[i]` der Konversation `messages[i]`. Um Fehler zu wiederholen, erstellen Sie einen neuen Batch, der nur die betreffenden Konversationen enthält.
 
 ## Vollständiges Python-Beispiel
 
-Installieren Sie `httpx`, setzen Sie `LLMAAS_API_KEY` in Ihrer Umgebung, speichern Sie das Skript als `batch_demo.py` und führen Sie `python batch_demo.py` aus.
+Installieren Sie `httpx`, legen Sie `LLMAAS_API_KEY` in Ihrer Umgebung fest, speichern Sie das Skript als `batch_demo.py` und führen Sie `python batch_demo.py` aus.
 
 ```bash
 pip install httpx
@@ -146,7 +146,7 @@ MODEL = os.getenv("LLMAAS_MODEL", "gpt-oss:120b")
 
 
 def wait_for_batch(client, batch_id):
-    # Wartezeitlimit dieses Skripts, keine Service-Zeitgarantie.
+    # Limite d'attente de ce script, pas un engagement de délai du service.
     deadline = time.monotonic() + 24 * 60 * 60
     while time.monotonic() < deadline:
         response = client.get(f"/chat/completions/batch/{batch_id}")
@@ -194,7 +194,7 @@ def main():
         print(f"Batch accepté. Conservez cet identifiant : {batch_id}", flush=True)
         batch = wait_for_batch(client, batch_id)
 
-    # Speichern Sie auch Fehler und mögliche Teilergebnisse.
+    # Sauvegarder aussi les erreurs et les éventuels résultats partiels.
     with open(f"{batch_id}.json", "w", encoding="utf-8") as output:
         json.dump(batch, output, ensure_ascii=False, indent=2)
 
@@ -212,42 +212,42 @@ if __name__ == "__main__":
     main()
 ```
 
-Falls das Skript nach dem Einreichen stoppt, setzen Sie die Überwachung mit der GET-Anfrage und der angezeigten ID fort. Reichen Sie dasselbe Batch nicht automatisch nach einem Verbindungsabbruch erneut ein: Es könnte bereits akzeptiert worden sein, was zu Duplikaten führen würde.
+Wenn das Skript nach der Übermittlung stoppt, setzen Sie die Verfolgung mit GET und der angezeigten ID fort. Übermitteln Sie denselben Batch nach einem Verbindungsverlust nicht automatisch erneut: Er könnte akzeptiert worden sein, was zu Duplikaten führen würde.
 
-## Limits und Aufbewahrung
+## Grenzen und Aufbewahrung
 
-Die unten aufgeführten Werte sind die Standardparameter des Dienstes; sie können über die Konfiguration angepasst werden.
+Die untenstehenden Werte sind die Standardparameter des Dienstes; sie können durch Konfiguration angepasst werden.
 
 | Parameter | Standardwert |
 |-----------|-------------------|
-| Konversationen pro Batch | maximal 1.000 |
+| Konversationen pro Batch | Maximal 1 000 |
 | Warteschlangenkapazität | 100 Batches pro Verarbeitungsinstanz; dies ist kein Kontingent pro Konto |
-| Verarbeitungsfenster | 22–7 Uhr unter der Woche, ganztägig am Wochenende, gemäß der Zeitzone des Dienstes |
-| Aufbewahrung nach der Verarbeitung | 24 Stunden nach Abschluss, anschließend automatische Löschung |
+| Verarbeitungsfenster | 22:00–07:00 unter der Woche, ganztägig am Wochenende, je nach Dienst-Zeitzone |
+| Aufbewahrung nach Verarbeitung | 24 h nach Abschluss, dann automatische Bereinigung |
 
-Ein Batch kann außerhalb des Verarbeitungsfensters in der Warteschlange verbleiben und pausiert sowie fortgesetzt werden, wenn das Fenster endet. **Die 24-stündige Aufbewahrung stellt keine Garantie für eine Verarbeitung innerhalb von 24 Stunden dar.**
+Ein Batch kann außerhalb des Verarbeitungsfensters warten und wird pausiert und später fortgesetzt, wenn dieses Fenster endet. **Die Aufbewahrung von 24 h ist keine Garantie für die Verarbeitung innerhalb von 24 h.**
 
-Der Status des Batches (Warteschlange, Fortschritt und über GET abfragbare Ergebnisse) wird im Arbeitsspeicher der Verarbeitungsinstanz gespeichert, ohne Persistenz auf Festplatte. Ein Neustart dieser Instanz führt zum Verlust dieses Status. Rufen Sie Ihre Ergebnisse ab und sichern Sie diese, bevor sie ablaufen. Bewahren Sie den Schlüssel, mit dem der Batch erstellt wurde, bis zur Abrufung der Ergebnisse auf.
+Der Batch-Status (Warteschlange, Fortschritt und über GET abrufbare Ergebnisse) wird im Speicher der Verarbeitungsinstanz gespeichert, ohne Mechanismus zur Wiederherstellung auf der Festplatte. Ein Neustart dieser Instanz führt zum Verlust dieses Status. Rufen Sie Ihre Ergebnisse ab und speichern Sie sie, bevor sie ablaufen. Bewahren Sie den Schlüssel, der den Batch erstellt hat, bis zu deren Abruf auf.
 
-Dieser API-Vertrag befasst sich mit Chat-Konversationen. Er unterstützt keinen JSONL-Upload, keine Batch-Verarbeitung von Embeddings, keine Auflistung der Batches oder keine Stornierung über die API.
+Dieser Vertrag behandelt Chat-Konversationen. Er bietet kein JSONL-Upload, keine Batch-Verarbeitung von Embeddings, keine Liste der Batches und keine API-Stornierung.
 
 ## Häufige Fehler
 
-| HTTP-Code | Ursache oder Maßnahme |
+| HTTP-Code | Ursache oder Aktion |
 |-----------|-----------------|
-| `400` | Fehlerhafte Anfrage, fehlende oder falsch strukturierte Konversationen, maximale Größe überschritten. Korrigieren Sie den gesendeten Request-Body. |
+| `400` | Ungültige Anfrage, fehlende oder falsch strukturierte Konversationen, maximale Größe überschritten. Korrigieren Sie den gesendeten Körper. |
 | `401` | Ungültige Authentifizierung. Überprüfen Sie Ihren API-Schlüssel. |
-| `403` | Der zum Abrufen des Batches verwendete Schlüssel unterscheidet sich von dem, der ihn erstellt hat. |
-| `404` | Unbekannte Kennung, abgelaufener Batch oder nach dem Neustart verlorener Status. |
+| `403` | Der zum Abfragen des Batches verwendete Schlüssel unterscheidet sich von dem, der ihn erstellt hat. |
+| `404` | Unbekannte ID, abgelaufener Batch oder verlorener Status nach Neustart. |
 | `501` | Batch-Verarbeitung auf der betreffenden Instanz deaktiviert. Kontaktieren Sie den Support. |
-| `503` | Warteschlange gesättigt oder Verarbeitungsinstanz nicht verfügbar. Versuchen Sie es später erneut, wie in der zurückgegebenen Meldung angegeben. |
+| `503` | Warteschlange gesättigt oder Verarbeitungsinstanz nicht verfügbar. Versuchen Sie es später erneut gemäß der zurückgegebenen Meldung. |
 
-Konversationsspezifische Fehler finden Sie in `results[].error`, auch wenn die GET-Anfrage HTTP 200 zurückgegeben hat.
+Fehler, die eine einzelne Konversation betreffen, finden Sie in `results[].error`, selbst wenn GET HTTP 200 zurückgegeben hat.
 
 ## Preisgestaltung und Ressourcen
 
-Die Generierungsparameter gelten für jede Konversation. Für Batch-Tarife finden Sie die [grille de tarification de l'API](./api.md#rate-limiting-und-abrechnung).
+Die Generierungsparameter gelten für jede Konversation. Für Batch-Preise konsultieren Sie den [offiziellen Cloud Temple Preiskatalog](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-- [API de génération de chat](./api.md#post-v1chatcompletions)
-- [Choisir un modèle](./models.md)
-- [Cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle)
+- [Chat-Generierungs-API](./api.md#post-v1chatcompletions)
+- [Modell auswählen](./models.md)
+- [Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)

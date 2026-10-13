@@ -82,6 +82,8 @@ npm run build
 
 Les identifiants de titre `{#identifiant}` ne sont pas compatibles avec la configuration MDX actuelle de ce projet.
 
+Le script conserve les liens vers le catalogue tarifaire français dans les langues autres que l’anglais. Pour `en`, il remplace automatiquement ce lien par `https://www.cloud-temple.com/en/our-public-rates/`. Aucun montant tarifaire ne doit être recopié dans les sources documentaires.
+
 #### Utilisation
 
 ```bash
@@ -424,3 +426,9 @@ Pour toute question sur les scripts :
 
 *Dernière mise à jour : 05/06/2025*
 *Scripts maintenus par l'équipe Cloud Temple Documentation*
+
+Les sections Markdown courtes sont regroupées dans la taille maximale configurée afin de limiter les appels de traduction. Ce regroupement conserve le texte et les limites des blocs de code.
+
+Le pipeline rétablit les blocs de code originaux après traduction, puis localise le lien tarifaire anglais. Il refuse une sortie dont le nombre de blocs diffère et retire les lignes vides avant le frontmatter YAML.
+
+Les niveaux de titres et les destinations des liens Markdown sont également conservés depuis la source. Les fragments français des liens internes sont ensuite réalignés par `scripts/fix_i18n_anchors.py` sur les titres traduits.

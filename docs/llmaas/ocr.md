@@ -208,50 +208,23 @@ Le modèle retournera une représentation textuelle ou tabulaire des données du
 ### Extraction de tableaux complexes
 DeepSeek-OCR excelle dans la conversion de tableaux, même sans lignes de démarcation claires.
 
-**Image Entrée :**
+**Image d’entrée — inventaire technique fictif :**
 
-![Tableau financier](@site/docs/llmaas/images/tableau.png)
+![Inventaire technique fictif, sans prix](@site/docs/llmaas/images/tableau_technique.svg)
 
-**Sortie Modèle (Prompt: "Convert the document to markdown table.") :**
+Ces données illustrent l’extraction d’un tableau ; elles ne définissent pas des gabarits commerciaux Cloud Temple.
+
+**Sortie Markdown attendue :**
+
 ```markdown
-# RESSOURCES PaaS
-
-## Unités d'œuvre laaS Redhat Openshift - à la demande - réservation 12 mois - Hors licence Openshift
-
-|    | Unité    | Prix unitaire € HT/mois | Engagement |
+| Équipement | Quantité | vCPU | RAM (Gio) |
 |---|---|---|---|
-| OPENSHIFT - Plan de contrôle - 3 nœuds - Région FR1    | 1 plan dédié    | 1 956,81 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - TINY - 3 x (10 cores / 20 threads - 64 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 834,62 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - SMALL - 3 x (20 cores / 40 threads - 128 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 2 756,21 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - STANDARD - 3 x (32 cores / 64 threads - 384 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 5 812,82 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - ADVANCED - 3 x (48 cores / 96 threads - 768 Go de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 8 413,27 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - PERF - 3 x (56 cores / 112 threads - 1.5 To de ram - 512 Gio FLASH 1500 ips) | 3 workers dédiés    | 13 835,78 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - GPU - 3 x (32 cores / 64 threads - 512 Go de ram - 512 Gio FLASH 1500 ips - 2xNVIDIA L40S 48GO) | 3 workers dédiés + GPU    | 13 378,32 €    | 12 mois    |
-| OPENSHIFT - WORKER NODES - GPU - 3 x (32 cores / 64 threads - 512 Go de ram - 512 Gio FLASH 1500 ips - 2xNVIDIA H100 80GO) | 3 workers dédiés + GPU    | 26 954,41 €    | 24 mois    |
-
----
-
-## Unités d'œuvre Kubernetes Manage - (hors infrastructure)
-
-|    | Unité    | Prix unitaire € HT/mois | Engagement |
-|---|---|---|---|
-| KUBERNETES MANAGE - PRODUCTION (incluant 3 Worker Nodes)    | 1 cluster virtuel    | 2 250,00 €    | 1 mois    |
-| KUBERNETES MANAGE - DEV/TEST/RECETTE (incluant 3 Worker Nodes)    | 1 cluster virtuel    | 1 500,00 €    | 1 mois    |
-| WORKER NODE additionnel pour Kubernetes Manage - PRODUCTION    | 1 worker node additionnel    | 450,00 €    | 1 mois    |
-| WORKER NODE additionnel pour Kubernetes Manage - DEV/TEST/RECETTE    | 3 worker node additionnel    | 300,00 €    | 1 mois    |
-
----
-
-## Unités d'œuvre IA - LLMaas
-
-|    | Unité    | Prix unitaire € HT/mois | Engagement |
-|---|---|---|---|
-| LLMaas - tokens ingéré (input) / millions    | 1 million tokens    | 0,90 €    | N/A    |
-| LLMaas - tokens généré (output) / millions    | 1 million tokens    | 4,00 €    | N/A    |
-| LLMaas - tokens de raisonnement / millions    | 1 million tokens    | 21,00 €    | N/A    |
-| LLMaas - voix vers texte / minute    | 1 minute    | 0,010 €    | N/A    |
-| LLMaas - texte vers voix / minute    | 1 minute    | 0,010 €    | N/A    |
+| Serveur web | 2 | 4 | 16 |
+| Serveur de calcul | 1 | 8 | 32 |
+| Serveur de test | 3 | 2 | 8 |
 ```
+
+Pour les prix publics du service, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ### Formules mathématiques (LaTeX)
 Idéal pour les documents académiques. Le modèle reconnaît les équations et les sort en syntaxe LaTeX standard.

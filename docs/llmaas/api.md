@@ -43,27 +43,37 @@ Notre système de tiers est conçu comme des **enveloppes de service complètes*
 
 Le choix d'un tier est donc un équilibre entre l'investissement initial, le budget mensuel prévisionnel et la capacité technique requise. Votre consommation au sein de cette enveloppe est ensuite facturée selon les tarifs en vigueur.
 
-### Tableau des Tiers
+### Capacités techniques des tiers
 
-| Tier                      | Crédit d'Achat | Limite Mensuelle | Tokens Output/Heure | Tokens Output/Jour | Description          |
-| ------------------------- | -------------- | ---------------- | ------------------- | ------------------ | -------------------- |
-| **Tier 1**                | 200 €          | 1 000 €          | 150 000             | 3 600 000          | Utilisation standard |
-| **Tier 2**                | 500 €          | 3 000 €          | 300 000             | 7 200 000          | Usage professionnel  |
-| **Tier 3**                | 1 000 €        | 5 000 €          | 450 000             | 10 800 000         | Volume élevé         |
-| **Tier 4**                | 4 000 €        | 10 000 €         | 600 000             | 14 400 000         | Entreprise           |
-| **Facturation Mensuelle** | N/A            | Illimitée        | Priorité élevée     | Priorité élevée    | Contact commercial   |
+Le tableau ci-dessous présente uniquement les débits techniques. Les montants de crédit d’accès et les plafonds budgétaires relèvent des conditions commerciales du palier choisi ; consultez le catalogue officiel et les conditions de votre souscription.
+
+| Tier | Tokens Output/Heure | Tokens Output/Jour | Description |
+| ------------------------- | ------------------- | ------------------ | -------------------- |
+| **Tier 1** | 150 000 | 3 600 000 | Utilisation standard |
+| **Tier 2** | 300 000 | 7 200 000 | Usage professionnel |
+| **Tier 3** | 450 000 | 10 800 000 | Volume élevé |
+| **Tier 4** | 600 000 | 14 400 000 | Entreprise |
+| **Facturation Mensuelle** | Priorité élevée | Priorité élevée | Contact commercial |
+
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+
 
 **Note** : Les limites de débit sont calculées sur la base des tokens de sortie. La tarification varie selon l'usage :
 
-| Type d'usage                           | Tarif                                            |
-| -------------------------------------- | ------------------------------------------------ |
-| **Tokens d'entrée**                    | 1.8 € / million                                  |
-| **Tokens de sortie (chat/completion)** | 8.00 € / million                                 |
-| **Tokens de raisonnement**             | 8.00 € / million                                 |
-| **Reranking**                          | 4,00 € / million de documents traités              |
-| **Batch asynchrone (entrée)**          | 0.9 € / million (−50% vs standard)               |
-| **Batch asynchrone (sortie)**          | 4.00 € / million (−50% vs standard)              |
-| **Transcription Audio**                | 0.01 € / minute (toute minute commencée est due) |
+| Type d'usage |
+| -------------------------------------- |
+| **Tokens d'entrée** |
+| **Tokens de sortie (chat/completion)** |
+| **Tokens de raisonnement** |
+| **Reranking** |
+| **Batch asynchrone (entrée)** |
+| **Batch asynchrone (sortie)** |
+| **Transcription Audio** |
+
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+
+
+La transcription audio est décomptée à la minute ; toute minute commencée est due.
 
 ### Headers de Limite
 
@@ -431,7 +441,7 @@ Extrait abrégé : les points de suspension représentent les autres composantes
 
 Réordonne une liste de documents par pertinence par rapport à une requête. Compatible avec l'API Cohere (v1 et v2).
 
-**Facturation** : 4,00 € par million de documents traités. Tous les documents soumis sont comptés, même si `top_n` limite le nombre de résultats retournés. Voir le [détail du calcul](./rerank.md#tarification).
+**Facturation** : consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Tous les documents soumis sont comptés, même si `top_n` limite le nombre de résultats retournés. Voir le [détail du calcul](./rerank.md#tarification).
 
 #### Requête
 

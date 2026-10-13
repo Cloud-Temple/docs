@@ -52,9 +52,9 @@ Les constats sur l’implémentation portent sur le code local consulté, pas su
 
 ## 04. Unité de facturation du reranking contradictoire
 
-**Suivi — tarif confirmé par Christophe et sources françaises corrigées.** Tarif publié : 4 € par million de documents traités. API, FAQ, Concepts et guide Reranking alignés ; effet de `top_n` précisé et exemple à 0,40 € ajouté. Source complémentaire : RFC-0084 classée FAIT et sa migration SQL. Traductions à régénérer. La divergence de calcul compteur/dashboard identifiée dans le complément logiciel reste un sujet distinct à vérifier ; la correction documentaire ne la résout pas. Les schémas de réponse seront traités au point 11.
+**Suivi — tarif confirmé par Christophe et sources françaises corrigées.** Tarif publié : [montant historique retiré] par million de documents traités. API, FAQ, Concepts et guide Reranking alignés ; effet de `top_n` précisé et exemple à [montant historique retiré] ajouté. Source complémentaire : RFC-0084 classée FAIT et sa migration SQL. Traductions à régénérer. La divergence de calcul compteur/dashboard identifiée dans le complément logiciel reste un sujet distinct à vérifier ; la correction documentaire ne la résout pas. Les schémas de réponse seront traités au point 11.
 
-**P1 — arbitrage facturation nécessaire.** API, FAQ et YAML annoncent 4 €/million de tokens rerankés. La formule Concepts utilise des documents et le guide Reranking présente `search_units` comme l’unité facturée. Le Swagger parle lui aussi d’une clé tarifaire `rerank_search_units` par document, tout en décrivant une réponse réelle fondée sur `usage.prompt_tokens`/`total_tokens`. Vérification complémentaire : `CreditService::calculate_consumption_cost` facture explicitement `search_units × tarif / 1 000 000` et exclut les tokens du reranking. L’unité documents est donc confirmée dans le code local ; le tarif de production reste à vérifier en configuration active.
+**P1 — arbitrage facturation nécessaire.** API, FAQ et YAML annoncent [montant historique retiré]/million de tokens rerankés. La formule Concepts utilise des documents et le guide Reranking présente `search_units` comme l’unité facturée. Le Swagger parle lui aussi d’une clé tarifaire `rerank_search_units` par document, tout en décrivant une réponse réelle fondée sur `usage.prompt_tokens`/`total_tokens`. Vérification complémentaire : `CreditService::calculate_consumption_cost` facture explicitement `search_units × tarif / 1 000 000` et exclut les tokens du reranking. L’unité documents est donc confirmée dans le code local ; le tarif de production reste à vérifier en configuration active.
 
 **Conséquence :** Les estimations de coût sont incompatibles ; les sources amont divergent elles-mêmes.
 
@@ -80,7 +80,7 @@ Les constats sur l’implémentation portent sur le code local consulté, pas su
 
 **Décision — accepté en l'état par Christophe le 7 septembre 2026.** Les tarifs OCR sont le contenu du document de démonstration ; les corpus RAG sont des données de test. Aucune modification demandée pour ces exemples. Les constats et recommandations ci-dessous sont conservés comme historique de l'audit, sans action à mener sur ce point.
 
-**P2 — avéré.** Les corpus des deux tutoriels RAG contiennent 1,9 €/million en entrée, contre 1,8 dans la grille. La sortie OCR reproduit une grille à 0,90 / 4 / 21 € sans avertissement explicite qu’il s’agit d’un document historique, pas des prix du service.
+**P2 — avéré.** Les corpus des deux tutoriels RAG contiennent [montant historique retiré]/million en entrée, contre un autre montant dans la grille. La sortie OCR reproduit une grille tarifaire historique sans avertissement explicite qu’il s’agit d’un document historique, pas des prix du service.
 
 **Conséquence :** Les démonstrateurs répondent avec des tarifs périmés et les extraits OCR peuvent être interprétés comme une grille actuelle.
 
@@ -324,3 +324,6 @@ Il s’agit d’une divergence de code à vérifier avec les conventions de char
 ## Inventaire des exemples dépassés
 
 Le [relevé détaillé des exemples](./audit-exemples-llmaas-2026-09-07.md) distingue les exemples à remplacer, les réglages de modèles à actualiser et les démonstrateurs dont le principe reste utilisable. Les scripts externes n’ont pas été modifiés ni exécutés contre la production.
+
+
+**Politique du 13 octobre 2026** : les montants historiques ont été retirés de cette copie. Les constats d’audit datés ci-dessus restent historiques ; les prix en vigueur sont publiés exclusivement dans le [catalogue officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).

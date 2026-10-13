@@ -23,7 +23,7 @@ Para comenzar, siga la [guía de inicio rápido](./quickstart.md). Para elegir u
 | Búsqueda aumentada por generación | [Comprender el RAG](./rag_explained.md) |
 | Clasificación de documentos por relevancia | [Reranking](./rerank.md) |
 | Procesamiento asíncrono de lotes de solicitudes | [Batch](./batch.md) |
-| Cambio de modelo y gestión de identificadores anteriores | [Ciclo de vida y migración](./concepts.md#migración-a-otro-modelo) |
+| Cambio de modelo y gestión de identificadores anteriores | [Ciclo de vida y migración](./concepts.md#migración-hacia-otro-modelo) |
 
 Las optimizaciones de inferencia, incluida la predicción de múltiples tokens (*MTP*) anunciada en el registro de cambios, se realizan en el lado del servicio. Evalúe sus efectos en sus propias solicitudes a partir de las métricas de supervisión.
 

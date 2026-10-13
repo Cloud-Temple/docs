@@ -201,7 +201,7 @@ def test_rag_pipeline_complete():
         with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
             f.write("""
             Cloud Temple est un fournisseur de cloud souverain français avec la qualification SecNumCloud.
-            L'API LLMaaS permet d'accéder à 46 modèles d'IA avec des tarifs de 0.9€ pour l'input et 4€ pour l'output.
+            L'API LLMaaS permet d'accéder à des modèles d'IA. Les tarifs publics sont disponibles sur https://www.cloud-temple.com/nos-tarifs-publics/
             La sécurité est garantie par le chiffrement end-to-end et la conformité RGPD.
             """)
             test_file = f.name
