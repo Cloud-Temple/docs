@@ -13,9 +13,9 @@ Trois sources sont fusionnées :
                                      Console (bases managées, Observability, MCP…)
 
 Principes :
-  - Les correctifs sont exclus. Le statut « correctif » est déterminé sur le
-    texte FR (source canonique) pour TOUTES les langues, afin que les fichiers
-    traduits portent exactement les mêmes entrées que le français.
+  - Les correctifs sont inclus depuis BUGFIX_MIN_VERSION. Avant cette borne,
+    leur exclusion est déterminée sur le texte FR (source canonique) pour
+    TOUTES les langues, afin de conserver les mêmes entrées que le français.
   - Le script échoue bruyamment plutôt que de publier une donnée douteuse :
     tag inconnu, réécriture périmée, version inexistante.
 """
@@ -42,7 +42,10 @@ MIN_VERSION = "4.0.0"
 # Plafond : dernière version RÉELLEMENT déployée en production. À relever à chaque
 # mise en production, sinon la documentation annoncerait des fonctionnalités
 # que le client ne voit pas encore. None = aucune limite.
-MAX_VERSION = "4.47.1"
+MAX_VERSION = "4.52.0"
+
+# À partir de cette version, les notes publiques incluent aussi les correctifs.
+BUGFIX_MIN_VERSION = "4.50.0"
 
 # Langues cibles (hors FR qui est la source)
 TARGET_LANGUAGES = ["en", "de", "es", "it"]
@@ -75,7 +78,7 @@ OUTPUTS = [
         DOCS / "changelog_produits.md",
         "Nouveautés produits",
         "Nouveautés produits & évolutions",
-        "Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont volontairement exclues.",
+        "Ce changelog liste les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont incluses à partir de la version 4.50.0.",
         ":::info[Historique antérieur]\n\n"
         "L'historique complet des versions antérieures à v{floor} (v{first} à v{last}, "
         "de {first_month} {first_year} à {last_month} {last_year}) est disponible dans "
@@ -86,7 +89,7 @@ OUTPUTS = [
         I18N / "en/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Product Updates",
         "Product Updates & Evolutions",
-        "This changelog lists only new features and significant evolutions of the Cloud Temple platform.\nBug fixes are intentionally excluded.",
+        "This changelog lists new features and significant evolutions of the Cloud Temple platform.\nBug fixes are included from version 4.50.0 onwards.",
         ":::info[Earlier history]\n\n"
         "The full history of versions prior to v{floor} (v{first} to v{last}, "
         "from {first_month} {first_year} to {last_month} {last_year}) is available in the "
@@ -97,7 +100,7 @@ OUTPUTS = [
         I18N / "de/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Produktneuheiten",
         "Produktneuheiten & Weiterentwicklungen",
-        "Dieses Changelog enthält ausschließlich neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.\nFehlerbeseitigungen sind bewusst ausgeschlossen.",
+        "Dieses Changelog enthält neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.\nFehlerbehebungen sind ab Version 4.50.0 enthalten.",
         ":::info[Frühere Historie]\n\n"
         "Die vollständige Historie der Versionen vor v{floor} (v{first} bis v{last}, "
         "von {first_month} {first_year} bis {last_month} {last_year}) ist in der "
@@ -108,7 +111,7 @@ OUTPUTS = [
         I18N / "es/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Novedades del producto",
         "Novedades del producto & Evoluciones",
-        "Este changelog lista únicamente las nuevas funcionalidades y evoluciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores están excluidas intencionalmente.",
+        "Este changelog lista las nuevas funcionalidades y evoluciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores se incluyen a partir de la versión 4.50.0.",
         ":::info[Historial anterior]\n\n"
         "El historial completo de las versiones anteriores a v{floor} (v{first} a v{last}, "
         "de {first_month} de {first_year} a {last_month} de {last_year}) está disponible en el "
@@ -119,7 +122,7 @@ OUTPUTS = [
         I18N / "it/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Novità del prodotto",
         "Novità del prodotto & Evoluzioni",
-        "Questo changelog elenca solo le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni di bug sono intenzionalmente escluse.",
+        "Questo changelog elenca le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni di bug sono incluse a partire dalla versione 4.50.0.",
         ":::info[Cronologia precedente]\n\n"
         "La cronologia completa delle versioni precedenti alla v{floor} (da v{first} a v{last}, "
         "da {first_month} {first_year} a {last_month} {last_year}) è disponibile nella "
@@ -127,10 +130,10 @@ OUTPUTS = [
     ),
 ]
 
-# Mots clés qui signalent un bug fix → exclusion
+# Mots clés qui signalent un bug fix → exclusion avant BUGFIX_MIN_VERSION
 # Le statut est évalué sur le texte FR, qui est la source canonique. Liste établie
 # empiriquement sur l'intégralité de maj.js : toute entrée dont le texte FR commence
-# par l'un de ces préfixes est un correctif, donc hors périmètre de ce changelog.
+# par l'un de ces préfixes est un correctif.
 BUG_PREFIXES = (
     "Correction",
     "correction",
@@ -217,7 +220,8 @@ def parse_maj_js(content: str) -> list[dict]:
     """
     Retourne [{version, date, entries: [{tag, id, texts: {fr, en}}]}].
 
-    Le filtrage des correctifs se fait sur le texte FR, pour toutes les langues.
+    Avant BUGFIX_MIN_VERSION, le filtrage des correctifs se fait sur le texte FR,
+    pour toutes les langues. Les versions suivantes conservent toutes les entrées.
     """
     results = []
     matches = list(VERSION_RE.finditer(content))
@@ -234,7 +238,8 @@ def parse_maj_js(content: str) -> list[dict]:
         for em in ENTRY_RE.finditer(block):
             ternary, tag = em.group("ternary"), em.group("tag")
             text_fr = extract_text(ternary, "fr")
-            if not text_fr or is_bugfix(text_fr):
+            if not text_fr or (version_key(version) < version_key(BUGFIX_MIN_VERSION)
+                               and is_bugfix(text_fr)):
                 continue
             entries.append({
                 "tag": tag,

@@ -459,11 +459,5 @@
       }
     ]
   },
-  "dates": {
-    "4.4.0": {
-      "attendue": "2024-01-13",
-      "corrigee": "2025-01-13",
-      "motif": "Coquille d'année dans maj.js : le bloc a été introduit le 2025-01-13 (commit ihm 67a2f53c) avec new Date('2024-01-13'). La version se situe entre v4.3.0 (2024-12-19) et v4.5.0 (2025-01-17). À corriger en amont dans ihm/src/config/maj.js, puis retirer cette correction locale."
-    }
-  }
+  "dates": {}
 }

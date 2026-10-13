@@ -276,6 +276,9 @@ python3 scripts/extract_changelog.py --max 4.48.0
   à chaque mise en production. Sans cette borne, la documentation annoncerait des
   fonctionnalités que le client ne voit pas encore.
 
+À partir de la v4.50.0, les notes publiques incluent aussi les correctifs.
+Le filtre historique reste appliqué aux versions antérieures (`BUGFIX_MIN_VERSION`).
+
 #### Réécriture éditoriale
 
 Les textes de `maj.js` sont rédigés par les équipes de développement. Le calque

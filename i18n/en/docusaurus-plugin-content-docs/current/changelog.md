@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Change Tracking
 
+### October 12, 2026 : Console Release Notes up to v4.52.0
+
+- **Console** : The [notes de version produits](./changelog_produits.md) present the new features and fixes for versions 4.50.0, 4.51.0 and 4.52.0, including improvements to VPC networking, cloud-init deployment, and virtual machine restoration.
+
 ### September 10, 2026: Updated LLMaaS Documentation
 
 - **Select and track your models**: Direct access to the [catalog and lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) to view available models, support end-of-life dates, and recommended migrations.

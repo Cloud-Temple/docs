@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Seguimiento de Cambios
 
+### 12 de octubre de 2026 : Notas de versión de la Consola hasta la v4.52.0
+
+- **Consola** : Les [notes de version produits](./changelog_produits.md) présentent les nouveautés et correctifs des versions 4.50.0, 4.51.0 et 4.52.0, notamment les évolutions du réseau VPC, du déploiement cloud-init et de la restauration des machines virtuelles.
+
 ### 10 de septiembre de 2026: Documentación de LLMaaS actualizada
 
 - **Seleccionar y supervisar sus modelos** : Acceso directo al [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para consultar los modelos disponibles, las fechas de finalización del soporte y las migraciones recomendadas.
