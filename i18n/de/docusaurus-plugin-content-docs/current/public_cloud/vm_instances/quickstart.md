@@ -1,101 +1,103 @@
 ---
-title: Startanleitung
+title: Einstiegsleitfaden
 ---
 
 ## Voraussetzungen
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Ein aktives **Cloud Temple Tenant**
-- Mindestens ein **Standard-Support**-Abonnement
+- Ein aktiver **Cloud Temple Tenant**
+- Mindestens ein Abonnement des **Standard-Supports** für einen Direktkunden; der **Basis-Support** ist für Kunden bestimmt, die von einem geschulten Partner begleitet werden (siehe [FAQ](./faq))
 - Die erforderlichen Berechtigungen in Ihrer Cloud Temple-Organisation
 
-## Zugriff auf den Dienst VM-Instanzen
+## Zugriff auf den Dienst VM Instances
 
-Melden Sie sich bei der **Cloud Temple-Konsole** an und navigieren Sie im Hauptmenü zu **Öffentliche Cloud > VM-Instanzen**.
+Melden Sie sich bei der **Console Cloud Temple** an und navigieren Sie über das Hauptmenü zu **Cloud Public > VM Instances**.
 
 ![Dashboard Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
-Das Dashboard bietet Ihnen einen Überblick über die verbrauchten VM-Instanz-Ressourcen (Speicher, CPU, RAM) sowie die Anzahl der aktiven virtuellen Maschinen.
+Das Dashboard zeigt Ihnen einen Überblick über die verbrauchten VM-Instance-Ressourcen (Speicher, CPU, RAM) sowie die Anzahl der aktiven virtuellen Maschinen.
 
-Klicken Sie in der linken Seitenleiste auf **Öffentliche Cloud**, um das Untermenü aufzuklappen, und wählen Sie dann **VM-Instanzen** aus.
+Klicken Sie in der linken Seitenleiste auf **Cloud Public**, um das Untermenü auszuklappen, und wählen Sie dann **VM Instances** aus.
 
 ![Navigation vers VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
-Sie gelangen zur Liste Ihrer VM-Instanzen:
+Sie gelangen zur Liste Ihrer VM Instances:
 
 ![Liste des VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
-Die Tabelle zeigt für jede VM Folgendes an: ihren Namen, ihren Status (Eingeschaltet / Ausgeschaltet), die Verfügbarkeitszone, die Instanzfamilie, das Modell sowie die zugewiesenen Ressourcen (CPU, RAM, Festplattengröße).
+Die Tabelle zeigt für jede VM: ihren Namen, ihren Status (Eingeschaltet / Ausgeschaltet), die Verfügbarkeitszone, die Instanzfamilie, das Modell sowie die zugewiesenen Ressourcen (CPU, RAM, Festplattengröße).
 
 ## Eine virtuelle Maschine bereitstellen
 
-Klicken Sie oben rechts auf die Schaltfläche **+ Neue virtuelle Maschine**, um den Erstellungswizard zu öffnen. Dieser Wizard umfasst **9 Schritte**.
+Klicken Sie auf die Schaltfläche **+ Neue virtuelle Maschine** oben rechts, um den Assistenten zur Erstellung zu öffnen. Dieser Assistent verläuft in **9 Schritten**.
 
 ### Schritt 1 — Instanzfamilie
 
-![Étape 1 : Famille d'instance](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
+![Schritt 1: Instanzfamilie](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
 
-Wählen Sie die **Instanzfamilie**, die zu Ihrer Arbeitslast passt:
+Wählen Sie die **Instanzfamilie**, die zu Ihrer Workload passt:
 
 | Familie | Beschreibung | CPU |
 |---------|-------------|-----|
 | **Development** | Kostenoptimiert, für Test- und Staging-Umgebungen | Geteilt |
-| **General Purpose** | Optimales vCPU/RAM-Verhältnis für Standard-Arbeitslasten | Geteilt |
+| **General Purpose** | Optimales vCPU/RAM-Verhältnis für Standard-Workloads | Geteilt |
 
 :::info
-Die Familie **Performance** (dedizierte vCPUs) ist über die benutzerdefinierte Vorlage verfügbar.
+Die Familie **Performance** (dedizierte vCPU) ist über die benutzerdefinierte Vorlage verfügbar.
 :::
 
 ### Schritt 2 — Verfügbarkeitszone
 
 ![Schritt 2: Verfügbarkeitszone](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
 
-Wählen Sie die **Verfügbarkeitszone (AZ)** aus, in der Ihre VM gehostet werden soll (z. B. `fr1-az01`).
+Wählen Sie die **Verfügbarkeitszone (AZ)**, in der Ihre VM gehostet werden soll (z. B. `fr1-az01`).
 
-### Schritt 3 — Eine Vorlage auswählen
+Diese Wahl erfordert nicht den Abschluss der kostenpflichtigen AZ-Aktivierung des IaaS-Angebots: Diese Aktivierung ist keine Voraussetzung für VM Instances.
 
-![Schritt 3: Eine Vorlage auswählen](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+### Schritt 3 — Ein Template auswählen
 
-Durchsuchen Sie den Katalog der verfügbaren Images über die Registerkarten **OS** und **Appliances**:
+![Schritt 3: Ein Template auswählen](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+
+Durchsuchen Sie den Katalog der verfügbaren Images über die Registerkarten **OS** und **Appliances** :
 
 - **Debian 13** (Trixie)
 - **Rocky Linux**
-- Und weitere Systeme, die im Cloud Temple Marketplace verfügbar sind
+- Und weitere Systeme, die in der Cloud Temple Marketplace verfügbar sind
 
-Wählen Sie das gewünschte Betriebssystem aus und wählen Sie die Version im zugehörigen Dropdown-Menü.
+Wählen Sie das gewünschte Betriebssystem aus und die Version im zugehörigen Dropdown-Menü.
 
 ### Schritt 4 — Vorlage
 
 ![Schritt 4: Vorlage](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape4_gabarit.png)
 
-Wählen Sie eine **vordefinierte Vorlage** oder erstellen Sie eine **benutzerdefinierte Vorlage** :
+Wählen Sie eine **vordefinierte Vorlage** oder erstellen Sie eine **Custom-Vorlage** :
 
 - `dev-1` : 1 vCPU
-- `dev-2` : 2 vCPU / 8 GB RAM (standardmäßig ausgewählt)
-- **Custom** : geben Sie die Anzahl der vCPU und die RAM-Größe frei ein
+- `dev-2` : 2 vCPU / 8 GB RAM (sélectionné par défaut)
+- **Custom** : geben Sie frei die Anzahl der vCPU und die RAM-Menge ein
 
 ### Schritt 5 — Name und Sicherungsrichtlinie
 
-![Schritt 5: Name und Sicherungsrichtlinie](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
+![Étape 5 : Nom et politique de sauvegarde](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
 
 Geben Sie Folgendes ein:
 
 | Parameter | Beschreibung |
 |-----------|-------------|
 | **Name** | Eindeutiger Name Ihrer VM im Tenant |
-| **Sicherungsrichtlinie** | Standardmäßig `No Backup`, oder eine Aufbewahrungsrichtlinie, wenn die Sicherungsoption abonniert ist |
+| **Sicherungsrichtlinie** | `No Backup` standardmäßig, oder eine Aufbewahrungsrichtlinie, wenn die Sicherungsoption abonniert ist |
 
-Dieser Schritt zeigt außerdem eine Zusammenfassung des ausgewählten Betriebssystems und der Größe der Systemfestplatte an.
+Dieser Schritt zeigt außerdem eine Zusammenfassung des ausgewählten Betriebssystems und der Größe der Systemplatte an.
 
 ### Schritt 6 — Cloud Init
 
-![Schritt 6 : Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
+![Étape 6 : Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
 
-Dieser Schritt ist **optional**. Er ermöglicht die Vorabkonfiguration Ihrer VM beim ersten Start über zwei Editoren:
+Dieser Schritt ist **optional**. Er ermöglicht die Vorkonfiguration Ihrer VM beim ersten Start über zwei Editoren:
 
-- **Cloud Config** : Injizieren von SSH-Schlüsseln, Konfiguration des Hostnamens, Installation von Paketen usw.
-- **Network Config** : Statische Netzwerkkonfiguration (Netplan-Format)
+- **Cloud Config**: Injektion von SSH-Schlüsseln, Konfiguration des Hostnames, Installation von Paketen usw.
+- **Network Config**: statische Netzwerkkonfiguration (Netplan-Format)
 
 Beispiel für eine minimale Cloud Config:
 
@@ -108,94 +110,94 @@ packages:
   - htop
 ```
 
-Ein Kontrollkästchen ermöglicht das **Löschen des Cloud-Init-Konfigurationsdatenträgers** nach dem ersten Start (aus Sicherheitsgründen empfohlen).
+Ein Kontrollkästchen ermöglicht es, die **Cloud-Init-Konfigurationsscheibe** nach dem ersten Start zu löschen (aus Sicherheitsgründen empfohlen).
 
 ### Schritt 7 — Festplatten
 
-![Étape 7 : Disques](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
+![Schritt 7 : Festplatten](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape7_disques.png)
 
 Konfigurieren Sie die Festplatte(n) Ihrer VM:
 
-- **Systemfestplatte** : wird automatisch erstellt (`system-disk-1`), Größe wird durch das Betriebssystem bestimmt
-- **Zusätzliche Festplatten** : fügen Sie weitere Volumes mit dem gewünschten Namen, der Kapazität und dem Speichertyp hinzu
+- **Systemfestplatte** : wird automatisch erstellt (`system-disk-1`), Größe durch das Betriebssystem bestimmt
+- **Zusätzliche Festplatten** : fügen Sie zusätzliche Volumes mit dem gewünschten Namen, der Kapazität und dem Speichertyp hinzu
 
 Zwei Speichertypen sind verfügbar:
 
 | Typ | IOPS |
 |------|------|
-| **Standard** | ~1.500 IOPS/TB |
-| **Enterprise** | ~7.500 IOPS/TB |
+| **Standard** | ~1 500 IOPS/TB |
+| **Enterprise** | ~7 500 IOPS/TB |
 
 ### Schritt 8 — Netzwerkadapter
 
-![Étape 8 : Adaptateurs Réseaux](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
+![Schritt 8: Netzwerkadapter](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape8_reseau.png)
 
-Verbinden Sie Ihre VM über das Dropdown-Menü mit einem Netzwerk. Zwei Netzwerktypen stehen zur Verfügung:
+Verbinden Sie Ihre VM über das Dropdown-Menü mit einem Netzwerk. Zwei Netzwerktypen sind verfügbar:
 
-- **Privates Backbone** (ex : PACKFR) : gemeinsam genutztes privates Netzwerk mit logischer Isolierung
-- **VPC** : vollständig dediziertes privates Netzwerk mit erweiterter Segmentierung
+- **Privates Backbone** (z. B. PACKFR): gemeinsam genutztes privates Netzwerk mit logischer Isolation
+- **VPC**: vollständig dediziertes privates Netzwerk mit fortgeschrittener Segmentierung
 
 ### Schritt 9 — Zusammenfassung
 
-![Schritt 9: Zusammenfassung](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
+![Étape 9 : Sommaire](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
 
-Überprüfen Sie die vollständige Zusammenfassung, bevor Sie die Provisionierung starten:
+Prüfen Sie die vollständige Zusammenfassung, bevor Sie das Provisioning starten:
 
 - Allgemeine Informationen (Familie, AZ, Modell, Name, Sicherung)
-- Konfiguration (CPU, RAM)
+- Vorlage (CPU, RAM)
 - Cloud-Init-Konfiguration
-- Virtuelle Festplatten
+- Virtuelle Datenträger
 - Netzwerk
 
 Klicken Sie auf **Erstellen**, um die Bereitstellung zu starten. Die VM wird innerhalb weniger Minuten provisioniert.
 
 ## Verwalten Sie Ihre virtuellen Maschinen
 
-Klicken Sie in der Liste auf eine VM, um die Detailansicht zu öffnen. Vier Registerkarten sind verfügbar:
+Klicken Sie in der Liste auf eine VM, um deren Detailansicht anzuzeigen. Vier Registerkarten sind verfügbar:
 
-### Registerkarte Informationen
+### Informations-Tab
 
-![VM-Details - Informationen](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
+![Détail VM - Informations](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
 
-Überprüfen und bearbeiten Sie die Einstellungen Ihrer VM:
+Rufen Sie die Parameter Ihrer VM ab und ändern Sie sie:
 - Name, UUID, Verfügbarkeitszone
-- Instanzfamilie, Betriebssystemvorlage
+- Instanzfamilie, OS-Modell
 - CPU, RAM (änderbar bei ausgeschalteter VM)
-- Sicherungsrichtlinie
+- Backup-Richtlinie
 
-Mithilfe der Aktionsicons können Sie die VM **starten**, **stoppen**, **neustarten** oder die **Konsole öffnen**.
+Aktionssymbole ermöglichen es, die VM zu **starten**, **anzuhalten**, **neu zu starten** oder die **Konsole zu öffnen**.
 
-### Tab "Festplatten"
+### Tab Disks
 
-![Détail VM - Disques](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
+![VM-Details - Disks](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
-Überprüfen Sie die angehängten Festplatten und fügen Sie über die Schaltfläche **+ Festplatte hinzufügen** zusätzliche Volumes hinzu.
+Rufen Sie die angehängten Disks ab und fügen Sie zusätzliche Volumes über die Schaltfläche **+ Disk hinzufügen** hinzu.
 
-### Registerkarte Netzwerkadapter
+### Netzwerkadapter-Tab
 
 ![VM-Details - Netzwerk](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_reseau.png)
 
-Überprüfen Sie die Netzwerkschnittstellen der VM (Netzwerkname, MAC-Adresse, IPv4-/IPv6-Adresse).
+Rufen Sie die Netzwerkschnittstellen der VM ab (Netzwerkname, MAC-Adresse, IPv4-/IPv6-Adresse).
 
-### Registerkarte Snapshots
+### Tab Snapshots
 
 ![VM-Details - Snapshots](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_snapshots.png)
 
-Erstellen und verwalten Sie Snapshots Ihrer VM über die Schaltfläche **+ Snapshot erstellen**.
+Erstellen und verwalten Sie Snapshots Ihrer VM über den Button **+ Snapshot erstellen**.
 
-## Automatisierung und Infrastruktur als Code
+## Automatisierung und Infrastructure as Code
 
-Der Dienst VM-Instanzen ist vollständig automatisierbar:
+Der Service VM Instances ist vollständig automatisierbar:
 
 ### Über die REST-API
 
-Die Cloud Temple REST-API ermöglicht die vollständige programmatische Steuerung des Lebenszyklus virtueller Maschinen.
+Die REST-API von Cloud Temple ermöglicht die vollständige programmatische Steuerung des Lebenszyklus virtueller Maschinen.
 
-API-Referenz: [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.com/api/)
+API-Referenz : [https://shiva.cloud-temple.com/api/](https://shiva.cloud-temple.com/api/)
 
-### Über Terraform
+### Via Terraform
 
-Der Terraform-Provider Cloud Temple ermöglicht die Verwaltung Ihrer VM-Instanzen als Infrastructure as Code.
+Der Terraform Provider Cloud Temple ermöglicht die Verwaltung Ihrer VM-Instanzen als Infrastructure as Code.
 
 ```hcl
 # Exemple de ressource VM Instances avec Terraform
@@ -205,11 +207,11 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-Siehe die [documentation Terraform](/terraform) für die Installation und Konfiguration des Providers.
+Bitte beachten Sie die [documentation Terraform](/terraform) für die Installation und Konfiguration des Providers.
 
 ## Nützliche Ressourcen
 
-- [Documentation publique Cloud Temple](https://docs.cloud-temple.com/home)
-- [Référence API](https://shiva.cloud-temple.com/api/)
-- [Documentation Terraform](/terraform)
-- [Concepts des zones de disponibilité](../../additional_content/concepts_az.md)
+- [Öffentliche Dokumentation Cloud Temple](https://docs.cloud-temple.com/home)
+- [API-Referenz](https://shiva.cloud-temple.com/api/)
+- [Terraform-Dokumentation](/terraform)
+- [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_az.md)

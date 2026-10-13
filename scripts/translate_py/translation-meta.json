@@ -775,10 +775,10 @@
       "it": "7efe13afe71c88bf3a6e3a6b4c25d8ed2a94f216114583039e39a587770f076a"
     },
     "public_cloud/vm_instances/quickstart.md": {
-      "en": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
-      "de": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
-      "es": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa",
-      "it": "ed02cf35de9cc6c3e903e1b9423fa704bf45548494910f8bf53412632bc17bfa"
+      "en": "e6fe08cf39cb367c382cf5455716a3672cab582b0ed4ed084287749d2c5fd9bf",
+      "de": "e6fe08cf39cb367c382cf5455716a3672cab582b0ed4ed084287749d2c5fd9bf",
+      "es": "e6fe08cf39cb367c382cf5455716a3672cab582b0ed4ed084287749d2c5fd9bf",
+      "it": "e6fe08cf39cb367c382cf5455716a3672cab582b0ed4ed084287749d2c5fd9bf"
     },
     "public_cloud/vm_instances/tutorials/create_vm.md": {
       "en": "f61d7698458e23b19560c21c3a3a0e1aade70b6b76f77263e15e577083d3bb9e",
@@ -925,10 +925,10 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     },
     "public_cloud/vm_instances/faq.md": {
-      "es": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
-      "de": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
-      "en": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b",
-      "it": "708d663483ce48ba4fe7fa266cf501ca8dd8a92f86ea7b5f23c0bd4f0e4b555b"
+      "es": "f5d3ff1b8994f0e5cc8332b60ace190f857b3758ad7daef9bb5f9b01648c4e23",
+      "de": "f5d3ff1b8994f0e5cc8332b60ace190f857b3758ad7daef9bb5f9b01648c4e23",
+      "en": "f5d3ff1b8994f0e5cc8332b60ace190f857b3758ad7daef9bb5f9b01648c4e23",
+      "it": "f5d3ff1b8994f0e5cc8332b60ace190f857b3758ad7daef9bb5f9b01648c4e23"
     },
     "console/onboarding.md": {
       "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
@@ -949,6 +949,6 @@
       "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-10-13T13:33:07.597466",
+  "last_update": "2026-10-13T14:33:37.095689",
   "version": "2.0"
 }
