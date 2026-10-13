@@ -180,7 +180,7 @@ const config: Config = {
           title: 'Market Place',
           items: [
             {
-              label: 'Nuage Public',
+              label: 'UGAP Nuage Public',
               href: 'https://www.nuagepublic.fr',
             },
             {
