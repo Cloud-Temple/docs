@@ -32,7 +32,7 @@ With scalable resources and automated management, you benefit from a high-perfor
 
   <div class="platform-card">
     <img src="img/marketplace/LogoNuagePublic.png" alt="Nuage Public logo" class="platform-logo" />
-    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> The Nuage Public market</a></p>
+    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> The UGAP Nuage Public market</a></p>
   </div>
 
   <div class="platform-card">

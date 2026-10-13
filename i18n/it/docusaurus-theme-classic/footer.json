@@ -43,9 +43,9 @@
     "message": "Privacy",
     "description": "The label of footer link with label=Privacy linking to /docs/privacy"
   },
-  "link.item.label.Nuage Public": {
-    "message": "Nuage Public",
-    "description": "The label of footer link with label=Nuage Public linking to https://www.nuagepublic.fr"
+  "link.item.label.UGAP Nuage Public": {
+    "message": "UGAP Nuage Public",
+    "description": "The label of footer link with label=UGAP Nuage Public linking to https://www.nuagepublic.fr"
   },
   "link.item.label.CAIH": {
     "message": "CAIH",
