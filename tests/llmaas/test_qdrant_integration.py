@@ -290,7 +290,7 @@ def test_qdrant_integration(logger: RAGTestLogger):
         documents_content = [
             "Cloud Temple est un fournisseur de cloud souverain français avec la qualification SecNumCloud de l'ANSSI.",
             "L'API LLMaaS de Cloud Temple permet d'accéder à 36 modèles d'intelligence artificielle.",
-            "Les tarifs LLMaaS sont de 0.9€ pour l'input et 4€ pour l'output par million de tokens.",
+            "Les tarifs publics LLMaaS sont disponibles sur https://www.cloud-temple.com/nos-tarifs-publics/",
             "La sécurité Cloud Temple est garantie par les certifications HDS et ISO 27001.",
             "Les cas d'usage de LLMaaS incluent le dialogue multilingue et l'analyse de documents longs."
         ]
@@ -376,10 +376,10 @@ def test_qdrant_integration(logger: RAGTestLogger):
         # 8. Validation simple de la réponse.
         # Vérifie si les mots-clés attendus sont présents dans la réponse générée.
         answer_normalized = answer.lower().replace(',', '.')
-        expected_keywords = ["secnumcloud", "0.9€", "4€"]
+        expected_keywords = ["secnumcloud", "tarifs", "cloud-temple.com"]
         
         if all(keyword in answer_normalized for keyword in expected_keywords):
-            logger.log_step("Validation réponse", "SUCCESS", "Les mots-clés 'SecNumCloud', '0.9€' et '4€' sont présents dans la réponse.")
+            logger.log_step("Validation réponse", "SUCCESS", "Les mots-clés 'SecNumCloud', 'tarifs' et 'cloud-temple.com' sont présents dans la réponse.")
             return True
         else:
             missing = [kw for kw in expected_keywords if kw not in answer_normalized]

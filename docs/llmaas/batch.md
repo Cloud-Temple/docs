@@ -246,7 +246,7 @@ Les erreurs propres à une conversation se trouvent dans `results[].error`, mêm
 
 ## Tarification et ressources
 
-Les paramètres de génération s'appliquent à chaque conversation. Pour les tarifs Batch, consultez la [grille de tarification de l'API](./api.md#rate-limiting-et-facturation).
+Les paramètres de génération s'appliquent à chaque conversation. Pour les tarifs Batch, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 - [API de génération de chat](./api.md#post-v1chatcompletions)
 - [Choisir un modèle](./models.md)

@@ -83,7 +83,7 @@ Chaque machine virtuelle dispose automatiquement d'un **disque système Flash** 
 
 - Taille : entre **15 et 100 Go** selon l'OS sélectionné.
 
-Le disque système est facturé au **Go** selon le catalogue tarifaire VM Instances. Sa création automatique avec la VM signifie qu'il est nécessaire au déploiement de l'OS, et non qu'il est inclus gratuitement.
+Le disque système est facturé au **Go** selon le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Sa création automatique avec la VM signifie qu'il est nécessaire au déploiement de l'OS, et non qu'il est inclus gratuitement.
 
 ### Volumes additionnels
 

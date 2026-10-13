@@ -7,14 +7,15 @@ sidebar_position: 2
 
 ## OpenAI Compatibility
 
-The LLMaaS API is OpenAI-compatible for the calls documented in this reference. Configure the base URL `https://api.ai.cloud-temple.com/v1` and your LLMaaS key in the client, then verify the model capabilities and the parameters of the endpoint used.
+The LLMaaS API is OpenAI-compatible for calls documented in this reference. Configure the base URL `https://api.ai.cloud-temple.com/v1` and your LLMaaS key in the client, then verify the model capabilities and endpoint parameters used.
 
 Compatibility does not cover all OpenAI features. Documented differences include:
 
-- **Completions** : `/v1/completions` expects a `messages` array, like chat; see the [format de complétion](#post-v1completions).
-- **Embeddings** : inputs must be text; see the [formats acceptés](#post-v1embeddings).
-- **Audio transcription** : response formats `text`, `srt`, and `vtt` are not supported; see the [paramètres de transcription](#post-v1audiotranscriptions).
-- **Batch** : the service uses a [contrat spécifique](./batch.md), with direct submission of conversations in JSON to `/v1/chat/completions/batch`.
+- **Completions**: `/v1/completions` expects a `messages` array, like chat; see the [completion format](#post-v1completions).
+- **Embeddings**: inputs must be text; see [accepted formats](#post-v1embeddings).
+- **Audio Transcription**: `text`, `srt`, and `vtt` response formats are not supported; see [transcription parameters](#post-v1audiotranscriptions).
+- **Batch**: the service uses a [specific contract](./batch.md), with direct submission of conversations in JSON to `/v1/chat/completions/batch`.
+
 
 ## Base URL
 
@@ -34,39 +35,49 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ### The Tier Principle: Access Level, Budget, and Capacity
 
-Our tier system is designed as **comprehensive service packages** that define three key aspects of your usage:
+Our tier system is designed as **complete service envelopes** that define three key aspects of your usage:
 
-1.  **An Access Level (Purchase Credit)** : For Tiers 1 to 4, this is an amount to be paid upfront to activate the service and unlock the technical and budgetary capacities of the chosen tier.
-2.  **A Monthly Budget Limit** : This is the ceiling for your monthly consumption, ensuring you have complete control over your costs.
-3.  **Technical Capacity** : These are the rate limits (tokens per day and per hour) that guarantee stable and predictable performance for your request volume.
+1.  **An Access Level (Purchase Credit)**: For Tiers 1 to 4, this is an upfront amount to be paid to activate the service and unlock the technical and budgetary capabilities of the chosen tier.
+2.  **A Monthly Budget Limit**: This is the cap on your monthly consumption, ensuring total control over your costs.
+3.  **Technical Capacity**: These are the throughput limits (tokens per day and per hour) that guarantee stable and predictable performance for your call volume.
 
-Choosing a tier is therefore a balance between the initial investment, the forecasted monthly budget, and the required technical capacity. Your consumption within this package is then billed according to the current rates.
+Choosing a tier is therefore a balance between the initial investment, the projected monthly budget, and the required technical capacity. Your consumption within this envelope is then billed according to the prevailing rates.
 
-### Tier Table
+### Technical capabilities of tiers
 
-| Tier                      | Purchase Credit | Monthly Limit | Output Tokens/Hour | Output Tokens/Day | Description          |
-| ------------------------- | --------------- | ------------- | ------------------ | ----------------- | -------------------- |
-| **Tier 1**                | 200 €           | 1 000 €       | 150 000            | 3 600 000         | Standard usage       |
-| **Tier 2**                | 500 €           | 3 000 €       | 300 000            | 7 200 000         | Professional usage   |
-| **Tier 3**                | 1 000 €         | 5 000 €       | 450 000            | 10 800 000        | High volume          |
-| **Tier 4**                | 4 000 €         | 10 000 €      | 600 000            | 14 400 000        | Enterprise           |
-| **Monthly Billing**       | N/A             | Unlimited     | High priority      | High priority     | Contact sales        |
+The table below presents only the technical throughput. Access credit amounts and budget caps are subject to the commercial terms of the chosen tier; consult the official catalog and the terms of your subscription.
 
-**Note** : Rate limits are calculated based on output tokens. Pricing varies by usage type:
+| Tier | Output Tokens/Hour | Output Tokens/Day | Description |
+| ------------------------- | ------------------- | ------------------ | -------------------- |
+| **Tier 1** | 150,000 | 3,600,000 | Standard usage |
+| **Tier 2** | 300,000 | 7,200,000 | Professional usage |
+| **Tier 3** | 450,000 | 10,800,000 | High volume |
+| **Tier 4** | 600,000 | 14,400,000 | Enterprise |
+| **Monthly Billing** | High priority | High priority | Contact sales |
 
-| Usage Type                           | Rate                                            |
-| ------------------------------------ | ----------------------------------------------- |
-| **Input Tokens**                     | 1.8 € / million                                 |
-| **Output Tokens (chat/completion)**  | 8.00 € / million                                |
-| **Reasoning Tokens**                 | 8.00 € / million                                |
-| **Reranking**                        | 4.00 € / million documents processed              |
-| **Asynchronous Batch (input)**       | 0.9 € / million (−50% vs standard)              |
-| **Asynchronous Batch (output)**      | 4.00 € / million (−50% vs standard)             |
-| **Audio Transcription**              | 0.01 € / minute (any started minute is charged) |
+To find the current public prices and estimate your costs, consult the [Cloud Temple official pricing catalog](https://www.cloud-temple.com/en/our-public-rates/).
 
-### Rate Limit Headers
 
-The responses include informative headers:
+**Note**: Throughput limits are calculated based on output tokens. Pricing varies by usage:
+
+| Usage Type |
+| -------------------------------------- |
+| **Input Tokens** |
+| **Output Tokens (chat/completion)** |
+| **Reasoning Tokens** |
+| **Reranking** |
+| **Async Batch (input)** |
+| **Async Batch (output)** |
+| **Audio Transcription** |
+
+To find the current public prices and estimate your costs, consult the [Cloud Temple official pricing catalog](https://www.cloud-temple.com/en/our-public-rates/).
+
+
+Audio transcription is billed per minute; any started minute is due.
+
+### Limit Headers
+
+Responses include informative headers:
 
 ```
 X-RateLimit-Limit-Requests: 1000
@@ -74,7 +85,7 @@ X-RateLimit-Remaining-Requests: 999
 X-RateLimit-Reset-Requests: 1640995200
 ```
 
-### Error 429 - Limit Reached
+### 429 Error - Limit Reached
 
 ```json
 {
@@ -115,7 +126,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter           | Type          | Required | Description                                                                                                                  |
 | ------------------- | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `model`             | string        | ✅       | Model ID (see [catalogue](./models))                                                                                         |
+| `model`             | string        | ✅       | Model ID (see [catalog](./models))                                                                                           |
 | `messages`          | array         | ✅       | Conversation (role: system/user/assistant)                                                                                   |
 | `stream`            | boolean       | ❌       | Enables streaming (default: false)                                                                                           |
 | `temperature`       | float         | ❌       | Creativity 0.0-2.0 (default: 0.7)                                                                                            |
@@ -191,7 +202,7 @@ If the model decides to call a tool, the response will have a `finish_reason` of
 }
 ```
 
-After receiving a `tool_calls` response, you must execute the tool on your end, then return the result to the model using a message with `role: "tool"`.
+After receiving a `tool_calls` response, you must execute the tool on your side, then send the result back to the model using a message with `role: "tool"`.
 
 ```json
 {
@@ -225,15 +236,15 @@ After receiving a `tool_calls` response, you must execute the tool on your end, 
 
 #### Streaming (SSE)
 
-With `"stream": true`, the response arrives token by token :
+With `"stream": true`, the response arrives token by token:
 
-**Response Headers :**
+**Response Headers:**
 ```
 Content-Type: text/event-stream
 Cache-Control: no-cache
 ```
 
-**Event Format :**
+**Event Format:**
 ```
 data: {"choices":[{"delta":{"content":"La"},"finish_reason":null,"index":0}],"created":1749114814,"id":"chatcmpl-bc52de347f2e4068b7bde380c0f8db37","model":"gpt-oss:120b","object":"chat.completion.chunk"}
 
@@ -244,16 +255,16 @@ data: {"choices":[{"delta":{"content":""},"finish_reason":"stop","index":0}],"cr
 data: [DONE]
 ```
 
-**Chunk Structure :**
+**Chunk Structure:**
 - `choices[].delta.content` : Incremental content
 - `finish_reason` : `null` during streaming, then `"stop"`
-- End signal : `data: [DONE]`
+- End signal: `data: [DONE]`
 
 ### Multimodal Requests (Vision)
 
 To analyze images, you can send a request where the `content` field of a user message is an array containing both text and images.
 
-The format for an image is an object with `type: "image_url"` and an `image_url` field containing the image URL in `data URI` (base64) format.
+The format for an image is an object with `type: "image_url"` and an `image_url` field containing the image URL in `data URI` format (base64).
 
 :::info[Compatibility Note]
 Although the standard and recommended format is `{"type": "image_url", "image_url": {"url": "data:..."}}`, the API also supports a simplified format `{"type": "image", "image": "data:..."}` for flexibility. However, it is recommended to use the standard `image_url` format for better compatibility with the OpenAI ecosystem.
@@ -263,7 +274,7 @@ Although the standard and recommended format is `{"type": "image_url", "image_ur
 For specific document analysis tasks (PDFs, scans, tables), we recommend using the specialized **DeepSeek-OCR** model. See the [dedicated documentation](./ocr).
 :::
 
-#### Example Vision Request
+#### Vision Request Example
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
@@ -295,7 +306,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 ### POST /v1/completions
 
 :::warning
-**Note** : The `/v1/completions` endpoint uses the same format as `/v1/chat/completions` with messages. 
+**Note** : The `/v1/completions` endpoint uses the same format as `/v1/chat/completions` with messages.
 For simple text completion, use a user message with your prompt.
 :::
 
@@ -326,7 +337,7 @@ Identical to `/v1/chat/completions` - see previous section.
 
 #### Response
 
-Same format as `/v1/chat/completions`.
+Format identical to `/v1/chat/completions`.
 
 ### POST /v1/audio/transcriptions
 
@@ -344,13 +355,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 
 #### Parameters
 
-| Parameter         | Type   | Required | Description                                                                                                        |
-| ----------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| `file`            | binary | ✅          | Audio file (wav, mp3, m4a).                                                                                     |
-| `language`        | string | ❌          | ISO 639-1 language code (e.g., "fr"). Automatic detection if not provided.                                             |
-| `initial_prompt`  | string | ❌          | Context or specific words to improve transcription accuracy.                                      |
-| `task`            | string | ❌          | Task to perform: `transcribe` (default) or `translate` (translate to English).                                    |
-| `response_format` | string | ❌          | `json` (default, equivalent to `verbose_json`). The `text`, `srt`, `vtt` formats are not currently supported. |
+| Parameter      | Type   | Required | Description                                                                                                        |
+| -------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `file`         | binary | ✅       | Audio file (wav, mp3, m4a).                                                                                        |
+| `language`     | string | ❌       | ISO 639-1 language code (e.g., "fr"). Automatic detection if not provided.                                        |
+| `initial_prompt` | string | ❌     | Context or specific words to improve transcription accuracy.                                                     |
+| `task`         | string | ❌       | Task to perform: `transcribe` (default) or `translate` (translate to English).                                   |
+| `response_format` | string | ❌    | `json` (default, equivalent to `verbose_json`). The `text`, `srt`, `vtt` formats are not currently supported. |
 
 #### Response (`json`)
 
@@ -375,6 +386,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/audio/transcriptions" \
 }
 ```
 
+
 ### POST /v1/embeddings
 
 Creates an embedding vector representing the input text.
@@ -395,12 +407,12 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 | Parameter | Type                       | Required | Description                                           |
 | --------- | -------------------------- | -------- | ----------------------------------------------------- |
-| `model`   | string                     | ✅       | ID of the embedding model (see [catalogue](./models)) |
+| `model`   | string                     | ✅       | Embedding model ID (see [catalog](./models))          |
 | `input`   | string or array of strings | ✅       | The text or list of texts to vectorize.               |
 
 #### Response
 
-Abbreviated excerpt: the ellipsis represents the other components of the vector. This block illustrates the response structure and does not constitute a directly copyable JSON document.
+Abbreviated excerpt: ellipses represent other vector components. This block illustrates the response structure and is not a directly copyable JSON document.
 
 ```text
 {
@@ -427,9 +439,9 @@ Abbreviated excerpt: the ellipsis represents the other components of the vector.
 
 ### POST /v1/rerank
 
-Reranks a list of documents by relevance to a query. Compatible with the Cohere API (v1 and v2).
+Reranks a list of documents by relevance to a query. Compatible with Cohere API (v1 and v2).
 
-**Billing** : €4.00 per million of processed documents. All submitted documents are counted, even if `top_n` limits the number of returned results. See the [détail du calcul](./rerank.md#pricing).
+**Billing**: see the [official Cloud Temple pricing catalog](https://www.cloud-temple.com/en/our-public-rates/). All submitted documents are counted, even if `top_n` limits the number of returned results. See [calculation details](./rerank.md#pricing).
 
 #### Request
 
@@ -453,14 +465,14 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 | Parameter   | Type    | Required | Description                                                                 |
 | ----------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `model`     | string  | ✅       | Reranking model ID (see [catalogue](./models#reranking-models))         |
+| `model`     | string  | ✅       | Reranking model ID (see [catalog](./models#reranking-models))               |
 | `query`     | string  | ✅       | The search query                                                            |
 | `documents` | array   | ✅       | List of documents to rerank                                                 |
 | `top_n`     | integer | ❌       | Number of results to return (default: all)                                  |
 
 #### Response
 
-Illustrative excerpt of the Jina/vLLM format described by the platform contract. The scores and counters below are dummy values. The proxy forwards the engine's response and adds a `backend` block, omitted here.
+Illustrative excerpt of the Jina/vLLM format described by the platform contract. The scores and counters below are fictitious. The proxy forwards the engine's response and adds a `backend` block, omitted here.
 
 ```json
 {
@@ -491,7 +503,7 @@ Illustrative excerpt of the Jina/vLLM format described by the platform contract.
 }
 ```
 
-The `relevance_score` values are raw, unnormalized scores, not probabilities between 0 and 1. Use their relative order; any threshold must be [calibrated to your model and corpus](./rerank.md#relevance-threshold). The `usage.prompt_tokens` and `usage.total_tokens` counters are separate from billing per processed document; no `usage.billed_units.search_units` field is required to calculate the latter.
+`relevance_score` values are raw, unnormalized scores, not probabilities between 0 and 1. Use their relative order; any threshold must be [calibrated on your model and corpus](./rerank.md#relevance-threshold). The `usage.prompt_tokens` and `usage.total_tokens` counters are distinct from billing per processed document; no `usage.billed_units.search_units` field is required to calculate the latter.
 
 The `/v2/rerank` endpoint (Cohere SDK v2) is also available with the same request format.
 
@@ -500,7 +512,7 @@ The `/v2/rerank` endpoint (Cohere SDK v2) is also available with the same reques
 ```python
 import cohere
 
-# Compatible with the Cohere SDK by pointing to the LLMaaS API
+# Compatible avec le SDK Cohere en pointant vers l'API LLMaaS
 co = cohere.Client(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com"
@@ -523,15 +535,15 @@ for result in results.results:
 
 ### POST /v1/chat/completions/batch
 
-Submits multiple independent conversations with a common model for asynchronous processing. The `messages` field is an array of conversations. The HTTP 202 response contains the batch ID.
+Submit multiple independent conversations with a common model for asynchronous processing. The `messages` field is an array of conversations. The HTTP 202 response contains the batch ID.
 
-Use `GET /v1/chat/completions/batch/{id}` with the same API key to track processing and retrieve the results. Refer to the [Batch guide](./batch.md) for the format, limits, and a complete example.
+Use `GET /v1/chat/completions/batch/{id}` with the same API key to track processing and retrieve results. See the [Batch guide](./batch.md) for format, limits, and a complete example.
 
 ### GET /v1/models
 
-List of model IDs exposed by the API. Use this response to set the `model` parameter.
+List of model identifiers exposed by the API. Use this response to populate the `model` parameter.
 
-Also refer to the [model lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) for deprecations, end-of-support dates, and migrations. An ID may be retained as a redirect to a successor; its presence in this list does not guarantee the retention of the original model.
+Also see the [model lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) for deprecations, end-of-support dates, and migrations. An identifier may be retained as a redirect to a successor; its presence in this list does not guarantee the original model's availability.
 
 #### Request
 
@@ -542,7 +554,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 
 #### Response
 
-This excerpt is illustrative: the identifiers and metadata values, including `max_model_len`, do not represent the current service specifications. Use the response from `GET /v1/models` to obtain the actual values.
+This excerpt is illustrative: identifiers and metadata values, including `max_model_len`, do not represent the service's current characteristics. Use the `GET /v1/models` response to obtain actual values.
 
 ```json
 {
@@ -572,7 +584,7 @@ This excerpt is illustrative: the identifiers and metadata values, including `ma
 
 ## Error Codes
 
-### 400 - Invalid Request
+### 400 - Bad Request
 
 ```json
 {
@@ -608,7 +620,7 @@ This excerpt is illustrative: the identifiers and metadata values, including `ma
 }
 ```
 
-### 429 - Rate Limit
+### 429 - Rate Limit Exceeded
 
 ```json
 {
@@ -651,9 +663,9 @@ import requests
 import json
 
 # Configuration
-# It is recommended to protect your API key using environment variables.
-# Example: API_KEY = os.getenv("LLMAAS_API_KEY")
-API_KEY = "VOTRE_TOKEN_API" 
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: API_KEY = os.getenv("LLMAAS_API_KEY")
+API_KEY = "VOTRE_TOKEN_API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
 headers = {
@@ -675,10 +687,10 @@ try:
         f"{BASE_URL}/chat/completions",
         headers=headers,
         json=payload,
-        timeout=30 # Added a timeout for the request
+        timeout=30 # Ajout d'un timeout pour la requête
     )
-    
-    response.raise_for_status() # Raises an exception for HTTP error codes (4xx, 5xx)
+
+    response.raise_for_status() # Lève une exception pour les codes d'erreur HTTP (4xx, 5xx)
     result = response.json()
     print(result["choices"][0]["message"]["content"])
 
@@ -699,8 +711,8 @@ import requests
 import json
 
 def stream_chat(message, model="gpt-oss:120b"):
-    # It is recommended to protect your API key using environment variables.
-    # Example: API_KEY = os.getenv("LLMAAS_API_KEY")
+    # Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+    # Exemple: API_KEY = os.getenv("LLMAAS_API_KEY")
     API_KEY = "VOTRE_TOKEN_API"
     BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
@@ -708,30 +720,30 @@ def stream_chat(message, model="gpt-oss:120b"):
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
     }
-    
+
     payload = {
         "model": model,
         "messages": [{"role": "user", "content": message}],
         "stream": True,
         "max_tokens": 200
     }
-    
+
     try:
         response = requests.post(
             f"{BASE_URL}/chat/completions",
             headers=headers,
             json=payload,
             stream=True,
-            timeout=30 # Adding a timeout for the request
+            timeout=30 # Ajout d'un timeout pour la requête
         )
-        
-        response.raise_for_status() # Raises an exception for HTTP error codes (4xx, 5xx)
-        
+
+        response.raise_for_status() # Lève une exception pour les codes d'erreur HTTP (4xx, 5xx)
+
         for line in response.iter_lines():
             if line:
                 line = line.decode('utf-8')
                 if line.startswith('data: '):
-                    data = line[6:]  # Remove 'data: '
+                    data = line[6:]  # Enlever 'data: '
                     if data == '[DONE]':
                         break
                     try:
@@ -742,7 +754,7 @@ def stream_chat(message, model="gpt-oss:120b"):
                     except json.JSONDecodeError:
                         print(f"Erreur de décodage JSON dans le stream: {data}")
                         continue
-        print() # New line after the stream
+        print() # Nouvelle ligne après le stream
     except requests.exceptions.HTTPError as e:
         print(f"Erreur HTTP: {e.response.status_code} - {e.response.text}")
     except requests.exceptions.RequestException as e:
@@ -750,7 +762,7 @@ def stream_chat(message, model="gpt-oss:120b"):
     except Exception as e:
         print(f"Une erreur inattendue est survenue: {e}")
 
-# Usage
+# Utilisation
 stream_chat("Expliquez la physique quantique")
 ```
 
@@ -784,7 +796,7 @@ async function chatCompletion(message) {
                 timeout: 30000 // Ajout d'un timeout pour la requête (30 secondes)
             }
         );
-        
+
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error('Erreur:', error.response?.data || error.message);
@@ -803,7 +815,7 @@ chatCompletion('Bonjour !').then(response => {
 
 ### JavaScript with Fetch (Server-side Node.js)
 
-Run this example server-side with Node.js using native `fetch`. Set `LLMAAS_API_KEY` in the server environment. For a web interface, the browser calls your backend, which authenticates the user and validates their permissions before calling LLMaaS. The service key remains exclusively server-side and must not be embedded in the code sent to the browser.
+Run this example on the server side with Node.js having native `fetch`. Set `LLMAAS_API_KEY` in the server environment. For a web interface, the browser calls your backend, which authenticates the user and checks their permissions before calling LLMaaS. The service key remains exclusively on the server side and must not be embedded in the code sent to the browser.
 
 ```javascript
 async function fetchCompletion(message) {
@@ -858,29 +870,29 @@ def safe_api_call(payload):
 
 ### Cost Optimization
 
-1. **Use appropriate models** : Smaller models for testing
-2. **Limit max_tokens** : Avoid overly long responses
-3. **Reuse conversations** : Efficient context window
-4. **Monitoring** : Track your usage in the Console
+1. **Use appropriate models**: Smaller models for testing
+2. **Limit max_tokens**: Avoid overly long responses
+3. **Reuse conversations**: Efficient context window usage
+4. **Monitoring**: Track your usage in the Console
 
 ### Security
 
-1. **Protect your token** : Environment variables
-2. **Regular rotation** : Change your keys periodically
-3. **Input validation** : Sanitize user data
-4. **Client rate limiting** : Implement your own limits
+1. **Protect your token**: Use environment variables
+2. **Regular rotation**: Change your keys periodically
+3. **Input validation**: Sanitize user data
+4. **Client rate limiting**: Implement your own limits
 
 ## SDK and Integrations
 
-For supported calls, configure the OpenAI SDK with the base URL and the LLMaaS key. Consult the [compatibility scope](#openai-compatibility) before migrating an integration:
+For supported calls, configure the OpenAI SDK with the base URL and LLMaaS key. Consult the [compatibility scope](#openai-compatibility) before migrating an integration:
 
 ### OpenAI Python SDK
 
 ```python
 from openai import OpenAI
 
-# It is recommended to protect your API key using environment variables.
-# Example: api_key=os.getenv("LLMAAS_API_KEY")
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: api_key=os.getenv("LLMAAS_API_KEY")
 client = OpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1"
@@ -894,7 +906,7 @@ try:
         ],
         max_tokens=50 # Ajout de max_tokens pour cohérence avec les tests
     )
-    
+
     print(response.choices[0].message.content)
 
 except Exception as e:
@@ -909,9 +921,9 @@ Use the [validated versions and LangChain prerequisites](./tutorials.md#langchai
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
-# Chat model configuration (compatible with LLMaaS)
-# It is recommended to protect your API key using environment variables.
-# Example: api_key=os.getenv("LLMAAS_API_KEY")
+# Configuration du chat model (compatible avec LLMaaS)
+# Il est recommandé de protéger votre clé API en utilisant des variables d'environnement.
+# Exemple: api_key=os.getenv("LLMAAS_API_KEY")
 chat = ChatOpenAI(
     api_key="VOTRE_TOKEN_API",
     base_url="https://api.ai.cloud-temple.com/v1",
@@ -920,12 +932,12 @@ chat = ChatOpenAI(
 )
 
 try:
-    # Usage with messages
+    # Utilisation avec messages
     messages = [HumanMessage(content="Expliquez l'IA en 3 phrases")]
     response = chat.invoke(messages)
     print(response.content)
 
-    # Or with a simple string
+    # Ou avec une simple chaîne
     response = chat.invoke("Bonjour, comment ça va ?")
     print(response.content)
 
@@ -953,15 +965,15 @@ vectors = embeddings.embed_documents(["Premier document", "Deuxième document"])
 query_vector = embeddings.embed_query("Ma question")
 ```
 
-This setting also disables automatic text chunking based on the context window by this client. Chunk the documents before the call and respect the limit of the chosen model, as in the [RAG tutorial](./tutorials.md#2-rag-retrieval-augmented-generation-with-the-llmaas-api).
+This setting also disables automatic text chunking according to the context window of this client. Chunk documents before the call and respect the limit of the chosen model, as in the [RAG tutorial](./tutorials.md#2-rag-retrieval-augmented-generation-with-the-llmaas-api).
 
-API errors are raised as exceptions: they are not replaced by an empty list. Handle them at the application level before proceeding with indexing or search.
+API errors are raised as exceptions: they are not replaced by an empty list. Handle them at your application level before proceeding with indexing or search.
 
-**Validation:** request format compared to the contract and proxy code; sending texts individually and in batches, authentication, vector reading, and HTTP error propagation verified with mock responses. No production calls were made for this validation.
+**Validation:** Request format compared to the contract and proxy code; sending texts alone and in batches, authentication, reading vectors, and propagation of HTTP errors verified with simulated responses. No production calls were made for this validation.
 
 ## Support
 
-- **Documentation** : [Quick Start Guide](./quickstart)
-- **Model Catalog** : [Full List](./models)
-- **Console** : Management and monitoring via Cloud Temple Console
-- **Support** : Via the Cloud Temple Console
+- **Documentation**: [Quick Start Guide](./quickstart)
+- **Model Catalog**: [Full List](./models)
+- **Console**: Management and monitoring via Cloud Temple Console
+- **Support**: Via Cloud Temple Console

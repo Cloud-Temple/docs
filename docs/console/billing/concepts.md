@@ -72,7 +72,7 @@ Chaque entrée de la grille indique :
 - Le **prix unitaire** applicable
 
 :::tip
-La grille tarifaire est votre référence pour **simuler le coût** d'une infrastructure avant de la commander. Combinez ces informations avec les données de consommation pour identifier les leviers d'optimisation.
+Pour les prix publics en vigueur, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). La grille affichée dans la Console présente les tarifs applicables à votre tenant ; combinez ces informations avec les données de consommation pour identifier les leviers d’optimisation.
 :::
 
 ## Bonnes pratiques

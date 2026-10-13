@@ -36,7 +36,7 @@ Les scripts `simple_translate`, `simple_voxtral`, `simple_image_generation`, `si
 |---------|------|-----------------------|
 | [Batch complet](/Users/clesur/PROJETS/docs/docs/llmaas/batch.md:176) | Contrat incompatible avec la plateforme locale | Remplacer le parcours fichiers/JSONL par le contrat Batch réel. |
 | [Wrapper LangChain](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:36) | Imports et chaîne historiques ; installation non figée | Corrigé au point 13 : imports core/classic, invoke et versions de référence ; wrapper exécuté avec réponse HTTP simulée. |
-| [RAG FAISS et Qdrant](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:182) | Chaînes historiques et corpus à 1,9 € ; imports hétérogènes | Dépendances corrigées au point 13 ; FAISS et Qdrant mémoire vérifiés avec HTTP simulé. Corpus de test conservés sur décision de Christophe (point 6). |
+| [RAG FAISS et Qdrant](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:182) | Chaînes historiques et corpus à [montant historique retiré] ; imports hétérogènes | Dépendances corrigées au point 13 ; FAISS et Qdrant mémoire vérifiés avec HTTP simulé. Corpus de test conservés sur décision de Christophe (point 6). |
 | [Agent calculatrice](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:510) | Exécution non bornée de code fourni au modèle | Corrigé en français le 7 septembre 2026 : deux nombres finis, opérateurs +, -, *, / ; aucun eval. Compatibilité LangChain corrigée au point 13 ; agent et appel calculatrice exécutés avec réponses HTTP simulées. |
 | [Semantic Kernel](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:639) | Simulation par requête HTTP, sans le SDK annoncé | Renommer en exemple de synthèse par API ou fournir une vraie intégration maintenue. |
 | [Haystack](/Users/clesur/PROJETS/docs/docs/llmaas/tutorials.md:713) | Simulation par requête HTTP, sans Haystack | Renommer en exemple de question/réponse contextualisée ou fournir une vraie intégration maintenue. |
@@ -61,3 +61,6 @@ Les scripts `simple_translate`, `simple_voxtral`, `simple_image_generation`, `si
 Conserver un exemple court par capacité (chat, outils, vision, embeddings/RAG, rerank, batch, audio, image, traduction). Pointer depuis les guides vers ces scripts maintenus, au lieu de recopier de gros programmes. Pour chaque exemple recommandé : modèle configurable, dépendances vérifiées et dernier test réussi identifiable. Archiver explicitement les démonstrations liées à une génération de modèle retirée.
 
 Aucune modification des scripts du dépôt LLMaaS n’a été effectuée pendant cet audit.
+
+
+**Politique du 13 octobre 2026** : les montants historiques ont été retirés de cette copie. Les constats d’audit datés ci-dessus restent historiques ; les prix en vigueur sont publiés exclusivement dans le [catalogue officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).

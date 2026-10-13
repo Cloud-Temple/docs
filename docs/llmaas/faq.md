@@ -19,7 +19,7 @@ Notre API compatible OpenAI vous permet de construire des fonctionnalités comme
 *   Des systèmes de **Recherche Augmentée par Génération (RAG)** complets : embedding (`/v1/embeddings`) + reranking (`/v1/rerank`) + génération augmentée.
 *   Des applications d'**analyse d'images et de documents visuels** (OCR, graphiques). Pour les PDF, convertissez préalablement les pages en images ; consultez les [prérequis du guide OCR](./ocr.md#prérequis--format-de-limage-et-dépendances).
 *   La **transcription audio** batch ou temps réel via WebSocket.
-*   Le **traitement en lot (Batch API)** asynchrone pour les workloads volumineux, avec une tarification réduite de 50%.
+*   Le **traitement en lot (Batch API)** asynchrone pour les workloads volumineux, avec une tarification spécifique publiée dans le catalogue tarifaire officiel.
 *   La **génération d'images** via API compatible OpenAI.
 
 ## Sécurité et Souveraineté
@@ -63,15 +63,18 @@ Vous avez le contrôle total sur les modèles que votre application appelle. Pou
 ### **Quel est votre modèle économique ?**
 Notre modèle est basé sur la consommation réelle pour refléter le coût de calcul exact. La tarification par type d'usage :
 
-| Usage | Tarif |
-|-------|-------|
-| **Tokens d'entrée (chat)** | 1.8 € / million |
-| **Tokens de sortie (chat)** | 8.0 € / million |
-| **Tokens de raisonnement** | 8.0 € / million |
-| **Reranking** | 4,00 € / million de documents traités |
-| **Batch (entrée)** | 0.9 € / million (−50%) |
-| **Batch (sortie)** | 4.0 € / million (−50%) |
-| **Audio ASR** | 0.01 € / minute de transcription |
+| Usage |
+| ------- |
+| **Tokens d'entrée (chat)** |
+| **Tokens de sortie (chat)** |
+| **Tokens de raisonnement** |
+| **Reranking** |
+| **Batch (entrée)** |
+| **Batch (sortie)** |
+| **Audio ASR** |
+
+Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+
 
 Pour garantir la prévisibilité et la maîtrise budgétaire, nous proposons des **Tiers de service** avec des budgets plafonnés et des **contrats sur mesure**. Vous pouvez suivre votre consommation en temps réel depuis la Console Cloud Temple pour une transparence totale. Le nombre d'utilisateurs est toujours illimité, quel que soit le plan choisi.
 

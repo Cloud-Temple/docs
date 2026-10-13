@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="230" viewBox="0 0 880 230">
+  <rect width="880" height="230" fill="white"/>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#183746">
+    <text x="24" y="32">Inventaire technique — exemple fictif</text>
+    <rect x="20" y="52" width="840" height="40" fill="#e5f5f1"/>
+    <path d="M20 52H860V212H20Z M20 92H860 M20 132H860 M20 172H860 M350 52V212 M560 52V212 M720 52V212" fill="none" stroke="#889ca5"/>
+    <text x="32" y="80">Équipement</text><text x="362" y="80">Quantité</text><text x="572" y="80">vCPU</text><text x="732" y="80">RAM (Gio)</text>
+    <text x="32" y="120">Serveur web</text><text x="362" y="120">2</text><text x="572" y="120">4</text><text x="732" y="120">16</text>
+    <text x="32" y="160">Serveur de calcul</text><text x="362" y="160">1</text><text x="572" y="160">8</text><text x="732" y="160">32</text>
+    <text x="32" y="200">Serveur de test</text><text x="362" y="200">3</text><text x="572" y="200">2</text><text x="732" y="200">8</text>
+  </g>
+</svg>

@@ -47,7 +47,7 @@ Vous n'avez aucune configuration à effectuer. L'emplacement de stockage est dé
 
 <img src={k10s3location} alt="Kasten S3 configuration"/>
 
-> ℹ️[Modèle de coût] Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez notre grille tarifaire pour plus de détails.
+> ℹ️[Modèle de coût] Le service Veeam Kasten est inclus dans le produit Managed Kubernetes. Le stockage des sauvegardes sur notre S3 souverain est facturé à l'usage. Consultez les [tarifs publics sur le site Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/) pour plus de détails.
 
 ## 3. Créer une politique de sauvegarde
 

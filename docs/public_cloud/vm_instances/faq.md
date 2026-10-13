@@ -129,7 +129,7 @@ Une seconde méthode, par import de disques **VHD/VMDK**, est en développement 
 
 ## Le disque système est-il inclus gratuitement ?
 
-Non. Un disque système est créé automatiquement avec chaque VM pour héberger l'OS, mais il s'agit d'une ressource de stockage facturée au **Go** selon le catalogue tarifaire VM Instances. Les ressources vCPU, RAM et stockage sont facturées séparément. Les volumes additionnels et les sauvegardes activées sont également facturés selon le catalogue applicable.
+Non. Un disque système est créé automatiquement avec chaque VM pour héberger l'OS, mais il s'agit d'une ressource de stockage facturée au **Go** selon le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Les ressources vCPU, RAM et stockage sont facturées séparément. Les volumes additionnels et les sauvegardes activées sont également facturés selon le catalogue applicable.
 
 ## Stormshield et FortiVM sont-ils compatibles avec VM Instances ?
 
