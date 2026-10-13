@@ -87,10 +87,19 @@ Chaque machine virtuelle dispose d'un **disque système Flash inclus par défaut
 
 Il est possible d'ajouter des volumes de stockage supplémentaires à chaque machine virtuelle :
 
-- **Taille maximale** : 2 To par volume
+- **Taille** : de **1 à 2 048 Go** par volume
 - **Nombre maximum** : 16 volumes par VM
 - **Granularité** : allocation au Go
 - **Facturation** : au Go alloué, avec choix de la classe de stockage
+
+### Classes de stockage
+
+Deux classes de stockage bloc sont disponibles pour les volumes additionnels :
+
+| Classe | Usage | Performance | Taille minimale | Taille maximale |
+| --- | --- | --- | --- | --- |
+| **Enterprise** | Stockage bloc haute performance pour les charges de travail sensibles à la latence. | **7 500 IOPS/To** | **1 Go** | **2 048 Go** |
+| **Standard** | Stockage bloc standard adapté à la plupart des charges de travail. | **1 500 IOPS/To** | **1 Go** | **2 048 Go** |
 
 ## Réseau
 

@@ -2,7 +2,7 @@
 title: Concetti
 ---
 
-Il servizio **VM Instances** di Cloud Temple è un prodotto di calcolo condiviso certificato **SecNumCloud**, che consente di distribuire macchine virtuali on demand, senza la necessità di gestire l'infrastruttura sottostante. Questa pagina presenta i concetti fondamentali del servizio.
+Il servizio **VM Instances** di Cloud Temple è un prodotto di compute condiviso certificato **SecNumCloud**, che consente di distribuire macchine virtuali on demand, senza la gestione dell'infrastruttura sottostante. Questa pagina presenta i concetti fondamentali del servizio.
 
 ## Regioni e zone di disponibilità
 
@@ -10,8 +10,8 @@ Il servizio VM Instances è distribuito nella regione **FR1**. Durante la creazi
 
 Per ulteriori informazioni sulle zone di disponibilità e le regioni Cloud Temple, consulta:
 
-- [Concepts des zones de disponibilité](../../additional_content/concepts_az.md)
-- [Concepts des régions](../../additional_content/concepts_regional.md)
+- [Concetti delle zone di disponibilità](../../additional_content/concepts_az.md)
+- [Concetti delle regioni](../../additional_content/concepts_regional.md)
 
 ## Classi di servizio
 
@@ -19,50 +19,50 @@ Il servizio offre tre classi di servizio adatte a diversi tipi di carichi di lav
 
 | Classe | Descrizione | Risorse |
 |--------|-------------|------------|
-| **Development** | Costo ottimizzato, per ambienti di test, integrazione e staging. Adatto a carichi non critici a utilizzo variabile. | Condivise |
-| **General Purpose** | Equilibrio ottimale vCPU/RAM per carichi di lavoro standard (applicazioni web, microservizi, database di dimensioni moderate). | Condivise |
-| **Performance** | Progettato per carichi di lavoro intensivi che richiedono elevate prestazioni CPU. **I vCPU sono dedicati** per garantire prestazioni costanti. | vCPU dedicati |
+| **Development** | Costo ottimizzato, per ambienti di test, integrazione e staging. Adatto a carichi di lavoro non critici con utilizzo variabile. | Condivise |
+| **General Purpose** | Equilibrio ottimale vCPU/RAM per carichi di lavoro standard (applications web, micro-services, bases de données de taille modérée). | Condivise |
+| **Performance** | Progettato per carichi di lavoro intensivi che richiedono elevate prestazioni CPU. **Le vCPU sono dedicate** per garantire prestazioni costanti. | vCPU dedicate |
 
 ## Modelli (Flavors)
 
-Sono disponibili modelli predefiniti per ciascuna classe di servizio. È inoltre possibile creare **modelli personalizzati** scegliendo liberamente il numero di vCPU e la quantità di RAM.
+Sono disponibili modelli predefiniti per ogni classe di servizio. È inoltre possibile creare **modelli personalizzati** scegliendo liberamente il numero di vCPU e la quantità di RAM.
 
 ### Sviluppo
 
 Ottimizzato per gli ambienti di test, integrazione e pre-produzione con un costo contenuto.
 
 | Flavor | vCPU | RAM | Tipo di utilizzo |
-|--------|------|-----|------------------|
+|--------|------|-----|------------|
 | dev.small | 1 | 2 GB | Test unitario, CI leggera |
 | dev.medium | 2 | 4 GB | Integrazione, strumenti interni |
 | dev.large | 4 | 8 GB | Ambiente di pre-produzione |
 
-### Uso generale
+### General Purpose
 
 Adatto a applicazioni web, microservizi e database di dimensioni moderate.
 
 | Flavor | vCPU | RAM | Tipo di utilizzo |
 |--------|------|-----|------------|
-| gp.small | 1 | 4 GB | Microservizio, test funzionale |
-| gp.medium | 2 | 8 GB | Server web, applicazione leggera |
-| gp.large | 4 | 16 GB | Applicazione standard |
-| gp.xlarge | 8 | 32 GB | Database medio |
-| gp.2xlarge | 16 | 64 GB | Applicazione critica |
+| gp.small | 1 | 4 Go | Microservizio, test funzionale |
+| gp.medium | 2 | 8 Go | Server web, applicazione leggera |
+| gp.large | 4 | 16 Go | Applicazione standard |
+| gp.xlarge | 8 | 32 Go | Database medio |
+| gp.2xlarge | 16 | 64 Go | Applicazione critica |
 
 ### Prestazioni
 
 I **vCPU sono dedicati** per garantire prestazioni costanti, anche sotto carico elevato.
 
-| Flavor | vCPU | RAM | Tipo di utilizzo |
-|--------|------|-----|------------------|
-| perf.medium | 2 | 4 GB | Calcolo leggero, CI/CD |
-| perf.large | 4 | 8 GB | Elaborazione batch, codifica |
-| perf.xlarge | 8 | 16 GB | Calcolo intensivo |
-| perf.2xlarge | 16 | 32 GB | Simulazione, analytics |
+| Configurazione | vCPU | RAM | Tipo di utilizzo |
+|--------|------|-----|------------|
+| perf.medium | 2 | 4 Go | Calcolo leggero, CI/CD |
+| perf.large | 4 | 8 Go | Elaborazione batch, codifica |
+| perf.xlarge | 8 | 16 Go | Calcolo intensivo |
+| perf.2xlarge | 16 | 32 Go | Simulazione, analytics |
 
 ### Template personalizzati
 
-È possibile creare un template personalizzato selezionando liberamente :
+È possibile creare un template personalizzato selezionando liberamente:
 
 - Il numero di vCPU
 - La quantità di RAM
@@ -70,7 +70,7 @@ I **vCPU sono dedicati** per garantire prestazioni costanti, anche sotto carico 
 Questa flessibilità consente di adattare con precisione il dimensionamento alle esigenze applicative, ottimizzando al contempo i costi.
 
 :::note
-Le specifiche dei template possono subire delle variazioni. Consultare la console Cloud Temple per l'elenco aggiornato.
+Le specifiche dei template possono subire delle modifiche. Consulta la console Cloud Temple per l'elenco aggiornato.
 :::
 
 ## Archiviazione
@@ -85,33 +85,42 @@ Ogni macchina virtuale dispone di un **disco di sistema Flash incluso di default
 
 ### Volumi aggiuntivi
 
-È possibile aggiungere volumi di archiviazione aggiuntivi a ciascuna macchina virtuale:
+È possibile aggiungere volumi di archiviazione aggiuntivi a ogni macchina virtuale :
 
-- **Dimensione massima** : 2 To per volume
+- **Dimensione** : da **1 a 2.048 GB** per volume
 - **Numero massimo** : 16 volumi per VM
-- **Granularità** : allocazione per Go
-- **Fatturazione** : per Go allocato, con scelta della classe di archiviazione
+- **Granularità** : allocazione per GB
+- **Fatturazione** : per GB allocato, con scelta della classe di archiviazione
+
+### Classi di archiviazione
+
+Sono disponibili due classi di archiviazione a blocchi per i volumi aggiuntivi:
+
+| Classe | Utilizzo | Prestazioni | Dimensione minima | Dimensione massima |
+| --- | --- | --- | --- | --- |
+| **Enterprise** | Archiviazione a blocchi ad alte prestazioni per carichi di lavoro sensibili alla latenza. | **7 500 IOPS/TB** | **1 GB** | **2 048 GB** |
+| **Standard** | Archiviazione a blocchi standard adatta alla maggior parte dei carichi di lavoro. | **1 500 IOPS/TB** | **1 GB** | **2 048 GB** |
 
 ## Rete
 
 ### Interfaccia di rete
 
-Ogni istanza VM può disporre di **da 1 a 7 schede di rete**. Ogni scheda di rete è associata a **una sola rete**.
+Ogni istanza VM può disporre di **1 a 7 schede di rete**. Ogni scheda di rete è associata a **una sola rete**.
 
 ### Compatibilità di rete
 
-Questa interfaccia può essere connessa a due tipi di reti Cloud Temple :
+Questa interfaccia può essere connessa a due tipi di reti Cloud Temple:
 
-- **Rete backbone privata** : rete privata condivisa con stretto isolamento logico tra i tenant. Ideale per interconnettere le vostre risorse Cloud Temple in un ambiente controllato. [En savoir plus](../../network/private_network/private_network.md)
+- **Rete backbone privata** : rete privata condivisa con isolamento logico rigoroso tra i tenant. Ideale per interconnettere le vostre risorse Cloud Temple in un ambiente controllato. [En savoir plus](../../network/private_network/private_network.md)
 - **VPC (Virtual Private Cloud)** : rete privata completamente gestita che consente una segmentazione avanzata e una configurazione di rete granulare dei vostri ambienti. [En savoir plus](../../network/vpc/vpc.md)
 
 ### IP flottante (Floating IP)
 
-Su una rete **VPC**, è possibile associare un'**IP flottante** a un'istanza VM. Un'IP flottante è un indirizzo IP pubblico che è possibile attaccare o staccare liberamente da un'istanza, indipendentemente dal suo ciclo di vita.
+Su una rete **VPC**, è possibile associare un'**IP flottante** a un'istanza VM. Un'IP flottante è un indirizzo IP pubblico che è possibile associare o dissociare liberamente da un'istanza, indipendentemente dal suo ciclo di vita.
 
 ## Distribuzione e immagini
 
-Le istanze VM vengono distribuite dalle **immagini ufficiali della Marketplace Cloud Temple**. I template disponibili sono quelli della [Marketplace filtrata per OpenIaaS](https://www.cloud-temple.com/marketplace/?m_deployment%5B%5D=openiaas&post_type=marketplace). Questo catalogo di immagini selezionate garantisce ambienti testati, mantenuti e pronti all'uso per ogni sistema operativo supportato.
+Le istanze VM vengono distribuite a partire dalle **immagini ufficiali della Marketplace Cloud Temple**. I template disponibili sono quelli della [Marketplace filtrata per OpenIaaS](https://www.cloud-temple.com/marketplace/?m_deployment%5B%5D=openiaas&post_type=marketplace). Questo catalogo di immagini selezionate garantisce ambienti testati, mantenuti e pronti all'uso per ogni sistema operativo supportato.
 
 Il servizio supporta **Cloud-init** per la preconfigurazione automatica delle istanze all'avvio (iniezione di chiavi SSH, configurazione di rete, script di inizializzazione, ecc.).
 
@@ -122,7 +131,7 @@ Il servizio supporta **Cloud-init** per la preconfigurazione automatica delle is
 Sono disponibili due politiche di backup: **`No Backup`** e **`Backup 30 snapshots`**. Con `Backup 30 snapshots`, uno snapshot viene creato automaticamente ogni sera tra le **20 h e le 22 h**. Se il cliente avvia un backup aggiuntivo durante il giorno, vengono creati due snapshot lo stesso giorno: la ritenzione attiva copre quindi **29 giorni** invece di 30. Questa opzione è **fatturata a parte**.
 
 :::info
-La replicazione delle VM non è inclusa di default. La sua valutazione è prevista per il secondo semestre del 2026.
+La replicazione delle VM non è inclusa di default. La sua valutazione è prevista per il secondo semestre 2026.
 :::
 
 ## SLA e disponibilità
@@ -134,8 +143,8 @@ La replicazione delle VM non è inclusa di default. La sua valutazione è previs
 
 ## Automazione
 
-Il servizio è completamente gestibile tramite :
+Il servizio è completamente gestibile tramite:
 
 - **Console Cloud Temple** : interfaccia grafica per la gestione quotidiana
 - **API REST Cloud Temple** : controllo programmatico del ciclo di vita delle VM
-- **Provider Terraform Cloud Temple** : Infrastructure as Code
+- **Provider Terraform Cloud Temple** : Infrastruttura come Codice

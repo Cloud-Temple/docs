@@ -43,13 +43,17 @@
     "message": "Privacy",
     "description": "The label of footer link with label=Privacy linking to /docs/privacy"
   },
-  "link.item.label.UGAP": {
-    "message": "UGAP",
-    "description": "The label of footer link with label=UGAP linking to /docs/market_place_public"
+  "link.item.label.Nuage Public": {
+    "message": "Nuage Public",
+    "description": "The label of footer link with label=Nuage Public linking to https://www.nuagepublic.fr"
   },
   "link.item.label.CAIH": {
     "message": "CAIH",
-    "description": "The label of footer link with label=CAIH linking to /docs/market_place_public"
+    "description": "The label of footer link with label=CAIH linking to its official market page"
+  },
+  "link.item.label.CANUT": {
+    "message": "CANUT",
+    "description": "The label of footer link with label=CANUT linking to its Cloud and Hosting market page"
   },
   "copyright": {
     "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"/contracts\">Contratti</a> |\n        <a href=\"/privacy\">Politica sulla privacy</a>\n        <br />\n        Copyright © 2026 Cloud Temple.\n      </div>\n    ",

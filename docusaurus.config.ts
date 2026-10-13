@@ -180,12 +180,16 @@ const config: Config = {
           title: 'Market Place',
           items: [
             {
-              label: 'UGAP',
-              to: '/market_place_public',
+              label: 'Nuage Public',
+              href: 'https://www.nuagepublic.fr',
             },
             {
               label: 'CAIH',
-              to: '/market_place_public',
+              href: 'https://www.caih-sante.org/marche/cloud-conseil-accompagnement-et-infrastructures-hebergees-pour-les-donnees-sante-hds',
+            },
+            {
+              label: 'CANUT',
+              href: 'https://canut.org/marche/cloud-et-hebergement',
             },
           ],
         },
@@ -194,7 +198,8 @@ const config: Config = {
           items: [
             {
               label: 'Contractual Documents',
-              to: '/contracts',
+              href: 'https://www.cloud-temple.com/contracts',
+              target: '_self',
             },
             {
               label: 'Shared Responsibility Model',
@@ -205,7 +210,6 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="${process.env.BASE_URL ?? "/docs/"}contracts">Contracts</a> |
         <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
         Copyright © 2026 Cloud Temple.

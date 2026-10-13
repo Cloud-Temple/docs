@@ -110,6 +110,18 @@ class BugfixFilterTest(unittest.TestCase):
         self.assertNotIn("Correction de l'affichage des disques", textes_fr)
         self.assertNotIn("Disk display bug fixed", textes_en)
 
+    def test_correctifs_conserves_depuis_la_version_4_50(self):
+        src = maj(
+            version_block("4.49.3", "2026-09-09",
+                          entry("Correction ancienne", "Old fix", "GEN")),
+            version_block("4.50.0", "2026-09-10",
+                          entry("Correction récente", "New fix", "GEN")),
+        )
+        versions = ec.parse_maj_js(src)
+        self.assertEqual([v["version"] for v in versions], ["4.50.0"])
+        self.assertEqual(versions[0]["entries"][0]["texts"],
+                         {"fr": "Correction récente", "en": "New fix"})
+
     def test_fr_et_en_portent_exactement_les_memes_entrees(self):
         src = maj(
             version_block("4.10.0", "2025-03-04",

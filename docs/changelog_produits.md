@@ -5,14 +5,88 @@ sidebar_position: 999
 
 # Nouveautés produits & évolutions
 
-> Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
-> Les corrections de bugs sont volontairement exclues.
+> Ce changelog liste les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
+> Les corrections de bugs sont incluses à partir de la version 4.50.0.
+
+## v4.52.0 — 2026-10-06
+
+### [IaaS VMware — Sauvegarde](/iaas_vmware)
+- Restauration d'une machine virtuelle dont les disques sont répartis sur plusieurs datastores : choix d'un datastore de destination pour chaque datastore source
+
+### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+- Onglet Snapshots : identification du type de chaque snapshot (manuel, sauvegarde, réplication, orphelin)
+- Relocalisation d'une machine virtuelle : possibilité de conserver l'hôte d'origine pour ne migrer que le stockage, désormais utilisable sur un pool mono-hôte
+- Correction de la case « Détruire la configuration cloud-init après le démarrage », sans effet au déploiement d'une machine virtuelle par template
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Hôte master : retrait des actions de maintenance et indication du chemin à suivre pour sa suppression (suppression de son pool)
+- Stockage : mise en maintenance et sortie de maintenance d'un Block Storage depuis la console
+
+### [IaaS OpenSource — Sauvegarde](/iaas_opensource)
+- Rapports de sauvegarde : les exécutions d'une politique sont triées par date de début, de la plus récente à la plus ancienne
+- Rapports de sauvegarde : correctifs divers sur l'écran (rafraîchissement, tri et pagination des exécutions)
+
+### [Marketplace](/marketplace)
+- Déploiement d'une image : pré-remplissage de la configuration cloud-init (user-data et configuration réseau) fournie par l'image, modifiable avant déploiement
+
+## v4.51.0 — 2026-09-18
+
+### [Console — Organisation](/console/iam/concepts)
+- Ajout d'une colonne « Type » (SecNumCloud / Legacy) dans la liste des tenants
+- Le favori d'un tenant est désormais indiqué par un badge « Favori » dans la liste des tenants
+
+### [Identité & Accès (IAM)](/console/iam)
+- Clarification de l'impact de la réinscription d'un utilisateur : la modale de confirmation précise qu'un nouvel e-mail d'inscription lui sera envoyé
+
+### [Support](/console)
+- Réaffichage du bloc d'informations de support en mode Organisation
+
+### [Métriques](/console/metrics/concepts)
+- Correction des légendes des graphiques de métriques des machines virtuelles
+
+### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+- Correction du wizard vMotion : le bouton « Suivant » restait bloqué après une erreur de compatibilité d'hôte lorsqu'on revenait à une étape précédente
+- Envoi des raccourcis clavier système (Alt+Tab, ⌘, Échap…) vers la console de la machine virtuelle en plein écran (API Keyboard Lock, navigateur Chromium)
+- Correction de la console VMware (WMKS) : un Alt+Tab laissait la touche Alt considérée comme enfoncée côté machine virtuelle
+
+### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+- Clarification de l'avertissement au déplacement d'un disque virtuel : les machines virtuelles associées ne sont plus annoncées comme suspendues, seules certaines actions sont temporairement indisponibles
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Détail d'un pool : affichage et gestion des Block Storage depuis Compute, et des hôtes depuis Storage (onglets croisés)
+
+## v4.50.0 — 2026-09-10
+
+### [Console](/console)
+- Mise à jour des unités de quotas affichés (GiB)
+
+### [Console — Organisation](/console/iam/concepts)
+- Affichage du suivi de préparation d'un tenant à sa création
+
+### [Commandes](/console/orders)
+- Ajout de la commande de suppression d'une IP publique VPC
+- Ajout de la commande de suppression d'une IP Private Backbone
+
+### [VPC](/network/vpc)
+- Affichage de l'état de configuration et choix d'IP statique sur les opérations de machines virtuelles
+- Possibilité de choisir un réseau VPC et d'y configurer une IP statique dans tous les formulaires nécessitant une configuration réseau sur une machine virtuelle (création, déploiement, migration, restauration, export)
 
 ## v4.49.3 — 2026-09-09
 
 ### [Bare Metal](/iaas_bare-metal)
 - Ajout de la colonne « Fabric » dans l'onglet réseau d'un serveur Bare Metal
-- 
+
+## v4.49.1 — 2026-09-03
+
+### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+- L'action « Associer une IP publique » de l'onglet « Cartes réseau » est grisée lorsque la gateway du VPC n'est pas activée
+
+### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+- L'action « Associer une IP publique » de l'onglet « Cartes réseau » est grisée lorsque la gateway du VPC n'est pas activée
+
+### [VM Instances](/public_cloud/vm_instances)
+- L'action « Associer une IP publique » de l'onglet « Cartes réseau » est grisée lorsque la gateway du VPC n'est pas activée
+
 ## v4.49.0 — 2026-08-31
 
 ### [Console](/console)
@@ -22,10 +96,11 @@ sidebar_position: 999
 ### [Console — Organisation](/console/iam/concepts)
 - Affichage du prix d'activation d'un tenant dans la modale de création, en mode Organisation
 
-### [VM Instances](/public_cloud/vm_instances)
-- Masquage des champs et message explicite lorsqu'aucun stockage n'est disponible, à l'ajout et à l'extension d'un disque
+### [IaaS VMware — Machines virtuelles](/iaas_vmware)
 - Association et dissociation d'une IP publique depuis l'onglet « Cartes réseau » d'une machine virtuelle raccordée à un VPC
-- Possibilité de choisir un gabarit personnalisé (vCPU et RAM libres, dans les limites de la famille d'instance) à la création, à la restauration et au redimensionnement d'une VM Instance
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Affichage du type de lame plutôt que sa description dans la « Classe » des clusters
 
 ### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
 - Le nombre de vCPU proposé au redimensionnement d'une machine virtuelle est désormais borné par sa capacité maximale
@@ -37,11 +112,13 @@ sidebar_position: 999
 ### [IaaS OpenSource — Sauvegarde](/iaas_opensource)
 - Mention à la restauration précisant que la machine virtuelle d'origine n'est pas remplacée : une nouvelle machine virtuelle datée est créée
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [VM Instances](/public_cloud/vm_instances)
+- Masquage des champs et message explicite lorsqu'aucun stockage n'est disponible, à l'ajout et à l'extension d'un disque
 - Association et dissociation d'une IP publique depuis l'onglet « Cartes réseau » d'une machine virtuelle raccordée à un VPC
+- Possibilité de choisir un gabarit personnalisé (vCPU et RAM libres, dans les limites de la famille d'instance) à la création, à la restauration et au redimensionnement d'une VM Instance
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Affichage du type de lame plutôt que sa description dans la « Classe » des clusters
+### [Bare Metal](/iaas_bare-metal)
+- Affichage du type de lame plutôt que sa description dans la « Classe » des serveurs Bare Metal
 
 ### [Réseau](/network/network_overview)
 - Réservation d'IP interco : blocage des adresses réseau et de diffusion, et indicateur « Réservée » sur les IP réservées
@@ -49,24 +126,28 @@ sidebar_position: 999
 ### [VPC](/network/vpc)
 - Le bouton « Nouveau VPC » de la liste est désormais grisé lorsque la limite de VPC est atteinte
 
-### [Bare Metal](/iaas_bare-metal)
-
-- Affichage du type de lame plutôt que sa description dans la « Classe » des serveurs Bare Metal
-
 ## v4.48.0 — 2026-08-13
 
 ### [Console](/console)
 - Amélioration de la persistance du choix de langue, désormais lié au profil utilisateur
 
-### [VM Instances](/public_cloud/vm_instances)
-- Le coût estimé affiché lors de la création d'une VM Instance est désormais mensuel, sur une base de 730 h/mois
+### [Console — Organisation](/console/iam/concepts)
+- Les produits d'un tenant sont désormais regroupés selon qu'ils sont modifiables, non désactivables ou non disponibles, avec le motif du verrouillage
 
-### [Marketplace](/marketplace)
-- Seules les zones de disponibilité compatibles avec l'image sélectionnée sont désormais proposées lors du déploiement depuis le Marketplace
-- Le prix d'un produit du Marketplace déployé en VM Instance indique désormais qu'il est calculé selon le CPU, la RAM et le stockage
+### [Gestionnaire des coûts](/console/billing/concepts)
+- La section Gestionnaire des coûts n'apparaît plus sur le tableau de bord Organisation lorsque l'organisation n'y est pas éligible
+- Affichage d'une carte d'erreur, au lieu d'un coût à 0 €, lorsque la récupération des consommations échoue sur le tableau de bord Organisation
+- Les lignes de plan de support sont désormais regroupées sous « Support » dans le coût par tenant, au lieu d'un tenant « Inconnu »
 
 ### [Commandes](/console/orders)
 - Message explicite lorsqu'il n'y a plus assez d'espace disponible pour un type de stockage, lors de la commande d'une zone de disponibilité ou d'un pool
+
+### [Support](/console)
+- Les descriptions et les rapports post-incident sont désormais mis en forme (markdown) sur la page Incidents
+- Les messages globaux de support sont désormais affichés en mode Organisation
+
+### [VM Instances](/public_cloud/vm_instances)
+- Le coût estimé affiché lors de la création d'une VM Instance est désormais mensuel, sur une base de 730 h/mois
 
 ### [VPC](/network/vpc)
 - Le nom du VPC est désormais affiché devant celui du réseau dans les sélecteurs de réseau
@@ -79,17 +160,9 @@ sidebar_position: 999
 - Choix du style d'adressage (path-style ou virtual-hosted) lors de la génération d'un lien de partage d'un fichier
 - Avertissement sur les buckets dont le nom n'est pas compatible DNS : seul l'accès path-style est possible
 
-### [Gestionnaire des coûts](/console/billing/concepts)
-- La section Gestionnaire des coûts n'apparaît plus sur le tableau de bord Organisation lorsque l'organisation n'y est pas éligible
-- Affichage d'une carte d'erreur, au lieu d'un coût à 0 €, lorsque la récupération des consommations échoue sur le tableau de bord Organisation
-- Les lignes de plan de support sont désormais regroupées sous « Support » dans le coût par tenant, au lieu d'un tenant « Inconnu »
-
-### [Console — Organisation](/console/iam/concepts)
-- Les produits d'un tenant sont désormais regroupés selon qu'ils sont modifiables, non désactivables ou non disponibles, avec le motif du verrouillage
-
-### [Support](/console)
-- Les descriptions et les rapports post-incident sont désormais mis en forme (markdown) sur la page Incidents
-- Les messages globaux de support sont désormais affichés en mode Organisation
+### [Marketplace](/marketplace)
+- Seules les zones de disponibilité compatibles avec l'image sélectionnée sont désormais proposées lors du déploiement depuis le Marketplace
+- Le prix d'un produit du Marketplace déployé en VM Instance indique désormais qu'il est calculé selon le CPU, la RAM et le stockage
 
 ### [Housing (Colocation)](/housing)
 - Ajout des types d'interface 1000BASE-SX et 10GBASE-SR à la réservation d'emplacement en colocation

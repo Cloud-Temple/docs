@@ -1,17 +1,91 @@
 ---
-title: Novità dei prodotti
+title: Novità del prodotto
 sidebar_position: 999
 ---
 
-# Novità prodotto ed evoluzioni
+# Novità del prodotto & Evoluzioni
 
-> Questo changelog elenca esclusivamente le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.
-> Le correzioni dei bug sono volutamente escluse.
+> Questo changelog elenca le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.
+> Le correzioni di bug sono incluse a partire dalla versione 4.50.0.
+
+## v4.52.0 — 2026-10-06
+
+### [IaaS VMware — Backup](/iaas_vmware)
+- Ripristino di una macchina virtuale i cui dischi sono distribuiti su più datastore: scelta di un datastore di destinazione per ciascun datastore di origine
+
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
+- Scheda Snapshots: identificazione del tipo di ogni snapshot (manuale, backup, replicazione, orfano)
+- Ricollocazione di una macchina virtuale: possibilità di mantenere l'host di origine per migrare solo lo storage, ora utilizzabile anche su un pool mono-host
+- Correzione della casella « Distruggi la configurazione cloud-init dopo l'avvio », senza effetto al deployment di una macchina virtuale da template
+
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
+- Host master: rimozione delle azioni di manutenzione e indicazione del percorso da seguire per la sua rimozione (rimozione del relativo pool)
+- Storage: messa in manutenzione e uscita dalla manutenzione di un Block Storage dalla console
+
+### [IaaS OpenSource — Backup](/iaas_opensource)
+- Report di backup: le esecuzioni di una policy sono ordinate per data di inizio, dalla più recente alla più antica
+- Report di backup: correzioni varie sulla schermata (aggiornamento, ordinamento e paginazione delle esecuzioni)
+
+### [Marketplace](/marketplace)
+- Deployment di un'immagine: precompilazione della configurazione cloud-init (user-data e configurazione di rete) fornita dall'immagine, modificabile prima del deployment
+
+## v4.51.0 — 2026-09-18
+
+### [Console — Organizzazione](/console/iam/concepts)
+- Aggiunta di una colonna « Tipo » (SecNumCloud / Legacy) nell'elenco dei tenant
+- Il preferito di un tenant è ora indicato da un badge « Preferito » nell'elenco dei tenant
+
+### [Identità e accessi (IAM)](/console/iam)
+- Chiarimento dell'impatto della nuova registrazione di un utente: la modale di conferma specifica che verrà inviato un nuovo e-mail di registrazione
+
+### [Supporto](/console)
+- Ripristino della visualizzazione del riquadro di supporto in modalità Organizzazione
+
+### [Metriche](/console/metrics/concepts)
+- Correzione delle legende dei grafici delle metriche delle macchine virtuali
+
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
+- Correzione del wizard vMotion: il pulsante « Avanti » restava bloccato dopo un errore di compatibilità dell'host quando si tornava a un passaggio precedente
+- Invio delle scorciatoie da tastiera di sistema (Alt+Tab, ⌘, Esc…) alla console della macchina virtuale a schermo intero (API Keyboard Lock, browser Chromium)
+- Correzione della console VMware (WMKS): un Alt+Tab lasciava il tasto Alt considerato come premuto lato macchina virtuale
+
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
+- Chiarimento dell'avviso al spostamento di un disco virtuale: le macchine virtuali associate non vengono più indicate come sospese, solo alcune azioni sono temporaneamente non disponibili
+
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
+- Dettaglio di un pool: visualizzazione e gestione dei Block Storage da Compute e degli host da Storage (schede incrociate)
+
+## v4.50.0 — 2026-09-10
+
+### [Console](/console)
+- Aggiornamento delle unità dei quote visualizzate (GiB)
+
+### [Console — Organizzazione](/console/iam/concepts)
+- Visualizzazione del monitoraggio della preparazione di un tenant al momento della sua creazione
+
+### [Ordini](/console/orders)
+- Aggiunta dell'ordine di rimozione di un IP pubblico VPC
+- Aggiunta dell'ordine di rimozione di un IP Private Backbone
+
+### [VPC](/network/vpc)
+- Visualizzazione dello stato di configurazione e scelta di IP statico sulle operazioni delle macchine virtuali
+- Possibilità di scegliere una rete VPC e di configurarvi un IP statico in tutti i moduli che richiedono una configurazione di rete su una macchina virtuale (creazione, deployment, migrazione, ripristino, export)
 
 ## v4.49.3 — 2026-09-09
 
 ### [Bare Metal](/iaas_bare-metal)
 - Aggiunta della colonna « Fabric » nella scheda di rete di un server Bare Metal
+
+## v4.49.1 — 2026-09-03
+
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
+- L'azione « Associa un IP pubblico » della scheda « Schede di rete » è grigia quando la gateway del VPC non è abilitata
+
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
+- L'azione « Associa un IP pubblico » della scheda « Schede di rete » è grigia quando la gateway del VPC non è abilitata
+
+### [VM Instances](/public_cloud/vm_instances)
+- L'azione « Associa un IP pubblico » della scheda « Schede di rete » è grigia quando la gateway del VPC non è abilitata
 
 ## v4.49.0 — 2026-08-31
 
@@ -22,14 +96,15 @@ sidebar_position: 999
 ### [Console — Organizzazione](/console/iam/concepts)
 - Visualizzazione del prezzo di attivazione di un tenant nella modale di creazione, in modalità Organizzazione
 
-### [VM Instances](/public_cloud/vm_instances)
-- Nascondimento dei campi e messaggio esplicito quando non è disponibile spazio di archiviazione, durante l'aggiunta e l'estensione di un disco
-- Associazione e dissociazione di un IP pubblico dalla scheda « Schede di rete » di una macchina virtuale collegata a un VPC
-- Possibilità di scegliere un modello personalizzato (vCPU e RAM liberi, entro i limiti della famiglia di istanze) alla creazione, al ripristino e al ridimensionamento di un'istanza VM
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
+- Associazione e dissociazione di un IP pubblico dalla scheda « Schede di rete » di una macchina virtuale connessa a un VPC
+
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
+- Visualizzazione del tipo di blade invece della sua descrizione nella « Classe » dei cluster
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - Il numero di vCPU proposto per il ridimensionamento di una macchina virtuale è ora limitato dalla sua capacità massima
-- Associazione e disassociazione di un IP pubblico dalla scheda « Schede di rete » di una macchina virtuale connessa a un VPC
+- Associazione e dissociazione di un IP pubblico dalla scheda « Schede di rete » di una macchina virtuale connessa a un VPC
 
 ### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
 - Visualizzazione del tipo di blade invece della sua descrizione nella « Classe » dei pool
@@ -37,11 +112,13 @@ sidebar_position: 999
 ### [IaaS OpenSource — Backup](/iaas_opensource)
 - Nota al ripristino che specifica che la macchina virtuale originale non viene sostituita: viene creata una nuova macchina virtuale con data
 
-### [IaaS VMware — Macchine virtuali](/iaas_vmware)
+### [VM Instances](/public_cloud/vm_instances)
+- Nascondimento dei campi e messaggio esplicito quando non è disponibile spazio di archiviazione, durante l'aggiunta e l'estensione di un disco
 - Associazione e dissociazione di un IP pubblico dalla scheda « Schede di rete » di una macchina virtuale connessa a un VPC
+- Possibilità di scegliere un modello personalizzato (vCPU e RAM liberi, entro i limiti della famiglia di istanze) alla creazione, al ripristino e al ridimensionamento di un'istanza VM
 
-### [IaaS VMware — Infrastruttura](/iaas_vmware)
-- Visualizzazione del tipo di blade invece della sua descrizione nella « Classe » dei cluster
+### [Bare Metal](/iaas_bare-metal)
+- Visualizzazione del tipo di blade anziché la sua descrizione nella « Classe » dei server Bare Metal
 
 ### [Rete](/network/network_overview)
 - Prenotazione IP interco : blocco degli indirizzi di rete e di broadcast, e indicatore « Riservata » sulle IP riservate
@@ -49,23 +126,28 @@ sidebar_position: 999
 ### [VPC](/network/vpc)
 - Il pulsante « Nuovo VPC » dell'elenco è ora disabilitato quando viene raggiunto il limite di VPC
 
-### [Bare Metal](/iaas_bare-metal)
-- Visualizzazione del tipo di blade anziché la sua descrizione nella « Classe » dei server Bare Metal
-
 ## v4.48.0 — 2026-08-13
 
 ### [Console](/console)
 - Miglioramento della persistenza della scelta della lingua, ora associata al profilo utente
 
-### [VM Instances](/public_cloud/vm_instances)
-- Il costo stimato visualizzato durante la creazione di un'istanza VM è ora mensile, su base di 730 h/mese
+### [Console — Organizzazione](/console/iam/concepts)
+- I prodotti di un tenant sono ora raggruppati in base al fatto che siano modificabili, non disattivabili o non disponibili, con il motivo del blocco
 
-### [Marketplace](/marketplace)
-- Solo le zone di disponibilità compatibili con l'immagine selezionata vengono ora proposte durante il deployment dal Marketplace
-- Il prezzo di un prodotto del Marketplace distribuito come VM Instance indica ora che viene calcolato in base a CPU, RAM e storage
+### [Gestione dei costi](/console/billing/concepts)
+- La sezione Gestore dei costi non viene più visualizzata nella dashboard dell'organizzazione quando l'organizzazione non è idonea
+- Visualizzazione di una card di errore, invece di un costo di 0 €, quando il recupero dei consumi fallisce nella dashboard dell'organizzazione
+- Le righe del piano di supporto sono ora raggruppate sotto « Supporto » nel costo per tenant, invece di un tenant « Sconosciuto »
 
 ### [Ordini](/console/orders)
 - Messaggio esplicito quando lo spazio disponibile non è più sufficiente per un tipo di archiviazione, durante l'ordine di una zona di disponibilità o di un pool
+
+### [Supporto](/console)
+- Le descrizioni e i rapporti post-incidente sono ora formattati (markdown) nella pagina Incidenti
+- I messaggi di supporto globali sono ora visualizzati in modalità Organizzazione
+
+### [VM Instances](/public_cloud/vm_instances)
+- Il costo stimato visualizzato durante la creazione di un'istanza VM è ora mensile, su base di 730 h/mese
 
 ### [VPC](/network/vpc)
 - Il nome del VPC viene ora visualizzato prima di quello della rete nei selettori di rete
@@ -74,21 +156,13 @@ sidebar_position: 999
 - L'opzione VM Instances è ora disponibile dal modulo di associazione di un indirizzo IP statico
 - Gli adattatori di rete già associati a un indirizzo IP statico sono ora visualizzati in grigio nel modulo di associazione
 
-### [Archiviazione oggetti](/storage/oss)
+### [Object Storage](/storage/oss)
 - Scelta dello stile di indirizzamento (path-style o virtual-hosted) durante la generazione di un link di condivisione di un file
 - Avviso per i bucket il cui nome non è compatibile con DNS: è possibile solo l'accesso path-style
 
-### [Gestore dei costi](/console/billing/concepts)
-- La sezione Gestore dei costi non viene più visualizzata nella dashboard dell'organizzazione quando l'organizzazione non è idonea
-- Visualizzazione di una card di errore, invece di un costo di 0 €, quando il recupero dei consumi fallisce nella dashboard dell'organizzazione
-- Le righe del piano di supporto sono ora raggruppate sotto « Supporto » nel costo per tenant, invece di un tenant « Sconosciuto »
-
-### [Console — Organizzazione](/console/iam/concepts)
-- I prodotti di un tenant sono ora raggruppati in base al fatto che siano modificabili, non disattivabili o non disponibili, con il motivo del blocco
-
-### [Supporto](/console)
-- Le descrizioni e i rapporti post-incidente sono ora formattati (markdown) nella pagina Incidenti
-- I messaggi di supporto globali sono ora visualizzati in modalità Organizzazione
+### [Marketplace](/marketplace)
+- Solo le zone di disponibilità compatibili con l'immagine selezionata vengono ora proposte durante il deployment dal Marketplace
+- Il prezzo di un prodotto del Marketplace distribuito come VM Instance indica ora che viene calcolato in base a CPU, RAM e storage
 
 ### [Housing (Colocation)](/housing)
 - Aggiunta dei tipi di interfaccia 1000BASE-SX e 10GBASE-SR alla prenotazione di spazi in colocazione
@@ -113,25 +187,25 @@ sidebar_position: 999
 ### [Marketplace](/marketplace)
 - È ora possibile distribuire un'istanza VM (Public Cloud) direttamente dalla scheda di un prodotto Marketplace
 
-## 2026-07-27 — Database gestiti (Anteprima)
+## 2026-07-27 — Database gestiti (Preview)
 
-### [MariaDB Gestito](/managed_mariadb)
+### [MariaDB gestito](/managed_mariadb)
 - Il modello di distribuzione Distributed è stato rinominato MultiAZ
 - Le dimensioni delle istanze arrivano ora fino a 6X-Large (32 vCPU e 128 GB di memoria) e lo storage estendibile a caldo fino a 512 GB
 - Pubblicazione delle raccomandazioni di dimensionamento che spiegano la calibrazione dei parametri del motore, con un avviso sull'attivazione di `performance_schema` al di sotto della dimensione X-Large
 - Il ripristino a un punto nel tempo non è più disponibile: i backup si basano ora su backup fisici giornalieri ed esportazioni logiche, senza archiviazione continua dei log delle transazioni
 
-### [PostgreSQL Managé](/managed_postgresql)
+### [PostgreSQL gestito](/managed_postgresql)
 - Nuova architettura basata sull'operatore Kubernetes CloudNative-PG e sul plugin di backup Barman Cloud
 - Tre modelli di deployment: StandAlone a istanza singola, Replica con tre istanze replicate in modo asincrono con failover automatico, e Enterprise con tre istanze replicate in modo sincrono su almeno due nodi, garantendo la durabilità senza blocchi in caso di indisponibilità di un nodo
 - Deployment dichiarativo tramite risorse Kubernetes personalizzate, utilizzabile tramite Terraform o Helm, ed esportazione nativa delle metriche verso Prometheus
 
 ## v4.46.0 — 2026-07-24
 
-### [Console — Organisation](/console/iam/concepts)
+### [Console — Organizzazione](/console/iam/concepts)
 - Ora è possibile creare un tenant direttamente dalla pagina Tenants, selezionando i prodotti associati
 
-### [Console — Activités](/console)
+### [Console — Attività](/console)
 - I registri di attività possono ora essere filtrati per modulo
 
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
@@ -145,7 +219,7 @@ sidebar_position: 999
 - L'elenco delle interfacce di rete di una macchina virtuale connessa a un VPC mostra ora l'indirizzo IP pubblico
 - Una scheda « Salute » è ora disponibile nei dettagli di una macchina virtuale aperta dall'elenco
 
-### [Istanze VM](/public_cloud/vm_instances)
+### [VM Instances](/public_cloud/vm_instances)
 - L'indirizzo IP pubblico è ora visualizzato nell'elenco degli adattatori di rete di un'istanza connessa a un VPC
 - Una scheda « Salute » è ora disponibile nei dettagli di un'istanza, accessibile dall'elenco
 
@@ -157,7 +231,7 @@ sidebar_position: 999
 
 ## v4.45.5 — 2026-07-23
 
-### [Istanze VM](/public_cloud/vm_instances)
+### [VM Instances](/public_cloud/vm_instances)
 - La creazione di un'istanza si basa ora sulla selezione di un'immagine di sistema, che sostituisce i modelli
 
 ## v4.45.4 — 2026-07-22
@@ -183,7 +257,7 @@ sidebar_position: 999
 
 ## v4.45.0 — 2026-07-10
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Durante un'operazione bloccante, le macchine virtuali mostrano ora uno stato esplicito: backup, snapshot o ripristino in corso
 - La modifica della CPU si adatta ora all'opzione di aggiunta CPU a caldo (CPU hot add) e allo stato della macchina virtuale
 
@@ -196,12 +270,12 @@ sidebar_position: 999
 - Le metriche di utilizzo istantaneo (CPU, RAM, storage) sono ora visualizzate per ogni istanza
 - L'univocità del nome è ora verificata sia alla creazione che al ripristino di un'istanza
 
-### [Réseau](/network/network_overview)
+### [Rete](/network/network_overview)
 - Durante un ordine che prevede una fase di propagazione, le nuove reti vengono create solo alla validazione finale dell'ordine
 
 ## v4.44.2 — 2026-07-03
 
-### [Istanze VM](/public_cloud/vm_instances)
+### [VM Instances](/public_cloud/vm_instances)
 - Il tipo di rete (backbone privato) è ora visualizzato sugli adattatori di rete di un'istanza, anche senza la funzionalità VPC
 
 ## v4.44.1 — 2026-07-02
@@ -214,7 +288,7 @@ sidebar_position: 999
 ### [Ordini](/console/orders)
 - Le azioni di provisioning dell'infrastruttura tengono ora conto dei ruoli di business (calcul, réseau, VPC, bare metal…) in aggiunta ai permessi di ordinazione
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Il monitoraggio del caricamento dei file ISO e OVF è stato migliorato ed è ora possibile annullare un caricamento in corso
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -246,14 +320,14 @@ sidebar_position: 999
 - È ora possibile visualizzare il JSON completo di un'attività, copiarlo o scaricarlo
 - L'elenco delle attività archiviate può ora essere ordinato per data di creazione
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - La visualizzazione dell'avanzamento di un ordine è stata riprogettata
 
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - I dettagli di una macchina virtuale vengono ora visualizzati in una nuova vista
 - Durante la modifica a caldo, la coerenza tra CPU e core per socket viene controllata: vengono visualizzati degli avvisi e i valori non validi non vengono accettati
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - È ora possibile richiedere la rimozione di un ambiente IaaS
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -270,7 +344,7 @@ sidebar_position: 999
 ### [VPC](/network/vpc)
 - La descrizione dell'indirizzo IP pubblico è ora visualizzata al momento dell'associazione a una rete privata
 
-### [Archiviazione oggetti](/storage/oss)
+### [Object Storage](/storage/oss)
 - Ora è possibile aggiungere una descrizione agli indirizzi IP autorizzati (whitelist) di un bucket
 
 ## v4.42.0 — 2026-06-22
@@ -333,7 +407,7 @@ sidebar_position: 999
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Le funzionalità della libreria di contenuti pubblici sono state rimosse
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - Il valore predefinito del passaggio CloudInit è stato aggiornato per le distribuzioni OpenIaaS dalla Marketplace
 - L'invio di caratteri speciali dagli appunti della console di una macchina virtuale è stato migliorato
 
@@ -387,11 +461,11 @@ sidebar_position: 999
 
 ## v4.39.0 — 2026-04-23
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - I dischi esistenti vengono ora visualizzati durante l'aggiunta di un nuovo disco
 - Durante lo spostamento (vMotion) di una macchina virtuale in modalità « solo risorse di calcolo », è ora possibile scegliere un cluster
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - I dischi esistenti vengono ora visualizzati durante l'aggiunta di un nuovo disco
 
 ### [VM Instances](/public_cloud/vm_instances)
@@ -401,32 +475,32 @@ sidebar_position: 999
 ### [Bare Metal](/iaas_bare-metal)
 - La selezione delle reti è ora obbligatoria durante la propagazione di una rete su un Bare Metal
 
-## 2026-04-20 — Database gestiti (Anteprima)
+## 2026-04-20 — Database gestiti (Preview)
 
-### [MariaDB Gestito](/managed_mariadb)
+### [MariaDB gestito](/managed_mariadb)
 - Pubblicazione dei parametri del motore associati a ogni modello di istanza: `innodb_buffer_pool_size`, `innodb_buffer_pool_instances`, `max_allowed_packet` e `table_open_cache`
-- Revisione dei modelli di istanza: il limite massimo è ridotto a 3X-Large (8 vCPU e 32 GiB di memoria) e l'archiviazione massima estendibile a caldo passa da 512 GiB a 128 GiB
+- Revisione dei tipi di istanza: il limite massimo è ridotto a 3X-Large (8 vCPU e 32 GiB di memoria) e lo storage massimo espandibile a caldo passa da 512 GiB a 128 GiB
 
-### [PostgreSQL Gestito](/managed_postgresql)
+### [PostgreSQL gestito](/managed_postgresql)
 - Pubblicazione dei parametri del motore associati a ogni tipo di istanza: `shared_buffers`, `effective_cache_size`, `work_mem` e `max_connections`
 - Revisione dei tipi di istanza: il limite massimo è ridotto a 3X-Large (8 vCPU e 32 GiB di memoria) e lo storage massimo espandibile a caldo passa da 512 GiB a 128 GiB
 
 ## v4.38.1 — 2026-04-18
 
-### [Istanze VM](/public_cloud/vm_instances)
+### [VM Instances](/public_cloud/vm_instances)
 - Le reti proposte sono ora filtrate alla creazione di un'istanza così come alla modifica di un adattatore di rete
 
 ## v4.38.0 — 2026-04-17
 
-### [Identità e Accesso (IAM)](/console/iam)
+### [Identità e accessi (IAM)](/console/iam)
 - Sei nuove autorizzazioni sono disponibili: `billing_read`, `vpc_read`, `vpc_write`, `public_cloud_vm_instances_read`, `public_cloud_vm_instances_management` e `public_cloud_vm_instances_console_access`
 - Il nome del prodotto interessato appare ora all'inizio della descrizione di ogni autorizzazione
 
-### [Gestore dei costi](/console/billing/concepts)
+### [Gestione dei costi](/console/billing/concepts)
 - L'interfaccia del gestore dei costi è stata migliorata
 - L'unità visualizzata nei grafici di consumo è stata aggiornata
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Durante il deployment di una macchina virtuale, la fase di selezione di un'immagine dal Marketplace è stata rivista
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -446,15 +520,15 @@ sidebar_position: 999
 
 ## 2026-04-15 — Database gestiti (Preview)
 
-### [MariaDB Managé](/managed_mariadb)
+### [MariaDB gestito](/managed_mariadb)
 - Apertura in Preview di MariaDB Managé : modelli StandAlone e Distributed in cluster a tre nodi dietro un proxy, storage replicato su tre zone di disponibilità e impegno di disponibilità del 99,9 %
 
-### [PostgreSQL Gestito](/managed_postgresql)
+### [PostgreSQL gestito](/managed_postgresql)
 - Disponibilità in anteprima di PostgreSQL Gestito: modelli StandAlone e Distributed in cluster a tre nodi dietro un proxy, replicazione sincrona multi-zona senza perdita di dati e ripristino a un istante specifico
 
 ## v4.37.0 — 2026-04-02
 
-### [Gestore dei costi](/console/billing/concepts)
+### [Gestione dei costi](/console/billing/concepts)
 - Aggiunta dell'importo previsto nella pagina dei consumi per il grafico e la tendenza
 - Miglioramento visivo in caso di errore o di dati insufficienti sui consumi del mese corrente
 
@@ -467,15 +541,15 @@ sidebar_position: 999
 ### [Console](/console)
 - Aggiornamento dei grafici delle metriche e del consumo
 
-### [Gestore dei costi](/console/billing/concepts)
+### [Gestione dei costi](/console/billing/concepts)
 - Aggiunta della pagina del gestore dei costi
 - Possibilità di visualizzare i costi del mese corrente
 - Possibilità di visualizzare i costi su un intervallo di date e di confrontare le tendenze
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Blocco del deprovisioning di un cluster di ipervisori quando un cluster di storage è collegato
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
 - Aggiunta di filtri e ordinamenti sulla lista dei dischi dai dettagli di un Block Storage
 
 ### [VPC](/network/vpc)
@@ -486,17 +560,17 @@ sidebar_position: 999
 ### [Console](/console)
 - Miglioramento della riconnessione ai WebSocket
 
-### [Support](/console)
+### [Supporto](/console)
 - Aggiunta di una soluzione di fallback per la creazione di un ticket di supporto quando i websocket sono disconnessi
 
 ## v4.35.3 — 2026-03-17
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Aggiornamento del recupero dei dischi durante il caricamento delle repliche dalla scheda Replicazione
 
 ## v4.35.0 — 2026-03-11
 
-### [Comandi](/console/orders)
+### [Ordini](/console/orders)
 - Aggiunta del comando per la rimozione di un mapping cpool/spool
 - Aggiunta del comando di deprovisioning della rete privata VPC
 - Modifiche al comando di deprovisioning di un volume Bare Metal: è possibile richiedere l'eliminazione dall'elenco dei volumi
@@ -510,11 +584,11 @@ sidebar_position: 999
 ### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Aggiornamento del multi vMotion VMware per consentire lo spostamento delle VM da un cluster a un altro
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
 - Aggiunta della possibilità di aggiornare un host
 - Visualizzazione delle informazioni sugli aggiornamenti di un host
 
-### [Réseau](/network/network_overview)
+### [Rete](/network/network_overview)
 - Disattivazione del pulsante di eliminazione della propagazione di rete quando nessuna propagazione viene erogata
 
 ### [LLMaaS](/llmaas)
@@ -544,10 +618,10 @@ sidebar_position: 999
 
 ## v4.33.0 — 2026-01-21
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Aggiunta del comando di rimozione di una propagazione di rete su OpenIaaS
 
-### [Métriques](/console/metrics/concepts)
+### [Metriche](/console/metrics/concepts)
 - Aggiunta di filtri per le pagine delle metriche VMWare e OpenIaaS
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -556,7 +630,7 @@ sidebar_position: 999
 
 ## v4.32.0 — 2026-01-14
 
-### [Support](/console)
+### [Supporto](/console)
 - Aggiornamento della modale di chiusura di un ticket di supporto
 
 ### [IaaS VMware — Backup](/iaas_vmware)
@@ -644,9 +718,9 @@ sidebar_position: 999
 - Aggiunta di un filtro per tipo di ordine e per prodotto nell'elenco degli ordini
 
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
-- Miglioramento della console delle macchine virtuali. Migliore gestione della tastiera e aggiunta degli appunti.
+- Miglioramento della console delle macchine virtuali. Migliore gestione della tastiera e aggiunta della funzionalità appunti.
 
-### [IaaS VMware — Sauvegarde](/iaas_vmware)
+### [IaaS VMware — Backup](/iaas_vmware)
 - Aggiunta di un'allerta sul dashboard per i VSnap di backup SPP con un'occupazione troppo elevata
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -675,7 +749,7 @@ sidebar_position: 999
 ### [Ordini](/console/orders)
 - Aggiornamento dei moduli di ordine per aggiungerli alle diverse pagine interessate (esempio: nuovo Datastore dalla pagina Archiviazione)
 
-### [Support](/console)
+### [Supporto](/console)
 - Aggiunta dell'indirizzo email della persona che ha chiuso il ticket nella valutazione del ticket di supporto
 
 ### [Metriche](/console/metrics/concepts)
@@ -725,7 +799,7 @@ sidebar_position: 999
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - Possibilità di distribuire un'immagine di macchina virtuale dall'elenco delle macchine virtuali
 
-### [Réseau](/network/network_overview)
+### [Rete](/network/network_overview)
 - Aggiunta di una validazione per bloccare la rimozione della condivisione di una rete se la rete è propagata in un altro Tenant
 
 ### [Marketplace](/marketplace)
@@ -760,21 +834,21 @@ sidebar_position: 999
 
 ## v4.22.1 — 2025-09-10
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Modifica delle alerte relative alla configurazione del formato del disco selezionato, durante un VMotion che include lo storage
 
 ## v4.22.0 — 2025-09-02
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Aggiunta dell'ordine per la rimozione della propagazione di rete dalla pagina di tutti gli ordini, tutti gli ordini disponibili sono ora accessibili da questa pagina
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Aggiornamento delle condizioni relative al cambio del formato del disco durante lo spostamento di una macchina virtuale e aggiunta di informazioni sul formato del disco corrente durante una configurazione tramite disco
 
 ## v4.21.0 — 2025-08-22
 
 ### [Console](/console)
-- Aggiornamento della visualizzazione quando nessun dato viene creato/provisionato o quando si verifica un errore durante il recupero delle informazioni.
+- Aggiornamento della visualizzazione quando non vengono creati/provisionati dati o quando si verifica un errore durante il recupero delle informazioni.
 
 ### [Supporto](/console)
 - Apertura delle finestre modali di supporto con il servizio associato pre-selezionato
@@ -785,15 +859,15 @@ sidebar_position: 999
 - Miglioramento dello slider di selezione della RAM su alcuni ordini
 - Aggiunta della gestione delle opzioni Static differed and immediate per il vMotion
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Blocco dell'eliminazione di un cluster non vuoto o con host/datastore non in manutenzione
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - Aggiunta della possibilità di esportare in CSV l'elenco delle repliche OpenIaaS e delle politiche associate
 - Aggiunta di dettagli sugli strumenti utilizzati dalle macchine virtuali (pvDrivers, managementAgent et tools)
 - Aggiunta di verifiche per l'alta disponibilità (HA)
 
-### [Réseau](/network/network_overview)
+### [Rete](/network/network_overview)
 - Modifica della selezione di un indirizzo IPv4 con un elenco disponibile
 
 ## v4.20.0 — 2025-07-29
@@ -818,7 +892,7 @@ sidebar_position: 999
 - Aggiornamento della visualizzazione degli ordini disponibili quando nessun ambiente è provisionato
 
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
-- Aggiunta di un filtro di replicazione all'elenco delle macchine virtuali
+- Aggiunta di un filtro di replica all'elenco delle macchine virtuali
 - Aggiornamento della modale di creazione di una macchina virtuale
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -832,7 +906,7 @@ sidebar_position: 999
 ### [Console](/console)
 - Aggiornamento della visualizzazione quando non vengono creati/provisionati dati o quando si verifica un errore durante il recupero delle informazioni.
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Aggiornamento delle fasi internet durante l'ordine di una nuova zona di disponibilità o di un nuovo pool
 
 ### [Supporto](/console)
@@ -863,11 +937,11 @@ sidebar_position: 999
 ### [Console](/console)
 - Aggiunta delle traduzioni inglesi nella pagina dei report di consumo del menu ordine
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Possibilità di ordinare l'aumento di dimensione di un volume bare metal
 - Possibilità di ordinare l'aumento di dimensione di un Block Storage OpenIaaS
 
-### [Support](/console)
+### [Supporto](/console)
 - Riprogettazione della creazione di un ticket di supporto
 - Interpretazione del markdown su un ticket di supporto e aggiornamento dell'ordine di visualizzazione dei commenti
 - Aggiunta di un feedback alla chiusura di un ticket di supporto
@@ -941,7 +1015,7 @@ sidebar_position: 999
 - Possibilità di deprovisionare un volume da un Bare Metal
 - Possibilità di deprovisionare un Bare Metal
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Aggiunta di un pulsante per copiare l'UUID sulle reti e i cataloghi VMware
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -963,7 +1037,7 @@ sidebar_position: 999
 ### Etichette
 - Aggiunta dei tag alle macchine virtuali OpenIaaS
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Aggiornamento del recupero delle raccomandazioni API sulle regole di affinità/anti-affinità di un HostCluster
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -985,7 +1059,7 @@ sidebar_position: 999
 - Aggiornamento dei nomi delle zone di disponibilità durante un ordine
 - Modifica del minimo di datastore durante l'ordine di un datastoreCluster
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Quando il campo label di hostCluster e datastoreCluster viene impostato su vuoto, il nome tecnico verrà applicato come predefinito.
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -1001,15 +1075,15 @@ sidebar_position: 999
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Visualizzazione del nome della macchina virtuale nella scheda della console per VMware
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Aggiunta della gestione delle etichette sui datastore cluster e host cluster VMware
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
 - Consentire il deployment di una macchina virtuale tramite import XVA per OpenIaaS
 - Aggiunta della gestione delle etichette sui pool OpenIaaS
 - Visualizzazione del nome della macchina virtuale nella scheda della console per OpenIaaS
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
 - Aggiornamento delle informazioni CPU degli host e dei pool OpenIaaS
 
 ### [Bare Metal](/iaas_bare-metal)
@@ -1030,7 +1104,7 @@ sidebar_position: 999
 
 ## v4.9.1 — 2025-02-27
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Possibilità di modificare un adattatore di rete su una macchina virtuale accesa
 
 ### [IaaS OpenSource — Macchine virtuali](/iaas_opensource)
@@ -1050,12 +1124,12 @@ sidebar_position: 999
 - Bloccare la creazione di una macchina virtuale se lo spazio sui Block Storage selezionati non è sufficiente
 - Svuotare gli indirizzi MAC predefiniti durante la creazione di una macchina virtuale OpenIaaS
 
-### [Stockage](/storage/oss)
+### [Archiviazione](/storage/oss)
 - Potere copiare negli appunti un endpoint S3
 
 ## v4.8.0 — 2025-02-14
 
-### [Commandes](/console/orders)
+### [Ordini](/console/orders)
 - Aggiunta del comando di propagazione di una rete sui Pool OpenIaaS
 - Aggiunta dei comandi di propagazione di rete nella pagina di tutti i comandi
 
@@ -1078,7 +1152,7 @@ sidebar_position: 999
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - L'esportazione in OVF è bloccata quando la macchina virtuale è crittografata
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Visualizzare le relazioni tra cluster datastore e cluster host nelle pagine Calcolo e Archiviazione
 
 ### [IaaS VMware — Backup](/iaas_vmware)
@@ -1096,7 +1170,7 @@ sidebar_position: 999
 - Rimuovere i caratteri visualizzati durante l'autocompletamento per l'aggiunta di osservatori alla creazione di un ticket di supporto
 - Aggiornamento della visualizzazione del menu e delle pagine disponibili per le offerte VMware e OpenIaaS su un nuovo ambiente senza zone di disponibilità provisionate
 
-### [Console — Notifications](/console)
+### [Console — Notifiche](/console)
 - Aggiornamento della visualizzazione degli abbonamenti alle notifiche dalla pagina profilo
 
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
@@ -1116,7 +1190,7 @@ sidebar_position: 999
 - Aggiunta di un ordine per il Bare Metal
 - Collegare un cluster di ipervisori a un cluster di storage
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Visualizzare la dimensione rimanente tra parentesi negli alberi di selezione dello storage
 
 ### [IaaS VMware — Infrastruttura](/iaas_vmware)
@@ -1146,10 +1220,10 @@ sidebar_position: 999
 ### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Aggiunta dei tag e dell'IP della macchina virtuale all'esportazione CSV delle macchine virtuali
 
-### [IaaS VMware — Sauvegarde](/iaas_vmware)
+### [IaaS VMware — Backup](/iaas_vmware)
 - Proporre di esportare solo gli elementi filtrati nell'esportazione CSV dei report di backup nella sotto-scheda macchine virtuali
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruttura](/iaas_opensource)
 - Aggiunta dei VM-templates XOA dalla pagina cataloghi
 
 ### [Object Storage](/storage/oss)
@@ -1190,7 +1264,7 @@ sidebar_position: 999
 
 ## v4.1.1 — 2024-11-18
 
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
+### [IaaS VMware — Macchine virtuali](/iaas_vmware)
 - Miglioramento della modifica della memoria, la conversione viene eseguita verso l'unità con l'ultimo valore intero
 - Durante una snapshot, il pulsante per salvare la RAM è disabilitato quando la macchina virtuale è spenta
 - Quando più macchine virtuali sono espanse, l'elenco dei dischi non viene visualizzato immediatamente
@@ -1203,7 +1277,7 @@ sidebar_position: 999
 ### [Console](/console)
 - Possibilità di inviare un file con il feedback
 
-### [Identité & Accès (IAM)](/console/iam)
+### [Identità e accessi (IAM)](/console/iam)
 - Disattivazione della possibilità di eliminare un proprietario
 
 ### [Ordini](/console/orders)
@@ -1214,7 +1288,7 @@ sidebar_position: 999
 - Aggiunta delle attività di snapshot nella scheda snapshot di una VM
 - Visualizzazione della dimensione reale delle macchine virtuali nell'esportazione CSV
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruttura](/iaas_vmware)
 - Nelle pagine calcolo e archiviazione, il filtro sulle zone di disponibilità si applica anche alle schede del cluster
 - Visualizzazione delle percentuali di utilizzo sulle barre di consumo (CPU / RAM / Stockage)
 
@@ -1249,8 +1323,8 @@ sidebar_position: 999
 
 ---
 
-:::info[Storico precedente]
+:::info[Cronologia precedente]
 
-Lo storico completo delle versioni precedenti alla v4.0 (da v1.0 a v3.38.1, da febbraio 2019 a ottobre 2024) è disponibile nello [storico Git](https://github.com/Cloud-Temple/docs) del progetto.
+La cronologia completa delle versioni precedenti alla v4.0 (da v1.0 a v3.38.1, da febbraio 2019 a ottobre 2024) è disponibile nella [cronologia Git](https://github.com/Cloud-Temple/docs) del progetto.
 
 :::
