@@ -7,7 +7,7 @@ title: Guide de démarrage
 Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 - Un **Tenant Cloud Temple** actif
-- Une souscription au **Support Standard** minimum
+- Une souscription au **Support Standard** minimum pour un client direct ; le **Support Basic** est destiné aux clients accompagnés par un partenaire formé (voir la [FAQ](./faq))
 - Les permissions nécessaires dans votre organisation Cloud Temple
 
 ## Accéder au service VM Instances
@@ -52,6 +52,9 @@ La famille **Performance** (vCPU dédiés) est disponible via le gabarit personn
 ![Étape 2 : Zone de disponibilité](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
 
 Sélectionnez la **zone de disponibilité (AZ)** dans laquelle votre VM sera hébergée (ex : `fr1-az01`).
+
+Ce choix ne nécessite pas de souscrire l'activation AZ facturée de l'offre
+IaaS : cette souscription n'est pas un prérequis de VM Instances.
 
 ### Étape 3 — Choisir un template
 
