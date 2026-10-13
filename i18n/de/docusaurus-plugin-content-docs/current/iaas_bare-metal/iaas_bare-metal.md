@@ -36,13 +36,18 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple Konsole, die 
   <p>Sind Sie ein Akteur im öffentlichen Sektor? Das Produkt <strong>Bare Metal</strong> ist verfügbar über:</p>
 
   <div class="platform-card">
-    <img src="img/marketplace/ugap_logo.svg" alt="UGAP Logo" class="platform-logo" />
-    <p><a href="https://cloudtour.capgemini.fr/partenaires/cloud-temple" target="_blank" rel="noopener noreferrer"> Die UGAP-Einkaufsplattform für den öffentlichen Sektor</a></p>
+    <img src="img/marketplace/LogoNuagePublic.png" alt="Nuage-Public-Logo" class="platform-logo" />
+    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Der Markt Nuage Public</a></p>
   </div>
 
   <div class="platform-card">
-      <img src="img/marketplace/caih_logo.png" alt="CAIH Logo" class="platform-logo" />
-    <p><a href="https://www.caih-sante.org" target="_blank" rel="noopener noreferrer"> Das CAIH-Einkaufsprogramm für den Gesundheitssektor</a></p>
+    <img src="img/marketplace/caih_logo.png" alt="CAIH-Logo" class="platform-logo" />
+    <p><a href="https://www.caih-sante.org/marche/cloud-conseil-accompagnement-et-infrastructures-hebergees-pour-les-donnees-sante-hds" target="_blank" rel="noopener noreferrer"> Das CAIH-Einkaufsprogramm für den Gesundheitssektor</a></p>
+  </div>
+
+  <div class="platform-card">
+    <img src="img/marketplace/canut-logo_rgb.png" alt="CANUT-Logo" class="platform-logo" />
+    <p><a href="https://canut.org/marche/cloud-et-hebergement" target="_blank" rel="noopener noreferrer"> Die CANUT-Rahmenvereinbarung „Cloud und Hosting“</a></p>
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">

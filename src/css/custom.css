@@ -429,8 +429,10 @@ h3 { font-size: 1.15rem; }
 }
 
 .platform-logo {
-  width: 60px;
-  height: auto;
+  flex: 0 0 120px;
+  width: 120px;
+  height: 72px;
+  object-fit: contain;
   margin-right: 16px;
 }
 
