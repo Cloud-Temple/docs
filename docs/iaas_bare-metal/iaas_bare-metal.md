@@ -37,7 +37,7 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
 
   <div class="platform-card">
     <img src="img/marketplace/LogoNuagePublic.png" alt="Logo Nuage Public" class="platform-logo" />
-    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Le marché Nuage Public</a></p>
+    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Le marché Nuage Public de l'UGAP</a></p>
   </div>
 
   <div class="platform-card">

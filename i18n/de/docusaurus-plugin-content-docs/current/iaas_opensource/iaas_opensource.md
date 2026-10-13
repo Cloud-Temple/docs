@@ -32,7 +32,7 @@ Mit skalierbaren Ressourcen und automatisiertem Management profitieren Sie von e
 
   <div class="platform-card">
     <img src="img/marketplace/LogoNuagePublic.png" alt="Nuage-Public-Logo" class="platform-logo" />
-    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Der Markt Nuage Public</a></p>
+    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Der Nuage-Public-Markt der UGAP</a></p>
   </div>
 
   <div class="platform-card">
