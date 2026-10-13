@@ -180,12 +180,16 @@ const config: Config = {
           title: 'Market Place',
           items: [
             {
-              label: 'UGAP',
-              to: '/market_place_public',
+              label: 'Nuage Public',
+              href: 'https://www.nuagepublic.fr',
             },
             {
               label: 'CAIH',
-              to: '/market_place_public',
+              href: 'https://www.caih-sante.org/marche/cloud-conseil-accompagnement-et-infrastructures-hebergees-pour-les-donnees-sante-hds',
+            },
+            {
+              label: 'CANUT',
+              href: 'https://canut.org/marche/cloud-et-hebergement',
             },
           ],
         },
