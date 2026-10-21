@@ -214,7 +214,7 @@ Sélectionnez l'utilisateur que vous souhaitez supprimer, puis cliquez sur le bo
 <img src={shivaProfil_013} />
 <img src={shivaProfil_010} />
 
-Note: Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
+Note: La suppression n'est disponible qu'en mode organisation. Vous ne pouvez pas vous supprimer vous même et vous ne pouvez pas supprimer un utilisateur __'Propriétaire'__.
 
 ## Tenant
 

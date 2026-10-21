@@ -16,7 +16,7 @@ Créer une VM Linux (Debian 13) dans la zone `fr1-az01`, pré-configurée avec u
 
 ## Étape 1 — Accéder à la console et ouvrir le wizard
 
-Depuis la Console Cloud Temple, naviguez vers **Cloud Public > VM Instances**.
+Depuis la Console Cloud Temple, naviguez vers **VM Instances**.
 
 ![Liste des VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_liste.png)
 
@@ -42,9 +42,9 @@ Pour maximiser la résilience, vous pouvez déployer plusieurs VMs dans des zone
 
 Cliquez sur **Suivant**.
 
-## Étape 4 — Choisir le template
+## Étape 4 — Choisir une image
 
-![Étape 3 : Choisir un template](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+![Étape 3 : Choisir une image](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
 
 Dans l'onglet **OS**, sélectionnez **Debian** et choisissez la version **13 (Trixie)** dans le menu déroulant.
 
