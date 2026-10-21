@@ -8,6 +8,105 @@ sidebar_position: 999
 > Ce changelog liste les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
 > Les corrections de bugs sont incluses à partir de la version 4.50.0.
 
+## v5.0.0 — 2026-10-15
+
+### [Console](/console)
+- Nouvelle console : refonte complète de l'interface, avec un nouveau design et un thème sombre
+- Choix du thème clair ou sombre depuis le profil, avec aperçus
+- Visite guidée de la nouvelle console à la première connexion
+- Retour possible à la version précédente de la console depuis la fenêtre « Nouveautés », tant qu'elle reste disponible
+- Navigation : les produits sont regroupés dans une seule section, le Marketplace est placé sous le Gestionnaire des coûts et « Public Cloud » devient « VM Instances »
+- Mention SecNumCloud dans l'en-tête des pages des produits qualifiés
+- Les formulaires en plusieurs étapes ne se ferment plus par un clic en dehors de la fenêtre
+- Correction de la fermeture des fenêtres affichant un secret une seule fois pendant sa création
+- Nouvelle page de détail des machines virtuelles VMware, OpenIaaS et VM Instances, réunissant informations, consommation et dernières activités
+- Menu d'actions sur chaque ligne de la liste des machines virtuelles
+
+### [VM Instances](/public_cloud/vm_instances)
+- Les informations d'une machine virtuelle restent consultables pendant une opération en cours
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Pages Calcul et Stockage repensées : en-tête de cluster avec sa consommation et nouvelles fiches hôte et datastore
+- Correction des chargements en double au clic sur un cluster et de l'URL modifiée au retour sur « Tous »
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Pages Calcul et Stockage repensées : en-tête de pool avec sa consommation et nouvelles fiches hôte, block storage et zone de disponibilité
+
+### [Object Storage](/storage/oss)
+- Explorateur de fichiers repensé : arborescence, panneau de détail, glisser-déposer et suivi des envois dans la liste
+- Affichage et restauration des fichiers supprimés sur les buckets versionnés
+
+### [Commandes](/console/orders)
+- Nouvelle présentation du détail d'une commande
+
+### [Gestionnaire des coûts](/console/billing/concepts)
+- Camemberts de l'aperçu cliquables pour accéder directement au détail de la consommation
+
+### [Console — Organisation](/console/iam/concepts)
+- Correction de l'indicateur de chargement du Gestionnaire des coûts sur le tableau de bord de l'organisation
+
+### [Console — Activités](/console)
+- Détail des activités enrichi des ressources concernées au fil de leur avancement
+
+### [Bastion](/bastion)
+- Bouton « Tout copier » pour le YAML de déploiement dans le détail d'une appliance
+
+### [Marketplace](/marketplace)
+- Fiche d'un élément du Marketplace : sommaire et colonne de droite visibles pendant le défilement
+
+### [Métriques](/console/metrics/concepts)
+- Correction d'une infobulle restant affichée sur les graphes après désépinglage
+
+## v4.53.1 — 2026-10-15
+
+### [Console](/console)
+- Améliorations techniques mineures
+
+## v4.53.0 — 2026-10-14
+
+### [VM Instances](/public_cloud/vm_instances)
+- Affichage des badges bêta sur les familles d'instances et les classes de stockage concernées
+- Affichage des indicateurs de disponibilité et de stock faible selon la famille, la zone et le stockage sélectionnés, avec désactivation des choix indisponibles
+- Import d'un disque de données VHD ou VMDK depuis l'Object Storage du tenant, avec sélection du fichier et suivi de la progression
+- Limitation à 8 cartes réseau par machine virtuelle, avec indication de la limite lors de la création et de l'ajout d'une carte
+- Affichage du prix du stockage et du coût estimé lors de l'ajout d'un disque, ainsi que du coût après extension
+- Identification des machines virtuelles en erreur par un statut dédié et ajout du filtre correspondant
+- Création, restauration et changement de la politique de sauvegarde d'une machine virtuelle : seules les politiques compatibles avec la famille d'instance sont proposées
+- Correction de l'unité de rétention des politiques de sauvegarde, exprimée en nombre de sauvegardes et non plus en jours
+- Restauration d'une sauvegarde : seules les familles d'instance vers lesquelles la sauvegarde peut être restaurée sont proposées
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Possibilité de demander le redémarrage d'un hôte ESX depuis la liste des hôtes
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Possibilité de demander le redémarrage d'un hôte XCP depuis la liste des hôtes, avec un avertissement d'indisponibilité du pool lorsque le dernier hôte actif est concerné
+
+### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+- Déploiement par template ou depuis la Marketplace : correction de l'altération des configurations cloud-init contenant des caractères spéciaux, à la lecture et à l'envoi
+
+### [Marketplace](/marketplace)
+- Correction du déploiement d'une image sur OpenIaaS lorsque seule la configuration réseau cloud-init est renseignée
+
+### [Console — Organisation](/console/iam/concepts)
+- Suppression d'un tenant : la consigne de confirmation est désormais affichée au-dessus du champ de saisie
+
+### [Console](/console)
+- Protection des transferts de fichiers en cours lors de l'expiration de la session : interruption de la redirection automatique, affichage de la progression et possibilité de se reconnecter dans un nouvel onglet
+- Correction des redirections des anciens liens vers les tickets de support et les hôtes VMware et OpenIaaS
+
+## v4.52.2 — 2026-10-09
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Possibilité de détacher le dernier cluster de stockage d'un cluster d'hyperviseur
+
+## v4.52.1 — 2026-10-07
+
+### [Commandes](/console/orders)
+- Correction de la commande d'augmentation de la taille d'un datastore
+
+### [LLMaaS](/llmaas)
+- Correction du coût total de la consommation LLMaaS, supérieur à la somme du graphique (consommations désormais affichées par jour UTC)
+
 ## v4.52.0 — 2026-10-06
 
 ### [IaaS VMware — Sauvegarde](/iaas_vmware)
