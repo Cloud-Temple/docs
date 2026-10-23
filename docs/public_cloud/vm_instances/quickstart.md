@@ -12,13 +12,13 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 ## Accéder au service VM Instances
 
-Connectez-vous à la **Console Cloud Temple** et naviguez vers **Cloud Public > VM Instances** depuis le menu principal.
+Connectez-vous à la **Console Cloud Temple** et naviguez vers **VM Instances** depuis le menu principal.
 
 ![Dashboard Console Cloud Temple](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
 Le tableau de bord vous présente un aperçu des ressources VM Instances consommées (stockage, CPU, RAM) ainsi que le nombre de machines virtuelles actives.
 
-Cliquez sur **Cloud Public** dans la sidebar gauche pour déployer le sous-menu, puis sélectionnez **VM Instances**.
+Sélectionnez **VM Instances** dans la sidebar gauche.
 
 ![Navigation vers VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
@@ -56,9 +56,9 @@ Sélectionnez la **zone de disponibilité (AZ)** dans laquelle votre VM sera hé
 Ce choix ne nécessite pas de souscrire l'activation AZ facturée de l'offre
 IaaS : cette souscription n'est pas un prérequis de VM Instances.
 
-### Étape 3 — Choisir un template
+### Étape 3 — Choisir une image
 
-![Étape 3 : Choisir un template](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+![Étape 3 : Choisir une image](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
 
 Parcourez le catalogue d'images disponibles via les onglets **OS** et **Appliances** :
 

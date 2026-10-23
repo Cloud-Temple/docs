@@ -11,7 +11,7 @@ import shivaInet_007 from '@site/docs/network/internet/images/shiva_inet_007.png
 
 ## Gestion de vos connectivités Internet
 
-La gestion de la connectivité s'effectue via le menu **'Réseau'** > **'Internet'**. Ce menu centralise la gestion des adresses IP, offrant deux catégories distinctes :
+La gestion de la connectivité s'effectue via le menu **'Réseau'** > **'Backbone privé'**, onglets **'ASNs'**, **'IPs publiques'** et **'IPs d'interco'**. Ce menu centralise la gestion des adresses IP, offrant deux catégories distinctes :
 
 1. **Adresses IP Publiques** : elles sont utilisées pour exposer vos services sur Internet, facilitant ainsi les échanges de données entrantes et sortantes.
 2. **Adresses IP d'Interconnexion** : ces adresses permettent à vos passerelles de diriger le trafic vers le réseau spécifique de Cloud Temple, assurant une connexion sécurisée et efficace.
@@ -22,7 +22,7 @@ Voici l'interface principale pour la gestion des adresses IP :
 
 <img src={shivaInet_001} />
 
-L'onglet d'accueil correspond à votre ASN interne dédié à votre tenant. Il indique notamment les informations importante pour le paramétrage de votre connectivité BGP.
+L'onglet **'ASNs'** correspond à votre ASN interne dédié à votre tenant. Il indique notamment les informations importante pour le paramétrage de votre connectivité BGP.
 
 ### Adresses IP publiques
 

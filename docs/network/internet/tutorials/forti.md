@@ -32,7 +32,6 @@ import ipPlan04 from '@site/docs/network/internet/images/ip_plan_04.png';
 import ipPlan05 from '@site/docs/network/internet/images/ip_plan_05.png';
 import imgDeploy01 from '@site/docs/network/internet/images/img_deploy_01.png';
 import imgDeploy02 from '@site/docs/network/internet/images/img_deploy_02.png';
-import imgDeploy03 from '@site/docs/network/internet/images/img_deploy_03.png';
 import imgDeploy04 from '@site/docs/network/internet/images/img_deploy_04.png';
 import imgDeploy05 from '@site/docs/network/internet/images/img_deploy_05.png';
 import imgDeploy06 from '@site/docs/network/internet/images/img_deploy_06.png';
@@ -269,11 +268,7 @@ Vous devez ensuite nommer la machine virtuelle; nous vous conseillons la nomencl
 
 <img src={imgDeploy02} />
 
-Choisisez ensuite la zone de disponibilité :
-
-<img src={imgDeploy03} />
-
-Puis le cluster d'hyperviseur cible :
+Choisissez ensuite le cluster d'hyperviseur cible :
 
 <img src={imgDeploy04} />
 

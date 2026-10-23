@@ -26,7 +26,7 @@ La commande des réseaux privés au sein d'une région se réalise directement d
 
 ### Au sein d'un tenant
 
-La création d'un réseau virtuel se fait dans le menu __*Réseaux*__ sur le bandeau vert à gauche de l'écran.
+La création d'un réseau virtuel se fait dans le menu __*Réseau*__ > __*Backbone privé*__ sur le bandeau vert à gauche de l'écran.
 
 <img src={shivaNetwork_001} />
 
