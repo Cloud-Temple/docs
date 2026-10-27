@@ -925,10 +925,10 @@
       "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
     },
     "public_cloud/vm_instances/faq.md": {
-      "es": "97730e710c04d0ed876514e77442185f11604751ead68f2ae6d1d28fe2f42824",
-      "de": "97730e710c04d0ed876514e77442185f11604751ead68f2ae6d1d28fe2f42824",
-      "en": "97730e710c04d0ed876514e77442185f11604751ead68f2ae6d1d28fe2f42824",
-      "it": "97730e710c04d0ed876514e77442185f11604751ead68f2ae6d1d28fe2f42824"
+      "es": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "de": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "en": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "it": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283"
     },
     "console/onboarding.md": {
       "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
@@ -949,6 +949,6 @@
       "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-10-13T16:50:37.923463",
+  "last_update": "2026-10-28T00:34:58.972008",
   "version": "2.0"
 }
