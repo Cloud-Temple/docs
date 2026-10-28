@@ -7,9 +7,9 @@ Ce guide **Quickstart Housing** vous accompagne pour démarrer rapidement avec l
 
 ## Étape 1 : Faire une demande d’hébergement
 
-1. Accédez à la console Cloud Temple.
-2. Ouvrez un dossier de service en fournissant :
-   - Nom de votre organisation.
+1. Accédez à la Console Cloud Temple.
+2. Passez votre commande depuis le module __Commandes (Order)__. Pour une opération que la Console ne prend pas en charge, contactez le support. Précisez notamment :
+   - Nom de votre organisation et du tenant.
    - Coordonnées d’un contact (email et téléphone).
    - Type d’hébergement souhaité (mutualisé au 'U' ou dédié par rack).
    - Quantité et caractéristiques des équipements (taille, poids, consommation, etc.).
