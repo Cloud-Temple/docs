@@ -395,6 +395,15 @@ const sidebars: SidebarsConfig = {
             'bastion/tutorials',
           ],
         },
+        {
+          type: 'category',
+          label: 'Sovereign SOC',
+          link: { type: 'doc', id: 'sovereign_soc/sovereign_soc' },
+          items: [
+            'sovereign_soc/sovereign_soc',
+            'sovereign_soc/concepts',
+          ],
+        },
       ],
     },
     {
