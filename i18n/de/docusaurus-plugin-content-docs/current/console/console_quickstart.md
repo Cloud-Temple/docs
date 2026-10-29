@@ -1,5 +1,5 @@
 ---
-title: Schnellstart
+title: Quickstart
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
 import shivaHome from '@site/docs/console/images/shiva_home.png'
@@ -10,6 +10,7 @@ import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
 import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
 import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
 import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaLogsDetail from '@site/docs/console/images/shiva_logs_detail.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
@@ -24,104 +25,104 @@ import imgCostsConsumption from '@site/docs/console/images/shiva_org_costs_consu
 
 ## Voraussetzungen
 
-- Ein Cloud Temple-Produkt abonniert haben. Um unkompliziert ein Abonnement abzuschließen, können Sie [uns kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an die Adresse __contact@cloud-temple.com__ schreiben.
-- Über einen Zugriff auf die Konsole verfügen
-- Die eigene öffentliche IPv4-Adresse in der Cloud Temple-Vertrauenszone hinterlegt haben (der Zugriff auf die Konsole ist auf identifizierte Vertrauensadressen beschränkt)
+- Ein Cloud-Temple-Produkt abonniert haben. Um ein Abonnement abzuschließen, können Sie uns [kontaktieren](https://www.cloud-temple.com/contactez-nous/) oder per E-Mail an __contact@cloud-temple.com__.
+- Einen Zugriff auf die Konsole haben
+- Die öffentliche IPv4-Adresse in der Vertrauenszone von Cloud Temple registriert haben (der Zugriff auf die Konsole ist auf identifizierte Vertrauensadressen beschränkt)
 
-## Verbindung zu Ihrem Cloud Temple-Tenant
+## Anmeldung an Ihrem Cloud-Temple-Tenant
 
-Die Konsole ist über die folgende URL erreichbar: [Console](https://shiva.cloud-temple.com) oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
+Die Konsole ist über die folgende URL erreichbar: [Konsole](https://shiva.cloud-temple.com) oder über die direkte URL, die Ihnen per E-Mail mitgeteilt wurde.
 
-Auf der ersten Seite können Sie [l'organisation](iam/concepts.md#organisationen) auswählen, in der Ihr Benutzer erstellt wurde.
-Sobald das Unternehmen eingegeben wurde, klicken Sie auf __'Anmelden'__.
+Auf der ersten Seite können Sie die [Organisation](iam/concepts.md#organisationen) auswählen, in der Ihr Benutzer erstellt wurde.
+Sobald das Unternehmen eingegeben wurde, klicken Sie bitte auf __'Anmelden'__.
 
 <img src={shivaLogin} />
 
 Anschließend werden Sie zu einer Seite weitergeleitet, auf der Sie sich authentifizieren müssen.
 Nach der Anmeldung gelangen Sie auf diese Seite.
 
-Dort finden Sie alle Metriken zu den in Ihrem Bereich abonnierten Produkten. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen angezeigt, deren Farbe den jeweiligen Schweregrad anzeigt.
+Hier finden Sie alle Metriken zu den in Ihrem Bereich abonnierten Produkten. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen angezeigt; die Farbe ist mit deren Schweregrad verknüpft.
 
 <img src={shivaHome} />
 
 ## Organisationsansicht
 
 :::info
-Die **Organisationsansicht** ist ausschließlich **Organisationsinhabern** vorbehalten.
+Die **Organisationsansicht** ist den **Eigentümern der Organisation** vorbehalten.
 :::
 
-Die **Organisationsansicht** bündelt die Steuerungsfunktionen für Ihre Entität in der Cloud Temple Console: Verwaltung von Tenants, Nutzern und deren Berechtigungen, Zugriffssteuerung und Verbrauchsüberwachung. Eine Organisation fasst einen oder mehrere **Tenants** (abgegrenzte Cloud-Umgebungen) zusammen, und die Nutzerberechtigungen unterliegen einer **tenantgetrennten Berechtigungsvergabe**.
+Die **Organisationsansicht** bündelt die Steuerungsfunktionen Ihrer Einheit in der Cloud-Temple-Konsole: Verwaltung der Tenants, Benutzer und deren Berechtigungen, Zugriffskontrolle und Verfolgung des Verbrauchs. Eine Organisation bündelt einen oder mehrere **Tenants** (abgeschottete Cloud-Umgebungen), und die Benutzerberechtigungen unterliegen einer **Segregation pro Tenant**.
 
 :::info
-Dieser Abschnitt beschreibt die **Benutzeroberfläche**: Wo Sie jede Funktion finden und was sie ermöglicht. Die **Referenzdokumentation** zum Organisations-/Tenant-Modell und zu den Berechtigungen finden Sie im Modul [IAM](iam/concepts.md).
+Dieser Abschnitt beschreibt die **Oberfläche**: Wo Sie jede Funktion finden und was sie ermöglicht. Die **Referenzdokumentation** zum Organisations-/Tenant-Modell und zu den Berechtigungen finden Sie im Modul [IAM](iam/concepts.md).
 :::
 
-### Kopfzeile und Auswahl des Arbeits-Tenants
+### Kopfbereich und Auswahl des Arbeits-Tenants
 
-Oben in der Konsole zeigt die Kopfzeile die aktuelle Organisation (**« Meine Organisation »**). Das zugehörige Auswahlmenü öffnet die Liste **« Meine Tenants »** : Jeder Tenant ist dort aufgeführt, gegebenenfalls begleitet vom Badge **SecNumCloud**, wenn er zertifiziert ist.
+Oben in der Konsole zeigt der Kopfbereich die aktuelle Organisation (**« Meine Organisation »**) an. Der zugehörige Auswahldialog öffnet die Liste **« Meine Tenants »**: Jeder Tenant wird dort aufgeführt, gegebenenfalls mit dem Badge **SecNumCloud**, wenn er zertifiziert ist.
 
-Um **den Arbeits-Tenant auszuwählen**, gibt es zwei Möglichkeiten :
+Um **den Arbeits-Tenant auszuwählen**, gibt es zwei Möglichkeiten:
 
-- über die Kopfzeile: Öffnen Sie das Auswahlmenü **« Meine Tenants »** und klicken Sie auf den gewünschten Tenant ;
-- über die Seite **Tenants**: Verwenden Sie die Aktion **« Zu Tenant wechseln »** in einer Zeile.
+- Öffnen Sie im Kopfbereich den Auswahldialog **« Meine Tenants »** und klicken Sie auf den gewünschten Tenant;
+- Verwenden Sie auf der Seite **Tenants** die Aktion **« Mit Tenant verbinden »** in einer Zeile.
 
-Die technischen Ressourcen (Rechenleistung, Speicher, Netzwerk…) sind **tenant-spezifisch** und werden nicht zwischen Tenants geteilt.
+Die technischen Ressourcen (Rechenleistung, Speicher, Netzwerk …) sind **jedem Tenant eigen** und werden zwischen Tenants nicht geteilt.
 
 <img src={imgSelector} />
 
 ### Dashboard
 
-Das **Dashboard** ist die Startseite der Organisation. Es bietet eine übergreifende Übersicht:
+Das **Dashboard** ist die Startseite der Organisation. Es zeigt eine übergreifende Übersicht:
 
-- den Status der **Support-Tickets** (ouverts, réponses requises, validation client, incidents) ;
-- die **Anzahl der Tenants** der Organisation ;
-- eine **Kostenübersicht** (coût du mois en cours, répartition par tenant et par service).
+- den Status der **Support-Tickets** (offen, Antwort erforderlich, Kundenfreigabe, Vorfälle);
+- die **Anzahl der Tenants** der Organisation;
+- eine **Kostenübersicht** (Kosten des laufenden Monats, Aufteilung nach Tenant und nach Dienst).
 
 <img src={imgDashboard} />
 
 ### Organisationsverwaltung
 
-Der Bereich **Administration** in der linken Navigation fasst die Governance-Seiten der Organisation zusammen.
+Der Bereich **Verwaltung** in der linken Navigation bündelt die Governance-Seiten der Organisation.
 
 | Seite | Rolle |
 |---|---|
-| **Tenants** | Tenants erstellen und verwalten |
+| **Tenants** | Tenants erstellen und weiterentwickeln |
 | **Benutzer** | Konten und deren Berechtigungen verwalten |
-| **Zugriff** | Liste der erlaubten öffentlichen IPs (Whitelist) |
+| **Zugriff** | Liste der erlaubten öffentlichen IP-Adressen (Whitelist) |
 | **Logs** | Aktivitätsprotokoll (Nachverfolgbarkeit) |
 | **Support** | Tickets der Organisation |
 
-Der **Kostenmanager** (außerhalb des Administrationsbereichs) bietet die Verbrauchsüberwachung.
+Der **Kostenverwalter** (außerhalb des Bereichs Verwaltung) bietet die Verbrauchsverfolgung.
 
-### Mandanten
+### Tenants
 
-Die Seite **Mandanten** listet alle Mandanten der Organisation auf. Eine Suchleiste und die Paginierung erleichtern die Navigation, wenn viele Mandanten vorhanden sind.
+Die Seite **Tenants** listet alle Tenants der Organisation auf. Eine Suchleiste und die Paginierung erleichtern die Navigation, wenn viele Tenants vorhanden sind.
 
-#### Einen Tenant erstellen
+#### Tenant erstellen
 
-Die Schaltfläche **« Neuer Tenant »** öffnet ein Formular in zwei Teilen :
+Die Schaltfläche **« Neuer Tenant »** öffnet ein Formular in zwei Teilen:
 
-- **Tenant-Identität** : der **Name** (wird live validiert) und eine **Beschreibung** ;
-- **Tenant-Produkte** : die auf dem Tenant zu aktivierenden Produkte. Die Schaltflächen **« Alle auswählen »** / **« Alle abwählen »** beschleunigen die Eingabe.
+- **Identität des Tenants**: der **Name** (live validiert) und eine **Beschreibung**;
+- **Produkte des Tenants**: die auf dem Tenant zu aktivierenden Produkte. Die Schaltflächen **« Alle auswählen »** / **« Alle abwählen »** beschleunigen die Eingabe.
 
-Bestätigen Sie mit **« Erstellen »** : Der Tenant wird mit den ausgewählten Produkten initialisiert.
+Bestätigen Sie mit **« Erstellen »**: Der Tenant wird mit den ausgewählten Produkten initialisiert.
 
-#### Aktionen für einen Tenant
+#### Aktionen auf einem Tenant
 
-Das Aktionen-Menü jeder Zeile bietet:
+Das Aktionsmenü jeder Zeile bietet:
 
-- **Zum Tenant wechseln** — definiert diesen Tenant als Arbeits-Tenant;
-- **Produkte bearbeiten** — aktiviert oder deaktiviert Produkte im Tenant, um dessen Umfang anzupassen;
+- **Mit Tenant verbinden** — definiert diesen Tenant als Arbeits-Tenant;
+- **Produkte ändern** — aktiviert oder deaktiviert Produkte auf dem Tenant, um dessen Umfang anzupassen;
 - **UUID kopieren** — kopiert die technische Kennung des Tenants (nützlich für die API oder ein Support-Ticket).
 
 #### Eigentümer und Lebenszyklus
 
-- **Erstellung** : im Self-Service über **« Neuer Tenant »**.
-- **Änderung** : Hinzufügen oder Entfernen von Produkten über **« Produkte bearbeiten »**.
-- **Tenant-Eigentümer** : Jeder Tenant hat mindestens einen Eigentümer. Die Regeln (empfohlene Anzahl, Ausbreitungsverzögerung, Entfernung auf Anfrage des Supports, Berechtigungen eines Eigentümers) werden im Modul [IAM](iam/concepts.md) detailliert beschrieben.
+- **Erstellung**: im Self-Service über **« Neuer Tenant »**.
+- **Weiterentwicklung**: Hinzufügen oder Entfernen von Produkten über **« Produkte ändern »**.
+- **Tenant-Eigentümer**: Jeder Tenant hat mindestens einen Eigentümer. Die Regeln (empfohlene Anzahl, Ausbreitungsverzögerung, Entfernung auf Support-Anfrage, Berechtigungen eines Eigentümers) sind im Modul [IAM](iam/concepts.md) detailliert beschrieben.
 
 :::info
-Operationen an Tenants werden auf der Seite **Logs** protokolliert (z. B. « *Creating tenant…* » oder « *Updating features on tenant…* »).
+Die Operationen auf Tenants werden in der Seite **Logs** protokolliert (z. B. « *Creating tenant…* » oder « *Updating features on tenant…* »).
 :::
 
 <img src={imgTenants} />
@@ -130,76 +131,76 @@ Operationen an Tenants werden auf der Seite **Logs** protokolliert (z. B. « *Cr
 
 ### Benutzer und Berechtigungen
 
-Die Seite **Benutzer** listet die Konten der Organisation auf. Die Identitäten sind **organisationweit global**; die Berechtigungen werden **pro Tenant** festgelegt.
+Die Seite **Benutzer** listet die Konten der Organisation auf. Die Anmeldeinformationen sind **organisationsweit**; die Berechtigungen werden hingegen **pro Tenant** definiert.
 
-Für jedes Konto werden der **Name**, die **E-Mail-Adresse**, der **Typ** des Kontos — **Föderiertes Konto** (référentiel d'identité externe) oder **Lokales Konto** — sowie visuelle Kennzeichnungen angezeigt: **Organisationsinhaber**, **Ich** oder **E-Mail nicht verifiziert** (compte non finalisé).
+Für jedes Konto werden der **Name**, die **E-Mail-Adresse**, der **Typ** des Kontos — **Föderiertes Konto** (externes Identitätsverzeichnis) oder **Lokales Konto** — sowie visuelle Kennzeichnungen angezeigt: **Eigentümer der Organisation**, **Ich** oder **E-Mail nicht verifiziert** (nicht finalisiertes Konto).
 
-#### Seitentools
+#### Werkzeuge der Seite
 
-- **Filter** : nach **Organisationsinhaber**, **Typ**, **Quelle** und **Status**.
-- **CSV exportieren** : Export der Benutzerliste und ihrer Zugriffsrechte, nützlich für Audits.
+- **Filter**: nach **Eigentümern der Organisation**, **Typ**, **Quelle** und **Status**.
+- **CSV exportieren**: Export der Benutzerliste und deren Zugriffe, nützlich für die Auditierung.
 
-#### Aktionen für ein Konto
+#### Aktionen auf einem Konto
 
-Je nach Kontostatus bietet das Aktionenmenü folgende Optionen an:
+Das Aktionsmenü bietet je nach Kontostatus:
 
-- **Als Organisationsinhaber hinzufügen** ;
-- **Erneute Einladung** — sendet die Einladung an ein nicht abgeschlossenes Konto erneut ;
-- **UUID kopieren** ;
+- **Als Organisationseigentümer hinzufügen**;
+- **Neue Einladung** — sendet die Einladung an ein nicht finalisiertes Konto erneut;
+- **UUID kopieren**;
 - **Löschen**.
 
 :::note
-Sie können sich nicht selbst löschen. Die **Einladung** eines neuen Benutzers und die **feingranulare Berechtigungsvergabe pro Tenant** werden im Modul [IAM](iam/quickstart.md) beschrieben.
+Sie können sich nicht selbst löschen. Die **Einladung** eines neuen Benutzers und die **feingranulare Zuweisung der Berechtigungen pro Tenant** sind im Modul [IAM](iam/quickstart.md) beschrieben.
 :::
 
-#### Organisationsinhaber und Tenant-Inhaber
+#### Organisationseigentümer und Tenant-Eigentümer
 
-Es handelt sich um zwei verschiedene Konzepte :
+Dies sind zwei unterschiedliche Begriffe:
 
-- der **Organisationsinhaber** wird über die Seite **Benutzer** hinzugefügt (action « Ajouter en tant que propriétaire d'organisation ») ; die **Entfernung erfolgt auf Anfrage beim Support** ;
-- der **Tenant-Inhaber** fällt in den Geltungsbereich eines Tenants ; die entsprechenden Regeln werden im Modul [IAM](iam/concepts.md) beschrieben.
+- der **Eigentümer der Organisation** wird über die Seite **Benutzer** hinzugefügt (Aktion « Als Organisationseigentümer hinzufügen »); seine **Entfernung erfolgt auf Support-Anfrage**;
+- der **Tenant-Eigentümer** gehört zum Umfang eines Tenants; seine Regeln sind im Modul [IAM](iam/concepts.md) beschrieben.
 
 :::info
-Als **Organisationsinhaber** sind Sie standardmäßig **Inhaber aller Tenants** der Organisation. Damit verfügen Sie über sämtliche Berechtigungen für jeden dieser Tenants. Umgekehrt verlieren Sie diese Berechtigungen **nicht**, wenn Ihnen diese Rolle entzogen wird: Sie bestehen für die betroffenen Tenants weiterhin fort.
+Als **Eigentümer der Organisation** sind Sie standardmäßig **Eigentümer aller Tenants** der Organisation. In dieser Eigenschaft verfügen Sie über sämtliche Berechtigungen auf jedem dieser Tenants. Umgekehrt verlieren Sie diese Berechtigungen **nicht**, wenn Ihnen diese Rolle entzogen wird: Sie bleiben auf den betroffenen Tenants erhalten.
 :::
 
 <img src={imgUsers} />
 
 ### Zugriff — IP-Whitelist
 
-Die Seite **Zugriff** verwaltet die **Liste der öffentlichen IP-Adressen, die zum Zugriff auf die Konsole berechtigt sind**. Gemäß den **SecNumCloud**-Anforderungen wird ausschließlich der Datenverkehr von diesen Adressen zugelassen.
+Die Seite **Zugriff** verwaltet die **Liste der erlaubten öffentlichen IP-Adressen** für den Zugriff auf die Konsole. Gemäß den Anforderungen von **SecNumCloud** wird nur der Verkehr von diesen Adressen akzeptiert.
 
 - Jeder Eintrag verknüpft eine **IP** (CIDR-Notation) mit einer **Beschreibung**.
-- Über die Schaltfläche **« IP hinzufügen »** kann eine Adresse zur Liste hinzugefügt werden.
+- Die Schaltfläche **« IP hinzufügen »** ermöglicht das Hinzufügen einer Adresse zur Liste.
 
 :::warning
-Das **Löschen** einer autorisierten IP erfolgt auf **Anfrage beim Support**.
+Die **Entfernung** einer erlaubten IP-Adresse erfolgt auf **Support-Anfrage**.
 :::
 
 <img src={imgAccess} />
 
-### Verbrauchsbericht — Kostenmanager
+### Verbrauchsbericht — Kostenverwalter
 
-Der **Kostenmanager** bietet eine Übersicht über den Organisationsverbrauch, aufgeschlüsselt nach Tenant. Er enthält zwei Registerkarten.
+Der **Kostenverwalter** bietet eine Ansicht des Verbrauchs der Organisation, aufgeteilt nach Tenant. Er bietet zwei Registerkarten.
 
-#### Reiter « Übersicht »
+#### Registerkarte « Übersicht »
 
-Zusammenfassende Ansicht des aktuellen Monats:
+Synthetische Ansicht des laufenden Monats:
 
-- Schlüsselkennzahlen: **Kosten des aktuellen Monats**, **Kosten des aktuellen Jahres**, **Anzahl der aktiven Produkte** ;
-- **Kosten pro Tenant** — Kostenverteilung zwischen den Tenants ;
-- **Aktuelle Kosten pro Dienst** und **Aktuelle Kosten pro Produkt** — Hauptkostenpositionen.
+- Kennzahlen: **Kosten des laufenden Monats**, **Kosten des laufenden Jahres**, **Anzahl aktiver Produkte**;
+- **Kosten pro Tenant** — Aufteilung der Kosten zwischen den Tenants;
+- **Aktuelle Kosten pro Dienst** und **Aktuelle Kosten pro Produkt** — Hauptverbrauchspositionen.
 
-#### Register „Verbrauch“
+#### Registerkarte « Verbrauch »
 
 Detaillierter und historisierter Bericht:
 
-- Auswahl des **Zeitraums** (Start- und Endmonat) und der Achse **„Anzeigen nach“** ;
-- Ansichten **Monatlicher Verbrauch**, **Gesamt**, **Prognose** und **Trend** ;
-- aufklappbare Tabelle nach **Monat / Tenant / Service / Produkt / Betrag**, mit dem **Trend** im Vergleich zum Vormonat.
+- Auswahl des **Zeitraums** (Beginn- und Endmonat) und der Achse **« Anzeigen nach »** ;
+- Ansichten **Monatlicher Verbrauch**, **Gesamt**, **Prognose** und **Trend**;
+- aufklappbare Tabelle nach **Monat / Tenant / Dienst / Produkt / Betrag**, mit dem **Trend** im Vergleich zum Vormonat.
 
 :::info
-Der Betrag des aktuellen Monats ist **vorläufig** : er wird auf Basis der bereits verbrauchten Tage geschätzt.
+Der Betrag des laufenden Monats ist **vorläufig**: Er wird auf Basis der bereits verbrauchten Tage geschätzt.
 :::
 
 <img src={imgCostsOverview} />
@@ -208,173 +209,177 @@ Der Betrag des aktuellen Monats ist **vorläufig** : er wird auf Basis der berei
 
 ### Protokollierung und Support
 
-- **Logs** — die Seite **Aktivitäten** protokolliert die Lese- und Schreibvorgänge der Organisation (Registerkarten **Neu** / **Archiviert**, Filter, CSV-Export) zu Zwecken der Nachverfolgbarkeit. Siehe auch den Abschnitt [Journalisation — Suivi des Activités](#protokollierung---aktivitätsverfolgung) unten.
-- **Support** — die Seite **Support** bündelt die **Tickets der Organisation** (Metriken, Ticket-Erstellung, Filter, Export). Die Erstellung und Verfolgung der Anfragen werden im Abschnitt [Accès au support technique](#zugriff-auf-den-technischen-support) unten beschrieben.
+- **Logs** — die Seite **Aktivitäten** dokumentiert die Lese- und Schreiboperationen der Organisation (Registerkarten **Letzte** / **Archiviert**, Filter, CSV-Export) zu Nachverfolgungszwecken. Siehe auch den Abschnitt [Protokollierung — Aktivitätsverfolgung](#protokollierung---aktivitätsverfolgung) unten.
+- **Support** — die Seite **Support** bündelt die **Tickets der Organisation** (Kennzahlen, Ticketerstellung, Filter, Export). Die Erstellung und Verfolgung von Anfragen sind im Abschnitt [Zugang zum technischen Support](#zugang-zum-technischen-support) unten beschrieben.
 
 ## Sprachverwaltung
 
-Die Konsole ist in __Französisch__, __Englisch__ verfügbar. Sie können die Arbeitssprache über das oben rechts auf dem Bildschirm befindliche __Sprachsymbol__ ändern.
+Die Konsole ist in __Französisch__ und __Englisch__ verfügbar. Sie können die Betriebssprache über das __Sprachsymbol__ oben rechts auf dem Bildschirm ändern.
 
-Die Sprachänderung für einen Benutzer erfolgt in dessen __'Profil'__, oben rechts auf dem Bildschirm, unter __'Benutzereinstellungen'__.
+Die Sprachänderung eines Benutzers erfolgt in seinem __'Profil'__, oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
 
 <img src={shivaProfil_006} />
 
 Die Konfiguration erfolgt für jeden Tenant [Tenant](iam/concepts.md#tenant).
 
-## Zugriff auf den technischen Support
+## Zugang zum technischen Support
 
-Zu jeder Zeit können Sie das __Cloud Temple Support-Team__ über das __'Hilfe'-Symbol__ oben rechts auf dem Bildschirm kontaktieren.
+Zu jedem Zeitpunkt können Sie das __Cloud-Temple-Support-Team__ über das __'Lebensring'-Symbol__ oben rechts auf dem Bildschirm kontaktieren.
 
 <img src={shivaSupport} />
 
-Sie werden während des gesamten Supportanforderungsprozesses unterstützt.
+Sie werden während des gesamten Supportanfrageprozesses geführt.
 
-Der erste Schritt ist die Identifizierung des Typs der Supportanforderung:
+Der erste Schritt ist die Identifizierung des Typs der Supportanfrage:
 
-- Beratung zur Nutzung eines Produkts anfordern (außerhalb von Störungen),
+- Einen Rat zur Nutzung eines Produkts anfordern (außerhalb eines Vorfalls),
 - Unterstützung im Zusammenhang mit Ihrem Kundenkonto anfordern,
-- Eine Störung melden oder technischen Support anfordern.
-- Unterstützung durch einen professionellen Service anfordern (Zur Verfügungstellung eines Cloud Temple-Ingenieurs für ein spezifisches Problem).
+- Einen Vorfall melden oder technischen Support anfordern,
+- Die Unterstützung eines professionellen Dienstes anfordern (Bereitstellung eines Cloud-Temple-Ingenieurs für ein Problem).
 
 <img src={shivaSupport_01} />
 
-Anschließend haben Sie die Möglichkeit, weitere Details anzugeben und Dateien (z. B. Bilder oder Protokolle) anzuhängen.
+Anschließend haben Sie die Möglichkeit, Präzisierungen zu geben und Dateien beizufügen (z. B. Bilder oder Protokolle).
 
-Der Auftraggeber kann in der Ticketbeschreibung im Falle eines Sicherheitsvorfalls auch ein Kritikalitätsniveau (P1 bis P5) angeben, wie zum Beispiel:
+Der Auftraggeber kann in der Ticketbeschreibung auch einen Schweregrad (P1 bis P5) angeben, im Falle eines Sicherheitsvorfalls, wie z. B.:
 
 <img src={shivaSupportCriticities} />
 
 __KRITISCH (P1)__:
 
-- Verdacht auf Datenleck sensibler Daten
+- Verdacht auf Leckage sensibler Daten
 - Erkennung eines unbefugten Zugriffs auf Ihre Daten
-- Kompromittierung Ihrer Administrationszugangsdaten
-- Totale Ausfall Ihrer kritischen Dienste
+- Kompromittierung Ihrer Administrationsanmeldeinformationen
+- Vollständige Nichtverfügbarkeit Ihrer kritischen Dienste
 - Anomales Verhalten bei sensiblen Daten
 - Verletzung personenbezogener Daten
 
-__HOCH (P2)__:
+__HOCH (P2)h__:
 
-- Fehlfunktion der Benutzerzugriffe
+- Funktionsstörung der Benutzerverbindungen
 - Anomalie bei der Verschlüsselung Ihrer Daten
 - Verlust des Zugriffs auf bestimmte kritische Funktionen
-- Dateninkonsistenzen
-- Schwerwiegende Verzögerungen, die den Betrieb beeinträchtigen
+- Inkonsistenz in den Daten
+- Schwere Verzögerungen mit Auswirkungen auf die Geschäftstätigkeit
 
 __MITTEL (P3)__:
 
 - Lokalisiertes Leistungsproblem
-- Störung bei einer nicht kritischen Funktion
+- Vorfall bei einer nicht kritischen Funktion
 - Konfigurationsfehler mit begrenzter Auswirkung
-- Vorübergehende Zugriffsprobleme
+- Gelegentliches Zugriffsproblem
 
 __NIEDRIG (P4)__:
 
-- Anfrage zur Untersuchung
+- Untersuchungsaufforderung
 - Anomalie ohne direkte Auswirkung
-- Frage zur Compliance
+- Konformitätsfrage
 - Bedarf an technischer Klärung
 
-__BETRIEBSDIENST (P5)__:
+__DIENST BETRIEBSBEREIT (P5)__:
 
-- Betriebssicherer Service ohne unmittelbares Risiko
+- Dienst betriebsbereit ohne unmittelbares Risiko
 
 <img src={shivaSupport_02} />
 
-Sobald Ihre Anfrage gestellt wurde, können Sie Ihre Anfragen über das __'Hilfe'-Symbol__ oben rechts auf dem Bildschirm aufrufen:
+Nachdem Ihre Anfrage gestellt wurde, können Sie Ihre Anfragen über das __'Lebensring'-Symbol__ oben rechts auf dem Bildschirm wiederfinden:
 
 <img src={shivaSupport_03} />
 
-## Zugriff auf Benutzerfunktionen über die Weboberfläche
+## Zugang zu den Benutzerfunktionen über die Web-Oberfläche
 
-Alle für Ihren Benutzer verfügbaren Funktionen (en fonction de ses droits) befinden sich links auf dem Bildschirm in der grünen Leiste.
-Die Funktionen sind nach Modulen gruppiert. Dies umfasst hauptsächlich :
+Die gesamten Ihrem Benutzer zugänglichen Funktionen (abhängig von seinen Berechtigungen) befinden sich links auf dem Bildschirm, in der grünen Leiste.
+Die Funktionen sind nach Modulen gruppiert. Dies umfasst hauptsächlich:
 
 - Das __Inventar__ Ihrer Ressourcen,
-- Die __Betriebsüberwachung__,
-- Die __Steuerung der IaaS-Ressourcen__ (Calcul, stockage, réseau, ...)
-- Die __Steuerung der OpenIaaS-Ressourcen__ (Calcul, stockage, réseau, ...)
-- Der Zugriff auf __Zusatzdienste__ (Bastion, monitoring, ...)
-- Die __Verwaltung Ihrer Organisation__ (Gestion des tenants, des droits, ...)
+- Das __Tracking der Operationen__,
+- Die __Steuerung der IaaS-Ressourcen__ (Compute, Storage, Netzwerk, ...)
+- Die __Steuerung der OpenIaaS-Ressourcen__ (Compute, Storage, Netzwerk, ...)
+- Der Zugang zu den __Zusatzdiensten__ (Bastion, Monitoring, ...)
+- Die __Verwaltung Ihrer Organisation__ (Verwaltung der Tenants, der Berechtigungen, ...)
 
-Die Aktivierung eines Moduls für einen Benutzer hängt von den Benutzerberechtigungen ab. Beispielsweise ist das Modul __'Commande'__ nicht verfügbar, wenn der Benutzer nicht über die Berechtigung __'ORDER'__ verfügt.
+Die Aktivierung eines Moduls für einen Benutzer hängt von den Berechtigungen des Benutzers ab. Zum Beispiel ist das Modul __'Commande'__ nicht verfügbar, wenn der Benutzer nicht über die Berechtigung __'ORDER'__ verfügt.
 
-Im Folgenden werden die verschiedenen verfügbaren Module vorgestellt. Neue Module erweitern die Konsole regelmäßig :
+Hier ist eine Übersicht der verfügbaren Module. Neue Module erweitern die Konsole regelmäßig:
 <div style={{display: 'flex'}}>
 <img src={shivaOnboard_007} style={{'margin-right': 20}}/>
 <div>
-- __Dashboard__ : bietet einen schnellen Überblick über die __Gesamtzahl der Rechen- und Speicherressourcen__, die __Backup-Statistiken__ und eine __Zusammenfassung der Support-Tickets__,
-- __Inventar__ : bietet einen Überblick über alle Ressourcen vom Typ __'virtuelle Maschinen'__. Wenn __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (par exemple, vue métier, vue applicatif, ...),
-- __Managed Services__ : bietet Zugriff auf die Verfolgung Ihrer __Supportanfragen__ und die __Service-Metriken__,
-- __IaaS__ : ermöglicht die __Steuerung der VMware IaaS-Infrastrukturen__ (Machines virtuelles, clusters, hyperviseurs, réplications, sauvegarde, ...),
-- __OpenIaaS__ : ermöglicht die __Steuerung der Xen Orchestra-Ressourcen__ (Machines virtuelles, sauvegarde, ...),
-- __OpenShift__ : ermöglicht die Steuerung Ihrer **RedHat OpenShift PaaS-Architektur** und das Management Ihrer Container in den 3 Verfügbarkeitszonen der Plattform.
-- __Bastion__ : Ermöglicht das Bereitstellen und Steuern von SSH/RDP-Bastion-Appliances in Ihren Netzwerken,
-- __Netzwerk__ : ermöglicht die Steuerung von __Layer-2- und Layer-3-Netzwerken__, __öffentlichen IPs__ und Ihren __Telekom-Leitungen__,
-- __Colocation__ : Bietet einen Überblick über die Geräte in der __gemeinsamen oder dedizierten Colocation-Zone__,
-- __Bestellung__ : Ermöglicht die Bestellung von Ressourcen und die Verfolgung der Bereitstellungen,
-- __Verwaltung__ : Bündelt die Verwaltungsfunktionen für Benutzer und Tenants sowie den Zugriff auf die globale Protokollierung.
+- __Dashboard__ : ermöglicht einen schnellen Überblick über die __Gesamtheit der Compute- und Storage-Ressourcen__, die Statistiken zur __Backup__ und eine __Zusammenfassung der Support-Tickets__,
+- __Inventar__ : ermöglicht einen Überblick über alle Ihre Ressourcen vom Typ __'virtuelle Maschinen'__. Falls __Tags__ verwendet werden, ermöglicht es eine Ansicht nach __Tag__ (z. B. geschäftliche Ansicht, Anwendungsansicht, ...),
+- __Infogérance__ : gibt Zugriff auf das Tracking Ihrer __Support-Anfragen__ und auf die __Metrik der Dienste__,
+- __IaaS__ : ermöglicht die __Steuerung der IaaS-VMware-Infrastrukturen__ (Virtuelle Maschinen, Cluster, Hypervisoren, Replikationen, Backup, ...),
+- __OpenIaaS__ : ermöglicht die __Steuerung der Xen Orchestra-Ressourcen__ (Virtuelle Maschinen, Backup, ...),
+- __OpenShift__ : ermöglicht die Steuerung Ihrer **PaaS-Architektur RedHat OpenShift** und das Management Ihrer Container in den 3 Verfügbarkeitszonen der Plattform.
+- __Bastion__ : Ermöglicht das Deployment und die Steuerung von SSH/RDP-Bastion-Appliances in Ihren Netzwerken,
+- __Netzwerk__ : ermöglicht die Steuerung der __Netzwerke der Ebene 2 und 3__, der __öffentlichen IPs__ und Ihrer __Telekom-Kreisläufe__,
+- __Colocation__ : Bietet einen Überblick über die Geräte in der __gemeinsam genutzten oder dedizierten Colocation-Zone__,
+- __Commande__ : Ermöglicht die Bestellung von Ressourcen und das Tracking der Deployments,
+- __Administration__ : Gruppiert die Verwaltungsfunktionen für Benutzer und Tenants sowie den Zugriff auf die globale Protokollierung.
 </div>
 </div>
-Die Symbole __'NEW'__ bedeuten, dass das betreffende Produkt bereitgestellt wurde, aber noch nicht als __SecNumCloud-Angebot__ zertifiziert ist, und __'BETA'__ bedeutet, dass das betreffende Produkt bereitgestellt wurde und gerade als __SecNumCloud-Angebot__ zertifiziert wurde.
+Die Piktogramme __'NEW'__ bedeuten, dass das betreffende Produkt provisioniert wurde, aber noch nicht als __SecNumCloud-Angebot__ qualifiziert ist, und __'BETA'__ bedeutet, dass das betreffende Produkt provisioniert wurde und gerade als __SecNumCloud-Angebot__ qualifiziert wurde.
 
 ## Protokollierung - Aktivitätsverfolgung
 
-Die Aktivitätsseite dient dazu, eine vollständige Übersicht über alle Lese- und Schreibvorgänge in der Konsole zu bieten und gewährleistet so eine verbesserte Nachverfolgbarkeit und Sicherheit. Sie zeigt die beiden Hauptregisterkarten: Aktuell und Archiviert.
+Die Aktivitäten-Seite dient dazu, eine vollständige Sichtbarkeit über alle Lese- und Schreiboperationen innerhalb der Konsole bereitzustellen und somit eine erhöhte Nachverfolgbarkeit und Sicherheit zu gewährleisten. Sie hebt die beiden Haupt-Registerkarten hervor: Letzte und Archivierte.
 
 <img src={shivaLogs} />
 
-### __Seitenstruktur__
+Es ist möglich, das Detail eines Logs zu öffnen, indem man seine Zeile aufklappt.
+
+<img src={shivaLogsDetail} />
+
+### __Struktur der Seite__
 
 #### __Registerkarten__
 
-- __Kürzlich__
+- __Letzte__
 
-- Kürzliche Vorgänge
-- Echtzeit-Überwachung
+- Letzte Operationen
+- Echtzeit-Tracking
 
-- __Archiviert__
+- __Archivierte__
 
-- Vorgänge über einen längeren Zeitraum
-- Archivierte Vorgänge zur Rückverfolgbarkeit und Compliance
+- Operationen über einen längeren Zeitraum
+- Archivierte Operationen zur Nachverfolgbarkeit und Konformität
 
 #### __Angezeigte Informationen__
 
 - Datum und Uhrzeit
 
-- Operationstyp
-  - Status
+- Typ der Operation
+  - Der Status
 - Benutzer
-- Operationsbeschreibung
+- Beschreibung der Operation
 
 #### __Funktionalität__
 
 - Suche/Filterung für spezifische Operationen
 
-### __Nutzung__
+### __Verwendung__
 
-- __Zugriff :__ Berechtigung `activity_read`
+- __Zugang :__ Berechtigung `activity_read`
 - __Navigation :__
-  - Wählen Sie die Registerkarte "Neueste" für Echtzeitoperationen.
-  - Wählen Sie "Archiviert", um den Verlauf einzusehen.
-  - Nutzen Sie die Such- und Filterfunktionen, um bestimmte Operationen zu finden.
+  - Wählen Sie die Registerkarte "Letzte" für Echtzeit-Operationen.
+  - Wählen Sie "Archivierte", um den Verlauf einzusehen.
+  - Verwenden Sie die Such- und Filterfunktionen, um spezifische Operationen zu lokalisieren.
 
 #### __Hinweis zur Konformität__
 
-Gemäß der SecNumCloud-Qualifikation beträgt die Aufbewahrungsfrist für die Ereignisse der Cloud Temple-Konsole mindestens __6 Monate__, wodurch die Einhaltung der Sicherheits- und Nachverfolgbarkeitsanforderungen gewährleistet wird.
+Gemäß der SecNumCloud-Qualifikation beträgt die Speicherdauer der Ereignisse der Cloud Temple Konsole mindestens __6 Monate__, was somit die Einhaltung der Sicherheits- und Nachverfolgbarkeitsanforderungen gewährleistet.
 
-## Übersicht der neuesten Updates
+## Einsichtnahme in die letzten Aktualisierungen
 
-Klicken Sie unten links auf dem grünen Banner auf das Symbol __'Neuigkeiten'__. Sie erhalten die Details zu den Änderungen für jede Version der Cloud Temple-Konsole.
+Klicken Sie unten links in der grünen Leiste auf das Symbol __'Neuigkeiten'__. Sie erhalten die Details der Änderungen für jede Version der Cloud Temple Konsole.
 
 <img src={shivaOnboard_009} />
 
-## Zugriff auf Benutzerfunktionen über die API
+## Zugang zu den Benutzerfunktionen über die API
 
-Der Zugriff auf alle Funktionen der Konsole ist über die Konsole-API möglich. Sie können die Details zu den Verben und Konfigurationen über __'Profil'__ und __'APIs'__ :
+Der Zugang zu allen Funktionen der Konsole ist über die Konsole-API möglich. Sie können die Details der Verben und Konfigurationen über __'Profil'__ und __'APIs'__ einsehen:
 
 <img src={shivaOnboard_008} />
 
-## Terraform-Provider
+## Terraform Provider
 
-Cloud Temple stellt Ihnen einen [provider Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu verwalten.
+Cloud Temple stellt Ihnen einen [Terraform Provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) zur Verfügung, um Ihre Cloud-Plattform *"as code"* zu steuern.
