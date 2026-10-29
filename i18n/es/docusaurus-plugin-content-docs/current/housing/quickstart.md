@@ -8,8 +8,8 @@ Esta guía **Quickstart Housing** le acompaña para iniciar rápidamente con el 
 ## Paso 1: Realizar una solicitud de alojamiento
 
 1. Acceda a la consola Cloud Temple.
-2. Abra un expediente de servicio proporcionando:
-   - Nombre de su organización.
+2. Realice su pedido desde el módulo __Pedidos (Order)__. Para una operación que la consola no admita, contacte con el soporte. Indique en particular:
+   - Nombre de su organización y del tenant.
    - Datos de contacto de un contacto (correo electrónico y teléfono).
    - Tipo de alojamiento deseado (compartido por 'U' o dedicado por rack).
    - Cantidad y características del equipo (dimensiones, peso, consumo, etc.).

@@ -7,9 +7,9 @@ This **Quickstart Housing** guide helps you get started quickly with the Cloud T
 
 ## Step 1: Submit a hosting request
 
-1. Access the Cloud Temple console.
-2. Open a service folder by providing:
-   - Your organization's name.
+1. Access the Cloud Temple Console.
+2. Place your order from the __Orders (Order)__ module. For an operation that the Console does not support, contact support. Specify in particular:
+   - Your organization's name and the tenant name.
    - Contact details (email and phone number).
    - Desired hosting type (shared per 'U' or dedicated per rack).
    - Quantity and specifications of the equipment (size, weight, power consumption, etc.).

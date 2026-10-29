@@ -1,10 +1,8 @@
-
-
 ---
 title: Tutorial
 ---
 
-Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dal portale Console.
+Questi tutorial ti aiuteranno a gestire il tuo hosting Housing dalla console Cloud Temple.
 
 <div class="card">
   <h3>Tutorial</h3>
