@@ -12,6 +12,12 @@
       "es": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093",
       "it": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093"
     },
+    "ai_overview.md": {
+      "en": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "de": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "es": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "it": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e"
+    },
     "bastion/bastion.md": {
       "en": "fabad2fbe37852910c499fa0c298469c439761d1aef29993b86eebff591ac6be",
       "de": "fabad2fbe37852910c499fa0c298469c439761d1aef29993b86eebff591ac6be",
@@ -132,6 +138,12 @@
       "es": "2f2c677773cad529a9613b4e9cc4b76ee36074b60020a5140b97c990537e9102",
       "it": "2f2c677773cad529a9613b4e9cc4b76ee36074b60020a5140b97c990537e9102"
     },
+    "console/onboarding.md": {
+      "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "de": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "es": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "it": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321"
+    },
     "console/orders.md": {
       "en": "7c75b25f2641edf9a70e72221b466dc55146c9ab9432198bc797f5d027356a86",
       "de": "7c75b25f2641edf9a70e72221b466dc55146c9ab9432198bc797f5d027356a86",
@@ -239,6 +251,18 @@
       "de": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
       "es": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
       "it": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7"
+    },
+    "gpu/concepts.md": {
+      "en": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "de": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "es": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "it": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30"
+    },
+    "gpu/gpu.md": {
+      "en": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "de": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "es": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "it": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0"
     },
     "home.md": {
       "en": "395ece8c9e2c3b79ed282ae528a2bf00fdf9832477cd1b7532a66468d75ca0ea",
@@ -522,6 +546,12 @@
       "es": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2",
       "it": "d5da45892228df9547e45dc021445b4fa8374e8bab0a79b70c3077de26cb64f2"
     },
+    "managed_kubernetes/tutorials/usingstorage.md": {
+      "en": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
+      "de": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
+      "es": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
+      "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
+    },
     "managed_mariadb/concepts.md": {
       "en": "fdcfd4e274a14227015a33940ab621bbd1fe38c276655d79a71e671ecf937872",
       "de": "fdcfd4e274a14227015a33940ab621bbd1fe38c276655d79a71e671ecf937872",
@@ -648,11 +678,23 @@
       "es": "84cdbd3a76be4dfea7e2afef36ecdf99ef49d77b75f7dc1717e7f8d8cb27c36d",
       "it": "84cdbd3a76be4dfea7e2afef36ecdf99ef49d77b75f7dc1717e7f8d8cb27c36d"
     },
+    "network/internet/tutorials/opensense.md": {
+      "en": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
+      "es": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
+      "de": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
+      "it": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8"
+    },
     "network/internet/tutorials/pfSense.md": {
       "en": "cbbc5f76a570e697856f1fe93387d7a5e361b7edcbc4b2b403fc680e57bccf49",
       "de": "cbbc5f76a570e697856f1fe93387d7a5e361b7edcbc4b2b403fc680e57bccf49",
       "es": "cbbc5f76a570e697856f1fe93387d7a5e361b7edcbc4b2b403fc680e57bccf49",
       "it": "cbbc5f76a570e697856f1fe93387d7a5e361b7edcbc4b2b403fc680e57bccf49"
+    },
+    "network/internet/tutorials/stormchield.md": {
+      "en": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
+      "de": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
+      "es": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
+      "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     },
     "network/network_overview.md": {
       "en": "b8bdf4e044044775b374f16306b54ba8d2159522760d996911cf8b1c97e25f6e",
@@ -773,6 +815,12 @@
       "de": "3b3aa494441de73f72fc944bdaa5ede29e4fcde7ebe7ba2153f8eef4f3270932",
       "es": "3b3aa494441de73f72fc944bdaa5ede29e4fcde7ebe7ba2153f8eef4f3270932",
       "it": "3b3aa494441de73f72fc944bdaa5ede29e4fcde7ebe7ba2153f8eef4f3270932"
+    },
+    "public_cloud/vm_instances/faq.md": {
+      "es": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "de": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "en": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
+      "it": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283"
     },
     "public_cloud/vm_instances/quickstart.md": {
       "en": "e6fe08cf39cb367c382cf5455716a3672cab582b0ed4ed084287749d2c5fd9bf",
@@ -917,36 +965,6 @@
       "de": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0",
       "es": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0",
       "it": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0"
-    },
-    "managed_kubernetes/tutorials/usingstorage.md": {
-      "en": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
-      "de": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
-      "es": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a",
-      "it": "695d30553cf371dfc570277a42ca4065f52653eb875e00f04a8fb3189e13df2a"
-    },
-    "public_cloud/vm_instances/faq.md": {
-      "es": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
-      "de": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
-      "en": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
-      "it": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283"
-    },
-    "console/onboarding.md": {
-      "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
-      "de": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
-      "es": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
-      "it": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321"
-    },
-    "network/internet/tutorials/opensense.md": {
-      "en": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
-      "es": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
-      "de": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8",
-      "it": "fbbb18c3613b9d812b1634d2a861d7413aab5f393bce9ca0372d7c7e822458d8"
-    },
-    "network/internet/tutorials/stormchield.md": {
-      "en": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
-      "de": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
-      "es": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527",
-      "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
   "last_update": "2026-10-28T00:34:58.972008",

@@ -35,6 +35,14 @@
     "message": "AI",
     "description": "The label for category 'AI' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.LLMaaS": {
+    "message": "LLMaaS",
+    "description": "The label for category 'LLMaaS' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.GPU": {
+    "message": "GPU",
+    "description": "The label for category 'GPU' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.llmaas_tutorials": {
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
