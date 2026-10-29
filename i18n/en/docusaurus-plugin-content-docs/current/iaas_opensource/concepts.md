@@ -18,7 +18,7 @@ Although fully automated through APIs and a Terraform provider, the offering pro
 | Benefit             | Description                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Digital trust       | Data hosting in France and GDPR compliance.                                                                                                    |
-| Security            | Highly secure platform, __SecNumCloud__-qualified, certified __HDS__ (Health Data Hosting) and __ISO 27001__.                                  |
+| Security            | Highly secure platform, __SecNumCloud__-qualified, certified __HDS__ (Health Data Hosting), __ISO 27001__ and __ISAE 3402 type II__. |
 | High availability   | Platform availability rate of 99.99%, measured monthly, including maintenance windows.                                                         |
 | Resilience          | Implementation of business continuity or disaster recovery plans as needed.                                                                     |
 | Automation          | Fully automated platform designed to integrate into a digital transformation program.                                                           |
@@ -187,7 +187,7 @@ Tools are a set of software components that improve the integration of the virtu
 
 ## Security and compliance
 
-IaaS OpenSource is certified HDS and ISO 27001, Gaia-X Label Level 3, CISPE-compliant and C5-compliant, and SecNumCloud-qualified by [ANSSI](https://www.ssi.gouv.fr/).
+IaaS OpenSource is certified HDS, ISO 27001 and ISAE 3402 type II, Gaia-X Label Level 3, CISPE-compliant and C5-compliant, and SecNumCloud-qualified by [ANSSI](https://www.ssi.gouv.fr/).
 
 ### Block storage security and encryption
 

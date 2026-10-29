@@ -18,7 +18,7 @@ Obwohl vollständig automatisiert durch APIs und einen Terraform-Provider, biete
 | Vorteil             | Beschreibung                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Digitales Vertrauen | Hosting der Daten in Frankreich und DSGVO-Konformität.                                                                                          |
-| Sicherheit          | Hochsichere Plattform, __SecNumCloud__-qualifiziert, nach __HDS__ (Hosting von Gesundheitsdaten) und __ISO 27001__ zertifiziert.              |
+| Sicherheit          | Hochsichere Plattform, __SecNumCloud__-qualifiziert, nach __HDS__ (Hosting von Gesundheitsdaten), __ISO 27001__ und __ISAE 3402 Typ II__ zertifiziert. |
 | Hohe Verfügbarkeit  | Verfügbarkeitsrate der Plattform von 99,99 %, monatlich gemessen, einschließlich Wartungsfenster.                                              |
 | Resilienz           | Einführung von Kontinuitäts- oder Wiederherstellungsplänen je nach Bedarf.                                                                     |
 | Automatisierung     | Vollautomatisierte Plattform, konzipiert zur Integration in ein digitales Transformationsprogramm.                                             |
@@ -187,7 +187,7 @@ Tools sind eine Sammlung von Softwarekomponenten, die die Integration der virtue
 
 ## Sicherheit und Compliance
 
-IaaS OpenSource ist nach HDS und ISO 27001 zertifiziert, trägt das Gaia-X-Label Stufe 3, ist CISPE-konform und C5-konform und von der [ANSSI](https://www.ssi.gouv.fr/) SecNumCloud-qualifiziert.
+IaaS OpenSource ist nach HDS, ISO 27001 und ISAE 3402 Typ II zertifiziert, trägt das Gaia-X-Label Stufe 3, ist CISPE-konform und C5-konform und von der [ANSSI](https://www.ssi.gouv.fr/) SecNumCloud-qualifiziert.
 
 ### Sicherheit und Verschlüsselung der Block-Speicherung
 
