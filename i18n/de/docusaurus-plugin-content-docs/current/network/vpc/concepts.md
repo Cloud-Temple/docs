@@ -2,64 +2,133 @@
 title: Konzepte
 ---
 
-# VPC-Konzepte
+<a id="concepts-vpc"></a>
+<a id="définition-et-positionnement"></a>
 
-## Definition und Positionierung
+## Einführung
 
-Der **VPC (Virtual Private Cloud)** ist ein verwalteter Netzwerkdienst, der die Erstellung isolierter, sicherer und über die Cloud Temple-Konsole steuerbarer privater Netzwerke ermöglicht. Er ist darauf ausgelegt, ein cloud-native-Erlebnis zu bieten, indem er die Konfiguration von Netzwerk und Sicherheit automatisiert.
+Der **VPC (Virtual Private Cloud)** ist ein verwalteter Netzwerkdienst, mit dem sich isolierte, sichere und über die Cloud Temple-Konsole steuerbare private Netzwerke erstellen lassen. Er bietet ein Cloud-native-Erlebnis: Die Konfiguration von Netzwerk und Sicherheit ist automatisiert, ohne dass Netzwerkgeräte installiert oder verwaltet werden müssen.
 
-Stand Januar 2026 ermöglichen die privaten Netzwerke des VPC die Vernetzung der Dienste **IaaS Open Source** und **IaaS VMware**. Die Vernetzung mit **Bare Metal**-Servern wird in einem kommenden Update verfügbar sein.
+Die privaten Netzwerke des VPC verbinden die Dienste **IaaS OpenSource**, **IaaS VMware** und **VM Instances** miteinander.
 
-### VPC vs Privates Backbone
+### VPC vs Private Backbone
 
-Cloud Temple bietet zwei Netzwerknutzungsmodelle an:
+Es werden zwei Netzwerk-Nutzungsmodelle angeboten:
 
-* **Privates Backbone (Historisches Angebot)** :
-  * Ideal für Experten, die maximale Autonomie und spezifische Netzwerkkonfigurationen (erweitertes Layer 2) suchen.
-  * Erfordert die manuelle Installation und Verwaltung von Sicherheitsgeräten (Firewalls, Router).
-  * Manuelle Verwaltung des Adressplans.
+* **Private Backbone (historisches Angebot)**:
+  * ideal für Experten, die maximale Autonomie und spezifische Netzwerkkonfigurationen (erweitertes L2) suchen;
+  * erfordert die manuelle Installation und Verwaltung von Sicherheitsgeräten (Firewalls, Router);
+  * manuelle Verwaltung des Adressplans.
 
-* **VPC (Neues Produkt)** :
-  * Entwickelt für ein cloud-natives und automatisiertes Erlebnis.
-  * Integrierte Sicherheit (Gateway, Firewalling, NAT) ohne Verwaltung von Drittanbietergeräten.
-  * Managed Service mit von Cloud Temple garantierter Hochverfügbarkeit.
-  * Ideal für moderne Projekte, DevOps und das Hosting von Webanwendungen.
+* **VPC**:
+  * konzipiert für ein Cloud-natives und automatisiertes Erlebnis;
+  * integrierte Sicherheit (Gateway, Filterung, NAT) ohne Verwaltung von Drittanbietergeräten;
+  * verwalteter, hochverfügbarer Dienst;
+  * ideal für moderne Projekte, DevOps und das Hosting von Webanwendungen.
 
-## Architecture
+<a id="cas-dusage"></a>
 
-Der VPC basiert auf einer redundanten und hochverfügbaren Architektur, die den niedriglatenten inter-AZ-Backbone von Cloud Temple nutzt.
+### Zielgruppen und Anwendungsfälle
+
+* **Hosting kritischer Anwendungen**, das eine starke Isolierung erfordert.
+* **Multi-Projekt-Segmentierung** (Produktion, Vorproduktion, Entwicklung).
+* **Testumgebungen**, kurzlebig und isoliert.
+* **Souveräne Netzwerkgrundlagen** für sensible Daten.
+
+## Vorteile
+
+| Vorteil                     | Beschreibung                                                                                |
+|-----------------------------|---------------------------------------------------------------------------------------------|
+| Hochverfügbarkeit           | Die Datenebene ist für eine Verfügbarkeit von 99,99 % ausgelegt.                            |
+| Multi-Zonen ohne Neukonfiguration | Ein einziger Adressplan erstreckt sich über mehrere Verfügbarkeitszonen, ohne IP-Neukonfiguration. |
+| Integrierte Sicherheit      | Gateway, Filterung und NAT sind enthalten, ohne zu verwaltende Netzwerkgeräte.              |
+| Einheitliche Steuerung      | Verwaltung über die Konsole oder per API.                                                   |
+| Souveränität                | SecNumCloud-qualifizierter Dienst.                                                          |
+
+<a id="fonctionnalités-principales"></a>
+
+## Funktionen
+
+| Funktion                      | Beschreibung                                                                |
+|-------------------------------|-----------------------------------------------------------------------------|
+| **Regionale private Netzwerke** | Multi-AZ-Bereitstellung und transparente L2-Ausbreitung.                  |
+| **Private Networks**          | Segmentierte Netzwerke, zwischen Cloud Temple-Angeboten verbindbar.         |
+| **Natives Routing**           | Automatische Kommunikation zwischen den privaten Netzwerken desselben VPC.  |
+| **IPAM & DHCP**               | Reservierung von IP-Adressen, Verwaltung der Pools und dynamische Zuweisung. |
+| **Internetzugang**            | Konfigurierbar über das Gateway (NAT, DNAT, kontrollierter Egress).         |
+| **Floating IPs**              | Flexible Bereitstellung von Diensten im Internet.                           |
+| **Flussrichtlinien**          | Integrierte Sicherheitsfilterung für Nord-Süd- und Ost-West-Flüsse.         |
+| **Observability**             | Protokolle und Leistungsmetriken des Netzwerks.                             |
+| **Inter-VPC-Peering**         | Verbindung von VPCs (kostenpflichtige Option).                              |
+
+### Bereitstellungsmodi
+
+* **VPC im dedizierten Modus**: Voraussetzung ist ein Abonnement des Angebots IaaS OpenSource. Die VPC-Instanzen (Router, Gateways) werden direkt auf Ihrer dedizierten Infrastruktur bereitgestellt: Die Rechenressourcen, die Ihre Netzwerkdienste tragen, sind physisch isoliert.
+* **VPC im gemeinsam genutzten Modus**: Dieser Modus stützt sich auf das Angebot VM Instances. Er stellt den VPC ohne vorherige dedizierte Infrastruktur bereit, für punktuelle Anforderungen oder Cloud-native-Umgebungen.
+
+## Architektur
+
+Der VPC beruht auf einer redundanten und hochverfügbaren Architektur, die sich auf den latenzarmen Inter-AZ-Backbone von Cloud Temple stützt.
 
 ### Schlüsselkomponenten
 
-* **VPC-Router** : Im Zentrum jedes VPC verwaltet er das dynamische Routing zwischen den verschiedenen Private Networks (trafic est-ouest).
-* **Private Netzwerke (VLANs)** : Netzwerksegmente auf Ebene 2, die Ihre Ressourcen (VMs, serveurs) verbinden. Sie erstrecken sich nativ über mehrere Verfügbarkeitszonen (AZ) hinweg, ohne dass eine IP-Neukonfiguration erforderlich ist.
-* **Externes Gateway (External Gateway)** : Optioneller Ein- und Ausgangspunkt für den Internetverkehr (nord-sud). Es integriert NAT-Funktionen und Traffic-Management.
+* **VPC-Router**: Im Zentrum jedes VPC verwaltet er das dynamische Routing zwischen den verschiedenen Private Networks (Ost-West-Verkehr).
+* **Private Networks (VLANs)**: Netzwerksegmente der Schicht 2, die Ihre Ressourcen (VMs, Server) verbinden. Sie erstrecken sich nativ über mehrere Verfügbarkeitszonen, ohne IP-Neukonfiguration.
+* **Externes Gateway (External Gateway)**: optionaler Ein- und Ausgangspunkt für den Internetverkehr (Nord-Süd). Es integriert NAT- und Flussverwaltungsfunktionen.
+
+### Integrationen
+
+* **Metriken**: Die Leistungs- und Verbrauchsmetriken des VPC (Datenverkehr, Status der Gateways usw.) sind über die API der Konsole im Prometheus-Format exportierbar.
+
+## Regionen und Verfügbarkeitszonen
+
+Der VPC ist in der Region FR1 verfügbar. Seine privaten Netzwerke erstrecken sich über mehrere Verfügbarkeitszonen, mit einem einzigen Adressplan.
+
+## Technische Spezifikationen
+
+| Parameter                 | Wert                            |
+|---------------------------|---------------------------------|
+| VPC pro Tenant            | 8                               |
+| Private Netzwerke pro VPC | 16                              |
+| IP-Adressierung           | RFC 1918 / RFC 4193             |
+| Inter-VPC-Peering         | Unterstützt (kostenpflichtige Option) |
+| Inter-AZ-Verkehr          | Inbegriffen                     |
+| Eingehender Verkehr       | Inbegriffen                     |
+
+### Grenzen
+
+* 8 VPC pro Tenant und 16 private Netzwerke pro VPC.
+
+## Sicherheit und Compliance
+
+Der VPC ist nach HDS und ISO 27001 zertifiziert und SecNumCloud-qualifiziert.
+
+<a id="isolation-et-sécurité"></a>
 
 ### Isolierung und Sicherheit
 
 Der VPC gewährleistet eine strikte Isolierung:
 
-* Jeder VPC ist eine eigenständige Netzwerkentität.
-* Die Bereitstellung erfolgt auf dedizierten Ressourcen (für Open-Source-IaaS-Kunden), wodurch sichergestellt wird, dass keine Netzwerkressourcen gemeinsam genutzt werden.
-* Der Dienst ist **SecNumCloud**-zertifiziert.
+* jeder VPC ist eine unabhängige Netzwerkeinheit, logisch von den anderen Tenants isoliert;
+* im dedizierten Modus erfolgt die Bereitstellung auf dedizierten Ressourcen: Keine Netzwerkressource wird zwischen Kunden geteilt;
+* alle Konfigurationsvorgänge sind über die Konsole nachvollziehbar.
 
-## Hauptfunktionen
+## Dienstverfügbarkeit
 
-| Funktion | Beschreibung | Verfügbarkeit |
-|----------------|-------------|---------------|
-| **Regionale Private Netzwerke** | Multi-AZ-Bereitstellung und transparente L2-Ausbreitung. | Verfügbar |
-| **Natives Routing** | Automatische Kommunikation zwischen privaten Netzwerken desselben VPC. | Verfügbar |
-| **IPAM & DHCP** | Automatisierte Verwaltung von Adresspools und dynamische Zuweisung. | Verfügbar |
-| **Internetzugriff** | Konfigurierbar über das Gateway (NAT, DNAT, kontrollierter Egress). | Verfügbar |
-| **Floating IPs** | Flexible Bereitstellung von Diensten im Internet. | Verfügbar |
-| **Mikrosegmentierung** | Netzwerkrichtlinien-Gruppen für erweiterte Sicherheit. | S1 2026 |
-| **Observability** | Protokolle und Leistungsmetriken des Netzwerks. | S1 2026 |
-| **DNS-Dienst** | Interne und externe Namensauflösung. | S2 2026 |
-| **VPN & Cloud Connect** | Sichere Konnektivität zu On-Premise-Umgebungen und öffentlichen Clouds. | S2 2026 |
+| Element                                                      | Verfügbarkeitsziel, gemessen über einen Monat |
+|--------------------------------------------------------------|-----------------------------------------------|
+| Datenebene (Routing zwischen Netzwerken, NAT, DNAT)          | 99,99 %                                       |
+| Steuerungsebene (API, Konsole)                               | 99,9 %                                        |
 
-## Anwendungsfälle
+## Verantwortlichkeiten
 
-* **Hosting kritischer Anwendungen**, das eine starke Isolation erfordert.
-* **Multi-Projekt-Segmentierung** (Prod, Pre-prod, Dev).
-* **Testumgebungen**, die ephemere und isoliert sind.
-* **Souveräne Netzwerkinfrastrukturen** für sensible Daten.
+Die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple ist in der [Verantwortlichkeitsmatrix (RACI) VPC](../../contractual/network/raci_vpc.md) beschrieben.
+
+## Reversibilität
+
+Die Konfiguration des VPC kann nach Ende des Dienstes 30 Tage lang in einen S3-Speicher exportiert werden.
+
+## Preise
+
+Die Preise des VPC sind auf der Produktseite auf der Cloud Temple-Website veröffentlicht:
+[VPC — Preise](https://www.cloud-temple.com/produits/virtual-private-cloud-souverain/).
