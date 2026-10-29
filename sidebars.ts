@@ -146,6 +146,15 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'GPU',
+          link: { type: 'doc', id: 'gpu/gpu' },
+          items: [
+            'gpu/gpu',
+            'gpu/concepts',
+          ],
+        },
       ],
     },
     {
