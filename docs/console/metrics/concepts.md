@@ -38,6 +38,7 @@ Ce proxy vous permet de requêter et manipuler les donnes depuis un outil de vis
 Il est cependant possible de visualiser certaines données de performances de vos ressources Cloud dans l'interface web de la Console.
 
 *__Nota :__ La philosophie __Cloud Temple__ n'est pas d'intégrer uniquement des graphiques dans l'interface web, mais aussi d'offrir le maximum d'informations accessibles par l'API*
+
 Le service inclut aussi la visibilité sur les opérations planifiées et les incidents (interventions, maintenances, rapports d'incidents) depuis la Console, avec des notifications par e-mail.
 
 ## Avantages
