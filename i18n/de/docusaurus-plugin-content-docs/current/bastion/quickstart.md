@@ -1,18 +1,17 @@
 ---
 title: Schnellstartanleitung
 ---
-import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
 import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
 import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
 import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
-Diese Schnellstartanleitung zeigt Ihnen, wie Sie die Erstellung einer Appliance anfordern und wie Sie eine neue Sitzung erstellen und sich damit verbinden.
+Diese Schnellstartanleitung zeigt, wie Sie das Produkt Bastion aktivieren, ein Gerät registrieren und sich damit verbinden.
 
 ## Voraussetzungen
 
-1. Das Cloud Temple-Produkt (Appliance Bastion-Abonnement) muss abonniert sein.
+1. Das Produkt Bastion muss für Ihre Organisation aktiviert sein.
 2. Die zu verwaltenden Geräte müssen aus dem Netzwerk erreichbar sein, in dem die Appliance Bastion bereitgestellt ist.
 3. Es müssen Berechtigungen für das Bastion-Modul vorliegen.
 4. Bei einer On-Premise-Bereitstellung der Appliance müssen die entsprechenden Netzwerkflüsse freigeschaltet sein.
@@ -39,16 +38,15 @@ Mehrere Datenflüsse sind für den ordnungsgemäßen Betrieb der Bastion-Applian
 |--------------------------|------------------------------|-----------|
 | Client-Bastion-Appliance | Die zu verwaltenden Instanzen | TCP/22    |
 
-## Appliance-Erstellung anfordern
+<a id="demander-la-création-dune-appliance"></a>
 
-Bevor eine Appliance bereitgestellt werden kann, muss ein Abonnement für eine Appliance über eine Anfrage an den Support beantragt werden.
-Der Support ist in der Konsole über das Rettungsring-Symbol in der oberen rechten Leiste des Fensters erreichbar.
+## Das Produkt Bastion aktivieren
 
-<img src={shivaSupport} />
+Das Produkt Bastion wird im Self-Service über die Ansicht Organisation der Cloud Temple-Konsole aktiviert. Sie können sich auch an Ihren gewohnten Vertriebsansprechpartner wenden.
 
 ## Gerät registrieren
 
-Um regelmäßig auf ein zu verwaltendes Gerät zugreifen zu können, empfiehlt es sich, eine Sitzung zu erstellen, bei der bei jeder Anmeldung nur Benutzername und Passwort abgefragt werden.
+Um regelmäßig auf ein zu verwaltendes Gerät zugreifen zu können, empfiehlt es sich, es zu registrieren: Bei jeder Anmeldung werden dann nur Ihr Benutzername und Ihr Passwort abgefragt.
 
 Navigieren Sie dazu zum Reiter « Geräte » im Menü « Bastion » und klicken Sie auf die Schaltfläche « Neues Gerät ».
 
@@ -65,7 +63,7 @@ Geben Sie anschließend die für die Erstellung Ihres Geräts erforderlichen Inf
 
 <img src={creerSession2} />
 
-Eine Benachrichtigung über die erfolgreiche Geräteerstellung sollte oben rechts auf der Seite erscheinen. Die Sitzung wird anschließend zur Liste Ihrer Geräte hinzugefügt.
+Eine Benachrichtigung über die erfolgreiche Geräteerstellung sollte oben rechts auf der Seite erscheinen. Das Gerät wird anschließend zur Liste Ihrer Geräte hinzugefügt.
 
 Um ein neues Gerät zu erstellen, können Sie alternativ den Reiter « Appliances » aufrufen und auf die Aktionsleiste der Appliance klicken, der Sie das Gerät zuordnen möchten.
 
