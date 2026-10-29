@@ -133,7 +133,8 @@ La plateforme Red Hat OpenShift de Cloud Temple est conçue comme un produit ré
 
 La plateforme se compose d'un plan de contrôle et de noeuds de travail, tous gérés par l'infrastructure Cloud Temple. Le plan de contrôle est réparti équitablement sur les trois zones de disponibilité, assurant une gestion centralisée et sécurisée. Les noeuds de travail, quant à eux, sont représentés par des lames de calcul, disposées de manière à ce que chaque zone de disponibilité en contienne une.
 
-Pour les noeuds de travail, plusieurs types de lames de calcul sont disponibles, permettant ainsi une adaptation flexible à divers besoins opérationnels :
+Pour les noeuds de travail, plusieurs types de lames de calcul sont disponibles, permettant ainsi une adaptation flexible à divers besoins opérationnels. Ils sont décrits dans la section Caractéristiques techniques.
+
 ## Régions et zones de disponibilité
 
 Le PaaS OpenShift est disponible dans la région FR1. Il est déployé nativement sur trois zones de disponibilité, incluses dans l'offre sans souscription supplémentaire. Les nœuds sont répartis de manière équilibrée entre les trois zones (un nœud par zone).
