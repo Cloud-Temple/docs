@@ -37,10 +37,10 @@
       "it": "efab3a71c16c98efecf08fdd9ce316df25d4990992dba6dc0c2ed94d418e736e"
     },
     "changelog.md": {
-      "en": "018ac6d030819dbeccd273cd609113839b261e8c476ab7fd3f6919601267cca1",
-      "de": "018ac6d030819dbeccd273cd609113839b261e8c476ab7fd3f6919601267cca1",
-      "es": "018ac6d030819dbeccd273cd609113839b261e8c476ab7fd3f6919601267cca1",
-      "it": "018ac6d030819dbeccd273cd609113839b261e8c476ab7fd3f6919601267cca1"
+      "en": "dbb0e6999c39abea4ab7393c0d53cd7253eef35547a94a43e777b5f063222790",
+      "de": "dbb0e6999c39abea4ab7393c0d53cd7253eef35547a94a43e777b5f063222790",
+      "es": "dbb0e6999c39abea4ab7393c0d53cd7253eef35547a94a43e777b5f063222790",
+      "it": "dbb0e6999c39abea4ab7393c0d53cd7253eef35547a94a43e777b5f063222790"
     },
     "changelog_produits.md": {
       "en": "4a12f20715a141fd821019e949b4617af86ce423688f5d3e247ea06992d4791f",
@@ -949,6 +949,6 @@
       "it": "1506296bc21ddd711dc6d1441fd43cabbdb0a0cf09f4c58cca9e18adb6090527"
     }
   },
-  "last_update": "2026-10-28T00:34:58.972008",
+  "last_update": "2026-10-29T09:26:38.649286",
   "version": "2.0"
 }

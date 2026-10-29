@@ -1,13 +1,13 @@
 ---
-title: Registro delle Modifiche
+title: Tracciamento delle Modifiche
 sidebar_position: 2
 ---
 
-# Registro delle Modifiche
+# Tracciamento delle Modifiche
 
 ### 21 Ottobre 2026 : Nuova console Cloud Temple (v5.0.0)
 
-- **Console** : Le [note di rilascio dei prodotti](./changelog_produits.md) presentano le versioni 4.52.1 a 5.0.0, inclusa la nuova console : rifacimento completo dell'interfaccia con tema scuro, navigazione semplificata, nuova pagina di dettaglio delle macchine virtuali, pagine Calcolo e Archiviazione ripensate e esploratore di file Object Storage. La vecchia versione della console resta accessibile fino alla fine di novembre 2026 dalla finestra « Novità ».
+- **Console** : Le [note di rilascio dei prodotti](./changelog_produits.md) presentano le versioni 4.52.1 a 5.0.0, tra cui la nuova console : rifacimento completo dell'interfaccia con tema scuro, navigazione semplificata, nuova pagina di dettaglio delle macchine virtuali, pagine Calcolo e Archiviazione ripensate e esploratore di file Object Storage. La vecchia versione della console resta accessibile fino a inizio dicembre 2026 dalla finestra « Novità ».
 
 ### 12 Ottobre 2026 : Note di rilascio della Console fino alla v4.52.0
 
@@ -35,9 +35,9 @@ sidebar_position: 2
 
 - **Console — Organizzazione** : La [guida di avvio](./console/console_quickstart.md) presenta la vista organizzazione e la gestione dei tenant. La documentazione precisa inoltre il ruolo dei proprietari e le procedure per far evolvere i loro accessi.
 
-### 15 Luglio 2026 : Precisione sulla cifratura Object Storage
+### 15 Luglio 2026 : Precisione sulla crittografia Object Storage
 
-- **Object Storage (Sicurezza)** : La sezione sulla cifratura dei dati a riposo (D@RE) precisa ora che il servizio utilizza una cifratura AES 256 bit certificata FIPS 140-3, tramite la libreria software RSA BSAFE Crypto-J in versione 7.x.
+- **Object Storage (Sicurezza)** : La sezione sulla crittografia dei dati a riposo (D@RE) precisa ora che il servizio utilizza una crittografia AES 256 bit certificata FIPS 140-3, tramite la libreria software RSA BSAFE Crypto-J in versione 7.x.
 
 ### 30 Aprile 2026 : Precisioni sulle prestazioni di archiviazione
 
@@ -45,7 +45,7 @@ sidebar_position: 2
 
 ### 24 Aprile 2026 : Arricchimento della documentazione backup IaaS OpenSource
 
-- **IaaS OpenSource (Backup)** : Arricchimento della sezione backup con precisioni sull'architettura tecnica (backup incrementale, impatto del Thick provisioning sull'archiviazione), la sicurezza (cifratura AES-256, isolamento di rete), il monitoring e i vincoli di pianificazione. Traduzioni disponibili EN/DE/ES/IT.
+- **IaaS OpenSource (Backup)** : Arricchimento della sezione backup con precisioni sull'architettura tecnica (backup incrementale, impatto del Thick provisioning sull'archiviazione), la sicurezza (crittografia AES-256, isolamento di rete), il monitoring e i vincoli di pianificazione. Traduzioni disponibili EN/DE/ES/IT.
 
 ### 20 Aprile 2026 : Aggiornamento del dimensionamento Managed Database
 
@@ -149,7 +149,7 @@ sidebar_position: 2
 
 - **LLMaaS** : Aggiunta di una nuova domanda alla FAQ per presentare la pagina di stato pubblica ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), che permette di monitorare in tempo reale la disponibilità e le prestazioni di ciascun modello.
 - **Contrattuale** : Aggiornamento maggiore del Data Processing Agreement (DPA v2) per riflettere gli ultimi requisiti legali e di conformità.
-- **Console** : Miglioramento e chiarimento della documentazione relativa alla gestione degli ordini.
+- **Console** : Miglioramento e chiarimento della documentazione riguardante la gestione degli ordini.
 - **Marketplace** : Aggiunta di un tutorial dettagliato sulla personalizzazione delle immagini delle macchine virtuali (VM) per creare template riutilizzabili.
 - **LLMaaS** : Aggiunta di una guida per configurare l'estensione VSCode CLINE per utilizzare i modelli di linguaggio di Cloud Temple direttamente dall'editor.
 - **Archiviazione Oggetti (OSS)** : Aggiunta di precisioni sulla politica di ciclo di vita (Lifecycle) per l'eliminazione dei dati.
@@ -162,15 +162,15 @@ sidebar_position: 2
 
 ### Luglio 2025: Novità e aggiornamenti principali
 
-- **Storage Oggetti (OSS)** :
-  - Ristrutturazione completa della sezione tutorial con guide dedicate per strumenti popolari : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer e il SDK Python Boto3.
-  - Aggiunta di dettagli sui concetti di account di storage e il blocco degli oggetti (Object Lock).
+- **Archiviazione Oggetti (OSS)** :
+  - Ristrutturazione completa della sezione tutorial con guide dedicate per strumenti popolari: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer e il SDK Python Boto3.
+  - Aggiunta di dettagli sui concetti di account di archiviazione e il blocco degli oggetti (Object Lock).
 - **IaaS OpenSource** :
   - Aggiunta di una documentazione dettagliata sulla gestione dell'Alta Disponibilità (HA) per i pool di risorse e le macchine virtuali.
 - **Console** :
-  - Aggiornamento della pagina delle alert di sicurezza con le ultime vulnerabilità.
+  - Aggiornamento della pagina delle avvisi di sicurezza con le ultime vulnerabilità.
 - **Rete** :
-  - Aggiunta di nuove capture screen per illustrare la configurazione della connettività IPv6.
+  - Aggiunta di nuove schermate per illustrare la configurazione della connettività IPv6.
 
 ### 29 Giugno 2025: finalizzazione della documentazione LLMaaS
 

@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ### 21 Octobre 2026 : Nouvelle console Cloud Temple (v5.0.0)
 
-- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les versions 4.52.1 à 5.0.0, dont la nouvelle console : refonte complète de l’interface avec thème sombre, navigation simplifiée, nouvelle page de détail des machines virtuelles, pages Calcul et Stockage repensées et explorateur de fichiers Object Storage. L’ancienne version de la console reste accessible jusqu’à fin novembre 2026 depuis la fenêtre « Nouveautés ».
+- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les versions 4.52.1 à 5.0.0, dont la nouvelle console : refonte complète de l’interface avec thème sombre, navigation simplifiée, nouvelle page de détail des machines virtuelles, pages Calcul et Stockage repensées et explorateur de fichiers Object Storage. L’ancienne version de la console reste accessible jusqu’à début décembre 2026 depuis la fenêtre « Nouveautés ».
 
 ### 12 Octobre 2026 : Notes de version de la Console jusqu’à la v4.52.0
 

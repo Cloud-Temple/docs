@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ### 21 de octubre de 2026 : Nueva consola Cloud Temple (v5.0.0)
 
-- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.52.1 a 5.0.0, incluida la nueva consola : rediseño completo de la interfaz con tema oscuro, navegación simplificada, nueva página de detalle de máquinas virtuales, páginas Cómputo y Almacenamiento repensadas y explorador de archivos Object Storage. La versión anterior de la consola sigue accesible hasta finales de noviembre de 2026 desde la ventana « Novedades ».
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.52.1 a 5.0.0, incluida la nueva consola : rediseño completo de la interfaz con tema oscuro, navegación simplificada, nueva página de detalle de máquinas virtuales, páginas de Cómputo y Almacenamiento repensadas y explorador de archivos de Object Storage. La versión anterior de la consola sigue siendo accesible hasta principios de diciembre de 2026 desde la ventana « Novedades ».
 
 ### 12 de octubre de 2026 : Notas de versión de la Consola hasta la v4.52.0
 
@@ -29,13 +29,13 @@ sidebar_position: 2
 
 ### 14 de agosto de 2026 : Aclaración de la gestión de accesos
 
-- **Consola — Gestión de accesos** : La [guía de identidades y permisos](./console/iam/concepts.md) distingue las acciones a realizar a nivel de la organización y de cada tenant, para facilitar la atribución de accesos y la gestión de los propietarios.
+- **Consola — Gestión de accesos** : La [guía de identidades y permisos](./console/iam/concepts.md) distingue las acciones a realizar a nivel de la organización y de cada inquilino, para facilitar la atribución de accesos y la gestión de los propietarios.
 
 ### 7 de agosto de 2026 : Guía de la vista de organización
 
-- **Consola — Organización** : La [guía de inicio](./console/console_quickstart.md) presenta la vista de organización y la gestión de los tenants. La documentación precisa también el rol de los propietarios y los pasos para hacer evolucionar sus accesos.
+- **Consola — Organización** : La [guía de inicio](./console/console_quickstart.md) presenta la vista de organización y la gestión de los inquilinos. La documentación precisa también el rol de los propietarios y los pasos para hacer evolucionar sus accesos.
 
-### 15 de julio de 2026 : Precisión sobre el cifrado Object Storage
+### 15 de julio de 2026 : Precisión sobre el cifrado de Object Storage
 
 - **Object Storage (Seguridad)** : La sección sobre el cifrado de datos en reposo (D@RE) precisa ahora que el servicio utiliza un cifrado AES de 256 bits certificado FIPS 140-3, mediante la biblioteca de software RSA BSAFE Crypto-J en versión 7.x.
 
@@ -47,13 +47,13 @@ sidebar_position: 2
 
 - **IaaS OpenSource (Copia de seguridad)** : Enriquecimiento de la sección de copia de seguridad con precisiones sobre la arquitectura técnica (copia de seguridad incremental, impacto del Thick provisioning en el almacenamiento), la seguridad (cifrado AES-256, aislamiento de red), el monitoreo y las restricciones de planificación. Traducciones disponibles EN/DE/ES/IT.
 
-### 20 de abril de 2026 : Actualización del dimensionamiento Managed Database
+### 20 de abril de 2026 : Actualización del dimensionamiento de Managed Database
 
 - **Managed MariaDB & PostgreSQL** : Actualización de las plantillas de dimensionamiento máximo disponibles para los servicios de bases de datos gestionadas.
 
 ### 17 de abril de 2026 : Instancias VM — documentación ilustrada, tutoriales y traducciones
 
-- **Instancias VM — Enriquecimiento documental** : Rediseño completo e ilustración de la documentación de Instancias VM. La guía de inicio (`quickstart.md`) cubre ahora la totalidad del recorrido del usuario ilustrado : acceso a la sección, lista de VMs, asistente de creación en 9 pasos (familia de instancia, zona de disponibilidad, plantilla de SO, plantilla, nombre/copia de seguridad, Cloud Init, discos, red, resumen), y gestión de las 4 pestañas (Información, Discos, Red, Instantáneas).
+- **Instancias VM — Enriquecimiento documental** : Rediseño completo e ilustración de la documentación de Instancias VM. La guía de inicio (`quickstart.md`) cubre ahora la totalidad del recorrido del usuario ilustrado : acceso a la sección, lista de VMs, asistente de creación en 9 pasos (familia de instancia, zona de disponibilidad, plantilla de SO, gabarito, nombre/copia de seguridad, Cloud Init, discos, red, resumen), y gestión de las 4 pestañas (Información, Discos, Red, Instantáneas).
 - **Instancias VM — Tutoriales** : Creación de 3 tutoriales dedicados en un directorio `tutorials/` : (1) **Crear su primera VM** (asistente completo ilustrado + Cloud Init + disco adicional), (2) **Gestionar los discos** (adición desde la consola + particionado Linux), (3) **Capturar y gestionar instantáneas** (creación, restauración, supresión + buenas prácticas y comparación instantánea/copia de seguridad). La navegación lateral se actualiza con 3 entradas individuales en la categoría Tutoriales.
 
 ### 17 de abril de 2026 : Documentos contractuales, traducciones y armonización terminológica
@@ -64,13 +64,13 @@ sidebar_position: 2
 
 - **Navegación — Cómputo** : Agrupación de Instancias VM (preview), IaaS OpenSource e IaaS VMware bajo una única categoría **Cómputo** en la navegación (PR #277).
 - **Navegación — Red** : Agrupación de VPC (preview) y Private Backbone bajo una única categoría **Red** en la navegación.
-- **Documentos contractuales** : Reestructuración completa de la documentación contractual — creación de una página hub `/contracts` (condiciones generales, condiciones particulares, convenios de servicio SecNumCloud, SLA instancias VM) y de una página hub `/shared-responsibility` (matrices RACI por servicio : IaaS, S3, PaaS, Kubernetes, LLMaaS, Red). El menú lateral contractual se reemplaza por una columna dedicada **Contractual** en el pie de página. Traducciones disponibles EN/DE/ES/IT.
+- **Documentos contractuales** : Reestructuración completa de la documentación contractual — creación de una página hub `/contracts` (condiciones generales, condiciones particulares, convenios de servicio SecNumCloud, SLA de instancias VM) y de una página hub `/shared-responsibility` (matrices RACI por servicio : IaaS, S3, PaaS, Kubernetes, LLMaaS, Red). El menú lateral contractual se reemplaza por una columna dedicada **Contractual** en el pie de página. Traducciones disponibles EN/DE/ES/IT.
 - **Instancias VM** : Actualización del compromiso de nivel de servicio (SLA) del 99,9 % al 99,95 %.
-- **IaaS OpenSource** : Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo, migración a Glacier prevista para el T1 2027).
+- **IaaS OpenSource** : Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo, migración hacia Glacier prevista en el T1 2027).
 
 ### 15 de abril de 2026 : Nueva documentación de instancias VM (Cloud Público)
 
-- **Instancias VM** : Puesta en línea de la documentación inicial del servicio de instancias VM (en preview), nueva oferta de máquinas virtuales mutualizadas de Cloud Temple. La documentación cubre la visión general del servicio, los conceptos técnicos (clases de servicio Development/General Purpose/Performance, plantillas predefinidas y personalizadas, almacenamiento, red VPC, copia de seguridad), así como una guía de inicio completa. El servicio se organiza bajo una nueva categoría **Cloud Público** en la navegación.
+- **Instancias VM** : Puesta en línea de la documentación inicial del servicio de instancias VM (en preview), nueva oferta de máquinas virtuales mutualizadas de Cloud Temple. La documentación cubre la visión general del servicio, los conceptos técnicos (clases de servicio Development/General Purpose/Performance, gabaritos predefinidos y personalizados, almacenamiento, red VPC, copia de seguridad), así como una guía de inicio completa. El servicio se organiza bajo una nueva categoría **Cloud Público** en la navegación.
 
 ### 15 de abril de 2026 : Mejora de la documentación IaaS VMware — métricas de clúster
 
@@ -104,7 +104,7 @@ sidebar_position: 2
 - **Red (Internet)** : Nueva página de **conceptos avanzados** que documenta las comunidades BGP y el control de la Local Preference en el backbone Internet Cloud Temple (AS33930). Incluye una guía de configuración con ejemplo Bird.
 - **LLMaaS** : Actualización del catálogo de modelos y adición del ciclo de vida de los modelos. Adición de los modelos LTS (Long Term Support).
 - **IaaS Bare Metal** : Adición de precisiones sobre el volumen BFS (Boot from SAN) en la guía de inicio : el Volumen 1 está dedicado a la instalación del SO, no compartible dentro de una misma AZ, con recomendación de almacenar los datos en un volumen LUN adicional.
-- **Almacenamiento de Objetos (OSS)** : Adición de una página **FAQ** que cubre el acceso S3, las listas blancas IP, los enlaces pre-firmados y los escenarios de uso recomendados.
+- **Almacenamiento de Objetos (OSS)** : Adición de una página **FAQ** que cubre el acceso S3, las listas blancas de IP, los enlaces pre-firmados y los escenarios de uso recomendados.
 
 ### 10 de febrero de 2026 : Actualización de las tarifas LLMaaS
 
@@ -147,13 +147,13 @@ sidebar_position: 2
 
 ### 18 de octubre de 2025 : Mantenimiento y nuevas documentaciones
 
-- **LLMaaS** : Adición de una nueva pregunta a la FAQ para presentar la página de estado pública ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), permitiendo seguir en tiempo real la disponibilidad y las prestaciones de cada modelo.
+- **LLMaaS** : Adición de una nueva pregunta a la FAQ para presentar la página de estado pública ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), permitiendo seguir en tiempo real la disponibilidad y el rendimiento de cada modelo.
 - **Contractual** : Actualización mayor del Data Processing Agreement (DPA v2) para reflejar los últimos requisitos legales y de conformidad.
 - **Consola** : Mejora y aclaración de la documentación concerniente a la gestión de los pedidos.
 - **Marketplace** : Adición de un tutorial detallado sobre la personalización de las imágenes de máquinas virtuales (VM) para crear plantillas reutilizables.
 - **LLMaaS** : Adición de una guía para configurar la extensión VSCode CLINE para utilizar los modelos de lenguaje de Cloud Temple directamente desde el editor.
-- **Almacenamiento de Objetos (OSS)** : Adición de precisiones sobre la política de ciclo de vida (Lifecycle) para la supresión de los datos.
-- **Almacenamiento de Objetos (OSS)** : Adición de una guía de solución de problemas para los errores de checksum (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
+- **Almacenamiento de Objetos (OSS)** : Adición de precisiones sobre la política de ciclo de vida (Lifecycle) para la supresión de datos.
+- **Almacenamiento de Objetos (OSS)** : Adición de una guía de resolución de problemas para los errores de checksum (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
 - **LLMaaS** : Actualización de la lista de modelos disponibles y retraducción de más de 50 documentos para asegurar la coherencia.
 
 ### 14 de agosto de 2025 : Mejoras y correcciones
