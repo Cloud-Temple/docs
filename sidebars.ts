@@ -285,27 +285,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Private Network',
-          link: { type: 'doc', id: 'network/private_network/private_network' },
-          items: [
-            'network/private_network/private_network',
-            'network/private_network/concepts',
-            'network/private_network/quickstart',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Internet',
-          link: { type: 'doc', id: 'network/internet/internet' },
-          items: [
-            'network/internet/internet',
-            'network/internet/concepts',
-            'network/internet/advanced_concepts',
-            'network/internet/quickstart',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Private Backbone',
           key: 'private_backbone',
           link: { type: 'doc', id: 'network/private_backbone/private_backbone' },
@@ -313,6 +292,36 @@ const sidebars: SidebarsConfig = {
             'network/private_backbone/private_backbone',
             'network/private_backbone/concepts',
             'network/private_backbone/quickstart',
+            {
+              type: 'category',
+              label: 'Private Network',
+              link: { type: 'doc', id: 'network/private_network/private_network' },
+              items: [
+                'network/private_network/private_network',
+                'network/private_network/concepts',
+                'network/private_network/quickstart',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Internet',
+              link: { type: 'doc', id: 'network/internet/internet' },
+              items: [
+                'network/internet/internet',
+                'network/internet/concepts',
+                'network/internet/advanced_concepts',
+                'network/internet/quickstart',
+                {
+                  type: 'category',
+                  label: 'Anti-DDoS',
+                  link: { type: 'doc', id: 'network/anti_ddos/anti_ddos' },
+                  items: [
+                    'network/anti_ddos/anti_ddos',
+                    'network/anti_ddos/concepts',
+                  ],
+                },
+              ],
+            },
             {
               type: 'category',
               label: 'Tutoriels',
