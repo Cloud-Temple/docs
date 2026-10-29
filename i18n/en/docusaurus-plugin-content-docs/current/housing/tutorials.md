@@ -1,10 +1,8 @@
-
-
 ---
 title: Tutorials
 ---
 
-These tutorials help you deploy and manage a Bastion Cloud Temple from the Console portal.
+These tutorials will help you manage your Housing hosting from the Cloud Temple Console.
 
 <div class="card">
   <h3>Tutorials</h3>
