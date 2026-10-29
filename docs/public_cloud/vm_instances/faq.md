@@ -5,6 +5,64 @@ sidebar_position: 4
 
 # FAQ VM Instances
 
+## Que sont les quotas VM Instances ?
+
+Les **quotas** définissent la quantité maximale de ressources que votre tenant
+peut utiliser pour ses VM Instances. Trois plafonds sont définis :
+
+| Quota | Ressource comptabilisée |
+|---|---|
+| **vCPU** | Nombre total de processeurs virtuels alloués aux instances du tenant. |
+| **RAM** | Quantité totale de mémoire allouée aux instances du tenant. |
+| **Stockage** | Capacité totale provisionnée pour les disques système et les disques additionnels. |
+
+Ces plafonds sont partagés entre les instances du tenant. Ils concernent les
+ressources configurées : une VM dotée de **4 vCPU** compte pour 4 vCPU dans le
+décompte, même si ses applications utilisent peu de processeur. Le stockage
+est comptabilisé selon la capacité provisionnée des disques, indépendamment
+de l'espace réellement occupé par les fichiers.
+
+Chaque quota est indépendant : disposer de vCPU disponibles ne permet pas de
+dépasser le plafond de RAM ou de stockage.
+
+Par exemple, avec un quota de **20 vCPU**, si vos instances en comptabilisent
+déjà **16**, vous pouvez demander **4 vCPU supplémentaires**, sous réserve des
+quotas de mémoire et de stockage et de la capacité disponible.
+
+Lorsqu'une opération entraînerait le dépassement d'un quota, elle est refusée.
+C'est notamment le cas lors de la création d'une VM, de l'augmentation de ses
+ressources ou de l'ajout de stockage.
+
+Vous pouvez consulter vos plafonds et leur utilisation dans la **Console
+Cloud Temple**. Un quota autorise une consommation maximale ; il ne constitue
+pas une réservation de capacité physique. Pour une instance non réservée, la
+création ou le redémarrage reste soumis à la capacité disponible.
+
+## Comment augmenter ses quotas ?
+
+Pour augmenter vos quotas VM Instances, ouvrez une **demande de support
+Cloud Temple** en précisant le tenant concerné, les nouveaux plafonds souhaités
+en vCPU, RAM et stockage, ainsi que votre besoin.
+
+## Quel est le lien entre quotas et facturation ?
+
+Les quotas définissent vos **plafonds autorisés**. La facturation dépend des
+ressources utilisées et des services souscrits : le plafond de quota ne
+correspond pas à la quantité de ressources facturées.
+
+Pour une VM à l'usage, les **vCPU et la RAM configurés sont facturés lorsque la
+VM est allumée**, indépendamment de la charge réelle de ses applications. La
+facturation du compute est à l'heure, **toute heure entamée étant due**.
+
+| Ressource | VM allumée | VM éteinte |
+|---|---|---|
+| **vCPU et RAM configurés** | Facturés à l'heure. | Facturation suspendue. |
+| **Disque système et disques additionnels** | Facturés au Go alloué. | Toujours facturés tant qu'ils sont conservés. |
+| **Stockage de sauvegarde** | Facturé selon le stockage consommé. | Reste facturé si les sauvegardes sont conservées. |
+| **Réseau, tenant et support** | Selon les services et abonnements souscrits. | Selon les services et abonnements souscrits. |
+
+Les **instances réservées** relèvent des conditions de leur réservation.
+
 ## Que reste-t-il facturé lorsque la VM est éteinte ?
 
 L'arrêt de la VM **suspend la facturation des vCPU et de la RAM**. Il ne
