@@ -319,7 +319,7 @@ Nota: *La eliminación de una IP autorizada se realiza mediante una solicitud de
 
 Es posible visualizar los recursos cloud consumidos dentro de un inquilino, lo que ofrece una vista detallada del uso de los distintos servicios desplegados. Esta funcionalidad permite a los usuarios seguir en tiempo real el consumo de sus recursos, identificar los servicios más utilizados y optimizar su uso según las necesidades.
 
-En el menú de la consola, haga clic en "Informe de consumo" y seleccione el período de tiempo deseado. De este modo, podrá visualizar en detalle el consumo de recursos cloud durante el período definido, lo que le permitirá analizar el uso de los servicios y optimizar su gestión en consecuencia:
+En el menú **Gestor de costos**, abra la pestaña "Informe de consumo" y seleccione el período de tiempo deseado. De esta forma, podrá visualizar en detalle el consumo de recursos cloud en el período definido, lo que le permitirá analizar el uso de los servicios y optimizar su gestión en consecuencia:
 
 <img src={shivaTenantRessources_01} />
 

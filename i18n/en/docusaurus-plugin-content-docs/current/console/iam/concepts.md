@@ -319,7 +319,7 @@ Note: *Removing an authorized IP requires submitting a support request via the C
 
 It is possible to view the cloud resources consumed within a tenant, providing a detailed overview of the usage of deployed services. This feature allows users to monitor resource consumption in real time, identify the most heavily used services, and optimize their usage based on requirements.
 
-In the console menu, click on "Consumption Report" and then select the desired time period. You will then be able to view in detail the cloud resource consumption for the selected period, allowing you to analyze service usage and optimize your management accordingly:
+In the **Cost Manager** menu, open the "Consumption Report" tab and then select the desired time period. You will then be able to visualize in detail the cloud resource consumption over the defined period, allowing you to analyze service usage and optimize your management accordingly:
 
 <img src={shivaTenantRessources_01} />
 

@@ -49,7 +49,7 @@ Nelle prossime fasi, sarà possibile specificare più precisamente l'ambito dell
 
 Dopo aver completato tutte le fasi, le reti vengono create e viene generato un ordine per propagarle. È possibile seguire i propri ordini:
 
-- Attraverso la scheda __*Ordini*__ nel menu principale
+- Attraverso il menu __*Marketplace*__ > __*Ordini*__
 
 <img src={shivaNetwork_order_001} />
 

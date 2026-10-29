@@ -49,7 +49,7 @@ In the next steps, you will be able to more precisely specify the scope of propa
 
 After completing all the steps, your networks are created, and then an order is generated to propagate them. You can track your orders:
 
-- Via the __*Orders*__ tab in the main menu
+- Via the __*Marketplace*__ > __*Orders*__ menu
 
 <img src={shivaNetwork_order_001} />
 

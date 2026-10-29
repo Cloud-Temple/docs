@@ -49,7 +49,7 @@ In den nächsten Schritten können Sie den Umfang der Propagierung innerhalb des
 
 Nachdem Sie alle Schritte abgeschlossen haben, werden Ihre Netzwerke erstellt und anschließend eine Bestellung zur Propagierung generiert. Sie können Ihre Bestellungen verfolgen:
 
-- Über den Tab __*Bestellungen*__ im Hauptmenü
+- Über das Menü __*Marketplace*__ > __*Bestellungen*__
 
 <img src={shivaNetwork_order_001} />
 

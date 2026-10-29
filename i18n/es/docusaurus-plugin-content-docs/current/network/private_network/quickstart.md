@@ -49,7 +49,7 @@ En los próximos pasos, podrá especificar con mayor precisión el alcance de la
 
 Después de completar todos los pasos, sus redes se crean y luego se genera un pedido para propagarlas. Puede hacer seguimiento de sus pedidos:
 
-- A través de la pestaña __*Pedidos*__ en el menú principal
+- A través del menú __*Marketplace*__ > __*Pedidos*__
 
 <img src={shivaNetwork_order_001} />
 
