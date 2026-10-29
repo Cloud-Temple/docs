@@ -551,6 +551,15 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Managed Firewall',
+      link: { type: 'doc', id: 'managed_firewall/managed_firewall' },
+      items: [
+        'managed_firewall/managed_firewall',
+        'managed_firewall/concepts',
+      ],
+    },
     // ─────────────────────────────────────────
     // QUICK LINKS
     // ─────────────────────────────────────────
