@@ -44,9 +44,9 @@ Actuellement, l'activation du service VPC nécessite d'avoir souscrit à un prod
 
 > **Note** : Le provisionnement du VPC est entièrement automatisé et prend généralement moins d'une heure.
 
-### Alternative : Via l'onglet Commandes
+### Alternative : Via le menu Commandes
 
-Vous pouvez également initier la commande de ressources VPC directement depuis le menu **Commandes**.
+Vous pouvez également initier la commande de ressources VPC directement depuis le menu **Marketplace** > **Commandes**.
 
 <img src={vpcOrders} />
 

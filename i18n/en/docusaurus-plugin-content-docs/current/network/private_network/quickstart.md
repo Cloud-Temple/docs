@@ -1,142 +1,146 @@
 ---
 title: Getting Started Guide
 ---
-import shivaNetwork_001 from '@site/docs/network/private_network/images/shiva_network_001.png';
-import shivaNetwork_002 from '@site/docs/network/private_network/images/shiva_network_002.png';
-import shivaNetwork_003 from '@site/docs/network/private_network/images/shiva_network_003.png';
-import shivaNetwork_004 from '@site/docs/network/private_network/images/shiva_network_004.png';
-import shivaNetwork_005 from '@site/docs/network/private_network/images/shiva_network_005.png';
-import shivaNetwork_006 from '@site/docs/network/private_network/images/shiva_network_006.png';
-import shivaNetwork_007 from '@site/docs/network/private_network/images/shiva_network_007.png';
-import shivaNetwork_008 from '@site/docs/network/private_network/images/shiva_network_008.png';
-import shivaNetwork_009 from '@site/docs/network/private_network/images/shiva_network_009.png';
-import shivaNetwork_010 from '@site/docs/network/private_network/images/shiva_network_010.png';
-import shivaNetworkVnShareEnabled from '@site/docs/network/private_network/images/shiva_network_vn_share_enabled.png';
-import shivaNetworkVnShared from '@site/docs/network/private_network/images/shiva_network_vn_shared.png';
-import shivaNetworkVnSharedTenant from '@site/docs/network/private_network/images/shiva_network_vn_shared_tenant.png';
-import shivaNetworkVnSharedWithMe from '@site/docs/network/private_network/images/shiva_network_vn_shared_with_me.png';
-import shivaOrderNetwork_001 from '@site/docs/network/private_network/images/shiva_order_network_001.png';
-import shivaNetworkDeletePropagation from '@site/docs/network/private_network/images/shiva_network_delete_propagation.png';
-import shivaNetworkDeletePropagationOrder from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order.png';
-import shivaNetworkDeletePropagationOrderValidate from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order_validate.png';
+import shivaNetwork_001 from '@site/docs/network/private_network/images/shiva_network_001.png'
+import shivaNetwork_002 from '@site/docs/network/private_network/images/shiva_network_002.png'
+import shivaNetwork_003 from '@site/docs/network/private_network/images/shiva_network_003.png'
+import shivaNetwork_004 from '@site/docs/network/private_network/images/shiva_network_004.png'
+import shivaNetwork_005 from '@site/docs/network/private_network/images/shiva_network_005.png'
+import shivaNetwork_006 from '@site/docs/network/private_network/images/shiva_network_006.png'
+import shivaNetwork_007 from '@site/docs/network/private_network/images/shiva_network_007.png'
+import shivaNetwork_008 from '@site/docs/network/private_network/images/shiva_network_008.png'
+import shivaNetwork_009 from '@site/docs/network/private_network/images/shiva_network_009.png'
+import shivaNetwork_010 from '@site/docs/network/private_network/images/shiva_network_010.png'
+import shivaNetworkVnShareEnabled from '@site/docs/network/private_network/images/shiva_network_vn_share_enabled.png'
+import shivaNetworkVnShared from '@site/docs/network/private_network/images/shiva_network_vn_shared.png'
+import shivaNetworkVnSharedTenant from '@site/docs/network/private_network/images/shiva_network_vn_shared_tenant.png'
+import shivaNetworkVnSharedWithMe from '@site/docs/network/private_network/images/shiva_network_vn_shared_with_me.png'
+import shivaNetwork_order_001 from '@site/docs/network/private_network/images/shiva_order_network_001.png'
+import shivaNetworkDeletePropagation from '@site/docs/network/private_network/images/shiva_network_delete_propagation.png'
+import shivaNetworkDeletePropagationOrder from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order.png'
+import shivaNetworkDeletePropagationOrderValidate from '@site/docs/network/private_network/images/shiva_network_delete_propagation_order_validate.png'
 
-### Private Regional Networks
+## Regional Private Networks
 
-The management of private networks within a region is directly handled through the Cloud Temple console.
+The ordering of private networks within a region is done directly in the Cloud Temple console.
 
-### Within a Tenant
+### Within a tenant
 
-The creation of a virtual network takes place in the *Networks* menu on the top left bar of the screen.
+The creation of a virtual network is done in the __*Network*__ > __*Private Backbone*__ menu on the green panel on the left side of the screen.
 
 <img src={shivaNetwork_001} />
 
-Clicking on the button *New Network*
+Then click on the __*New network*__ button.
 
-You need to specify the name of your network, which will be displayed. By default, all of your clusters will access your new network.
+You must specify the name of your network, which will be displayed. By default, all of your clusters will have access to your new network.
 
-It is now possible to create multiple networks simultaneously. Simply click on *Add Network*.
+It is now possible to create multiple networks simultaneously. Simply click on __*add a network*__.
 
 <img src={shivaNetwork_002} />
 
-In the following steps, you can specify more precisely the scope of propagation within the tenant between your different IaaS VMware or Open IaaS clusters.
+In the next steps, you will be able to more precisely specify the scope of propagation within the tenant between your different IaaS VMware or Open IaaS clusters.
 
 <div style={{display: 'flex', gap: '10px', alignItems: 'flex-start'}}>
   <img src={shivaNetwork_003} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
   <img src={shivaNetwork_004} style={{flex: 1, maxWidth: '50%', height: 'auto', objectFit: 'contain'}} />
 </div>
 
-### Network Command Management
+### Network order management
 
-Once all steps are completed, your networks are created, and a command is generated to propagate them. You can track your commands:
+After completing all the steps, your networks are created, and then an order is generated to propagate them. You can track your orders:
 
-- Through the __*Commands*__ tab in the main menu
+- Via the __*Marketplace*__ > __*Orders*__ menu
 
-<img src={shivaOrderNetwork_001} alt="Console Network Order 001" />
+<img src={shivaNetwork_order_001} />
 
-- By clicking on informational labels that redirect to related commands
+- By clicking on the information labels that redirect to the related orders
 
-> __Important:__ It is not possible to generate multiple commands of the same resource type simultaneously. You must wait for the current command to be processed before creating a new one.
+> __Important:__ It is not possible to generate multiple orders of the same resource type simultaneously. You must wait for the current order to be processed before creating a new one.
 
-All possible actions on your networks are available in the __*Actions*__ menu of each one:
+All possible actions on your networks are found in the __*Actions*__ menu of each one:
 
-- Enabling or disabling network sharing between tenants within the same organization.
-- Disabling network sharing between tenants within the same organization.
-- Adding a network sharing between tenants within the same organization.
-- Removing a network sharing between tenants within the same organization.
-- Graphically visualizing the propagation of a network across all your clusters and hypervisors within a tenant.
-- Removing network propagation within a tenant.
-- Modifying network propagation within a tenant.
+- Enabling network sharing between tenants of the same organization.
+- Disabling network sharing between tenants of the same organization.
+- Adding a network sharing between tenants of the same organization.
+- Removing a network sharing between tenants of the same organization.
+- Graphical visualization of network propagation across all of your clusters and hypervisors within a tenant.
+- Removing a propagation within a tenant.
+- Modifying a propagation within a tenant.
 
-> Network removal is currently not available.
+> Network deletion is not yet available.
 
-<img src={shivaNetwork_005} alt="Console Network 005" />
-<img src={shivaNetwork_006} alt="Console Network 006" />
+<img src={shivaNetwork_005} />
+<img src={shivaNetwork_006} />
 
-#### Visualization of Network Propagation
+#### Visualization of your network propagation
 
-You can easily visualize a network's propagation to your various clusters within the same tenant by selecting the option *"Visualize Propagation"* from the menu __*Actions*__:
+You can easily visualize in the __*Actions*__ menu the propagation of a network to your different clusters within the same tenant.
+
+Choose the *"Visualize propagation"* option:
 
 <img src={shivaNetwork_007} />
 
-#### Modification of Propagation
+#### Modifying propagation
 
-Modifying a propagation within a tenant is done via the __Propager__ option:
+Modifying a propagation within a tenant is done via the __*Propagate*__ option:
 
-Next, select the target product (IaaS VMware, Open IaaS, Bare metal) for your network propagation, and ensure that the clusters are integrated into this propagation.
+Then choose which product (IaaS VMware, Open IaaS, Bare metal) you want to propagate your networks to, and then the clusters to be included in this propagation.
 
-<img src={shivaNetwork_008} alt="Propagation" />
-<img src={shivaNetwork_009} alt="Propagation" />
+<img src={shivaNetwork_008} />
+<img src={shivaNetwork_009} />
 
-__Note:__ *Propagation modification is limited to 20 networks per action.*
+__*Note:*__ *Propagation modification is limited to 20 networks per action.*
 
-#### Suppression of Propagation
+#### Removing propagation
 
-The removal of a propagation within a tenant is carried out through the option __*Remove Propagation*:
+Removing a propagation within a tenant is done via the __*Remove a propagation*__ option:
 
-You then select which propagation you wish to remove:
+Then choose which propagation you want to remove:
 
-<img src={shivaNetworkDeletePropagation} alt="Console Network Delete Propagation" />
+<img src={shivaNetworkDeletePropagation} />
 
-A command is subsequently generated, similar to the initial creation with propagation.
+An order is then created, as during the initial creation with propagation.
 
-<img src={shivaNetworkDeletePropagationOrder} alt="Console Network Delete Propagation Order" />
-<img src={shivaNetworkDeletePropagationOrderValidate} alt="Console Network Delete Propagation Order Validate" />
+<img src={shivaNetworkDeletePropagationOrder} />
+<img src={shivaNetworkDeletePropagationOrderValidate} />
 
-#### Delayed Network Propagation
+#### Deferred network propagation
 
-It is feasible to separate the creation and propagation of networks into two distinct stages:
+It is possible to separate the creation and propagation of networks into two distinct steps:
 
-1. __Propagate an existing network__: Click on the action __*Propagate*__ for a network that has already been created.
-2. __Select the target for propagation__: A command is then generated, similar to how it was done initially with propagation.
+1. __Propagate an existing network__: Click on the __*Propagate*__ action on an already created network
+2. __Select the propagation target__: An order is then created, as during the initial creation with propagation.
 
-#### Activation and Deactivation of Networks
+#### Enabling and disabling networks
 
-A network can be temporarily deactivated without being deleted, and then reactivated later.
+A network can be temporarily disabled without being deleted and then re-enabled later.
 
-<img src={shivaNetwork_010} alt="Console Network" />
+<img src={shivaNetwork_010} />
 
-### Network Sharing Between Tenants
+### Network sharing between tenants
 
-By default, __networks are only available within a single tenant__. You can choose to __share a network across multiple tenants__ for technical or connectivity reasons. This allows you to share a network between your __[Tenant](../../console/iam/concepts.md#tenant)__ within the same organization.
+By default, __networks are only available within a tenant__. You can choose to __share a network between multiple tenants__ for technical reasons or connectivity reasons.
+It is thus possible to share a network between your __[Tenant](../../console/iam/concepts.md#tenant)__ within the same organization.
 
-To achieve this, simply enable sharing as shown below:
+Simply enable sharing as shown below.
 
 <img src={shivaNetworkVnShareEnabled} />
 
-After enabling sharing, add a share as follows:
+Once sharing is enabled, you just need to add a sharing as shown below.
 
 <img src={shivaNetworkVnShared} />
 
-Next, select the target tenant. Note that the list of tenants is dynamic and depends on your organization and your permissions.
+Then, select the target tenant. Note that the list of tenants is dynamic.
+It depends on your organization and your permissions.
 
 <img src={shivaNetworkVnSharedTenant} />
 
-Once network sharing is enabled, it will be visible in the 'Shared Networks' tab from your second tenant.
+Once the network is shared, it will be visible in the 'Shared Networks' tab from your second tenant.
 
 <img src={shivaNetworkVnSharedWithMe} />
 
-### Visualization of Shared Networks
+### Visualization of shared networks
 
-After propagating the networks, the "Shared Networks" tab allows you to visualize the networks that other tenants within your organization share with you:
+Once the networks are propagated, the "Shared Networks" tab allows you to visualize the networks that other tenants in your organization are sharing with you:
 
-<img src={shivaNetwork_007} alt="Visualisation des réseaux partagés" />
+<img src={shivaNetwork_007} />

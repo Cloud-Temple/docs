@@ -7,7 +7,6 @@ import billingDashboardConsumptionTotal from '@site/docs/console/billing/images/
 import billingDashboardConsumptionPerProduct from '@site/docs/console/billing/images/billing_dashboard_consumption_per_product.png'
 import billingDashboardConsumptionPerService from '@site/docs/console/billing/images/billing_dashboard_consumption_per_service.png'
 import billingConsumptionDetails from '@site/docs/console/billing/images/billing_consumption_details.png'
-import billingPricesList from '@site/docs/console/billing/images/billing_prices_list.png'
 
 ## Présentation
 
@@ -37,17 +36,17 @@ Vous pouvez ajuster la **période d'affichage** pour affiner votre analyse : jou
 
 ## Consommation par produit
 
-L'onglet **Consommation par produit** décompose votre consommation selon les grandes familles de services Cloud Temple auxquels vous avez souscrit : compute, stockage, réseau, etc.
+L'affichage **Produit** décompose votre consommation selon les grandes familles de services Cloud Temple auxquels vous avez souscrit : compute, stockage, réseau, etc.
 
-<img src={billingDashboardConsumptionPerProduct} />
+<img src={billingDashboardConsumptionPerService} />
 
 Cette vue est particulièrement utile pour **identifier les postes de dépenses les plus significatifs** et orienter les décisions d'optimisation. Chaque produit est représenté avec sa part relative dans la consommation globale, ce qui facilite la lecture et la comparaison.
 
-## Consommation par service
+## Consommation par SKU
 
-L'onglet **Consommation par service** offre un niveau de détail supplémentaire en ventilant la consommation par **service spécifique** au sein de chaque produit.
+L'affichage **SKU** offre un niveau de détail supplémentaire en ventilant la consommation par **référence tarifée (SKU)** au sein de chaque produit.
 
-<img src={billingDashboardConsumptionPerService} />
+<img src={billingDashboardConsumptionPerProduct} />
 
 Ce niveau de granularité vous permet d'aller plus loin dans l'analyse : vous pouvez par exemple distinguer la consommation de vos machines virtuelles, de votre stockage bloc, de vos snapshots ou de votre bande passante réseau, et ainsi identifier précisément les ressources générant le plus de coûts.
 
@@ -59,27 +58,10 @@ La vue **Détail de la consommation** présente un tableau exhaustif listant l'e
 
 Ce détail est précieux pour les équipes souhaitant effectuer une **répartition analytique** de leurs coûts ou pour identifier des ressources potentiellement inutilisées qui pourraient être désactivées afin d'optimiser les dépenses.
 
-## Grille tarifaire
-
-L'onglet **Grille tarifaire** (ou **Liste des prix**) référence l'ensemble des tarifs unitaires applicables aux ressources disponibles dans votre tenant. Il s'agit du catalogue de prix en vigueur vous permettant d'anticiper le coût de nouvelles ressources avant leur déploiement.
-
-<img src={billingPricesList} />
-
-Chaque entrée de la grille indique :
-
-- Le **type de ressource** concernée
-- L'**unité de facturation** (par heure, par Go, par unité, etc.)
-- Le **prix unitaire** applicable
-
-:::tip
-Pour les prix publics en vigueur, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). La grille affichée dans la Console présente les tarifs applicables à votre tenant ; combinez ces informations avec les données de consommation pour identifier les leviers d’optimisation.
-:::
-
 ## Bonnes pratiques
 
 Pour tirer le meilleur parti du Gestionnaire des coûts, voici quelques recommandations :
 
 - **Consultez régulièrement** votre consommation pour détecter rapidement toute dérive budgétaire.
 - **Comparez les périodes** : l'outil vous permet d'analyser l'évolution mois par mois pour identifier les tendances.
-- **Utilisez la vue par service** pour identifier des ressources sous-utilisées ou oubliées (snapshots anciens, volumes déconnectés, etc.).
-- **Croisez avec la grille tarifaire** pour évaluer l'impact financier de tout changement d'infrastructure avant de le réaliser.
+- **Utilisez la vue par SKU** pour identifier des ressources sous-utilisées ou oubliées (snapshots anciens, volumes déconnectés, etc.).

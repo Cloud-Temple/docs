@@ -15,38 +15,38 @@ import vpcNewStaticIps from '@site/docs/network/vpc/images/vpc_new_static_ips.pn
 import vpcNewStaticIpsModale from '@site/docs/network/vpc/images/vpc_new_static_ips_modale.png'
 import vpcStaticIpsAssociate from '@site/docs/network/vpc/images/vpc_static_ips_associate_png.png'
 
-# Quick Start VPC
+# VPC Quickstart
 
 This guide walks you through creating your first Virtual Private Cloud (VPC) and deploying your first private networks.
 
 ## Prerequisites
 
-Currently, activating the VPC service requires subscribing to an **IaaS Open Source** offering. (This requirement will be removed in the future).
+Currently, activating the VPC service requires having subscribed to an **IaaS Open Source** product. (This requirement will be lifted in the future).
 
 ## Step 1: Access the Console
 
-1. Sign in to the Cloud Temple Console.
+1. Log in to the Cloud Temple Console.
 2. In the navigation menu, select **Network** then **VPC**.
 
 <img src={newTabNetwork} />
 
-## Step 2: Create a VPC
+## Step 2: Order a VPC
 
 1. Click the **New VPC** button.
 <img src={vpcCreateButton} />
 
-2. Fill out the guided form:
+2. Fill in the guided form:
     * **VPC Name**: Choose a unique name to identify your environment.
     * **Description**: (Optional) Add a description.
 <img src={vpcCreateModal} />
 
 3. Confirm the creation.
 
-> **Note**: VPC provisioning is fully automated and typically takes less than one hour.
+> **Note**: VPC provisioning is fully automated and generally takes less than one hour.
 
-### Alternative: Via the Commands Tab
+### Alternative: Via the Orders Menu
 
-You can also initiate the VPC resources command directly from the **Commands** menu.
+You can also initiate a VPC resource order directly from the **Marketplace** > **Orders** menu.
 
 <img src={vpcOrders} />
 
@@ -56,22 +56,22 @@ You can also initiate the VPC resources command directly from the **Commands** m
 
 Once your VPC is active:
 
-1. Go to your VPC details by clicking on its name.
+1. Access your VPC details by clicking on its name.
 <img src={vpcDetailsView} />
 
-2. Navigate to the **Private Networks** tab.
+2. Go to the **Private Networks** tab.
 3. Click **Add a network**.
 4. Configure your network:
-    * **Name**: Name of the network segment (e.g., `backend`, `frontend`).
-    * **CIDR**: IP address range (e.g., `192.168.1.0/24`).
+    * **Name**: Name of the network segment (e.g. `backend`, `frontend`).
+    * **CIDR**: IP address range (e.g. `192.168.1.0/24`).
 
 <img src={vpcNewPrivateNetwork} />
 
-## Step 4: Activate the Gateway and Request Public IPs
+## Step 4: Activate the Gateway and Order Public IPs
 
-To enable Internet access and expose services:
+To enable Internet access and service exposure:
 
-1. Check whether the gateway is activated. If not, click the activation button.
+1. Check if the gateway is activated. If not, click the activation button.
 <img src={vpcActivateGatewayButton} />
 
 <img src={vpcActivateGatewayModal} />
@@ -79,18 +79,18 @@ To enable Internet access and expose services:
 1. Once the gateway is active, go to the **Public IPs** tab.
 <img src={vpcStaticIps} />
 
-> **Note**: The **Public IPs** list at the root of the VPC menu displays all public IPs (assigned or unassigned). The **Public IPs** tab within a VPC's details allows you to manage only those IPs assigned to that specific VPC (requires the gateway to be active).
+> **Note**: The **Public IPs** list at the root of the VPC menu displays all public IPs (associated or not). The **Public IPs** tab in a VPC's details allows you to manage those associated with that VPC (requires an active gateway).
 
-1. Click the button to request new IPs, or click the "Assign" action to assign an IP from the list that is not yet assigned.
+1. Click the button to order new IPs, or click the "Associate" action to associate one of the IP addresses from the list that is not yet associated.
 <img src={vpcNewStaticIps} />
 
 <img src={vpcStaticIpsAssociate} />
 <img src={vpcNewStaticIpsModale} />
 
-1. Select the number of IPs you wish to request, then confirm your request.
+1. Select the number of IPs you want to order, then confirm your order.
 
 ## Step 5: Connect Your Resources
 
-Your private networks are now available across all Availability Zones (AZs) in the region. You can connect your Open Source IaaS virtual machines or your servers directly from their respective configuration interfaces.
+Your private networks are now available in all availability zones (AZ) of the region. You can connect your IaaS Open Source virtual machines or your servers directly from their respective configuration interfaces.
 
-To learn how to set up a VPC network on a virtual machine, refer to our tutorial: [Configure a Static IP and a VM](./tutorials/vm_configuration).
+To learn how to configure a VPC network on a virtual machine, see our tutorial: [Configure a Static IP and a VM](./tutorials/vm_configuration).

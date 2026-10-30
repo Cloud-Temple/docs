@@ -30,7 +30,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concetto
 
-Il monitoraggio del deployment di nuove risorse avviene nel menu __'Comandi'__ accessibile nella barra verde a sinistra dello schermo.
+Il monitoraggio del deployment di nuove risorse si effettua nel menu __'Marketplace'__ > __'Ordini'__ accessibile nella barra verde a sinistra dello schermo.
 
 Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della tua [Organisation](iam/concepts.md#organizzazioni).
 
@@ -52,7 +52,7 @@ __Nota__ : __non è possibile avviare più comandi dello stesso tipo di risorsa 
 
 ## Ordinare una nuova zona di disponibilità
 
-È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Ordine__". Questa opzione consente di estendere le proprie risorse e migliorare la disponibilità e la resilienza delle applicazioni con pochi semplici clic:
+È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Marketplace__ > __Ordini__". Questa opzione consente di estendere le proprie risorse e di migliorare la disponibilità e la resilienza delle proprie applicazioni in pochi clic :
 
 <img src={shivaOrderAz_01} />
 
@@ -126,7 +126,7 @@ Otterrai successivamente un riepilogo delle opzioni selezionate prima di conferm
 
 ### Distribuire un nuovo cluster di storage
 
-Nel menu "__ordine__", procedere all'ordine di un __nuovo cluster di storage__ per il proprio ambiente selezionando le opzioni che corrispondono alle proprie esigenze in termini di capacità, prestazioni e ridondanza. Selezionare la posizione:
+Nel menu "__Marketplace__ > __Ordini__", procedere all'ordine di un __nuovo cluster di storage__ per il proprio ambiente selezionando le opzioni che corrispondono alle proprie esigenze in termini di capacità, performance e ridondanza. Selezionare la posizione :
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Flessibilità delle reti__ :
 - Una rete può essere __terminata in una zona di hosting__ per le proprie apparecchiature fisiche
 - __Limite__ : Massimo 20 reti per ordine. È possibile effettuare più ordini consecutivi per estendere questo numero in base alle proprie esigenze
 
-L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant vengono eseguite nel menu __'Rete'__ della barra verde a sinistra dello schermo. Le reti verranno prima create, quindi verrà generato un ordine separato per propagarle. È possibile monitorare l'avanzamento degli ordini in corso accedendo alla scheda "Ordine" nel menu, oppure facendo clic sulle etichette informative che reindirizzano agli ordini attivi o in fase di elaborazione.
+L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant, vengono effettuate nel menu __'Rete'__ della barra verde a sinistra dello schermo. Le reti verranno prima create, poi un ordine distinto verrà generato per propagarle. È possibile seguire l'avanzamento degli ordini in corso accedendo al menu "Marketplace > Ordini", o cliccando sui label di informazione che reindirizzano verso gli ordini attivi o in corso di elaborazione.
 
 <img src={shivaOrdersNet_002} />
 
