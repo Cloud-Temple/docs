@@ -1,181 +1,185 @@
 ---
-title: Seguimiento de Cambios
+title: Registro de Cambios
 sidebar_position: 2
 ---
 
-# Seguimiento de Cambios
+# Registro de Cambios
 
-### 12 Octubre 2026: Notas de la versión de la Consola hasta la v4.52.0
+### 21 de octubre de 2026 : Nueva consola Cloud Temple (v5.0.0)
 
-- **Consola**: Las [notas de la versión del producto](./changelog_produits.md) presentan las novedades y correcciones de las versiones 4.50.0, 4.51.0 y 4.52.0, incluidas las evoluciones de la red VPC, el despliegue cloud-init y la restauración de máquinas virtuales.
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.52.1 a 5.0.0, incluida la nueva consola : rediseño completo de la interfaz con tema oscuro, navegación simplificada, nueva página de detalle de máquinas virtuales, páginas de Cómputo y Almacenamiento repensadas y explorador de archivos de Object Storage. La versión anterior de la consola sigue siendo accesible hasta principios de diciembre de 2026 desde la ventana « Novedades ».
 
-### 10 Septiembre 2026: Documentación LLMaaS actualizada
+### 12 de octubre de 2026 : Notas de versión de la Consola hasta la v4.52.0
 
-- **Elegir y seguir sus modelos**: Acceso directo al [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para consultar los modelos disponibles, los plazos de soporte y las migraciones recomendadas.
-- **Tomar el control del servicio**: Guías de inicio y ejemplos de integración actualizados para facilitar los primeros usos y la integración en sus aplicaciones.
-- **Comprender los usos y la facturación**: Documentación aclarada sobre los procesos por lotes, la búsqueda documental y las modalidades de facturación del reranking.
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las novedades y correcciones de las versiones 4.50.0, 4.51.0 y 4.52.0, en particular las evoluciones de la red VPC, del despliegue cloud-init y de la restauración de máquinas virtuales.
 
-### 20 Agosto 2026: Armonización de la etiqueta de madurez de las bases de datos gestionadas
+### 10 de septiembre de 2026 : Documentación LLMaaS actualizada
 
-- **Navegación — Bases de datos**: Eliminación de la etiqueta **Beta** en las entradas **MariaDB Gestionada** y **PostgreSQL Gestionada** del menú lateral y en las tarjetas de la página Bases de datos. Los dos servicios mostraban simultáneamente dos etiquetas de madurez contradictorias: *Beta* en la navegación, *Preview* en el título de sus páginas de producto. Solo se conserva la etiqueta **Preview**, como fuente única de verdad sobre el nivel de madurez de estos servicios. Traducciones disponibles EN/DE/ES/IT.
+- **Elegir y seguir sus modelos** : Acceso directo al [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para consultar los modelos disponibles, las fechas de fin de soporte y las migraciones recomendadas.
+- **Ponerse en marcha con el servicio** : Guías de inicio y ejemplos de integración actualizados para facilitar los primeros usos y la integración en sus aplicaciones.
+- **Comprender los usos y la facturación** : Documentación aclarada sobre los procesos por lotes, la búsqueda documental y las modalidades de facturación del reranking.
 
-### 17 Agosto 2026: Actualización de las alertas de seguridad
+### 20 de agosto de 2026 : Armonización del etiquetado de madurez de las bases de datos gestionadas
 
-- **Seguridad**: Nuevos [avisos de seguridad](./console/security/security_alarms.md) están disponibles para los entornos VMware, OpenShift, XCP-ng y Dell, para ayudarle a identificar los productos afectados y las acciones recomendadas.
+- **Navegación — Bases de datos** : Supresión de la insignia **Beta** en las entradas **MariaDB Gestionado** y **PostgreSQL Gestionado** del menú lateral y en las tarjetas de la página Bases de datos. Los dos servicios mostraban simultáneamente dos etiquetas de madurez contradictorias : *Beta* en la navegación, *Preview* en el título de sus páginas de producto. Solo se conserva la insignia **Preview**, como fuente única de verdad sobre el nivel de madurez de estos servicios. Traducciones disponibles EN/DE/ES/IT.
 
-### 14 Agosto 2026: Aclaración de la gestión de accesos
+### 17 de agosto de 2026 : Actualización de las alertas de seguridad
 
-- **Consola — Gestión de accesos**: La [guía de identidades y permisos](./console/iam/concepts.md) distingue las acciones que deben realizarse a nivel de la organización y de cada tenant, para facilitar la asignación de accesos y la gestión de los propietarios.
+- **Seguridad** : Hay nuevos [avisos de seguridad](./console/security/security_alarms.md) disponibles para los entornos VMware, OpenShift, XCP-ng y Dell, para ayudarle a identificar los productos afectados y las acciones recomendadas.
 
-### 7 Agosto 2026: Guía de la vista de organización
+### 14 de agosto de 2026 : Aclaración de la gestión de accesos
 
-- **Consola — Organización**: La [guía de inicio](./console/console_quickstart.md) presenta la vista de organización y la gestión de tenants. La documentación aclara también el papel de los propietarios y los procedimientos para evolucionar sus accesos.
+- **Consola — Gestión de accesos** : La [guía de identidades y permisos](./console/iam/concepts.md) distingue las acciones a realizar a nivel de la organización y de cada inquilino, para facilitar la atribución de accesos y la gestión de los propietarios.
 
-### 15 Julio 2026: Precisión sobre el cifrado de Object Storage
+### 7 de agosto de 2026 : Guía de la vista de organización
 
-- **Object Storage (Seguridad)**: La sección sobre el cifrado de datos en reposo (D@RE) aclara ahora que el servicio utiliza un cifrado AES de 256 bits certificado FIPS 140-3, a través de la biblioteca de software RSA BSAFE Crypto-J versión 7.x.
+- **Consola — Organización** : La [guía de inicio](./console/console_quickstart.md) presenta la vista de organización y la gestión de los inquilinos. La documentación precisa también el rol de los propietarios y los pasos para hacer evolucionar sus accesos.
 
-### 30 Abril 2026: Precisión sobre el rendimiento del almacenamiento
+### 15 de julio de 2026 : Precisión sobre el cifrado de Object Storage
 
-- **Almacenamiento (IaaS VMware, OpenSource, Bare Metal)**: Adición de los límites absolutos de IOPS y del ancho de banda máximo para todas las clases de almacenamiento. Esta información permite dimensionar mejor los entornos en función de las necesidades de rendimiento.
+- **Object Storage (Seguridad)** : La sección sobre el cifrado de datos en reposo (D@RE) precisa ahora que el servicio utiliza un cifrado AES de 256 bits certificado FIPS 140-3, mediante la biblioteca de software RSA BSAFE Crypto-J en versión 7.x.
 
-### 24 Abril 2026: Enriquecimiento de la documentación de copia de seguridad IaaS OpenSource
+### 30 de abril de 2026 : Precisiones sobre el rendimiento de almacenamiento
 
-- **IaaS OpenSource (Copia de seguridad)**: Enriquecimiento de la sección de copia de seguridad con precisiones sobre la arquitectura técnica (copia incremental, impacto del Thick provisioning en el almacenamiento), la seguridad (cifrado AES-256, aislamiento de red), el monitoreo y las restricciones de planificación. Traducciones disponibles EN/DE/ES/IT.
+- **Almacenamiento (IaaS VMware, OpenSource, Bare Metal)** : Adición de los límites absolutos de IOPS y de ancho de banda máximo para todas las clases de almacenamiento. Esta información permite dimensionar mejor los entornos en función de las necesidades de rendimiento.
 
-### 20 Abril 2026: Actualización del dimensionamiento de Managed Database
+### 24 de abril de 2026 : Enriquecimiento de la documentación de copia de seguridad IaaS OpenSource
 
-- **Managed MariaDB & PostgreSQL**: Actualización de las plantillas de dimensionamiento máximo disponibles para los servicios de bases de datos gestionadas.
+- **IaaS OpenSource (Copia de seguridad)** : Enriquecimiento de la sección de copia de seguridad con precisiones sobre la arquitectura técnica (copia de seguridad incremental, impacto del Thick provisioning en el almacenamiento), la seguridad (cifrado AES-256, aislamiento de red), el monitoreo y las restricciones de planificación. Traducciones disponibles EN/DE/ES/IT.
 
-### 17 Abril 2026: VM Instances — documentación ilustrada, tutoriales y traducciones
+### 20 de abril de 2026 : Actualización del dimensionamiento de Managed Database
 
-- **VM Instances — Enriquecimiento documental**: Reestructuración completa e ilustración de la documentación de VM Instances. La guía de inicio (`quickstart.md`) cubre ahora todo el recorrido del usuario ilustrado: acceso a la sección, lista de VMs, asistente de creación en 9 pasos (familia de instancia, zona de disponibilidad, plantilla OS, plantilla, nombre/copia de seguridad, Cloud Init, discos, red, resumen) y gestión de las 4 pestañas (Información, Discos, Red, Snapshots).
-- **VM Instances — Tutoriales**: Creación de 3 tutoriales dedicados en una carpeta `tutorials/`: (1) **Crear su primera VM** (asistente completo ilustrado + Cloud Init + disco adicional), (2) **Gestionar los discos** (adición desde la consola + particionamiento Linux), (3) **Crear y gestionar los snapshots** (creación, restauración, eliminación + buenas prácticas y comparación snapshot/copia de seguridad). La navegación lateral se actualiza con 3 entradas individuales en la categoría Tutoriales.
+- **Managed MariaDB & PostgreSQL** : Actualización de las plantillas de dimensionamiento máximo disponibles para los servicios de bases de datos gestionadas.
 
-### 17 Abril 2026: Documentos contractuales, traducciones y armonización terminológica
+### 17 de abril de 2026 : Instancias VM — documentación ilustrada, tutoriales y traducciones
 
-- **Documentos contractuales — Reestructuración**: La página `contracts.md` se reorganiza con la jerarquía de los documentos contractuales en la parte superior de la página, incluyendo la lista de prioridad de los 6 documentos (CGVU, Convención SecNumCloud, Convención específica ¹, PAS ², CPU, DPA) y un recuadro de precisiones contractuales.
+- **Instancias VM — Enriquecimiento documental** : Rediseño completo e ilustración de la documentación de Instancias VM. La guía de inicio (`quickstart.md`) cubre ahora la totalidad del recorrido del usuario ilustrado : acceso a la sección, lista de VMs, asistente de creación en 9 pasos (familia de instancia, zona de disponibilidad, plantilla de SO, gabarito, nombre/copia de seguridad, Cloud Init, discos, red, resumen), y gestión de las 4 pestañas (Información, Discos, Red, Instantáneas).
+- **Instancias VM — Tutoriales** : Creación de 3 tutoriales dedicados en un directorio `tutorials/` : (1) **Crear su primera VM** (asistente completo ilustrado + Cloud Init + disco adicional), (2) **Gestionar los discos** (adición desde la consola + particionado Linux), (3) **Capturar y gestionar instantáneas** (creación, restauración, supresión + buenas prácticas y comparación instantánea/copia de seguridad). La navegación lateral se actualiza con 3 entradas individuales en la categoría Tutoriales.
 
-### 16 Abril 2026: Reestructuración de la navegación, documentos contractuales y actualizaciones
+### 17 de abril de 2026 : Documentos contractuales, traducciones y armonización terminológica
 
-- **Navegación — Compute**: Agrupación de VM Instances (preview), IaaS OpenSource e IaaS VMware bajo una única categoría **Compute** en la navegación (PR #277).
-- **Navegación — Network**: Agrupación de VPC (preview) y Private Backbone bajo una única categoría **Network** en la navegación.
-- **Documentos contractuales**: Reestructuración completa de la documentación contractual — creación de una página hub `/contracts` (condiciones generales, condiciones particulares, convenciones de servicio SecNumCloud, SLA VM instances) y de una página hub `/shared-responsibility` (matrices RACI por servicio: IaaS, S3, PaaS, Kubernetes, LLMaaS, Red). El menú lateral contractual se reemplaza por una columna dedicada **Contractual** en el pie de página. Traducciones disponibles EN/DE/ES/IT.
-- **VM Instances**: Actualización del compromiso de nivel de servicio (SLA) del 99,9 % al 99,95 %.
-- **IaaS OpenSource**: Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo, migración a Glacier prevista en el T1 2027).
+- **Documentos contractuales — Reestructuración** : La página `contracts.md` se reorganiza con la jerarquía de los documentos contractuales en la parte superior de la página, incluyendo la lista de prioridad de los 6 documentos (CGVU, Convenio SecNumCloud, Convenio específico ¹, PAS ², CPU, DPA) y un recuadro de precisiones contractuales.
 
-### 15 Abril 2026: Nueva documentación de VM instances (Cloud Public)
+### 16 de abril de 2026 : Rediseño de la navegación, documentos contractuales y actualizaciones
 
-- **VM instances**: Publicación de la documentación inicial del servicio VM instances (en preview), nueva oferta de máquinas virtuales compartidas de Cloud Temple. La documentación cubre la visión general del servicio, los conceptos técnicos (clases de servicio Development/General Purpose/Performance, plantillas predefinidas y personalizadas, almacenamiento, red VPC, copia de seguridad), así como una guía de inicio completa. El servicio se organiza bajo una nueva categoría **Cloud Public** en la navegación.
+- **Navegación — Cómputo** : Agrupación de Instancias VM (preview), IaaS OpenSource e IaaS VMware bajo una única categoría **Cómputo** en la navegación (PR #277).
+- **Navegación — Red** : Agrupación de VPC (preview) y Private Backbone bajo una única categoría **Red** en la navegación.
+- **Documentos contractuales** : Reestructuración completa de la documentación contractual — creación de una página hub `/contracts` (condiciones generales, condiciones particulares, convenios de servicio SecNumCloud, SLA de instancias VM) y de una página hub `/shared-responsibility` (matrices RACI por servicio : IaaS, S3, PaaS, Kubernetes, LLMaaS, Red). El menú lateral contractual se reemplaza por una columna dedicada **Contractual** en el pie de página. Traducciones disponibles EN/DE/ES/IT.
+- **Instancias VM** : Actualización del compromiso de nivel de servicio (SLA) del 99,9 % al 99,95 %.
+- **IaaS OpenSource** : Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo, migración hacia Glacier prevista en el T1 2027).
 
-### 15 Abril 2026: Mejora de la documentación IaaS VMware — métricas del clúster
+### 15 de abril de 2026 : Nueva documentación de instancias VM (Cloud Público)
 
-- **IaaS VMware**: Adición de una documentación detallada sobre las métricas mostradas en la vista de un clúster VMware desde la Consola Cloud Temple. Cubre los tres gráficos de memoria del clúster: **Memoria asignada** (cantidad total asignada a las VMs), **Memoria consumida** (memoria física realmente utilizada por las VMs) y **Asignación en el peor de los casos** (proyección del consumo máximo simultáneo), con la descripción precisa de lo que representa cada indicador para anticipar las necesidades de recursos.
+- **Instancias VM** : Puesta en línea de la documentación inicial del servicio de instancias VM (en preview), nueva oferta de máquinas virtuales mutualizadas de Cloud Temple. La documentación cubre la visión general del servicio, los conceptos técnicos (clases de servicio Development/General Purpose/Performance, gabaritos predefinidos y personalizados, almacenamiento, red VPC, copia de seguridad), así como una guía de inicio completa. El servicio se organiza bajo una nueva categoría **Cloud Público** en la navegación.
 
-### 15 Abril 2026: Documentación Managed MariaDB, Managed PostgreSQL
+### 15 de abril de 2026 : Mejora de la documentación IaaS VMware — métricas de clúster
 
-- **Managed MariaDB**: Publicación de la documentación inicial del servicio Managed MariaDB (en preview): presentación del servicio, conceptos técnicos (arquitecturas StandAlone y Distributed), guía de inicio.
-- **Managed PostgreSQL**: Publicación de la documentación inicial del servicio Managed PostgreSQL (en preview): presentación del servicio, conceptos técnicos, guía de inicio.
+- **IaaS VMware** : Adición de una documentación detallada sobre las métricas mostradas en la vista de un clúster VMware desde la Consola Cloud Temple. Cubre los tres gráficos de memoria del clúster : **Memoria asignada** (cantidad total asignada a las VMs), **Memoria consumida** (memoria física realmente utilizada por las VMs) y **Asignación en el peor de los casos** (proyección de consumo máximo simultáneo), con la descripción precisa de lo que cada indicador representa para anticipar las necesidades de recursos.
 
-### 15 Abril 2026: Nuevo módulo Gestor de costes
+### 15 de abril de 2026 : Documentación Managed MariaDB, Managed PostgreSQL
 
-- **Consola (Gestor de costes)**: Adición de la documentación completa del nuevo módulo de seguimiento del consumo accesible desde la Consola Cloud Temple. Cubre el panel de control, el consumo global (con proyección de fin de mes), la distribución por producto y por servicio, los detalles de facturación línea por línea y el catálogo de precios.
+- **Managed MariaDB** : Puesta en línea de la documentación inicial del servicio Managed MariaDB (en preview) : presentación del servicio, conceptos técnicos (arquitecturas StandAlone y Distributed), guía de inicio.
+- **Managed PostgreSQL** : Puesta en línea de la documentación inicial del servicio Managed PostgreSQL (en preview) : presentación del servicio, conceptos técnicos, guía de inicio.
 
-### 26 Marzo 2026: Actualización de la lista de subcontratistas (DPA)
+### 15 de abril de 2026 : Nuevo módulo Gestor de costes
 
-- **Contractual**: Actualización del Anexo Contractual sobre Datos de Carácter Personal (DPA) — revisión de la lista de subcontratistas (retirada de Microsoft Azure y Amazon Web Services, modificación de la actividad para Iron Mountain) y adición de la fecha de autorización.
+- **Consola (Gestor de costes)** : Adición de la documentación completa del nuevo módulo de seguimiento de consumo accesible desde la Consola Cloud Temple. Cubre el panel de control, el consumo global (con proyección de fin de mes), la distribución por producto y por servicio, los detalles de facturación línea por línea y el catálogo de precios.
 
-### 19 Marzo 2026: Mejoras en la documentación IaaS y Terraform
+### 26 de marzo de 2026 : Actualización de la lista de subcontratistas (DPA)
 
-- **IaaS OpenSource**: Adición de una guía completa para crear una máquina virtual. El tutorial cubre los tres métodos de despliegue disponibles (modelo, importación XVA, Marketplace) con instrucciones paso a paso y recomendaciones de buenas prácticas.
-- **IaaS VMware**: Adición de una página que agrupa todos los tutoriales disponibles para facilitar la navegación y el descubrimiento de las guías.
-- **Terraform**: Nueva sección que explica cómo recibir automáticamente las notificaciones de las nuevas versiones del Provider Terraform a través de GitHub.
+- **Contractual** : Actualización del Anexo Contractual sobre los Datos de Carácter Personal (DPA) - revisión de la lista de subcontratistas (retirada de Microsoft Azure y Amazon Web Services, modificación de la actividad para Iron Mountain) y adición de la fecha de autorización.
 
-### 19 Marzo 2026: Actualización DPA y conformidad HDS
+### 19 de marzo de 2026 : Mejoras de documentación IaaS y Terraform
 
-- **Contractual**: Actualización del Anexo Contractual sobre Datos de Carácter Personal (DPA) a la versión 1.0. Integración de los últimos requisitos de la certificación HDS (Alojador de Datos de Salud) y actualización de la lista de subcontratistas autorizados. Traducción completa en inglés, alemán, español e italiano.
+- **IaaS OpenSource** : Adición de una guía completa para crear una máquina virtual. El tutorial cubre los tres métodos de despliegue disponibles (modelo, importación XVA, Marketplace) con instrucciones paso a paso y recomendaciones de buenas prácticas.
+- **IaaS VMware** : Adición de una página que agrupa el conjunto de tutoriales disponibles para facilitar la navegación y el descubrimiento de las guías.
+- **Terraform** : Nueva sección que explica cómo recibir automáticamente las notificaciones de las nuevas versiones del Provider Terraform a través de GitHub.
 
-### 21 Febrero 2026: Conceptos avanzados de red
+### 19 de marzo de 2026 : Actualización DPA y conformidad HDS
 
-- **Red (Internet)**: Nueva página de **conceptos avanzados** que documenta las comunidades BGP y el control de la Local Preference en el backbone Internet Cloud Temple (AS33930). Incluye una guía de configuración con ejemplo Bird.
-- **LLMaaS**: Actualización del catálogo de modelos y adición del ciclo de vida de los modelos. Adición de los modelos LTS (Long Term Support).
-- **IaaS Bare Metal**: Adición de precisiones sobre el volumen BFS (Boot from SAN) en la guía de inicio: el Volumen 1 está dedicado a la instalación del SO, no compartible dentro de una misma AZ, con recomendación de almacenar los datos en un volumen LUN adicional.
-- **Almacenamiento Objeto (OSS)**: Adición de una página **FAQ** que cubre el acceso S3, las listas blancas de IP, los enlaces pre-firmados y los escenarios de uso recomendados.
+- **Contractual** : Actualización del Anexo Contractual sobre los Datos de Carácter Personal (DPA) a la versión 1.0. Integración de los últimos requisitos de la certificación HDS (Hébergeur de Datos de Salud) y actualización de la lista de subcontratistas autorizados. Traducción completa en inglés, alemán, español e italiano.
 
-### 10 Febrero 2026: Actualización de los precios LLMaaS
+### 21 de febrero de 2026 : Conceptos avanzados de red
 
-- **LLMaaS**: Actualización de las condiciones tarifarias de la API. Los precios vigentes están disponibles en el [catálogo tarifario oficial Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+- **Red (Internet)** : Nueva página de **conceptos avanzados** que documenta las comunidades BGP y el control de la Local Preference en el backbone Internet Cloud Temple (AS33930). Incluye una guía de configuración con ejemplo Bird.
+- **LLMaaS** : Actualización del catálogo de modelos y adición del ciclo de vida de los modelos. Adición de los modelos LTS (Long Term Support).
+- **IaaS Bare Metal** : Adición de precisiones sobre el volumen BFS (Boot from SAN) en la guía de inicio : el Volumen 1 está dedicado a la instalación del SO, no compartible dentro de una misma AZ, con recomendación de almacenar los datos en un volumen LUN adicional.
+- **Almacenamiento de Objetos (OSS)** : Adición de una página **FAQ** que cubre el acceso S3, las listas blancas de IP, los enlaces pre-firmados y los escenarios de uso recomendados.
 
-### 5 Febrero 2026: Precisión sobre los compromisos de servicio (SLA)
+### 10 de febrero de 2026 : Actualización de las tarifas LLMaaS
 
-- **Managed Kubernetes**: Actualización completa y finalización de los compromisos de nivel de servicio (SLA) para la oferta Managed Kubernetes.
+- **LLMaaS** : Actualización de las condiciones tarifarias de la API. Las tarifas en vigor están disponibles en el [catálogo tarifario oficial Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-### 19 Enero 2026: Extensión Managed Kubernetes y VPC
+### 5 de febrero de 2026 : Precisiones sobre los compromisos de servicio (SLA)
 
-- **Managed Kubernetes**: Adición del soporte para los nodos **Bare Metal** y las **GPUs** (NVIDIA).
-- **Managed Kubernetes**: Nuevo tutorial sobre el uso de GPUs en un clúster Kubernetes.
-- **Managed Kubernetes**: Reemplazo de KubeCost por una guía más reciente sobre **OpenCost**.
-- **Red (VPC)**: Documentación completa del servicio Virtual Private Cloud (VPC), incluyendo los conceptos de alta disponibilidad (HA), las guías de inicio y los tutoriales.
+- **Managed Kubernetes** : Actualización completa y finalización de los compromisos de nivel de servicio (SLA) para la oferta Managed Kubernetes.
 
-### 11 Diciembre 2025: Novedades de Managed Kubernetes
+### 19 de enero de 2026 : Extensión Managed Kubernetes y VPC
 
-- **Managed Kubernetes**: Añadido un nuevo tutorial sobre el uso de **Gateway API** para la gestión avanzada del tráfico.
-- **Managed Kubernetes**: Actualización de la documentación sobre la gestión de cuotas (Ceph) y optimización de las herramientas de gestión de costes (OpenCost).
+- **Managed Kubernetes** : Adición del soporte para los nodos **Bare Metal** y los **GPUs** (NVIDIA).
+- **Managed Kubernetes** : Nuevo tutorial sobre el uso de GPUs en un clúster Kubernetes.
+- **Managed Kubernetes** : Reemplazo de KubeCost por una guía más reciente sobre **OpenCost**.
+- **Red (VPC)** : Documentación completa del servicio Virtual Private Cloud (VPC), incluyendo los conceptos de alta disponibilidad (HA), las guías de inicio y los tutoriales.
 
-### 22 Noviembre 2025: Novedades de LLMaaS y mejoras globales
+### 11 de diciembre de 2025 : Novedades Managed Kubernetes
 
-- **LLMaaS (OCR)**: Añadida una documentación completa para **DeepSeek-OCR**, nuestro nuevo modelo especializado en el análisis de documentos (PDF, imágenes), capaz de extraer texto estructurado, tablas y fórmulas matemáticas.
+- **Managed Kubernetes** : Adición de un nuevo tutorial sobre el uso de **Gateway API** para la gestión avanzada del tráfico.
+- **Managed Kubernetes** : Actualización de la documentación sobre la gestión de cuotas (Ceph) y optimización de las herramientas de gestión de costes (OpenCost).
 
-### 20 Noviembre 2025: Actualización mayor de PaaS OpenShift
+### 22 de noviembre de 2025 : Novedades LLMaaS y mejoras globales
 
-- **PaaS OpenShift (PR #194)**: Rediseño y actualización completa de la documentación de OpenShift, incluyendo nuevas capturas de pantalla y una traducción íntegra al inglés, español, alemán e italiano para acompañar nuestra expansión internacional.
+- **LLMaaS (OCR)** : Adición de una documentación completa para **DeepSeek-OCR**, nuestro nuevo modelo especializado en el análisis de documentos (PDF, imágenes), capaz de extraer texto estructurado, tablas y fórmulas matemáticas.
 
-### 3 Noviembre 2025: Mejora de los tutoriales de Kubernetes
+### 20 de noviembre de 2025 : Actualización mayor PaaS OpenShift
 
-- **Managed Kubernetes**: Añadido un nuevo tutorial sobre el despliegue continuo con **ArgoCD** y el enfoque GitOps.
-- **Managed Kubernetes**: Revisión y mejora de los tutoriales existentes. Las guías sobre el despliegue, la red, la gestión de permisos (Capsule) y la copia de seguridad (Kasten) se han enriquecido para abordar mejor las cuestiones de seguridad, gobernanza y coste, en respuesta a las expectativas de los perfiles de CISO y Comprador.
+- **PaaS OpenShift (PR #194)** : Rediseño y actualización completa de la documentación OpenShift, incluyendo nuevas capturas de pantalla y una traducción integral en inglés, español, alemán e italiano para acompañar nuestra expansión internacional.
 
-### 28 Octubre 2025: Nueva documentación de Managed Kubernetes y mejoras varias
+### 3 de noviembre de 2025 : Mejora de los tutoriales Kubernetes
 
-- **Managed Kubernetes (PR #193 y mejoras)**: Añadida una documentación completa para el nuevo servicio Managed Kubernetes. La sección incluye una presentación del servicio, los conceptos técnicos, una guía de inicio, un primer tutorial y la matriz de responsabilidades (RACI). El contenido se ha enriquecido para responder mejor a las expectativas de los diferentes perfiles de usuarios.
-- **Almacenamiento de Objetos (PR #190, #189)**: Añadidos dos nuevos tutoriales para el servicio de Almacenamiento de Objetos: uno sobre la gestión de accesos a los buckets S3 y otro sobre el uso de Restic para las copias de seguridad.
-- **Contractual (PR #191)**: Corrección y actualización del documento "Acuerdo de Procesamiento de Datos" (DPA).
+- **Managed Kubernetes** : Adición de un nuevo tutorial sobre el despliegue continuo con **ArgoCD** y el enfoque GitOps.
+- **Managed Kubernetes** : Revisión y mejora de los tutoriales existentes. Las guías sobre el despliegue, la red, la gestión de permisos (Capsule) y la copia de seguridad (Kasten) han sido enriquecidas para abordar mejor las cuestiones de seguridad, gobernanza y coste, en respuesta a las expectativas de los perfiles RSSI y Comprador.
 
-### 18 Octubre 2025: Mantenimiento y nuevas documentaciones
+### 28 de octubre de 2025 : Nueva documentación Managed Kubernetes y mejoras diversas
 
-- **LLMaaS**: Añadida una nueva pregunta a la FAQ para presentar la página de estado público ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), que permite seguir en tiempo real la disponibilidad y el rendimiento de cada modelo.
-- **Contractual**: Actualización mayor del Acuerdo de Procesamiento de Datos (DPA v2) para reflejar los últimos requisitos legales y de cumplimiento.
-- **Consola**: Mejora y aclaración de la documentación relativa a la gestión de pedidos.
-- **Marketplace**: Añadido un tutorial detallado sobre la personalización de las imágenes de las máquinas virtuales (VM) para crear plantillas reutilizables.
-- **LLMaaS**: Añadida una guía para configurar la extensión VSCode CLINE con el fin de utilizar los modelos de lenguaje de Cloud Temple directamente desde el editor.
-- **Almacenamiento de Objetos (OSS)**: Añadidas precisiones sobre la política de ciclo de vida (Lifecycle) para la eliminación de datos.
-- **Almacenamiento de Objetos (OSS)**: Añadida una guía de resolución de problemas para los errores de suma de comprobación (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
-- **LLMaaS**: Actualización de la lista de modelos disponibles y retraducción de más de 50 documentos para asegurar la coherencia.
+- **Managed Kubernetes (PR #193 & mejoras)**: Adición de una documentación completa para el nuevo servicio Managed Kubernetes. La sección incluye una presentación del servicio, los conceptos técnicos, una guía de inicio, un primer tutorial, y la matriz de responsabilidades (RACI). El contenido ha sido enriquecido para responder mejor a las expectativas de los diferentes perfiles de usuarios.
+- **Almacenamiento de Objetos (PR #190, #189)**: Adición de dos nuevos tutoriales para el servicio de Almacenamiento de Objetos : uno sobre la gestión de accesos a los buckets S3 y otro sobre el uso de Restic para las copias de seguridad.
+- **Contractual (PR #191)**: Corrección y actualización del documento "Data Processing Agreement" (DPA).
 
-### 14 Agosto 2025: Mejoras y correcciones
+### 18 de octubre de 2025 : Mantenimiento y nuevas documentaciones
 
-- **LLMaaS**: Actualización y aclaración de las respuestas de la FAQ para abordar mejor las preguntas técnicas y estratégicas. Añadida la FAQ a la navegación.
+- **LLMaaS** : Adición de una nueva pregunta a la FAQ para presentar la página de estado pública ([llmaas.status.cloud-temple.app](https://llmaas.status.cloud-temple.app/)), permitiendo seguir en tiempo real la disponibilidad y el rendimiento de cada modelo.
+- **Contractual** : Actualización mayor del Data Processing Agreement (DPA v2) para reflejar los últimos requisitos legales y de conformidad.
+- **Consola** : Mejora y aclaración de la documentación concerniente a la gestión de los pedidos.
+- **Marketplace** : Adición de un tutorial detallado sobre la personalización de las imágenes de máquinas virtuales (VM) para crear plantillas reutilizables.
+- **LLMaaS** : Adición de una guía para configurar la extensión VSCode CLINE para utilizar los modelos de lenguaje de Cloud Temple directamente desde el editor.
+- **Almacenamiento de Objetos (OSS)** : Adición de precisiones sobre la política de ciclo de vida (Lifecycle) para la supresión de datos.
+- **Almacenamiento de Objetos (OSS)** : Adición de una guía de resolución de problemas para los errores de checksum (`XAmzContentSHA256Mismatch`) con AWS CLI y Terraform.
+- **LLMaaS** : Actualización de la lista de modelos disponibles y retraducción de más de 50 documentos para asegurar la coherencia.
 
-### Julio 2025: Novedades y actualizaciones mayores
+### 14 de agosto de 2025 : Mejoras y correcciones
 
-- **Almacenamiento de Objetos (OSS)**:
-  - Rediseño completo de la sección de tutoriales con guías dedicadas para herramientas populares: AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer y el SDK Python Boto3.
-  - Añadidas precisiones sobre los conceptos de cuentas de almacenamiento y el bloqueo de objetos (Object Lock).
-- **IaaS OpenSource**:
-  - Añadida una documentación detallada sobre la gestión de la Alta Disponibilidad (HA) para los grupos de recursos y las máquinas virtuales.
-- **Consola**:
+- **LLMaaS** : Actualización y aclaración de las respuestas de la FAQ para abordar mejor las cuestiones técnicas y estratégicas. Adición de la FAQ a la navegación.
+
+### Julio 2025: Novedades y actualizaciones importantes
+
+- **Almacenamiento de Objetos (OSS)** :
+  - Rediseño completo de la sección de tutoriales con guías dedicadas para herramientas populares : AWS CLI, Minio Client (`mc mirror`), Cloudberry Explorer y el SDK Python Boto3.
+  - Añadición de precisiones sobre los conceptos de cuentas de almacenamiento y el bloqueo de objetos (Object Lock).
+- **IaaS OpenSource** :
+  - Añadición de una documentación detallada sobre la gestión de la Alta Disponibilidad (HA) para los pools de recursos y las máquinas virtuales.
+- **Consola** :
   - Actualización de la página de alertas de seguridad con las últimas vulnerabilidades.
-- **Red**:
-  - Añadidas nuevas capturas de pantalla para ilustrar la configuración de la conectividad IPv6.
+- **Red** :
+  - Añadición de nuevas capturas de pantalla para ilustrar la configuración de la conectividad IPv6.
 
-### 29 Junio 2025: Finalización de la documentación de LLMaaS
+### 29 de junio de 2025: finalización de la documentación LLMaaS
 
-- Validación del conjunto completo de pruebas.
-- Corrección y validación de los pipelines RAG con FAISS y Qdrant.
+- Validación de la suite de pruebas completa.
+- Corrección y validación de los pipelines RAG with FAISS y Qdrant.
 - Enriquecimiento de los tutoriales con explicaciones técnicas más detalladas.
-- Añadida una sección sobre la seguridad de los prompts y el ciclo de vida de los modelos en los conceptos.
-- Mejora de la página de explicación del RAG con esquemas y detalles sobre los modelos de incrustación (embedding).
-- Actualización de la documentación de la API, la guía de inicio y la presentación del servicio.
-- Añadido el precio para el endpoint de Transcripción de Audio.
-- Añadido el calendario previsto del ciclo de vida de los modelos.
-- Añadida la matriz de responsabilidades para la oferta LLMaaS.
+- Añadición de una sección sobre la seguridad de los prompts y el ciclo de vida de los modelos en los conceptos.
+- Mejora de la página de explicación del RAG con diagramas y detalles sobre los modelos de embedding.
+- Actualización de la documentación de la API, de la guía de inicio y de la presentación del servicio.
+- Añadición del pricing para el endpoint Transcription Audio.
+- Añadición de la planificación previsional del ciclo de vida de los modelos.
+- Añadición de la matriz de responsabilidad para la oferta LLMaaS.
