@@ -14,9 +14,9 @@ Es ermöglicht die Verwaltung lokaler Konten und unterstützt gleichzeitig die H
     <a href="./iam/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
-    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./iam/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Die gängigen Antworten zu Konten, Berechtigungen und dem Zugriff auf die Konsole.</p>
+    <a href="./iam/quickstart" class="card-link">FAQ lesen &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

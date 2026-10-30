@@ -59,9 +59,9 @@ hide_table_of_contents: true
 ## Páginas populares
 
 <div class="popular-links-grid">
-  <a class="popular-link" href="./console/console_quickstart">
-    <div class="popular-link-title">Inicio rápido de la Consola <span>→</span></div>
-    <div class="popular-link-desc">Inicio rápido de la Consola Cloud Temple</div>
+  <a class="popular-link" href="./console/onboarding">
+    <div class="popular-link-title">Onboarding <span>→</span></div>
+    <div class="popular-link-desc">Tus primeros pasos en la plataforma, desde el registro hasta el primer despliegue</div>
   </a>
   <a class="popular-link" href="./managed_kubernetes/quickstart">
     <div class="popular-link-title">Kubernetes Gestionado <span>→</span></div>

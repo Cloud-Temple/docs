@@ -1,14 +1,18 @@
 ---
 title: Onboarding
-description: "Créez votre organisation, ouvrez vos environnements et activez vos produits. La mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement."
+description: "Créez votre organisation, sécurisez vos accès, ouvrez vos environnements, invitez vos équipes et activez vos produits. La mise en place sur la plateforme Cloud Temple, de l'inscription au premier déploiement."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
 import shivaHome from '@site/docs/console/images/shiva_home.png'
+import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
 import tenantNew from '@site/docs/console/images/shiva_org_tenant_new.png'
 import orgAccess from '@site/docs/console/images/shiva_org_access.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import supportSelectProduct from '@site/docs/console/images/console_support_new_ticket_select_product.png'
 import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_products_edit.png'
+import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 
 # Onboarding
 
@@ -16,13 +20,6 @@ Chez Cloud Temple, vous n'attendez pas votre cloud : vous le créez.
 
 Vous créez votre organisation depuis un formulaire en ligne, en quelques minutes. Vos environnements se créent ensuite d'un clic depuis la Console. Vous pouvez activer et désactiver des produits en complète autonomie, facturés à l'usage. Le tout sur une infrastructure souveraine, opérée en France. La Console signale, tenant par tenant et produit par produit, ce qui relève de la qualification **SecNumCloud**.
 
-<div class="cert-row cert-row--doc">
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
-</div>
 
 ## Ce que vous obtenez en vous inscrivant
 
@@ -31,27 +28,20 @@ Vous créez votre organisation depuis un formulaire en ligne, en quelques minute
 - **Sans avenant** : ouvrez de nouveaux environnements sous votre contrat existant, dans les conditions qu'il prévoit.
 - **Souverain par construction** : infrastructure opérée en France, et un périmètre de qualification **SecNumCloud** identifié dans la Console.
 
-## Les trois parcours
+<a id="les-trois-parcours"></a>
 
-Cette page décrit cette mise en place, de bout en bout.
+## Les étapes de votre mise en place
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Créer votre organisation</h3>
-    <p>Le formulaire d'inscription en ligne, et ce qui se déclenche derrière.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Démarrer &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Ajouter un environnement</h3>
-    <p>Un nouveau tenant depuis la Console, en quelques minutes et en autonomie.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">Voir comment &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Faire évoluer un environnement</h3>
-    <p>Activer un produit, ouvrir un accès, déléguer la gestion à un tiers.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Explorer &rarr;</a>
-  </div>
-</div>
+Cette page décrit votre mise en place de bout en bout, dans l'ordre où vous la vivez. Chaque étape est courte et renvoie vers la documentation de référence pour le détail.
+
+1. [Créer votre organisation](#étape-1-créer-votre-organisation) : le formulaire d'inscription, et ce qui se déclenche derrière.
+2. [Vous connecter et sécuriser vos accès](#étape-2-vous-connecter-et-sécuriser-vos-accès) : la connexion, le double facteur et les adresses IP autorisées.
+3. [Choisir ou créer un environnement](#étape-3-choisir-ou-créer-un-environnement) : un tenant par usage, créé en quelques minutes et en autonomie.
+4. [Inviter vos collaborateurs](#étape-4-inviter-vos-collaborateurs) : leurs comptes et leurs droits, tenant par tenant.
+5. [Activer vos produits](#étape-5-activer-vos-produits) : ouvrir, arrêter ou demander un produit.
+6. [Automatiser](#étape-6-automatiser) : l'API de la Console et le provider Terraform.
+
+Une fois en place, la [visite de la Console](./console_quickstart) vous présente le reste de l'interface : tableau de bord, coûts, journalisation, support.
 
 ## Le vocabulaire, en deux mots
 
@@ -79,7 +69,9 @@ Cela peut être la même personne.
 
 ---
 
-## Parcours 1. Créer votre organisation
+<a id="parcours-1-créer-votre-organisation"></a>
+
+## Étape 1. Créer votre organisation
 
 C'est votre point d'entrée sur la plateforme. Il n'arrive qu'une fois, et il se fait en ligne.
 
@@ -100,7 +92,7 @@ Il est court et se remplit en une seule fois. Il vous demande quatre choses.
 :::caution[Les adresses IP ne sont pas optionnelles]
 Seules les adresses que vous déclarez pourront accéder à la Console.
 
-Pensez à inclure **tous** vos sites et vos sorties VPN. Un oubli n'est pas définitif : la liste s'enrichit ensuite depuis la Console, en autonomie.
+Pensez à inclure **tous** vos sites et vos sorties VPN. Un oubli n'est pas définitif : la liste s'enrichit ensuite depuis la Console, en autonomie (voir [Ajouter une adresse IP](#ajouter-une-adresse-ip)).
 :::
 
 Vous terminez en attestant que vous êtes habilité à engager votre organisation, et en acceptant les **[conditions générales](https://www.cloud-temple.com/contracts)**.
@@ -123,21 +115,73 @@ Un courriel de **création de compte**, adressé au propriétaire désigné. Vou
 
 Détails : [Les courriels que vous recevez](#les-courriels-que-vous-recevez).
 
-### Vous êtes connecté
-
-Vous arrivez sur la Console, à l'adresse [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Vous pouvez dès lors inviter vos collaborateurs et leur attribuer des droits : voir [Identités et accès](/console/iam).
-
-<img src={shivaLogin} />
-
-<img src={shivaHome} />
-
 :::tip[Et la partie contractuelle ?]
 Elle ne vous bloque pas. Les informations administratives et de facturation : coordonnées de facturation, mode de règlement, référence de bon de commande se complètent en parallèle, avec votre interlocuteur Cloud Temple. Vous n'attendez pas qu'elles soient finalisées pour prendre la plateforme en main.
 :::
 
 ---
 
-## Parcours 2. Ajouter un environnement
+<a id="connexion-à-votre-tenant-cloud-temple"></a>
+
+## Étape 2. Vous connecter et sécuriser vos accès
+
+<a id="vous-êtes-connecté"></a>
+
+### Vous connecter
+
+La Console est accessible à l'adresse [shiva.cloud-temple.com](https://shiva.cloud-temple.com), ou depuis l'adresse directe qui vous a été communiquée par courriel.
+
+1. Sur la première page, indiquez l'[organisation](./iam/concepts.md#organisations) dans laquelle votre compte a été créé, puis cliquez sur **Se connecter**.
+2. Authentifiez-vous avec votre mot de passe, puis avec le code à usage unique de votre second facteur.
+
+<img src={shivaLogin} />
+
+Vous arrivez sur la page d'accueil de la Console.
+
+<img src={shivaHome} />
+
+### Le double facteur est obligatoire
+
+L'authentification à double facteur (MFA) est **obligatoire** pour tous les comptes de la Console : après le mot de passe, la Console demande un code à usage unique. Vous l'activez depuis le courriel de création de compte. Si votre organisation est fédérée à votre propre annuaire, voir les [mécanismes d'authentification](./iam/concepts.md#mécanismes-dauthentification).
+
+### Ajouter une adresse IP
+
+La Console étant hébergée sur une infrastructure qualifiée SecNumCloud, son accès est limité aux adresses IP publiques que vous avez autorisées.
+
+L'**ajout** se fait depuis la Console, dans **Administration > Accès**. La page liste les adresses publiques autorisées ; le bouton **« Ajouter une IP »** en déclare une nouvelle, en notation CIDR, avec une description.
+
+Il vous faut le droit `console_public_access_read` pour consulter la liste, et `console_public_access_write` pour l'enrichir.
+
+Comptez une **dizaine de minutes** avant que la nouvelle adresse soit effective.
+
+:::caution[Cette liste est celle de votre organisation]
+Il n'y a qu'une liste pour toute l'organisation. La page est atteignable depuis un tenant, mais **une adresse ajoutée là autorise l'accès à la Console pour toute l'organisation**, pas seulement pour ce tenant.
+:::
+
+La **suppression** d'une adresse, elle, passe par une **demande de support** depuis la Console. C'est délibéré : retirer un accès est une opération irréversible pour ceux qui se connectent derrière.
+
+<img src={orgAccess} />
+
+Pour aller plus loin : les [recommandations de sécurité](./security/security_recommendations.md) pour l'accès à la Console.
+
+---
+
+<a id="parcours-2-ajouter-un-environnement"></a>
+
+## Étape 3. Choisir ou créer un environnement
+
+### Choisir votre tenant de travail
+
+Les ressources techniques (calcul, stockage, réseau…) sont **propres à chaque tenant** et ne sont pas partagées entre tenants. Avant d'agir, choisissez le tenant dans lequel vous travaillez :
+
+- depuis le bandeau en haut de la Console, ouvrez le sélecteur **« Mes tenants »** et cliquez sur le tenant voulu ;
+- ou depuis **Administration > Tenants**, utilisez l'action **« Se connecter au tenant »** d'une ligne.
+
+Le sélecteur signale par un badge **SecNumCloud** les tenants qualifiés.
+
+<img src={imgSelector} />
+
+### Créer un nouvel environnement
 
 Vous avez déjà une organisation et vous voulez un nouvel environnement, pour une recette, un nouveau projet ou une filiale.
 
@@ -145,10 +189,10 @@ Vous avez déjà une organisation et vous voulez un nouvel environnement, pour u
 
 ### Les étapes
 
-1. Depuis la Console, créez un **nouveau tenant** depuis l'onglet **Tenants**.
-2. Donnez-lui un **nom** parlant : *production*, *recette*, le nom d'un projet.
+1. Depuis **Administration > Tenants**, cliquez sur **« Nouveau tenant »**.
+2. Donnez-lui un **nom** parlant : *production*, *recette*, le nom d'un projet. Le nom est contrôlé en direct ; une description est possible.
 3. Le créateur du tenant en devient le propriétaire par défaut. Il pourra ajouter d'autres responsables ensuite, via l'onglet **Utilisateurs**, une fois connecté au tenant.
-4. Choisissez les **produits** à y activer.
+4. Choisissez les **produits** à y activer, puis validez avec **« Créer »**.
 
 <img src={tenantNew} />
 
@@ -164,9 +208,34 @@ Vous choisissez les produits du tenant **dès le formulaire de création** (l'é
 
 ---
 
-## Parcours 3. Faire évoluer un environnement
+## Étape 4. Inviter vos collaborateurs
 
-Vos besoins changent. Voici comment faire évoluer un environnement existant.
+Les comptes sont **globaux à l'organisation** ; les droits, eux, se donnent **tenant par tenant**.
+
+1. **Invitez le collaborateur.** Depuis **Administration > Utilisateurs**, le bouton **« Nouvel utilisateur »** demande son adresse électronique. Il reçoit un courriel de vérification ; son compte apparaît grisé tant qu'il ne l'a pas validé.
+2. **Donnez-lui ses droits.** Un compte nouvellement créé n'a **aucun droit**. Dans le menu **Actions** de l'utilisateur, choisissez **« Modifier »**, puis cochez les permissions nécessaires, dans chaque tenant où il doit intervenir.
+
+<img src={shivaOnboard_004} />
+
+<img src={shivaOnboard_005} />
+
+Pour inviter un utilisateur ou lui donner une permission, il vous faut le droit `iam_write`, et vous ne pouvez donner qu'une permission que vous possédez vous-même.
+
+Le détail des procédures (réinscription, suppression, propriétaires de tenant) et la liste des permissions sont dans la [référence IAM](./iam/concepts.md). Si votre organisation utilise son propre annuaire d'identités, voir les [tutoriels de fédération d'identité](/console/iam/tutorials).
+
+### Changer un responsable
+
+Le propriétaire de l'organisation gère les utilisateurs et leurs droits directement depuis la Console : voir [Identités et accès](/console/iam).
+
+Il peut aussi **déléguer** ses droits à un partenaire externe ou à un chef de projet Cloud Temple : utile si vous confiez l'exploitation à un tiers.
+
+---
+
+<a id="parcours-3-faire-évoluer-un-environnement"></a>
+
+## Étape 5. Activer vos produits
+
+Vos besoins changent. Voici comment faire évoluer le périmètre d'un environnement existant.
 
 ### Activer un produit
 
@@ -186,27 +255,62 @@ Une vérification a lieu avant : si des ressources sont encore consommées, la d
 
 C'est une protection : elle évite de couper un service encore utilisé et d'en perdre les données.
 
-### Ajouter une adresse IP
+### Les produits {/* #les-produits */}
 
-L'**ajout** se fait depuis la Console, dans **Administration > Accès**. La page liste les adresses publiques autorisées ; le bouton **« Ajouter une IP »** en déclare une nouvelle, en notation CIDR, avec une description.
+#### Ce que vous activez vous-même
 
-Il vous faut le droit `console_public_access_read` pour consulter la liste, et `console_public_access_write` pour l'enrichir.
+Aucun produit n'est activé d'office, ni à la création de votre organisation, ni à celle d'un tenant. Quatre produits sont en revanche **disponibles** dans votre Console dès l'ouverture : vous les activez vous-même, sur le tenant de votre choix. Ils sont **facturés à l'usage**, sans engagement de volume ni palier à négocier : vous ne payez que ce que vous consommez.
 
-Comptez une **dizaine de minutes** avant que la nouvelle adresse soit effective.
+| Produit | À quoi ça sert | En savoir plus |
+| --- | --- | --- |
+| **VM Instances** | Des machines virtuelles à la demande | [Documentation](/public_cloud/vm_instances) |
+| **VPC** | Un réseau privé virtuel | [Documentation](/network/vpc) |
+| **LLMaaS** | Des modèles d'IA souverains | [Documentation](/llmaas) |
+| **Object Storage** | Du stockage compatible S3 | [Documentation](/storage/oss) |
 
-:::caution[Cette liste est celle de votre organisation]
-Il n'y a qu'une liste pour toute l'organisation. La page est atteignable depuis un tenant, mais **une adresse ajoutée là autorise l'accès à la Console pour toute l'organisation**, pas seulement pour ce tenant.
-:::
+#### Le reste du catalogue
 
-La **suppression** d'une adresse, elle, passe par une **demande de support** depuis la Console. C'est délibéré : retirer un accès est une opération irréversible pour ceux qui se connectent derrière.
+Ces produits s'ouvrent dans le cadre de votre contrat, avec votre interlocuteur commercial :
 
-<img src={orgAccess} />
+- [IaaS VMware](/iaas_vmware) et [IaaS OpenSource](/iaas_opensource)
+- [Bare metal](/iaas_bare-metal)
+- [PaaS OpenShift](/paas_openshift) et [Kubernetes managé](/managed_kubernetes)
+- Bases de données managées : [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
+- [Bastion](/bastion)
+- [Housing](/housing)
+- [Backbone privé](/network/private_backbone) et [Internet](/network/internet)
+- [Marketplace](/marketplace)
 
-### Changer un responsable
+Vue d'ensemble : [nos produits](/managedproducts_overview).
 
-Le propriétaire de l'organisation gère les utilisateurs et leurs droits directement depuis la Console : voir [Identités et accès](/console/iam).
+### Demander un produit supplémentaire {/* #demander-un-produit-supplémentaire */}
 
-Il peut aussi **déléguer** ses droits à un partenaire externe ou à un chef de projet Cloud Temple : utile si vous confiez l'exploitation à un tiers.
+Le produit que vous voulez n'apparaît pas dans votre Console ? Il n'est pas encore à votre catalogue.
+
+1. Depuis la Console, créez une **demande de support**
+2. Indiquez le **produit** concerné, et le volume envisagé si vous le connaissez
+3. Nous revenons vers vous sur les conditions
+4. Une fois validé, le produit apparaît dans votre Console
+5. Vous pouvez l'activer sur un ou plusieurs tenants
+
+<img src={supportSelectProduct} />
+
+#### Changer de niveau de support
+
+Trois niveaux existent, présentés sur [notre site](https://www.cloud-temple.com/produits/niveaux-de-support).
+
+Vous pouvez monter ou descendre de niveau : faites-en la demande par le support depuis la Console, ou auprès de votre interlocuteur commercial.
+
+---
+
+## Étape 6. Automatiser
+
+Tout ce que vous faites dans la Console est aussi possible par programme.
+
+- **L'API de la Console** donne accès à l'ensemble de ses fonctionnalités. Vous vous y authentifiez avec une clé API, ou *Personal Access Token* (PAT), liée à un tenant et à l'utilisateur qui l'a créée. Le détail des appels est consultable depuis **Profil > APIs**. Voir la [documentation de l'API](./api.md).
+- **Le provider Terraform** pilote votre plateforme *as code*. Voir [Terraform Provider](/terraform).
+
+<img src={shivaOnboard_008} />
 
 ---
 
@@ -238,60 +342,10 @@ Regardez vos courriers indésirables : le message est parfois filtré. Il est ex
 
 ---
 
-## Les produits {/* #les-produits */}
-
-### Ce que vous activez vous-même
-
-Aucun produit n'est activé d'office, ni à la création de votre organisation, ni à celle d'un tenant. Quatre produits sont en revanche **disponibles** dans votre Console dès l'ouverture : vous les activez vous-même, sur le tenant de votre choix. Ils sont **facturés à l'usage**, sans engagement de volume ni palier à négocier : vous ne payez que ce que vous consommez.
-
-| Produit | À quoi ça sert | En savoir plus |
-| --- | --- | --- |
-| **VM Instances** | Des machines virtuelles à la demande | [Documentation](/public_cloud/vm_instances) |
-| **VPC** | Un réseau privé virtuel | [Documentation](/network/vpc) |
-| **LLMaaS** | Des modèles d'IA souverains | [Documentation](/llmaas) |
-| **Object Storage** | Du stockage compatible S3 | [Documentation](/storage/oss) |
-
-### Le reste du catalogue
-
-Ces produits s'ouvrent dans le cadre de votre contrat, avec votre interlocuteur commercial :
-
-- [IaaS VMware](/iaas_vmware) et [IaaS OpenSource](/iaas_opensource)
-- [Bare metal](/iaas_bare-metal)
-- [PaaS OpenShift](/paas_openshift) et [Kubernetes managé](/managed_kubernetes)
-- Bases de données managées : [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
-- [Bastion](/bastion)
-- [Housing](/housing)
-- [Backbone privé](/network/private_backbone) et [Internet](/network/internet)
-- [Marketplace](/marketplace)
-
-Vue d'ensemble : [nos produits](/managedproducts_overview).
-
----
-
-## Demander un produit supplémentaire {/* #demander-un-produit-supplémentaire */}
-
-Le produit que vous voulez n'apparaît pas dans votre Console ? Il n'est pas encore à votre catalogue.
-
-1. Depuis la Console, créez une **demande de support**
-2. Indiquez le **produit** concerné, et le volume envisagé si vous le connaissez
-3. Nous revenons vers vous sur les conditions
-4. Une fois validé, le produit apparaît dans votre Console
-5. Vous pouvez l'activer sur un ou plusieurs tenants
-
-<img src={supportSelectProduct} />
-
-### Changer de niveau de support
-
-Trois niveaux existent, présentés sur [notre site](https://www.cloud-temple.com/produits/niveaux-de-support).
-
-Vous pouvez monter ou descendre de niveau : faites-en la demande par le support depuis la Console, ou auprès de votre interlocuteur commercial.
-
----
-
 ## Questions fréquentes
 
 **Combien de temps prend la création d'un environnement ?**
-Quelques minutes, dans les trois cas. La création est automatique, que ce soit pour votre première arrivée ou pour un nouvel environnement.
+Quelques minutes. La création est automatique, que ce soit pour votre première arrivée ou pour un nouvel environnement.
 
 **Combien de tenants puis-je créer ?**
 Autant que nécessaire, dans les conditions de votre contrat.
@@ -308,19 +362,21 @@ Si un collègue de votre organisation a encore accès à la Console, il ajoute l
 **Je viens d'activer un produit, je ne le vois pas encore.**
 Patientez quelques minutes. S'il n'apparaît toujours pas, contactez le support.
 
+D'autres questions sur les comptes et les droits : voir les [questions fréquentes IAM](./iam/quickstart.md).
+
 ---
 
 ## Aller plus loin
 
 <div class="card-grid">
   <div class="card">
-    <h3>Prise en main de la Console</h3>
-    <p>Le tour complet de l'interface : tenants, utilisateurs, accès, coûts.</p>
-    <a href="./console_quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <h3>Visite de la Console</h3>
+    <p>Le reste de l'interface : tableau de bord, coûts, journalisation, support.</p>
+    <a href="./console_quickstart" class="card-link">Faire la visite &rarr;</a>
   </div>
   <div class="card">
     <h3>Identités et accès</h3>
-    <p>Invitez vos collaborateurs et attribuez leurs droits, tenant par tenant.</p>
+    <p>La référence des comptes, des propriétaires et des permissions, tenant par tenant.</p>
     <a href="./iam" class="card-link">Explorer l'IAM &rarr;</a>
   </div>
   <div class="card">

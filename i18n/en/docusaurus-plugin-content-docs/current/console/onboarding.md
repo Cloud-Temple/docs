@@ -1,14 +1,18 @@
 ---
 title: Onboarding
-description: "Create your organization, open your environments, and activate your products. Getting started on the Cloud Temple platform, from registration to first deployment."
+description: "Create your organization, secure your access, open your environments, invite your teams, and activate your products. Getting started on the Cloud Temple platform, from registration to first deployment."
 tags: [onboarding]
 ---
 import shivaLogin from '@site/docs/console/images/shiva_login.png'
 import shivaHome from '@site/docs/console/images/shiva_home.png'
+import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
 import tenantNew from '@site/docs/console/images/shiva_org_tenant_new.png'
 import orgAccess from '@site/docs/console/images/shiva_org_access.png'
+import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
+import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
 import supportSelectProduct from '@site/docs/console/images/console_support_new_ticket_select_product.png'
 import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_products_edit.png'
+import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 
 # Onboarding
 
@@ -16,42 +20,28 @@ At Cloud Temple, you don't wait for your cloud: you create it.
 
 You create your organization from an online form, in just a few minutes. Your environments are then created with a single click from the Console. You can enable and disable products with full autonomy, billed on a pay-as-you-go basis. All on a sovereign infrastructure, operated in France. The Console indicates, tenant by tenant and product by product, what falls under the **SecNumCloud** qualification.
 
-<div class="cert-row cert-row--doc">
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
-  <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
-</div>
 
 ## What you get when you sign up
 
-- **No waiting** : a single form is all it takes. Your organization is created automatically, in a few minutes, without any intervention from our teams.
-- **No volume commitment** : self-service products are billed on a pay-as-you-go basis.
-- **No amendment** : open new environments under your existing contract, under the terms it provides.
-- **Sovereign by design** : infrastructure operated in France, and a **SecNumCloud** qualification scope identified in the Console.
+- **No waiting**: a single form is all it takes. Your organization is created automatically, in a few minutes, without any intervention from our teams.
+- **No volume commitment**: self-service products are billed on a pay-as-you-go basis.
+- **No amendment**: open new environments under your existing contract, under the terms it provides.
+- **Sovereign by design**: infrastructure operated in France, and a **SecNumCloud** qualification scope identified in the Console.
 
-## The three workflows
+<a id="les-trois-parcours"></a>
 
-This page describes this setup, end to end.
+## The steps of your setup
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Create your organization</h3>
-    <p>The online registration form, and what gets triggered behind the scenes.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Get started &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Add an environment</h3>
-    <p>A new tenant from the Console, in a few minutes and autonomously.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">See how &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Evolve an environment</h3>
-    <p>Enable a product, open an access, delegate management to a third party.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Explore &rarr;</a>
-  </div>
-</div>
+This page describes your setup end to end, in the order in which you go through it. Each step is short and points to the reference documentation for details.
+
+1. [Create your organization](#step-1-create-your-organization): the registration form, and what gets triggered behind the scenes.
+2. [Log in and secure your access](#step-2-log-in-and-secure-your-access): logging in, two-factor authentication and authorized IP addresses.
+3. [Choose or create an environment](#step-3-choose-or-create-an-environment): one tenant per use, created in a few minutes and autonomously.
+4. [Invite your collaborators](#step-4-invite-your-collaborators): their accounts and their permissions, tenant by tenant.
+5. [Enable your products](#step-5-enable-your-products): open, stop or request a product.
+6. [Automate](#step-6-automate): the Console API and the Terraform provider.
+
+Once you are set up, the [Console tour](./console_quickstart) presents the rest of the interface: dashboard, costs, logging, support.
 
 ## The vocabulary, in two words
 
@@ -79,7 +69,9 @@ This can be the same person.
 
 ---
 
-## Path 1. Create your organization
+<a id="parcours-1-créer-votre-organisation"></a>
+
+## Step 1. Create your organization
 
 This is your entry point to the platform. It happens only once, and it is done online.
 
@@ -100,7 +92,7 @@ It is short and completed in one go. It asks for four things.
 :::caution[IP addresses are not optional]
 Only the addresses you declare will be able to access the Console.
 
-Make sure to include **all** your sites and VPN exits. An oversight is not permanent: the list can be expanded later from the Console, independently.
+Make sure to include **all** your sites and VPN exits. An oversight is not permanent: the list can be expanded later from the Console, independently (see [Add an IP address](#add-an-ip-address)).
 :::
 
 You finish by attesting that you are authorized to bind your organization, and by accepting the **[general terms and conditions](https://www.cloud-temple.com/contracts)**.
@@ -114,79 +106,47 @@ You have nothing to do during this time.
 :::tip[This first environment arrives empty]
 The environment created by your registration has **no product activated**: it is provisioned by our automation, without a form, so no selection is possible. This is deliberate: nothing starts being billed until you have activated a product yourself.
 
-The four self-service products are **available** in your Console from the moment it opens. Available does not mean activated: you activate them when you decide to, see [Les produits](#les-produits).
+The four self-service products are **available** in your Console from the moment it opens. Available does not mean activated: you activate them when you decide to, see [Products](#les-produits).
 :::
 
 ### What you receive
 
 An **account creation** email, addressed to the designated owner. You set your password and enable your second authentication factor.
 
-Details: [Les courriels que vous recevez](#les-courriels-que-vous-recevez).
+Details: [The emails you receive](#les-courriels-que-vous-recevez).
 
-### You are logged in
-
-You arrive on the Console, at [shiva.cloud-temple.com](https://shiva.cloud-temple.com). You can now invite your collaborators and assign them permissions: see [Identités et accès](/console/iam).
-
-<img src={shivaLogin} />
-
-<img src={shivaHome} />
-
-:::tip[Et la partie contractuelle ?]
+:::tip[What about the contractual side?]
 It does not block you. Administrative and billing information: billing details, payment method, purchase order reference are completed in parallel, with your Cloud Temple contact. You do not wait for them to be finalized to get started with the platform.
 :::
 
 ---
 
-## Path 2. Adding an environment
+<a id="connexion-à-votre-tenant-cloud-temple"></a>
 
-You already have an organization and you want a new environment, for staging, a new project, or a subsidiary.
+## Step 2. Log in and secure your access
 
-**You do everything from the Console, under the terms of your contract. No action on our side is required.**
+<a id="vous-êtes-connecté"></a>
 
-### The steps
+### Log in
 
-1. From the Console, create a **new tenant** from the **Tenants** tab.
-2. Give it a meaningful **name**: *production*, *staging*, the name of a project.
-3. The tenant creator becomes the default owner. They can add other managers later, via the **Users** tab, once connected to the tenant.
-4. Choose the **products** to activate in it.
+The Console is accessible at [shiva.cloud-temple.com](https://shiva.cloud-temple.com), or from the direct address that was sent to you by email.
 
-<img src={tenantNew} />
+1. On the first page, enter the [organization](./iam/concepts.md#organizations) in which your account was created, then click **Log in**.
+2. Authenticate with your password, then with the one-time code from your second factor.
 
-### What happens next
+<img src={shivaLogin} />
 
-Your environment builds itself automatically in a few minutes. You have nothing to do.
+You arrive on the Console home page.
 
-If the tenant owner does not yet have an account, they receive their account creation email. If they already have one, they access the new environment without a new invitation.
+<img src={shivaHome} />
 
-:::tip[Nothing is enabled by default]
-You choose the tenant's products **from the creation form** (step 4 above), and you can expand this scope at any time. No product is opened unless you have checked it: you only pay for what you consume.
-:::
+### Two-factor authentication is mandatory
 
----
+Two-factor authentication (MFA) is **mandatory** for all Console accounts: after the password, the Console asks for a one-time code. You enable it from the account creation email. If your organization is federated with your own directory, see the [authentication mechanisms](./iam/concepts.md#authentication-mechanisms).
 
-## Path 3. Evolving an environment
+### Add an IP address
 
-Your needs change. Here is how to evolve an existing environment.
-
-### Enable a product
-
-If the product is part of your catalog, it appears in the Console: **enable it in full autonomy** on the relevant tenant. Allow a few minutes before it becomes available.
-
-From the list of your tenants, the action **"Modify products"** opens the catalog. Check the ones you want to enable, uncheck the ones you want to stop, then **Save**.
-
-If it does not appear, it is not yet in your catalog: see [Demander un produit supplémentaire](#demander-un-produit-supplémentaire).
-
-<img src={tenantProductsEdit} />
-
-### Stopping a product
-
-You can disable a product you no longer use, and billing stops with it.
-
-A check is performed beforehand: if resources are still being consumed, the deactivation is refused and the Console indicates what is blocking it. Delete these resources, then try again.
-
-This is a safeguard: it prevents cutting off a service that is still in use and losing its data.
-
-### Adding an IP Address
+As the Console is hosted on SecNumCloud-qualified infrastructure, access to it is limited to the public IP addresses you have authorized.
 
 **Adding** is done from the Console, under **Administration > Access**. The page lists the authorized public addresses; the **"Add an IP"** button declares a new one, in CIDR notation, with a description.
 
@@ -202,11 +162,155 @@ There is only one list for the entire organization. The page is accessible from 
 
 <img src={orgAccess} />
 
+To go further: the [security recommendations](./security/security_recommendations.md) for Console access.
+
+---
+
+<a id="parcours-2-ajouter-un-environnement"></a>
+
+## Step 3. Choose or create an environment
+
+### Choose your working tenant
+
+Technical resources (compute, storage, network…) are **specific to each tenant** and are not shared between tenants. Before taking any action, choose the tenant you are working in:
+
+- from the header at the top of the Console, open the **"My tenants"** selector and click on the desired tenant;
+- or from **Administration > Tenants**, use the **"Connect to tenant"** action on a row.
+
+The selector marks qualified tenants with a **SecNumCloud** badge.
+
+<img src={imgSelector} />
+
+### Create a new environment
+
+You already have an organization and you want a new environment, for staging, a new project, or a subsidiary.
+
+**You do everything from the Console, under the terms of your contract. No action on our side is required.**
+
+### The steps
+
+1. From **Administration > Tenants**, click **"New tenant"**.
+2. Give it a meaningful **name**: *production*, *staging*, the name of a project. The name is validated in real time; you can also add a description.
+3. The tenant creator becomes the default owner. They can add other managers later, via the **Users** tab, once connected to the tenant.
+4. Choose the **products** to activate in it, then confirm with **"Create"**.
+
+<img src={tenantNew} />
+
+### What happens next
+
+Your environment builds itself automatically in a few minutes. You have nothing to do.
+
+If the tenant owner does not yet have an account, they receive their account creation email. If they already have one, they access the new environment without a new invitation.
+
+:::tip[Nothing is enabled by default]
+You choose the tenant's products **from the creation form** (step 4 above), and you can expand this scope at any time. No product is opened unless you have checked it: you only pay for what you consume.
+:::
+
+---
+
+## Step 4. Invite your collaborators
+
+Accounts are **global to the organization**; permissions, on the other hand, are granted **tenant by tenant**.
+
+1. **Invite the collaborator.** From **Administration > Users**, the **"New User"** button asks for their email address. They receive a verification email; their account appears grayed out until they have validated it.
+2. **Grant them their permissions.** A newly created account has **no permissions**. In the user's **Actions** menu, choose **"Edit"**, then check the necessary permissions, in each tenant where they need to work.
+
+<img src={shivaOnboard_004} />
+
+<img src={shivaOnboard_005} />
+
+To invite a user or grant them a permission, you need the `iam_write` permission, and you can only grant a permission that you hold yourself.
+
+Details of the procedures (re-registration, deletion, tenant owners) and the list of permissions are in the [IAM reference](./iam/concepts.md). If your organization uses its own identity directory, see the [identity federation tutorials](/console/iam/tutorials).
+
 ### Change a manager
 
 The organization owner manages users and their permissions directly from the Console: see [Identity and Access Management](/console/iam).
 
 They can also **delegate** their permissions to an external partner or a Cloud Temple project manager: useful if you outsource operations to a third party.
+
+---
+
+<a id="parcours-3-faire-évoluer-un-environnement"></a>
+
+## Step 5. Enable your products
+
+Your needs change. Here is how to evolve the scope of an existing environment.
+
+### Enable a product
+
+If the product is part of your catalog, it appears in the Console: **enable it in full autonomy** on the relevant tenant. Allow a few minutes before it becomes available.
+
+From the list of your tenants, the action **"Modify products"** opens the catalog. Check the ones you want to enable, uncheck the ones you want to stop, then **Save**.
+
+If it does not appear, it is not yet in your catalog: see [Request an additional product](#demander-un-produit-supplémentaire).
+
+<img src={tenantProductsEdit} />
+
+### Stop a product
+
+You can disable a product you no longer use, and billing stops with it.
+
+A check is performed beforehand: if resources are still being consumed, the deactivation is refused and the Console indicates what is blocking it. Delete these resources, then try again.
+
+This is a safeguard: it prevents cutting off a service that is still in use and losing its data.
+
+### Products {/* #les-produits */}
+
+#### What you enable yourself
+
+No product is enabled by default, neither at the creation of your organization nor at the creation of a tenant. Four products are, however, **available** in your Console from the start: you enable them yourself, on the tenant of your choice. They are **billed on a pay-as-you-go basis**, with no volume commitment or tier to negotiate: you only pay for what you consume.
+
+| Product | What it's for | Learn more |
+| --- | --- | --- |
+| **VM Instances** | On-demand virtual machines | [Documentation](/public_cloud/vm_instances) |
+| **VPC** | A virtual private network | [Documentation](/network/vpc) |
+| **LLMaaS** | Sovereign AI models | [Documentation](/llmaas) |
+| **Object Storage** | S3-compatible storage | [Documentation](/storage/oss) |
+
+#### The rest of the catalog
+
+These products are opened within the scope of your contract, with your commercial contact:
+
+- [IaaS VMware](/iaas_vmware) and [IaaS OpenSource](/iaas_opensource)
+- [Bare metal](/iaas_bare-metal)
+- [PaaS OpenShift](/paas_openshift) and [Managed Kubernetes](/managed_kubernetes)
+- Managed databases: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
+- [Bastion](/bastion)
+- [Housing](/housing)
+- [Private Backbone](/network/private_backbone) and [Internet](/network/internet)
+- [Marketplace](/marketplace)
+
+Overview: [our products](/managedproducts_overview).
+
+### Request an additional product {/* #demander-un-produit-supplémentaire */}
+
+The product you want doesn't appear in your Console? It's not yet in your catalog.
+
+1. From the Console, create a **support request**
+2. Specify the **product** concerned, and the expected volume if you know it
+3. We will get back to you with the terms
+4. Once approved, the product appears in your Console
+5. You can enable it on one or more tenants
+
+<img src={supportSelectProduct} />
+
+#### Change support level
+
+Three levels exist, presented on [our website](https://www.cloud-temple.com/produits/niveaux-de-support).
+
+You can upgrade or downgrade your level: make the request through support from the Console, or to your commercial contact.
+
+---
+
+## Step 6. Automate
+
+Everything you do in the Console can also be done programmatically.
+
+- **The Console API** gives access to all of its features. You authenticate to it with an API key, or *Personal Access Token* (PAT), linked to a tenant and to the user who created it. Details of the calls are available from **Profile > APIs**. See the [API documentation](./api.md).
+- **The Terraform provider** manages your platform *as code*. See [Terraform Provider](/terraform).
+
+<img src={shivaOnboard_008} />
 
 ---
 
@@ -224,7 +328,7 @@ Only one email requires action on your part.
 | **When** | A few minutes after creation |
 | **Validity** | **96 hours** |
 
-:::warning[Lien expiré ?]
+:::warning[Link expired?]
 After 96 hours, the link no longer works. This is a security measure, not a failure.
 
 Write to **`shiva.support@cloud-temple.com`**: we will send you a new one.
@@ -232,66 +336,16 @@ Write to **`shiva.support@cloud-temple.com`**: we will send you a new one.
 This is the only channel available at this stage: without access to the Console, you cannot yet open a request there.
 :::
 
-:::note[Rien reçu ?]
+:::note[Nothing received?]
 Check your spam folder: the message is sometimes filtered. It is sent from **`shiva.support@cloud-temple.com`**: allow this address in your email client. If you have not received anything within the following hour, contact us at the same address.
 :::
 
 ---
 
-## Products {/* #les-produits */}
-
-### What you enable yourself
-
-No product is enabled by default, neither at the creation of your organization nor at the creation of a tenant. Four products are, however, **available** in your Console from the start: you enable them yourself, on the tenant of your choice. They are **billed on a pay-as-you-go basis**, with no volume commitment or tier to negotiate: you only pay for what you consume.
-
-| Product | What it's for | Learn more |
-| --- | --- | --- |
-| **VM Instances** | On-demand virtual machines | [Documentation](/public_cloud/vm_instances) |
-| **VPC** | A virtual private network | [Documentation](/network/vpc) |
-| **LLMaaS** | Sovereign AI models | [Documentation](/llmaas) |
-| **Object Storage** | S3-compatible storage | [Documentation](/storage/oss) |
-
-### The rest of the catalog
-
-These products are opened within the scope of your contract, with your commercial contact:
-
-- [IaaS VMware](/iaas_vmware) and [IaaS OpenSource](/iaas_opensource)
-- [Bare metal](/iaas_bare-metal)
-- [PaaS OpenShift](/paas_openshift) and [Kubernetes managé](/managed_kubernetes)
-- Managed databases: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
-- [Bastion](/bastion)
-- [Housing](/housing)
-- [Backbone privé](/network/private_backbone) and [Internet](/network/internet)
-- [Marketplace](/marketplace)
-
-Overview: [nos produits](/managedproducts_overview).
-
----
-
-## Request an additional product {/* #demander-un-produit-supplémentaire */}
-
-The product you want doesn't appear in your Console? It's not yet in your catalog.
-
-1. From the Console, create a **support request**
-2. Specify the **product** concerned, and the expected volume if you know it
-3. We will get back to you with the terms
-4. Once approved, the product appears in your Console
-5. You can enable it on one or more tenants
-
-<img src={supportSelectProduct} />
-
-### Change support level
-
-Three levels exist, presented on [notre site](https://www.cloud-temple.com/produits/niveaux-de-support).
-
-You can upgrade or downgrade your level: make the request through support from the Console, or to your commercial contact.
-
----
-
-## Frequently Asked Questions
+## Frequently asked questions
 
 **How long does it take to create an environment?**
-A few minutes, in all three cases. Creation is automatic, whether it's your first arrival or a new environment.
+A few minutes. Creation is automatic, whether it's your first arrival or a new environment.
 
 **How many tenants can I create?**
 As many as needed, within the terms of your contract.
@@ -308,19 +362,21 @@ If a colleague in your organization still has access to the Console, they can ad
 **I just activated a product but I don't see it yet.**
 Please wait a few minutes. If it still doesn't appear, contact support.
 
+Other questions about accounts and permissions: see the [IAM frequently asked questions](./iam/quickstart.md).
+
 ---
 
 ## Going further
 
 <div class="card-grid">
   <div class="card">
-    <h3>Console Quickstart</h3>
-    <p>A full tour of the interface: tenants, users, access, costs.</p>
-    <a href="./console_quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <h3>Console tour</h3>
+    <p>The rest of the interface: dashboard, costs, logging, support.</p>
+    <a href="./console_quickstart" class="card-link">Take the tour &rarr;</a>
   </div>
   <div class="card">
     <h3>Identities and Access</h3>
-    <p>Invite your collaborators and assign their permissions, tenant by tenant.</p>
+    <p>The reference for accounts, owners and permissions, tenant by tenant.</p>
     <a href="./iam" class="card-link">Explore IAM &rarr;</a>
   </div>
   <div class="card">
