@@ -75,6 +75,7 @@ Le Stockage Objet est disponible dans la région FR1. Les données sont réparti
 ### Limites
 
 - 999 buckets par tenant.
+- 10 buckets accessibles par compte de stockage.
 - 5 To par objet.
 
 <a id="sécurité-et-chiffrement"></a>

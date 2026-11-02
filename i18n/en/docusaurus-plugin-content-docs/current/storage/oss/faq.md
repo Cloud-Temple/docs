@@ -56,6 +56,17 @@ The service checks:
 
 Any unsatisfied condition results in access being denied.
 
+## Why can't a storage account access an additional bucket?
+
+A storage account can access **10 buckets** at most. Beyond that, granting access to an 11th bucket fails. The limit applies to the **storage account**, not to the bucket.
+
+Two solutions:
+
+- revoke the account's access to a bucket it no longer needs, from that bucket's '__Policies__' tab;
+- use another storage account for the additional buckets.
+
+See [Access Policy Management](./quickstart.md#access-policy-management).
+
 ## Recommended Use Cases
 
 - **Internal client archiving**: Private buckets accessible only from the client's dedicated public IP addresses (managed via whitelist).

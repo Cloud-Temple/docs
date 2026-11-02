@@ -75,6 +75,7 @@ Object Storage is available in the FR1 region. Data is distributed across three 
 ### Limits
 
 - 999 buckets per tenant.
+- 10 buckets accessible per storage account.
 - 5 TB per object.
 
 <a id="sécurité-et-chiffrement"></a>

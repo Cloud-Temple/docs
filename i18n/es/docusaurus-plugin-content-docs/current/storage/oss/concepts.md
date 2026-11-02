@@ -75,6 +75,7 @@ El Almacenamiento de objetos está disponible en la región FR1. Los datos se di
 ### Límites
 
 - 999 buckets por tenant.
+- 10 buckets accesibles por cuenta de almacenamiento.
 - 5 TB por objeto.
 
 <a id="sécurité-et-chiffrement"></a>

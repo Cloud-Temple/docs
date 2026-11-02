@@ -56,6 +56,17 @@ The service checks:
 
 Any unsatisfied condition results in access being denied.
 
+## Warum kann ein Speicherkonto nicht auf einen weiteren Bucket zugreifen?
+
+Ein Speicherkonto kann auf höchstens **10 Buckets** zugreifen. Darüber hinaus schlägt die Zuweisung eines Zugriffs auf einen 11. Bucket fehl. Die Grenze gilt für das **Speicherkonto**, nicht für den Bucket.
+
+Zwei Lösungen:
+
+- den Zugriff des Kontos auf einen nicht mehr benötigten Bucket über die Registerkarte '__Policies__' dieses Buckets widerrufen;
+- ein weiteres Speicherkonto für die zusätzlichen Buckets verwenden.
+
+Siehe [Access Policy Management](./quickstart.md#access-policy-management).
+
 ## Empfohlene Anwendungsszenarien
 
 - **Interne Kundenarchivierung**: Private Buckets, die ausschließlich über die dedizierten öffentlichen IP-Adressen des Kunden zugänglich sind (Verwaltung über Whitelist).
