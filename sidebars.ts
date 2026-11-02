@@ -311,6 +311,15 @@ const sidebars: SidebarsConfig = {
                 'network/internet/concepts',
                 'network/internet/advanced_concepts',
                 'network/internet/quickstart',
+                {
+                  type: 'category',
+                  label: 'Anti-DDoS',
+                  link: { type: 'doc', id: 'network/anti_ddos/anti_ddos' },
+                  items: [
+                    'network/anti_ddos/anti_ddos',
+                    'network/anti_ddos/concepts',
+                  ],
+                },
               ],
             },
             {
