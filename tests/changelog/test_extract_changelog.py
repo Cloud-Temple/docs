@@ -25,13 +25,13 @@ _spec.loader.exec_module(ec)
 
 
 def maj(*version_blocks: str) -> str:
-    return "const maj = {\n" + "\n".join(version_blocks) + "\n}\n"
+    return "const majs = {\n" + "\n".join(version_blocks) + "\n}\n"
 
 
 def version_block(version: str, date: str, *entries: str) -> str:
     return (f"  '{version}': {{\n"
             f"    options: {{ date: new Date('{date}') }},\n"
-            f"    data: [\n" + ",\n".join(entries) + "\n    ]\n  }},")
+            f"    data: [\n" + ",\n".join(entries) + "\n    ]\n  },")
 
 
 def entry(fr: str, en: str, tag: str) -> str:
@@ -77,13 +77,184 @@ class ParsingTest(unittest.TestCase):
         )
 
     def test_apostrophe_echappee_est_restituee(self):
-        src = ("const maj = {\n  '4.1.0': {\n"
+        src = ("const majs = {\n  '4.1.0': {\n"
                "    options: { date: new Date('2024-11-13') },\n"
                "    data: [\n      {\n"
                "        text: lang === 'fr' ? 'Ajout d\\'une page' : 'Add a page',\n"
                "        tag: 'GEN'\n      }\n    ]\n  },\n}\n")
         entries = ec.parse_maj_js(src)[0]["entries"]
         self.assertEqual(entries[0]["texts"]["fr"], "Ajout d'une page")
+
+    def test_exemple_commente_en_fin_de_fichier_est_ignore(self):
+        """
+        maj.js se termine par un exemple commenté (/* … */) qui contient des
+        entrées { text, tag }. Elles étaient rattachées à la dernière version et
+        publiées comme livrées (« Possibilité de déplacer une machine virtuelle »).
+        """
+        src = maj(version_block(
+            "5.1.0", "2026-10-30",
+            entry("Nouveau thème Système", "New System theme", "GEN"),
+        )) + (
+            "\n/* example of breaking changes object\n"
+            "    data: [\n      {\n"
+            "        text: lang === 'fr' ? 'Possibilité de déplacer une machine virtuelle'"
+            " : 'Ability to move a virtual machine',\n"
+            "        tag: 'OpenIaasCMP'\n      },\n    ]\n*/\n"
+        )
+        versions = ec.parse_maj_js(src)
+        self.assertEqual([e["texts"]["fr"] for e in versions[0]["entries"]],
+                         ["Nouveau thème Système"])
+
+    def test_texte_contenant_une_ouverture_de_commentaire_est_conserve(self):
+        """Le retrait des commentaires ne doit pas couper un texte d'entrée."""
+        src = maj(version_block(
+            "5.1.0", "2026-10-30",
+            entry("Chemins /v1/* pris en charge", "Paths /v1/* supported", "GEN"),
+            entry("Ajout d'un filtre */ sur la liste", "Add a filter", "ORDER"),
+        ))
+        versions = ec.parse_maj_js(src)
+        self.assertEqual([e["texts"]["fr"] for e in versions[0]["entries"]],
+                         ["Chemins /v1/* pris en charge",
+                          "Ajout d'un filtre */ sur la liste"])
+
+    def test_commentaire_dans_un_texte_multiligne_est_conserve(self):
+        """Un texte entre backticks peut s'étendre sur plusieurs lignes : un
+        « /* … */ » en début de ligne y fait partie du texte, pas d'un commentaire."""
+        src = ("const majs = {\n  '5.1.0': {\n"
+               "    options: { date: new Date('2026-10-30') },\n"
+               "    data: [\n      {\n"
+               "        text: lang === 'fr' ? `Nouveaux exemples :\n/* motif */\nsuite`"
+               " : `New examples:\n/* pattern */\nnext`,\n"
+               "        tag: 'GEN'\n      }\n    ]\n  },\n}\n")
+        texts = ec.parse_maj_js(src)[0]["entries"][0]["texts"]
+        self.assertEqual(texts, {"fr": "Nouveaux exemples :\n/* motif */\nsuite",
+                                 "en": "New examples:\n/* pattern */\nnext"})
+
+    def _version_avec(self, insertion: str) -> str:
+        """Une version dont la liste d'entrées contient `insertion`."""
+        return ("const majs = {\n  '5.1.0': {\n"
+                "    options: { date: new Date('2026-10-30') },\n"
+                "    data: [\n" + entry("Nouveau thème Système", "New System theme", "GEN")
+                + ",\n" + insertion + "\n    ]\n  },\n}\n")
+
+    def test_entree_commentee_dans_une_version_est_ignoree(self):
+        src = self._version_avec(
+            "      /* {\n        text: lang === 'fr' ? 'Entrée retirée' : 'Removed entry',\n"
+            "        tag: 'GEN'\n      } */")
+        self.assertEqual([e["texts"]["fr"] for e in ec.parse_maj_js(src)[0]["entries"]],
+                         ["Nouveau thème Système"])
+
+    def test_commentaire_non_ferme_fait_echouer(self):
+        """Mieux vaut échouer que publier ou perdre la fin des notes."""
+        with self.assertRaises(SystemExit):
+            ec.parse_maj_js(self._version_avec("      /* entrée jamais refermée"))
+
+    def test_chaine_non_refermee_fait_echouer(self):
+        """Une chaîne mal fermée décalerait le balayage : des entrées commentées
+        seraient alors lues comme livrées."""
+        for ouverture in ("'", '"', "`"):
+            with self.subTest(ouverture=ouverture):
+                with self.assertRaises(SystemExit):
+                    ec.parse_maj_js(self._version_avec(
+                        f"      {{ note: {ouverture}non refermée,\n      }}"))
+
+    def test_code_apres_les_notes_n_est_pas_analyse(self):
+        """
+        maj.js se poursuit après l'objet des notes (exemple commenté, puis
+        `export default` et ses fonctions). Ce code n'a pas à être analysé : une
+        expression régulière ou un template imbriqué ne doit ni bloquer la
+        génération, ni faire publier l'exemple.
+        """
+        src = maj(version_block(
+            "5.1.0", "2026-10-30",
+            entry("Nouveau thème Système", "New System theme", "GEN"),
+        )) + (
+            "\nconst casse = '\n"
+            "/* example\n      {\n"
+            "        text: lang === 'fr' ? 'Possibilité de déplacer une VM'"
+            " : 'Ability to move a VM',\n        tag: 'GEN'\n      },\n*/\n"
+            "const apostrophe = /'/g;\nconst motif = /[/*]/;\n"
+            "const texte = `outer ${`l'exemple`} end`;\n"
+        )
+        self.assertEqual([e["texts"]["fr"] for e in ec.parse_maj_js(src)[0]["entries"]],
+                         ["Nouveau thème Système"])
+
+    def test_premiere_version_commentee_n_est_pas_publiee(self):
+        """Une version mise en commentaire en tête de l'objet ne doit pas être lue."""
+        src = ("const majs = {\n/*\n"
+               + version_block("4.50.0", "2026-09-10",
+                               entry("Ajout commenté", "Commented addition", "GEN"))
+               + "\n*/\n"
+               + version_block("5.1.0", "2026-10-30",
+                               entry("Nouveau thème Système", "New System theme", "GEN"))
+               + "\n}\n")
+        self.assertEqual([v["version"] for v in ec.parse_maj_js(src)], ["5.1.0"])
+
+    def test_fin_de_l_objet_suit_les_accolades(self):
+        """
+        La fin de l'objet ne se repère pas à l'indentation : une accolade en
+        colonne 0 dans une version, ou dans un texte multiligne, ne le ferme pas ;
+        une accolade finale indentée le ferme bien.
+        """
+        nouveau = entry("Nouveau thème Système", "New System theme", "GEN")
+        filtre = entry("Ajout d'un filtre", "Add a filter", "ORDER")
+        exemple = ("\n/* example\n      {\n"
+                   "        text: lang === 'fr' ? 'Possibilité de déplacer une VM'"
+                   " : 'Ability to move a VM',\n        tag: 'GEN'\n      },\n*/\n")
+        cas = {
+            "accolade de version en colonne 0":
+                "const majs = {\n" + version_block("5.0.0", "2026-10-15", nouveau)[:-2]
+                + "\n},\n" + version_block("5.1.0", "2026-10-30", filtre) + "\n}\n",
+            "accolade dans un texte multiligne":
+                "const majs = {\n  '5.0.0': {\n"
+                "    options: { date: new Date('2026-10-15') },\n    data: [\n"
+                "      {\n        text: lang === 'fr' ? `Nouveau thème Système\n}\nfin`"
+                " : `New System theme\n}\nend`,\n        tag: 'GEN'\n      }\n    ]\n  },\n"
+                + version_block("5.1.0", "2026-10-30", filtre) + "\n}\n",
+            "accolade finale indentée":
+                "const majs = {\n" + version_block("5.0.0", "2026-10-15", nouveau) + "\n"
+                + version_block("5.1.0", "2026-10-30", filtre) + "\n  }\n" + exemple,
+        }
+        for nom, src in cas.items():
+            with self.subTest(nom):
+                versions = ec.parse_maj_js(src)
+                self.assertEqual([v["version"] for v in versions], ["5.0.0", "5.1.0"])
+                self.assertEqual([e["tag"] for v in versions for e in v["entries"]],
+                                 ["GEN", "ORDER"])
+
+    def test_commentaire_de_ligne_n_est_ni_publie_ni_bloquant(self):
+        """Une entrée en commentaire « // » n'est pas publiée ; un commentaire
+        « // » au milieu d'une entrée ne la fait pas disparaître."""
+        src = self._version_avec(
+            "      // { text: lang === 'fr' ? 'Fonction abandonnée' : 'Abandoned', tag: 'GEN' },\n"
+            "      {\n        text: lang === 'fr' ? 'Ajout d\\'un filtre' : 'Add a filter', // traduction\n"
+            "        tag: 'ORDER'\n      }")
+        self.assertEqual([e["texts"]["fr"] for e in ec.parse_maj_js(src)[0]["entries"]],
+                         ["Nouveau thème Système", "Ajout d'un filtre"])
+
+    def test_declaration_commentee_avant_la_vraie_est_ignoree(self):
+        commentee = ("/* const majs = {\n" + version_block(
+            "4.0.0", "2024-01-01", entry("Fonction abandonnée", "Abandoned", "GEN"))
+            + "\n} */\n")
+        src = commentee + maj(version_block(
+            "5.1.0", "2026-10-30",
+            entry("Nouveau thème Système", "New System theme", "GEN")))
+        versions = ec.parse_maj_js(src)
+        self.assertEqual([(v["version"], [e["texts"]["fr"] for e in v["entries"]])
+                          for v in versions],
+                         [("5.1.0", ["Nouveau thème Système"])])
+
+    def test_objet_des_notes_introuvable_fait_echouer(self):
+        with self.assertRaises(SystemExit):
+            ec.parse_maj_js("const notes = {\n" + version_block(
+                "5.1.0", "2026-10-30",
+                entry("Nouveau thème Système", "New System theme", "GEN")) + "\n}\n")
+
+    def test_objet_des_notes_non_referme_fait_echouer(self):
+        with self.assertRaises(SystemExit):
+            ec.parse_maj_js("const majs = {\n" + version_block(
+                "5.1.0", "2026-10-30",
+                entry("Nouveau thème Système", "New System theme", "GEN")) + "\n")
 
     def test_version_sans_entree_publiable_est_omise(self):
         src = maj(version_block(
@@ -110,17 +281,28 @@ class BugfixFilterTest(unittest.TestCase):
         self.assertNotIn("Correction de l'affichage des disques", textes_fr)
         self.assertNotIn("Disk display bug fixed", textes_en)
 
-    def test_correctifs_conserves_depuis_la_version_4_50(self):
+    def test_correctifs_exclus_dans_toutes_les_versions(self):
+        """De la 4.50.0 à la 5.0.0, les correctifs ont été publiés : le changelog
+        ne doit porter que les nouveautés et évolutions, quelle que soit la version."""
         src = maj(
-            version_block("4.49.3", "2026-09-09",
-                          entry("Correction ancienne", "Old fix", "GEN")),
             version_block("4.50.0", "2026-09-10",
-                          entry("Correction récente", "New fix", "GEN")),
+                          entry("Correction récente", "New fix", "GEN"),
+                          entry("Ajout d'un filtre", "Add a filter", "GEN")),
+            version_block("5.1.0", "2026-10-30",
+                          entry("Correction de la couleur", "Fixed the color", "GEN")),
         )
         versions = ec.parse_maj_js(src)
         self.assertEqual([v["version"] for v in versions], ["4.50.0"])
-        self.assertEqual(versions[0]["entries"][0]["texts"],
-                         {"fr": "Correction récente", "en": "New fix"})
+        self.assertEqual([e["texts"]["fr"] for e in versions[0]["entries"]],
+                         ["Ajout d'un filtre"])
+
+    def test_l_introduction_annonce_l_exclusion_des_correctifs(self):
+        """L'introduction publiée annonçait « corrections incluses à partir de la
+        4.50.0 » : elle doit décrire la règle réellement appliquée."""
+        for lang, _path, _title, _h1, intro, _footer in ec.OUTPUTS:
+            with self.subTest(lang=lang):
+                self.assertNotIn("4.50.0", intro)
+        self.assertIn("volontairement exclues", ec.OUTPUTS[0][4])
 
     def test_fr_et_en_portent_exactement_les_memes_entrees(self):
         src = maj(
