@@ -12,6 +12,12 @@
       "es": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093",
       "it": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093"
     },
+    "ai_overview.md": {
+      "en": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "de": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "es": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
+      "it": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e"
+    },
     "bastion/bastion.md": {
       "en": "fabad2fbe37852910c499fa0c298469c439761d1aef29993b86eebff591ac6be",
       "de": "fabad2fbe37852910c499fa0c298469c439761d1aef29993b86eebff591ac6be",
@@ -138,6 +144,12 @@
       "es": "0b5d7efd2e5bcac69c276d3ae2794dcf802eee85919c1b6482002e72af12a574",
       "it": "0b5d7efd2e5bcac69c276d3ae2794dcf802eee85919c1b6482002e72af12a574"
     },
+    "console/onboarding.md": {
+      "en": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "de": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "es": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321",
+      "it": "ce57f03d17960b92fb7a4f15bc044550a3a6db03016e64b22a463c76dd191321"
+    },
     "console/orders.md": {
       "en": "7c75b25f2641edf9a70e72221b466dc55146c9ab9432198bc797f5d027356a86",
       "de": "7c75b25f2641edf9a70e72221b466dc55146c9ab9432198bc797f5d027356a86",
@@ -245,6 +257,18 @@
       "de": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
       "es": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
       "it": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7"
+    },
+    "gpu/concepts.md": {
+      "en": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "de": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "es": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
+      "it": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30"
+    },
+    "gpu/gpu.md": {
+      "en": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "de": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "es": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
+      "it": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0"
     },
     "home.md": {
       "en": "1fe7366b6072cc4dd9f63bdba125668c3928595a13ca913c4f7f4cb5aa2fa84b",
