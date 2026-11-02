@@ -8,6 +8,49 @@ sidebar_position: 999
 > This changelog lists the new features and significant updates of the Cloud Temple platform.
 > Bug fixes are included starting from version 4.50.0.
 
+## v5.1.0 — 2026-10-30
+
+### [Console](/console)
+- New "System" theme, which automatically follows the operating system's light or dark mode, applied by default when no theme has been chosen
+- The UUID can now be copied from the actions menu on each row of the virtual machine list
+- Fixed the color of error messages under form fields, displayed in red again
+- Validation messages for choice lists, previously hidden, are now displayed (LLMaaS credit top-up, VMware rules, virtual machine export, Marketplace partner contact)
+- File upload panel: wider progress bar, and the title and labels now match the state of the uploads
+- Usability, display and search fixes across several screens
+- Security hardening: errors logged in the browser console no longer expose sensitive data
+- Security update for the translation library
+- Chart CSV export: accented characters are now displayed correctly in Excel
+- Chart CSV export: dates are now formatted according to the console language
+
+### [VM Instances](/public_cloud/vm_instances)
+- Limited stock is now displayed on storage types, in the list and, for the selected type, in the field itself
+- Disk size: exceeding the maximum now shows an error explaining why (storage type limit or remaining quota)
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Cross-cluster migration: a failed compatibility check no longer displays technical details
+
+### [Object Storage](/storage/oss)
+- File browser: fixed the size of some file icons (OVF, OVA, ISO)
+
+### [Orders](/console/orders)
+- The Orders menu has moved under the Marketplace, below the Catalog
+- Order type selectors (availability zones, clusters, datastores, pools, block storage, Bare Metal servers and volumes): the commercial name and its description are now displayed
+
+### [Cost Manager](/console/billing/concepts)
+- The consumption report is now a Cost Manager tab, displayed on its own when cost tracking is not enabled
+- SKU commercial names are now displayed in charts, tables and the consumption report; the technical name is still shown in tables and the report
+- Product, SKU and tenant filters on the "Monthly consumption" chart, applied automatically when clicking a slice of an overview pie chart
+- Colors in charts are now assigned to each product, SKU and tenant rather than to their rank: filters no longer change colors
+- Compare mode: "Period evolution" now starts from the first month with consumption and flags new consumption
+
+### [Console — Organization](/console/iam/concepts)
+- Tenant list: the name of a tenant being created now persists after a page reload and is shown to other organization owners
+- Tenant list: the type of a tenant being created is no longer wrongly shown as "Legacy"
+
+### [LLMaaS](/llmaas)
+- Model testing: fixed missing passages and garbled accented characters in streamed responses
+- Model testing: send, transcription and microphone errors now show the service message or a translated label instead of a technical code
+
 ## v5.0.0 — 2026-10-15
 
 ### [Console](/console)
@@ -56,6 +99,11 @@ sidebar_position: 999
 
 ### [Metrics](/console/metrics/concepts)
 - Fix for a tooltip remaining displayed on charts after unpinning
+
+## v4.53.2 — 2026-10-23
+
+### [Console](/console)
+- Minor technical update
 
 ## v4.53.1 — 2026-10-15
 

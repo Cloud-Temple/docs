@@ -8,6 +8,49 @@ sidebar_position: 999
 > Ce changelog liste les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.
 > Les corrections de bugs sont incluses à partir de la version 4.50.0.
 
+## v5.1.0 — 2026-10-30
+
+### [Console](/console)
+- Nouveau thème « Système », qui suit automatiquement le mode clair ou sombre du système d'exploitation, appliqué par défaut lorsqu'aucun thème n'a été choisi
+- Copie de l'UUID depuis le menu d'actions de chaque ligne de la liste des machines virtuelles
+- Correction de la couleur des messages d'erreur sous les champs de formulaire, de nouveau affichés en rouge
+- Affichage des messages de validation des listes de choix, jusqu'ici masqués (ajout de crédit LLMaaS, règles VMware, export d'une machine virtuelle, contact d'un partenaire du Marketplace)
+- Bandeau des transferts de fichiers : barre de progression élargie, titre et libellés adaptés à l'état des transferts
+- Corrections d'ergonomie, d'affichage et de recherche sur plusieurs écrans
+- Renforcement de la sécurité : les erreurs consignées dans la console du navigateur n'exposent plus de données sensibles
+- Mise à jour de sécurité de la bibliothèque de traduction
+- Export CSV des graphiques : accents correctement affichés dans Excel
+- Export CSV des graphiques : dates au format de la langue de la console
+
+### [VM Instances](/public_cloud/vm_instances)
+- Affichage du stock limité sur les types de stockage, dans la liste et, pour le type sélectionné, directement dans le champ
+- Taille d'un disque : un dépassement du maximum affiche désormais une erreur qui en explique la cause (limite du type de stockage ou quota restant)
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Migration entre clusters : un échec de la vérification de compatibilité n'affiche plus de détail technique
+
+### [Object Storage](/storage/oss)
+- Explorateur de fichiers : correction de la taille des icônes de certains fichiers (OVF, OVA, ISO)
+
+### [Commandes](/console/orders)
+- Le menu Commandes est déplacé sous le Marketplace, après le Catalogue
+- Sélecteurs de types de commande (zones de disponibilité, clusters, datastores, pools, block storage, serveurs et volumes Bare Metal) : affichage du nom commercial et de sa description
+
+### [Gestionnaire des coûts](/console/billing/concepts)
+- Le rapport de consommation devient un onglet du Gestionnaire des coûts, affiché seul lorsque le suivi des coûts n'est pas activé
+- Affichage du nom commercial des SKU dans les graphiques, les tableaux et le rapport de consommation ; le nom technique reste indiqué dans les tableaux et le rapport
+- Filtres par produit, SKU et tenant sur le graphique « Consommation mensuelle », appliqués automatiquement au clic sur une part d'un camembert de l'aperçu
+- Couleurs attribuées à chaque produit, SKU et tenant plutôt qu'à leur rang dans les graphiques : les filtres ne modifient plus les couleurs
+- Mode Comparer : l'évolution sur la période part du premier mois consommé et signale les nouvelles consommations
+
+### [Console — Organisation](/console/iam/concepts)
+- Liste des tenants : le nom d'un tenant en cours de création est désormais conservé après un rechargement de la page et affiché aux autres propriétaires de l'organisation
+- Liste des tenants : le type d'un tenant en cours de création n'est plus indiqué à tort comme « Legacy »
+
+### [LLMaaS](/llmaas)
+- Test d'un modèle : correction de passages manquants et de caractères accentués altérés dans les réponses affichées progressivement
+- Test d'un modèle : les erreurs d'envoi, de transcription et de microphone affichent le message du service ou un libellé traduit, au lieu d'un code technique
+
 ## v5.0.0 — 2026-10-15
 
 ### [Console](/console)
@@ -56,6 +99,11 @@ sidebar_position: 999
 
 ### [Métriques](/console/metrics/concepts)
 - Correction d'une infobulle restant affichée sur les graphes après désépinglage
+
+## v4.53.2 — 2026-10-23
+
+### [Console](/console)
+- Mise à jour technique mineure
 
 ## v4.53.1 — 2026-10-15
 

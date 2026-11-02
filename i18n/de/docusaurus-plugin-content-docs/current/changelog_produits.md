@@ -8,6 +8,49 @@ sidebar_position: 999
 > Dieses Changelog listet die neuen Funktionen und wesentlichen Weiterentwicklungen der Plattform Cloud Temple.
 > Bugfixes sind ab Version 4.50.0 enthalten.
 
+## v5.1.0 — 2026-10-30
+
+### [Konsole](/console)
+- Neues Theme „System“, das automatisch dem hellen oder dunklen Modus des Betriebssystems folgt und standardmäßig angewendet wird, wenn kein Theme gewählt wurde
+- Kopieren der UUID über das Aktionsmenü jeder Zeile der Liste der virtuellen Maschinen
+- Korrektur der Farbe der Fehlermeldungen unter Formularfeldern, die wieder rot angezeigt werden
+- Anzeige der bisher ausgeblendeten Validierungsmeldungen von Auswahllisten (Aufladen von LLMaaS-Guthaben, VMware-Regeln, Export einer virtuellen Maschine, Kontakt zu einem Marketplace-Partner)
+- Leiste der Dateiübertragungen: breiterer Fortschrittsbalken, Titel und Beschriftungen passen sich dem Status der Übertragungen an
+- Korrekturen an Bedienbarkeit, Anzeige und Suche auf mehreren Bildschirmen
+- Verstärkte Sicherheit: in der Browserkonsole protokollierte Fehler legen keine sensiblen Daten mehr offen
+- Sicherheitsupdate der Übersetzungsbibliothek
+- CSV-Export der Diagramme: Umlaute und Akzente werden in Excel korrekt angezeigt
+- CSV-Export der Diagramme: Datumsangaben im Format der Konsolensprache
+
+### [VM Instances](/public_cloud/vm_instances)
+- Anzeige des begrenzten Bestands bei den Speichertypen, in der Liste und für den ausgewählten Typ direkt im Feld
+- Größe eines Datenträgers: Eine Überschreitung des Maximums zeigt nun einen Fehler mit der Ursache an (Grenze des Speichertyps oder verbleibendes Kontingent)
+
+### [IaaS VMware — Infrastruktur](/iaas_vmware)
+- Migration zwischen Clustern: Ein Fehlschlag der Kompatibilitätsprüfung zeigt keine technischen Details mehr an
+
+### [Object Storage](/storage/oss)
+- Dateibrowser: Korrektur der Größe der Symbole bestimmter Dateien (OVF, OVA, ISO)
+
+### [Bestellungen](/console/orders)
+- Das Menü „Orders“ befindet sich nun unter dem Marketplace, nach dem Katalog
+- Auswahlfelder für Bestelltypen (Verfügbarkeitszonen, Cluster, Datastores, Pools, Block Storage, Bare-Metal-Server und -Volumes): Anzeige des kommerziellen Namens und seiner Beschreibung
+
+### [Kostenmanager](/console/billing/concepts)
+- Der Verbrauchsbericht wird zu einem Tab des Kostenmanagers und wird allein angezeigt, wenn die Kostenverfolgung nicht aktiviert ist
+- Anzeige des kommerziellen Namens der SKU in Diagrammen, Tabellen und im Verbrauchsbericht; der technische Name bleibt in den Tabellen und im Bericht angegeben
+- Filter nach Produkt, SKU und Tenant im Diagramm „Monthly consumption“, die beim Klick auf ein Segment eines Kreisdiagramms der Übersicht automatisch angewendet werden
+- Farben werden jedem Produkt, jeder SKU und jedem Tenant zugeordnet statt ihrem Rang in den Diagrammen: Filter ändern die Farben nicht mehr
+- Vergleichsmodus: Die Entwicklung über den Zeitraum beginnt mit dem ersten Monat mit Verbrauch und weist auf neue Verbräuche hin
+
+### [Konsole — Organisation](/console/iam/concepts)
+- Liste der Tenants: Der Name eines Tenants, der gerade erstellt wird, bleibt nun nach einem Neuladen der Seite erhalten und wird den anderen Eigentümern der Organisation angezeigt
+- Liste der Tenants: Der Typ eines Tenants, der gerade erstellt wird, wird nicht mehr fälschlicherweise als „Legacy“ angezeigt
+
+### [LLMaaS](/llmaas)
+- Test eines Modells: Korrektur fehlender Passagen und verfälschter Sonderzeichen in schrittweise angezeigten Antworten
+- Test eines Modells: Fehler beim Senden, bei der Transkription und beim Mikrofon zeigen die Meldung des Dienstes oder eine übersetzte Beschriftung statt eines technischen Codes an
+
 ## v5.0.0 — 2026-10-15
 
 ### [Console](/console)
@@ -56,6 +99,11 @@ sidebar_position: 999
 
 ### [Métriques](/console/metrics/concepts)
 - Korrektur eines Tooltip, der nach dem Entfernen der Nadel auf den Diagrammen weiterhin angezeigt wurde
+
+## v4.53.2 — 2026-10-23
+
+### [Konsole](/console)
+- Kleineres technisches Update
 
 ## v4.53.1 — 2026-10-15
 

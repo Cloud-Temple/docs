@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Änderungsverfolgung
 
+### 30. Oktober 2026 : Konsole v5.1.0
+
+- **Konsole** : Die [Produkt-Versionshinweise](./changelog_produits.md) präsentieren die Versionen 4.53.2 und 5.1.0: neues Theme „System“, das dem hellen oder dunklen Modus des Betriebssystems folgt, in den Kostenmanager integrierter Verbrauchsbericht mit Filtern nach Produkt, SKU und Tenant, Menü „Orders“ unter den Marketplace verschoben sowie zahlreiche Korrekturen.
+
 ### 21. Oktober 2026 : Neue Cloud Temple Konsole (v5.0.0)
 
 - **Konsole** : Die [notes de version produits](./changelog_produits.md) präsentieren die Versionen 4.52.1 bis 5.0.0, darunter die neue Konsole : vollständiges Redesign der Oberfläche mit dunklem Theme, vereinfachte Navigation, neue Detailseite für virtuelle Maschinen, überarbeitete Seiten für Compute und Storage sowie ein Dateibrowser für Object Storage. Die alte Version der Konsole bleibt bis Anfang Dezember 2026 über das Fenster « Nouveautés » zugänglich.

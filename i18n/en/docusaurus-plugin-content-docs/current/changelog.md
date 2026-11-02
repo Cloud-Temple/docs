@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Changelog
 
+### October 30, 2026: Console v5.1.0
+
+- **Console**: The [product release notes](./changelog_produits.md) cover versions 4.53.2 and 5.1.0: a new "System" theme that follows the operating system's light or dark mode, the consumption report integrated into the Cost Manager with filters by product, SKU and tenant, the Orders menu moved under the Marketplace, and many fixes.
+
 ### October 21, 2026: New Cloud Temple Console (v5.0.0)
 
 - **Console**: The [product release notes](./changelog_produits.md) cover versions 4.52.1 through 5.0.0, including the new console: a complete interface overhaul with a dark theme, simplified navigation, a new virtual machine detail page, redesigned Compute and Storage pages, and an Object Storage file explorer. The previous version of the console remains accessible until early December 2026 from the "What's New" window.
