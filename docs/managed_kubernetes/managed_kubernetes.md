@@ -25,7 +25,7 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
   </div>
 </div>
 
-**Managed Kubernetes** by Cloud Temple est une solution d’orchestration de conteneurs basée sur des standards open source (CNCF). Elle est conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation sur les plateformes SecNumcloud de Cloud Temple. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
+**Managed Kubernetes** by Cloud Temple est une solution d’orchestration de conteneurs basée sur des standards open source (CNCF). Elle est conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation, et elle est disponible sur des services qualifiés SecNumCloud. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
 
 Afin de répondre au mieux aux besoins de vos équipes, nous proposons deux déclinaisons de ce produit : **Managed Core Kubernetes** (un socle minimaliste) et **Managed Kubernetes** (une plateforme complète "prête à l'emploi").
 
@@ -38,6 +38,7 @@ Cette offre est conçue pour les équipes ayant une **excellente maîtrise de Ku
 
 - **OS et Réseau inclus** : Talos OS, Rook-Ceph (stockage), Cilium (CNI), MetalLB (Load Balancer).
 - **Philosophie** : À partir de ce socle performant et standardisé, vous êtes libre d'intégrer vos propres outils de déploiement continu, d'observabilité, de sauvegarde ou de sécurité.
+- **En savoir plus** : [Concepts Managed Core Kubernetes](../managed_core_kubernetes/concepts.md).
 
 ### 2. Managed Kubernetes (La plateforme complète)
 Cette offre clé en main est conçue pour les équipes souhaitant une solution **native, prête à l'emploi et tout-en-un**, intégrant les meilleurs standards open source pour couvrir tous les besoins du cycle de vie applicatif sans avoir à assembler et maintenir les composants soi-même.
@@ -58,7 +59,7 @@ Quelle que soit l'offre choisie, nos clusters Kubernetes partagent ces bénéfic
 
 - **Souveraineté et Réversibilité** : La solution s'appuie sur des standards open source pour éviter toute dépendance technologique (*vendor lock-in*) et garantir la portabilité totale de vos applications. (Avec Veeam Kasten inclus dans la version complète pour faciliter les migrations inter-cloud).
 - **Sécurité "Zero-Trust" by design** : L'architecture repose sur **Talos OS**, un système d'exploitation Linux immuable et éphémère conçu spécifiquement pour Kubernetes. Il ne dispose d'aucun accès direct (ni shell, ni SSH), ce qui réduit drastiquement la surface d'attaque.
-- **Maîtrise des Coûts** : Le modèle économique est transparent, basé exclusivement sur les ressources IaaS sous-jacentes consommées, sans coût de licence additionnel pour l'orchestrateur.
+- **Maîtrise des Coûts** : Le modèle économique est transparent : le service managé est facturé par cluster, en complément des ressources IaaS sous-jacentes, sans coût de licence additionnel pour l'orchestrateur.
 
 ---
 
@@ -82,7 +83,7 @@ Idéale pour les environnements de POC, cette architecture compacte déploie tou
 
 ### Architecture Production (Multi-AZ)
 
-Conçue pour la production et les applications critiques, cette architecture distribue les ressources sur trois zones de disponibilité (AZ) pour garantir une haute disponibilité et une résilience maximale, conformément aux exigences SecNumCloud.
+Conçue pour la production et les applications critiques, cette architecture distribue les ressources sur trois zones de disponibilité (AZ) pour garantir une haute disponibilité et une résilience maximale.
 
 - **Cas d'usage** : Applications de production, services critiques, plateformes nécessitant un SLA.
 - **Points clés** :

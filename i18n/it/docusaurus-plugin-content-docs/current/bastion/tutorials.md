@@ -18,7 +18,7 @@ Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dalla
 
 ## Prerequisiti
 
-1. Avere sottoscritto il prodotto Cloud Temple (souscription Appliance Bastion).
+1. Avere attivato il prodotto Bastion per la propria organizzazione.
 2. Le apparecchiature da amministrare devono essere accessibili dalla rete in cui è distribuita l'Appliance Bastion.
 3. Avere le autorizzazioni sul modulo Bastion.
 4. Nel caso di un'installazione on-premise dell'Appliance, i flussi corrispondenti devono essere aperti.
@@ -31,7 +31,7 @@ Una volta connessi al portale web Console, accedere alla scheda "Bastion" nel me
 
 La scheda « Dispositivi » consente di visualizzare l'elenco dei propri dispositivi. Un dispositivo corrisponde a una configurazione di connessione tramite un'Appliance Bastion. Per ogni dispositivo sono indicati il nome, i tag, la descrizione, l'Appliance associata, il tipo di connessione (SSH o RDP), l'IP dell'host e, infine, la configurazione della tastiera.
 
-È possibile filtrare l'elenco dei dispositivi in base ai tag assegnati e un motore di ricerca consente di cercare una sessione tramite il suo nome.
+È possibile filtrare l'elenco dei dispositivi in base ai tag assegnati e un motore di ricerca consente di cercare un dispositivo tramite il suo nome.
 
 <img src={sessions2} />
 
@@ -43,7 +43,7 @@ La scheda « Appliances » fornisce l'elenco delle proprie Appliance Bastion. Pe
 
 ## Distribuire un'Appliance
 
-Prima di poter distribuire un'Appliance, è necessario presentare una richiesta di sottoscrizione per un'Appliance tramite una richiesta al supporto.
+Prima di distribuire un'Appliance, attivare il prodotto Bastion. Si attiva in self-service dalla vista Organizzazione della console Cloud Temple, oppure tramite il proprio contatto commerciale abituale.
 
 ## Aprire una connessione verso un dispositivo
 

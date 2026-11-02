@@ -93,7 +93,7 @@ The Cloud Temple Console specifically enables your teams to:
 ## Access to user features via the API
 
 Access to all Console features is available via the Console API.
-You can view details of the methods and configurations via **'Profile'** and **'APIs'**
+You can view details of the methods and configurations from the user menu (your avatar, top right), **'APIs'** entry.
 
 ## Terraform Provider
 

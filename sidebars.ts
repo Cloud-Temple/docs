@@ -120,30 +120,46 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'AI',
       className: 'sidebar-cat-ai',
-      link: { type: 'doc', id: 'llmaas/llmaas' },
+      link: { type: 'doc', id: 'ai_overview' },
       items: [
-        'llmaas/llmaas',
-        'llmaas/concepts',
-        'llmaas/quickstart',
-        'llmaas/api',
-        'llmaas/models',
-        'llmaas/faq',
         {
           type: 'category',
-          label: 'Tutoriels',
-          key: 'llmaas_tutorials',
-          link: { type: 'generated-index' },
+          label: 'LLMaaS',
+          link: { type: 'doc', id: 'llmaas/llmaas' },
           items: [
+            'llmaas/llmaas',
+            'llmaas/concepts',
+            'llmaas/quickstart',
+            'llmaas/api',
+            'llmaas/models',
+            'llmaas/faq',
             {
-              type: 'doc',
-              id: 'llmaas/tutorials',
-              label: 'Intégrations & Frameworks',
+              type: 'category',
+              label: 'Tutoriels',
+              key: 'llmaas_tutorials',
+              link: { type: 'generated-index' },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'llmaas/tutorials',
+                  label: 'Intégrations & Frameworks',
+                },
+                {
+                  type: 'doc',
+                  id: 'llmaas/ocr',
+                  label: 'Reconnaissance de documents (OCR)',
+                },
+              ],
             },
-            {
-              type: 'doc',
-              id: 'llmaas/ocr',
-              label: 'Reconnaissance de documents (OCR)',
-            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'GPU',
+          link: { type: 'doc', id: 'gpu/gpu' },
+          items: [
+            'gpu/gpu',
+            'gpu/concepts',
           ],
         },
       ],
@@ -285,27 +301,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Private Network',
-          link: { type: 'doc', id: 'network/private_network/private_network' },
-          items: [
-            'network/private_network/private_network',
-            'network/private_network/concepts',
-            'network/private_network/quickstart',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Internet',
-          link: { type: 'doc', id: 'network/internet/internet' },
-          items: [
-            'network/internet/internet',
-            'network/internet/concepts',
-            'network/internet/advanced_concepts',
-            'network/internet/quickstart',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Private Backbone',
           key: 'private_backbone',
           link: { type: 'doc', id: 'network/private_backbone/private_backbone' },
@@ -313,6 +308,36 @@ const sidebars: SidebarsConfig = {
             'network/private_backbone/private_backbone',
             'network/private_backbone/concepts',
             'network/private_backbone/quickstart',
+            {
+              type: 'category',
+              label: 'Private Network',
+              link: { type: 'doc', id: 'network/private_network/private_network' },
+              items: [
+                'network/private_network/private_network',
+                'network/private_network/concepts',
+                'network/private_network/quickstart',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Internet',
+              link: { type: 'doc', id: 'network/internet/internet' },
+              items: [
+                'network/internet/internet',
+                'network/internet/concepts',
+                'network/internet/advanced_concepts',
+                'network/internet/quickstart',
+                {
+                  type: 'category',
+                  label: 'Anti-DDoS',
+                  link: { type: 'doc', id: 'network/anti_ddos/anti_ddos' },
+                  items: [
+                    'network/anti_ddos/anti_ddos',
+                    'network/anti_ddos/concepts',
+                  ],
+                },
+              ],
+            },
             {
               type: 'category',
               label: 'Tutoriels',
@@ -502,6 +527,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'managed_kubernetes/managed_kubernetes',
         'managed_kubernetes/concepts',
+        'managed_core_kubernetes/concepts',
         'managed_kubernetes/quickstart',
         {
           type: 'category',

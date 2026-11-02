@@ -18,7 +18,7 @@ Estos tutoriales le ayudan a implementar y gestionar un Bastion Cloud Temple des
 
 ## Prerrequisitos
 
-1. Haber suscrito el producto Cloud Temple (suscripción Appliance Bastion).
+1. Haber activado el producto Bastion para su organización.
 2. Los equipos a administrar deben ser accesibles desde la red donde se despliega la Appliance Bastion.
 3. Contar con los permisos del módulo Bastion.
 4. En el caso de un despliegue de la Appliance on-premise, los flujos correspondientes deben estar abiertos.
@@ -31,7 +31,7 @@ Una vez conectado al portal web Console, acceda a la pestaña "Bastion" del men�
 
 La pestaña « Equipos » le permite consultar la lista de sus equipos. Un equipo corresponde a una configuración de conexión mediante una Appliance Bastion. Para cada equipo, se indican su nombre, sus etiquetas, su descripción, la Appliance asociada, el tipo de conexión (SSH o RDP), la IP del host y, por último, la configuración del teclado.
 
-Puede filtrar la lista de sus equipos según las etiquetas asignadas y un motor de búsqueda permite buscar una sesión por su nombre.
+Puede filtrar la lista de sus equipos según las etiquetas asignadas y un motor de búsqueda permite buscar un equipo por su nombre.
 
 <img src={sessions2} />
 
@@ -43,7 +43,7 @@ Dispone de un motor de búsqueda para permitirle buscar una Appliance por su nom
 
 ## Desplegar una Appliance
 
-Antes de poder desplegar una Appliance, es necesario realizar una solicitud de suscripción a una Appliance a través de una solicitud al soporte.
+Antes de desplegar una Appliance, active el producto Bastion. Se activa en autoservicio desde la vista Organización de la consola Cloud Temple, o a través de su contacto comercial habitual.
 
 ## Abrir una conexión hacia un equipo
 

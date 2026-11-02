@@ -18,7 +18,7 @@ Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis 
 
 ## Prérequis
 
-1. Avoir souscrit à le produit Cloud Temple (souscription Appliance Bastion).
+1. Avoir activé le produit Bastion pour votre organisation.
 2. Les équipements à administrer doivent être accessibles depuis le réseau où est déployée l'Appliance Bastion.
 3. Avoir les droits sur le module Bastion.
 4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts.
@@ -33,7 +33,7 @@ L’onglet « Equipements » vous permet de consulter la liste de vos equipement
 connexion via une Appliance Bastion. Pour chaque équipement, est indiqué son nom, ses tags, sa
 description, l’Appliance qui lui est associé, le type de connexion (SSH ou RDP), l’IP de l’host et enfin la configuration du clavier.
 
-Vous pouvez filtrer la liste de vos équipements selon les tags qui leur sont assignés, et un moteur de recherche permet de chercher une session avec son nom.
+Vous pouvez filtrer la liste de vos équipements selon les tags qui leur sont assignés, et un moteur de recherche permet de chercher un équipement avec son nom.
 
 <img src={sessions2} />
 
@@ -45,7 +45,7 @@ Un moteur de recherche est disponible pour vous permettre de chercher une Applia
 
 ## Déployer une Appliance
 
-Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
+Avant de déployer une Appliance, activez le produit Bastion. Il s'active en libre-service depuis la vue Organisation de la Console Cloud Temple, ou via votre contact commercial habituel.
 
 ## Ouvrir un flux vers un équipement
 

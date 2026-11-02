@@ -2,136 +2,184 @@
 title: Concepts
 ---
 
-## Deux options sont possibles
+<a id="deux-options-sont-possibles"></a>
 
-- __hébergement physique au 'U'__ en baie mutualisée et espace mutualisé,
-- __hébergement dédié par rack__ d'au minimum 42 'U' en espace mutualisé.
+## Présentation
 
-Les commandes Housing prises en charge sont accessibles dans le module __Commandes (Order)__ de la console Cloud Temple : réservation d’emplacement, installation et dérackage, accompagnement technique, smart hands et câblage/décâblage. Pour les opérations non prises en charge par la console, contactez le support. La demande doit notamment préciser :
+Le Housing Cloud Temple héberge vos équipements physiques (serveurs, appliances réseau, boîtiers opérateur) dans des datacenters sécurisés. Deux options sont possibles :
 
-    Le nom de votre Organisation
-    Le nom d'un contact avec son mail et n° de téléphone pour finaliser la configuration
-    Le nom du tenant
-    le type d'hébergement souhaité (mutualisé au 'U' ou dédié au rack)
-    La quantité souhaité
-    Le type d'équipement et ses caractéristiques (taille, poid, consommation energetique, dégagement thermique, ...)
+- **hébergement mutualisé au 'U'**, dans une baie partagée entre plusieurs clients ;
+- **hébergement dédié par rack**, d'au minimum 42 'U', réservé à votre organisation.
 
-L'équipe support Cloud Temple prendra contact avec vous pour finaliser la demande.
+L'offre comprend la connectivité réseau vers vos équipements et des services d'assistance en datacenter.
 
-## Hébergement mutualisé
+:::info
+Le Housing est hébergé en zone non SecNumCloud.
+:::
 
-### Hébergement d'appliances (réseau, firewall, ...)
+### Publics et cas d'usage
 
-L'hébergement mutualisé se fait dans un rack partagé entre différents clients Cloud Temple. [La segmentation](https://fr.wikipedia.org/wiki/Unit%C3%A9_de_rack) se fait au 'U' (unité de rack).
-Une unité de rack mesure 1,75 pouce (soit 44,45 mm) de haut. Les racks d'hébergement mutualisés disposent de deux chaines électriques distinctes.
+- **Équipements physiques legacy** : hébergement de serveurs qui ne peuvent pas être virtualisés.
+- **Appliances réseau et de sécurité** : pare-feu et équipements réseau à proximité de vos ressources cloud.
+- **Connexion opérateur** : réception d'un lien opérateur en Meet Me Room.
+- **Transition vers le cloud** : hébergement temporaire pendant une migration progressive.
+- **Contraintes réglementaires** : équipements qui doivent rester physiquement séparés.
+- **Reprise d'activité** : site de secours pour des équipements critiques.
 
-La masse maximale des équipements pour chaque unité de 'U' est de 25Kg. Au dela, il est nécessaire de commander le nombre de 'U' permettant de soutenir la masse totale de votre équipement.
+## Avantages
 
-Par exemple, pour un équipement de 34 Kg, il est nécessaire de souscrire à 2 unités de rack.
+| Avantage                 | Description                                                                                                       |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Sécurité physique        | Les équipements sont hébergés dans des datacenters surveillés 24/7, avec un contrôle d'accès strict.             |
+| Liberté de configuration | Vous choisissez et configurez le matériel selon vos besoins.                                                      |
+| Espace dédié             | Le rack dédié offre un espace privé, sans cohabitation avec d'autres clients.                                     |
+| Accompagnement sur site  | Les techniciens datacenter interviennent pour votre compte, sans que vous ayez à vous déplacer.                   |
+| Proximité du cloud       | Les équipements hébergés peuvent être connectés aux autres produits Cloud Temple.                                 |
 
-Il est possible pour chaque unité de rack de demander à bénéficier d'une ou deux prises électriques type C13 en fonction de vos besoins.
+## Fonctionnalités
 
-Chaque prise électrique est limité à 150W sous 220v pour chaque 'U'.
+| Fonctionnalité                   | Description                                                                         |
+|----------------------------------|-------------------------------------------------------------------------------------|
+| Hébergement mutualisé            | À partir de 1 'U' et 150 W, pour des appliances ou des serveurs.                    |
+| Rack dédié                       | Rack de 42 'U' avec 3 kW d'énergie, extensible par paliers de 2 kW.                 |
+| Alimentation redondante          | Deux chaînes électriques indépendantes.                                             |
+| Connectivité réseau              | Ports cuivre ou fibre, jusqu'à 10 Gbps.                                             |
+| Meet Me Room                     | Réception d'un lien privé opérateur en 1 Gbps ou 10 Gbps.                           |
+| Services Hands & Eyes            | Interventions ponctuelles des techniciens datacenter.                               |
+| Services d'ingénieur datacenter  | Rackage, câblage et gestion des connexions (patch management).                      |
 
-Si vous souhaitez pour votre équipement bénéficier d'une puissance de 1500W, sur deux alimentations, il est nécessaire de demander
+### Commandes et demandes
 
-1500 W / 150 W = 10 'U', soit 5 'U' (ou 750 W) par chaine électrique.
+Les commandes Housing prises en charge sont accessibles dans le module __Commandes (Order)__ de la Console Cloud Temple : réservation d'emplacement, installation et dérackage, accompagnement technique, smart hands et câblage/décâblage. Pour les opérations non prises en charge par la Console, contactez le support. La demande doit notamment préciser :
 
-La connectivité réseau est à souscrire en parallèle par type de port attendu et bande passante souhaitée, voici les options possibles par port réseau :
+- le nom de votre organisation ;
+- le nom d'un contact, avec son adresse e-mail et son numéro de téléphone, pour finaliser la configuration ;
+- le nom du tenant ;
+- le type d'hébergement souhaité (mutualisé au 'U' ou dédié au rack) ;
+- la quantité souhaitée ;
+- le type d'équipement et ses caractéristiques (taille, poids, consommation énergétique, dégagement thermique, etc.).
 
-- Cuivre `100MBps/1Gbps`,
-- Fibre 1Gbps/10Gbps via un module SFP fournit pour la connectivité coté Cloud Temple.
+L'équipe support prend ensuite contact avec vous pour finaliser la demande.
 
-Pour ces unités d'oeuvre, le refroidissement se fait nécessairement depuis la face avant de la baie, vers la face arrière, et __l'appliance prend sa connectivité réseau face avant de la baie.__
+<a id="services-hands--eyes"></a>
 
-__*Remarque :*__ *l'engagement minimum est de 12 mois.*
+### Services Hands & Eyes
 
-| Référence                                          | Unité | SKU                                    | Engagement |
-| -------------------------------------------------- | ----- | -------------------------------------- | ---------- |
-| HÉBERGEMENT EN BAIE - 1 U Mutualisé - 150W (1 C13) | 1 U   | csp:(region):hosting:shared:basic:v1   | 12 mois    |
-| HÉBERGEMENT EN BAIE - 1 U Mutualisé - 300W (2 C13) | 1 U   | csp:(region):hosting:shared:premium:v1 | 12 mois    |
+Les techniciens datacenter peuvent intervenir pour votre compte, notamment pour :
 
-### Hébergement de serveurs
-
-Les unités d'oeuvres __'Serveurs'__ sont prévues pour s'adapter à la dissipation thermique des serveurs et __apporte de la connectivité réseau en face arrière__, simplifiant les opérations de maintenance et optimisant ainsi le refroidissement de la baie.
-
-__Elle sont obligatoires pour les serveurs.__
-
-| Référence                                                    | Unité | SKU                                        | Engagement |
-| ------------------------------------------------------------ | ----- | ------------------------------------------ | ---------- |
-| HEBERGEMENT EN BAIE - 1 U Mutualisé - Server - 400 W (2 C19) | 2 U   | csp:(region):hosting:shared:srv:basic:v1   | 12 mois    |
-| HEBERGEMENT EN BAIE - 1 U Mutualisé - Server - 800 W (2 C19) | 2 U   | csp:(region):hosting:shared:srv:premium:v1 | 12 mois    |
-
-## Hébergement dédié
-
-L'hébergement en rack dédié se fait en zone d'hébergement mutualisé hors secnumcloud. Le rack d'hébergement dédié est d'une dimension d'au minimum 42 'U' ou 42 unités de rack.
-La profondeur est de 1200 millimètres dont 1000 millimètres utilisables par les équipements. La largeur est de 600 millimètres.
-
-Il est livré avec le cooling nécessaire, les portes sécurisées avant et arrière et 3 Kw d'énergie sur 2 chaines électriques de 16 ampères chacune.
-
-Il est possible de demande des paliers d'énergie supplémentaires par 2Kw. __La masse maximum des équipements intégrable dans le rack dédié est de 1000kg__.
-
-La baie est équipée de 'PDU' (unité de distribution d'énergie) adaptés à la puissance souscrite et monitorés. Il y a un 'PDU' par chaine électrique.
-
-| Référence                                                    | Unité      | SKU                                        | Engagement |
-| ------------------------------------------------------------ | ---------- | ------------------------------------------ | ---------- |
-| HÉBERGEMENT EN BAIE - Rack 42 U Dédié incluant 3Kw d'énergie | 1 rack 42U | csp:(region):hosting:dedicated:rack:v1     | 12 mois    |
-| ÉNERGIE - 2 Kw complémentaire                                | 2 Kw       | csp:(region):hosting:dedicated:rack:2kw:v1 | 12 mois    |
-
-### Connectivité réseau pour l'hébergement physique
-
-La connectivité réseau est à souscrire en complément de l'hébergement physique par type de port attendu et bande passante souhaitée, voici les options possibles par port réseau :
-
-- Cuivre 1Gbps,
-- Fibre 1Gbps/10Gbps via un module SFP fournit pour la connectivité coté Cloud Temple.
-
-Il est aussi possible de demander une connectivité en zone meet me room des différents datacenter pour recevoir votre connectivité opérateur.
-Cette connectivité est nécessairement en fibre optique sur des débits de 1Gbps ou 10GBps.
-
-| Référence                                                              | Unité     | SKU                                    | Engagement |
-| ---------------------------------------------------------------------- | --------- | -------------------------------------- | ---------- |
-| RESEAU - 1 port - 1 Gbps - fibre ou cuivre                             | 1 port    | csp:(region):hosting:shared:port1g:v1  | 36 mois    |
-| RESEAU - 1 port - 10 Gbps - fibre                                      | 1 port    | csp:(region):hosting:shared:port10g:v1 | 36 mois    |
-| RESEAU - Connexion lien privé en meet me room d'une AZ - 1 port 1Gbps  | 1 forfait | csp:(region):hosting:mmr:v1:1g         | 36 mois    |
-| RESEAU - Connexion lien privé en meet me room d'une AZ - 1 port 10Gbps | 1 forfait | csp:(region):hosting:mmr:v1:10g        | 36 mois    |
-
-### Services 'Hands & Eyes'
-
-En complément des services d'hébergement physique et de connectivité réseau, il est possible de demander des services professionnels d'assistance pour votre hébergement physique.
-
-Ils sont opérés par les techniciens datacenter ou par les ingénieurs Cloud Temple spécialisés en datacenter.
-
-Voici les principales unités d'œuvres 'Hands & Eyes' disponibles. Elles visent à traiter les sujets suivants :
-
-- Accompagnement d'un intervenant externe préalablement identifié,
-- Constaté un statut sur un équipement (état des LEDS, état de fonctionnement, ...),
-- Prendre des photos d'un équipement client préalablement identifié,
-- Appuyer sur un contacteur,
-- Redémarrer l'équipement,
-- Brancher un terminal d'accès pour prise de contrôle à distance,
+- accompagner un intervenant externe préalablement identifié ;
+- constater l'état d'un équipement (état des LED, état de fonctionnement, etc.) ;
+- prendre des photos d'un équipement préalablement identifié ;
+- appuyer sur un contacteur ou redémarrer un équipement ;
+- brancher un terminal d'accès pour une prise de contrôle à distance ;
 - remplacer une connectique sans modification de câblage.
 
-| Référence                                                                               | Unité   | SKU                              | GTI        |
-| --------------------------------------------------------------------------------------- | ------- | -------------------------------- | ---------- |
-| Hand's & Eyes datacenter - Heures ouvrées (8h - 19h; Lundi au vendredi)                 | 1 heure | csp:(region):hosting:ho:std:v1   | 2 heures   |
-| Hand's & Eyes datacenter - Heures ouvrées (8h - 19h; Lundi au vendredi) - URGENT        | 1 heure | csp:(region):hosting:ho:fast:v1  | 30 minutes |
-| Hand's & Eyes datacenter - Heures non ouvrées (nuit, week end et jours fériés)          | 1 heure | csp:(region):hosting:hno:std:v1  | 2 jours    |
-| Hand's & Eyes datacenter - Heures non ouvrées (nuit, week end et jours fériés) - URGENT | 1 heure | csp:(region):hosting:hno:fast:v1 | 2 heures   |
+### Services d'ingénieur datacenter
 
-Vous pouvez aussi bénéficier d'un ingénieur datacenter Cloud Temple pour traiter les sujets suivants :
+Un ingénieur datacenter peut prendre en charge :
 
-- Rackage (avec les équipements de protection et de levage adaptés),
-- Câblage (suivant le plan de câblage préalablement remis),
-- Modification de câblage ou déplacement d'un équipement existant,
-- Assistance à la connectivité réseau opérateur.
+- le rackage, avec les équipements de protection et de levage adaptés ;
+- le câblage, suivant le plan de câblage préalablement remis ;
+- la modification de câblage ou le déplacement d'un équipement existant ;
+- l'assistance à la connectivité réseau opérateur.
 
-| Référence                                                                    | Unité  | SKU                             | GTI      |
-| ---------------------------------------------------------------------------- | ------ | ------------------------------- | -------- |
-| Ingénieur Datacenter - Heures ouvrées (8h - 19h; Lundi au vendredi)          | 1 acte | csp:(region):hosting:ho:std:v1  | 2 jours  |
-| Ingénieur Datacenter - Heures ouvrées (8h - 19h; Lundi au vendredi) - URGENT | 1 acte | csp:(region):hosting:ho:fast:v1 | 4 heures |
+Toute intervention sur le câblage physique (réseau, alimentation, fibre optique) est réalisée exclusivement par les ingénieurs datacenter. La configuration logicielle de vos équipements reste sous votre contrôle.
 
-__Nota :__
+| Service                               | Plage horaire                                  | Délai d'intervention | Délai en urgence |
+|---------------------------------------|------------------------------------------------|----------------------|------------------|
+| Hands & Eyes                          | Heures ouvrées (8 h – 19 h, lundi au vendredi) | 2 heures             | 30 minutes       |
+| Hands & Eyes                          | Heures non ouvrées (nuit, week-end, fériés)    | 2 jours              | 2 heures         |
+| Ingénieur datacenter                  | Heures ouvrées (8 h – 19 h, lundi au vendredi) | 2 jours              | 4 heures         |
 
-- *Toute demande doit passer par l'ouverture d'un dossier d'intervention dans la console Cloud Temple*,
-- *En cas de demande urgente, appeler l'astreinte après ouverture du dossier d'intervention dans la console Cloud temple*,
-- *Toute heure commencée est due.*
+:::note
+- Toute demande passe par l'ouverture d'un dossier d'intervention dans la Console.
+- En cas d'urgence, appelez l'astreinte après l'ouverture du dossier.
+- Toute heure commencée est due.
+:::
+
+## Architecture
+
+- **Infrastructure** : alimentation redondante (deux arrivées électriques indépendantes), refroidissement et climatisation contrôlés, sécurité physique multicouche.
+- **Intégrations** : connexion directe aux produits Cloud Temple et Meet Me Room pour les connexions opérateur.
+
+## Régions et zones de disponibilité
+
+Le Housing est disponible dans la région FR1, sur trois zones de disponibilité. Les baies sont situées exclusivement en France.
+
+## Caractéristiques techniques
+
+### Hébergement mutualisé
+
+L'hébergement mutualisé se fait dans un rack partagé entre différents clients. [La segmentation](https://fr.wikipedia.org/wiki/Unit%C3%A9_de_rack) se fait au 'U' (unité de rack). Une unité de rack mesure 1,75 pouce (soit 44,45 mm) de haut. Les racks d'hébergement mutualisé disposent de deux chaînes électriques distinctes.
+
+La masse maximale des équipements est de 25 kg par 'U'. Au-delà, il faut commander le nombre de 'U' permettant de soutenir la masse totale de l'équipement : par exemple, 2 'U' pour un équipement de 34 kg.
+
+<a id="hébergement-dappliances-réseau-firewall-"></a>
+
+#### Appliances (réseau, pare-feu…)
+
+Chaque unité de rack peut disposer d'une ou de deux prises électriques de type C13, selon vos besoins. Chaque prise est limitée à 150 W sous 220 V. Pour un équipement de 1 500 W sur deux alimentations, il faut ainsi 1 500 W / 150 W = 10 'U', soit 5 'U' (750 W) par chaîne électrique.
+
+Le refroidissement se fait de la face avant vers la face arrière de la baie, et __l'appliance prend sa connectivité réseau en face avant de la baie.__
+
+#### Hébergement de serveurs
+
+Les unités dédiées aux serveurs (2 'U', 400 W ou 800 W sur deux prises C19) sont adaptées à la dissipation thermique des serveurs et __apportent la connectivité réseau en face arrière__, ce qui simplifie la maintenance et optimise le refroidissement de la baie. __Elles sont obligatoires pour les serveurs.__
+
+### Hébergement dédié
+
+Le rack dédié est installé en zone d'hébergement mutualisé hors SecNumCloud.
+
+| Paramètre            | Valeur                                                                  |
+|----------------------|-------------------------------------------------------------------------|
+| Dimensions           | 42 'U' minimum ; profondeur 1 200 mm, dont 1 000 mm utiles ; largeur 600 mm |
+| Énergie              | 3 kW inclus sur deux chaînes électriques de 16 A, extensible par paliers de 2 kW |
+| Masse maximale       | 1 000 kg par rack                                                       |
+| Distribution         | Un PDU (unité de distribution d'énergie) monitoré par chaîne électrique |
+| Équipement           | Refroidissement et portes sécurisées à l'avant et à l'arrière           |
+
+<a id="connectivité-réseau-pour-lhébergement-physique"></a>
+
+### Connectivité réseau
+
+La connectivité réseau se souscrit en complément de l'hébergement, par type de port et bande passante souhaitée :
+
+- cuivre 100 Mbps ou 1 Gbps ;
+- fibre 1 Gbps ou 10 Gbps, via un module SFP fourni pour la connectivité côté Cloud Temple.
+
+Une connectivité en Meet Me Room permet aussi de recevoir votre lien opérateur. Elle est nécessairement en fibre optique, en 1 Gbps ou 10 Gbps.
+
+### Limites
+
+- Masse maximale de 25 kg par 'U' en hébergement mutualisé, et de 1 000 kg par rack dédié.
+- Puissance de 150 W par prise en hébergement mutualisé d'appliances.
+- Profondeur utile de 1 000 mm dans un rack dédié.
+
+## Sécurité et conformité
+
+Le Housing est certifié HDS et ISO 27001. Il est hébergé en zone non SecNumCloud.
+
+- **Contrôle d'accès physique** : accès strict, surveillance 24/7 et traçabilité complète des interventions.
+- **Accès accompagné** : toute visite sur site se fait sur rendez-vous, accompagnée par un technicien datacenter.
+- **Chiffrement** : le chiffrement des équipements hébergés relève de votre responsabilité. Le service assure la sécurité physique des locaux.
+
+## Disponibilité du service
+
+| Élément                 | Objectif de disponibilité, mesuré sur un mois |
+|-------------------------|-----------------------------------------------|
+| Alimentation électrique | 100 %                                         |
+| Refroidissement         | 100 %                                         |
+
+## Réversibilité
+
+À la fin du service, vos équipements vous sont restitués :
+
+| Opération                 | Livrable           | Délai     | Coût      |
+|---------------------------|--------------------|-----------|-----------|
+| Récupération du matériel  | Matériel client    | 15 jours  | Sans frais |
+| Assistance au déménagement | Support logistique | Sur demande | Sur devis |
+
+## Tarification
+
+L'hébergement est souscrit avec un engagement minimum de 12 mois. Les tarifs et les durées d'engagement de chaque option sont publiés sur la page produit du site Cloud Temple :
+[Housing — tarifs](https://www.cloud-temple.com/produits/housing-espace-dedie/).

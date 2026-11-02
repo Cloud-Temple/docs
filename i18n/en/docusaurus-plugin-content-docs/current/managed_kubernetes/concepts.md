@@ -6,307 +6,259 @@ import grafana from '@site/docs/managed_kubernetes/images/grafana.png'
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
-## Our Managed Kubernetes Offerings
+<a id="nos-offres-managed-kubernetes"></a>
 
-Cloud Temple offers two distinct plans to meet your container orchestration needs:
+## Introduction
 
-- **Managed Core Kubernetes** : A minimalist product that provides you with a robust and secure Kubernetes foundation, based on cutting-edge open-source components. It is ideal for expert teams who wish to build their own custom platform.
-- **Managed Kubernetes** : A comprehensive, out-of-the-box solution that includes a full stack of tools for networking, security, storage, continuous deployment, observability, backup, and cost management.
+Managed Kubernetes is a fully managed container orchestration platform, based on CNCF-validated open source standards. Each cluster is deployed in an environment dedicated to the customer, on a single availability zone or on three. The platform is delivered ready to use, with a complete stack for networking, security, storage, continuous deployment, observability, backup and cost management.
 
-### Offer Comparison Table
+For teams who prefer to build their own platform on a minimal foundation, the [Managed Core Kubernetes](../managed_core_kubernetes/concepts.md) offering provides only the core components.
 
-| Component                               | Managed Core Kubernetes | Managed Kubernetes          |
-| --------------------------------------- | ----------------------- | --------------------------- |
-| **OS**                            | ✅Talos                 | ✅Talos                     |
-| **CNI**                           | ✅Cilium                | ✅Cilium                    |
-| **Load Balancer**                 | ✅MetalLB               | ✅MetalLB                   |
-| **Distributed Storage**           | ✅Rook-Ceph             | ✅Rook-Ceph                 |
-| **Local Storage**                | 🔵TopoLVM               | 🔵TopoLVM                   |
-| **CNI Observability**            | ❌                      | ✅Hubble                    |
-| **Ingress**                       | ❌                      | ✅Ingress Nginx             |
+### Offering comparison table
+
+| Component                        | Managed Core Kubernetes | Managed Kubernetes          |
+| -------------------------------- | ----------------------- | --------------------------- |
+| **OS**                           | ✅Talos                 | ✅Talos                     |
+| **CNI**                          | ✅Cilium                | ✅Cilium                    |
+| **Load Balancer**                | ✅MetalLB               | ✅MetalLB                   |
+| **Distributed storage**          | ✅Rook-Ceph             | ✅Rook-Ceph                 |
+| **Local storage**                | 🔵TopoLVM               | 🔵TopoLVM                   |
+| **CNI observability**            | ❌                      | ✅Hubble                    |
+| **Ingress**                      | ❌                      | ✅Ingress Nginx             |
 | **Observability**                | ❌                      | ✅Prometheus, Grafana, Loki |
-| **Backup and Migration**       | ❌                      | ✅Veeam Kasten              |
-| **Governance and Security**     | ❌                      | ✅Kyverno, Capsule          |
-| **Certificate Management**       | ❌                      | ✅Cert-Manager              |
-| **Continuous Deployment (GitOps)** | ❌                      | 🔵ArgoCD                    |
-| **Container Registry**            | ❌                      | 🔵Harbor                    |
-| **SSO Authentication**          | ❌                      | 🔵OIDC Integration         |
-| **Pod Autoscaling**           | ❌                      | 🔵Keda                      |
-| **Cost Management (FinOps)**   | ❌                      | 🔵OpenCost                  |
+| **Backup and Migration**         | ❌                      | ✅Veeam Kasten              |
+| **Governance and Security**      | ❌                      | ✅Kyverno, Capsule          |
+| **Certificate management**       | ❌                      | ✅Cert-Manager              |
+| **Continuous Deployment (GitOps)** | ❌                    | 🔵ArgoCD                    |
+| **Container Registry**           | ❌                      | 🔵Harbor                    |
+| **SSO authentication**           | ❌                      | 🔵OIDC integration          |
+| **Pod autoscaling**              | ❌                      | 🔵Keda                      |
+| **Cost Management (FinOps)**     | ❌                      | 🔵OpenCost                  |
 | **Observability (profiling)**    | ❌                      | 🔵Pyroscope + LLM           |
 
 ✅ : included
-🔵 : optional/disablable
+🔵 : optional/can be disabled
 ❌ : not included
 
-## Overview of Managed (Core) Kubernetes Products
+### Audiences and use cases
 
-**Managed Core Kubernetes** is based on Talos Linux ([https://www.talos.dev/](https://www.talos.dev/)), a lightweight and secure operating system dedicated to Kubernetes. It is immutable, with no shell or SSH access, and configured exclusively in a declarative manner via the gRPC API.
+Managed Kubernetes is intended for DevOps teams, cloud-native application developers, architects migrating to containerized architectures, and public or regulated organizations. Typical use cases:
 
-The standardized installation includes a set of components, mostly Open Source and CNCF-certified:
+- **Cloud-native applications**: microservices architectures.
+- **Migration to containers**: progressive modernization of existing applications.
+- **Advanced CI/CD**: automated GitOps deployment pipelines.
+- **Multiple environments**: separation of development, test and production.
+- **Critical applications**: high availability across three availability zones.
+- **Regulatory compliance**: deployments subject to sovereignty requirements.
 
-- **CNI Cilium**, with observability interface (**Hubble**): Cilium is a networking solution for Kubernetes containers (*Container Network Interface*). It handles security, load balancing, service mesh, observability, encryption, etc. It is a fundamental networking component found in most Kubernetes distributions (OpenShift, AKS, GKE, EKS,...). In **Managed Kubernetes**, we have included the **Hubble** GUI for visualizing Cilium traffic flows.
+## Benefits
+
+| Benefit                       | Description                                                                                                        |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Fully managed                 | Cluster configuration, deployment and lifecycle are taken care of.                                                 |
+| High availability             | In production, the cluster is spread across three availability zones.                                             |
+| Security by design            | Minimalist and immutable OS, managed only through an API, with no shell or SSH access.                             |
+| Ready-to-use platform         | Networking, observability, backup, governance and certificates are integrated from delivery.                       |
+| CNCF compatible               | Open source standards avoid technological lock-in and guarantee the portability of your applications.             |
+
+<a id="présentation-des-produits-managed-core-kubernetes"></a>
+
+## Features
+
+The clusters are based on Talos Linux ([https://www.talos.dev/](https://www.talos.dev/)), a lightweight and secure operating system dedicated to Kubernetes. It is immutable, with no shell or SSH access, and configured only declaratively through a gRPC API. The standardized installation includes a set of components, mostly open source and validated by the CNCF.
+
+### Networking and service exposure
+
+- **Cilium CNI**, with the **Hubble** observability interface: Cilium handles container networking (*Container Network Interface*): security, load balancing, service mesh, observability, encryption. The **Hubble** graphical interface lets you visualize Cilium flows.
 
   <img src={cillium} />
-- **MetalLB** and **nginx**: For exposing web applications, 3 **nginx** *ingress-classes* are integrated by default:
 
-  - *nginx-external-secured*: exposure on a public IP, filtered at the firewall to only allow known IPs (used for the GUIs of various products, and the Kubernetes API)
-  - *nginx-external*: exposure on a second unfiltered public IP (or client-specific filtering)
-  - *nginx-internal*: exposure on an internal IP only
+- **MetalLB** and **nginx**: to expose web applications, three **nginx** *ingress-classes* are integrated:
+  - *nginx-external-secured*: exposure on a public IP, filtered at the firewall to allow only known IPs (used for the graphical interfaces of the various products and for the Kubernetes API);
+  - *nginx-external*: exposure on a second, unfiltered public IP (or with customer-specific filtering);
+  - *nginx-internal*: exposure on an internal IP only.
 
-    For "non-web" services, a **MetalLB** load balancer allows exposing services internally or on public IPs. (ce qui permet de déployer des autres ingresses, comme par exemple un WAF)
+  For "non-web" services, the **MetalLB** load balancer exposes services internally or on public IPs, which makes it possible to deploy other ingresses, for example a WAF.
 
-> Note: we use the open-source version of nginx *maintained by F5 Networks*. (pas la version d'origine, opensource, qui est deprecated)
+> Note: the open source version of nginx used is the one *maintained by F5 Networks*, not the original, deprecated version.
 
-- **Rook-Ceph distributed storage**: for persistent volume (PV) storage, open-source distributed **Ceph** storage is integrated into the platform. It allows using the *storage-classes* *ceph-block* (Block, répliqué multi-zones), *ceph-block-norepl* (Block, non répliqué), and *ceph-filesystem* (File, répliqué multi-zones). Storage with **7500 IOPS** is used, enabling high performance. In production deployments (sur 3 AZ), storage nodes are dedicated (1 noeud par AZ); in non-production deployments (1 AZ), storage is shared with worker nodes.
-- **TopoLVM local storage**: for persistent volume (PV) storage, open-source local **TopoLVM** storage can be added (en option) to the platform. It allows using the *storage-class* *topolvm-ssd* to store data locally, *on the Worker nodes*. This option is useful for deployments that use built-in application replication (Kafka, MongoDB, PostgreSQL, ...) and benefit from ultra-fast storage with reduced latency. This option is typically used to dedicate *Worker nodes* to a specific workload.
-- **Cert-Manager**: the open-source certificate manager **Cert-Manager** is natively integrated into the platform.
-- **ArgoCD**  is available for your automated deployments via a **CI/CD** pipeline. (optionnel)
-- **Prometheus Stack** (Prometheus, Grafana, Loki): Managed Kubernetes clusters are delivered by default with a complete open-source **Prometheus** stack for observability, including:
+### Storage
 
-  - **Prometheus**, for metrics collection
-  - **Grafana**, with numerous dashboards
-  - **Loki**: platform logs are exported to Cloud-Temple S3 storage (et intégrés dans Grafana).
-  - **Pyroscope**: (optionnel) continuous profiling platform, queryable via LLM.
+- **Rook-Ceph distributed storage**: open source **Ceph** storage for persistent volumes (PV). It provides the *storage-classes* *ceph-block* (block, multi-zone replicated), *ceph-block-norepl* (block, not replicated) and *ceph-filesystem* (file, multi-zone replicated). The storage used delivers **7,500 IOPS**.
+- **TopoLVM local storage** (optional): the *topolvm-ssd* *storage-class* stores data locally *on the Worker nodes*. This option is useful for applications that replicate their own data (Kafka, MongoDB, PostgreSQL…) and benefit from ultra-fast, low-latency storage. It is generally used to dedicate *Worker nodes* to a specific workload.
 
-    <img src={grafana} />
-- **Harbor** is a **Container registry** that allows you to store your container images or Helm charts directly within the cluster. It performs **vulnerability scans** on your images. **Harbor** also supports synchronization with other registries. ([https://goharbor.io/](https://goharbor.io/)) (optionnel)
-- **OpenCost** ([https://github.com/opencost/opencost](https://github.com/opencost/opencost)) is a cost management (Finops) tool for Kubernetes. It allows you to closely track Kubernetes resource consumption and perform sub-billing/chargeback by project/namespace. (optionnel)
-- Advanced security strategies with **Kyverno** and **Capsule**:
+### Observability
 
-  - **Kyverno** ([https://kyverno.io/](https://kyverno.io/)) is an admission controller for Kubernetes that allows applying policies. It is an essential tool for governance and security in Kubernetes.
-  - **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)) is a permission management tool that simplifies rights management in Kubernetes. It introduces the concept of a *tenant*, which allows centralizing and delegating permissions across multiple namespaces. Through **Capsule**, users of the Managed Kubernetes platform therefore have rights restricted to their own namespaces only.
-- **Veeam Kasten** (aka 'k10') is a solution for **backing up** Kubernetes workloads.
+The open source **Prometheus** stack is delivered as standard:
 
-  It allows backing up a complete deployment: manifests, volumes, etc., to Cloud-Temple S3 object storage. **Kasten** uses **Kanister** to enable consistent application-level backups, for example for databases ([https://docs.kasten.io/latest/usage/blueprints/](https://docs.kasten.io/latest/usage/blueprints/)).
+- **Prometheus**, for metrics collection;
+- **Grafana**, with numerous dashboards;
+- **Loki**: platform logs are exported to Cloud Temple Object Storage and integrated into Grafana;
+- **Pyroscope** (optional): continuous profiling platform, queryable through an LLM.
 
-  **Kasten** is a cross-platform tool that can work with other Kubernetes clusters (OpenShift, Hyperscalers, etc.). It can therefore be used for reversibility or migration scenarios (K10 handles potential adaptations via *transformations*, par exemple un changement d'ingress-class), as well as for "refresh" scenarios (exemple : restauration planifiée d'un environnement de production en pré-production).
-- **SSO Authentication** with an External OIDC Identity Provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...) (optionnel)
-- **KEDA** enables pod autoscaling via advanced metrics, such as the number of HTTP connections. (optionnel)
+<img src={grafana} />
 
-## SLA & Support Information
+### Governance and security
 
-- **Guaranteed Availability (production 3 AZ)** : 99.95 %
-- **Support** : N1/N2/N3 included for the core scope (infrastructure and standard operators).
-- **Recovery Time Objective (ETR)** : per Cloud Temple master agreement.
-- **Maintenance (MCO)** : regular patching of Talos / Kubernetes / standard operators by MSP, with no service interruption (rolling upgrade).
+- **Kyverno** ([https://kyverno.io/](https://kyverno.io/)): admission controller that enforces security and governance policies.
+- **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)): permission management based on the *tenant* concept, which centralizes and delegates rights across several namespaces. Platform users thus have rights restricted to their own namespaces only.
+- **Cert-Manager**: natively integrated open source certificate manager.
+- **SSO authentication** (optional): integration with an external OIDC identity provider (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce…).
 
-Response and recovery times depend on the incident severity, in accordance with the support matrix (P1 to P4).
+### Deployment and automation
 
-## Versioning Policy & Lifecycle
+- **ArgoCD** (optional): automated GitOps deployments, within a **CI/CD** chain.
+- **Harbor** (optional): **container registry** that stores your container images and Helm charts directly in the cluster. It performs **vulnerability scans** on your images and synchronizes with other registries ([https://goharbor.io/](https://goharbor.io/)).
+- **Keda** (optional): pod autoscaling based on advanced metrics, for example a number of HTTP connections.
+- **OpenCost** (optional, [https://github.com/opencost/opencost](https://github.com/opencost/opencost)): FinOps tracking of Kubernetes resource consumption and chargeback per project or namespace.
 
-- **Supported Kubernetes:** N-2 (3 major releases per year, approximately every 4 months). Each release is officially supported for 12 months, ensuring a Cloud Temple support window of ~16 months maximum per version.
-- **Talos OS:** aligned with stable Kubernetes versions.
-  - Each branch is maintained for approximately 12 months (security patches included).
-  - Recommended upgrade cadence: 3 times per year, in alignment with Kubernetes upgrades.
-  - Critical patches (CVE, kernel) are applied via rolling upgrade, without service interruption.
-- **Updates:**
-  - **Major** (Kubernetes N+1, Talos X+1): scheduled 3 times/year, via rolling update.
-  - **Minor**: applied automatically within 30 to 60 days.
-- **Deprecation:** version N-3 → end of support within 90 days after the release of N.
+### Backup
 
-## Kubernetes Nodes
+**Veeam Kasten** (also called K10) backs up a complete deployment (manifests, volumes…) to Cloud Temple Object Storage. It relies on **Kanister** for application-consistent backups, for example for databases ([https://docs.kasten.io/latest/usage/blueprints/](https://docs.kasten.io/latest/usage/blueprints/)).
 
-### Production (multi-zonal)
+## Architecture
+
+### Production (multi-zone)
 
 <img src={archi_overview} />
 
-For a "production" deployment (multi-zonal), the following machines are used:
+The production cluster is spread across three availability zones:
 
-| **AZ** | **Machine**   | **vCores** | **RAM** | **Local Storage**              |
-| ------------ | ------------------- | ---------------- | ------------- | ------------------------------------- |
-| AZ07         | Git Runner          | 4                | 8 GB          | OS: 256 GB                            |
-| AZ05         | Control Plane 1     | 8                | 12 GB         | OS: 64 GB                             |
-| AZ06         | Control Plane 2     | 8                | 12 GB         | OS: 64 GB                             |
-| AZ07         | Control Plane 3     | 8                | 12 GB         | OS: 64 GB                             |
-| AZ05         | Storage Node 1 (**) | 12               | 24 GB         | OS: 64 GB + Ceph 500 GB minimum (***) |
-| AZ06         | Storage Node 2 (**) | 12               | 24 GB         | OS: 64 GB + Ceph 500 GB minimum (***) |
-| AZ07         | Storage Node 3 (**) | 12               | 24 GB         | OS: 64 GB + Ceph 500 GB minimum (***) |
-| AZ05         | Worker Node 1 (*)   | 12               | 24 GB         | OS: 64 GB                             |
-| AZ06         | Worker Node 2 (*)   | 12               | 24 GB         | OS: 64 GB                             |
-| AZ07         | Worker Node 3 (*)   | 12               | 24 GB         | OS: 64 GB                             |
-
-(*) : The size and number of Worker Nodes can be adjusted based on the client's compute capacity requirements. The minimum number of Worker Nodes is 3 (1 per AZ), and we recommend increasing their number in batches of 3 to maintain a consistent multi-zonal distribution. The size of Worker Nodes can be adjusted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (potentially 112 cores/1536 GB of RAM with Performance 3 blades). The number of Worker Nodes is limited to 100. The CNCF recommends using Worker Nodes of identical size. The limit on the number of pods per Worker Node is 110.
-
-(**) : The size of Storage Nodes can be increased based on the size of the associated Ceph storage. (for example: 24c/128GB for 10 TB of Ceph)
-
-(***) : Each storage node comes with a minimum of 500 GB of disk space, providing 500 GB of usable distributed Ceph storage (data is replicated across each AZ, hence x3). The free space available to the client is approximately 350 GB. This initial size can be increased at provisioning time, or later, as needed. Quotas are applied on Ceph, with a Block/File allocation.
+- **Control Plane**: three nodes, one per zone;
+- **storage nodes**: three dedicated Rook-Ceph nodes, one per zone;
+- **Worker nodes**: at least three, one per zone, adjustable to your needs;
+- **Bare Metal Worker nodes** (optional): for specific performance needs, notably GPUs;
+- **Git Runner**: one node for CI/CD pipelines;
+- **managed firewall**: two virtual machines, which filter the public IPs of the Kubernetes API and of the secured ingresses.
 
 ### Dev/test (single or dual zone)
 
 <img src={archi_overview_1az} />
 
-For a "dev/test" version, the following machines are deployed:
+The development and test cluster is deployed on a single availability zone, with one Control Plane, at least three Worker nodes and one Git Runner. Ceph storage is shared on the Worker nodes.
 
-| **AZ** | **Machine** | **vCores** | **RAM** | **Local Storage**             |
-| ------------ | ----------------- | ---------------- | ------------- | ------------------------------------ |
-| AZ0n         | Git Runner        | 4                | 8 GB          | OS: 256 GB                           |
-| AZ0n         | Control Plane     | 8                | 12 GB         | OS: 64 GB                            |
-| AZ0n         | Worker Node 1 (*) | 12               | 24 GB         | OS: 64 GB + Ceph 300 GB minimum (**) |
-| AZ0n         | Worker Node 2 (*) | 12               | 24 GB         | OS: 64 GB + Ceph 300 GB minimum (**) |
-| AZ0n         | Worker Node 3 (*) | 12               | 24 GB         | OS: 64 GB + Ceph 300 GB minimum (**) |
+### Integrations
 
-(*) : The size and number of Worker Nodes can be adjusted according to the client's compute capacity requirements. The minimum number of Worker Nodes is 3 (due to storage replication). The size of the Worker Nodes can be adjusted, with a minimum of 12 cores and 24 GB of RAM; the upper limit per Worker Node is determined by the size of the hypervisors used (thus potentially 112 cores/1536 GB of RAM with Performance 3 blades). The number of Worker Nodes is limited to 250. The CNCF recommends having worker nodes of identical size. The limit on the number of pods per Worker Node is 110.
+- **Cloud Temple Object Storage**: logs (Loki) and backups (Kasten).
+- **Identity providers**: optional integration via OIDC.
+- **Cloud Temple IaaS**: interconnection of clusters with virtualized resources, such as databases or middleware components.
 
-(**) : 3 Worker Nodes are used as Storage Nodes and are delivered with a minimum of 300 GB of disk space, providing 300 GB of usable distributed storage (data is replicated three times). The free space available to the client is approximately 150 GB. This initial size can be increased at the time of deployment, or later, depending on requirements.
+## Regions and availability zones
 
-## RACI
+Managed Kubernetes is available in the FR1 region. A production cluster is spread across three availability zones; a development and test cluster is deployed on a single one. Data is hosted in France.
 
-### Architecture & Infrastructure
+<a id="noeuds-kubernetes"></a>
 
-| **Activity**                                                      | **Client** | **Cloud Temple** |
-| ------------------------------------------------------------------------ | ---------------- | ---------------------- |
-| Define the overall architecture of the Kubernetes service                    | C                | RA                     |
-| Size the Kubernetes service (number of nodes, resources)        | C                | RA                     |
-| Install the Kubernetes service with a default configuration       | I                | RA                     |
-| Kubernetes service configuration                                      | C                | RA                     |
-| Configure the base network of the Kubernetes service                      | I                | RA                     |
-| Deployment of the initial identity and access configuration   | C                | RA                     |
-| Define the scaling and high availability strategy | C                | RA                     |
+## Technical specifications
 
-### Project and Business Application Management
+### Nodes of a production cluster
 
-| **Activity**                                  | **Client** | **Cloud Temple** |
-| ---------------------------------------------------- | ---------------- | ---------------------- |
-| Create and manage Kubernetes projects              | RA               | I*                     |
-| Deploy and manage applications in Kubernetes | RA               | I*                     |
-| Configure CI/CD pipelines                       | RA               | I*                     |
-| Manage container images and registries     | RA               | I*                     |
+| **AZ** | **Machine**         | **vCores** | **RAM** | **Local storage**                     |
+| ------ | ------------------- | ---------- | ------- | ------------------------------------- |
+| AZ07   | Git Runner          | 4          | 8 GB    | OS: 256 GB                            |
+| AZ05   | Control Plane 1     | 8          | 12 GB   | OS: 64 GB                             |
+| AZ06   | Control Plane 2     | 8          | 12 GB   | OS: 64 GB                             |
+| AZ07   | Control Plane 3     | 8          | 12 GB   | OS: 64 GB                             |
+| AZ05   | Storage Node 1 (**) | 12         | 24 GB   | OS: 64 GB + Ceph 500 GB minimum (***) |
+| AZ06   | Storage Node 2 (**) | 12         | 24 GB   | OS: 64 GB + Ceph 500 GB minimum (***) |
+| AZ07   | Storage Node 3 (**) | 12         | 24 GB   | OS: 64 GB + Ceph 500 GB minimum (***) |
+| AZ05   | Worker Node 1 (*)   | 12         | 24 GB   | OS: 64 GB                             |
+| AZ06   | Worker Node 2 (*)   | 12         | 24 GB   | OS: 64 GB                             |
+| AZ07   | Worker Node 3 (*)   | 12         | 24 GB   | OS: 64 GB                             |
 
-*may change to "C" depending on the managed services contract
+(*): the size and number of Worker Nodes adapt to your compute capacity needs. It is recommended to increase their number in batches of 3 to maintain a consistent multi-zone distribution, and to have Worker Nodes of identical size, as advised by the CNCF.
 
-### Monitoring and Performance
+(**): the size of the Storage Nodes can be increased according to the size of the associated Ceph storage (for example 24 cores and 128 GB of RAM for 10 TB of Ceph).
 
-| **Activity**                             | **Client** | **Cloud Temple** |
-| ----------------------------------------------- | ---------------- | ---------------------- |
-| Monitor Kubernetes service performance | I                | RA*                    |
-| Monitor application performance      | RA               |                        |
-| Manage alerts related to the Kubernetes service | I                | RA*                    |
-| Manage alerts related to applications      | RA               |                        |
+(***): each storage node is delivered with at least 500 GB of disk space, for 500 GB of usable distributed Ceph storage (data is replicated on each zone, i.e. three times). The free space available to the customer is approximately 350 GB. This initial size can be increased at build time or later. Quotas are applied on Ceph, with a block / file split.
 
-(*) : *Production Managed Kubernetes cluster only. In Dev/Test and Core versions, the client is fully autonomous and responsible.*
+### Nodes of a development and test cluster
 
-### Infrastructure Maintenance and Updates
+| **AZ** | **Machine**       | **vCores** | **RAM** | **Local storage**                    |
+| ------ | ----------------- | ---------- | ------- | ------------------------------------ |
+| AZ0n   | Git Runner        | 4          | 8 GB    | OS: 256 GB                           |
+| AZ0n   | Control Plane     | 8          | 12 GB   | OS: 64 GB                            |
+| AZ0n   | Worker Node 1 (*) | 12         | 24 GB   | OS: 64 GB + Ceph 300 GB minimum (**) |
+| AZ0n   | Worker Node 2 (*) | 12         | 24 GB   | OS: 64 GB + Ceph 300 GB minimum (**) |
+| AZ0n   | Worker Node 3 (*) | 12         | 24 GB   | OS: 64 GB + Ceph 300 GB minimum (**) |
 
-| **Activity**                                        | **Client** | **Cloud Temple** |
-| ---------------------------------------------------------- | ---------------- | ---------------------- |
-| Update Kubernetes/OS service                    | C                | RA                     |
-| Apply security patches to Kubernetes       | C                | RA                     |
-| Update deployed applications (operators*) | C                | RA                     |
+(*): the size and number of Worker Nodes adapt to your needs. The minimum of three Worker Nodes is imposed by storage replication.
 
-*Operator package included on Managed Kube - see chapters: Managed Helm Packages
+(**): three Worker Nodes serve as storage nodes and are delivered with at least 300 GB of disk space, for 300 GB of usable distributed storage (data is replicated three times). The free space available to the customer is approximately 150 GB. This initial size can be increased at build time or later.
 
-### Security
+### Limits
 
-| **Activity**                                                              | **Client** | **Cloud Temple** |
-| -------------------------------------------------------------------------------- | ---------------- | ---------------------- |
-| Manage Kubernetes service security                                       | RA               | RA*                    |
-| Configure and manage pod security policies                       | RA               | I                      |
-| Manage SSL/TLS certificates for the Kubernetes service                        | C                | RA*                    |
-| Manage SSL/TLS certificates for applications                             | RA               | I                      |
-| Implement and manage basic role-based access control (RBAC) | C                | R*                     |
-| Implement and manage client role-based access control (RBAC)  | RA               | I                      |
+| Parameter                          | Production                         | Development and test               |
+|------------------------------------|------------------------------------|------------------------------------|
+| Number of Worker Nodes             | 3 minimum (1 per zone), 100 maximum | 3 minimum, 250 maximum            |
+| Minimum size of a Worker Node      | 12 cores, 24 GB of RAM             | 12 cores, 24 GB of RAM             |
+| Maximum size of a Worker Node      | Hypervisor size, up to 112 cores and 1,536 GB of RAM (Performance 3 blades) | Same |
+| Pods per Worker Node               | 110                                | 110                                |
 
-(*) : *Production Managed Kubernetes cluster only. In Dev/Test and Core versions, the client is fully autonomous and responsible.*
+## Security and compliance
 
-### Backup and Disaster Recovery
+Managed Kubernetes is certified HDS and ISO 27001, and available on SecNumCloud-qualified and C5-compliant services.
 
-| **Activity**                                                          | **Client** | **Cloud Temple** |
-| ---------------------------------------------------------------------------- | ---------------- | ---------------------- |
-| Define the backup strategy for the Kubernetes service              | I                | RA                     |
-| Implement and manage Kubernetes service backups             | I                | RA                     |
-| Define the backup strategy for applications                   | RA*              | I*                     |
-| Implement and manage application backups                  | RA*              | I*                     |
-| Test disaster recovery procedures for the Kubernetes service | CI               | RA                     |
-| Test disaster recovery procedures for applications      | RA*              | CI*                    |
+- **Immutable OS**: no shell or SSH access, managed only through an API.
+- **Encryption**: data encrypted at rest and in transit, physical encryption of the links between availability zones.
+- **Governance**: Kyverno policies, per-tenant permissions with Capsule, complete audit log.
+- **Data residency**: France (FR1), in standard Kubernetes formats.
 
-*may change to "CI | RA" depending on the managed services contract
+## Backup and continuity
 
-### Support and Troubleshooting
+- **Workload backup**: Veeam Kasten backs up your deployments (manifests and volumes) to Cloud Temple Object Storage, with application-consistent backups.
+- **Storage replication**: in production, replicated Ceph volumes are copied across the three availability zones.
+- **High availability**: in production, the Control Plane and the storage nodes are spread across three zones.
 
-| **Activity**                                       | **Client** | **Cloud Temple** |
-| --------------------------------------------------------- | ---------------- | ---------------------- |
-| Provide level 1 support for infrastructure      | I                | RA                     |
-| Provide level 2 and 3 support for infrastructure | I                | RA                     |
-| Resolve Kubernetes service-related issues      | C                | RA                     |
-| Resolve application-related issues           | RA               | I                      |
+<a id="politique-de-versions--cycle-de-vie"></a>
 
-### Capacity Management and Evolution
+## Versions and lifecycle
 
-*Production Managed Kubernetes cluster only. In Dev/Test and Core versions, the client is fully autonomous and responsible.*
+- **Supported Kubernetes:** N-2 (three major releases per year, roughly every four months). Each release is officially supported for 12 months, i.e. a support window of approximately 16 months maximum per version.
+- **Talos OS:** aligned with stable Kubernetes versions.
+  - Each branch is maintained for approximately 12 months, security patches included.
+  - Recommended upgrade cadence: three times a year, consistent with Kubernetes upgrades.
+  - Critical patches (CVE, kernel) are applied as rolling upgrades, without service interruption.
+- **Updates:**
+  - **major** (Kubernetes N+1, Talos X+1): scheduled three times a year, as rolling updates;
+  - **minor**: applied automatically within 30 to 60 days.
+- **Deprecation:** version N-3 reaches end of support 90 days after the release of version N.
 
-| **Activity**                                       | **Client** | **Cloud Temple** |
-| --------------------------------------------------------- | ---------------- | ---------------------- |
-| Monitor Kubernetes resource usage        | C                | RA                     |
-| Plan service capacity evolution         | RA               | C                      |
-| Implement capacity changes                 | I                | RA                     |
-| Manage application and resource evolution | RA               | I                      |
+<a id="sla--information-sur-le-support"></a>
 
-### Documentation and Compliance
+## Service availability
 
-| **Activity**                              | **Client** | **Cloud Temple** |
-| ------------------------------------------------ | ---------------- | ---------------------- |
-| Maintain Kubernetes product documentation | I                | RA                     |
-| Maintain application documentation      | RA               | I                      |
-| Ensure Kubernetes service compliance     | I                | RA                     |
-| Ensure application compliance          | RA               | I                      |
-| Conduct Kubernetes service audits       | I                | RA                     |
-| Conduct application audits            | RA               | I                      |
+| Item                        | Availability target, measured over one month |
+|-----------------------------|-----------------------------------------------|
+| Production cluster (Kubernetes API) | 99.95 %                               |
+| Production storage (Ceph volumes)   | 99.90 %                               |
 
-### Kubernetes Operators/CRD Management (included in the product)
+Development and test clusters have no availability target.
 
-| **Activity**                                           | **Client** | **Cloud Temple** |
-| ------------------------------------------------------------- | ---------------- | ---------------------- |
-| Provisioning of the default Operators catalog    | CI               | RA                     |
-| Operators updates                                  | CI               | RA                     |
-| Monitoring Operators status                      | CI               | RA                     |
-| Troubleshooting Operators issues              | CI               | RA                     |
-| Operators permissions management                     | CI               | RA                     |
-| Operators resources management (addition/removal)    | CI               | RA                     |
-| Backup of Operators resources data        | CI               | RA                     |
-| Monitoring Operators resources                        | CI               | RA                     |
-| Restoration of Operators resources data      | CI               | RA                     |
-| Operators security audit                           | CI               | RA                     |
-| Operators support                                       | CI               | RA                     |
-| Operators licensing management                      | CI               | RA                     |
-| Management of specific support plans for Operators | CI               | RA                     |
+<a id="raci"></a>
 
-*Operator package included on Managed Kube - see chapters: Managed Helm Packages
+## Responsibilities
 
-### Management of Kubernetes applications/operators/CRDs (du client)
+The split of responsibilities between the customer and Cloud Temple is detailed in the [Managed Kubernetes responsibility matrix (RACI)](../contractual/kubernetes/raci.md). In summary:
 
-*Managed Kubernetes Production Cluster only. In Dev/Test and Core versions, the client is fully autonomous and responsible.*
+- **Cloud Temple** is responsible for the Kubernetes foundation and the managed services: security, cluster backup, monitoring, updates and included operators.
+- **The customer** is responsible for their application projects, their business operators, their CI/CD pipelines and the backups of their applications.
+- **Support**: levels 1, 2 and 3 included for the foundation (infrastructure and standard operators). Response times depend on incident severity (P1 to P4).
+- **Maintenance**: regular patching of Talos, Kubernetes and the standard operators, as rolling upgrades, without service interruption.
 
-| **Activity**                                           | **Client** | **Cloud Temple** |
-| ------------------------------------------------------------- | ---------------- | ---------------------- |
-| Deployment of CRDs                                         | I*               | RA*                    |
-| Update of Operators                                  | RA               | I                      |
-| Monitoring of Operator status                      | RA               | I                      |
-| Troubleshooting Operator-related issues              | RA               | I                      |
-| Management of Operator permissions                     | RA               | I                      |
-| Management of Operator resources (ajout/suppression)    | RA               | I                      |
-| Backup of Operator resource data        | RA               | I                      |
-| Monitoring of Operator resources                        | RA               | I                      |
-| Restoration of Operator resource data      | RA               | I                      |
-| Security audit of Operators                           | RA               | I                      |
-| Operator support                                       | RA               | I                      |
-| License management for operators                      | RA               | I                      |
-| Management of specific support plans for operators | RA               | I                      |
+## Reversibility
 
-Certain operator services may be covered depending on the managed services contract.
+The clusters are based on open source standards and standard Kubernetes formats, which guarantees the portability of your applications.
 
-*may change to "A | RC" depending on the managed services contract
+| Operation                | Deliverable                 | Lead time   | Cost         |
+|--------------------------|-----------------------------|-------------|--------------|
+| Application export       | Kubernetes YAML manifests   | 15 days     | Free of charge |
+| Volume backup            | Veeam Kasten backups        | Continuous  | Included     |
+| Migration assistance     | Technical support           | On request  | On quotation |
 
-### Application Support
+**Veeam Kasten** also works with other Kubernetes clusters (OpenShift, hyperscalers…). It can therefore be used for reversibility or migration scenarios, handling the necessary adaptations through *transformations* (for example a change of ingress-class), but also for "refresh" scenarios, such as the scheduled restoration of a production environment into pre-production.
 
-| **Activity**                         | **Client** | **Cloud Temple** |
-| ------------------------------------------- | ---------------- | ---------------------- |
-| Application support (external service) | RA               | I                      |
+## Pricing
 
-Application support can be provided through an additional service.
-
-### RACI (summary)
-
-- Cloud Temple : Responsible and Actor (RA) for the *Core Kubernetes* foundation and additional *Managed Kubernetes* services (security, backup, monitoring)
-- Client : Responsible and Actor (RA) for application projects, business operators, CI/CD pipelines, application backups.
-- "Gray" zone : adaptations and extensions (IAM, specific operators, cluster compliance/security hardening) - billed on a project basis.
+The managed service is billed monthly, per cluster; the underlying IaaS infrastructure (compute, storage, network) is billed in addition, according to sizing. Prices are published on the product page on the Cloud Temple website:
+[Managed Kubernetes — pricing](https://www.cloud-temple.com/produits/managed-kubernetes/).

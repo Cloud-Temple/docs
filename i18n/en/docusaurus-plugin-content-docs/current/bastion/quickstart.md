@@ -1,18 +1,17 @@
 ---
 title: Getting Started Guide
 ---
-import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
 import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
 import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
 import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
-This getting started guide shows you how to request the creation of an Appliance and how to create a new session and connect to it.
+This getting started guide shows you how to activate the Bastion product, register a device and connect to it.
 
 ## Prerequisites
 
-1. Subscribe to the Cloud Temple product (Appliance Bastion subscription).
+1. Have activated the Bastion product for your organization.
 2. The devices to be managed must be accessible from the network where the Appliance Bastion is deployed.
 3. Have permissions on the Bastion module.
 4. For an on-premise Appliance deployment, the corresponding traffic must be allowed.
@@ -39,16 +38,15 @@ Several flows are required for the proper operation of the Bastion Appliance.
 |--------------------------|-----------------------------|-----------|
 | Client bastion appliance | Managed instances           | TCP/22    |
 
-## Requesting an Appliance
+<a id="demander-la-création-dune-appliance"></a>
 
-Before you can deploy an Appliance, you must submit an Appliance subscription request via a support request.
-Support is accessible in the Console via the lifebuoy icon on the top-right bar of the window.
+## Activate the Bastion product
 
-<img src={shivaSupport} />
+The Bastion product is activated in self-service from the Organization view of the Cloud Temple Console. You can also go through your usual sales contact.
 
 ## Register a device
 
-To regularly access a device for administration, it is more appropriate to create a session that will only require your username and password each time you log in.
+To regularly access a device for administration, it is more appropriate to register it: only your username and password will be requested each time you log in.
 
 To do this, go to the "Devices" tab in the "Bastion" menu, then click the "New Device" button.
 
@@ -65,7 +63,7 @@ Then, fill in the information required to create your device:
 
 <img src={creerSession2} />
 
-A notification indicating the device has been created should appear in the top right corner of the page. The session is then added to your list of devices.
+A notification indicating the device has been created should appear in the top right corner of the page. The device is then added to your list of devices.
 
 To create a new device, you can also go through the "Appliances" tab by clicking on the action bar of the appliance to which you want to associate a device.
 
