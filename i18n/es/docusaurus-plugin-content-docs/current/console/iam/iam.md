@@ -14,9 +14,9 @@ Permite administrar cuentas locales al tiempo que admite la hibridación con con
     <a href="./iam/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./iam/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <h3>Preguntas frecuentes</h3>
+    <p>Las respuestas habituales sobre las cuentas, los permisos y el acceso a la consola.</p>
+    <a href="./iam/quickstart" class="card-link">Leer las FAQ &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

@@ -22,7 +22,7 @@ Der Zugriff auf die Konsole ist der Zugangspunkt zu allen Ihren Cloud Temple-Die
 
 Der Zugriff auf die Cloud-Verwaltungskonsole ist auf vorher autorisierte IP-Adressen beschränkt. Diese Einschränkung ermöglicht es, den Zugriff ausschließlich auf Benutzer aus den festgelegten IP-Bereichen zu gewähren und minimiert somit das Risiko unbefugter Zugriffe.
 
-Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Konfiguration der IP-Filterung finden Sie unter [Zugriffs- und Authentifizierungsverwaltung | Cloud Temple Dokumentation](../../console/iam/quickstart?_highlight=*facteur#access-management-and-authentication).
+Sie können diese IP-Einschränkungen in den Einstellungen Ihrer Organisation konfigurieren. Informationen zur Konfiguration der IP-Filterung finden Sie unter [Wie autorisiere ich eine neue IP-Adresse für den Zugriff auf die Konsole? | Cloud Temple Dokumentation](../../console/iam/quickstart#wie-autorisiere-ich-eine-neue-ip-adresse-für-den-zugriff-auf-die-konsole).
 
 Um die Effektivität dieses Mechanismus zu maximieren, beachten Sie Folgendes:
 
@@ -62,7 +62,7 @@ Für lokal von der Konsole verwaltete Konten (ohne Identitätsföderation) ist M
 
 Weitere Informationen:  
 
-- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#what-is-mfa-and-is-it-mandatory)
+- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#was-ist-mfa-und-ist-sie-verpflichtend)
 - [Tutoriel : Fédération d'identité avec Microsoft EntraID | Documentation Cloud Temple](../../console/iam/tutorials/sso_azuread)
 - [Tutoriel : Fédération d'identité avec Microsoft ADFS | Documentation Cloud Temple](../../console/iam/tutorials/sso_adfs)
 

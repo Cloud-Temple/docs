@@ -1,164 +1,109 @@
 ---
-title: Guide de démarrage
+title: Questions fréquentes
 ---
-import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
-import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
-import shivaOnboard_004 from '@site/docs/console/iam/images/shiva_onboard_004.png'
 import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
-import shivaOnboard_005 from '@site/docs/console/iam/images/shiva_onboard_005.png'
-import shivaProfil_006 from '@site/docs/console/iam/images/shiva_profil_006.png'
-import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
-import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
-import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
-## Tenant
+# FAQ IAM
 
-### Création d'un tenant
+Les questions courantes sur les comptes, les droits et l'accès à la Console. Les procédures pas à pas sont dans [Onboarding](../onboarding.md) ; la référence complète est dans les [concepts IAM](concepts.md).
 
-La création d'un tenant se fait __en self-service__ depuis la Console, sans demande de service préalable. Depuis __'Administration > Tenants'__, le bouton __'Nouveau tenant'__ ouvre un formulaire en deux parties : l'identité du tenant (nom et description) et les produits à y activer.
+<a id="tenant"></a>
+<a id="création-dun-tenant"></a>
+<a id="selection-dun-tenant"></a>
 
-La procédure détaillée est décrite dans le [Quickstart Console](../console_quickstart.md).
+## Comment créer ou choisir un tenant ?
 
-### Selection d'un tenant
+La création d'un tenant se fait __en self-service__ depuis la Console, sans demande de service préalable : __'Administration > Tenants'__, bouton __'Nouveau tenant'__. Le tenant de travail se choisit depuis le sélecteur __'Mes tenants'__ du bandeau.
 
-La selection du tenant se fait depuis la page principale de la Console :
+Voir [Choisir ou créer un environnement](../onboarding.md#étape-3-choisir-ou-créer-un-environnement).
 
-<img src={shivaTenant} />
+*__Nota :__ Les ressources d'un tenant lui sont propres et ne sont pas partagées avec les autres tenants.*
 
-*__Nota :__ Les ressources d'un tenant lui sont propres et ne sont pas mélangeable avec d'autres tenants.*
+<a id="comptes-daccès-à-la-console"></a>
+<a id="création-dun-compte-utilisateur-dans-votre-organisation"></a>
 
-## Comptes d'accès à la Console
+## Comment ajouter un utilisateur ?
 
-Les comptes d'accès à la Console sont créés par le compte maitre du commanditaire sur invitation (quelque soit le référentiel d'authentification).
-Les informations d'identification sont globales à votre [Organisation](concepts.md#organisations).
-
-*__Nota :__ La fédération d'identité se gère au niveau de l'organisation*
-
-### Création d'un compte utilisateur dans votre organisation
-
-La création d'un compte utilisateur dans votre organisation se fait par invitation. Pour inviter un utilisateur dans une [Organisation](concepts.md#organisations), aller dans le menu __'Administration'__ à gauche de votre écran sur le bandeau vert puis dans le sous menu __'Utilisateurs'__.
-
-Cliquer sur le bouton __'Nouvel Utilisateur'__ depuis la page des utilisateurs.
-
-<img src={shivaOnboard_003} />
-
-Indiquer ensuite l'adresse de messagerie de l'utilisateur
-
-<img src={shivaOnboard_004} />
-
-L'utilisateur va alors recevoir un mail de vérification.
-
-<img src={shivaOnboard_001} />
-
-Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
-
-### Affectation des permissions à un utilisateur
-
-La gestion des droits utilisateurs se fait depuis la page utilisateur.
-
-<img src={shivaOnboard_003} />
-
-Par défaut, un utilisateur n'a pas de droit. Il est donc nécessaire que l'administrateur ayant fait l'invitation lui octroie les droits nécessaires à son activité. Il suffit de cliquer sur le menu __'Actions'__ de l'utilisateur et de choisir l'option __'Modifier'__.
-
-Le menu d'activation des droits apparait alors :
-
-<img src={shivaOnboard_005} />
-
-La configuration des permissions est à faire pour chaque [Tenant](concepts.md#tenant) de l'
-[Organisation](concepts.md#organisations).
-
-La liste des permissions et leur définition est accessible [ici](#permissions).
-
-### Changer la langue d'un utilisateur
-
-Le changement de langue d'un utilisateur est à réaliser dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__.
-
-<img src={shivaProfil_006} />
-
-La configuration est faite pour chaque tenant [Tenant](concepts.md#tenant).
-
-### Abonnement aux notifications thématiques
-
-La gestion des abonnements permet de recevoir les e-mails relatifs aux thématiques activées qui seront automatiquement envoyés lors de la survenue d'événements correspondants.
-
-Elle est accessible dans le profil utilisateur, dans l'onglet "Mes abonnements" :
-
-<img src={shivaProfil_007} />
-
- Par exemple, en cas d'incident, des notifications par e-mail spécifiques à cette thématique seront générées.
-
-La liste des thématiques disponibles est susceptible d'évoluer et de s'enrichir progressivement pour s'adapter aux besoins et aux changements dans notre environnement opérationnel.
-
-## Permissions
-
-### Quelles sont les permissions disponibles pour les comptes utilisateur de la Console ?
-
-Voici la liste des [permissions disponibles](#permissions).
-
-### Comment ajouter une permission ?
-
-Voici la [procédure d'affectation de permission est disponible ici](#permissions)
-
-### Pourquoi je ne peux pas ajouter une permission ?
-
-Pour ajouter une permission, vous avez besoin de posséder la permission __'iam_write'__ ainsi que la __permission que vous souhaitez ajouter__.
-
-### Comment ajouter un utilisateur ?
+Par invitation, depuis __'Administration > Utilisateurs'__, bouton __'Nouvel utilisateur'__. Les informations d'identification sont globales à votre [organisation](concepts.md#organisations), quel que soit le référentiel d'authentification.
 
 *__Nota__ : Pour ajouter un utilisateur, vous devez posséder le droit __'iam_write'__.*
 
-### Comment auditer les accès/permissions des utilisateurs ?
+Voir [Inviter vos collaborateurs](../onboarding.md#étape-4-inviter-vos-collaborateurs) et la [référence](concepts.md#création-dun-compte-utilisateur-dans-votre-organisation).
 
-Allez sur la page utilisateurs et cliquez sur le bouton __'Exporter csv'__ :
+<a id="affectation-des-permissions-à-un-utilisateur"></a>
 
-### Comment supprimer un utilisateur ?
+## Comment ajouter une permission ?
 
-Dans le menu __'Administration'__ sur le bandeau vert à gauche de l'écran, dans le sous menu __'utilisateur'__, cliquer sur l'icône __'Action'__ de l'utilisateur cible et choisissez __'Supprimer'__.
+Par défaut, un utilisateur n'a aucun droit. Depuis la page des utilisateurs, ouvrez le menu __'Actions'__ de l'utilisateur et choisissez __'Modifier'__. Les permissions se donnent __tenant par tenant__ : il n'existe pas d'attribution globale au niveau de l'organisation.
 
-*__nota__ :*
+Voir l'[affectation des permissions dans un tenant](concepts.md#affectation-des-permissions-dans-un-tenant).
 
-- *Pour ajouter un utilisateur, vous devez posséder le droit __'iam_write'__.*
+## Pourquoi je ne peux pas ajouter une permission ?
+
+Pour ajouter une permission, vous avez besoin de posséder la permission __'iam_write'__ ainsi que la __permission que vous souhaitez ajouter__.
+
+<a id="permissions"></a>
+
+## Quelles sont les permissions disponibles pour les comptes utilisateur de la Console ?
+
+Voir la liste des [permissions disponibles](concepts.md#permissions-disponibles-pour-les-utilisateurs-de-votre-organisation) et leur définition.
+
+## Comment auditer les accès/permissions des utilisateurs ?
+
+Allez sur la page __'Utilisateurs'__ et cliquez sur le bouton __'Exporter CSV'__ : vous obtenez la liste des utilisateurs et de leurs accès.
+
+## Comment supprimer un utilisateur ?
+
+Dans le menu __'Administration'__ sur le bandeau vert à gauche de l'écran, dans le sous menu __'Utilisateurs'__, cliquez sur l'icône __'Actions'__ de l'utilisateur cible et choisissez __'Supprimer'__.
+
+*__Nota__ :*
+
+- *Vous ne pouvez pas vous supprimer vous-même, ni supprimer un utilisateur __'Propriétaire'__.*
 - *S'il s'agit d'un utilisateur fédéré, __assurez-vous que l'utilisateur a été supprimé également depuis le référentiel d'identité__.*
 
-### Comment réinitialiser son mot de passe ?
+## Pourquoi certains utilisateurs sont grisés ?
 
-Il est possible de réinitialiser son mot de passe depuis la page de connexion de la Console en cliquant sur __'Mot de passe oublié ?'__.
-
-### Pourquoi certains utilisateurs sont grisés ?
-
-Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, ;'utilisateur a recu un mail de vérification.
+Les utilisateurs grisés sont ceux n'ayant pas validé leur compte. Lors de la création du compte, l'utilisateur a reçu un mail de vérification.
 
 <img src={shivaOnboard_001} />
 
-Une fois la vérification terminée, l'utilisateur pourra se connecter sur la console.
+Le compte est grisé tant que la vérification n'a pas été finalisée. Si le lien a expiré, utilisez l'action __'Réinscription'__ : voir la [réinscription d'un utilisateur](concepts.md#réinscription-dun-utilisateur).
 
-Le compte est grisé tant que la vérification n'a pas été finalisée.
+## Comment réinitialiser son mot de passe ?
 
-### Qu'est-ce qu'un Personal Access Token (PAT) ?
+Il est possible de réinitialiser son mot de passe depuis la page de connexion de la Console en cliquant sur __'Mot de passe oublié ?'__.
 
-La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__,
-est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique.
-
-### Qu'est-ce que le MFA et est-il obligatoire ?
+## Qu'est-ce que le MFA et est-il obligatoire ?
 
 Le MFA (multi-factor authentication) est un concept de vérification de l'identité d'un utilisateur en deux étapes, appelée __authentification à double facteur__.
 
 L'utilisateur doit fournir deux preuves d'identité distinctes. Dans le cas de la Console, l'authentification à double facteur est obligatoire et requiert de rentrer un code à usage unique une fois que l'utilisateur a entré le mot de passe de son compte.
 
-## Gestion des accès et authentification
+## Qu'est-ce qu'un Personal Access Token (PAT) ?
 
-### Autorisation d'accès à la Console : IP autorisées
+La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__, est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique. Voir la [documentation de l'API](../api.md).
 
-L'accès à la console de gestion cloud est strictement limité aux adresses IP préalablement autorisées, en conformité avec les exigences de la qualification SecNumCloud. Cette restriction garantit un niveau de sécurité renforcé en ne permettant l'accès qu'aux utilisateurs provenant de plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés et protégeant l'infrastructure cloud selon les standards de sécurité les plus élevés.
+<a id="gestion-des-accès-et-authentification"></a>
+<a id="autorisation-daccès-à-la-console--ip-autorisées"></a>
 
-La liste est celle de l'__organisation__ : une adresse ajoutée depuis n'importe quel tenant autorise l'accès à la Console pour toute l'organisation. Elle se consulte et s'enrichit depuis l'onglet __'Administration > Accès'__.
+## Comment autoriser une nouvelle adresse IP à accéder à la Console ?
 
-<img src={shivaOrgAccess} />
+La Console étant hébergée sur une infrastructure qualifiée SecNumCloud, son accès est limité aux adresses IP publiques autorisées. La liste est celle de l'__organisation__ : elle se consulte et s'enrichit depuis __'Administration > Accès'__, avec les droits `console_public_access_read` et `console_public_access_write`. La suppression d'une adresse se fait par une demande de support dans la Console.
 
-Pour cela, l’utilisateur doit disposer du droit `console_public_access_read` pour consulter les IPs autorisées, et du droit `console_public_access_write` pour ajouter une adresse IP publique à la liste.
+Voir [Ajouter une adresse IP](../onboarding.md#ajouter-une-adresse-ip).
 
-Il est alors possible d'ajouter une nouvelle IP:
+## Comment fédérer l'authentification avec notre annuaire ?
 
-<img src={shivaIpAccessManagement_02} />
+La fédération d'identité se paramètre au niveau de l'organisation : voir les [mécanismes d'authentification](concepts.md#mécanismes-dauthentification) et les [tutoriels de fédération d'identité](/console/iam/tutorials).
 
-Note : *La suppression d'un IP autorisée se fait par une demande de support dans la console Cloud Temple.*
+<a id="changer-la-langue-dun-utilisateur"></a>
+
+## Comment changer la langue d'un utilisateur ?
+
+Dans son __'Profil'__, en haut à droite de l'écran, dans les __'Paramètres utilisateur'__. Voir [Changer la langue d'un utilisateur](concepts.md#changer-la-langue-dun-utilisateur).
+
+<a id="abonnement-aux-notifications-thématiques"></a>
+
+## Comment recevoir les notifications par courriel ?
+
+Dans le profil utilisateur, onglet __'Mes abonnements'__, activez les thématiques souhaitées. Voir l'[abonnement aux notifications thématiques](concepts.md#abonnement-aux-notifications-thématiques).
