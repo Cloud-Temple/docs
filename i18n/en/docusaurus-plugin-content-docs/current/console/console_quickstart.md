@@ -8,6 +8,7 @@ import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
 import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
 import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
 import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaLogsDetail from '@site/docs/console/images/shiva_logs_detail.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
@@ -275,6 +276,10 @@ Once your request has been submitted, you can view your requests via __the 'help
 The activity page is designed to provide complete visibility into all read and write operations performed within the console, ensuring enhanced traceability and security. It highlights the two main tabs: Recent and Archived.
 
 <img src={shivaLogs} />
+
+It is possible to open the details of a log by expanding its line.
+
+<img src={shivaLogsDetail} />
 
 ### __Page Structure__
 

@@ -8,6 +8,7 @@ import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
 import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
 import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
 import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaLogsDetail from '@site/docs/console/images/shiva_logs_detail.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
@@ -275,6 +276,10 @@ Une fois votre demande effectuée, il est possible de retrouver vos demandes via
 La page des activités est destinée à fournir une visibilité complète sur toutes les opérations de lecture et d'écriture réalisées au sein de la console, assurant ainsi une traçabilité et une sécurité accrues. Elle met en évidence les deux onglets principaux : Récents et Archivés.
 
 <img src={shivaLogs} />
+
+Il est possible d'ouvrir le détail d'un log en dépliant sa ligne.
+
+<img src={shivaLogsDetail} />
 
 ### __Structure de la Page__
 

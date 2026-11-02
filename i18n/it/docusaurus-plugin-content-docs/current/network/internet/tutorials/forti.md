@@ -1,5 +1,5 @@
 ---
-title: Distribuire un firewall virtuale Fortigate
+title: Deployare un firewall virtuale Fortigate
 tags:
   - internet
   - tutorials
@@ -32,15 +32,12 @@ import ipPlan04 from '@site/docs/network/internet/images/ip_plan_04.png';
 import ipPlan05 from '@site/docs/network/internet/images/ip_plan_05.png';
 import imgDeploy01 from '@site/docs/network/internet/images/img_deploy_01.png';
 import imgDeploy02 from '@site/docs/network/internet/images/img_deploy_02.png';
-import imgDeploy03 from '@site/docs/network/internet/images/img_deploy_03.png';
 import imgDeploy04 from '@site/docs/network/internet/images/img_deploy_04.png';
 import imgDeploy05 from '@site/docs/network/internet/images/img_deploy_05.png';
 import imgDeploy06 from '@site/docs/network/internet/images/img_deploy_06.png';
 import imgDeploy07 from '@site/docs/network/internet/images/img_deploy_07.png';
 import imgDeploy08 from '@site/docs/network/internet/images/img_deploy_08.png';
 import imgDeploy09 from '@site/docs/network/internet/images/img_deploy_09.png';
-import imgDeploy10 from '@site/docs/network/internet/images/img_deploy_10.png';
-import imgDeploy11 from '@site/docs/network/internet/images/img_deploy_11.png';
 import imgBackup01 from '@site/docs/network/internet/images/img_backup_01.png';
 import imgBackup02 from '@site/docs/network/internet/images/img_backup_02.png';
 import imgBackup03 from '@site/docs/network/internet/images/img_backup_03.png';
@@ -53,103 +50,103 @@ import vmBoot02 from '@site/docs/network/internet/images/vm_boot_02.png';
 import vmBoot03 from '@site/docs/network/internet/images/vm_boot_03.png';
 import vmBoot04 from '@site/docs/network/internet/images/vm_boot_04.png';
 
-## Obiettivo di questa guida
+## Oggetto di questa guida
 
-Questa guida descrive i passaggi essenziali per distribuire efficacemente un firewall individuale o un cluster di firewall in un ambiente SecNumCloud.
+Questa guida dettagli gli passaggi essenziali per deployare efficacemente un firewall individuale o un cluster di firewall in un ambiente SecNumCloud.
 
-**Nota:** *Le configurazioni presentate in questo documento servono come guida di riferimento e devono essere attentamente adattate alle specifiche tecniche, ai requisiti di sicurezza e agli obiettivi operativi specifici di ogni ambiente*
+**Nota:** *Le configurazioni presentate in questo documento fungono da guida di riferimento e devono essere attentamente adattate alle specificità tecniche, ai requisiti di sicurezza e agli obiettivi operativi propri di ciascun ambiente*
 
 ## Prerequisiti per questa guida
 
-### Diritti necessari
+### Permessi necessari
 
-La distribuzione degli appliance virtuali richiede un accesso al tenant del cliente nella console Cloud Temple con i seguenti permessi specifici:
+Il deployment delle appliance virtuali richiede un accesso al tenant del cliente nella console Cloud Temple con i seguenti permessi specifici:
 
-Se utilizzi l'offerta **OpenIaaS**:
+Se si utilizza il prodotto **OpenIaaS** :
 
-| Nome del permesso                            | Descrizione del permesso                                                                                                      |
+| Nome del permesso                          | Descrizione del permesso                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| compute_iaas_opensource_console_access        | Offerta OpenIaaS - Apertura della console di una macchina virtuale                                                             |
-| compute_iaas_opensource_infrastructure_read   | Offerta OpenIaaS - Consultazione di dati avanzati delle risorse VMware (regole affinità/anti-affinità, configurazione drs, ecc) |
-| compute_iaas_opensource_infrastructure_write  | Offerta OpenIaaS - Gestione avanzata delle risorse VMware                                                                      |
-| compute_iaas_opensource_read                  | Offerta OpenIaaS - Consultazione delle risorse di tipo Macchine Virtuali                                                       |
-| compute_iaas_opensource_management            | Offerta OpenIaaS - Gestione delle risorse di tipo Macchine Virtuali                                                            |
-| compute_iaas_opensource_virtual_machine_power | Offerta OpenIaaS - Gestione dell'alimentazione di una macchina virtuale                                                         |
-| activity_read                                 | Consultazione dei log e delle attività                                                                                         |
+| compute_iaas_opensource_console_access        | Offerta OpenIaaS - Apertura della console di una macchina virtuale                                                                |
+| compute_iaas_opensource_infrastructure_read   | Offerta OpenIaaS - Consultazione di dati avanzati delle risorse VMware (regole di affinità/anti-affinità, configurazione drs, ecc) |
+| compute_iaas_opensource_infrastructure_write  | Offerta OpenIaaS - Gestione avanzata delle risorse VMware                                                                          |
+| compute_iaas_opensource_read                  | Offerta OpenIaaS - Consultazione delle risorse di tipo Macchine Virtuali                                                        |
+| compute_iaas_opensource_management            | Offerta OpenIaaS - Gestione delle risorse di tipo Macchine Virtuali                                                             |
+| compute_iaas_opensource_virtual_machine_power | Offerta OpenIaaS - Gestione dell'alimentazione di una macchina virtuale                                                              |
+| activity_read                                 | Consultazione dei log e delle attività                                                                                    |
 
-Se utilizzi l'offerta **Vmware**:
+Se si utilizza il prodotto **Vmware** :
 
-| Nome del permesso                            | Descrizione del permesso                                                                                                      |
+| Nome del permesso                          | Descrizione del permesso                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| compute_iaas_vmware_console_access            | Offerta Vmware - Apertura della console di una macchina virtuale                                                               |
-| compute_iaas_vmware_infrastructure_read       | Offerta Vmware - Consultazione di dati avanzati delle risorse VMware (regole affinità/anti-affinità, configurazione drs, ecc)  |
-| compute_iaas_vmware_infrastructure_write      | Offerta Vmware - Gestione avanzata delle risorse VMware                                                                        |
+| compute_iaas_vmware_console_access            | Offerta Vmware - Apertura della console di una macchina virtuale                                                                 |
+| compute_iaas_vmware_infrastructure_read       | Offerta Vmware - Consultazione di dati avanzati delle risorse VMware (regole di affinità/anti-affinità, configurazione drs, ecc)  |
+| compute_iaas_vmware_infrastructure_write      | Offerta Vmware - Gestione avanzata delle risorse VMware                                                                           |
 | compute_iaas_vmware_read                      | Offerta Vmware - Consultazione delle risorse di tipo Macchine Virtuali                                                         |
 | compute_iaas_vmware_management                | Offerta Vmware - Gestione delle risorse di tipo Macchine Virtuali                                                              |
-| compute_iaas_vmware_virtual_machine_power     | Offerta Vmware - Gestione dell'alimentazione di una macchina virtuale                                                           |
-| activity_read                                 | Consultazione dei log e delle attività                                                                                         |
+| compute_iaas_vmware_virtual_machine_power     | Offerta Vmware - Gestione dell'alimentazione di una macchina virtuale                                                               |
+| activity_read                                 | Consultazione dei log e delle attività                                                                                    |
 
-Se desideri utilizzare ***Terraform***, sono richiesti i seguenti permessi aggiuntivi:
+Se si desidera utilizzare ***Terraform***, sono richiesti i seguenti permessi aggiuntivi :
 
-| Nome del permesso                            | Descrizione del permesso                                                                                                      |
+| Nome del permesso                          | Descrizione del permesso                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| tag_read                                      | Consultazione dei tag, eccetto i tag RTMS                                                                                      |
-| tag_write                                     | Gestione dei tag, eccetto i tag RTMS                                                                                           |
-| iam_read                                      | Consultazione dei diritti utente                                                                                               |
-| iam_write                                     | Gestione dei diritti utente                                                                                                    |
+| tag_read                                      | Consultazione dei tag, ad eccezione dei tag RTMS                                                                                   |
+| tag_write                                     | Gestione dei tag, ad eccezione dei tag RTMS                                                                                        |
+| iam_read                                      | Consultazione dei diritti utente                                                                                           |
+| iam_write                                     | Gestione dei diritti utente                                                                                                |
 
-L'immagine OVA dell'appliance da distribuire deve essere disponibile prima di iniziare il processo. Troverai le immagini Fortinet sul [sito del supporto](https://support.fortinet.com/welcome/). È necessario disporre di un account di supporto Fortinet.
+L'immagine OVA dell'appliance da deployare deve essere disponibile prima di iniziare il processo. Le immagini Fortinet sono disponibili su [il sito di supporto](https://support.fortinet.com/welcome/). È necessario disporre di un account di supporto Fortinet.
 
-Vai alla **sezione Download** e poi **Firmware Images**:
+Andare nella **sezione Download** poi **Firmware Images** :
 
 <img src={fortiSupport} />
 
-**Al 1° luglio 2024, la versione 7.2 è raccomandata.**
+**Al 1° Luglio 2024, la versione 7.2 è raccomandata.**
 
-L'immagine da scaricare è la FGT_VM64 in formato OVF/ZIP:
+L'immagine da recuperare è la FGT_VM64 in formato OVF/ZIP :
 
 <img src={fortiSupportVm01} />
 
-**Nota:** *Se hai sottoscritto un'unità di lavoro firewall Fortinet, il supporto Cloud Temple può mettere a disposizione l'immagine in formato OVA e la licenza associata.*
+**Nota:** *Se si è sottoscritto un'unità d'opera firewall Fortinet, il supporto Cloud Temple può mettere a disposizione l'immagine in formato OVA nonché la licenza associata.*
 
-| Unità di lavoro dell'infrastruttura - FIREWALLS VIRTUALI | Unità            | sku                     |
-| :------------------------------------------------------ | :---------------- | :---------------------- |
-| FIREWALL UTM -Fortigate Virtuale VM02V - senza vdom     | 1 cluster virtuale | csp:fr1:licence:fw:ftg2 |
-| FIREWALL UTM -Fortigate Virtuale VM04V - senza vdom     | 1 cluster virtuale | csp:fr1:licence:fw:ftg4 |
-| FIREWALL UTM -Fortigate Virtuale VM08V - senza vdom     | 1 cluster virtuale | csp:fr1:licence:fw:ftg8 |
-| FIREWALL UTM -Fortigate - 5 vdom complementari          | 5 vdom            | csp:fr1:licence:fw:vdom |
+| Unità d'opera di infrastruttura - FIREWALL VIRTUALI | Unità             | sku                     |
+| :--------------------------------------------------- | :---------------- | :---------------------- |
+| FIREWALL UTM -Fortigate Virtuale VM02V - senza vdom    | 1 cluster virtuale | csp:fr1:licence:fw:ftg2 |
+| FIREWALL UTM -Fortigate Virtuale VM04V - senza vdom    | 1 cluster virtuale | csp:fr1:licence:fw:ftg4 |
+| FIREWALL UTM -Fortigate Virtuale VM08V - senza vdom    | 1 cluster virtuale | csp:fr1:licence:fw:ftg8 |
+| FIREWALL UTM -Fortigate - 5 vdom complementari     | 5 vdom            | csp:fr1:licence:fw:vdom |
 
 ### Informazioni di connettività di rete
 
-Devi disporre delle informazioni necessarie per stabilire la sessione BGP con il backbone. Questi dati sono disponibili nella console Cloud Temple, nella sezione Network → Internet → ASNs:
+È necessario disporre delle informazioni necessarie per stabilire la sessione BGP con il backbone. Questi dati sono disponibili nella console Cloud Temple, nella sezione Network → Internet → ASNs :
 
 <img src={asn} />
 
-Devi anche disporre di un intervallo di indirizzi IP pubblici la cui estensione sia in linea con le tue esigenze. L'intervallo di indirizzi riservato è indicato nella console Cloud Temple nella sezione Network → Internet → IP pubblici. Ecco un esempio:
+È inoltre necessario disporre di un intervallo di indirizzi IP pubblici la cui estensione è in rapporto con il proprio bisogno. L'intervallo di indirizzi riservato è indicato nella console Cloud Temple alla sezione Network → Internet → IP pubbliche. Ecco un esempio :
 
 <img src={ipsPub} />
 
-Infine, devi disporre del blocco che ti è assegnato sulla rete di interconnessione BGP per poter beneficiare di una rotta verso Internet. La rete di interconnessione Cloud Temple è la 100.64.0.0/16 e ogni accesso beneficia di una sottorete di interconnessione di tipo /28. Questa rete serve per stabilire la sessione BGP con il core di routing Cloud Temple. Troverai questo intervallo nella console Cloud Temple nella sezione Network → Internet → IPs di interconnessione. Ecco un esempio:
+Infine, è necessario disporre del blocco che vi è stato assegnato sulla rete di interconnessione BGP al fine di poter beneficiare di una rotta verso Internet. La rete di interconnessione Cloud Temple è la 100.64.0.0/16 e ogni accesso beneficia di un sotto-rete di interconnessione di tipo /28. Questa rete serve per l'istituzione della sessione BGP con il cuore di routing Cloud Temple. Questo intervallo si trova nella console Cloud Temple nella sezione Network → Internet → IPs di interconnessione. Ecco un esempio :
 
 <img src={ipsInterco} />
 
-**Nota:** *Devi aver sottoscritto le unità di lavoro associate alla connettività Internet. Vedrai quindi apparire le informazioni di connettività nella console Cloud Temple.*
+**Nota:** *È necessario aver sottoscritto le unità d'opera associate di connettività Internet. Si vedranno quindi apparire le informazioni di connettività nella console Cloud Temple.*
 
 ## Architettura di rete tipo
 
-L'architettura tipo di un deployment Cloud Temple è di tipo Cluster in continuità di attività. Implica l'implementazione e la sottoscrizione ad almeno 2 zone di disponibilità in una regione.
+L'architettura tipo di un deployment Cloud Temple è di tipo Cluster in continuità di attività. Implica la messa in opera e la sottoscrizione di almeno 2 zone di disponibilità in una regione.
 
-Il deployment standard dei firewall viene effettuato in cluster, con un dispositivo in ciascuna zona di disponibilità SNC. Una rete virtuale assicura la sincronizzazione del cluster. Le porte WAN accedono a Internet tramite la rete di interconnessione.
+Il deployment standard dei firewall si effettua in cluster, con un equipaggiamento in ciascuna zona di disponibilità SNC. Una rete virtuale assicura la sincronizzazione del cluster. Le porte WAN accedono a Internet tramite la rete di interconnessione.
 
-Una configurazione iniziale è necessaria per stabilire le sessioni BGP, permettendo così la connettività Internet. Le VLAN private sono instradate verso le interfacce LAN del firewall virtuale tramite un trunk (aggregazione di reti di livello 2 tramite la tecnologia 802.1q).
+Una configurazione iniziale è necessaria per stabilire le sessioni BGP, permettendo così la connettività Internet. I VLAN privati sono instradati verso le interfacce LAN del firewall virtuale tramite un trunk (aggregazione di reti di livello 2 tramite la tecnologia 802.1q).
 
-**Nota:** *Sebbene non sia un'architettura raccomandata, questa guida si applica anche ai deployment mono-AZ.*
+**Nota:** *Sebbene non si tratti di un'architettura raccomandata, questa guida si applica anche ai deployment mono-AZ.*
 
 ## Importare l'appliance Fortinet nella console Cloud Temple
 
 ### Decompressione del file appliance
 
-Dopo il download dal sito di supporto Fortinet, decomprimi il file ZIP per ottenere:
+Dopo il download dal sito di supporto Fortinet, decomprimere il file ZIP per ottenere :
 
 - I dischi virtuali VMDK dell'appliance,
 
@@ -157,7 +154,7 @@ Dopo il download dal sito di supporto Fortinet, decomprimi il file ZIP per otten
 
 <img src={fortiSupportVm02} />
 
-Ecco i tipi di template comunemente integrati nel file .ZIP:
+Ecco i tipi di template comunemente integrati nel .ZIP :
 
 | Template                     | Compatible with                           |
 | ---------------------------- | ----------------------------------------- |
@@ -169,39 +166,39 @@ Ecco i tipi di template comunemente integrati nel file .ZIP:
 | FortiGate-VM64.nsxt.ovf      | ESXI 6.7U2+(Hardware Version 15) or later |
 | FortiGate-VM64-ZNTA.vapp.ovf | ESXI 7.0(Hardware Version 17) or later    |
 
-### Importare l'appliance nel tuo catalogo di immagini tramite la console Cloud Temple
+### Importare l'appliance nel proprio catalogo di immagini tramite la console Cloud Temple
 
-Accedi al tuo tenant nella console Cloud Temple, poi vai in "**Catalogo**" e "**Pubblica file**":
+Connettersi al proprio tenant all'interno della console Cloud Temple, poi andare in "**Catalogo**" e "**Pubblicare dei file**" :
 
 <img src={shivaCatalogues} />
 
-Scegli un nome per la tua immagine. Ti consigliamo di utilizzare: **FGT-VM-VERSIONE-AZ**, per esempio qui FGT-VM-*7.2.8*-*TH3S*:
+Scegliere un nome per la propria immagine. Si raccomanda di utilizzare : **FGT-VM-VERSIONE-AZ**, per esempio qui FGT-VM-*7.2.8*-*TH3S* :
 
 <img src={imgImport01} />
 
-Indica poi la libreria di immagini della zona di disponibilità **(1)**:
+Indicare quindi la libreria di immagini della zona di disponibilità **(1)**:
 
 <img src={imgImport02} />
 
-Scegli poi i file da pubblicare nella libreria **(2)**:
+Scegliere quindi i file da pubblicare nella libreria **(2)**:
 
 <img src={imgImport03} />
 
 <img src={imgImport04} />
 
-Clicca poi su "**pubblica file**":
+Cliccare quindi su "**pubblicare dei file**" :
 
 <img src={imgImport05} />
 
-Attendi la fine del caricamento dei tuoi file nella libreria:
+Aspettare la fine del download dei propri file nella libreria :
 
 <img src={imgImport06} />
 
 <img src={imgImport07} />
 
-*L'operazione va ripetuta per ogni zona di disponibilità in cui desideri distribuire un appliance.*
+*L'operazione è da ripetere per ciascuna zona di disponibilità in cui si desidera deployare un'appliance.*
 
-Per esempio per la seconda zona PAR7S:
+Per esempio per la seconda zona PAR7S :
 
 <img src={imgImport08} />
 
@@ -215,159 +212,149 @@ Per esempio per la seconda zona PAR7S:
 
 **Nota:**
 
-- ***(1)*** *Ogni zona di disponibilità dispone di una libreria di immagini per gli hypervisor di quella zona.*
+- ***(1)*** *Ciascuna zona di disponibilità dispone di una libreria di immagini per gli hypervisor di questa zona.*
 
-- ***(2)*** *per il file .ovf, scegli una versione con hardware virtuale compatibile con la versione degli hypervisor ESXi (al 1° luglio 2024, la versione massima supportata è la **v19** corrispondente agli ESX 7.0.x.).*
+- ***(2)*** *per il file .ovf, prendere una versione il cui hardware virtuale è in versione compatibile con la versione degli hypervisor ESXi (al 1° luglio 2024, la versione massima supportata è la **v19** corrispondente agli ESX 7.0.x.).*
 
-## Distribuzione dell'appliance Fortinet su una zona di disponibilità
+## Deployment dell'appliance Fortinet su una zona di disponibilità
 
-### Pianificare la distribuzione della tua interconnessione BGP
+### Pianificare il deployment della propria interconnessione BGP
 
-Devi selezionare un indirizzo IP di interconnessione per il tuo futuro appliance Firewall. Il primo indirizzo è sempre il gateway BGP Cloud Temple. Gli altri indirizzi sono quindi in linea di principio disponibili (a meno che tu non abbia precedentemente distribuito altri dispositivi):
+È necessario selezionare un indirizzo IP di interconnessione per la futura appliance Firewall. Il primo indirizzo è sempre la gateway BGP Cloud Temple. Gli altri indirizzi sono quindi in principio disponibili (a meno che non si siano precedentemente deployati altri equipaggiamenti) :
 
 <img src={ipPlan01} />
 
-La regola vuole che si prendano gli IP liberi in sequenza:
+La regola vuole che si prendano gli IP liberi in sequenza :
 
 <img src={ipPlan02} />
 
-### Pianificare l'uso dei tuoi indirizzi IP pubblici
+### Pianificare l'uso dei propri indirizzi IP pubblici
 
-Tutti gli IP pubblici allocati sono utilizzabili per il tuo tenant. La dimensione della sottorete dipende dalle unità di lavoro sottoscritte.
+Tutti gli IP pubblici assegnati sono utilizzabili per il proprio tenant. La dimensione del sotto-rete dipende dalle unità d'opera sottoscritte.
 
 <img src={ipPlan03} />
 
 ### Parametri di configurazione BGP4
 
-Nota le 3 informazioni importanti seguenti per il proseguimento della configurazione BGP4:
+Annotare le 3 informazioni importanti seguenti per il seguito della configurazione BGP4 :
 
 <img src={ipPlan04} />
 
-- **AS Partner**: il remote AS utilizzato per stabilire la sessione BGP dal punto di vista del firewall, si tratta dell'AS Cloud Temple.
+- **AS Partner** : il remote AS utilizzato per avviare la sessione BGP dal punto di vista del firewall, si tratta dell'AS Cloud Temple.
 
-- **Route Servers**: i due peer BGP verso cui stabilire una sessione BGP.
+- **Route Servers** : i due peer BGP verso i quali avviare una sessione BGP.
 
-- **Nome**: il numero di AS proprio del tenant; rimuovere il prefisso *AS* per conservare solo il numero.
+- **Nome** : il numero di AS proprio del tenant; rimuovere il prefisso *AS* per conservare solo il numero.
 
 <img src={ipPlan05} />
 
-### Distribuire l'appliance sull'infrastruttura
+### Deployare l'appliance sull'infrastruttura
 
-Dalla libreria della zona di disponibilità su cui desideri installare il tuo appliance, seleziona il template e poi "**Distribuisci**":
+Dalla libreria della zona di disponibilità su cui si desidera installare l'appliance, selezionare il template poi "**Deploy**" :
 
 <img src={imgDeploy01} />
 
-Devi poi nominare la macchina virtuale; ti consigliamo la seguente nomenclatura: FGT-VM-**0X**-**RUOLO**-**AZ**
+Bisogna quindi nominare la macchina virtuale; si consiglia la seguente nomenclatura : FGT-VM-**0X**-**ROLE**-**AZ**
 
-- **0X**: corrisponde al tipo di licenza Fortigate che hai sottoscritto:
+- **0X** :corrisponde al tipo di licenza Fortigate a cui si è sottoscritto :
 
 <img src={fortiVmType01} />
 
-- **RUOLO**: Per esempio INTERNET per un firewall di interconnessione INTERNET.
+- **ROLE** : Ad esempio INTERNET per un firewall di interconnessione INTERNET.
 
-- **AZ**: La zona di disponibilità
+- **AZ** : La zona di disponibilità
 
 <img src={imgDeploy02} />
 
-Scegli poi la zona di disponibilità:
-
-<img src={imgDeploy03} />
-
-Poi il cluster di hypervisor target:
+Scegliere quindi il cluster di hypervisor target :
 
 <img src={imgDeploy04} />
 
-Scegli la destinazione di storage:
+Scegliere il target di storage :
 
 <img src={imgDeploy05} />
 
-Indica infine le informazioni di configurazione del tuo appliance e in particolare le informazioni di indirizzamento ottenute precedentemente:
+Indicare infine le informazioni di configurazione dell'appliance e in particolare le informazioni di indirizzamento ottenute precedentemente :
 
 <img src={imgDeploy06} />
 
-- **Token**: non indicare nulla
+- **Token** : non indicare nulla
 
-- **Configuration URL**: non indicare nulla
+- **Configuration URL** : non indicare nulla
 
-- **Hostname**: identico al nome della VM
+- **Hostname** : identico al nome dell'involucro della VM
 
-- **DNS**: 208.91.112.53 e 208.91.112.2 (di default, ma puoi decidere di utilizzare altri DNS a tua convenienza)
+- **DNS** : 208.91.112.53 et 208.91.112.2 (per impostazione predefinita, ma è possibile decidere di utilizzare altri DNS a propria discrezione)
 
-- **Interface IP**: primo IP di interconnessione libero
+- **Interface IP** : prima IP di interconnessione libera
 
-- **Netmask**: netmask dell'intervallo di interconnessione
+- **Netmask** : netmask del range di interconnessione
 
-- **Interface 2**: non configurata
+- **Interface 2** : non configurata
 
-Clicca poi su **Avanti**. Le informazioni di configurazione delle interfacce devono essere compilate. La prima interfaccia deve essere utilizzata per l'accesso internet; le altre sono temporaneamente messe sulla vlan dedicata all'alta disponibilità:
+Cliccare quindi su **Avanti**. Le informazioni di configurazione delle interfacce devono essere compilate. La prima interfaccia è da utilizzare per l'accesso internet; le altre sono temporaneamente impostate sul vlan dedicata all'alta disponibilità :
 
 <img src={imgDeploy07} />
 
-infine, clicca su "**Distribuisci**".
+infine, cliccare su "**Deploy**".
 
 <img src={imgDeploy08} />
 
 <img src={imgDeploy09} />
 
-Quando la distribuzione è terminata, la console Cloud Temple te lo indica:
+Quando il deploy è terminato, la console Cloud Temple lo indica e l'appliance è ora visibile nelle macchine virtuali.
 
-<img src={imgDeploy10} />
+### Assegnazione di una policy di backup
 
-Il tuo appliance è ora visibile nelle macchine virtuali:
-
-<img src={imgDeploy11} />
-
-### Assegnazione di una politica di backup
-
-In ambiente SecNumCloud, una macchina virtuale deve avere una politica di backup per avviarsi. Puoi configurarla nelle politiche e avviare l'attività di inventario:
+In ambiente SecNumCloud, una macchina virtuale deve avere una policy di backup per avviarsi. È possibile configurarla nelle policy e avviare la task di inventario :
 
 <img src={imgBackup01} />
 
 <img src={imgBackup02} />
 
-Assegna la politica corrispondente all'RPO desiderato, di default puoi scegliere una politica giornaliera:
+Assegnare la policy corrispondente al RPO desiderato, per impostazione predefinita è possibile scegliere una policy giornaliera :
 
 <img src={imgBackup03} />
 
-Puoi confermare la tua scelta:
+È possibile confermare la scelta :
 
 <img src={imgBackup04} />
 
-Se sono richieste politiche aggiuntive (come in questo esempio 'daily' e 'monthly'), ripeti l'operazione per ogni politica aggiuntiva.
+Se sono richieste policy aggiuntive (come in questo esempio 'daily' e 'monthly'), ripetere l'operazione per ogni policy aggiuntiva.
 
 ### Avvio della macchina virtuale
 
-L'avvio della macchina virtuale si effettua dalla console Cloud Temple:
+L'avvio della macchina virtuale si effettua dalla console Cloud Temple :
 
 <img src={vmStart01} />
 
-È possibile osservare la console e l'appliance Fortinet riavviarsi nuovamente al termine del primo boot:
+È possibile osservare la console e l'appliance Fortinet reboota nuovamente al termine del primo Boot :
 
 <img src={vmStart02} />
 
-Dopo questo secondo boot, l'indirizzo IP indicato nel deployment della macchina virtuale nella sezione **OvfProperties**, deve rispondere al ping a condizione di avere accesso alla rete di interconnessione.
+Dopo questo secondo boot, l'indirizzo IP indicato nel deploy della macchina virtuale alla sezione **OvfProperties**, deve rispondere al ping a condizione di un accesso alla rete di interconnessione.
 
 ## Configurazione iniziale
 
 ### Connessione alla console
 
-Nella console Cloud Temple, seleziona il tuo appliance Fortinet e richiedi la console dell'appliance.
+Nella console Cloud Temple, selezionare l'appliance Fortinet e richiedere la console dell'appliance.
 
 <img src={vmConsole01} />
 
-A seconda del momento in cui accedi alla console, potresti aver visto l'avvio e il riavvio iniziali:
+A seconda del momento in cui si accede alla console, è stato possibile vedere il boot e il reboot iniziali di quest'ultima :
 
 <img src={vmBoot01} />
 
 <img src={vmBoot02} />
 
-Puoi quindi connetterti alla console dell'appliance, il nome utente è "**admin**". L'appliance ti chiederà di cambiare la password (non ce n'è una predefinita, basta premere INVIO).
+È quindi possibile connettersi alla console dell'appliance, il nome utente è "**admin**". L'appliance richiederà di cambiare la password (non ne esiste una predefinita, basta premere ENTER).
 
-Dovrai quindi inserire una nuova password.
+Bisogna quindi inserire una nuova password.
 
-**Attenzione: L'appliance ha una tastiera QWERTY.**
+**Attenzione : l'appliance è in tastiera QWERTY.**
 
-**In caso di errore nella password, dovrai reinstallare l'appliance.**
+**In caso di errore di password, sarà necessario reinstallare l'appliance.**
 
 <img src={vmBoot03} />
 
@@ -375,11 +362,11 @@ Dovrai quindi inserire una nuova password.
 
 ### Configurazione della sessione BGP
 
-In questa fase, configureremo in modalità console il tuo appliance Fortinet per stabilire il collegamento BGP4.
+In questa fase, si configurerà in modalità console l'appliance Fortinet per stabilire il link BGP4
 
-#### Configurazione del range di IP pubblici
+#### Configurazione del range di IP Pubbliche
 
-Il primo passo consiste nel definire gli intervalli di indirizzi IP pubblici. Per iniziare, configureremo solo il primo blocco. Utilizzeremo le informazioni che hai precedentemente annotato.
+La prima fase consiste nel definire i range di indirizzi IP pubblici. Per iniziare, si configurerà solo il primo blocco. Si utilizzeranno le informazioni precedentemente annotate.
 
     config router prefix-list
         edit "pfx_net_public_customer"
@@ -409,15 +396,15 @@ Il primo passo consiste nel definire gli intervalli di indirizzi IP pubblici. Pe
     next
     end
 
-Puoi quindi verificare che la configurazione sia avvenuta correttamente con il comando:
+È quindi possibile verificare che la configurazione sia stata eseguita correttamente con il comando :
 
     show router prefix-list
 
 #### Configurazione della route map
 
-Una "route map policy" serve a definire politiche di routing più complesse che possono influenzare o modificare il comportamento del traffico di rete basato su criteri specifici. Le route map sono particolarmente utili per compiti avanzati di gestione del traffico, come il filtraggio delle rotte, la reindirizzazione del traffico o la modifica degli attributi di rotta in protocolli di routing dinamico come BGP (Border Gateway Protocol). Nel nostro contesto, mira a proteggere la tua rete da annunci non validi.
+Una "route map policy" serve a definire policy di routing più complesse che possono influenzare o modificare il comportamento del traffico di rete in base a criteri specifici. Le route map sono particolarmente utili per attività avanzate di gestione del traffico, come il filtraggio delle route, la ridirezione del traffico, o la modifica degli attributi di route in protocolli di routing dinamico come BGP (Border Gateway Protocol). Nel nostro contesto, essa mira a proteggere la rete dagli annunci non validi.
 
-Il secondo passaggio consiste nel configurare la route map policy:
+La seconda fase consiste nel configurare la route map policy :
 
     config router route-map
         edit "rm_deny_all"
@@ -436,29 +423,29 @@ Il secondo passaggio consiste nel configurare la route map policy:
         next
     end
 
-Puoi quindi verificare che la configurazione sia avvenuta correttamente con il comando:
+È quindi possibile verificare che la configurazione sia stata eseguita correttamente con il comando :
 
     show router route-map
 
 #### Configurazione dell'annuncio BGP
 
-Configureremo ora l'annuncio BGP. Devi avere in tuo possesso, come visto in precedenza in questa guida, l'IP di interconnessione (qui, il router-id), l'indirizzo IP del peer BGP4 (qui, **100.64.0.1** e **100.64.0.2**), il local AS (qui **4200000005**) e l'intervallo IP Pubblico precedentemente configurato. ***Ricorda***:
+Si configurerà ora l'annuncio BGP. È necessario disporre, come visto più sopra in questa guida, dell'IP di interconnessione (qui, il router-id), dell'indirizzo IP del peer BGP4 (qui, **100.64.0.1** et **100.64.0.2**), dell'AS locale (qui **4200000005**) e del range IP Pubblico precedentemente configurato. ***Ricordate*** :
 
 <img src={ipPlan04} />
 
-e
+et
 
 <img src={ipPlan05} />
 
-In questa configurazione, l'AS (autonomous system) di Cloud Temple è il 33930. L'AS 65001 è un AS privato che ti rappresenta. L'utilizzo a questo livello di un numero di AS privato è più appropriato soprattutto se devono essere configurate più connessioni BGP.
+In questa configurazione, l'AS (autonomous system) di Cloud Temple è il 33930. L'AS 65001 è un AS privato che rappresenta l'utente. L'utilizzo a questo livello di un numero AS privato è più pulito in particolare se più connessioni BGP devono essere configurate.
 
     config router bgp
-        set as 65001
-        set router-id **100.64.1.110**
-        set network-import-check disable
-        set graceful-restart enable
-        config neighbor
-            edit "100.64.0.1"
+        set as 65001                                                                    
+        set router-id **100.64.1.110**                                                     
+        set network-import-check disable                                                    
+        set graceful-restart enable                                                           
+        config neighbor
+            edit "100.64.0.1" 
                 set capability-graceful-restart enable
                 set ebgp-enforce-multihop enable
                 set next-hop-self enable
@@ -498,23 +485,23 @@ In questa configurazione, l'AS (autonomous system) di Cloud Temple è il 33930. 
     end
     end
 
-Puoi quindi verificare che le sessioni BGP siano attivate:
+È quindi possibile verificare che le sessioni BGP siano stabilite :
 
     get router info bgp summary
 
-#### Configurazione dell'indirizzo di LoopBack
+#### Configurazione dell'indirizzo Loopback
 
-L'utilizzo dell'indirizzo di loopback per stabilire sessioni BGP tra peer migliora la stabilità della sessione. Gli indirizzi di loopback non dipendono dallo stato di una specifica interfaccia fisica. Di conseguenza, anche se un'interfaccia fallisce o se un percorso è interrotto, la sessione BGP può rimanere attiva fintanto che esiste un altro percorso di routing valido tra i peer. Questo aumenta la ridondanza e la resilienza della rete.
+Utilizzando l'indirizzo loopback per stabilire sessioni BGP tra peer, la stabilità della sessione viene migliorata. Gli indirizzi loopback non dipendono dallo stato di una specifica interfaccia fisica. Di conseguenza, anche se un'interfaccia va in guasto o se un percorso viene interrotto, la sessione BGP può rimanere attiva finché esiste un altro percorso di routing valido tra i peer. Questo aumenta la ridondanza e la resilienza della rete.
 
-Utilizzare indirizzi di loopback per le sessioni BGP aiuta anche a rafforzare la sicurezza. Le politiche di sicurezza possono essere applicate in modo più uniforme ed efficace agli indirizzi di loopback, e misure di sicurezza aggiuntive come l'autenticazione e le liste di controllo degli accessi possono essere implementate più facilmente.
+L'utilizzo di indirizzi loopback per le sessioni BGP consente inoltre di contribuire a rafforzare la sicurezza. Le policy di sicurezza possono essere applicate in modo più uniforme ed efficiente agli indirizzi loopback, e misure di sicurezza aggiuntive come l'autenticazione e le liste di controllo accessi possono essere più facilmente implementate.
 
-Consigliamo di nominare l'indirizzo di LoopBack utilizzando il primo IP pubblico del primo range, che dovrebbe essere l'indirizzo predefinito per uscire su Internet: **LOOP_"PENULTIMO OTTETTO DELL'IP PUBBLICO"_"ULTIMO OTTETTO DELL'IP PUBBLICO"**
+Si consiglia di nominare l'indirizzo Loopback utilizzando la prima IP pubblica del primo range, che dovrebbe essere l'indirizzo predefinito per uscire su Internet : **LOOP_"PENULTIMO OTTETTO DELL'IP PUBBLICO"_"ULTIMO OTTETTO DELL'IP PUBBLICO"**
 
-Per esempio, se il tuo primo indirizzo IP Pubblico del primo range è 80.75.159.90/32, il loopback è nominato **LOOP_159_90**.
-Nella riga di comando del tuo dispositivo, digita (**Attenzione 80.75.159.90/32 è qui un esempio!**):
+Ad esempio, se la prima IP Pubblica del primo range è 80.75.159.90/32, la loopback è nominata **LOOP_159.90**.
+Nella riga di comando dell'appliance, digitare (**Attenzione 80.75.159.90/32 è qui un esempio !**):
 
 ```
-    config system interface
+    config system interface 
         edit "LOOP_159_90"
         set vdom "root"
         set ip 80.75.159.90/32
@@ -535,7 +522,7 @@ Nella riga di comando del tuo dispositivo, digita (**Attenzione 80.75.159.90/32 
     end
     config system fortiguard
         set update-server-location eu
-        set source-ip 80.75.159.90
+        set source-ip 80.75.159.90
     end
     config system ntp
         set ntpsync enable
@@ -543,15 +530,15 @@ Nella riga di comando del tuo dispositivo, digita (**Attenzione 80.75.159.90/32 
     end
 ```
 
-Questo permette la configurazione iniziale del NAT, del DNS, della prevenzione delle intrusioni e dell'orologio. Ora il tuo dispositivo dovrebbe essere in grado di pingare l'esterno se l'indirizzo IP sorgente è l'IP del NAT (qui in questo esempio 80.75.159.90).
+Questo consente la configurazione iniziale del NAT, del DNS, della prevenzione delle intrusioni e dell'orologio. Ora, l'appliance deve essere in grado di pinging l'esterno se l'indirizzo IP sorgente è l'IP di NAT (qui in questo esempio 80.57.159.90).
 
-**Consigliamo anche di cambiare la porta di amministrazione, che di default è 80 o 443.**
+**Si consiglia inoltre di cambiare la porta di amministrazione, che è per impostazione predefinita 80 o 443.**
 
 #### Configurazione delle interfacce WAN e HA
 
-Per semplificare la leggibilità delle interfacce nell'amministrazione dei dispositivi, raccomandiamo di rinominare le interfacce in modo che il loro nome corrisponda al loro ruolo nel firewall. Ciò avviene tramite la definizione di un alias sull'interfaccia.
+Al fine di semplificare la leggibilità delle interfacce nella gestione dei dispositivi, si raccomanda di rinominare le interfacce in modo che il loro nome corrisponda al loro ruolo sul firewall. Questo si ottiene tramite la definizione di un alias sull'interfaccia.
 
-Il port1 è definito come WAN e il port2 è rinominato HA. Per la porta HA, viene definito un indirizzo IP nel subnet APIPA in modo che i dispositivi possano connettersi in questo modo una volta in cluster.
+Il port1 è definito come WAN e il port2 è rinominato HA. Per la porta di HA, viene definito un indirizzo IP nella subnet APIPA affinché i dispositivi possano unirsi in questo modo una volta in cluster.
 
 ```
 config system interface
@@ -568,23 +555,23 @@ config system interface
 end
 ```
 
-### Distribuzione di un secondo membro
+### Deploy di un secondo membro
 
-#### Distribuzione della seconda VM
+#### Deploy della seconda VM
 
-Per distribuire un secondo membro per il clustering, è consigliabile disporre di una seconda AZ per garantire un'alta disponibilità del cluster firewall.
+Per deployare un secondo membro per la messa in cluster, è raccomandato disporre di una seconda AZ al fine di garantire l'alta disponibilità del cluster di firewall.
 
-Per la distribuzione del secondo dispositivo, ripetere le azioni di distribuzione indicate in precedenza nella seconda AZ:
+Per il deploy della seconda appliance, sarà necessario ripetere le azioni di deploy indicate precedentemente nella seconda AZ :
 
-- Aggiungere il template OVF a una libreria di contenuti
-- Distribuire una VM da questa libreria di contenuti
-- Assegnazione di una politica di backup
+- Aggiunta del template OVF in una libreria di contenuti
+- Deploy di una VM da questa libreria di contenuti
+- Assegnazione di una policy di backup
 
-Consigliamo di mantenere la politica di denominazione della VM, ovvero FGT-VM-0X-ROLE-AZ e per l'indirizzo IP della prima interfaccia, utilizzare il secondo IP libero dell'intervallo di interconnessione.
+Si raccomanda di mantenere la policy di nomina della VM, ovvero FGT-VM-0X-ROLE-AZ e per l'indirizzo IP della prima interfaccia, si tratterà di utilizzare la seconda IP libera del range di interconnessione.
 
 #### Configurazione delle interfacce WAN e HA
 
-Sempre con l'obiettivo di semplificare la leggibilità delle interfacce, queste devono essere rinominate sul secondo membro. Durante questa fase, configurare anche l'indirizzo IP dell'interfaccia HA affinché i dispositivi possano comunicare per il clustering.
+Sempre nell'ottica di semplificare la leggibilità delle interfacce, queste devono essere rinominate sul secondo membro. Sarà inoltre necessario in questa fase configurare l'indirizzo IP dell'interfaccia di HA affinché i dispositivi possano comunicare per la messa in cluster.
 
 ```
 config system interface
@@ -601,37 +588,37 @@ config system interface
 end
 ```
 
-### Configurazione del cluster
+### Messa in cluster
 
-Configureremo un clustering Attivo/Passivo. La password costituisce una chiave condivisa tra i due membri del cluster e deve essere conservata in modo sicuro. La comunicazione tra i dispositivi avviene in unicast e quindi l'IP del peer da indicare è quello dell'interfaccia HA del firewall con cui stabilire il cluster.
-Infine, le interfacce menzionate nella sezione *monitor* sono le interfacce monitorate, se il link L2 viene perso, ciò attiverà un failover del cluster.
+Si configurerà un clustering Attivo/Passivo. La password costituisce una chiave condivisa tra i due membri del cluster e dovrà essere conservata in modo sicuro. La comunicazione tra i dispositivi avviene in unicast e quindi l'IP peer da indicare è quello dell'interfaccia HA del firewall con cui stabilire il cluster.
+Infine, le interfacce menzionate nella sezione *monitor* sono le interfacce monitorate, se il link L2 viene perso, ciò innesca un failover del cluster.
 
-Sul primo dispositivo, questa è la configurazione:
+Sul primo dispositivo, si ottiene questa configurazione :
 
 ```
 config system ha
     set mode a-p
-    set group-name "FTG-HA-INTERNET"
+ set group-name "FTG-HA-INTERNET"
     set group-id 16
     set password SECRET
     set hbdev HA 10
-    set priority 100
+ set priority 100
     set monitor "HA" "WAN"
     set unicast-hb enable
     set unicast-hb-peerip 169.254.254.2
 end
 ```
 
-Infine, sul secondo, cambiamo l'indirizzo IP del peer e aumentiamo la priorità in modo che il primo dispositivo sia eletto di default come membro attivo del cluster:
+Infine, sul secondo, si cambierà l'indirizzo IP del peer e si abbasserà la priorità affinché il primo dispositivo venga eletto per impostazione predefinita come membro attivo del cluster :
 
 ```
 config system ha
     set mode a-p
-    set group-name "FTG-HA-INTERNET"
+ set group-name "FTG-HA-INTERNET"
     set group-id 16
     set password SECRET
     set hbdev HA 10
-    set priority 200
+ set priority 200
     set monitor "HA" "WAN"
     set unicast-hb enable
     set unicast-hb-peerip 169.254.254.1
@@ -639,9 +626,8 @@ end
 ```
 
 La sincronizzazione può richiedere alcuni minuti per stabilirsi.
-
-Per una verifica completa, il comando *get sys ha status* è il comando indicato. Per verificare in modo più conciso, è necessario eseguire *diag sys ha checksum cluster*.
-Quando la sincronizzazione è funzionale, i checksum della riga *all* devono essere identici su entrambi i dispositivi.
+Per una verifica completa, il comando *get sys ha status* è il comando indicato. Per verificare in modo più sintetico, è necessario eseguire *diag sys ha checksum cluster*
+Quando la sincronizzazione è funzionante, i checksum della riga *all* devono essere identici sui due dispositivi.
 
 ```
 # diag sys ha checksum cluster
@@ -675,7 +661,7 @@ all: c9 4b 3b e2 1b e6 25 89 df d2 95 31 ba 8b 47 bb
 
 #### Configurazione degli accessi esterni sul firewall
 
-Innanzitutto, spostiamo la porta di amministrazione dalla porta 443 alla porta 8443 per consentire la liberazione di una porta standard che può essere utilizzata per usi aziendali.
+Innanzitutto, si sposta la porta di amministrazione dalla porta 443 alla porta 8443 al fine di liberare una porta standard che può essere utilizzata per scopi di business.
 
 ```
 config system global
@@ -683,7 +669,7 @@ config system global
 end
 ```
 
-Aggiunta di un servizio personalizzato per le regole di flusso da seguire:
+Aggiunta di un servizio custom per le regole di flusso da seguire:
 
 ```
 config firewall service custom
@@ -693,7 +679,7 @@ config firewall service custom
 end
 ```
 
-Autorizzazione dell'amministrazione sull'interfaccia WAN e sull'interfaccia loopback. Sarà importante in questa fase adattare il nome dell'interfaccia LOOP come definito in precedenza:
+Autorizzazione dell'amministrazione sull'interfaccia WAN e sull'interfaccia loopback. Sarà importante a questo passo adattare il nome dell'interfaccia LOOP come definito in precedenza:
 
 ```
 edit port1
@@ -707,7 +693,7 @@ config system interface
 end
 ```
 
-Creiamo quindi una regola di flusso che autorizza l'accesso alle interfacce di amministrazione sull'interfaccia loopback. Questa regola è molto permissiva, autorizza tutti gli indirizzi IP, è opportuno filtrare successivamente su intervalli esplicitamente consentiti.
+Si crea quindi una regola di flusso che autorizza l'accesso alle interfacce di amministrazione sull'interfaccia loopback. Questa regola è molto permissiva, autorizza tutti gli indirizzi IP, è opportuno filtrare successivamente su intervalli esplicitamente consentiti.
 
 ```
 config firewall policy
@@ -724,7 +710,7 @@ config firewall policy
 end
 ```
 
-Infine, limitiamo l'autenticazione dell'account admin a intervalli di IP prestabiliti. Questa è una forte raccomandazione di sicurezza di Cloud Temple.
+Infine, si restringe l'autenticazione dell'account admin a intervalli di IP predefiniti. Questa è una forte raccomandazione di sicurezza di Cloud Temple.
 
 ```
 config system admin

@@ -4,21 +4,21 @@ title: Getting Started Guide
 
 ## Prerequisites
 
-Before getting started, make sure you have the following:
+Before you begin, make sure you have the following:
 
 - An active **Cloud Temple Tenant**
-- A subscription to at least **Standard Support** for a direct client; **Basic Support** is intended for clients accompanied by a trained partner (see the [FAQ](./faq))
+- At least a **Standard Support** subscription for a direct client; **Basic Support** is intended for clients accompanied by a trained partner (see the [FAQ](./faq))
 - The necessary permissions in your Cloud Temple organization
 
 ## Accessing the VM Instances Service
 
-Log in to the **Cloud Temple Console** and navigate to **Cloud Public > VM Instances** from the main menu.
+Log in to the **Cloud Temple Console** and navigate to **VM Instances** from the main menu.
 
 ![Cloud Temple Console Dashboard](@site/docs/public_cloud/vm_instances/images/vm_instances_dashboard_overview.png)
 
-The dashboard provides an overview of the consumed VM Instances resources (storage, CPU, RAM) as well as the number of active virtual machines.
+The dashboard provides an overview of consumed VM Instances resources (storage, CPU, RAM) as well as the number of active virtual machines.
 
-Click on **Cloud Public** in the left sidebar to expand the submenu, then select **VM Instances**.
+Select **VM Instances** in the left sidebar.
 
 ![Navigation to VM Instances](@site/docs/public_cloud/vm_instances/images/vm_instances_navigation_cloud_public.png)
 
@@ -28,11 +28,11 @@ You arrive at your VM Instances list:
 
 The table displays for each VM: its name, its status (On / Off), the availability zone, the instance family, the model, as well as the allocated resources (CPU, RAM, Disk size).
 
-## Deploy a virtual machine
+## Deploying a Virtual Machine
 
-Click the **+ New virtual machine** button in the top right to open the creation wizard. This wizard consists of **9 steps**.
+Click the **+ New virtual machine** button in the top right corner to open the creation wizard. This wizard is completed in **9 steps**.
 
-### Step 1 — Instance family
+### Step 1 — Instance Family
 
 ![Étape 1 : Famille d'instance](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape1_famille.png)
 
@@ -40,7 +40,7 @@ Choose the **instance family** suited to your workload:
 
 | Family | Description | CPU |
 |---------|-------------|-----|
-| **Development** | Cost-optimized, for test and staging environments | Shared |
+| **Development** | Cost optimized, for test and staging environments | Shared |
 | **General Purpose** | Optimal vCPU/RAM balance for standard workloads | Shared |
 
 :::info
@@ -51,13 +51,14 @@ The **Performance** family (dedicated vCPU) is available via the custom template
 
 ![Step 2: Availability Zone](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape2_az.png)
 
-Select the **availability zone (AZ)** in which your VM will be hosted (e.g., `fr1-az01`).
+Select the **availability zone (AZ)** in which your VM will be hosted (e.g. `fr1-az01`).
 
-This choice does not require subscribing to the billed AZ activation of the IaaS offer: this subscription is not a prerequisite for VM Instances.
+This choice does not require subscribing to the billed AZ activation of the
+IaaS offer: this subscription is not a prerequisite for VM Instances.
 
-### Step 3 — Choose a template
+### Step 3 — Choose an Image
 
-![Step 3: Choose a template](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
+![Step 3: Choose an image](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape3_template.png)
 
 Browse the catalog of available images via the **OS** and **Appliances** tabs:
 
@@ -75,9 +76,9 @@ Choose a **predefined template** or create a **Custom template**:
 
 - `dev-1`: 1 vCPU
 - `dev-2`: 2 vCPU / 8 GB RAM (selected by default)
-- **Custom**: freely specify the number of vCPUs and the amount of RAM
+- **Custom**: freely specify the number of vCPU and the amount of RAM
 
-### Step 5 — Name and backup policy
+### Step 5 — Name and Backup Policy
 
 ![Step 5: Name and backup policy](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape5_nom_sauvegarde.png)
 
@@ -94,7 +95,7 @@ This step also displays a summary of the selected operating system and the syste
 
 ![Étape 6 : Cloud Init](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape6_cloudinit.png)
 
-This step is **optional**. It allows you to pre-configure your VM on first boot via two editors:
+This step is **optional**. It allows you to pre-configure your VM at first boot via two editors:
 
 - **Cloud Config**: SSH key injection, hostname configuration, package installation, etc.
 - **Network Config**: static network configuration (Netplan format)
@@ -119,7 +120,7 @@ A checkbox allows you to **delete the Cloud Init configuration disk** after the 
 Configure the disk(s) of your VM:
 
 - **System disk**: created automatically (`system-disk-1`), size determined by the OS
-- **Additional disks**: add extra volumes with the desired name, capacity, and storage type
+- **Additional disks**: add additional volumes with the desired name, capacity, and storage type
 
 Two storage types are available:
 
@@ -134,14 +135,14 @@ Two storage types are available:
 
 Associate your VM with a network from the dropdown menu. Two types of networks are available:
 
-- **Private backbone** (e.g., PACKFR): shared private network with logical isolation
+- **Private Backbone** (e.g. PACKFR): shared private network with logical isolation
 - **VPC**: fully dedicated private network with advanced segmentation
 
 ### Step 9 — Summary
 
 ![Étape 9 : Sommaire](@site/docs/public_cloud/vm_instances/images/vm_instances_creation_etape9_sommaire.png)
 
-Verify the full summary before launching the provisioning:
+Review the full summary before launching provisioning:
 
 - General information (family, AZ, model, name, backup)
 - Template (CPU, RAM)
@@ -151,27 +152,27 @@ Verify the full summary before launching the provisioning:
 
 Click **Create** to launch the deployment. The VM is provisioned in a few minutes.
 
-## Manage your virtual machines
+## Managing Your Virtual Machines
 
-From the list, click on a VM to expand its detail panel. Four tabs are available:
+From the list, click on a VM to open its detail panel. Four tabs are available:
 
 ### Information Tab
 
 ![Détail VM - Informations](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_informations.png)
 
-View and modify your VM settings:
+View and modify your VM's settings:
 - Name, UUID, availability zone
 - Instance family, OS model
-- CPU, RAM (modifiable when VM is stopped)
+- CPU, RAM (modifiable when VM is powered off)
 - Backup policy
 
-Action icons allow you to **start**, **stop**, **restart** or **open the console** of the VM.
+Action icons allow you to **start**, **stop**, **restart**, or **open the console** of the VM.
 
 ### Disks Tab
 
 ![VM Detail - Disks](@site/docs/public_cloud/vm_instances/images/vm_instances_detail_disques.png)
 
-View the attached disks and add additional volumes via the **+ Add a disk** button.
+View attached disks and add additional volumes via the **+ Add a disk** button.
 
 ### Network Adapters Tab
 
@@ -207,7 +208,7 @@ resource "cloudtemple_compute_vm_instance" "example" {
 }
 ```
 
-See the [documentation Terraform](/terraform) for provider installation and configuration.
+See the [Terraform documentation](/terraform) for provider installation and configuration.
 
 ## Useful Resources
 

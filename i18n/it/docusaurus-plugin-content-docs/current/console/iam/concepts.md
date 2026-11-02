@@ -321,7 +321,7 @@ Nota: *La rimozione di un IP autorizzato avviene tramite una richiesta di suppor
 
 È possibile visualizzare le risorse cloud consumate all'interno di un tenant, offrendo così una vista dettagliata dell'utilizzo dei diversi servizi distribuiti. Questa funzionalità consente agli utenti di monitorare in tempo reale il consumo delle proprie risorse, identificare i servizi più sollecitati e ottimizzarne l'utilizzo in base alle esigenze.
 
-Nel menu della console, fare clic su "Report di consumo" e selezionare il periodo di tempo desiderato. In questo modo sarà possibile visualizzare nel dettaglio il consumo delle risorse cloud nel periodo definito, consentendo di analizzare l'utilizzo dei servizi e ottimizzare di conseguenza la propria gestione:
+Nel menu **Gestore dei costi**, aprire la scheda "Report di consumo" quindi selezionare il periodo di tempo desiderato. Sarà così possibile visualizzare in dettaglio la consumazione delle risorse cloud nel periodo definito, il che consentirà di analizzare l'utilizzo dei servizi e di ottimizzare la gestione di conseguenza:
 
 <img src={shivaTenantRessources_01} />
 

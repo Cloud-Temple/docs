@@ -30,7 +30,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concept
 
-Deployment tracking for new resources is performed in the __'Orders'__ menu accessible in the green banner on the left side of the screen.
+Tracking the deployment of new resources is done in the __'Marketplace'__ > __'Orders'__ menu accessible in the green banner on the left side of the screen.
 
 It allows you to view ordered Cloud resources, those currently being deployed, and any errors within a [Tenant](iam/concepts.md#tenant) of your [Organization](iam/concepts.md#organizations).
 
@@ -52,7 +52,7 @@ __Note__ : __It is not possible to launch multiple orders for the same resource 
 
 ## Order a new availability zone
 
-You can add a new availability zone by accessing the "__Order__" menu. This option allows you to scale your resources and improve the availability and resilience of your applications with just a few clicks:
+It is possible to add a new availability zone by accessing the "__Marketplace__ > __Orders__" menu. This option allows you to extend your resources and improve the availability and resilience of your applications in just a few clicks:
 
 <img src={shivaOrderAz_01} />
 
@@ -126,7 +126,7 @@ You will then receive a summary of the selected options before validating your o
 
 ### Deploy a new storage cluster
 
-In the "__command__" menu, proceed to order a __new storage cluster__ for your environment by selecting the options that match your capacity, performance, and redundancy requirements. Select the location:
+In the "__Marketplace__ > __Orders__" menu, proceed to order a __new storage cluster__ for your environment by selecting the options that correspond to your needs in terms of capacity, performance, and redundancy. Select the location:
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Network Flexibility__:
 - A network can be __terminated in a hosting zone__ for your physical equipment
 - __Limit__: Maximum of 20 networks per order. You can place multiple successive orders to extend this number according to your needs
 
-Ordering a new network and making sharing decisions between your tenants are performed in the __'Network'__ menu of the green banner on the left side of the screen. Networks will first be created, then a separate order will be generated to propagate them. You can track the progress of ongoing orders by accessing the "Order" tab in the menu, or by clicking on the information labels that redirect you to active or processing orders.
+The ordering of a new network and the sharing decisions between your tenants are made in the __'Network'__ menu of the green banner on the left side of the screen. Networks will first be created, then a separate order will be generated to propagate them. You can track the progress of ongoing orders by accessing the "Marketplace > Orders" menu, or by clicking on the information labels that redirect you to active or in-progress orders.
 
 <img src={shivaOrdersNet_002} />
 

@@ -8,6 +8,7 @@ import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
 import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
 import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
 import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaLogsDetail from '@site/docs/console/images/shiva_logs_detail.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
@@ -275,6 +276,10 @@ Una vez realizada su solicitud, puede encontrar sus solicitudes a través del __
 La página de actividades tiene como objetivo proporcionar una visibilidad completa sobre todas las operaciones de lectura y escritura realizadas en la consola, garantizando así una mayor trazabilidad y seguridad. Destaca las dos pestañas principales: Recientes y Archivadas.
 
 <img src={shivaLogs} />
+
+Es posible abrir el detalle de un registro desplegando su línea.
+
+<img src={shivaLogsDetail} />
 
 ### __Estructura de la página__
 

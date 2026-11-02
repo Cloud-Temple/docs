@@ -32,15 +32,12 @@ import ipPlan04 from '@site/docs/network/internet/images/ip_plan_04.png';
 import ipPlan05 from '@site/docs/network/internet/images/ip_plan_05.png';
 import imgDeploy01 from '@site/docs/network/internet/images/img_deploy_01.png';
 import imgDeploy02 from '@site/docs/network/internet/images/img_deploy_02.png';
-import imgDeploy03 from '@site/docs/network/internet/images/img_deploy_03.png';
 import imgDeploy04 from '@site/docs/network/internet/images/img_deploy_04.png';
 import imgDeploy05 from '@site/docs/network/internet/images/img_deploy_05.png';
 import imgDeploy06 from '@site/docs/network/internet/images/img_deploy_06.png';
 import imgDeploy07 from '@site/docs/network/internet/images/img_deploy_07.png';
 import imgDeploy08 from '@site/docs/network/internet/images/img_deploy_08.png';
 import imgDeploy09 from '@site/docs/network/internet/images/img_deploy_09.png';
-import imgDeploy10 from '@site/docs/network/internet/images/img_deploy_10.png';
-import imgDeploy11 from '@site/docs/network/internet/images/img_deploy_11.png';
 import imgBackup01 from '@site/docs/network/internet/images/img_backup_01.png';
 import imgBackup02 from '@site/docs/network/internet/images/img_backup_02.png';
 import imgBackup03 from '@site/docs/network/internet/images/img_backup_03.png';
@@ -269,11 +266,7 @@ Vous devez ensuite nommer la machine virtuelle; nous vous conseillons la nomencl
 
 <img src={imgDeploy02} />
 
-Choisisez ensuite la zone de disponibilité :
-
-<img src={imgDeploy03} />
-
-Puis le cluster d'hyperviseur cible :
+Choisissez ensuite le cluster d'hyperviseur cible :
 
 <img src={imgDeploy04} />
 
@@ -309,13 +302,7 @@ enfin, cliquer sur "**Deployer**".
 
 <img src={imgDeploy09} />
 
-Lorsque le déploiement est terminé, la console Cloud Temple vous l'indique :
-
-<img src={imgDeploy10} />
-
-Votre appliance est désormais visible dans les machines virtuelles :
-
-<img src={imgDeploy11} />
+Lorsque le déploiement est terminé, la console Cloud Temple vous l'indique et votre appliance est désormais visible dans les machines virtuelles.
 
 ### Affectation d'une politique de sauvegarde
 

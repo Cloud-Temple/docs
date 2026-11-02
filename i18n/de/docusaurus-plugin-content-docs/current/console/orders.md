@@ -30,7 +30,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Konzept
 
-Die Nachverfolgung der Bereitstellung neuer Ressourcen erfolgt im Menü __'Bestellungen'__, das im grünen Banner links auf dem Bildschirm verfügbar ist.
+Das Tracking der Bereitstellung neuer Ressourcen erfolgt über das Menü __'Marketplace'__ > __'Bestellungen'__, das im grünen Balken links auf dem Bildschirm zugänglich ist.
 
 Dies ermöglicht die Anzeige der bestellten Cloud-Ressourcen, die sich in der Bereitstellung befinden, sowie eventueller Fehler innerhalb eines [Tenant](iam/concepts.md#tenant) Ihrer [Organisation](iam/concepts.md#organisationen).
 
@@ -52,7 +52,7 @@ __Hinweis__: __Es ist nicht möglich, mehrere Bestellungen desselben Ressourcent
 
 ## Eine neue Verfügbarkeitszone bestellen
 
-Sie können eine neue Verfügbarkeitszone hinzufügen, indem Sie das Menü „__Bestellung__“ aufrufen. Diese Option ermöglicht es Ihnen, Ihre Ressourcen zu erweitern und die Verfügbarkeit und Resilienz Ihrer Anwendungen mit nur wenigen Klicks zu verbessern:
+Es ist möglich, eine neue Verfügbarkeitszone hinzuzufügen, indem Sie das Menü "__Marketplace__ > __Bestellungen__" aufrufen. Diese Option ermöglicht es Ihnen, Ihre Ressourcen in nur wenigen Klicks zu erweitern und die Verfügbarkeit und Resilienz Ihrer Anwendungen zu verbessern:
 
 <img src={shivaOrderAz_01} />
 
@@ -126,7 +126,7 @@ Anschließend erhalten Sie eine Zusammenfassung der ausgewählten Optionen, bevo
 
 ### Einen neuen Storage-Cluster bereitstellen
 
-Im Menü "__commande__" bestellen Sie einen __neuen Storage-Cluster__ für Ihre Umgebung, indem Sie die Optionen auswählen, die Ihren Anforderungen an Kapazität, Leistung und Redundanz entsprechen. Wählen Sie den Standort:
+Im Menü "__Marketplace__ > __Bestellungen__" geben Sie die Bestellung eines __neuen Storage-Clusters__ für Ihre Umgebung auf, indem Sie die Optionen auswählen, die Ihren Anforderungen in Bezug auf Kapazität, Leistung und Redundanz entsprechen. Wählen Sie den Standort:
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Flexibilität der Netzwerke__ :
 - Ein Netzwerk kann __in einer Hosting-Zone terminiert__ werden, um Ihre physischen Geräte anzuschließen
 - __Begrenzung__ : Maximal 20 Netzwerke pro Bestellung. Sie können mehrere aufeinanderfolgende Bestellungen durchführen, um diese Anzahl nach Bedarf zu erweitern
 
-Die Bestellung eines neuen Netzwerks und die Freigabeentscheidungen zwischen Ihren Mandanten werden im Menü __'Netzwerk'__ der grünen Leiste links auf dem Bildschirm durchgeführt. Die Netzwerke werden zunächst erstellt, anschließend wird eine separate Bestellung zur Propagierung generiert. Sie können den Fortschritt laufender Bestellungen nachverfolgen, indem Sie auf die Registerkarte „Bestellung“ im Menü zugreifen oder auf die Informationslabels klicken, die Sie zu aktiven oder in Bearbeitung befindlichen Bestellungen weiterleiten.
+Die Bestellung eines neuen Netzwerks und die Entscheidungen zur Freigabe zwischen Ihren Tenants werden im Menü __'Netzwerk'__ des grünen Balkens links auf dem Bildschirm durchgeführt. Die Netzwerke werden zunächst erstellt, anschließend wird eine separate Bestellung zur Propagation generiert. Sie können den Fortschritt der laufenden Bestellungen verfolgen, indem Sie das Menü "Marketplace > Bestellungen" aufrufen oder auf die Informationslabels klicken, die Sie zu den aktiven oder in Bearbeitung befindlichen Bestellungen weiterleiten.
 
 <img src={shivaOrdersNet_002} />
 

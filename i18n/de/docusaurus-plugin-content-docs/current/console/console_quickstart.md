@@ -8,6 +8,7 @@ import shivaSupport_02 from '@site/docs/console/images/shiva_support_02.png'
 import shivaSupport_03 from '@site/docs/console/images/shiva_support_03.png'
 import shivaOnboard_007 from '@site/docs/console/images/shiva_onboard_007.png'
 import shivaLogs from '@site/docs/console/images/shiva_logs.png'
+import shivaLogsDetail from '@site/docs/console/images/shiva_logs_detail.png'
 import shivaOnboard_009 from '@site/docs/console/images/shiva_onboard_009.png'
 import shivaSupportCriticities from '@site/docs/console/images/shiva_incident_criticities.png'
 import imgSelector from '@site/docs/console/images/shiva_org_selector.png'
@@ -275,6 +276,10 @@ Sobald Ihre Anfrage gestellt wurde, können Sie Ihre Anfragen über das __'Hilfe
 Die Aktivitätsseite dient dazu, eine vollständige Übersicht über alle Lese- und Schreibvorgänge in der Konsole zu bieten und gewährleistet so eine verbesserte Nachverfolgbarkeit und Sicherheit. Sie zeigt die beiden Hauptregisterkarten: Kürzlich und Archiviert.
 
 <img src={shivaLogs} />
+
+Es ist möglich, das Detail eines Logs zu öffnen, indem man seine Zeile aufklappt.
+
+<img src={shivaLogsDetail} />
 
 ### __Seitenstruktur__
 
