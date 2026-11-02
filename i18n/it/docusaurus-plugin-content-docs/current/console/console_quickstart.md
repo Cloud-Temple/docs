@@ -44,7 +44,7 @@ Questa sezione descrive l'**interfaccia**. Le procedure si trovano in [Onboardin
 
 ### Intestazione e selezione del tenant di lavoro
 
-Nella parte superiore della console, l'intestazione visualizza l'organizzazione corrente (**« La mia organizzazione »**). Il selettore associato apre l'elenco **« I miei tenant »**, da cui scegliete il vostro tenant di lavoro: vedere [Scegliere il vostro tenant di lavoro](./onboarding.md#scegliere-il-vostro-tenant-di-lavoro).
+Nella parte superiore della console, il **selettore di tenant** mostra la vostra organizzazione e, quando lavorate in un tenant, quel tenant. Il suo menu presenta l'organizzazione e, sotto, l'elenco dei vostri **tenant**, da cui scegliete il vostro tenant di lavoro: vedere [Scegliere il vostro tenant di lavoro](./onboarding.md#scegliere-il-vostro-tenant-di-lavoro).
 
 <img src={imgSelector} />
 

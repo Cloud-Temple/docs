@@ -13,7 +13,7 @@ Common questions about accounts, permissions and access to the Console. Step-by-
 
 ## How do I create or select a tenant?
 
-Tenant creation is done __in self-service__ from the Console, with no prior service request: __'Administration > Tenants'__, __'New tenant'__ button. The working tenant is selected from the __'My tenants'__ selector in the header.
+Tenant creation is done __in self-service__ from the Console, with no prior service request: __'Administration > Tenants'__, __'New tenant'__ button. The working tenant is selected from the __tenant selector__ in the header.
 
 See [Choose or create an environment](../onboarding.md#step-3-choose-or-create-an-environment).
 

@@ -93,7 +93,7 @@ La Console Cloud Temple permet notamment à vos équipes :
 ## Accès aux fonctionnalités utilisateur via l'API
 
 L'accès à l'ensemble des fonctionnalités de la Console est possible via l'API Console.
-Vous pouvez avoir le détail des verbes et des configurations via **'Profil'** et **'APIs'**
+Vous pouvez avoir le détail des verbes et des configurations depuis le menu utilisateur (votre avatar, en haut à droite), entrée **'APIs'**.
 
 ## Provider Terraform
 

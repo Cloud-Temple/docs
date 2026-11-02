@@ -174,7 +174,7 @@ To go further: the [security recommendations](./security/security_recommendation
 
 Technical resources (compute, storage, network…) are **specific to each tenant** and are not shared between tenants. Before taking any action, choose the tenant you are working in:
 
-- from the header at the top of the Console, open the **"My tenants"** selector and click on the desired tenant;
+- from the header at the top of the Console, open the **tenant selector** (it shows your organization and, when you are working in a tenant, that tenant) and click on the desired tenant under **Tenants**;
 - or from **Administration > Tenants**, use the **"Connect to tenant"** action on a row.
 
 The selector marks qualified tenants with a **SecNumCloud** badge.
@@ -307,7 +307,7 @@ You can upgrade or downgrade your level: make the request through support from t
 
 Everything you do in the Console can also be done programmatically.
 
-- **The Console API** gives access to all of its features. You authenticate to it with an API key, or *Personal Access Token* (PAT), linked to a tenant and to the user who created it. Details of the calls are available from **Profile > APIs**. See the [API documentation](./api.md).
+- **The Console API** gives access to all of its features. You authenticate to it with an API key, or *Personal Access Token* (PAT), linked to a tenant and to the user who created it. Details of the calls are available from the user menu (your avatar, top right), **APIs** entry. See the [API documentation](./api.md).
 - **The Terraform provider** manages your platform *as code*. See [Terraform Provider](/terraform).
 
 <img src={shivaOnboard_008} />

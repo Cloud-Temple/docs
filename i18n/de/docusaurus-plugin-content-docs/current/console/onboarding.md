@@ -174,7 +174,7 @@ Weiterführende Informationen: die [Sicherheitsempfehlungen](./security/security
 
 Die technischen Ressourcen (Rechenleistung, Speicher, Netzwerk…) sind **tenant-spezifisch** und werden nicht zwischen Tenants geteilt. Bevor Sie handeln, wählen Sie den Tenant aus, in dem Sie arbeiten:
 
-- Öffnen Sie in der Kopfzeile oben in der Konsole das Auswahlmenü **„Meine Tenants"** und klicken Sie auf den gewünschten Tenant;
+- Öffnen Sie in der Kopfzeile oben in der Konsole die **Tenant-Auswahl** (sie zeigt Ihre Organisation und, wenn Sie in einem Tenant arbeiten, diesen Tenant) und klicken Sie im Bereich **Tenants** auf den gewünschten Tenant;
 - oder verwenden Sie unter **Administration > Tenants** die Aktion **„Zum Tenant wechseln"** in einer Zeile.
 
 Das Auswahlmenü kennzeichnet die qualifizierten Tenants mit einem **SecNumCloud**-Badge.
@@ -307,7 +307,7 @@ Sie können die Stufe erhöhen oder senken: Stellen Sie die Anfrage über den Su
 
 Alles, was Sie in der Konsole tun, ist auch programmatisch möglich.
 
-- **Die API der Konsole** bietet Zugriff auf alle ihre Funktionen. Sie authentifizieren sich dort mit einem API-Schlüssel oder *Personal Access Token* (PAT), der an einen Tenant und an den Benutzer, der ihn erstellt hat, gebunden ist. Die Details der Aufrufe können Sie unter **Profil > APIs** einsehen. Siehe die [API-Dokumentation](./api.md).
+- **Die API der Konsole** bietet Zugriff auf alle ihre Funktionen. Sie authentifizieren sich dort mit einem API-Schlüssel oder *Personal Access Token* (PAT), der an einen Tenant und an den Benutzer, der ihn erstellt hat, gebunden ist. Die Details der Aufrufe können Sie über das Benutzermenü (Ihr Avatar, oben rechts), Eintrag **APIs**, einsehen. Siehe die [API-Dokumentation](./api.md).
 - **Der Terraform-Provider** steuert Ihre Plattform *as code*. Siehe [Terraform Provider](/terraform).
 
 <img src={shivaOnboard_008} />

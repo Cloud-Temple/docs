@@ -13,7 +13,7 @@ Las preguntas habituales sobre las cuentas, los permisos y el acceso a la consol
 
 ## ¿Cómo crear o elegir un tenant?
 
-La creación de un tenant se realiza __en autoservicio__ desde la consola, sin solicitud de servicio previa: __'Administración > Tenants'__, botón __'Nuevo tenant'__. El tenant de trabajo se elige desde el selector __'Mis tenants'__ de la barra superior.
+La creación de un tenant se realiza __en autoservicio__ desde la consola, sin solicitud de servicio previa: __'Administración > Tenants'__, botón __'Nuevo tenant'__. El tenant de trabajo se elige desde el __selector de tenant__ de la barra superior.
 
 Ver [Elegir o crear un entorno](../onboarding.md#etapa-3-elegir-o-crear-un-entorno).
 

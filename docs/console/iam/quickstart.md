@@ -13,7 +13,7 @@ Les questions courantes sur les comptes, les droits et l'accès à la Console. L
 
 ## Comment créer ou choisir un tenant ?
 
-La création d'un tenant se fait __en self-service__ depuis la Console, sans demande de service préalable : __'Administration > Tenants'__, bouton __'Nouveau tenant'__. Le tenant de travail se choisit depuis le sélecteur __'Mes tenants'__ du bandeau.
+La création d'un tenant se fait __en self-service__ depuis la Console, sans demande de service préalable : __'Administration > Tenants'__, bouton __'Nouveau tenant'__. Le tenant de travail se choisit depuis le __sélecteur de tenant__ du bandeau.
 
 Voir [Choisir ou créer un environnement](../onboarding.md#étape-3-choisir-ou-créer-un-environnement).
 

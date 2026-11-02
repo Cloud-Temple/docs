@@ -13,7 +13,7 @@ Le domande più comuni su account, diritti e accesso alla console. Le procedure 
 
 ## Come creare o scegliere un tenant?
 
-La creazione di un tenant avviene __in self-service__ dalla console, senza alcuna richiesta di servizio preliminare: __'Amministrazione > Tenant'__, pulsante __'Nuovo tenant'__. Il tenant di lavoro si sceglie dal selettore __'I miei tenant'__ dell'intestazione.
+La creazione di un tenant avviene __in self-service__ dalla console, senza alcuna richiesta di servizio preliminare: __'Amministrazione > Tenant'__, pulsante __'Nuovo tenant'__. Il tenant di lavoro si sceglie dal __selettore di tenant__ dell'intestazione.
 
 Vedere [Scegliere o creare un ambiente](../onboarding.md#tappa-3-scegliere-o-creare-un-ambiente).
 

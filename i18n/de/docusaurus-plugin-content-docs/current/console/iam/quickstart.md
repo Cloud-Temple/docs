@@ -13,7 +13,7 @@ Die gängigen Fragen zu Konten, Berechtigungen und dem Zugriff auf die Konsole. 
 
 ## Wie erstelle oder wähle ich einen Tenant aus?
 
-Die Erstellung eines Tenants erfolgt __im Self-Service__ über die Konsole, ohne vorherige Serviceanfrage: __'Administration > Tenants'__, Schaltfläche __'Neuer Tenant'__. Der Arbeits-Tenant wird über das Auswahlmenü __'Meine Tenants'__ in der Kopfzeile ausgewählt.
+Die Erstellung eines Tenants erfolgt __im Self-Service__ über die Konsole, ohne vorherige Serviceanfrage: __'Administration > Tenants'__, Schaltfläche __'Neuer Tenant'__. Der Arbeits-Tenant wird über die __Tenant-Auswahl__ in der Kopfzeile ausgewählt.
 
 Siehe [Eine Umgebung auswählen oder erstellen](../onboarding.md#schritt-3-eine-umgebung-auswählen-oder-erstellen).
 

@@ -174,7 +174,7 @@ Pour aller plus loin : les [recommandations de sécurité](./security/security_r
 
 Les ressources techniques (calcul, stockage, réseau…) sont **propres à chaque tenant** et ne sont pas partagées entre tenants. Avant d'agir, choisissez le tenant dans lequel vous travaillez :
 
-- depuis le bandeau en haut de la Console, ouvrez le sélecteur **« Mes tenants »** et cliquez sur le tenant voulu ;
+- depuis le bandeau en haut de la Console, ouvrez le **sélecteur de tenant** (il affiche votre organisation et, lorsque vous travaillez dans un tenant, ce tenant) et cliquez sur le tenant voulu dans la rubrique **Tenants** ;
 - ou depuis **Administration > Tenants**, utilisez l'action **« Se connecter au tenant »** d'une ligne.
 
 Le sélecteur signale par un badge **SecNumCloud** les tenants qualifiés.
@@ -307,7 +307,7 @@ Vous pouvez monter ou descendre de niveau : faites-en la demande par le support 
 
 Tout ce que vous faites dans la Console est aussi possible par programme.
 
-- **L'API de la Console** donne accès à l'ensemble de ses fonctionnalités. Vous vous y authentifiez avec une clé API, ou *Personal Access Token* (PAT), liée à un tenant et à l'utilisateur qui l'a créée. Le détail des appels est consultable depuis **Profil > APIs**. Voir la [documentation de l'API](./api.md).
+- **L'API de la Console** donne accès à l'ensemble de ses fonctionnalités. Vous vous y authentifiez avec une clé API, ou *Personal Access Token* (PAT), liée à un tenant et à l'utilisateur qui l'a créée. Le détail des appels est consultable depuis le menu utilisateur (votre avatar, en haut à droite), entrée **APIs**. Voir la [documentation de l'API](./api.md).
 - **Le provider Terraform** pilote votre plateforme *as code*. Voir [Terraform Provider](/terraform).
 
 <img src={shivaOnboard_008} />
