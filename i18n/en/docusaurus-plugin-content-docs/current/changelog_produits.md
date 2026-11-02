@@ -5,50 +5,39 @@ sidebar_position: 999
 
 # Product News & Updates
 
-> This changelog lists the new features and significant updates of the Cloud Temple platform.
-> Bug fixes are included starting from version 4.50.0.
+> This changelog lists only new features and significant enhancements to the Cloud Temple platform.
+> Bug fixes are intentionally excluded.
 
 ## v5.1.0 — 2026-10-30
 
 ### [Console](/console)
 - New "System" theme, which automatically follows the operating system's light or dark mode, applied by default when no theme has been chosen
 - The UUID can now be copied from the actions menu on each row of the virtual machine list
-- Fixed the color of error messages under form fields, displayed in red again
-- Validation messages for choice lists, previously hidden, are now displayed (LLMaaS credit top-up, VMware rules, virtual machine export, Marketplace partner contact)
 - File upload panel: wider progress bar, and the title and labels now match the state of the uploads
-- Usability, display and search fixes across several screens
-- Security hardening: errors logged in the browser console no longer expose sensitive data
-- Security update for the translation library
-- Chart CSV export: accented characters are now displayed correctly in Excel
 - Chart CSV export: dates are now formatted according to the console language
 
-### [VM Instances](/public_cloud/vm_instances)
-- Limited stock is now displayed on storage types, in the list and, for the selected type, in the field itself
-- Disk size: exceeding the maximum now shows an error explaining why (storage type limit or remaining quota)
+### [Console — Organization](/console/iam/concepts)
+- Tenant list: the name of a tenant being created now persists after a page reload and is shown to other organization owners
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Cross-cluster migration: a failed compatibility check no longer displays technical details
-
-### [Object Storage](/storage/oss)
-- File browser: fixed the size of some file icons (OVF, OVA, ISO)
-
-### [Orders](/console/orders)
-- The Orders menu has moved under the Marketplace, below the Catalog
-- Order type selectors (availability zones, clusters, datastores, pools, block storage, Bare Metal servers and volumes): the commercial name and its description are now displayed
-
-### [Cost Manager](/console/billing/concepts)
+### [Cost manager](/console/billing/concepts)
 - The consumption report is now a Cost Manager tab, displayed on its own when cost tracking is not enabled
 - SKU commercial names are now displayed in charts, tables and the consumption report; the technical name is still shown in tables and the report
 - Product, SKU and tenant filters on the "Monthly consumption" chart, applied automatically when clicking a slice of an overview pie chart
 - Colors in charts are now assigned to each product, SKU and tenant rather than to their rank: filters no longer change colors
 - Compare mode: "Period evolution" now starts from the first month with consumption and flags new consumption
 
-### [Console — Organization](/console/iam/concepts)
-- Tenant list: the name of a tenant being created now persists after a page reload and is shown to other organization owners
-- Tenant list: the type of a tenant being created is no longer wrongly shown as "Legacy"
+### [Orders](/console/orders)
+- The Orders menu has moved under the Marketplace, below the Catalog
+- Order type selectors (availability zones, clusters, datastores, pools, block storage, Bare Metal servers and volumes): the commercial name and its description are now displayed
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Cross-cluster migration: a failed compatibility check no longer displays technical details
+
+### [VM Instances](/public_cloud/vm_instances)
+- Limited stock is now displayed on storage types, in the list and, for the selected type, in the field itself
+- Disk size: exceeding the maximum now shows an error explaining why (storage type limit or remaining quota)
 
 ### [LLMaaS](/llmaas)
-- Model testing: fixed missing passages and garbled accented characters in streamed responses
 - Model testing: send, transcription and microphone errors now show the service message or a translated label instead of a technical code
 
 ## v5.0.0 — 2026-10-15
@@ -61,35 +50,30 @@ sidebar_position: 999
 - Navigation: products are grouped in a single section, the Marketplace is placed under the Cost Manager and "Public Cloud" becomes "VM Instances"
 - SecNumCloud mention in the header of qualified product pages
 - Multi-step forms no longer close when clicking outside the window
-- Fix for the closing of windows displaying a secret only once during its creation
 - New detail page for VMware, OpenIaaS and VM Instances virtual machines, bringing together information, consumption and recent activities
 - Actions menu on each row of the virtual machines list
 
-### [VM Instances](/public_cloud/vm_instances)
-- Virtual machine information remains viewable during an ongoing operation
+### [Console — Activity](/console)
+- Activity details enriched with related resources as they progress
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Redesigned Compute and Storage pages: cluster header with its consumption and new host and datastore cards
-- Fix for duplicate loading when clicking on a cluster and the modified URL when returning to "All"
-
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
-- Redesigned Compute and Storage pages: pool header with its consumption and new host, block storage and availability zone cards
-
-### [Object Storage](/storage/oss)
-- Redesigned file explorer: tree view, detail panel, drag and drop and upload tracking in the list
-- Display and restore of deleted files on versioned buckets
+### [Cost manager](/console/billing/concepts)
+- Clickable pie charts in the overview to access consumption details directly
 
 ### [Orders](/console/orders)
 - New presentation of order details
 
-### [Cost Manager](/console/billing/concepts)
-- Clickable pie charts in the overview to access consumption details directly
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Redesigned Compute and Storage pages: cluster header with its consumption and new host and datastore cards
 
-### [Console — Organization](/console/iam/concepts)
-- Fix for the Cost Manager loading indicator on the organization dashboard
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Redesigned Compute and Storage pages: pool header with its consumption and new host, block storage and availability zone cards
 
-### [Console — Activities](/console)
-- Activity details enriched with related resources as they progress
+### [VM Instances](/public_cloud/vm_instances)
+- Virtual machine information remains viewable during an ongoing operation
+
+### [Object Storage](/storage/oss)
+- Redesigned file explorer: tree view, detail panel, drag and drop and upload tracking in the list
+- Display and restore of deleted files on versioned buckets
 
 ### [Bastion](/bastion)
 - "Copy All" button for the deployment YAML in the appliance details
@@ -97,13 +81,10 @@ sidebar_position: 999
 ### [Marketplace](/marketplace)
 - Marketplace item card: table of contents and right column visible during scrolling
 
-### [Metrics](/console/metrics/concepts)
-- Fix for a tooltip remaining displayed on charts after unpinning
-
 ## v4.53.2 — 2026-10-23
 
 ### [Console](/console)
-- Minor technical update
+- Minor technical improvements
 
 ## v4.53.1 — 2026-10-15
 
@@ -111,6 +92,18 @@ sidebar_position: 999
 - Minor technical improvements
 
 ## v4.53.0 — 2026-10-14
+
+### [Console](/console)
+- Protection of ongoing file transfers upon session expiration: interruption of the automatic redirect, display of progress and ability to reconnect in a new tab
+
+### [Console — Organization](/console/iam/concepts)
+- Tenant deletion: the confirmation prompt is now displayed above the input field
+
+### [IaaS VMware — Infrastructure](/iaas_vmware)
+- Ability to request the restart of an ESX host from the host list
+
+### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+- Ability to request the restart of an XCP host from the host list, with a pool unavailability warning when the last active host is affected
 
 ### [VM Instances](/public_cloud/vm_instances)
 - Display of beta badges on the relevant instance families and storage classes
@@ -120,40 +113,12 @@ sidebar_position: 999
 - Display of storage price and estimated cost when adding a disk, as well as the cost after extension
 - Identification of virtual machines in error by a dedicated status and addition of the corresponding filter
 - Creation, restore and change of a virtual machine's backup policy: only policies compatible with the instance family are offered
-- Fix for the backup policy retention unit, expressed as a number of backups and no longer in days
 - Restore of a backup: only the instance families to which the backup can be restored are offered
-
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Ability to request the restart of an ESX host from the host list
-
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
-- Ability to request the restart of an XCP host from the host list, with a pool unavailability warning when the last active host is affected
-
-### [IaaS OpenSource — Virtual machines](/iaas_opensource)
-- Template or Marketplace deployment: fix for the corruption of cloud-init configurations containing special characters, on read and on send
-
-### [Marketplace](/marketplace)
-- Fix for the deployment of an image on OpenIaaS when only the cloud-init network configuration is provided
-
-### [Console — Organization](/console/iam/concepts)
-- Tenant deletion: the confirmation prompt is now displayed above the input field
-
-### [Console](/console)
-- Protection of ongoing file transfers upon session expiration: interruption of the automatic redirect, display of progress and ability to reconnect in a new tab
-- Fix for redirects of old links to support tickets and VMware and OpenIaaS hosts
 
 ## v4.52.2 — 2026-10-09
 
 ### [IaaS VMware — Infrastructure](/iaas_vmware)
 - Ability to detach the last storage cluster from a hypervisor cluster
-
-## v4.52.1 — 2026-10-07
-
-### [Orders](/console/orders)
-- Fix for the datastore size increase order
-
-### [LLMaaS](/llmaas)
-- Fix for the total cost of LLMaaS consumption, which was higher than the chart total (consumptions now displayed per UTC day)
 
 ## v4.52.0 — 2026-10-06
 
@@ -163,7 +128,6 @@ sidebar_position: 999
 ### [IaaS OpenSource — Virtual machines](/iaas_opensource)
 - Snapshots tab: identification of the type of each snapshot (manual, backup, replication, orphaned)
 - Relocation of a virtual machine: ability to keep the original host to migrate only storage, now usable on a single-host pool
-- Fix for the "Destroy cloud-init configuration after boot" checkbox, which had no effect when deploying a virtual machine by template
 
 ### [IaaS OpenSource — Infrastructure](/iaas_opensource)
 - Master host: removal of maintenance actions and indication of the path to follow for its deletion (deletion of its pool)
@@ -171,7 +135,6 @@ sidebar_position: 999
 
 ### [IaaS OpenSource — Backup](/iaas_opensource)
 - Backup reports: policy executions are sorted by start date, from most recent to oldest
-- Backup reports: various fixes on the screen (refresh, sorting and pagination of executions)
 
 ### [Marketplace](/marketplace)
 - Image deployment: pre-filling of the cloud-init configuration (user-data and network configuration) provided by the image, modifiable before deployment
@@ -185,16 +148,8 @@ sidebar_position: 999
 ### [Identity & Access (IAM)](/console/iam)
 - Clarification of the impact of a user's re-registration: the confirmation modal specifies that a new registration email will be sent to them
 
-### [Support](/console)
-- Re-display of the support information block in Organization mode
-
-### [Metrics](/console/metrics/concepts)
-- Fix for the legends of virtual machine metrics charts
-
 ### [IaaS VMware — Virtual machines](/iaas_vmware)
-- Fix for the vMotion wizard: the "Next" button remained stuck after a host compatibility error when returning to a previous step
 - Sending of system keyboard shortcuts (Alt+Tab, ⌘, Esc…) to the virtual machine console in full screen (Keyboard Lock API, Chromium browser)
-- Fix for the VMware console (WMKS): an Alt+Tab left the Alt key considered as pressed on the virtual machine side
 
 ### [IaaS OpenSource — Virtual machines](/iaas_opensource)
 - Clarification of the warning when moving a virtual disk: associated virtual machines are no longer announced as suspended, only certain actions are temporarily unavailable
@@ -443,7 +398,6 @@ sidebar_position: 999
 
 ### [VM Instances](/public_cloud/vm_instances)
 - Disk sizes no longer accept decimal values, whether at instance creation or at disk addition or extension
-- Instance and resource processing indicators are now correctly restored after a page refresh
 
 ### [VPC](/network/vpc)
 - From the network card of a virtual machine attached to a VPC network, you can now directly access the relevant VPC (VMware, OpenIaaS, and VM Instances)

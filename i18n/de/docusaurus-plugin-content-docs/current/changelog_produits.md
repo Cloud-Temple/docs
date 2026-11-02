@@ -5,36 +5,19 @@ sidebar_position: 999
 
 # Produktneuheiten & Weiterentwicklungen
 
-> Dieses Changelog listet die neuen Funktionen und wesentlichen Weiterentwicklungen der Plattform Cloud Temple.
-> Bugfixes sind ab Version 4.50.0 enthalten.
+> Dieses Changelog listet ausschließlich neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple-Plattform auf.
+> Bugfixes sind bewusst nicht enthalten.
 
 ## v5.1.0 — 2026-10-30
 
-### [Konsole](/console)
+### [Console](/console)
 - Neues Theme „System“, das automatisch dem hellen oder dunklen Modus des Betriebssystems folgt und standardmäßig angewendet wird, wenn kein Theme gewählt wurde
 - Kopieren der UUID über das Aktionsmenü jeder Zeile der Liste der virtuellen Maschinen
-- Korrektur der Farbe der Fehlermeldungen unter Formularfeldern, die wieder rot angezeigt werden
-- Anzeige der bisher ausgeblendeten Validierungsmeldungen von Auswahllisten (Aufladen von LLMaaS-Guthaben, VMware-Regeln, Export einer virtuellen Maschine, Kontakt zu einem Marketplace-Partner)
 - Leiste der Dateiübertragungen: breiterer Fortschrittsbalken, Titel und Beschriftungen passen sich dem Status der Übertragungen an
-- Korrekturen an Bedienbarkeit, Anzeige und Suche auf mehreren Bildschirmen
-- Verstärkte Sicherheit: in der Browserkonsole protokollierte Fehler legen keine sensiblen Daten mehr offen
-- Sicherheitsupdate der Übersetzungsbibliothek
-- CSV-Export der Diagramme: Umlaute und Akzente werden in Excel korrekt angezeigt
 - CSV-Export der Diagramme: Datumsangaben im Format der Konsolensprache
 
-### [VM Instances](/public_cloud/vm_instances)
-- Anzeige des begrenzten Bestands bei den Speichertypen, in der Liste und für den ausgewählten Typ direkt im Feld
-- Größe eines Datenträgers: Eine Überschreitung des Maximums zeigt nun einen Fehler mit der Ursache an (Grenze des Speichertyps oder verbleibendes Kontingent)
-
-### [IaaS VMware — Infrastruktur](/iaas_vmware)
-- Migration zwischen Clustern: Ein Fehlschlag der Kompatibilitätsprüfung zeigt keine technischen Details mehr an
-
-### [Object Storage](/storage/oss)
-- Dateibrowser: Korrektur der Größe der Symbole bestimmter Dateien (OVF, OVA, ISO)
-
-### [Bestellungen](/console/orders)
-- Das Menü „Orders“ befindet sich nun unter dem Marketplace, nach dem Katalog
-- Auswahlfelder für Bestelltypen (Verfügbarkeitszonen, Cluster, Datastores, Pools, Block Storage, Bare-Metal-Server und -Volumes): Anzeige des kommerziellen Namens und seiner Beschreibung
+### [Console — Organisation](/console/iam/concepts)
+- Liste der Tenants: Der Name eines Tenants, der gerade erstellt wird, bleibt nun nach einem Neuladen der Seite erhalten und wird den anderen Eigentümern der Organisation angezeigt
 
 ### [Kostenmanager](/console/billing/concepts)
 - Der Verbrauchsbericht wird zu einem Tab des Kostenmanagers und wird allein angezeigt, wenn die Kostenverfolgung nicht aktiviert ist
@@ -43,12 +26,18 @@ sidebar_position: 999
 - Farben werden jedem Produkt, jeder SKU und jedem Tenant zugeordnet statt ihrem Rang in den Diagrammen: Filter ändern die Farben nicht mehr
 - Vergleichsmodus: Die Entwicklung über den Zeitraum beginnt mit dem ersten Monat mit Verbrauch und weist auf neue Verbräuche hin
 
-### [Konsole — Organisation](/console/iam/concepts)
-- Liste der Tenants: Der Name eines Tenants, der gerade erstellt wird, bleibt nun nach einem Neuladen der Seite erhalten und wird den anderen Eigentümern der Organisation angezeigt
-- Liste der Tenants: Der Typ eines Tenants, der gerade erstellt wird, wird nicht mehr fälschlicherweise als „Legacy“ angezeigt
+### [Bestellungen](/console/orders)
+- Das Menü „Orders“ befindet sich nun unter dem Marketplace, nach dem Katalog
+- Auswahlfelder für Bestelltypen (Verfügbarkeitszonen, Cluster, Datastores, Pools, Block Storage, Bare-Metal-Server und -Volumes): Anzeige des kommerziellen Namens und seiner Beschreibung
+
+### [IaaS VMware — Infrastruktur](/iaas_vmware)
+- Migration zwischen Clustern: Ein Fehlschlag der Kompatibilitätsprüfung zeigt keine technischen Details mehr an
+
+### [VM Instances](/public_cloud/vm_instances)
+- Anzeige des begrenzten Bestands bei den Speichertypen, in der Liste und für den ausgewählten Typ direkt im Feld
+- Größe eines Datenträgers: Eine Überschreitung des Maximums zeigt nun einen Fehler mit der Ursache an (Grenze des Speichertyps oder verbleibendes Kontingent)
 
 ### [LLMaaS](/llmaas)
-- Test eines Modells: Korrektur fehlender Passagen und verfälschter Sonderzeichen in schrittweise angezeigten Antworten
 - Test eines Modells: Fehler beim Senden, bei der Transkription und beim Mikrofon zeigen die Meldung des Dienstes oder eine übersetzte Beschriftung statt eines technischen Codes an
 
 ## v5.0.0 — 2026-10-15
@@ -61,35 +50,30 @@ sidebar_position: 999
 - Navigation: Die Produkte sind in einer einzigen Sektion zusammengefasst, der Marketplace ist unter dem Kostenmanager platziert und „Public Cloud" wird zu „VM Instances"
 - SecNumCloud-Hinweis im Kopf der Seiten qualifizierter Produkte
 - Mehrschrittige Formulare schließen sich nicht mehr durch einen Klick außerhalb des Fensters
-- Korrektur des Schließverhaltens von Fenstern, die ein Geheimnis nur einmal während seiner Erstellung anzeigen
 - Neue Detailseite für virtuelle Maschinen von VMware, OpenIaaS und VM Instances, die Informationen, Verbrauch und letzte Aktivitäten zusammenfasst
 - Aktionsmenü auf jeder Zeile der Liste der virtuellen Maschinen
+
+### [Console — Aktivitäten](/console)
+- Aktivitätsdetails angereichert mit den betroffenen Ressourcen im Verlauf ihres Fortschritts
+
+### [Kostenmanager](/console/billing/concepts)
+- Klickbare Kreisdiagramme in der Vorschau für den direkten Zugriff auf die Verbrauchsdetails
+
+### [Bestellungen](/console/orders)
+- Neue Darstellung der Detailansicht einer Bestellung
+
+### [IaaS VMware — Infrastruktur](/iaas_vmware)
+- Überarbeitete Seiten Compute und Storage: Cluster-Kopf mit dessen Verbrauch und neue Host- und Datastore-Karten
+
+### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
+- Überarbeitete Seiten Compute und Storage: Pool-Kopf mit dessen Verbrauch und neue Host-, Block-Storage- und Verfügbarkeitszonen-Karten
 
 ### [VM Instances](/public_cloud/vm_instances)
 - Die Informationen einer virtuellen Maschine bleiben während einer laufenden Operation einsehbar
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Überarbeitete Seiten Compute und Storage: Cluster-Kopf mit dessen Verbrauch und neue Host- und Datastore-Karten
-- Korrektur der doppelten Ladung beim Klick auf einen Cluster und der geänderten URL bei der Rückkehr zu „Alle"
-
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
-- Überarbeitete Seiten Compute und Storage: Pool-Kopf mit dessen Verbrauch und neue Host-, Block-Storage- und Verfügbarkeitszonen-Karten
-
 ### [Object Storage](/storage/oss)
 - Überarbeiteter Dateibrowser: Baumstruktur, Detailpanel, Drag & Drop und Überwachung der Übertragungen in der Liste
 - Anzeige und Wiederherstellung gelöschter Dateien in versionierten Buckets
-
-### [Commandes](/console/orders)
-- Neue Darstellung der Detailansicht einer Bestellung
-
-### [Gestionnaire des coûts](/console/billing/concepts)
-- Klickbare Kreisdiagramme in der Vorschau für den direkten Zugriff auf die Verbrauchsdetails
-
-### [Console — Organisation](/console/iam/concepts)
-- Korrektur des Ladeindikators des Kostenmanagers auf dem Organisations-Dashboard
-
-### [Console — Activités](/console)
-- Aktivitätsdetails angereichert mit den betroffenen Ressourcen im Verlauf ihres Fortschritts
 
 ### [Bastion](/bastion)
 - Button „Alles kopieren" für das Deployment-YAML in der Detailansicht einer Appliance
@@ -97,13 +81,10 @@ sidebar_position: 999
 ### [Marketplace](/marketplace)
 - Karte eines Marketplace-Elements: Inhaltsverzeichnis und rechte Spalte bleiben beim Scrollen sichtbar
 
-### [Métriques](/console/metrics/concepts)
-- Korrektur eines Tooltip, der nach dem Entfernen der Nadel auf den Diagrammen weiterhin angezeigt wurde
-
 ## v4.53.2 — 2026-10-23
 
-### [Konsole](/console)
-- Kleineres technisches Update
+### [Console](/console)
+- Kleinere technische Verbesserungen
 
 ## v4.53.1 — 2026-10-15
 
@@ -111,6 +92,18 @@ sidebar_position: 999
 - Kleinere technische Verbesserungen
 
 ## v4.53.0 — 2026-10-14
+
+### [Console](/console)
+- Schutz laufender Dateiübertragungen bei Ablauf der Sitzung: Unterbrechung der automatischen Umleitung, Anzeige des Fortschritts und Möglichkeit, sich in einem neuen Tab erneut anzumelden
+
+### [Console — Organisation](/console/iam/concepts)
+- Löschung eines Tenants: Die Bestätigungsanweisung wird nun über dem Eingabefeld angezeigt
+
+### [IaaS VMware — Infrastruktur](/iaas_vmware)
+- Möglichkeit, den Neustart eines ESX-Hosts aus der Host-Liste anzufordern
+
+### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
+- Möglichkeit, den Neustart eines XCP-Hosts aus der Host-Liste anzufordern, mit einer Warnung zur Pool-Verfügbarkeit, wenn der letzte aktive Host betroffen ist
 
 ### [VM Instances](/public_cloud/vm_instances)
 - Anzeige von Beta-Badges auf den betroffenen Instanzfamilien und Speicherklassen
@@ -120,58 +113,28 @@ sidebar_position: 999
 - Anzeige des Speicherpreises und der geschätzten Kosten beim Hinzufügen einer Festplatte sowie der Kosten nach Erweiterung
 - Kennzeichnung virtueller Maschinen im Fehlerzustand durch einen dedizierten Status und Hinzufügen des entsprechenden Filters
 - Erstellung, Wiederherstellung und Änderung der Backup-Richtlinie einer virtuellen Maschine: Es werden nur Richtlinien vorgeschlagen, die mit der Instanzfamilie kompatibel sind
-- Korrektur der Aufbewahrungszeit-Einheit der Backup-Richtlinien, ausgedrückt in Anzahl der Backups und nicht mehr in Tagen
 - Wiederherstellung eines Backups: Es werden nur Instanzfamilien vorgeschlagen, auf die das Backup wiederhergestellt werden kann
-
-### [IaaS VMware — Infrastructure](/iaas_vmware)
-- Möglichkeit, den Neustart eines ESX-Hosts aus der Host-Liste anzufordern
-
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
-- Möglichkeit, den Neustart eines XCP-Hosts aus der Host-Liste anzufordern, mit einer Warnung zur Pool-Verfügbarkeit, wenn der letzte aktive Host betroffen ist
-
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
-- Deployment per Template oder aus dem Marketplace: Korrektur der Verfälschung von cloud-init-Konfigurationen mit Sonderzeichen, beim Lesen und beim Senden
-
-### [Marketplace](/marketplace)
-- Korrektur des Deployments eines Images auf OpenIaaS, wenn nur die cloud-init-Netzwerkkonfiguration ausgefüllt ist
-
-### [Console — Organisation](/console/iam/concepts)
-- Löschung eines Tenants: Die Bestätigungsanweisung wird nun über dem Eingabefeld angezeigt
-
-### [Console](/console)
-- Schutz laufender Dateiübertragungen bei Ablauf der Sitzung: Unterbrechung der automatischen Umleitung, Anzeige des Fortschritts und Möglichkeit, sich in einem neuen Tab erneut anzumelden
-- Korrektur der Umleitungen alter Links zu Support-Tickets und VMware- und OpenIaaS-Hosts
 
 ## v4.52.2 — 2026-10-09
 
-### [IaaS VMware — Infrastructure](/iaas_vmware)
+### [IaaS VMware — Infrastruktur](/iaas_vmware)
 - Möglichkeit, den letzten Storage-Cluster von einem Hypervisor-Cluster zu trennen
-
-## v4.52.1 — 2026-10-07
-
-### [Commandes](/console/orders)
-- Korrektur der Bestellung zur Vergrößerung der Größe eines Datastores
-
-### [LLMaaS](/llmaas)
-- Korrektur der Gesamtkosten des LLMaaS-Verbrauchs, die höher als die Summe des Diagramms waren (Verbräuche werden nun pro UTC-Tag angezeigt)
 
 ## v4.52.0 — 2026-10-06
 
-### [IaaS VMware — Sauvegarde](/iaas_vmware)
+### [IaaS VMware — Backup](/iaas_vmware)
 - Wiederherstellung einer virtuellen Maschine, deren Festplatten auf mehrere Datastores verteilt sind: Auswahl eines Ziel-Datastores für jeden Quell-Datastore
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
 - Tab Snapshots: Identifikation des Typs jedes Snapshots (manuell, Backup, Replikation, verwaist)
 - Neuplatzierung einer virtuellen Maschine: Möglichkeit, den ursprünglichen Host beizubehalten und nur den Storage zu migrieren, nun auch auf einem Single-Host-Pool verfügbar
-- Korrektur des Häkchens „cloud-init-Konfiguration nach dem Start löschen", das beim Deployment einer virtuellen Maschine per Template keine Wirkung hatte
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
 - Master-Host: Entfernung der Wartungsaktionen und Angabe des Weges zu dessen Löschung (Löschung des zugehörigen Pools)
 - Storage: Wartungsmodus aktivieren und beenden für einen Block Storage aus der Konsole
 
-### [IaaS OpenSource — Sauvegarde](/iaas_opensource)
+### [IaaS OpenSource — Backup](/iaas_opensource)
 - Backup-Reports: Die Ausführungen einer Richtlinie sind nach Startdatum sortiert, von der neuesten zur ältesten
-- Backup-Reports: Verschiedene Korrekturen auf dem Bildschirm (Aktualisierung, Sortierung und Paginierung der Ausführungen)
 
 ### [Marketplace](/marketplace)
 - Deployment eines Images: Voraufüllung der cloud-init-Konfiguration (user-data und Netzwerkkonfiguration), die vom Image bereitgestellt wird, vor dem Deployment änderbar
@@ -182,24 +145,16 @@ sidebar_position: 999
 - Hinzufügen einer Spalte „Typ" (SecNumCloud / Legacy) in der Tenant-Liste
 - Der Favorit eines Tenants wird nun durch ein Badge „Favorit" in der Tenant-Liste angezeigt
 
-### [Identité & Accès (IAM)](/console/iam)
+### [Identität & Zugriff (IAM)](/console/iam)
 - Klärung der Auswirkungen der Neuregistrierung eines Benutzers: Das Bestätigungsdialogfenster gibt an, dass eine neue Registrierungs-E-Mail gesendet wird
 
-### [Support](/console)
-- Wiederanzeige des Support-Informationen-Blocks im Organisationsmodus
-
-### [Métriques](/console/metrics/concepts)
-- Korrektur der Legenden der Metrik-Diagramme der virtuellen Maschinen
-
-### [IaaS VMware — Machines virtuelles](/iaas_vmware)
-- Korrektur des vMotion-Wizards: Die Schaltfläche „Weiter" blieb nach einem Host-Kompatibilitätsfehler blockiert, wenn zu einem vorherigen Schritt zurückgegangen wurde
+### [IaaS VMware — Virtuelle Maschinen](/iaas_vmware)
 - Weiterleitung der System-Tastenkürzel (Alt+Tab, ⌘, Esc…) an die Konsole der virtuellen Maschine im Vollbildmodus (Keyboard Lock API, Chromium-Browser)
-- Korrektur der VMware-Konsole (WMKS): Alt+Tab ließ die Alt-Taste auf der virtuellen Maschine als gedrückt gelten
 
-### [IaaS OpenSource — Machines virtuelles](/iaas_opensource)
+### [IaaS OpenSource — Virtuelle Maschinen](/iaas_opensource)
 - Klärung der Warnung bei der Verschiebung einer virtuellen Festplatte: Die zugehörigen virtuellen Maschinen werden nicht mehr als ausgesetzt angekündigt, nur bestimmte Aktionen sind vorübergehend nicht verfügbar
 
-### [IaaS OpenSource — Infrastructure](/iaas_opensource)
+### [IaaS OpenSource — Infrastruktur](/iaas_opensource)
 - Detailansicht eines Pools: Anzeige und Verwaltung von Block Storage aus Compute und von Hosts aus Storage (kreuzweise Tabs)
 
 ## v4.50.0 — 2026-09-10
@@ -210,7 +165,7 @@ sidebar_position: 999
 ### [Console — Organisation](/console/iam/concepts)
 - Anzeige des Vorbereitungsfortschritts eines Tenants bei dessen Erstellung
 
-### [Commandes](/console/orders)
+### [Bestellungen](/console/orders)
 - Hinzufügen der Bestellung zur Löschung einer öffentlichen VPC-IP
 - Hinzufügen der Bestellung zur Löschung einer Private-Backbone-IP
 
@@ -443,7 +398,6 @@ sidebar_position: 999
 
 ### [VM Instances](/public_cloud/vm_instances)
 - Die Diskgrößen akzeptieren keine Dezimalwerte mehr, weder bei der Erstellung einer Instanz noch beim Hinzufügen oder Erweitern eines Datenträgers
-- Die Verarbeitungsindikatoren für Instanzen und deren Ressourcen werden nun korrekt nach einem Seiten-Refresh wiederhergestellt
 
 ### [VPC](/network/vpc)
 - Von der Netzwerkkarte einer an ein VPC-Netzwerk zugewiesenen virtuellen Maschine aus können Sie nun direkt auf den betreffenden VPC zugreifen (VMware, OpenIaaS und VM Instances)

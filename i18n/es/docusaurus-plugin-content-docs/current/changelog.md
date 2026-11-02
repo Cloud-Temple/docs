@@ -7,15 +7,15 @@ sidebar_position: 2
 
 ### 30 de octubre de 2026 : Consola v5.1.0
 
-- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.53.2 y 5.1.0: nuevo tema « System » que sigue el modo claro u oscuro del sistema operativo, informe de consumo integrado en el Gestor de costes con filtros por producto, SKU y tenant, menú « Orders » trasladado bajo el Marketplace y numerosas correcciones.
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.53.2 y 5.1.0: nuevo tema « System » que sigue el modo claro u oscuro del sistema operativo, informe de consumo integrado en el Gestor de costes con filtros por producto, SKU y tenant, y menú « Orders » trasladado bajo el Marketplace.
 
 ### 21 de octubre de 2026 : Nueva consola Cloud Temple (v5.0.0)
 
-- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.52.1 a 5.0.0, incluida la nueva consola : rediseño completo de la interfaz con tema oscuro, navegación simplificada, nueva página de detalle de máquinas virtuales, páginas de Cómputo y Almacenamiento repensadas y explorador de archivos de Object Storage. La versión anterior de la consola sigue siendo accesible hasta principios de diciembre de 2026 desde la ventana « Novedades ».
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.52.2 a 5.0.0, incluida la nueva consola : rediseño completo de la interfaz con tema oscuro, navegación simplificada, nueva página de detalle de máquinas virtuales, páginas de Cómputo y Almacenamiento repensadas y explorador de archivos de Object Storage. La versión anterior de la consola sigue siendo accesible hasta principios de diciembre de 2026 desde la ventana « Novedades ».
 
 ### 12 de octubre de 2026 : Notas de versión de la Consola hasta la v4.52.0
 
-- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las novedades y correcciones de las versiones 4.50.0, 4.51.0 y 4.52.0, en particular las evoluciones de la red VPC, del despliegue cloud-init y de la restauración de máquinas virtuales.
+- **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las novedades de las versiones 4.50.0, 4.51.0 y 4.52.0, en particular las evoluciones de la red VPC, del despliegue cloud-init y de la restauración de máquinas virtuales.
 
 ### 10 de septiembre de 2026 : Documentación LLMaaS actualizada
 

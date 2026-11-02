@@ -7,15 +7,15 @@ sidebar_position: 2
 
 ### October 30, 2026: Console v5.1.0
 
-- **Console**: The [product release notes](./changelog_produits.md) cover versions 4.53.2 and 5.1.0: a new "System" theme that follows the operating system's light or dark mode, the consumption report integrated into the Cost Manager with filters by product, SKU and tenant, the Orders menu moved under the Marketplace, and many fixes.
+- **Console**: The [product release notes](./changelog_produits.md) cover versions 4.53.2 and 5.1.0: a new "System" theme that follows the operating system's light or dark mode, the consumption report integrated into the Cost Manager with filters by product, SKU and tenant, and the Orders menu moved under the Marketplace.
 
 ### October 21, 2026: New Cloud Temple Console (v5.0.0)
 
-- **Console**: The [product release notes](./changelog_produits.md) cover versions 4.52.1 through 5.0.0, including the new console: a complete interface overhaul with a dark theme, simplified navigation, a new virtual machine detail page, redesigned Compute and Storage pages, and an Object Storage file explorer. The previous version of the console remains accessible until early December 2026 from the "What's New" window.
+- **Console**: The [product release notes](./changelog_produits.md) cover versions 4.52.2 through 5.0.0, including the new console: a complete interface overhaul with a dark theme, simplified navigation, a new virtual machine detail page, redesigned Compute and Storage pages, and an Object Storage file explorer. The previous version of the console remains accessible until early December 2026 from the "What's New" window.
 
 ### October 12, 2026: Console Release Notes up to v4.52.0
 
-- **Console**: The [product release notes](./changelog_produits.md) cover the new features and fixes in versions 4.50.0, 4.51.0, and 4.52.0, including improvements to VPC networking, cloud-init deployment, and virtual machine restoration.
+- **Console**: The [product release notes](./changelog_produits.md) cover the new features in versions 4.50.0, 4.51.0, and 4.52.0, including improvements to VPC networking, cloud-init deployment, and virtual machine restoration.
 
 ### September 10, 2026: Updated LLMaaS Documentation
 

@@ -13,9 +13,11 @@ Trois sources sont fusionnées :
                                      Console (bases managées, Observability, MCP…)
 
 Principes :
-  - Les correctifs sont inclus depuis BUGFIX_MIN_VERSION. Avant cette borne,
-    leur exclusion est déterminée sur le texte FR (source canonique) pour
-    TOUTES les langues, afin de conserver les mêmes entrées que le français.
+  - Les correctifs sont exclus, dans toutes les versions. Leur exclusion est
+    déterminée sur le texte FR (source canonique) pour TOUTES les langues, afin
+    de conserver les mêmes entrées que le français. Un correctif dont le texte
+    ne commence pas par un préfixe de BUG_PREFIXES s'exclut dans le calque
+    éditorial ({exclude: true}).
   - Le script échoue bruyamment plutôt que de publier une donnée douteuse :
     tag inconnu, réécriture périmée, version inexistante.
 """
@@ -42,10 +44,7 @@ MIN_VERSION = "4.0.0"
 # Plafond : dernière version RÉELLEMENT déployée en production. À relever à chaque
 # mise en production, sinon la documentation annoncerait des fonctionnalités
 # que le client ne voit pas encore. None = aucune limite.
-MAX_VERSION = "4.52.0"
-
-# À partir de cette version, les notes publiques incluent aussi les correctifs.
-BUGFIX_MIN_VERSION = "4.50.0"
+MAX_VERSION = "5.1.0"
 
 # Langues cibles (hors FR qui est la source)
 TARGET_LANGUAGES = ["en", "de", "es", "it"]
@@ -78,7 +77,7 @@ OUTPUTS = [
         DOCS / "changelog_produits.md",
         "Nouveautés produits",
         "Nouveautés produits & évolutions",
-        "Ce changelog liste les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont incluses à partir de la version 4.50.0.",
+        "Ce changelog liste uniquement les nouvelles fonctionnalités et évolutions significatives de la plateforme Cloud Temple.\nLes corrections de bugs sont volontairement exclues.",
         ":::info[Historique antérieur]\n\n"
         "L'historique complet des versions antérieures à v{floor} (v{first} à v{last}, "
         "de {first_month} {first_year} à {last_month} {last_year}) est disponible dans "
@@ -89,7 +88,7 @@ OUTPUTS = [
         I18N / "en/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Product Updates",
         "Product Updates & Evolutions",
-        "This changelog lists new features and significant evolutions of the Cloud Temple platform.\nBug fixes are included from version 4.50.0 onwards.",
+        "This changelog lists only new features and significant enhancements to the Cloud Temple platform.\nBug fixes are intentionally excluded.",
         ":::info[Earlier history]\n\n"
         "The full history of versions prior to v{floor} (v{first} to v{last}, "
         "from {first_month} {first_year} to {last_month} {last_year}) is available in the "
@@ -100,7 +99,7 @@ OUTPUTS = [
         I18N / "de/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Produktneuheiten",
         "Produktneuheiten & Weiterentwicklungen",
-        "Dieses Changelog enthält neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple Plattform.\nFehlerbehebungen sind ab Version 4.50.0 enthalten.",
+        "Dieses Changelog listet ausschließlich neue Funktionen und wesentliche Weiterentwicklungen der Cloud Temple-Plattform auf.\nBugfixes sind bewusst nicht enthalten.",
         ":::info[Frühere Historie]\n\n"
         "Die vollständige Historie der Versionen vor v{floor} (v{first} bis v{last}, "
         "von {first_month} {first_year} bis {last_month} {last_year}) ist in der "
@@ -111,7 +110,7 @@ OUTPUTS = [
         I18N / "es/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Novedades del producto",
         "Novedades del producto & Evoluciones",
-        "Este changelog lista las nuevas funcionalidades y evoluciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores se incluyen a partir de la versión 4.50.0.",
+        "Este changelog enumera únicamente las nuevas funcionalidades y actualizaciones significativas de la plataforma Cloud Temple.\nLas correcciones de errores se excluyen intencionadamente.",
         ":::info[Historial anterior]\n\n"
         "El historial completo de las versiones anteriores a v{floor} (v{first} a v{last}, "
         "de {first_month} de {first_year} a {last_month} de {last_year}) está disponible en el "
@@ -122,7 +121,7 @@ OUTPUTS = [
         I18N / "it/docusaurus-plugin-content-docs/current/changelog_produits.md",
         "Novità del prodotto",
         "Novità del prodotto & Evoluzioni",
-        "Questo changelog elenca le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni di bug sono incluse a partire dalla versione 4.50.0.",
+        "Questo changelog elenca esclusivamente le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.\nLe correzioni dei bug sono volutamente escluse.",
         ":::info[Cronologia precedente]\n\n"
         "La cronologia completa delle versioni precedenti alla v{floor} (da v{first} a v{last}, "
         "da {first_month} {first_year} a {last_month} {last_year}) è disponibile nella "
@@ -130,7 +129,7 @@ OUTPUTS = [
     ),
 ]
 
-# Mots clés qui signalent un bug fix → exclusion avant BUGFIX_MIN_VERSION
+# Mots clés qui signalent un bug fix → exclusion
 # Le statut est évalué sur le texte FR, qui est la source canonique. Liste établie
 # empiriquement sur l'intégralité de maj.js : toute entrée dont le texte FR commence
 # par l'un de ces préfixes est un correctif.
@@ -210,6 +209,77 @@ ENTRY_RE = re.compile(
 )
 
 
+# Déclaration de l'objet des notes de version dans maj.js.
+NOTES_START_RE = re.compile(r"const\s+majs\s*=\s*\{")
+
+
+def notes_object(content: str) -> str:
+    """
+    Extrait de maj.js le contenu de l'objet des notes de version, sans ses
+    commentaires.
+
+    Le balayage parcourt le fichier en sautant chaînes et commentaires, repère
+    la déclaration « const majs = { », puis suit les accolades jusqu'à celle qui
+    ferme l'objet. Le reste du module n'est pas analysé : l'exemple commenté qui
+    suit l'objet contient des entrées { text, tag }, autrefois publiées comme
+    livrées, et le code exporté (expressions régulières, templates) tromperait
+    le balayage.
+
+    Dans l'objet, les commentaires (bloc et ligne) sont retirés ; un « /* » ou un
+    « // » dans une chaîne, même multiligne, reste du texte. Un objet introuvable
+    ou non refermé, un commentaire ou une chaîne non refermés font échouer la
+    génération : mieux vaut ne rien publier qu'une entrée commentée ou perdue.
+    """
+    def echec(motif: str, pos: int) -> None:
+        ligne = content.count("\n", 0, pos) + 1
+        print(f"ERREUR : {motif} dans maj.js (ligne {ligne})", file=sys.stderr)
+        sys.exit(1)
+
+    out, i, n, quote, debut = [], 0, len(content), None, 0
+    depth, objet = 0, None  # objet : position de la déclaration, une fois trouvée
+    while i < n:
+        c = content[i]
+        if quote:
+            if c == "\n" and quote != "`":
+                echec("chaîne non refermée", debut)
+            pas = 2 if c == "\\" else 1
+            if c == quote:
+                quote = None
+            if objet is not None:
+                out.append(content[i:i + pas])
+            i += pas
+        elif c in "'\"`":
+            quote, debut = c, i
+            if objet is not None:
+                out.append(c)
+            i += 1
+        elif content.startswith("/*", i):
+            fin = content.find("*/", i + 2)
+            if fin < 0:
+                echec("commentaire non refermé", i)
+            i = fin + 2
+        elif content.startswith("//", i):
+            fin = content.find("\n", i)
+            i = n if fin < 0 else fin   # le saut de ligne est conservé
+        elif objet is None:
+            m = NOTES_START_RE.match(content, i)
+            if m and (i == 0 or not (content[i - 1].isalnum() or content[i - 1] in "_$")):
+                objet, depth, i = i, 1, m.end()
+            else:
+                i += 1
+        else:
+            depth += {"{": 1, "}": -1}.get(c, 0)
+            if depth == 0:
+                return "".join(out)
+            out.append(c)
+            i += 1
+    if quote:
+        echec("chaîne non refermée", debut)
+    if objet is None:
+        echec("objet des notes « const majs = { » introuvable", 0)
+    echec("objet des notes non refermé", objet)
+
+
 def entry_id(version: str, tag: str, text_fr: str) -> str:
     """Identifiant stable d'une entrée source, utilisé par le calque éditorial."""
     digest = hashlib.sha1(text_fr.encode("utf-8")).hexdigest()[:12]
@@ -220,9 +290,11 @@ def parse_maj_js(content: str) -> list[dict]:
     """
     Retourne [{version, date, entries: [{tag, id, texts: {fr, en}}]}].
 
-    Avant BUGFIX_MIN_VERSION, le filtrage des correctifs se fait sur le texte FR,
-    pour toutes les langues. Les versions suivantes conservent toutes les entrées.
+    Le filtrage des correctifs se fait sur le texte FR, pour toutes les langues.
     """
+    # Seul l'objet des notes est analysé, débarrassé de ses commentaires : cf.
+    # notes_object.
+    content = notes_object(content)
     results = []
     matches = list(VERSION_RE.finditer(content))
 
@@ -238,8 +310,7 @@ def parse_maj_js(content: str) -> list[dict]:
         for em in ENTRY_RE.finditer(block):
             ternary, tag = em.group("ternary"), em.group("tag")
             text_fr = extract_text(ternary, "fr")
-            if not text_fr or (version_key(version) < version_key(BUGFIX_MIN_VERSION)
-                               and is_bugfix(text_fr)):
+            if not text_fr or is_bugfix(text_fr):
                 continue
             entries.append({
                 "tag": tag,
