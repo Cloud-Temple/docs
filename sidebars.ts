@@ -527,6 +527,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'managed_kubernetes/managed_kubernetes',
         'managed_kubernetes/concepts',
+        'managed_core_kubernetes/concepts',
         'managed_kubernetes/quickstart',
         {
           type: 'category',
