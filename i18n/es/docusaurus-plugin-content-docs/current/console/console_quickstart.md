@@ -44,7 +44,7 @@ Esta sección describe la **interfaz**. Los procedimientos se encuentran en [Onb
 
 ### Barra superior y selección del tenant de trabajo
 
-En la parte superior de la consola, la barra superior muestra la organización actual (**« Mi organización »**). El selector asociado abre la lista **« Mis tenants »**, desde la que elige su tenant de trabajo: ver [Elegir su tenant de trabajo](./onboarding.md#elegir-su-tenant-de-trabajo).
+En la parte superior de la consola, el **selector de tenant** muestra su organización y, cuando trabaja en un tenant, ese tenant. Su menú presenta la organización y, debajo, la lista de sus **tenants**, desde la que elige su tenant de trabajo: ver [Elegir su tenant de trabajo](./onboarding.md#elegir-su-tenant-de-trabajo).
 
 <img src={imgSelector} />
 

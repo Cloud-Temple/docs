@@ -44,7 +44,7 @@ Cette section décrit l'**interface**. Les procédures sont dans [Onboarding](./
 
 ### Bandeau et sélection du tenant de travail
 
-En haut de la Console, le bandeau affiche l'organisation courante (**« Mon organisation »**). Le sélecteur associé ouvre la liste **« Mes tenants »**, d'où vous choisissez votre tenant de travail : voir [Choisir votre tenant de travail](./onboarding.md#choisir-votre-tenant-de-travail).
+En haut de la Console, le **sélecteur de tenant** affiche votre organisation et, lorsque vous travaillez dans un tenant, ce tenant. Son menu présente l'organisation puis, en dessous, la liste de vos **tenants**, d'où vous choisissez votre tenant de travail : voir [Choisir votre tenant de travail](./onboarding.md#choisir-votre-tenant-de-travail).
 
 <img src={imgSelector} />
 

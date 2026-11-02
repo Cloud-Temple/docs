@@ -44,7 +44,7 @@ Dieser Abschnitt beschreibt die **Benutzeroberfläche**. Die Verfahren finden Si
 
 ### Kopfzeile und Auswahl des Arbeits-Tenants
 
-Oben in der Konsole zeigt die Kopfzeile die aktuelle Organisation (**« Meine Organisation »**). Das zugehörige Auswahlmenü öffnet die Liste **« Meine Tenants »**, aus der Sie Ihren Arbeits-Tenant auswählen: siehe [Ihren Arbeits-Tenant auswählen](./onboarding.md#ihren-arbeits-tenant-auswählen).
+Oben in der Konsole zeigt die **Tenant-Auswahl** Ihre Organisation und, wenn Sie in einem Tenant arbeiten, diesen Tenant. Ihr Menü zeigt die Organisation und darunter die Liste Ihrer **Tenants**, aus der Sie Ihren Arbeits-Tenant auswählen: siehe [Ihren Arbeits-Tenant auswählen](./onboarding.md#ihren-arbeits-tenant-auswählen).
 
 <img src={imgSelector} />
 

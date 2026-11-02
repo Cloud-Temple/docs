@@ -44,7 +44,7 @@ This section describes the **interface**. The procedures are in [Onboarding](./o
 
 ### Header and active tenant selection
 
-At the top of the Console, the header displays the current organization (**« My organization »**). The associated selector opens the **« My tenants »** list, from which you choose your active tenant: see [Choose your working tenant](./onboarding.md#choose-your-working-tenant).
+At the top of the Console, the **tenant selector** shows your organization and, when you are working in a tenant, that tenant. Its menu lists the organization and, below it, your **tenants**, from which you choose your active tenant: see [Choose your working tenant](./onboarding.md#choose-your-working-tenant).
 
 <img src={imgSelector} />
 

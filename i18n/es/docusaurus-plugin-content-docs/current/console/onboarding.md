@@ -174,7 +174,7 @@ Para ir más allá: las [recomendaciones de seguridad](./security/security_recom
 
 Los recursos técnicos (cómputo, almacenamiento, red…) son **exclusivos de cada tenant** y no se comparten entre tenants. Antes de actuar, elija el tenant en el que trabaja:
 
-- desde la barra superior de la consola, abra el selector **« Mis tenants »** y haga clic en el tenant deseado;
+- desde la barra superior de la consola, abra el **selector de tenant** (muestra su organización y, cuando trabaja en un tenant, ese tenant) y haga clic en el tenant deseado en la sección **Tenants**;
 - o desde **Administración > Tenants**, utilice la acción **« Conectarse al tenant »** de una fila.
 
 El selector señala con una insignia **SecNumCloud** los tenants cualificados.
@@ -307,7 +307,7 @@ Puede subir o bajar de nivel: solicítelo a través del soporte desde la consola
 
 Todo lo que hace en la consola también es posible mediante programación.
 
-- **La API de la consola** da acceso al conjunto de sus funcionalidades. Se autentica en ella con una clave API, o *Personal Access Token* (PAT), vinculada a un tenant y al usuario que la creó. El detalle de las llamadas se puede consultar desde **Perfil > APIs**. Consulte la [documentación de la API](./api.md).
+- **La API de la consola** da acceso al conjunto de sus funcionalidades. Se autentica en ella con una clave API, o *Personal Access Token* (PAT), vinculada a un tenant y al usuario que la creó. El detalle de las llamadas se puede consultar desde el menú de usuario (su avatar, arriba a la derecha), entrada **APIs**. Consulte la [documentación de la API](./api.md).
 - **El provider Terraform** gestiona su plataforma *as code*. Consulte [Terraform Provider](/terraform).
 
 <img src={shivaOnboard_008} />
