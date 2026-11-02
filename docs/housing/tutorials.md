@@ -2,7 +2,7 @@
 title: Tutoriels
 ---
 
-Ces tutoriels vous aident à déployer et gérer un Bastion Cloud Temple depuis le portail Console.
+Ces tutoriels vous aideront à gérer votre hébergement Housing depuis la Console Cloud Temple.
 
 <div class="card">
   <h3>Tutorials</h3>

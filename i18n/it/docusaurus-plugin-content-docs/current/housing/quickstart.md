@@ -7,8 +7,8 @@ Questa guida **Quickstart Housing** ti accompagna per iniziare rapidamente con i
 ## Passo 1: Richiesta di hosting
 
 1. Accedi alla console Cloud Temple.
-2. Apri una pratica di servizio fornendo:
-   - Nome della tua organizzazione.
+2. Effettua il tuo ordine dal modulo __Ordini (Order)__. Per un'operazione non supportata dalla console, contatta il supporto. Specifica in particolare:
+   - Nome della tua organizzazione e del tenant.
    - Coordinate di un contatto (email e telefono).
    - Tipo di hosting desiderato (condiviso in 'U' o dedicato per rack).
    - Quantità e caratteristiche delle apparecchiature (dimensioni, peso, consumo, ecc.).

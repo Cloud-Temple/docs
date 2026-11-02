@@ -8,8 +8,8 @@ Dieser **Quickstart Housing** Leitfaden unterstützt Sie bei der schnellen Inbet
 ## Schritt 1: Hosting-Anfrage einreichen
 
 1. Rufen Sie die Cloud Temple-Konsole auf.
-2. Öffnen Sie einen Service-Ordner, indem Sie folgende Angaben machen:
-   - Name Ihrer Organisation.
+2. Geben Sie Ihre Bestellung über das Modul __Bestellungen (Order)__ auf. Wenden Sie sich bei einem Vorgang, den die Konsole nicht unterstützt, an den Support. Geben Sie insbesondere Folgendes an:
+   - Name Ihrer Organisation und des Tenants.
    - Kontaktdaten einer Kontaktperson (E-Mail und Telefonnummer).
    - Gewünschter Hosting-Typ (gemeinsam genutzte 'U'-Einheiten oder dediziertes Rack).
    - Menge und Spezifikationen der Hardware (Abmessungen, Gewicht, Stromverbrauch usw.).
