@@ -51,6 +51,12 @@ Ihre Ressourcen sind in **Tenants** organisiert, voneinander abgeschotteten Umge
   </div>
 
   <div class="card">
+    <h3>Support kontaktieren</h3>
+    <p>Beratung, Unterstützung zu Ihrem Konto, Incidents oder Professional Services: alle Ihre Anfragen an den Support.</p>
+    <a href="./console/console_quickstart#zugriff-auf-den-technischen-support" class="card-link">Technischer Support &rarr;</a>
+  </div>
+
+  <div class="card">
     <h3>Ressourcen bestellen</h3>
     <p>Verfügbarkeitszonen, Cluster, Speicher und Netzwerke, mit Verfolgung der Bestellungen.</p>
     <a href="./console/orders" class="card-link">Ressourcen bereitstellen &rarr;</a>

@@ -17,7 +17,7 @@ Occorre distinguere due percorsi:
 
 Le vostre risorse sono organizzate in **tenant**, ambienti isolati all'interno della vostra organizzazione, e distribuite in [regioni e zone di disponibilità](../additional_content/concepts_regional.md). I [concetti](./concepts.md) descrivono questo modello.
 
-## Cosa vi fate
+## Cosa potete fare
 
 <div class="card-grid">
   <div class="card">
@@ -48,6 +48,12 @@ Le vostre risorse sono organizzate in **tenant**, ambienti isolati all'interno d
     <h3>Seguire operazioni e incidenti</h3>
     <p>Interventi pianificati sulla piattaforma e incidenti in corso.</p>
     <a href="./console/status" class="card-link">Operazioni pianificate &rarr;</a>
+  </div>
+
+  <div class="card">
+    <h3>Contattare il supporto</h3>
+    <p>Consulenza, assistenza sul vostro account, incidenti o servizi professionali: tutte le vostre richieste al supporto.</p>
+    <a href="./console/console_quickstart#accesso-al-supporto-tecnico" class="card-link">Supporto tecnico &rarr;</a>
   </div>
 
   <div class="card">

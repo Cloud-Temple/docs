@@ -51,6 +51,12 @@ Vos ressources sont rangées dans des **tenants**, des environnements cloisonné
   </div>
 
   <div class="card">
+    <h3>Contacter le support</h3>
+    <p>Conseil, assistance sur votre compte, incident ou service professionnel : toutes vos demandes au support.</p>
+    <a href="./console/console_quickstart#accès-au-support-technique" class="card-link">Support technique &rarr;</a>
+  </div>
+
+  <div class="card">
     <h3>Commander des ressources</h3>
     <p>Zones de disponibilité, clusters, stockage et réseaux, avec le suivi des commandes.</p>
     <a href="./console/orders" class="card-link">Déployer des ressources &rarr;</a>

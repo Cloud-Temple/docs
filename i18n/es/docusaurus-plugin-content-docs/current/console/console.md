@@ -51,6 +51,12 @@ Sus recursos se organizan en **tenants**, entornos aislados dentro de su organiz
   </div>
 
   <div class="card">
+    <h3>Contactar con el soporte</h3>
+    <p>Asesoramiento, asistencia sobre su cuenta, incidentes o servicios profesionales: todas sus solicitudes al soporte.</p>
+    <a href="./console/console_quickstart#acceso-al-soporte-técnico" class="card-link">Soporte técnico &rarr;</a>
+  </div>
+
+  <div class="card">
     <h3>Encargar recursos</h3>
     <p>Zonas de disponibilidad, clústeres, almacenamiento y redes, con el seguimiento de los pedidos.</p>
     <a href="./console/orders" class="card-link">Desplegar recursos &rarr;</a>

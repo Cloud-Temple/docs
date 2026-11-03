@@ -51,6 +51,12 @@ Your resources are organised in **tenants**, isolated environments within your o
   </div>
 
   <div class="card">
+    <h3>Contact support</h3>
+    <p>Advice, account assistance, incidents or professional services: all your requests to support.</p>
+    <a href="./console/console_quickstart#access-to-technical-support" class="card-link">Technical support &rarr;</a>
+  </div>
+
+  <div class="card">
     <h3>Order resources</h3>
     <p>Availability zones, clusters, storage and networks, with order tracking.</p>
     <a href="./console/orders" class="card-link">Deploying resources &rarr;</a>

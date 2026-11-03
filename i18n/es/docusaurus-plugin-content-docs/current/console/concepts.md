@@ -15,11 +15,11 @@ Toda la plataforma se basa en dos niveles.
 ```
 Su organización
 ├── Tenant «producción»
-├── Tenant «preproducción»
+├── Tenant «aceptación»
 └── Tenant «laboratorio»
 ```
 
-El reparto en tenants le corresponde: por entorno (producción, preproducción), por aplicación o por criticidad. Puede añadir tenants en cualquier momento, y ningún producto se activa de oficio: usted elige los productos de cada tenant. El detalle está en [Organizaciones](./iam/concepts.md#organizaciones) y [Tenant](./iam/concepts.md#tenant).
+El reparto en tenants le corresponde: por entorno (producción, pruebas de aceptación), por aplicación o por criticidad. Puede añadir tenants en cualquier momento, y ningún producto se activa de oficio: usted elige los productos de cada tenant. El detalle está en [Organizaciones](./iam/concepts.md#organizaciones) y [Tenant](./iam/concepts.md#tenant).
 
 Los recursos de un tenant se despliegan en [regiones y zonas de disponibilidad](../additional_content/concepts_regional.md).
 
