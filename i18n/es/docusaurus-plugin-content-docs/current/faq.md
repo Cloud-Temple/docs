@@ -173,6 +173,8 @@ A continuación, encontrará las preguntas frecuentes sobre los productos y serv
 
 ---
 
+<a id="housing-colocation"></a>
+
 ## Housing
 
 <div class="book-grid">

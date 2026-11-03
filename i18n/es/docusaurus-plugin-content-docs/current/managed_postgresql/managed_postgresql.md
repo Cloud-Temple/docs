@@ -1,8 +1,8 @@
 ---
-title: Visión general de PostgreSQL Administrado
+title: Visión general de PostgreSQL gestionado
 ---
 
-# Visión general de PostgreSQL Administrado <span class="title-preview-badge">Preview</span>
+# Visión general de PostgreSQL gestionado <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

@@ -1,8 +1,8 @@
 ---
-title: Visión general de MariaDB Administrado
+title: Visión general de MariaDB gestionado
 ---
 
-# Visión general de MariaDB Administrado <span class="title-preview-badge">Preview</span>
+# Visión general de MariaDB gestionado <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

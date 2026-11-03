@@ -1,5 +1,5 @@
 ---
-title: Panoramica
+title: Panoramica di IaaS OpenSource
 ---
 
 L'**offerta IaaS OpenSource di Cloud Temple** : un'alleanza unica tra prestazioni, sicurezza e trasparenza.

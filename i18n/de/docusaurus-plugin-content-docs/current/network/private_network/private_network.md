@@ -1,5 +1,5 @@
 ---
-title: Übersicht über Private Network
+title: Private Netzwerke – Übersicht
 slug: /network/private_network
 ---
 

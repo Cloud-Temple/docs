@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Console overview
 ---
 
 ## The Cloud Temple Console

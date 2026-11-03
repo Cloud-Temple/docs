@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de la Console
 ---
 
 ## La Console Cloud Temple

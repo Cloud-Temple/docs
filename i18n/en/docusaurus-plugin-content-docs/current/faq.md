@@ -173,6 +173,8 @@ Find below the frequently asked questions regarding Cloud Temple products and se
 
 ---
 
+<a id="housing-colocation"></a>
+
 ## Housing
 
 <div class="book-grid">

@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: IaaS OpenSource overview
 ---
 
 The **Cloud Temple Open Source IaaS offering**: a unique alliance between performance, security, and transparency.
