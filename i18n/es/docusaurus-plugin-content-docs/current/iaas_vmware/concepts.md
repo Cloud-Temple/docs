@@ -143,7 +143,7 @@ El proceso de actualización está completamente automatizado. Para garantizar l
 ## Regiones y zonas de disponibilidad
 
 El producto IaaS VMware se despliega en una zona de disponibilidad.
-Una [zona de disponibilidad](../additional_content/concepts_az.md) forma parte de una [región](../additional_content/concepts_regional.md).
+Una [zona de disponibilidad](../additional_content/concepts_regional.md#zonas-de-disponibilidad) forma parte de una [región](../additional_content/concepts_regional.md).
 
 Este tipo de despliegue permite elegir la ubicación de los clústeres y repartirlos en diferentes zonas de disponibilidad (AZ).
 Esto ofrece un mejor reparto de la carga, maximiza la redundancia y facilita la implantación de un plan de recuperación ante desastres (DRP) en caso de incidente.

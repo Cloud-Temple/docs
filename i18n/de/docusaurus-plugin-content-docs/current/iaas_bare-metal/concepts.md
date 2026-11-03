@@ -69,7 +69,7 @@ Das Modell des verteilten Speichers trennt die Rechenleistung (Bare Metal-Server
 ## Regionen und Verfügbarkeitszonen
 
 Das Produkt Bare Metal wird in der Region FR1 in einer Verfügbarkeitszone bereitgestellt.
-Eine [Verfügbarkeitszone](../additional_content/concepts_az.md) ist Teil einer [Region](../additional_content/concepts_regional.md).
+Eine [Verfügbarkeitszone](../additional_content/concepts_regional.md#verfügbarkeitszonen) ist Teil einer [Region](../additional_content/concepts_regional.md).
 
 Sie wählen den Standort der Bare Metal-Server und können sie auf verschiedene Verfügbarkeitszonen (AZ) verteilen. Dies ermöglicht eine bessere Lastverteilung, maximiert die Redundanz und erleichtert die Umsetzung eines Notfallwiederherstellungsplans im Falle eines Vorfalls.
 

@@ -67,7 +67,7 @@ Il servizio VM Instances è distribuito nella regione **FR1**. Durante la creazi
 
 Per ulteriori informazioni sulle zone di disponibilità e sulle regioni Cloud Temple, consultare:
 
-- [Concetti delle zone di disponibilità](../../additional_content/concepts_az.md)
+- [Concetti delle zone di disponibilità](../../additional_content/concepts_regional.md#zone-di-disponibilità)
 - [Concetti delle regioni](../../additional_content/concepts_regional.md)
 
 ## Specifiche tecniche

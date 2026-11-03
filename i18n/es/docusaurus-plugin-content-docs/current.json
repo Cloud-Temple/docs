@@ -1,4 +1,8 @@
 {
+  "sidebar.docSidebar.doc.Régions et zones de disponibilité": {
+    "message": "Regiones y zonas de disponibilidad",
+    "description": "The label for the doc item 'Régions et zones de disponibilité' in sidebar 'docSidebar', linking to the doc additional_content/concepts_regional"
+  },
   "version.label": {
     "message": "Siguiente",
     "description": "The label for version current"
@@ -6,10 +10,6 @@
   "sidebar.docSidebar.category.Console": {
     "message": "Console",
     "description": "The label for category 'Console' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Contenu additionnel": {
-    "message": "Contenido adicional",
-    "description": "The label for category 'Contenu additionnel' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.Billing": {
     "message": "Billing",

@@ -69,7 +69,7 @@ Le modèle de stockage distribué sépare le calcul (serveurs Bare Metal) du sto
 ## Régions et zones de disponibilité
 
 Le produit Bare Metal est déployé dans la région FR1, dans une zone de disponibilité.
-Une [zone de disponibilité](../additional_content/concepts_az.md) fait partie d'une [région](../additional_content/concepts_regional.md).
+Une [zone de disponibilité](../additional_content/concepts_regional.md#zones-de-disponibilité) fait partie d'une [région](../additional_content/concepts_regional.md).
 
 Vous choisissez la localisation des serveurs Bare Metal et pouvez les répartir sur différentes zones de disponibilité (AZ). Cela offre une meilleure répartition de la charge, maximise la redondance et facilite la mise en place d'un plan de reprise d'activité en cas d'incident.
 

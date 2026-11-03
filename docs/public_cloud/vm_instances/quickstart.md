@@ -215,4 +215,4 @@ Consultez la [documentation Terraform](/terraform) pour l'installation et la con
 - [Documentation publique Cloud Temple](https://docs.cloud-temple.com/home)
 - [Référence API](https://shiva.cloud-temple.com/api/)
 - [Documentation Terraform](/terraform)
-- [Concepts des zones de disponibilité](../../additional_content/concepts_az.md)
+- [Concepts des zones de disponibilité](../../additional_content/concepts_regional.md#zones-de-disponibilité)

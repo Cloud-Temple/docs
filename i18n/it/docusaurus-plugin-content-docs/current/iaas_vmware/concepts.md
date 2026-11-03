@@ -143,7 +143,7 @@ Il processo di aggiornamento è interamente automatizzato. Per garantire la cont
 ## Regioni e zone di disponibilità
 
 Il prodotto IaaS VMware è distribuito in una zona di disponibilità.
-Una [zona di disponibilità](../additional_content/concepts_az.md) fa parte di una [regione](../additional_content/concepts_regional.md).
+Una [zona di disponibilità](../additional_content/concepts_regional.md#zone-di-disponibilità) fa parte di una [regione](../additional_content/concepts_regional.md).
 
 Questo tipo di distribuzione consente di scegliere la localizzazione dei cluster e di ripartirli su diverse zone di disponibilità (AZ).
 Ciò offre una migliore ripartizione del carico, massimizza la ridondanza e facilita l'implementazione di un piano di disaster recovery (DRP) in caso di incidente.
