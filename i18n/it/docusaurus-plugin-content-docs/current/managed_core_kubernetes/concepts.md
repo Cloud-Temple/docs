@@ -1,5 +1,5 @@
 ---
-title: Concetti
+title: Concetti (Core) di Managed Kubernetes
 sidebar_label: Concetti (Core)
 ---
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'

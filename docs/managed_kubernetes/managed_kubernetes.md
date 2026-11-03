@@ -1,11 +1,11 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de Managed Kubernetes
 ---
 
 import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 
-# Managed Kubernetes
+# Vue d'ensemble de Managed Kubernetes
 
 <div class="card-grid">
   <div class="card">

@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica del Marketplace
 ---
 
-# Marketplace
+# Panoramica del Marketplace
 
 La __Marketplace Cloud Temple__ offre un accesso semplificato alle soluzioni cloud essenziali e ai migliori software dei nostri partner editori, distribuiti in pochi clic in un ambiente sicuro.
 

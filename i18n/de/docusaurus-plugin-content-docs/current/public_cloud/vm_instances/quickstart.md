@@ -1,5 +1,5 @@
 ---
-title: Einstiegsguide
+title: Erste Schritte
 ---
 
 ## Voraussetzungen

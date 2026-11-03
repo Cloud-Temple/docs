@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 import openIaasVirtualMachinesList from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list.png'
 import openIaasVirtualMachinesListActions from '@site/docs/iaas_opensource/images/open_iaas_virtual_machines_list_actions.png'

@@ -1,5 +1,5 @@
 ---
-title: Guida introduttiva
+title: Guida introduttiva a OpenShift
 ---
 import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
 import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
@@ -8,7 +8,7 @@ import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png
 import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
 import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
-# Guida rapida per l'offerta OpenShift
+# Guida introduttiva a OpenShift
 
 Questa pagina ti guida attraverso i passaggi iniziali per utilizzare l'offerta **OpenShift** dalla console Cloud Temple. Segui queste istruzioni per esplorare i menu e le funzionalità disponibili.
 

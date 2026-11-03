@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Private Backbone overview
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Advanced Connectivity
+# Private Backbone overview
 
 > **Take full control of your network with extended level 2 connectivity, designed for hybrid architectures and custom configurations.**
 

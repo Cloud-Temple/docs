@@ -1,5 +1,5 @@
 ---
-title: Schnellstart
+title: Erste Schritte
 ---
 Willkommen im Schnellstart-Leitfaden für **Managed Kubernetes** von Cloud Temple.
 

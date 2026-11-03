@@ -1,5 +1,5 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva
 ---
 import S3ListBucket from '@site/docs/storage/oss/images/S3_list_bucket.png'
 import S3Accounts from '@site/docs/storage/oss/images/S3_accounts.png'

@@ -1,5 +1,5 @@
 ---
-title: Überblick
+title: Übersicht
 ---
 
 Das **IaaS-OpenSource-Angebot von Cloud Temple**: eine einzigartige Verbindung aus Leistung, Sicherheit und Transparenz.

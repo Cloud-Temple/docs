@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über Managed PostgreSQL
 ---
 
-# Managed PostgreSQL <span class="title-preview-badge">Vorschau</span>
+# Übersicht über Managed PostgreSQL <span class="title-preview-badge">Vorschau</span>
 
 <div class="card-grid">
   <div class="card">

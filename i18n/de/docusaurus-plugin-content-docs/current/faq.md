@@ -173,13 +173,13 @@ Hier finden Sie die häufig gestellten Fragen zu den Produkten und Diensten von 
 
 ---
 
-## Housing (Colocation)
+## Colocation
 
 <div class="book-grid">
   <a class="book-card book-card--orange" href="./housing/faq">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
-      <div class="book-card-title">Housing</div>
+      <div class="book-card-title">Colocation</div>
       <div class="book-card-desc">Rubrik in Vorbereitung.</div>
       <div class="book-card-cta">FAQ ansehen →</div>
     </div>

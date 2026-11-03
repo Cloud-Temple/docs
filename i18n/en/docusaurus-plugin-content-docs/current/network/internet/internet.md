@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Internet offering overview
 ---
 
-# Internet
+# Internet offering overview
 
 Cloud Temple provides its clients with blocks of __public IP addresses__ of at least 1 IPv4, or 64 IPv6, registered with RIPE, to enable your Internet connectivity.
 

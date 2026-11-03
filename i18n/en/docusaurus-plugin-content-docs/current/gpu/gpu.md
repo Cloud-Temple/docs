@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: GPU overview
 ---
 
-# GPU
+# GPU overview
 
 **GPU** provides access to NVIDIA H100 and L40S graphics cards to accelerate your artificial intelligence, machine learning and high-performance computing workloads. GPUs are offered within the IaaS and PaaS offerings: Bare Metal compute blades, virtual machines, OpenShift worker nodes and Kubernetes nodes.
 

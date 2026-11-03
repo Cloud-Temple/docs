@@ -1,9 +1,9 @@
 ---
-title: Übersicht
+title: Übersicht über VPC
 slug: /network/vpc
 ---
 
-# VPC
+# Übersicht über VPC
 
 Der VPC (Virtual Private Cloud) von Cloud Temple ist ein verwalteter Netzwerkdienst mit **SecNumCloud**-Zertifizierung, der die vollständig automatisierte Erstellung privater, isolierter und sicherer Umgebungen ermöglicht. Entwickelt für ein cloud-native Erlebnis, vereinfacht er das Management von Datenflüssen, dem Internetzugang und IP-Adressen, während er gleichzeitig die Souveränität Ihrer Daten gewährleistet.
 

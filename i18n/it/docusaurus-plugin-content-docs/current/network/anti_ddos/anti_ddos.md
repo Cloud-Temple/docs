@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di Anti-DDoS
 ---
 
-# Anti-DDoS
+# Panoramica di Anti-DDoS
 
 L'**Anti-DDoS** protegge i vostri servizi pubblicati su Internet dagli attacchi volumetrici di tipo DDoS (Distributed Denial of Service). Il traffico in ingresso è monitorato in modo permanente e il traffico illegittimo viene filtrato a monte, prima che raggiunga i vostri servizi.
 

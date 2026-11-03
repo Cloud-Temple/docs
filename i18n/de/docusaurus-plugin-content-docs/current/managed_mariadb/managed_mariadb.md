@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über Managed MariaDB
 ---
 
-# Managed MariaDB <span class="title-preview-badge">Preview</span>
+# Übersicht über Managed MariaDB <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di Bare Metal
 ---
 
-# Bare metal
+# Panoramica di Bare Metal
 
 Il prodotto __Bare Metal__ di Cloud Temple offre server dedicati, completamente personalizzabili, per soddisfare le esigenze dei clienti alla ricerca di un'autonomia totale sulla propria infrastruttura.
 

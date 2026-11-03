@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'IaaS VMware
 ---
 
-# IaaS VMware
+# Vue d'ensemble de l'IaaS VMware
 
 L'**offre IaaS VMware** est conçue pour répondre aux besoins critiques des entreprises en matière de performance, de sécurité et de continuité d'activité. Avec des ressources dédiées, une infrastructure qualifiée **SecNumCloud**, et des options entièrement automatisées, ce service garantit une fiabilité optimale pour vos charges de travail sensibles.
 

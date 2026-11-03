@@ -1,9 +1,9 @@
 ---
-title: Product News
+title: Product updates
 sidebar_position: 999
 ---
 
-# Product News & Updates
+# Product updates
 
 > This changelog lists only new features and significant enhancements to the Cloud Temple platform.
 > Bug fixes are intentionally excluded.

@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'

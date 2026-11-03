@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di PostgreSQL Gestito
 ---
 
-# PostgreSQL Gestito <span class="title-preview-badge">Preview</span>
+# Panoramica di PostgreSQL Gestito <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

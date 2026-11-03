@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de VM Instances
 ---
 
-# VM Instances
+# Vue d'ensemble de VM Instances
 
 Le service **VM Instances** de Cloud Temple est qualifié **SecNumCloud**. Il permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante, en combinant la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
 

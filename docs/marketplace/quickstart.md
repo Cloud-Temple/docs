@@ -1,10 +1,10 @@
 ---
-title: Guide de démarrage
+title: Guide de démarrage de la Marketplace
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# QuickStart pour la Marketplace Cloud Temple
+# Guide de démarrage de la Marketplace
 
 Cette page vous guide à travers les étapes initiales pour utiliser la **Marketplace Cloud Temple** depuis la console. Suivez ces instructions pour découvrir les solutions disponibles et les déployer rapidement.
 

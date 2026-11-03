@@ -1,5 +1,5 @@
 ---
-title: Guida rapida
+title: Guida introduttiva
 ---
 
 Questa guida **Quickstart Housing** ti accompagna per iniziare rapidamente con il prodotto di hosting fisico Cloud Temple. Copre i passaggi essenziali per effettuare una richiesta di hosting, configurare le apparecchiature e usufruire dei servizi aggiuntivi.

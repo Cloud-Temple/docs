@@ -1,8 +1,8 @@
 ---
-title: Getting Started Guide
+title: Getting started with the Terraform provider
 ---
 
-# Quick Start Guide
+# Getting started with the Terraform provider
 
 This guide walks you step by step through deploying your first Cloud Temple infrastructure with Terraform.
 

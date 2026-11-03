@@ -1,9 +1,9 @@
 ---
-title: Databases
+title: Bases de données
 displayed_sidebar: docSidebar
 ---
 
-# Databases
+# Bases de données
 
 Les bases de données managées de Cloud Temple vous déchargent de la gestion opérationnelle (sauvegardes, mises à jour, haute disponibilité) tout en restant hébergées sur une infrastructure souveraine qualifiée SecNumCloud.
 

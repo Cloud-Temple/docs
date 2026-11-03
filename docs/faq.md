@@ -4,7 +4,7 @@ sidebar_position: 1
 hide_table_of_contents: true
 ---
 
-# Foire aux questions
+# Questions fréquentes
 
 Retrouvez ci-dessous les questions fréquemment posées sur les produits et services Cloud Temple.
 
@@ -173,13 +173,13 @@ Retrouvez ci-dessous les questions fréquemment posées sur les produits et serv
 
 ---
 
-## Housing (colocation)
+## Colocation
 
 <div class="book-grid">
   <a class="book-card book-card--orange" href="./housing/faq">
     <div class="book-card-spine"></div>
     <div class="book-card-body">
-      <div class="book-card-title">Housing</div>
+      <div class="book-card-title">Colocation</div>
       <div class="book-card-desc">Rubrique en cours de rédaction.</div>
       <div class="book-card-cta">Consulter la FAQ →</div>
     </div>

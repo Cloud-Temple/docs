@@ -1,9 +1,9 @@
 ---
-title: Tutoriel OCR
+title: Reconnaissance de documents (OCR) avec DeepSeek
 sidebar_position: 4
 ---
 
-# Guide : Maîtriser l'OCR avec DeepSeek
+# Reconnaissance de documents (OCR) avec DeepSeek
 
 Ce guide détaille l'utilisation du modèle **DeepSeek-OCR**, une solution de pointe pour la compression optique de contexte et l'analyse de documents.
 

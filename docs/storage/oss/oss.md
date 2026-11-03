@@ -1,9 +1,9 @@
 ---
-title: Object Storage Service (OSS)
+title: Vue d'ensemble du Stockage Objet (OSS)
 sidebar_position: 1
 ---
 
-# Object Storage Service (OSS)
+# Vue d'ensemble du Stockage Objet (OSS)
 
 ## Vue d'ensemble
 

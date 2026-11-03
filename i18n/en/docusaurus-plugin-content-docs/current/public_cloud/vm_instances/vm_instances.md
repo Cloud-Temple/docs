@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: VM Instances overview
 ---
 
-# VM Instances
+# VM Instances overview
 
 The **VM Instances** service by Cloud Temple is **SecNumCloud** certified. It enables the rapid deployment of virtual machines on a shared, high-performance infrastructure, combining the flexibility of a public cloud with the security guarantees of a sovereign cloud.
 

@@ -1,9 +1,9 @@
 ---
-title: Security & Identity
+title: Seguridad e identidad
 displayed_sidebar: docSidebar
 ---
 
-# Security & Identity
+# Seguridad e identidad
 
 Gestione identidades, derechos de acceso y la seguridad de su infraestructura Cloud Temple desde un panel centralizado. Aplique el principio de mínimo privilegio y supervise actividades sospechosas en tiempo real.
 

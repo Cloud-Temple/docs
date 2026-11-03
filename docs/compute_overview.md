@@ -1,9 +1,9 @@
 ---
-title: Compute
+title: Calcul
 displayed_sidebar: docSidebar
 ---
 
-# Compute
+# Calcul
 
 Les services Compute de Cloud Temple vous permettent de déployer et d'opérer des machines virtuelles sur une infrastructure souveraine et sécurisée. Choisissez la technologie qui correspond à vos besoins : instances cloud mutualisées, infrastructure open source ou virtualisation VMware.
 

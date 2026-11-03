@@ -1,9 +1,9 @@
 ---
-title: AI
+title: IA
 displayed_sidebar: docSidebar
 ---
 
-# AI
+# IA
 
 I servizi di intelligenza artificiale di Cloud Temple consentono di utilizzare modelli di IA e di accelerare i calcoli su un'infrastruttura sovrana ospitata in Francia. Scegliete il servizio adatto alle vostre esigenze: modelli pronti all'uso accessibili tramite API, oppure potenza di calcolo GPU per i vostri carichi di lavoro.
 

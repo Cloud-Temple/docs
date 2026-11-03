@@ -1,9 +1,9 @@
 ---
-title: Getting Started Guide
+title: Getting started with LLMaaS
 sidebar_position: 3
 ---
 
-# Quick Start Guide
+# Getting started with LLMaaS
 
 This guide allows you to make your first request to the LLMaaS API in less than 5 minutes.
 

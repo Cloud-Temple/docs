@@ -1,9 +1,9 @@
 ---
-title: Einstiegsguide
+title: Erste Schritte mit LLMaaS
 sidebar_position: 3
 ---
 
-# Schnellstartanleitung
+# Erste Schritte mit LLMaaS
 
 Dieser Leitfaden ermöglicht es Ihnen, Ihre erste Anfrage an die LLMaaS-API in weniger als 5 Minuten zu stellen.
 

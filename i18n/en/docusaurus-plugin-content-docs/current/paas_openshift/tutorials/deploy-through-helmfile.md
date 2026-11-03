@@ -1,8 +1,8 @@
 ---
-title : Deploy via HelmFile
+title: Deploy with Helmfile
 ---
 
-# Deploying with Helmfile
+# Deploy with Helmfile
 
 ---
 

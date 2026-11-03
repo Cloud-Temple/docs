@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 
 

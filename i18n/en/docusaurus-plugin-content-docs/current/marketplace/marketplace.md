@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Marketplace overview
 ---
 
-# Marketplace
+# Marketplace overview
 
 The __Cloud Temple Marketplace__ provides simplified access to essential cloud solutions and top-tier software from our publisher partners, deployed in just a few clicks within a secure environment.
 

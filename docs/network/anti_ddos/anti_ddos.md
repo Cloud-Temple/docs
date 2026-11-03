@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'Anti-DDoS
 ---
 
-# Anti-DDoS
+# Vue d'ensemble de l'Anti-DDoS
 
 L'**Anti-DDoS** protège vos services publiés sur Internet contre les attaques par déni de service distribué (DDoS) de type volumétrique. Le trafic entrant est surveillé en permanence et le trafic illégitime est filtré en amont, avant d'atteindre vos services.
 

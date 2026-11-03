@@ -1,5 +1,5 @@
 ---
-title : Bereitstellen über HelmFile
+title: Bereitstellen mit Helmfile
 ---
 
 # Bereitstellen mit Helmfile

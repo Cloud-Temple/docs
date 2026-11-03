@@ -1,9 +1,9 @@
 ---
-title: Servicio de Almacenamiento de Objetos (OSS)
+title: Visión general del Servicio de Almacenamiento de Objetos (OSS)
 sidebar_position: 1
 ---
 
-# Servicio de Almacenamiento de Objetos (OSS)
+# Visión general del Servicio de Almacenamiento de Objetos (OSS)
 
 ## Visión general
 

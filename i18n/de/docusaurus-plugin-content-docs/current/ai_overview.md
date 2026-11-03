@@ -1,9 +1,9 @@
 ---
-title: AI
+title: KI
 displayed_sidebar: docSidebar
 ---
 
-# AI
+# KI
 
 Mit den KI-Diensten von Cloud Temple nutzen Sie KI-Modelle und beschleunigen Ihre Berechnungen auf einer souveränen, in Frankreich gehosteten Infrastruktur. Wählen Sie den Dienst, der Ihrem Bedarf entspricht: sofort einsatzbereite, per API zugängliche Modelle oder GPU-Rechenleistung für Ihre eigenen Workloads.
 

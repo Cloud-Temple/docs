@@ -1,9 +1,9 @@
 ---
-title: Visión general
+title: Visión general de LLM como Servicio (LLMaaS)
 sidebar_position: 1
 ---
 
-# LLM como Servicio (LLMaaS)
+# Visión general de LLM como Servicio (LLMaaS)
 
 LLMaaS proporciona acceso a los modelos de IA alojados por Cloud Temple a través de una API: asistentes conversacionales, programación y agentes, análisis de imágenes, búsqueda semántica, reranking, traducción y usos de audio/imagen.
 

@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general de IAM
 ---
 
-# Identity Access Management
+# Visión general de IAM
 
 El módulo IAM (Identity Access Management) de la consola Cloud Temple ofrece una solución completa para la gestión de identidades y accesos.
 Permite administrar cuentas locales al tiempo que admite la hibridación con configuraciones externas, compatibles con los protocolos estándar del mercado como OIDC y SAML, para satisfacer las necesidades de flexibilidad y seguridad de los entornos modernos.

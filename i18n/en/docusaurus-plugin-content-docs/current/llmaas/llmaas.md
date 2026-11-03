@@ -1,9 +1,9 @@
 ---
-title: Overview
+title: LLM as a Service (LLMaaS) overview
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# LLM as a Service (LLMaaS) overview
 
 LLMaaS provides access to AI models hosted by Cloud Temple via an API: conversational assistants, coding and agents, image analysis, semantic search, reranking, translation, and audio/image use cases.
 

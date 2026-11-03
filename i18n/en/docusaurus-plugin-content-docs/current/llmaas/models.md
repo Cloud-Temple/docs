@@ -3,7 +3,7 @@ title: AI Models Catalog
 sidebar_position: 2
 ---
 
-# LLM as a Service Models Catalog
+# LLMaaS AI Models Catalog
 
 ## View the updated catalog
 

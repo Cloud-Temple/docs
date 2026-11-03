@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Getting started with VPC
 ---
 import newTabNetwork from '@site/docs/network/vpc/images/new_tab_network.png'
 import vpcCreateButton from '@site/docs/network/vpc/images/vpc_create_button.png'
@@ -15,7 +15,7 @@ import vpcNewStaticIps from '@site/docs/network/vpc/images/vpc_new_static_ips.pn
 import vpcNewStaticIpsModale from '@site/docs/network/vpc/images/vpc_new_static_ips_modale.png'
 import vpcStaticIpsAssociate from '@site/docs/network/vpc/images/vpc_static_ips_associate_png.png'
 
-# VPC Quickstart
+# Getting started with VPC
 
 This guide walks you through creating your first Virtual Private Cloud (VPC) and deploying your first private networks.
 

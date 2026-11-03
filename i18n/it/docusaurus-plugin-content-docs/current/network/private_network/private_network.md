@@ -1,5 +1,5 @@
 ---
-title: Panoramica
+title: Panoramica di Private Network
 slug: /network/private_network
 ---
 

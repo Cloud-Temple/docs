@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica dell'offerta Internet
 ---
 
-# Internet
+# Panoramica dell'offerta Internet
 
 Cloud Temple mette a disposizione dei propri clienti blocchi di __indirizzi IP pubblici__ di almeno 1 IPv4 o 64 IPv6, assegnati dal RIPE, per garantire la connettività Internet.
 

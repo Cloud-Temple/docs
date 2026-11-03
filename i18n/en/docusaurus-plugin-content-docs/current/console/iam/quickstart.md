@@ -1,9 +1,9 @@
 ---
-title: Frequently asked questions
+title: Frequently asked questions about IAM
 ---
 import shivaOnboard_001 from '@site/docs/console/iam/images/shiva_onboard_001.png'
 
-# IAM FAQ
+# Frequently asked questions about IAM
 
 Common questions about accounts, permissions and access to the Console. Step-by-step procedures are in [Onboarding](../onboarding.md); the complete reference is in the [IAM concepts](concepts.md).
 
