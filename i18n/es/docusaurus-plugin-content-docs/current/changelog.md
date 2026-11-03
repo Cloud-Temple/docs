@@ -1,9 +1,9 @@
 ---
-title: Registro de Cambios
+title: Historial de la documentación
 sidebar_position: 2
 ---
 
-# Registro de Cambios
+# Historial de la documentación
 
 ### 30 de octubre de 2026 : Consola v5.1.0
 

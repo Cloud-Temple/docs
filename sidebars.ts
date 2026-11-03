@@ -57,11 +57,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
-      id: 'changelog',
-      label: 'Historique de la documentation',
-    },
-    {
-      type: 'doc',
       id: 'changelog_produits',
       label: 'Nouveautés produits',
     },
@@ -595,6 +590,11 @@ const sidebars: SidebarsConfig = {
       type: 'link',
       label: 'Page de statut',
       href: 'https://status.cloud-temple.com/',
+    },
+    {
+      type: 'doc',
+      id: 'changelog',
+      label: 'Historique de la documentation',
     },
   ],
 };

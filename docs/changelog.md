@@ -1,9 +1,9 @@
 ---
-title: Suivi des Changements
+title: Historique de la documentation
 sidebar_position: 2
 ---
 
-# Suivi des Changements
+# Historique de la documentation
 
 ### 30 Octobre 2026 : Console v5.1.0
 

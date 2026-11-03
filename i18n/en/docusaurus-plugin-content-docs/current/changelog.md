@@ -1,9 +1,9 @@
 ---
-title: Changelog
+title: Documentation changelog
 sidebar_position: 2
 ---
 
-# Changelog
+# Documentation changelog
 
 ### October 30, 2026: Console v5.1.0
 
