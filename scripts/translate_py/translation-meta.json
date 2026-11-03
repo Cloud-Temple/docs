@@ -30,6 +30,12 @@
       "es": "a7d3af87e10559d66a70330819e0f4ff44ebfd88f38836f522281af465198953",
       "it": "a7d3af87e10559d66a70330819e0f4ff44ebfd88f38836f522281af465198953"
     },
+    "bastion/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "bastion/quickstart.md": {
       "en": "11e2e3a401b99b7875bfcf28a65b861ea9e261c9e9f19d2012441ac5f4040bea",
       "de": "11e2e3a401b99b7875bfcf28a65b861ea9e261c9e9f19d2012441ac5f4040bea",
@@ -247,10 +253,10 @@
       "it": "86de3978e89198f284d81e1945653f7fd46a485c35802dc22e8ef819733c90ee"
     },
     "faq.md": {
-      "en": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
-      "de": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
-      "es": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7",
-      "it": "94ea8436cd96f9bc2760ed58357aa7db1826ef4d25a227fdf7ab7ec13171a4e7"
+      "en": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
+      "de": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
+      "es": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
+      "it": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627"
     },
     "gpu/concepts.md": {
       "en": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
@@ -258,11 +264,29 @@
       "es": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
       "it": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30"
     },
+    "gpu/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "gpu/gpu.md": {
       "en": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
       "de": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
       "es": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0",
       "it": "f7d703fc113a63298accd27cda69511b8b5839623b2fadd6f5af3c497bfec2a0"
+    },
+    "gpu/quickstart.md": {
+      "en": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "de": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "es": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "it": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580"
+    },
+    "gpu/tutorials.md": {
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
     },
     "home.md": {
       "en": "1fe7366b6072cc4dd9f63bdba125668c3928595a13ca913c4f7f4cb5aa2fa84b",
@@ -275,6 +299,12 @@
       "de": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33",
       "es": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33",
       "it": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33"
+    },
+    "housing/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "housing/housing.md": {
       "en": "6a5be1fdca2211fd66909921a34026fd578ab5bf5398bbd10d8ba7db739613c5",
@@ -289,16 +319,22 @@
       "it": "e6c84088d60648f23664a3a372301185374af76f4a37bfcaf6e0f12e2f3d7ffd"
     },
     "housing/tutorials.md": {
-      "en": "6905ca4c43cea19a896e9a76f5217e41fd75e460a9e7e269f3b020a548ae2738",
-      "de": "6905ca4c43cea19a896e9a76f5217e41fd75e460a9e7e269f3b020a548ae2738",
-      "es": "6905ca4c43cea19a896e9a76f5217e41fd75e460a9e7e269f3b020a548ae2738",
-      "it": "6905ca4c43cea19a896e9a76f5217e41fd75e460a9e7e269f3b020a548ae2738"
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
     },
     "iaas_bare-metal/concepts.md": {
       "en": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
       "de": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
       "es": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
       "it": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1"
+    },
+    "iaas_bare-metal/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_bare-metal/iaas_bare-metal.md": {
       "en": "3441cef079a716c6b06d5a079fed50a1771eda8471ed76b3450b645791a7f03a",
@@ -313,16 +349,22 @@
       "it": "6414cbc305585fa899634bb063dcfc96a62c3710299ef3fced507aebd7a3ecd7"
     },
     "iaas_bare-metal/tutorials.md": {
-      "en": "ea2704db25b3315a99e4bdeb594d743d88f73da8e62a9fe353088a673131f852",
-      "de": "ea2704db25b3315a99e4bdeb594d743d88f73da8e62a9fe353088a673131f852",
-      "es": "ea2704db25b3315a99e4bdeb594d743d88f73da8e62a9fe353088a673131f852",
-      "it": "ea2704db25b3315a99e4bdeb594d743d88f73da8e62a9fe353088a673131f852"
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
     },
     "iaas_opensource/concepts.md": {
       "en": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
       "de": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
       "es": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
       "it": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f"
+    },
+    "iaas_opensource/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_opensource/iaas_opensource.md": {
       "en": "4d27fd397c405d991e5198494e7d40b293a2eb2223c26e7d55a4371e2c796d87",
@@ -365,6 +407,12 @@
       "de": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b",
       "es": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b",
       "it": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b"
+    },
+    "iaas_vmware/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_vmware/iaas_vmware.md": {
       "en": "8ab7499f394fc125df5c8e58bbb06d3a9d953eb4a8206029e52c119ba69ff692",
@@ -485,6 +533,12 @@
       "de": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b",
       "es": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b",
       "it": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b"
+    },
+    "managed_kubernetes/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "managed_kubernetes/managed_kubernetes.md": {
       "en": "390ed811c610a47bb3efc4d0235cad47c8a07568c0f6f3cebc64d1bc9a3ca4b7",
@@ -612,6 +666,12 @@
       "es": "1f56deab4e9f5a347c0886af01b64823a247519f69c08a114408e8fc95de4cea",
       "it": "1f56deab4e9f5a347c0886af01b64823a247519f69c08a114408e8fc95de4cea"
     },
+    "marketplace/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "marketplace/marketplace.md": {
       "en": "049051ed6337f1bd4489e36b700ee7f7063d126d9c8291f7c3b0d1d51ee75f75",
       "de": "049051ed6337f1bd4489e36b700ee7f7063d126d9c8291f7c3b0d1d51ee75f75",
@@ -666,6 +726,24 @@
       "es": "2484fd3d62b9195fc5a28c8091bf8caee9d41c8255b4a34344f75dfe068ea76d",
       "it": "2484fd3d62b9195fc5a28c8091bf8caee9d41c8255b4a34344f75dfe068ea76d"
     },
+    "network/anti_ddos/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
+    "network/anti_ddos/quickstart.md": {
+      "en": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "de": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "es": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580",
+      "it": "891a9e9b21cbd73ead0e350608ab4904cf7fab4593cf7052a6a6f1e5fb168580"
+    },
+    "network/anti_ddos/tutorials.md": {
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
+    },
     "network/internet/advanced_concepts.md": {
       "en": "2453b90d81afe3c1efc520146f33ee2039b19ca4c80f98d9cdc28d1def78e512",
       "de": "2453b90d81afe3c1efc520146f33ee2039b19ca4c80f98d9cdc28d1def78e512",
@@ -677,6 +755,12 @@
       "de": "bf5b06cd8106ff05eed259eaa84bcb2ff66b17116d3913a16ef05f39cdf850ae",
       "es": "bf5b06cd8106ff05eed259eaa84bcb2ff66b17116d3913a16ef05f39cdf850ae",
       "it": "bf5b06cd8106ff05eed259eaa84bcb2ff66b17116d3913a16ef05f39cdf850ae"
+    },
+    "network/internet/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "network/internet/internet.md": {
       "en": "a579fe1760bfa5d6039f83449a6302e8e0e85663178449c94782a03cfd3892bf",
@@ -726,6 +810,12 @@
       "es": "ce95b4f622e049bd9dbd28b919c23e6b1e967c03a4908c4f380acd6641da7e35",
       "it": "ce95b4f622e049bd9dbd28b919c23e6b1e967c03a4908c4f380acd6641da7e35"
     },
+    "network/private_backbone/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "network/private_backbone/private_backbone.md": {
       "en": "89f133cfef5e449b94de8091a1cb45105c61448323a370b7f17dc412cdb8e682",
       "de": "89f133cfef5e449b94de8091a1cb45105c61448323a370b7f17dc412cdb8e682",
@@ -750,6 +840,12 @@
       "es": "9314df2a2eac26465a9e094142915442da5451a60e0aa104c2ee02a3d5c0f765",
       "it": "9314df2a2eac26465a9e094142915442da5451a60e0aa104c2ee02a3d5c0f765"
     },
+    "network/private_network/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "network/private_network/private_network.md": {
       "en": "1d8c064221201fc0ac3b7baf2812431479731f474777e433c8e2d1139d80742f",
       "de": "1d8c064221201fc0ac3b7baf2812431479731f474777e433c8e2d1139d80742f",
@@ -762,11 +858,23 @@
       "es": "fe41bd2dbf20763065f8456c74f3569fcf1060385aaf8ddb2f6b11e025c1952f",
       "it": "fe41bd2dbf20763065f8456c74f3569fcf1060385aaf8ddb2f6b11e025c1952f"
     },
+    "network/private_network/tutorials.md": {
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
+    },
     "network/vpc/concepts.md": {
       "en": "1497f973915fe174644775a1568c8be8891d3726724f400d0292f0e177a61cda",
       "de": "1497f973915fe174644775a1568c8be8891d3726724f400d0292f0e177a61cda",
       "es": "1497f973915fe174644775a1568c8be8891d3726724f400d0292f0e177a61cda",
       "it": "1497f973915fe174644775a1568c8be8891d3726724f400d0292f0e177a61cda"
+    },
+    "network/vpc/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "network/vpc/quickstart.md": {
       "en": "00f9ec7ac03c8c8067f4e5af6b718eb9f8c6e9419a17b00a3e491fea27dcd4d6",
@@ -791,6 +899,12 @@
       "de": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
       "es": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
       "it": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a"
+    },
+    "paas_openshift/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "paas_openshift/paas_openshift.md": {
       "en": "74277e7b8bf261adb8d04948a416c8e36499bfcf1e901ebc563dc3f06439ddfe",
@@ -965,6 +1079,12 @@
       "de": "fac596ff4a66ff49cbde6dbfcb9ba914d4854b34ec5b0ebaf1bedd58ac091fbc",
       "es": "fac596ff4a66ff49cbde6dbfcb9ba914d4854b34ec5b0ebaf1bedd58ac091fbc",
       "it": "fac596ff4a66ff49cbde6dbfcb9ba914d4854b34ec5b0ebaf1bedd58ac091fbc"
+    },
+    "terraform/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "terraform/quickstart.md": {
       "en": "3507e021523367f311f0dfe1e02ff4a0d8a97841993c4cdd9cf3053bc4ffacc2",
