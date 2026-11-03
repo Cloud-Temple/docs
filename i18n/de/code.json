@@ -309,5 +309,33 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "emptySection.quickstart.title": {
+    "message": "Erste Schritte",
+    "description": "Titre de la carte d'un guide de démarrage vide"
+  },
+  "emptySection.tutorials.title": {
+    "message": "Tutorials",
+    "description": "Titre de la carte d'une rubrique Tutoriels vide"
+  },
+  "emptySection.faq.title": {
+    "message": "Häufig gestellte Fragen",
+    "description": "Titre de la carte d'une rubrique Questions fréquentes vide"
+  },
+  "emptySection.quickstart.message": {
+    "message": "Noch ist keine Anleitung für den Einstieg verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei!",
+    "description": "Message d'un guide de démarrage vide"
+  },
+  "emptySection.tutorials.message": {
+    "message": "Noch ist kein Tutorial verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei!",
+    "description": "Message d'une rubrique Tutoriels vide"
+  },
+  "emptySection.faq.message": {
+    "message": "Noch sind keine häufig gestellten Fragen verfügbar, aber wir arbeiten aktiv daran. Schauen Sie bald wieder vorbei!",
+    "description": "Message d'une rubrique Questions fréquentes vide"
+  },
+  "emptySection.homeLink": {
+    "message": "Zur Startseite →",
+    "description": "Lien vers la page d'accueil depuis une rubrique vide"
   }
 }
