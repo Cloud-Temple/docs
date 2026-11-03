@@ -67,7 +67,7 @@ The VM Instances service is deployed in the **FR1** region. When creating a virt
 
 To learn more about availability zones and Cloud Temple regions, see:
 
-- [Availability Zone Concepts](../../additional_content/concepts_az.md)
+- [Availability Zone Concepts](../../additional_content/concepts_regional.md#availability-zones)
 - [Region Concepts](../../additional_content/concepts_regional.md)
 
 ## Technical specifications

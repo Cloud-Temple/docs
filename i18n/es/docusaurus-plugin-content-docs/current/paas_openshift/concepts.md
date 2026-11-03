@@ -129,7 +129,7 @@ Si estos recursos no son suficientes para soportar sus cargas de trabajo, puede 
 
 ### Generalidades
 
-La plataforma Red Hat OpenShift de Cloud Temple está diseñada como un producto regional, desplegada nativamente en [**tres zonas de disponibilidad distintas**](../additional_content/concepts_az.md) dentro de la misma [región](../additional_content/concepts_regional.md) de Cloud Temple. Esta arquitectura tri-zonal aumenta significativamente la disponibilidad y resiliencia de los datos.
+La plataforma Red Hat OpenShift de Cloud Temple está diseñada como un producto regional, desplegada nativamente en [**tres zonas de disponibilidad distintas**](../additional_content/concepts_regional.md#zonas-de-disponibilidad) dentro de la misma [región](../additional_content/concepts_regional.md) de Cloud Temple. Esta arquitectura tri-zonal aumenta significativamente la disponibilidad y resiliencia de los datos.
 
 La plataforma se compone de un plano de control y nodos de trabajo, todos gestionados por la infraestructura de Cloud Temple. El plano de control se distribuye equitativamente entre las tres zonas de disponibilidad, garantizando una gestión centralizada y segura. Los nodos de trabajo, por su parte, se representan mediante láminas de cálculo, dispuestas de forma que cada zona de disponibilidad contenga una.
 

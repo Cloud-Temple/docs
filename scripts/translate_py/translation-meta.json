@@ -1,16 +1,16 @@
 {
   "files": {
     "additional_content/concepts_az.md": {
-      "en": "5cbd7f8c41aa565196086deba38a32582f7f7e21efa9b3023b398b42342f75ed",
-      "de": "5cbd7f8c41aa565196086deba38a32582f7f7e21efa9b3023b398b42342f75ed",
-      "es": "5cbd7f8c41aa565196086deba38a32582f7f7e21efa9b3023b398b42342f75ed",
-      "it": "5cbd7f8c41aa565196086deba38a32582f7f7e21efa9b3023b398b42342f75ed"
+      "en": "f349c7a6d3303a543c8dd283f2b947857c42a23d1fd43579ac320ee777fa92e5",
+      "de": "f349c7a6d3303a543c8dd283f2b947857c42a23d1fd43579ac320ee777fa92e5",
+      "es": "f349c7a6d3303a543c8dd283f2b947857c42a23d1fd43579ac320ee777fa92e5",
+      "it": "f349c7a6d3303a543c8dd283f2b947857c42a23d1fd43579ac320ee777fa92e5"
     },
     "additional_content/concepts_regional.md": {
-      "en": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093",
-      "de": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093",
-      "es": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093",
-      "it": "3ba875920a8433570039e54bcda034c46d88b0a9205b52ff15dba36557ad8093"
+      "en": "9cf7c131c0a0cc8e13e05cfe0f070cae0d768396d30effd8fc3a595b1f957ccb",
+      "de": "9cf7c131c0a0cc8e13e05cfe0f070cae0d768396d30effd8fc3a595b1f957ccb",
+      "es": "9cf7c131c0a0cc8e13e05cfe0f070cae0d768396d30effd8fc3a595b1f957ccb",
+      "it": "9cf7c131c0a0cc8e13e05cfe0f070cae0d768396d30effd8fc3a595b1f957ccb"
     },
     "ai_overview.md": {
       "en": "2923271c64fac4c1670e53152f8683198581bf83e6d45de0030716abfc24fd7e",
@@ -295,10 +295,10 @@
       "it": "6905ca4c43cea19a896e9a76f5217e41fd75e460a9e7e269f3b020a548ae2738"
     },
     "iaas_bare-metal/concepts.md": {
-      "en": "477680b0659cf335e9cdddcf1c8e0083a2007aa5d30935bef7c02c6d1c337c45",
-      "de": "477680b0659cf335e9cdddcf1c8e0083a2007aa5d30935bef7c02c6d1c337c45",
-      "es": "477680b0659cf335e9cdddcf1c8e0083a2007aa5d30935bef7c02c6d1c337c45",
-      "it": "477680b0659cf335e9cdddcf1c8e0083a2007aa5d30935bef7c02c6d1c337c45"
+      "en": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
+      "de": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
+      "es": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1",
+      "it": "7dde4f230c496b8c7e21223a3ad3fdc12e65e435faeef3e090896233b8cb5de1"
     },
     "iaas_bare-metal/iaas_bare-metal.md": {
       "en": "3441cef079a716c6b06d5a079fed50a1771eda8471ed76b3450b645791a7f03a",
@@ -361,10 +361,10 @@
       "it": "281289bc26113b45708ca464819f262146745b2f50de98546173ef7e908ba00f"
     },
     "iaas_vmware/concepts.md": {
-      "en": "890a3e1371f4274e0dcf757310d55eb9766f2f12de0a48aa3c133fcc05bf62ac",
-      "de": "890a3e1371f4274e0dcf757310d55eb9766f2f12de0a48aa3c133fcc05bf62ac",
-      "es": "890a3e1371f4274e0dcf757310d55eb9766f2f12de0a48aa3c133fcc05bf62ac",
-      "it": "890a3e1371f4274e0dcf757310d55eb9766f2f12de0a48aa3c133fcc05bf62ac"
+      "en": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b",
+      "de": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b",
+      "es": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b",
+      "it": "601268822a20a74dff407d506579a8d0e6e7cffe5d90d5e7c0866ec74347181b"
     },
     "iaas_vmware/iaas_vmware.md": {
       "en": "8ab7499f394fc125df5c8e58bbb06d3a9d953eb4a8206029e52c119ba69ff692",
@@ -787,10 +787,10 @@
       "it": "bd4f0bc628a1685b709e0477e465dcd6bc5e0e1912998ac7b7eababaecce085e"
     },
     "paas_openshift/concepts.md": {
-      "en": "bfb268d8a5b287f9d0aea2b4c75c2dce6b1814426edc6f904f710275a0db15b3",
-      "de": "bfb268d8a5b287f9d0aea2b4c75c2dce6b1814426edc6f904f710275a0db15b3",
-      "es": "bfb268d8a5b287f9d0aea2b4c75c2dce6b1814426edc6f904f710275a0db15b3",
-      "it": "bfb268d8a5b287f9d0aea2b4c75c2dce6b1814426edc6f904f710275a0db15b3"
+      "en": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
+      "de": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
+      "es": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
+      "it": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a"
     },
     "paas_openshift/paas_openshift.md": {
       "en": "74277e7b8bf261adb8d04948a416c8e36499bfcf1e901ebc563dc3f06439ddfe",
@@ -829,10 +829,10 @@
       "it": "03ce6808894a3b12567fc584a7cf355f64dbe8bb4dc78dfc829825517bbd2340"
     },
     "public_cloud/vm_instances/concepts.md": {
-      "en": "a7d4fd2326950db92237ec70d86aedbc30018e88b882912d99680a2d89a9a45c",
-      "de": "a7d4fd2326950db92237ec70d86aedbc30018e88b882912d99680a2d89a9a45c",
-      "es": "a7d4fd2326950db92237ec70d86aedbc30018e88b882912d99680a2d89a9a45c",
-      "it": "a7d4fd2326950db92237ec70d86aedbc30018e88b882912d99680a2d89a9a45c"
+      "en": "513b0de5840f57e09bc089037edb4f3797ef14034a4b98250ff28a0dd72b7f3b",
+      "de": "513b0de5840f57e09bc089037edb4f3797ef14034a4b98250ff28a0dd72b7f3b",
+      "es": "513b0de5840f57e09bc089037edb4f3797ef14034a4b98250ff28a0dd72b7f3b",
+      "it": "513b0de5840f57e09bc089037edb4f3797ef14034a4b98250ff28a0dd72b7f3b"
     },
     "public_cloud/vm_instances/faq.md": {
       "es": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283",
@@ -841,10 +841,10 @@
       "it": "a6df42c468ea3da93f7f90e5ebf4937bedc758d274ac43f88ed3dfe9f9ec8283"
     },
     "public_cloud/vm_instances/quickstart.md": {
-      "en": "85c839144888289cdbd7beab57cfe7c7641d6b5770379d3e116f08e1014c6fcf",
-      "de": "85c839144888289cdbd7beab57cfe7c7641d6b5770379d3e116f08e1014c6fcf",
-      "es": "85c839144888289cdbd7beab57cfe7c7641d6b5770379d3e116f08e1014c6fcf",
-      "it": "85c839144888289cdbd7beab57cfe7c7641d6b5770379d3e116f08e1014c6fcf"
+      "en": "b9e023c97058af22af3cfe2c9f9d618a2aaf83ad079a794aa945bbdbca3831b8",
+      "de": "b9e023c97058af22af3cfe2c9f9d618a2aaf83ad079a794aa945bbdbca3831b8",
+      "es": "b9e023c97058af22af3cfe2c9f9d618a2aaf83ad079a794aa945bbdbca3831b8",
+      "it": "b9e023c97058af22af3cfe2c9f9d618a2aaf83ad079a794aa945bbdbca3831b8"
     },
     "public_cloud/vm_instances/tutorials/create_vm.md": {
       "en": "632f2b8abec0ac1a80a1cec484103f426c2600bea788abd8131e5f6c5a7ca902",

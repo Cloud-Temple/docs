@@ -215,4 +215,4 @@ See the [Terraform documentation](/terraform) for provider installation and conf
 - [Cloud Temple Public Documentation](https://docs.cloud-temple.com/home)
 - [API Reference](https://shiva.cloud-temple.com/api/)
 - [Terraform Documentation](/terraform)
-- [Availability Zone Concepts](../../additional_content/concepts_az.md)
+- [Availability Zone Concepts](../../additional_content/concepts_regional.md#availability-zones)

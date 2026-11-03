@@ -143,7 +143,7 @@ The update process is fully automated. To ensure service continuity, a minimum o
 ## Regions and availability zones
 
 The IaaS VMware product is deployed in an availability zone.
-An [availability zone](../additional_content/concepts_az.md) is part of a [region](../additional_content/concepts_regional.md).
+An [availability zone](../additional_content/concepts_regional.md#availability-zones) is part of a [region](../additional_content/concepts_regional.md).
 
 This type of deployment allows you to choose the location of the clusters and to distribute them across different availability zones (AZ).
 This provides better load distribution, maximizes redundancy and facilitates the implementation of a disaster recovery plan (DRP) in the event of an incident.

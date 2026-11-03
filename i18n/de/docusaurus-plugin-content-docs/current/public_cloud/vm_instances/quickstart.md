@@ -214,4 +214,4 @@ Consultez die [Terraform-Dokumentation](/terraform) für die Installation und Ko
 - [Öffentliche Dokumentation Cloud Temple](https://docs.cloud-temple.com/home)
 - [API-Referenz](https://shiva.cloud-temple.com/api/)
 - [Terraform-Dokumentation](/terraform)
-- [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_az.md)
+- [Konzepte der Verfügbarkeitszonen](../../additional_content/concepts_regional.md#verfügbarkeitszonen)

@@ -69,7 +69,7 @@ The distributed storage model separates compute (Bare Metal servers) from storag
 ## Regions and availability zones
 
 The Bare Metal product is deployed in the FR1 region, in one availability zone.
-An [availability zone](../additional_content/concepts_az.md) is part of a [region](../additional_content/concepts_regional.md).
+An [availability zone](../additional_content/concepts_regional.md#availability-zones) is part of a [region](../additional_content/concepts_regional.md).
 
 You choose the location of the Bare Metal servers and can distribute them across different availability zones (AZ). This provides better load distribution, maximizes redundancy and facilitates the implementation of a disaster recovery plan in the event of an incident.
 

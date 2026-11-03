@@ -22,6 +22,11 @@ const sidebars: SidebarsConfig = {
       id: 'faq',
       label: 'FAQs',
     },
+    {
+      type: 'doc',
+      id: 'additional_content/concepts_regional',
+      label: 'Régions et zones de disponibilité',
+    },
 
     // ─────────────────────────────────────────
     // MANAGEMENT & GOVERNANCE
@@ -45,15 +50,6 @@ const sidebars: SidebarsConfig = {
         'console/console_quickstart',
         'console/status',
         'console/orders',
-        {
-          type: 'category',
-          label: 'Contenu additionnel',
-          link: { type: 'generated-index' },
-          items: [
-            'additional_content/concepts_regional',
-            'additional_content/concepts_az',
-          ],
-        },
       ],
     },
     {

@@ -143,7 +143,7 @@ Der Aktualisierungsprozess ist vollständig automatisiert. Um die Dienstkontinui
 ## Regionen und Verfügbarkeitszonen
 
 Das Produkt IaaS VMware wird in einer Verfügbarkeitszone bereitgestellt.
-Eine [Verfügbarkeitszone](../additional_content/concepts_az.md) ist Teil einer [Region](../additional_content/concepts_regional.md).
+Eine [Verfügbarkeitszone](../additional_content/concepts_regional.md#verfügbarkeitszonen) ist Teil einer [Region](../additional_content/concepts_regional.md).
 
 Diese Art der Bereitstellung ermöglicht es, den Standort der Cluster zu wählen und sie auf verschiedene Verfügbarkeitszonen (AZ) zu verteilen.
 Dies bietet eine bessere Lastverteilung, maximiert die Redundanz und erleichtert die Einrichtung eines Disaster-Recovery-Plans (DRP) im Falle eines Vorfalls.
