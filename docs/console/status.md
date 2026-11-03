@@ -1,5 +1,5 @@
 ---
-title: Opérations planifiées et gestion des Incidents
+title: Opérations planifiées et gestion des incidents
 ---
 import shivaInterventionMenu01 from '@site/docs/console/images/shiva_intervention_menu01.png'
 import shivaInterventionMenu03 from '@site/docs/console/images/shiva_intervention_menu03.png'

@@ -1,0 +1,76 @@
+/* Palette du schéma : neutre (postes, tenants), pilotage (Console, API), usage (trafic applicatif). */
+.figure {
+  --cm-neutral-fill: #f1efe8;
+  --cm-neutral-stroke: #888780;
+  --cm-neutral-title: #2c2c2a;
+  --cm-neutral-sub: #5f5e5a;
+  --cm-pilot-fill: #eeedfe;
+  --cm-pilot-stroke: #534ab7;
+  --cm-pilot-title: #26215c;
+  --cm-pilot-sub: #534ab7;
+  --cm-usage-fill: #e1f5ee;
+  --cm-usage-stroke: #0f6e56;
+  --cm-usage-title: #04342c;
+  --cm-usage-sub: #0f6e56;
+  --cm-line: #5f5e5a;
+  --cm-text: #444441;
+  margin: 1.5rem 0;
+}
+
+[data-theme='dark'] .figure {
+  --cm-neutral-fill: #2c2c2a;
+  --cm-neutral-stroke: #b4b2a9;
+  --cm-neutral-title: #f1efe8;
+  --cm-neutral-sub: #d3d1c7;
+  --cm-pilot-fill: #3c3489;
+  --cm-pilot-stroke: #afa9ec;
+  --cm-pilot-title: #eeedfe;
+  --cm-pilot-sub: #cecbf6;
+  --cm-usage-fill: #085041;
+  --cm-usage-stroke: #5dcaa5;
+  --cm-usage-title: #e1f5ee;
+  --cm-usage-sub: #9fe1cb;
+  --cm-line: #b4b2a9;
+  --cm-text: #d3d1c7;
+}
+
+.svg {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sub,
+.lane,
+.note {
+  font-size: 12px;
+}
+
+.lane,
+.note {
+  fill: var(--cm-text);
+}
+
+.neutral rect { fill: var(--cm-neutral-fill); stroke: var(--cm-neutral-stroke); stroke-width: 0.75; }
+.neutral .title { fill: var(--cm-neutral-title); }
+.neutral .sub { fill: var(--cm-neutral-sub); }
+
+.pilot rect { fill: var(--cm-pilot-fill); stroke: var(--cm-pilot-stroke); stroke-width: 0.75; }
+.pilot .title { fill: var(--cm-pilot-title); }
+.pilot .sub { fill: var(--cm-pilot-sub); }
+
+.usage rect { fill: var(--cm-usage-fill); stroke: var(--cm-usage-stroke); stroke-width: 0.75; }
+.usage .title { fill: var(--cm-usage-title); }
+.usage .sub { fill: var(--cm-usage-sub); }
+
+.arrows line,
+.arrows path {
+  stroke: var(--cm-line);
+  stroke-width: 1.5;
+}

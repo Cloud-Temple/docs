@@ -1,5 +1,5 @@
 ---
-title: Onboarding
+title: Erste Schritte (Onboarding)
 description: "Erstellen Sie Ihre Organisation, sichern Sie Ihre Zugriffe ab, öffnen Sie Ihre Umgebungen, laden Sie Ihre Teams ein und aktivieren Sie Ihre Produkte. Die Einrichtung auf der Cloud Temple-Plattform, von der Registrierung bis zur ersten Bereitstellung."
 tags: [onboarding]
 ---
@@ -14,7 +14,7 @@ import supportSelectProduct from '@site/docs/console/images/console_support_new_
 import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_products_edit.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 
-# Onboarding
+# Erste Schritte (Onboarding)
 
 Sie erstellen Ihre Organisation über ein Online-Formular in wenigen Minuten. Ihre Umgebungen werden anschließend mit einem Klick aus der Konsole erstellt. Sie können Produkte vollständig autonom aktivieren und deaktivieren, abgerechnet nach Nutzung. Das alles auf einer souveränen Infrastruktur, betrieben in Frankreich. Die Konsole zeigt Tenant für Tenant und Produkt für Produkt an, was unter die Qualifikation **SecNumCloud** fällt.
 

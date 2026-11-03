@@ -7,6 +7,10 @@
     "message": "Console",
     "description": "The label for category 'Console' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.console_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Facturation": {
     "message": "Billing",
     "description": "The label for category 'Facturation' in sidebar 'docSidebar'"
@@ -215,10 +219,6 @@
     "message": "API documentation",
     "description": "The label for the doc item 'Documentation de l'API' in sidebar 'docSidebar', linking to the doc console/api"
   },
-  "sidebar.docSidebar.doc.Historique de la documentation": {
-    "message": "Documentation changelog",
-    "description": "The label for the doc item 'Historique de la documentation' in sidebar 'docSidebar', linking to the doc changelog"
-  },
   "sidebar.docSidebar.doc.Nouveautés produits": {
     "message": "Product updates",
     "description": "The label for the doc item 'Nouveautés produits' in sidebar 'docSidebar', linking to the doc changelog_produits"
@@ -230,6 +230,22 @@
   "sidebar.docSidebar.doc.Régions et zones de disponibilité": {
     "message": "Regions and availability zones",
     "description": "The label for the doc item 'Régions et zones de disponibilité' in sidebar 'docSidebar', linking to the doc additional_content/concepts_regional"
+  },
+  "sidebar.docSidebar.doc.console_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/console"
+  },
+  "sidebar.docSidebar.doc.console_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/concepts"
+  },
+  "sidebar.docSidebar.doc.console_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc console/onboarding"
+  },
+  "sidebar.docSidebar.doc.console_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/faq"
   },
   "sidebar.docSidebar.doc.llmaas_overview": {
     "message": "Overview",
@@ -598,5 +614,9 @@
   "sidebar.docSidebar.doc.managed_postgresql_faq": {
     "message": "Frequently asked questions",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_postgresql/faq"
+  },
+  "sidebar.docSidebar.doc.Historique de la documentation": {
+    "message": "Documentation changelog",
+    "description": "The label for the doc item 'Historique de la documentation' in sidebar 'docSidebar', linking to the doc changelog"
   }
 }

@@ -83,11 +83,14 @@ const sidebars: SidebarsConfig = {
       className: 'sidebar-cat-console',
       link: { type: 'doc', id: 'console/console' },
       items: [
-        'console/console',
-        'console/onboarding',
-        'console/console_quickstart',
-        'console/status',
-        'console/orders',
+        page('console', 'overview', 'console/console'),
+        page('console', 'concepts', 'console/concepts'),
+        page('console', 'quickstart', 'console/onboarding'),
+        tutorials('console', { type: 'generated-index', slug: '/console/tutorials' }, [
+          'console/console_quickstart',
+          'console/status',
+        ]),
+        page('console', 'faq', 'console/faq'),
       ],
     },
     {
@@ -282,6 +285,9 @@ const sidebars: SidebarsConfig = {
               'iaas_vmware/tutorials/deploy_vm_template',
               'iaas_vmware/tutorials/deploy_vm_terraform',
               'iaas_vmware/tutorials/vm_encryption',
+              // Commandes depuis la Console (zones, clusters, réseaux) : la page vit ici, une seule fois
+              // dans le menu, pour que son fil d'Ariane reste juste.
+              'console/orders',
             ]),
             page('iaas_vmware', 'faq', 'iaas_vmware/faq'),
           ],
