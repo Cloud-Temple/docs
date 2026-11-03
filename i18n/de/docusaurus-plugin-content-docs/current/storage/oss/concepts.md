@@ -75,6 +75,7 @@ Der Objektspeicher ist in der Region FR1 verfügbar. Die Daten werden über drei
 ### Grenzen
 
 - 999 Buckets pro Tenant.
+- 10 zugängliche Buckets pro Speicherkonto.
 - 5 TB pro Objekt.
 
 <a id="sécurité-et-chiffrement"></a>

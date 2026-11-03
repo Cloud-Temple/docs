@@ -75,6 +75,7 @@ L'Archiviazione oggetti è disponibile nella regione FR1. I dati sono distribuit
 ### Limiti
 
 - 999 bucket per tenant.
+- 10 bucket accessibili per account di archiviazione.
 - 5 TB per oggetto.
 
 <a id="sécurité-et-chiffrement"></a>

@@ -56,6 +56,17 @@ Le service vérifie :
 
 Toute condition non satisfaite entraîne un refus d'accès.
 
+## Pourquoi un compte de stockage ne peut-il pas accéder à un bucket supplémentaire ?
+
+Un compte de stockage peut accéder à **10 buckets** au maximum. Au-delà, l'attribution d'un accès à un 11ᵉ bucket échoue. La limite porte sur le **compte de stockage**, pas sur le bucket.
+
+Deux solutions :
+
+- révoquer l'accès du compte à un bucket dont il n'a plus besoin, depuis l'onglet '__Politiques__' de ce bucket ;
+- utiliser un autre compte de stockage pour les buckets supplémentaires.
+
+Voir [Gestion des politiques d'accès](./quickstart.md#gestion-des-politiques-daccès).
+
 ## Scénarios d'usage recommandés
 
 - **Archivage client interne** : buckets privés accessibles uniquement depuis les IP publiques dédiées du client (gestion via whitelist).
