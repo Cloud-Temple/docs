@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 
@@ -46,7 +46,7 @@ export function EmptySection({ kind }: { kind: Kind }) {
     <div className="card">
       <h3>{TITLES[kind]}</h3>
       <p>{MESSAGES[kind]}</p>
-      <Link to="/" className="card-link">
+      <Link to="/home" className="card-link">
         <Translate id="emptySection.homeLink" description="Lien vers la page d'accueil depuis une rubrique vide">
           Accéder à la page d'accueil →
         </Translate>

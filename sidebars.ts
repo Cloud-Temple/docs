@@ -18,7 +18,9 @@ const divider = { type: 'html' as const, value: '<hr class="sidebar-divider" />'
 
 const section = (name: keyof typeof SECTIONS) => ({
   type: 'html' as const,
-  value: `<p class="sidebar-section-label">${SECTIONS[name][locale] ?? SECTIONS[name].fr}</p>`,
+  value: `<p class="sidebar-section-label">${
+    Object.prototype.hasOwnProperty.call(SECTIONS[name], locale) ? SECTIONS[name][locale] : SECTIONS[name].fr
+  }</p>`,
 });
 
 // Rubriques standard de chaque produit : Vue d'ensemble, Concepts, Guide de démarrage,
@@ -243,7 +245,8 @@ const sidebars: SidebarsConfig = {
                 type: 'category',
                 label: 'Haute disponibilité',
                 key: 'iaas_opensource_high_availability',
-                link: { type: 'generated-index' },
+                // Slug figé : l'URL d'origine reste valide malgré la traduction du libellé.
+                link: { type: 'generated-index', slug: '/category/high-availability' },
                 items: [
                   'iaas_opensource/tutorials/high_availability/manage_pool',
                   'iaas_opensource/tutorials/high_availability/manage_vm',
@@ -253,7 +256,7 @@ const sidebars: SidebarsConfig = {
                 type: 'category',
                 label: 'Sauvegarde',
                 key: 'iaas_opensource_backup',
-                link: { type: 'generated-index' },
+                link: { type: 'generated-index', slug: '/category/backup' },
                 items: [
                   'iaas_opensource/tutorials/backup/iaas_opensource_backup',
                 ],
@@ -275,7 +278,7 @@ const sidebars: SidebarsConfig = {
                 type: 'category',
                 label: 'Sauvegarde',
                 key: 'iaas_vmware_backup',
-                link: { type: 'generated-index' },
+                link: { type: 'generated-index', slug: '/category/backup-1' },
                 items: [
                   'iaas_vmware/tutorials/backup/iaas_backup',
                 ],
