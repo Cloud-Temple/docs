@@ -16,8 +16,6 @@ import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 
 # Onboarding
 
-At Cloud Temple, you don't wait for your cloud: you create it.
-
 You create your organization from an online form, in just a few minutes. Your environments are then created with a single click from the Console. You can enable and disable products with full autonomy, billed on a pay-as-you-go basis. All on a sovereign infrastructure, operated in France. The Console indicates, tenant by tenant and product by product, what falls under the **SecNumCloud** qualification.
 
 
