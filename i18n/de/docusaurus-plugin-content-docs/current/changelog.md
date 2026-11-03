@@ -1,9 +1,9 @@
 ---
-title: Änderungsverfolgung
+title: Änderungsprotokoll der Dokumentation
 sidebar_position: 2
 ---
 
-# Änderungsverfolgung
+# Änderungsprotokoll der Dokumentation
 
 ### 30. Oktober 2026 : Konsole v5.1.0
 

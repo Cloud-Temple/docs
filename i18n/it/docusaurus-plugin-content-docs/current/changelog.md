@@ -1,9 +1,9 @@
 ---
-title: Tracciamento delle Modifiche
+title: Cronologia della documentazione
 sidebar_position: 2
 ---
 
-# Tracciamento delle Modifiche
+# Cronologia della documentazione
 
 ### 30 Ottobre 2026 : Console v5.1.0
 
