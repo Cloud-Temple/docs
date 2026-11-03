@@ -571,6 +571,14 @@
     "message": "Guida introduttiva",
     "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc managed_mariadb/quickstart"
   },
+  "sidebar.docSidebar.doc.managed_mariadb_tutorials": {
+    "message": "Tutorial",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc managed_mariadb/tutorials"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_faq": {
+    "message": "Domande frequenti",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_mariadb/faq"
+  },
   "sidebar.docSidebar.doc.managed_postgresql_overview": {
     "message": "Panoramica",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_postgresql/managed_postgresql"
@@ -582,5 +590,13 @@
   "sidebar.docSidebar.doc.managed_postgresql_quickstart": {
     "message": "Guida introduttiva",
     "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc managed_postgresql/quickstart"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_tutorials": {
+    "message": "Tutorial",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc managed_postgresql/tutorials"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_faq": {
+    "message": "Domande frequenti",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_postgresql/faq"
   }
 }

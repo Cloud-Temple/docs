@@ -552,6 +552,8 @@ const sidebars: SidebarsConfig = {
             page('managed_mariadb', 'overview', 'managed_mariadb/managed_mariadb'),
             page('managed_mariadb', 'concepts', 'managed_mariadb/concepts'),
             page('managed_mariadb', 'quickstart', 'managed_mariadb/quickstart'),
+            page('managed_mariadb', 'tutorials', 'managed_mariadb/tutorials'),
+            page('managed_mariadb', 'faq', 'managed_mariadb/faq'),
           ],
         },
         {
@@ -562,6 +564,8 @@ const sidebars: SidebarsConfig = {
             page('managed_postgresql', 'overview', 'managed_postgresql/managed_postgresql'),
             page('managed_postgresql', 'concepts', 'managed_postgresql/concepts'),
             page('managed_postgresql', 'quickstart', 'managed_postgresql/quickstart'),
+            page('managed_postgresql', 'tutorials', 'managed_postgresql/tutorials'),
+            page('managed_postgresql', 'faq', 'managed_postgresql/faq'),
           ],
         },
       ],

@@ -226,6 +226,29 @@ Find below the frequently asked questions regarding Cloud Temple products and se
 
 ---
 
+## Databases
+
+<div class="book-grid">
+  <a class="book-card book-card--orange" href="./managed_mariadb/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">Managed MariaDB</div>
+      <div class="book-card-desc">Section being written.</div>
+      <div class="book-card-cta">View the FAQ →</div>
+    </div>
+  </a>
+  <a class="book-card book-card--orange" href="./managed_postgresql/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">Managed PostgreSQL</div>
+      <div class="book-card-desc">Section being written.</div>
+      <div class="book-card-cta">View the FAQ →</div>
+    </div>
+  </a>
+</div>
+
+---
+
 ## Developer tools
 
 <div class="book-grid">

@@ -226,6 +226,29 @@ Trovate di seguito le domande più frequenti sui prodotti e servizi Cloud Temple
 
 ---
 
+## Database
+
+<div class="book-grid">
+  <a class="book-card book-card--orange" href="./managed_mariadb/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">MariaDB gestito</div>
+      <div class="book-card-desc">Sezione in preparazione.</div>
+      <div class="book-card-cta">Consulta la FAQ →</div>
+    </div>
+  </a>
+  <a class="book-card book-card--orange" href="./managed_postgresql/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">PostgreSQL gestito</div>
+      <div class="book-card-desc">Sezione in preparazione.</div>
+      <div class="book-card-cta">Consulta la FAQ →</div>
+    </div>
+  </a>
+</div>
+
+---
+
 ## Strumenti per sviluppatori
 
 <div class="book-grid">

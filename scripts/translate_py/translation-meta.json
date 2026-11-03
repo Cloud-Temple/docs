@@ -253,10 +253,10 @@
       "it": "86de3978e89198f284d81e1945653f7fd46a485c35802dc22e8ef819733c90ee"
     },
     "faq.md": {
-      "en": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
-      "de": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
-      "es": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627",
-      "it": "21b8d435b46d7a63bafdc87c90dcfb79c37a6f76e51458c951aebaf69dc05627"
+      "en": "2e73e6d1fdc648030ee1dce3eef8b65018f2c28ea61dc091c08ce59c88df41fd",
+      "de": "2e73e6d1fdc648030ee1dce3eef8b65018f2c28ea61dc091c08ce59c88df41fd",
+      "es": "2e73e6d1fdc648030ee1dce3eef8b65018f2c28ea61dc091c08ce59c88df41fd",
+      "it": "2e73e6d1fdc648030ee1dce3eef8b65018f2c28ea61dc091c08ce59c88df41fd"
     },
     "gpu/concepts.md": {
       "en": "df4af8a5a8331bdbc5253084b379dff8d2bf90be1d1bcdc6f83e89570a99de30",
@@ -618,6 +618,12 @@
       "es": "fdcfd4e274a14227015a33940ab621bbd1fe38c276655d79a71e671ecf937872",
       "it": "fdcfd4e274a14227015a33940ab621bbd1fe38c276655d79a71e671ecf937872"
     },
+    "managed_mariadb/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
     "managed_mariadb/managed_mariadb.md": {
       "en": "4be48e2dd4bdd668b29ecf98945e5386257d08f8910830a751361f0bdad24223",
       "de": "4be48e2dd4bdd668b29ecf98945e5386257d08f8910830a751361f0bdad24223",
@@ -630,11 +636,23 @@
       "es": "d3656b1f561e89efa1d8065ae398b917f2228eed71b227ef552dd7e4ef6c171a",
       "it": "d3656b1f561e89efa1d8065ae398b917f2228eed71b227ef552dd7e4ef6c171a"
     },
+    "managed_mariadb/tutorials.md": {
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
+    },
     "managed_postgresql/concepts.md": {
       "en": "9ce261a846731732f25d50122c755411a7f6abb04c95dcb9e59648eb4b53b473",
       "de": "9ce261a846731732f25d50122c755411a7f6abb04c95dcb9e59648eb4b53b473",
       "es": "9ce261a846731732f25d50122c755411a7f6abb04c95dcb9e59648eb4b53b473",
       "it": "9ce261a846731732f25d50122c755411a7f6abb04c95dcb9e59648eb4b53b473"
+    },
+    "managed_postgresql/faq.md": {
+      "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
+      "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "managed_postgresql/managed_postgresql.md": {
       "en": "c97bf17463c870ffe942e0cbc410ea8d4bb624333c7251d6ff4c053c97a46212",
@@ -647,6 +665,12 @@
       "de": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf",
       "es": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf",
       "it": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf"
+    },
+    "managed_postgresql/tutorials.md": {
+      "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "de": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "es": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
+      "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
     },
     "managedproducts_overview.md": {
       "en": "f0e5a7d16630740782af8a832e7f73388d3322a34114423ef89a525b49e5db35",

@@ -226,6 +226,29 @@ A continuación, encontrará las preguntas frecuentes sobre los productos y serv
 
 ---
 
+## Bases de datos
+
+<div class="book-grid">
+  <a class="book-card book-card--orange" href="./managed_mariadb/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">MariaDB gestionado</div>
+      <div class="book-card-desc">Sección en preparación.</div>
+      <div class="book-card-cta">Consultar la FAQ →</div>
+    </div>
+  </a>
+  <a class="book-card book-card--orange" href="./managed_postgresql/faq">
+    <div class="book-card-spine"></div>
+    <div class="book-card-body">
+      <div class="book-card-title">PostgreSQL gestionado</div>
+      <div class="book-card-desc">Sección en preparación.</div>
+      <div class="book-card-cta">Consultar la FAQ →</div>
+    </div>
+  </a>
+</div>
+
+---
+
 ## Herramientas para desarrolladores
 
 <div class="book-grid">
