@@ -428,6 +428,15 @@ const sidebars: SidebarsConfig = {
             page('bastion', 'faq', 'bastion/faq'),
           ],
         },
+        {
+          type: 'category',
+          label: 'Sovereign SOC',
+          link: { type: 'doc', id: 'sovereign_soc/sovereign_soc' },
+          items: [
+            'sovereign_soc/sovereign_soc',
+            'sovereign_soc/concepts',
+          ],
+        },
       ],
     },
     {
