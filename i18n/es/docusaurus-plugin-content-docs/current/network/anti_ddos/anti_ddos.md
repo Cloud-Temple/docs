@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general de Anti-DDoS
 ---
 
-# Anti-DDoS
+# Visión general de Anti-DDoS
 
 El **Anti-DDoS** protege sus servicios publicados en Internet contra los ataques volumétricos de denegación de servicio distribuida (DDoS). El tráfico entrante se supervisa de forma permanente y el tráfico ilegítimo se filtra aguas arriba, antes de que alcance sus servicios.
 

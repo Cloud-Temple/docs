@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über VM Instances
 ---
 
-# VM Instances
+# Übersicht über VM Instances
 
 Der Dienst **VM Instances** von Cloud Temple ist als **SecNumCloud** zertifiziert. Er ermöglicht die schnelle Bereitstellung virtueller Maschinen auf einer leistungsstarken, geteilten Infrastruktur und kombiniert dabei die Flexibilität einer Public Cloud mit den Sicherheitsgarantien einer souveränen Cloud.
 

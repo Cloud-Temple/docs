@@ -1,5 +1,5 @@
 ---
-title: Visión general
+title: Visión general de la Console
 ---
 
 ## La Consola Cloud Temple

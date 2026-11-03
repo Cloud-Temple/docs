@@ -1,5 +1,5 @@
 ---
-title: Visión general
+title: Visión general de las redes privadas
 slug: /network/private_network
 ---
 

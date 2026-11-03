@@ -1,9 +1,9 @@
 ---
-title: OCR-Tutorial
+title: Dokumentenerkennung (OCR) mit DeepSeek
 sidebar_position: 4
 ---
 
-# Anleitung: Meistern von OCR mit DeepSeek
+# Dokumentenerkennung (OCR) mit DeepSeek
 
 Dieser Leitfaden beschreibt die Verwendung des Modells **DeepSeek-OCR**, eine fortschrittliche Lösung für optische Zeichenerkennung und Dokumentenanalyse.
 

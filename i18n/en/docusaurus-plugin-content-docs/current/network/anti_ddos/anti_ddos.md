@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Anti-DDoS overview
 ---
 
-# Anti-DDoS
+# Anti-DDoS overview
 
 **Anti-DDoS** protects your services published on the Internet against volumetric distributed denial-of-service (DDoS) attacks. Incoming traffic is continuously monitored and illegitimate traffic is filtered upstream, before it reaches your services.
 

@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 import S3ListBucket from '@site/docs/storage/oss/images/S3_list_bucket.png'
 import S3Accounts from '@site/docs/storage/oss/images/S3_accounts.png'

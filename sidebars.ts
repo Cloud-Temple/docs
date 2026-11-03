@@ -427,7 +427,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Housing (colocation)',
+      label: 'Colocation',
       className: 'sidebar-cat-housing',
       link: { type: 'doc', id: 'housing/housing' },
       items: [

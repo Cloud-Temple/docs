@@ -8,7 +8,7 @@ import vpcDetailIpsPub from '@site/docs/network/vpc/images/vpc_detail_ips_pub.pn
 import vpcIpPubAssociate from '@site/docs/network/vpc/images/vpc_ip_pub_associate.png'
 import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_address_associate_modale.png'
 
-# Network Configuration of the VM
+# Netzwerkkonfiguration der VM
 
 This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
 

@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'IaaS OpenSource
 ---
 
 L'**offre IaaS OpenSource de Cloud Temple** : une alliance unique entre performance, sécurité et transparence.

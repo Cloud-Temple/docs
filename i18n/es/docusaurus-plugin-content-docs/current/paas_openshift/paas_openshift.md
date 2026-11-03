@@ -1,5 +1,5 @@
 ---
-title: Vista general
+title: Visión general de PaaS OpenShift
 ---
 
 La oferta Red Hat OpenShift de Cloud Temple combina la potencia de una plataforma PaaS reconocida y la seguridad de una infraestructura calificada SecNumCloud. Basada en una arquitectura tri-zonal, garantiza alta disponibilidad, resiliencia y conformidad para tus proyectos críticos.

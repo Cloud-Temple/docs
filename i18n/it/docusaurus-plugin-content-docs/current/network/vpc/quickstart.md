@@ -1,5 +1,5 @@
 ---
-title: Avvio rapido
+title: Guida introduttiva a VPC
 ---
 import newTabNetwork from '@site/docs/network/vpc/images/new_tab_network.png'
 import vpcCreateButton from '@site/docs/network/vpc/images/vpc_create_button.png'
@@ -15,7 +15,7 @@ import vpcNewStaticIps from '@site/docs/network/vpc/images/vpc_new_static_ips.pn
 import vpcNewStaticIpsModale from '@site/docs/network/vpc/images/vpc_new_static_ips_modale.png'
 import vpcStaticIpsAssociate from '@site/docs/network/vpc/images/vpc_static_ips_associate_png.png'
 
-# Avvio rapido VPC
+# Guida introduttiva a VPC
 
 Questa guida vi accompagna nella creazione del vostro primo Virtual Private Cloud (VPC) e nel deployment dei vostri primi network privati.
 

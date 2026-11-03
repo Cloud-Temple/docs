@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general del Marketplace
 ---
 
-# Marketplace
+# Visión general del Marketplace
 
 La __Marketplace Cloud Temple__ ofrece un acceso simplificado a las soluciones cloud esenciales y al mejor software de nuestros editores socios, desplegados en unos pocos clics en un entorno seguro.
 

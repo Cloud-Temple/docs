@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general del housing
 ---
 
-# Housing Cloud Temple
+# Visión general del housing
 
 El **Housing Cloud Temple** ofrece una solución de alojamiento físico para sus infraestructuras IT en zonas de disponibilidad fiables y seguras. Diseñada para satisfacer las necesidades empresariales, este producto permite alojar sus equipos en racks compartidos o dedicados, garantizando al mismo tiempo una conectividad de red de alto rendimiento y servicios profesionales de asistencia en datacenter.
 

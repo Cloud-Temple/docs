@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di Bastion
 ---
 
-# Bastion
+# Panoramica di Bastion
 
 Il **Bastion Cloud Temple** è un servizio sicuro e gestito che semplifica l'amministrazione delle vostre infrastrutture tramite connessioni RDP o SSH.
 

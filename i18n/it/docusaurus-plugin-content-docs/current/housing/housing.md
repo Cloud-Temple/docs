@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica dell'housing
 ---
 
-# Housing Cloud Temple
+# Panoramica dell'housing
 
 Il **Housing Cloud Temple** offre una soluzione di hosting fisico per le tue infrastrutture IT in zone di disponibilità affidabili e sicure. Progettato per rispondere alle esigenze aziendali, questo prodotto consente di ospitare le tue apparecchiature in rack condivisi o dedicati, garantendo al contempo una connettività di rete performante e servizi professionali di assistenza in datacenter.
 

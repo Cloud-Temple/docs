@@ -1,5 +1,5 @@
 ---
-title : Deployare tramite HelmFile
+title: Distribuire con Helmfile
 ---
 
 # Distribuire con Helmfile

@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general de Bare Metal
 ---
 
-# Metal desnudo
+# Visión general de Bare Metal
 
 El producto __Metal desnudo__ de Cloud Temple ofrece servidores dedicados, totalmente personalizables, para satisfacer las necesidades de los clientes que buscan una autonomía total sobre su infraestructura.
 

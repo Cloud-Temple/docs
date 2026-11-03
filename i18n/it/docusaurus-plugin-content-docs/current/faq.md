@@ -173,7 +173,9 @@ Trovate di seguito le domande più frequenti sui prodotti e servizi Cloud Temple
 
 ---
 
-## Housing (colocation)
+<a id="housing-colocation"></a>
+
+## Housing
 
 <div class="book-grid">
   <a class="book-card book-card--orange" href="./housing/faq">

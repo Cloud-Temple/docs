@@ -1,9 +1,9 @@
 ---
-title: Guida introduttiva
+title: Guida introduttiva a LLMaaS
 sidebar_position: 3
 ---
 
-# Guida all'Avvio Rapido
+# Guida introduttiva a LLMaaS
 
 Questa guida ti consente di effettuare la tua prima richiesta all'API LLMaaS in meno di 5 minuti.
 

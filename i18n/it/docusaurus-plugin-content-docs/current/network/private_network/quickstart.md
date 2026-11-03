@@ -1,5 +1,5 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva
 ---
 import shivaNetwork_001 from '@site/docs/network/private_network/images/shiva_network_001.png'
 import shivaNetwork_002 from '@site/docs/network/private_network/images/shiva_network_002.png'

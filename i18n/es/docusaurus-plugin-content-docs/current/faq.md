@@ -173,7 +173,9 @@ A continuación, encontrará las preguntas frecuentes sobre los productos y serv
 
 ---
 
-## Housing (colocation)
+<a id="housing-colocation"></a>
+
+## Housing
 
 <div class="book-grid">
   <a class="book-card book-card--orange" href="./housing/faq">

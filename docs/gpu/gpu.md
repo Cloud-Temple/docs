@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'offre GPU
 ---
 
-# GPU
+# Vue d'ensemble de l'offre GPU
 
 **GPU** donne accès à des cartes graphiques NVIDIA H100 et L40S pour accélérer vos calculs d'intelligence artificielle, d'apprentissage automatique et de calcul haute performance. Les GPU sont proposés au sein des offres IaaS et PaaS : lames de calcul Bare Metal, machines virtuelles, worker nodes OpenShift et nœuds Kubernetes.
 

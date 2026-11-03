@@ -1,9 +1,9 @@
 ---
-title: Servizio di Archiviazione Oggetti (OSS)
+title: Panoramica del Servizio di Archiviazione Oggetti (OSS)
 sidebar_position: 1
 ---
 
-# Servizio di Archiviazione Oggetti (OSS)
+# Panoramica del Servizio di Archiviazione Oggetti (OSS)
 
 ## Panoramica
 

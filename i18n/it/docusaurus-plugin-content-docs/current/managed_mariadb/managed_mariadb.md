@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di MariaDB Gestito
 ---
 
-# MariaDB Gestito <span class="title-preview-badge">Anteprima</span>
+# Panoramica di MariaDB Gestito <span class="title-preview-badge">Anteprima</span>
 
 <div class="card-grid">
   <div class="card">

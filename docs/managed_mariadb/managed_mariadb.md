@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de MariaDB Managé
 ---
 
-# MariaDB Managé <span class="title-preview-badge">Preview</span>
+# Vue d'ensemble de MariaDB Managé <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Housing overview
 ---
 
-# Housing Cloud Temple
+# Housing overview
 
 The **Housing Cloud Temple** provides a physical hosting solution for your IT infrastructure in reliable and secure availability zones. Designed to meet enterprise needs, this product allows you to host your equipment in shared or dedicated racks, while ensuring high-performance network connectivity and professional datacenter support services.
 

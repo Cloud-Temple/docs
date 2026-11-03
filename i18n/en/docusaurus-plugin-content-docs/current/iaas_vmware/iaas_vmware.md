@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: IaaS VMware overview
 ---
 
-# IaaS VMware
+# IaaS VMware overview
 
 The **IaaS VMware offering** is designed to meet critical enterprise needs for performance, security, and business continuity. With dedicated resources, **SecNumCloud**-qualified infrastructure, and fully automated options, this service ensures optimal reliability for your sensitive workloads.
 

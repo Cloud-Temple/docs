@@ -1,8 +1,8 @@
 ---
-title : Déployer au travers d'HelmFile
+title: Déployer avec Helmfile
 ---
 
-# Déployer à l'aide de Helmfile
+# Déployer avec Helmfile
 
 ---
 

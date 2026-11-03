@@ -143,9 +143,9 @@
     "message": "Bastion",
     "description": "The label for category 'Bastion' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Housing (colocation)": {
-    "message": "Housing (Colocation)",
-    "description": "The label for category 'Housing (colocation)' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.Colocation": {
+    "message": "Colocation",
+    "description": "The label for category 'Colocation' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.Marketplace": {
     "message": "Marketplace",

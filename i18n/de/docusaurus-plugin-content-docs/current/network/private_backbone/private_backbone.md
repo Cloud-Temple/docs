@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Übersicht über Private Backbone
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Erweiterte Konnektivität
+# Übersicht über Private Backbone
 
 > **Übernehmen Sie die volle Kontrolle über Ihr Netzwerk mit einer erweiterten Konnektivität der Ebene 2, die für hybride Architekturen und maßgeschneiderte Konfigurationen entwickelt wurde.**
 

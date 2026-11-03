@@ -1,8 +1,8 @@
 ---
-title: Overview
+title: Bare Metal overview
 ---
 
-# Bare Metal
+# Bare Metal overview
 
 Cloud Temple's __Bare Metal__ product offers dedicated, fully customizable servers to meet the needs of clients seeking complete autonomy over their infrastructure.
 

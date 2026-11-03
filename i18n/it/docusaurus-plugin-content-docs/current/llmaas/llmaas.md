@@ -1,9 +1,9 @@
 ---
-title: Panoramica
+title: Panoramica di LLM as a Service (LLMaaS)
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# Panoramica di LLM as a Service (LLMaaS)
 
 LLMaaS fornisce accesso ai modelli di IA ospitati da Cloud Temple tramite un'API: assistenti conversazionali, programmazione e agenti, analisi delle immagini, ricerca semantica, reranking, traduzione e utilizzi audio/immagine.
 

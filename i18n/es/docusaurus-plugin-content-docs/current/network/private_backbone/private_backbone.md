@@ -1,9 +1,9 @@
 ---
-title: Backbone Privado
+title: Visión general de Private Backbone
 slug: /network/private_backbone
 ---
 
-# Backbone Privado — Conectividad Avanzada
+# Visión general de Private Backbone
 
 > **Toma el control total de tu red con conectividad de nivel 2 extendida, diseñada para arquitecturas híbridas y configuraciones a medida.**
 

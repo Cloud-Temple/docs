@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'offre Internet
 ---
 
-# Internet
+# Vue d'ensemble de l'offre Internet
 
 Cloud Temple met à disposition de ses clients des blocs d'__adresses IP publiques__ d'au minimum 1 IPv4, ou 64 IPv6, déclarées au RIPE, pour permettre votre connectivité Internet.
 

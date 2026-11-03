@@ -1,9 +1,9 @@
 ---
-title: Novità di prodotto
+title: Novità sui prodotti
 sidebar_position: 999
 ---
 
-# Novità di prodotto & evoluzioni
+# Novità sui prodotti
 
 > Questo changelog elenca esclusivamente le nuove funzionalità e le evoluzioni significative della piattaforma Cloud Temple.
 > Le correzioni dei bug sono volutamente escluse.

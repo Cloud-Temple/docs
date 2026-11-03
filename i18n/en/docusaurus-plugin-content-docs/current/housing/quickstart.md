@@ -1,5 +1,5 @@
 ---
-title: Quickstart Guide
+title: Getting started
 ---
 
 

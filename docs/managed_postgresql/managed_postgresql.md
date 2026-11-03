@@ -1,7 +1,7 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de PostgreSQL Managé
 ---
-# PostgreSQL Managé <span class="title-preview-badge">Preview</span>
+# Vue d'ensemble de PostgreSQL Managé <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">

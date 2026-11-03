@@ -3,7 +3,7 @@ title: Cómputo
 displayed_sidebar: docSidebar
 ---
 
-# Compute
+# Cómputo
 
 Los servicios Compute de Cloud Temple le permiten desplegar y operar máquinas virtuales en una infraestructura soberana y segura. Elija la tecnología que se adapte a sus necesidades: instancias cloud compartidas, infraestructura open source o virtualización VMware.
 
