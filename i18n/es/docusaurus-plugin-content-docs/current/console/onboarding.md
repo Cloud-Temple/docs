@@ -1,5 +1,5 @@
 ---
-title: Onboarding
+title: Guía de inicio (onboarding)
 description: "Cree su organización, proteja sus accesos, abra sus entornos, invite a sus equipos y active sus productos. La puesta en marcha en la plataforma Cloud Temple, desde el registro hasta el primer despliegue."
 tags: [onboarding]
 ---
@@ -14,7 +14,7 @@ import supportSelectProduct from '@site/docs/console/images/console_support_new_
 import tenantProductsEdit from '@site/docs/console/images/shiva_org_tenant_products_edit.png'
 import shivaOnboard_008 from '@site/docs/console/images/shiva_onboard_008.png'
 
-# Onboarding
+# Guía de inicio (onboarding)
 
 Crea su organización desde un formulario en línea, en pocos minutos. Sus entornos se crean a continuación con un clic desde la consola. Puede activar y desactivar productos con total autonomía, facturados según el uso. Todo ello sobre una infraestructura soberana, operada en Francia. La consola señala, tenant por tenant y producto por producto, lo que corresponde a la cualificación **SecNumCloud**.
 
