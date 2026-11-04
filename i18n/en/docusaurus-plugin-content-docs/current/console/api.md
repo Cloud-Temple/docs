@@ -361,7 +361,7 @@ The endpoint description includes:
 
 ### Best Practices for Managing Deprecations
 
-1. **Monitor deprecated features**: Regularly check the console for deprecated features to stay informed about upcoming deprecations.
+1. **Monitor deprecated features**: Regularly check the console for deprecated features to know which deprecations have been announced and their scheduled removal date.
 
 2. **Plan your migrations**: As soon as a deprecation is announced, plan to migrate your code to the new endpoint within 3 months.
 

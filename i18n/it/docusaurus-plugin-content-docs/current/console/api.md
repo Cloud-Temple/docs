@@ -359,7 +359,7 @@ La descrizione dell'endpoint include :
 
 ### Buone pratiche per gestire le deprecazioni
 
-1. **Monitora le funzionalità deprecate** : Consulta regolarmente le funzionalità deprecate nella console per essere informato sulle deprecazioni imminenti.
+1. **Monitora le funzionalità deprecate** : Consulta regolarmente le funzionalità deprecate nella console per conoscere le deprecazioni annunciate e la loro data di rimozione prevista.
 
 2. **Pianifica le tue migrazioni** : Non appena viene annunciata una deprecazione, pianifica la migrazione del tuo codice verso il nuovo endpoint entro 3 mesi.
 

@@ -361,7 +361,7 @@ La description de l'endpoint inclut :
 
 ### Bonnes pratiques pour gérer les dépréciations
 
-1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciée dans la console pour être informé des dépréciations à venir.
+1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciées dans la console pour connaître les dépréciations annoncées et leur date de suppression prévue.
 
 2. **Planifiez vos migrations** : Dès qu'une dépréciation est annoncée, planifiez la migration de votre code vers le nouvel endpoint dans les 3 mois.
 
