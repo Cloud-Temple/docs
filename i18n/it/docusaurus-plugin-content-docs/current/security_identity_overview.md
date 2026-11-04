@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Sicurezza e identità
 
-Gestisci identità, diritti di accesso e la sicurezza della tua infrastruttura Cloud Temple da un pannello centralizzato. Applica il principio del minimo privilegio e monitora attività sospette in tempo reale.
+Gestisci le identità e i diritti di accesso alla tua infrastruttura Cloud Temple applicando il principio del minimo privilegio. Segui le buone pratiche e gli avvisi di sicurezza pubblicati sui nostri servizi, e sfrutta i log di attività per individuare azioni sensibili o sospette.
 
 <div class="card-grid">
   <div class="card">
@@ -15,7 +15,7 @@ Gestisci identità, diritti di accesso e la sicurezza della tua infrastruttura C
   </div>
   <div class="card">
     <h3>Sicurezza</h3>
-    <p>Raccomandazioni di sicurezza, avvisi e criteri di conformità per rafforzare la postura di sicurezza del tuo tenant.</p>
+    <p>Buone pratiche di sicurezza e avvisi di sicurezza pubblicati sui nostri servizi.</p>
     <a href="./console/security/security_recommendations" class="card-link">Scopri Sicurezza →</a>
   </div>
 </div>

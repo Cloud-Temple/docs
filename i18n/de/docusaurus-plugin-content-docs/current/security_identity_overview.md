@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Sicherheit & Identität
 
-Verwalten Sie Identitäten, Zugriffsrechte und die Sicherheit Ihrer Cloud Temple-Infrastruktur über ein zentralisiertes Dashboard. Wenden Sie das Prinzip der geringsten Rechte an und überwachen Sie verdächtige Aktivitäten in Echtzeit.
+Verwalten Sie Identitäten und Zugriffsrechte auf Ihre Cloud Temple-Infrastruktur nach dem Prinzip der geringsten Rechte. Verfolgen Sie die Sicherheitsempfehlungen und die für unsere Dienste veröffentlichten Sicherheitswarnungen, und nutzen Sie die Aktivitätsprotokolle, um sensible oder verdächtige Aktionen zu erkennen.
 
 <div class="card-grid">
   <div class="card">
@@ -15,7 +15,7 @@ Verwalten Sie Identitäten, Zugriffsrechte und die Sicherheit Ihrer Cloud Temple
   </div>
   <div class="card">
     <h3>Sicherheit</h3>
-    <p>Sicherheitsempfehlungen, Warnungen und Compliance-Richtlinien zur Stärkung der Sicherheitsposition Ihres Tenants.</p>
+    <p>Sicherheitsempfehlungen und die für unsere Dienste veröffentlichten Sicherheitswarnungen.</p>
     <a href="./console/security/security_recommendations" class="card-link">Sicherheit entdecken →</a>
   </div>
 </div>
