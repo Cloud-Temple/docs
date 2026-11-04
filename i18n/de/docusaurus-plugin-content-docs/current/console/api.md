@@ -1,5 +1,5 @@
 ---
-title: API-Dokumentation
+title: Dokumentation der Console-API
 ---
 import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
 import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'

@@ -54,11 +54,6 @@ const sidebars: SidebarsConfig = {
   docSidebar: [
     {
       type: 'doc',
-      id: 'console/api',
-      label: "Documentation de l'API",
-    },
-    {
-      type: 'doc',
       id: 'changelog_produits',
       label: 'Nouveautés produits',
     },
@@ -67,11 +62,6 @@ const sidebars: SidebarsConfig = {
       id: 'faq',
       label: 'Questions fréquentes',
       key: 'global_faq',
-    },
-    {
-      type: 'doc',
-      id: 'additional_content/concepts_regional',
-      label: 'Régions et zones de disponibilité',
     },
 
     // ─────────────────────────────────────────
@@ -143,6 +133,25 @@ const sidebars: SidebarsConfig = {
             'console/security/security_recommendations',
             'console/security/security_alarms',
           ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Plateforme Cloud Temple',
+      className: 'sidebar-cat-platform',
+      // Notions communes à tous les produits ; slug figé pour une URL identique dans toutes les langues.
+      link: { type: 'generated-index', slug: '/category/platform' },
+      items: [
+        {
+          type: 'doc',
+          id: 'additional_content/concepts_regional',
+          label: 'Régions et zones de disponibilité',
+        },
+        {
+          type: 'doc',
+          id: 'contractual/shared-responsibility',
+          label: 'Responsabilité partagée',
         },
       ],
     },
@@ -495,8 +504,14 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Outils de développement',
       className: 'sidebar-cat-devtools',
-      link: { type: 'doc', id: 'terraform/terraform' },
+      // Index généré : un lien vers console/api, aussi première entrée, ferait boucler « Suivant ».
+      link: { type: 'generated-index', slug: '/category/developer-tools' },
       items: [
+        {
+          type: 'doc',
+          id: 'console/api',
+          label: 'API de la Console',
+        },
         {
           type: 'category',
           label: 'Provider Terraform',
