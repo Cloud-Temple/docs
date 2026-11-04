@@ -64,7 +64,7 @@ Two network consumption modes are offered:
 ### Deployment modes
 
 * **VPC in dedicated mode**: prerequisite, a subscription to the IaaS OpenSource offering. The VPC instances (routers, gateways) are deployed directly on your dedicated infrastructure: the compute resources that host your network services are physically isolated.
-* **VPC in shared mode**: this mode relies on the VM Instances offering. It provides the VPC without prior dedicated infrastructure, for occasional needs or cloud-native environments.
+* **VPC in shared mode**: announced, see the [upcoming changes](#upcoming-changes).
 
 ## Architecture
 
@@ -127,6 +127,16 @@ The allocation of responsibilities between the customer and Cloud Temple is deta
 ## Reversibility
 
 The VPC configuration can be exported to S3 storage for 30 days after the end of the service.
+
+## Upcoming changes
+
+The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **VPC in shared mode**: an option on shared infrastructure, for customers who do not have the IaaS OpenSource offering. It will rely on the VM Instances offering.
+- **Site-to-site VPN**: secure connectivity to your on-premises networks.
+- **Cloud Connect**: secure connectivity to Azure and AWS.
+- **DNS service**: name resolution within the VPC and configuration of an external DNS.
+- **Micro-segmentation**: network policy groups for advanced security.
 
 ## Pricing
 

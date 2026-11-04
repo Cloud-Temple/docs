@@ -22,7 +22,7 @@ Le service permet de déployer et gérer vos réseaux privés sans vous soucier 
   </div>
     <div class="card">
     <h3>Tutoriels</h3>
-    <p>Guides pas à pas pour les cas d'usage avancés (Peering, VPN, etc.).</p>
+    <p>Guides pas à pas, comme la configuration réseau d'une machine virtuelle.</p>
     <a href="./vpc/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
 </div>

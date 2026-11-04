@@ -22,7 +22,7 @@ Der Dienst ermöglicht das Bereitstellen und Verwalten Ihrer privaten Netzwerke,
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Schritt-für-Schritt-Anleitungen für erweiterte Anwendungsfälle (Peering, VPN, etc.).</p>
+    <p>Schritt-für-Schritt-Anleitungen, etwa zur Netzwerkkonfiguration einer virtuellen Maschine.</p>
     <a href="./vpc/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>

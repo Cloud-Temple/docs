@@ -119,6 +119,13 @@ Vous récupérez vos données à tout moment, de manière autonome, avec les out
 | Transfert sortant           | Aucun frais de sortie lors du transfert de vos données vers un autre fournisseur.            | Sans frais |
 | Assistance à la migration   | Support technique sur demande pour les opérations de migration complexes.                    | Sur devis  |
 
+## Prochaines évolutions
+
+Les évolutions suivantes sont annoncées ; elles ne sont pas encore disponibles. Suivez leur avancement sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **Object Lock (WORM)** : des buckets immuables, dont les objets ne peuvent être ni modifiés ni supprimés, même par un compte administrateur, avant l'expiration de la période définie.
+- **Modes de chiffrement supplémentaires** : SSE-C (chiffrement côté serveur avec des clés fournies par le client) et CSE (chiffrement côté client).
+
 ## Tarification
 
 Le service est facturé selon la capacité réellement utilisée, sans frais de sortie. Les tarifs sont publiés sur la page produit du site Cloud Temple :

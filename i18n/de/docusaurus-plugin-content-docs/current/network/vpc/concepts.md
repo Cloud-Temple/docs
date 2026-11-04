@@ -64,7 +64,7 @@ Es werden zwei Netzwerk-Nutzungsmodelle angeboten:
 ### Bereitstellungsmodi
 
 * **VPC im dedizierten Modus**: Voraussetzung ist ein Abonnement des Angebots IaaS OpenSource. Die VPC-Instanzen (Router, Gateways) werden direkt auf Ihrer dedizierten Infrastruktur bereitgestellt: Die Rechenressourcen, die Ihre Netzwerkdienste tragen, sind physisch isoliert.
-* **VPC im gemeinsam genutzten Modus**: Dieser Modus stützt sich auf das Angebot VM Instances. Er stellt den VPC ohne vorherige dedizierte Infrastruktur bereit, für punktuelle Anforderungen oder Cloud-native-Umgebungen.
+* **VPC im gemeinsam genutzten Modus**: angekündigt, siehe die [kommenden Entwicklungen](#kommende-entwicklungen).
 
 ## Architektur
 
@@ -127,6 +127,16 @@ Die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple ist
 ## Reversibilität
 
 Die Konfiguration des VPC kann nach Ende des Dienstes 30 Tage lang in einen S3-Speicher exportiert werden.
+
+## Kommende Entwicklungen
+
+Die folgenden Entwicklungen sind angekündigt; sie sind noch nicht verfügbar. Verfolgen Sie ihren Fortschritt auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **VPC im gemeinsam genutzten Modus**: eine Option auf gemeinsam genutzter Infrastruktur für Kunden ohne das Angebot IaaS OpenSource. Sie wird sich auf das Angebot VM Instances stützen.
+- **Site-to-Site-VPN**: sichere Konnektivität zu Ihren On-Premises-Netzwerken.
+- **Cloud Connect**: sichere Konnektivität zu Azure und AWS.
+- **DNS-Dienst**: Namensauflösung innerhalb des VPC und Konfiguration eines externen DNS.
+- **Mikrosegmentierung**: Gruppen von Netzwerkrichtlinien für erweiterte Sicherheit.
 
 ## Preise
 

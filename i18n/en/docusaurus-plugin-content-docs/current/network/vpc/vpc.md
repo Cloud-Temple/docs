@@ -22,7 +22,7 @@ The service allows you to deploy and manage your private networks without worryi
   </div>
     <div class="card">
     <h3>Tutorials</h3>
-    <p>Step-by-step guides for advanced use cases (Peering, VPN, etc.).</p>
+    <p>Step-by-step guides, such as configuring a virtual machine's network.</p>
     <a href="./vpc/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
 </div>
