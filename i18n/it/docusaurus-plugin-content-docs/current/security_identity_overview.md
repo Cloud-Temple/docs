@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Sicurezza e identità
 
-Gestisci le identità e i diritti di accesso alla tua infrastruttura Cloud Temple, e segui le buone pratiche di sicurezza e gli avvisi di sicurezza pubblicati sui nostri servizi.
+Gestisci le identità e i diritti di accesso alla tua infrastruttura Cloud Temple applicando il principio del minimo privilegio. Segui le buone pratiche e gli avvisi di sicurezza pubblicati sui nostri servizi, e sfrutta i log di attività per individuare azioni sensibili o sospette.
 
 <div class="card-grid">
   <div class="card">

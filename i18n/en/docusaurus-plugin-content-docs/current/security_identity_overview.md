@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Security & Identity
 
-Manage identities and access rights to your Cloud Temple infrastructure, and follow the security best practices and the security alerts published for our services.
+Manage identities and access rights to your Cloud Temple infrastructure by applying the principle of least privilege. Follow the security best practices and alerts published for our services, and use the activity logs to spot sensitive or suspicious actions.
 
 <div class="card-grid">
   <div class="card">

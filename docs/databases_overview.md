@@ -10,7 +10,7 @@ Les bases de données managées de Cloud Temple vous déchargent de la gestion o
 <div class="card-grid">
   <div class="card">
     <h3>MariaDB Managé</h3>
-    <p>Moteur MariaDB sur Kubernetes : modèles StandAlone ou MultiAZ, avec sauvegardes physiques et logiques.</p>
+    <p>Moteur MariaDB sur Kubernetes : modèles StandAlone ou MultiAZ, stockage réparti sur trois zones de disponibilité, sauvegardes physiques et logiques.</p>
     <a href="./managed_mariadb" class="card-link">Découvrir MariaDB Managé →</a>
   </div>
   <div class="card">
