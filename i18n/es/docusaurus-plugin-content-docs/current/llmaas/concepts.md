@@ -82,7 +82,6 @@ El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la 
 
 #### **Protección de Datos**
 - **Cifrado de extremo a extremo** : TLS 1.3 para todos los intercambios
-- **Datos cifrados en reposo**: los datos que el servicio conserva temporalmente, como los resultados de un [procesamiento por lotes](./batch.md), se cifran (AES-256)
 
 #### Soberanía Digital
 - **Alojamiento en Francia** : Centros de datos Cloud Temple certificados
@@ -92,7 +91,7 @@ El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la 
 <a id="auditoría-y-trazabilidad"></a>
 
 #### **Confidencialidad de los Datos**
-- **Sin conservación**: sus datos permanecen estrictamente confidenciales y no se explotan ni se almacenan tras el procesamiento. Única excepción: los resultados de un [procesamiento por lotes](./batch.md) se conservan 24 h tras su finalización para que pueda recuperarlos, y después se purgan automáticamente
+- **Sin conservación**: sus datos permanecen estrictamente confidenciales y no se explotan ni se almacenan tras el procesamiento. Única excepción: los resultados de un [procesamiento por lotes](./batch.md) siguen siendo consultables durante un tiempo limitado tras su finalización (24 h por defecto) y después se purgan automáticamente; consulte las [condiciones de conservación](./batch.md#límites-y-retención)
 
 ### Controles de Seguridad
 

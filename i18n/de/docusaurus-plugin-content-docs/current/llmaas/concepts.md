@@ -84,7 +84,6 @@ Der LLMaaS-Dienst läuft auf einer technischen Infrastruktur, die die **SecNumCl
 
 #### **Datenschutz**
 - **End-to-End-Verschlüsselung**: TLS 1.3 für alle Übertragungen
-- **Verschlüsselte ruhende Daten**: Daten, die der Dienst vorübergehend aufbewahrt, etwa die Ergebnisse einer [Stapelverarbeitung](./batch.md), werden verschlüsselt (AES-256)
 
 #### **Digitale Souveränität**
 - **Hosting in Frankreich**: Zertifizierte Cloud Temple Rechenzentren
@@ -94,7 +93,7 @@ Der LLMaaS-Dienst läuft auf einer technischen Infrastruktur, die die **SecNumCl
 <a id="audit-und-nachverfolgbarkeit"></a>
 
 #### **Vertraulichkeit der Daten**
-- **Keine Speicherung**: Ihre Daten bleiben streng vertraulich und werden nach der Verarbeitung weder genutzt noch gespeichert. Einzige Ausnahme: Die Ergebnisse einer [Stapelverarbeitung](./batch.md) werden nach Abschluss 24 Stunden lang aufbewahrt, damit Sie sie abrufen können, und anschließend automatisch gelöscht
+- **Keine Speicherung**: Ihre Daten bleiben streng vertraulich und werden nach der Verarbeitung weder genutzt noch gespeichert. Einzige Ausnahme: Die Ergebnisse einer [Stapelverarbeitung](./batch.md) bleiben nach Abschluss für begrenzte Zeit abrufbar (standardmäßig 24 Stunden) und werden anschließend automatisch gelöscht; siehe die [Aufbewahrungsbedingungen](./batch.md#grenzen-und-aufbewahrung)
 
 ### Sicherheitskontrollen
 

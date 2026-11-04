@@ -82,7 +82,6 @@ The LLMaaS service runs on a technical infrastructure that benefits from the **S
 
 #### **Data Protection**
 - **End-to-end encryption** : TLS 1.3 for all exchanges
-- **Encrypted data at rest**: data the service keeps temporarily, such as the results of [batch processing](./batch.md), is encrypted (AES-256)
 
 #### **Digital Sovereignty**
 - **France hosting** : Certified Cloud Temple datacenters
@@ -92,7 +91,7 @@ The LLMaaS service runs on a technical infrastructure that benefits from the **S
 <a id="audit-and-traceability"></a>
 
 #### **Data Confidentiality**
-- **No retention**: your data remains strictly confidential and is neither used nor stored after processing. The only exception: the results of [batch processing](./batch.md) are kept for 24 hours after completion so that you can retrieve them, then purged automatically
+- **No retention**: your data remains strictly confidential and is neither used nor stored after processing. The only exception: the results of [batch processing](./batch.md) remain retrievable for a limited time after completion (24 hours by default), then are purged automatically; see the [retention conditions](./batch.md#limits-and-retention)
 
 ### Security Controls
 
