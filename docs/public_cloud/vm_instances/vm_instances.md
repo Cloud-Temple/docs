@@ -17,9 +17,9 @@ Elle s'adapte à tous les besoins grâce à ses différentes classes de service 
     <a href="./vm_instances/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guide de démarrage</h3>
     <p>Déployez votre première machine virtuelle en quelques minutes depuis la Marketplace Cloud Temple.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./vm_instances/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriels</h3>

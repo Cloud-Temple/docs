@@ -14,9 +14,9 @@ Grazie a risorse scalabili e a una gestione automatizzata, beneficerete di un'in
     <a href="./iaas_opensource/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Avvio Rapido</h3>
+    <h3>Guida introduttiva</h3>
     <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>

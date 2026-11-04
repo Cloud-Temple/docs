@@ -102,9 +102,9 @@ else:
 
 ## Elección del modelo
 
-Los ejemplos utilizan `gpt-oss:120b`. Antes de su ejecución, verifique que este identificador figure en `/v1/models` y consulte su [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle).
+Los ejemplos utilizan `gpt-oss:120b`. Antes de su ejecución, verifique que este identificador figure en `/v1/models` y consulte su [ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle).
 
-Para su aplicación, elija según las capacidades necesarias, la calidad con sus datos y el horizonte de soporte. La [guide du catalogue](./models.md) detalla estos criterios. Los ejemplos de visión requieren un modelo multimodal y los de llamada de herramientas un modelo que admita el *tool calling*.
+Para su aplicación, elija según las capacidades necesarias, la calidad con sus datos y el horizonte de soporte. La [guía del catálogo](./models.md) detalla estos criterios. Los ejemplos de visión requieren un modelo multimodal y los de llamada de herramientas un modelo que admita el *tool calling*.
 
 Los ajustes de razonamiento dependen del modelo. No asuma que una instrucción de texto active o desactive este modo para todos los modelos de una misma familia.
 

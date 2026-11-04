@@ -17,12 +17,12 @@ En collaborant avec un réseau de partenaires technologiques reconnus, Cloud Tem
     <a href="./marketplace/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guide de démarrage</h3>
     <p>Commencez rapidement avec la Marketplace en suivant des instructions claires et simples.</p>
-    <a href="./marketplace/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à utiliser la Marketplace avec des guides détaillés.</p>
     <a href="./marketplace/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

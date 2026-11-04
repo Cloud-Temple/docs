@@ -12,9 +12,9 @@ Cloud Temple bietet ein Private Networks-Angebot, das auf die Anforderungen von 
     <a href="./private_network/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klare und einfache Anleitungen befolgen.</p>
-    <a href="./private_network/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="./private_network/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

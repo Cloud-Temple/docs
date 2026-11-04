@@ -17,9 +17,9 @@ With its security-first approach and advanced features such as Infrastructure as
     <a href="./bastion/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
-    <a href="./bastion/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./bastion/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

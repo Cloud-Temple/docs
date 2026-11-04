@@ -17,9 +17,9 @@ It adapts to all needs through its various service classes — from cost-effecti
     <a href="./vm_instances/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Deploy your first virtual machine in just a few minutes from the Cloud Temple Marketplace.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./vm_instances/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

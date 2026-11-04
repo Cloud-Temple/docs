@@ -15,7 +15,7 @@ Questo tutorial ha lo scopo di familiarizzarvi con i concetti di rete fondamenta
 
 Prenderemo come **esempio** un cluster **"ctodev"**, il cui range assegnato è **10.20.0.0/22**
 
-> ⚠[définition des ranges]
+> ⚠[Definizione degli intervalli]
 > Questo range di IP private X.Y.Z.0/22 (RFC 1918) viene definito con il cliente durante la configurazione del cluster. Non può essere modificato in seguito.
 
 ## Piano di indirizzamento IP
@@ -26,9 +26,9 @@ Il range del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sotto-r
 
     - 10.20.0.0/24 è assegnato ai nodi del cluster:
 
-    - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
+    - 10.20.0.10 : ctodev-gitrunner (la macchina che gestisce l'infrastruttura)
 
-    - 10.20.0.20 : IP virtuale (load balancée) del servizio API Kubernetes
+    - 10.20.0.20 : IP virtuale (con bilanciamento del carico) del servizio API Kubernetes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -56,7 +56,7 @@ Il range del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sotto-r
 
     - Servizi: 10.95.0.0/12
 
-> ⚠[Ranges Pods et Services]
+> ⚠[Intervalli di Pod e Service]
 > I range Pods e Servizi sono definiti con il cliente durante la configurazione del cluster. Non possono essere modificati in seguito.
 
 ## Utilizzo di MetalLB
@@ -115,7 +115,7 @@ Il vostro cluster Kubernetes gestito è stato fornito inizialmente con 2 indiriz
 
 Il primo indirizzo IP è utilizzato sulla porta 6443 per l'API Kubernetes (nel nostro esempio ctodev.mk.ms-cloud-temple.com:6443)
 
-Lo stesso indirizzo IP è inoltre indirizzato tramite NAT sull'ingress controller *"nginx-external-secured"* per la porta 443. Ciò consente l'esposizione delle diverse console a vostra disposizione (vedere la guida quickstart). L'accesso a questo indirizzo IP pubblico è **filtrato** tramite una lista di IP autorizzati.
+Lo stesso indirizzo IP è inoltre indirizzato tramite NAT sull'ingress controller *"nginx-external-secured"* per la porta 443. Ciò consente l'esposizione delle diverse console a vostra disposizione (vedere la guida introduttiva). L'accesso a questo indirizzo IP pubblico è **filtrato** tramite una lista di IP autorizzati.
 
 ---
 
@@ -131,8 +131,8 @@ Le applicazioni esposte con l'ingress class *"nginx-external"* saranno quindi di
 
 Per il DNS interno (CoreDNS), il cluster avrà questi parametri:
 
-- Nome del cluster : `<identifiant du cluster>`
-- Dominio interno : `<identifiant du cluster>-cluster.local` (nel nostro esempio: ctodev-cluster.local)
+- Nome del cluster : `<identificativo del cluster>`
+- Dominio interno : `<identificativo del cluster>-cluster.local` (nel nostro esempio: ctodev-cluster.local)
 
 Questo dominio interno è cruciale per la comunicazione tra servizi all'interno del cluster. Consente a un'applicazione di contattare un'altra applicazione utilizzando semplicemente il suo nome di servizio Kubernetes, senza dover conoscere il suo indirizzo IP interno.
 
@@ -142,8 +142,8 @@ Ad esempio, un servizio denominato `api-backend` nel namespace `production` sar�
 
 La zona DNS pubblica utilizzata per i cluster Kubernetes Managed è `.mk.ms-cloud-temple.com`
 
-L'ingress *"nginx-external"* (mappato sull'IP pubblico n. 2) è accessibile su `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
-Se pubblichi un'applicazione con questa ingress-class, potrai accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Déployer votre première application](./firstdeploy)
+L'ingress *"nginx-external"* (mappato sull'IP pubblico n. 2) è accessibile su `"*.external.<il vostro identificativo di cluster>.mk.ms-cloud-temple.com"`.
+Se pubblichi un'applicazione con questa ingress-class, potrai accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Distribuire la vostra prima applicazione](./firstdeploy)
 
 ## Hubble: l'osservabilità di rete a portata di mano
 
@@ -162,7 +162,7 @@ L'interfaccia grafica di Hubble è esposta su un URL interno del cluster. L'acce
 
 Per accedervi, è necessario essere connessi alla rete interna del cluster (ad esempio, tramite un server di salto o una VPN). L'URL da utilizzare è il seguente:
 
-`http://hubble.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
+`http://hubble.internal.<vostro-identificativo-cluster>.mk.ms-cloud-temple.com`
 
 Affinché questo URL sia risolvibile dalla tua postazione di lavoro, dovrai probabilmente aggiungere una voce nel file `hosts` o nel DNS interno. È possibile ottenere l'indirizzo IP interno dell'Ingress Hubble con il seguente comando:
 
@@ -172,7 +172,9 @@ kubectl get ingress hubble-ui -n kube-system
 
 <img src={cillium} />
 
-### Creazione di zone DNS interne (cluster privé)
+<a id="creazione-di-zone-dns-interne-cluster-privé"></a>
+
+### Creazione di zone DNS interne (cluster privato)
 
 Per rafforzare la sicurezza e semplificare l'accesso ai vostri servizi e all'API Kubernetes dalla vostra rete interna, si consiglia di creare una zona DNS interna. Questa zona consentirà di risolvere i nomi di dominio dei vostri Ingress e dell'API Kubernetes verso i rispettivi indirizzi IP privati, evitando così di transitare attraverso reti pubbliche.
 
@@ -180,12 +182,12 @@ Per rafforzare la sicurezza e semplificare l'accesso ai vostri servizi e all'API
 
 Basandovi sugli URL forniti nella guida di avvio, potete configurare il vostro DNS interno come segue :
 
-1. **Create la zona DNS privata** sui vostri server DNS interni per `.<identifiant du cluster>.mk.ms-cloud-temple.com`
+1. **Create la zona DNS privata** sui vostri server DNS interni per `.<identificativo del cluster>.mk.ms-cloud-temple.com`
 2. **Aggiungete i record di tipo A** seguenti :
 
    - **Per l'API Kubernetes :**
 
-     - `. -> 10.20.0.20` (IP virtuelle de l'API)
+     - `. -> 10.20.0.20` (IP virtuale dell'API)
    - **Per i servizi interni (via l'Ingress `nginx-internal`) :**
 
      - `hubble.internal -> 10.20.1.1`

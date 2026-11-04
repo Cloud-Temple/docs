@@ -62,7 +62,7 @@ Il nostro ruolo di consulenza è accompagnarvi in questa decisione. I nostri arc
         <h3>PaaS OpenShift</h3>
       </div>
       <div className="card__body">
-        <p>Scoprite la nostra piattaforma "as a Service" per modernizzare le vostre applicazioni su un'infrastruttura certificata SecNumCloud.</p>
+        <p>Scoprite la nostra piattaforma "as a Service" per modernizzare le vostre applicazioni su un'infrastruttura qualificata SecNumCloud.</p>
       </div>
       <div className="card__footer">
         <a href="./paas_openshift" className="button button--primary button--block">Scopri di più</a>

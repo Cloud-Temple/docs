@@ -13,9 +13,9 @@ Per interagire con il cluster, diversi elementi sono indispensabili :
 
 1. **Il file `kubeconfig`** : Questo file, fornito dal team Cloud Temple alla consegna del servizio, contiene tutte le informazioni per connettersi in modo sicuro.
 2. **Lo strumento `kubectl`** : Si tratta dell'interfaccia a riga di comando standard per gestire un cluster Kubernetes.
-3. **Lo strumento `kubelogin`** (si OIDC est utilisé) : Se il cluster è configurato per l'autenticazione tramite un provider di identità OIDC (comme Entra ID/Azure AD), è necessario installare lo strumento `kubelogin` per gestire il flusso di autenticazione. Segui la [guide d&#39;installation de kubelogin](https://github.com/int128/kubelogin).
+3. **Lo strumento `kubelogin`** (se si utilizza OIDC) : Se il cluster è configurato per l'autenticazione tramite un provider di identità OIDC (come Entra ID/Azure AD), è necessario installare lo strumento `kubelogin` per gestire il flusso di autenticazione. Segui la [guida all'installazione di kubelogin](https://github.com/int128/kubelogin).
 
-> ℹ️[Outils graphiques recommandés:]
+> ℹ️[Strumenti grafici consigliati:]
 > Per un'esperienza più visiva e una gestione semplificata delle risorse, consigliamo l'utilizzo di **Lens**. Si tratta di un potente strumento per Kubernetes che consente di esplorare il cluster, gestire le applicazioni e visualizzarne lo stato in modo grafico.
 > Alcuni dei nostri tutorial utilizzeranno Lens per illustrare le operazioni. Puoi scaricarlo qui : [https://k8slens.dev/](https://k8slens.dev/).
 
@@ -29,30 +29,30 @@ Gli URL sono:
 
 - API Kubernetes (utilizzata in kubeconfig):
 
-  - **identifiant**.mk.ms-cloud-temple.com:6443  (donc dans notre exemple: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
+  - **identificativo**.mk.ms-cloud-temple.com:6443  (quindi nel nostro esempio: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 - URL pubbliche:
 
-  - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - k10.external-secured.**identificativo**.mk.ms-cloud-temple.com
+  - grafana.external-secured.**identificativo**.mk.ms-cloud-temple.com
+  - harbor.external-secured.**identificativo**.mk.ms-cloud-temple.com
+  - opencost.external-secured.**identificativo**.mk.ms-cloud-temple.com
+  - opencost-mcp.external-secured.**identificativo**.mk.ms-cloud-temple.com
 
->ℹ️[url sécurisées]
+>ℹ️[URL protetti]
 >Gli URL sopra indicati sono accessibili solo da indirizzi IP pubblici noti, configurati nel firewall della soluzione. Se desideri aggiungere un indirizzo IP pubblico, è necessario presentare una richiesta di supporto.
 >
 
->ℹ️[url internes]
+>ℹ️[URL interni]
 >Gli URL qui sotto non sono esposti su Internet. Sono accessibili solo sulla rete interna Kubernetes Gestito.
->  - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
->  - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
->  - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
+>  - ceph.internal.**identificativo**.mk.ms-cloud-temple.com
+>  - argocd.internal.**identificativo**.mk.ms-cloud-temple.com
+>  - hubble.internal.**identificativo**.mk.ms-cloud-temple.com
 
 ---
 
 ## Le tue autorizzazioni
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test e Kubernetes Core]
 >Per i cluster Kubernetes Gestiti **"Dev/Test"** e i cluster Core, l'account di servizio fornito dispone di tutte le autorizzazioni sull'intero cluster (ClusterAdmin)
 
 Sui cluster **"Production"**, le tue autorizzazioni sono limitate. Disponete di un diritto **"Viewer Esteso"** sulle risorse del cluster. Questo diritto concede un accesso in sola lettura a risorse chiave, sia a livello di cluster che per la diagnostica:
@@ -66,12 +66,12 @@ Sui cluster **"Production"**, le tue autorizzazioni sono limitate. Disponete di 
 
 L'account di servizio assegnato è stato anche reso **proprietario di un primo *tenant* Capsule**.
 Puoi creare Namespaces, che saranno associati al tuo tenant Capsule.
-Gli account esterni (OIDC) sono membri dello stesso tenant Capsule, il che consente loro di interagire liberamente all'interno dei **namespaces** associati al tenant. (Voir le tutoriel "Gérer les permissions avec Capsule")
+Gli account esterni (OIDC) sono membri dello stesso tenant Capsule, il che consente loro di interagire liberamente all'interno dei **namespaces** associati al tenant. (Vedi il tutorial «Gestire i permessi con Capsule»)
 
 Alcune azioni non sono consentite:
 
 - elencare / creare tenant Capsule
-- creare CRD: Se devi distribuire un'applicazione con CRD (helm chart di un operatore per esempio), dovrai interagire con il supporto affinché queste CRD vengano importate (via estrazione dei yaml dal chart helm). Potrai quindi distribuire il tuo chart helm con l'opzione --skip-crds. Vedi : [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- creare CRD: Se devi distribuire un'applicazione con CRD (helm chart di un operatore per esempio), dovrai interagire con il supporto affinché queste CRD vengano importate (via estrazione dei yaml dal chart helm). Potrai quindi distribuire il tuo chart helm con l'opzione --skip-crds. Vedi : [Documentazione Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
 

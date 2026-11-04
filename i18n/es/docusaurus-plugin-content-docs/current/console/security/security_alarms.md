@@ -7,7 +7,7 @@ Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades 
 
 ## Vulnerabilidades
 
-| Date | Référence(s) | CVSS | Titre | Description | Service(s) | Sévérité | Traitement |
+| Fecha | Referencia(s) | CVSS | Título | Descripción | Servicio(s) | Gravedad | Tratamiento |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
 | 21/10/2026 | [CVE-2026-113610](https://nvd.nist.gov/vuln/detail/CVE-2026-113610) | 5.4 | **Vulnerabilidad en Xen Orchestra (CVE-2026-113610)** | Omisión de autorización en el método de API user.set de xo-server que permite a un usuario autenticado restringido modificar las preferencias de otros usuarios. | IaaS OpenSource | 🟡 Moderada | ✅ La actualización de sus instancias Xen Orchestra está programada una vez que los parches sean validados por Cloud Temple. No es necesaria ninguna acción por su parte. |
 | 14/10/2026 | [CVE-2026-110111](https://nvd.nist.gov/vuln/detail/CVE-2026-110111) | 7.5 | **Vulnerabilidad en Xen Orchestra (CVE-2026-110111)** | Fallo de control de acceso en Xen Orchestra que permite a un usuario autenticado elevar sus privilegios a administrador y ejecutar código arbitrario de forma remota mediante archivos .vmx manipulados. | IaaS OpenSource | 🟠 Importante | ✅ La actualización de sus instancias Xen Orchestra está programada una vez que los parches sean validados por Cloud Temple. No es necesaria ninguna acción por su parte. |

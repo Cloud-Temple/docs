@@ -11,9 +11,9 @@ title: Managed PostgreSQL overview
     <a href="./managed_postgresql/concepts" class="card-link">Explore concepts →</a>
   </div>
   <div class="card">
-    <h3>Getting Started Guide</h3>
+    <h3>Getting started</h3>
     <p>Get up and running quickly by following clear and straightforward instructions.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Start the Quickstart →</a>
+    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide →</a>
   </div>
 </div>
 

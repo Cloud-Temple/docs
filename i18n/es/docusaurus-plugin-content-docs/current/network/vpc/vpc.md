@@ -16,9 +16,9 @@ El servicio permite desplegar y gestionar sus redes privadas sin preocuparse por
     <a href="./vpc/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guía de inicio</h3>
     <p>Cree su primer VPC y configure sus redes privadas en pocos minutos.</p>
-    <a href="./vpc/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./vpc/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

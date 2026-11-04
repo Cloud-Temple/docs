@@ -14,9 +14,9 @@ With scalable resources and automated management, you benefit from a high-perfor
     <a href="./iaas_opensource/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

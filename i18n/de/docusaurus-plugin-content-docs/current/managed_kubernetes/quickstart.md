@@ -52,7 +52,7 @@ Die URLs lauten:
 
 ## Ihre Berechtigungen
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test und Kubernetes Core]
 >Für die verwalteten Kubernetes-Cluster **"Dev/Test"** und die Core-Cluster verfügt der Ihnen bereitgestellte Service-Account über alle Berechtigungen im gesamten Cluster (ClusterAdmin)
 
 Auf den Clustern **"Production"** sind Ihre Berechtigungen eingeschränkt. Sie verfügen über ein **"Erweiterter Viewer"**-Recht für die Cluster-Ressourcen. Dieses Recht gewährt schreibgeschützten Zugriff auf Schlüsselressourcen, sowohl auf Clusterebene als auch zur Diagnose:
@@ -66,12 +66,12 @@ Auf den Clustern **"Production"** sind Ihre Berechtigungen eingeschränkt. Sie v
 
 Der Ihnen zugewiesene Service-Account wurde zudem zum **Eigentümer eines ersten *Capsule-Tenants*** gemacht.
 Sie können Namespaces erstellen, die Ihrem Capsule-Tenant zugeordnet werden.
-Externe Konten (OIDC) sind Mitglieder desselben Capsule-Tenants, was ihnen ermöglicht, frei innerhalb der dem Tenant zugeordneten **Namespaces** zu interagieren. (Voir le tutoriel "Gérer les permissions avec Capsule")
+Externe Konten (OIDC) sind Mitglieder desselben Capsule-Tenants, was ihnen ermöglicht, frei innerhalb der dem Tenant zugeordneten **Namespaces** zu interagieren. (Siehe das Tutorial „Berechtigungen mit Capsule verwalten“)
 
 Bestimmte Aktionen sind nicht erlaubt:
 
 - Auflisten / Erstellen von Capsule-Tenants
-- Erstellen von CRDs: Wenn Sie eine Anwendung mit CRDs bereitstellen müssen (helm chart d'un opérateur par exemple), müssen Sie sich an den Support wenden, damit diese CRDs importiert werden (via extraction des yaml depuis le chart helm). Anschließend können Sie Ihr Helm-Chart mit der Option --skip-crds bereitstellen. Siehe: [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- Erstellen von CRDs: Wenn Sie eine Anwendung mit CRDs bereitstellen müssen (zum Beispiel das Helm-Chart eines Operators), müssen Sie sich an den Support wenden, damit diese CRDs importiert werden (durch Extraktion der YAML-Dateien aus dem Helm-Chart). Anschließend können Sie Ihr Helm-Chart mit der Option --skip-crds bereitstellen. Siehe: [Helm-3-Dokumentation](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
 
