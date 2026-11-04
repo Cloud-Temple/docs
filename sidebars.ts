@@ -105,9 +105,8 @@ const sidebars: SidebarsConfig = {
           label: 'IAM',
           link: { type: 'doc', id: 'console/iam/iam' },
           items: [
-            'console/iam/iam',
-            'console/iam/concepts',
-            'console/iam/quickstart',
+            page('iam', 'overview', 'console/iam/iam'),
+            page('iam', 'concepts', 'console/iam/concepts'),
             {
               type: 'category',
               label: 'Tutoriels',
@@ -121,6 +120,8 @@ const sidebars: SidebarsConfig = {
                 'console/iam/tutorials/sso_okta',
               ],
             },
+            // La FAQ de l'IAM est rangée sous quickstart.md (URL historique conservée).
+            page('iam', 'faq', 'console/iam/quickstart'),
           ],
         },
         {

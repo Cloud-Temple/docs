@@ -626,5 +626,17 @@
   "sidebar.docSidebar.doc.Historique de la documentation": {
     "message": "Cronologia della documentazione",
     "description": "The label for the doc item 'Historique de la documentation' in sidebar 'docSidebar', linking to the doc changelog"
+  },
+  "sidebar.docSidebar.doc.iam_overview": {
+    "message": "Panoramica",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/iam/iam"
+  },
+  "sidebar.docSidebar.doc.iam_concepts": {
+    "message": "Concetti",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/iam/concepts"
+  },
+  "sidebar.docSidebar.doc.iam_faq": {
+    "message": "Domande frequenti",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/iam/quickstart"
   }
 }
