@@ -5,7 +5,7 @@ displayed_sidebar: docSidebar
 
 # Security & Identity
 
-Manage identities, access rights, and the security of your Cloud Temple infrastructure from a centralized dashboard. Apply the principle of least privilege and monitor suspicious activities in real time.
+Manage identities and access rights to your Cloud Temple infrastructure, and follow the security best practices and the security alerts published for our services.
 
 <div class="card-grid">
   <div class="card">
@@ -15,7 +15,7 @@ Manage identities, access rights, and the security of your Cloud Temple infrastr
   </div>
   <div class="card">
     <h3>Security</h3>
-    <p>Security recommendations, alerts, and compliance policies to strengthen the security posture of your tenant.</p>
+    <p>Security best practices and security alerts published for our services.</p>
     <a href="./console/security/security_recommendations" class="card-link">Discover Security →</a>
   </div>
 </div>
