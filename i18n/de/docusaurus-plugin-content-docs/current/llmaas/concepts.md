@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Überblick
 
-Der **LLMaaS**-Service (Large Language Models as a Service) von Cloud Temple bietet sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen mit der **SecNumCloud-Zertifizierung** der ANSSI.
+Der **LLMaaS**-Service (Large Language Models as a Service) von Cloud Temple bietet sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen mit der **SecNumCloud-Qualifizierung** der ANSSI.
 
 ## 🏗️ Technische Architektur
 
@@ -37,6 +37,8 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 *Siehe [Katalog und Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle) sowie [Auswahlführer](./models.md).*
 
 ### Token-Verwaltung
+
+<a id="token-arten"></a>
 
 #### **Abrechnungseinheiten**
 - **Eingabetokens**: Ihr Prompt und sein Kontext
@@ -74,21 +76,25 @@ print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
 
 ## 🔒 Sicherheit und Compliance
 
-### SecNumCloud-Zertifizierung
+<a id="secnumcloud-zertifizierung"></a>
+
+### SecNumCloud-Qualifizierung
 
 Der LLMaaS-Dienst läuft auf einer technischen Infrastruktur, die die **SecNumCloud 3.2-Qualifizierung** der ANSSI und die **HDS-Zertifizierung** für das Hosting von Gesundheitsdaten genießt, was garantiert:
 
 #### **Datenschutz**
 - **End-to-End-Verschlüsselung**: TLS 1.3 für alle Übertragungen
-- **Sichere Speicherung**: Daten in Ruhe verschlüsselt (AES-256)
+- **Verschlüsselte ruhende Daten**: Daten, die der Dienst vorübergehend aufbewahrt, etwa die Ergebnisse einer [Stapelverarbeitung](./batch.md), werden verschlüsselt (AES-256)
 
 #### **Digitale Souveränität**
 - **Hosting in Frankreich**: Zertifizierte Cloud Temple Rechenzentren
 - **Französisches Recht**: Native DSGVO-Konformität
 - **Keine Exposition**: Keine Übertragung in ausländische Clouds
 
+<a id="audit-und-nachverfolgbarkeit"></a>
+
 #### **Vertraulichkeit der Daten**
-- **Keine Speicherung**: Ihre Daten bleiben streng vertraulich und werden nach der Verarbeitung weder genutzt noch gespeichert
+- **Keine Speicherung**: Ihre Daten bleiben streng vertraulich und werden nach der Verarbeitung weder genutzt noch gespeichert. Einzige Ausnahme: Die Ergebnisse einer [Stapelverarbeitung](./batch.md) werden nach Abschluss 24 Stunden lang aufbewahrt, damit Sie sie abrufen können, und anschließend automatisch gelöscht
 
 ### Sicherheitskontrollen
 

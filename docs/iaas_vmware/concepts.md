@@ -169,7 +169,7 @@ Dans le cadre de l'usage avec une offre de virtualisation, un cluster d'hypervis
 | Lame PERFORMANCE 2 v3 | 768 Go       | 3.00/3.6 GHz (Gold 6354 ou équivalent)    | 36 / 72 threads            | 2 X 25 Gbit/s        | |
 | Lame PERFORMANCE 3 v3 | 1536 Go      | 2.60/3.5 GHz (Gold 6348 ou équivalent)    | 56 / 112 threads           | 2 X 25 Gbit/s        | |
 | Lame PERFORMANCE 4 v3 | 512 Go       | 2.50/4.1 GHz (Intel 6426Y ou equivalent)  | 32 / 64 threads            | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48go |
-| Lame PERFORMANCE 5 v3 | 512 Go       | 2.50/4.1 GHz (Intel 6426Y ou équivalent)  | 32 / 64 threads            | 2 X 25 Gbit/s        | 2 x NVIDIA H100 80 Go |
+| Lame PERFORMANCE 5 v3 | 512 Go       | 2.50/4.1 GHz (Intel 6426Y ou équivalent)  | 32 / 64 threads            | __(5)__              | 2 x NVIDIA H100 80 Go |
 
 __Remarques__ :
 
@@ -180,6 +180,8 @@ __Remarques__ :
 - __(3)__ La connectivité physique est mutualisée pour l'accès réseau et l'accès storage bloc, la plateforme CISCO étant convergée.
 
 - __(4)__ L'offre de GPU disponible évolue en permanence. Elle est basée sur les GPU NVIDIA L40S et H100. La lame PERF4 est livrée avec 2 cartes L40S de 48 Go de ram ; la lame PERF5, avec 2 cartes H100 de 80 Go, est proposée avec un engagement de 24 mois. Contactez le support pour plus de précision si nécessaire.
+
+- __(5)__ Connectivité de la lame PERFORMANCE 5 : nous consulter.
 
 ### Réseau
 

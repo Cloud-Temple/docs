@@ -38,6 +38,8 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Gestión de Tokens
 
+<a id="tipos-de-tokens"></a>
+
 #### **Unidades de facturación**
 - **Tokens de entrada**: su prompt y su contexto
 - **Tokens de salida**: la respuesta generada por el modelo
@@ -80,15 +82,17 @@ El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la 
 
 #### **Protección de Datos**
 - **Cifrado de extremo a extremo** : TLS 1.3 para todos los intercambios
-- **Almacenamiento seguro** : Datos cifrados en reposo (AES-256)
+- **Datos cifrados en reposo**: los datos que el servicio conserva temporalmente, como los resultados de un [procesamiento por lotes](./batch.md), se cifran (AES-256)
 
 #### Soberanía Digital
 - **Alojamiento en Francia** : Centros de datos Cloud Temple certificados
 - **Derecho francés** : Cumplimiento nativo del RGPD
 - **Sin exposición** : Ninguna transferencia hacia nubes extranjeras
 
+<a id="auditoría-y-trazabilidad"></a>
+
 #### **Confidencialidad de los Datos**
-- **Sin conservación**: sus datos permanecen estrictamente confidenciales y no se explotan ni se almacenan tras el procesamiento
+- **Sin conservación**: sus datos permanecen estrictamente confidenciales y no se explotan ni se almacenan tras el procesamiento. Única excepción: los resultados de un [procesamiento por lotes](./batch.md) se conservan 24 h tras su finalización para que pueda recuperarlos, y después se purgan automáticamente
 
 ### Controles de Seguridad
 

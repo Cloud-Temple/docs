@@ -38,6 +38,8 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Gestione dei Token
 
+<a id="tipi-di-token"></a>
+
 #### **Unità di fatturazione**
 - **Token di input**: il tuo prompt e il suo contesto
 - **Token di output**: la risposta generata dal modello
@@ -80,15 +82,17 @@ Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della
 
 #### **Protezione dei Dati**
 - **Crittografia end-to-end** : TLS 1.3 per tutti gli scambi
-- **Archiviazione sicura** : Dati crittografati a riposo (AES-256)
+- **Dati a riposo crittografati**: i dati che il servizio conserva temporaneamente, come i risultati di un'[elaborazione in batch](./batch.md), sono crittografati (AES-256)
 
 #### **Sovranità Digitale**
 - **Hosting Francia** : Datacenter Cloud Temple certificati
 - **Diritto francese** : Conformità RGPD nativa
 - **Nessuna esposizione** : Nessun trasferimento verso cloud stranieri
 
+<a id="audit-e-tracciabilità"></a>
+
 #### **Riservatezza dei Dati**
-- **Nessuna conservazione**: i tuoi dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione
+- **Nessuna conservazione**: i tuoi dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione. Unica eccezione: i risultati di un'[elaborazione in batch](./batch.md) sono conservati 24 ore dopo il completamento perché tu possa recuperarli, poi eliminati automaticamente
 
 ### Controlli di Sicurezza
 
