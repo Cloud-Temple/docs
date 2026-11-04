@@ -61,7 +61,7 @@ El rango de nuestro **ejemplo** 10.20.0.0/22 se divide lógicamente en subrangos
 
 ## Uso de MetalLB
 
-MetalLB es el componente que permite exponer servicios de capa 3 (non web / L7) directamente en una dirección IP, ya sea interna o externa, utilizando el tipo de servicio `LoadBalancer`. Es una alternativa a los Ingress para aplicaciones no HTTP o para casos de uso específicos.
+MetalLB es el componente que permite exponer servicios de capa 3 (no web / L7) directamente en una dirección IP, ya sea interna o externa, utilizando el tipo de servicio `LoadBalancer`. Es una alternativa a los Ingress para aplicaciones no HTTP o para casos de uso específicos.
 
 Para utilizar MetalLB, bastará con crear un servicio de tipo `LoadBalancer`. MetalLB le asignará automáticamente una dirección IP desde los rangos preconfigurados. La distinción entre los rangos `interne` y `externe` es una medida de seguridad para garantizar que una aplicación destinada a un uso interno no se exponga en una red pública por error.
 
