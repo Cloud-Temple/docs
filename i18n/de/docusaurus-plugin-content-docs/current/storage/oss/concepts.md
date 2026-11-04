@@ -119,6 +119,13 @@ Sie können Ihre Daten jederzeit selbstständig mit den Standard-S3-Tools abrufe
 | Ausgehende Übertragung      | Keine Egress-Gebühren bei der Übertragung Ihrer Daten zu einem anderen Anbieter.             | Kostenlos  |
 | Migrationsunterstützung     | Technischer Support auf Anfrage für komplexe Migrationsvorgänge.                             | Auf Angebot |
 
+## Kommende Entwicklungen
+
+Die folgenden Entwicklungen sind angekündigt; sie sind noch nicht verfügbar. Verfolgen Sie ihren Fortschritt auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **Object Lock (WORM)**: unveränderliche Buckets, deren Objekte vor Ablauf des festgelegten Zeitraums weder geändert noch gelöscht werden können, auch nicht von einem Administratorkonto.
+- **Zusätzliche Verschlüsselungsmodi**: SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) und CSE (clientseitige Verschlüsselung).
+
 ## Preise
 
 Der Dienst wird nach der tatsächlich genutzten Kapazität abgerechnet, ohne Egress-Gebühren. Die Preise sind auf der Produktseite auf der Cloud Temple-Website veröffentlicht:

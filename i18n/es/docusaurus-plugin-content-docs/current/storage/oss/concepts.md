@@ -119,6 +119,13 @@ Puede recuperar sus datos en cualquier momento, de forma autónoma, con las herr
 | Transferencia saliente      | Sin costes de salida al transferir sus datos a otro proveedor.                               | Sin coste  |
 | Asistencia a la migración   | Soporte técnico bajo demanda para las operaciones de migración complejas.                    | Bajo presupuesto |
 
+## Próximas evoluciones
+
+Las siguientes evoluciones están anunciadas; todavía no están disponibles. Siga su avance en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **Object Lock (WORM)**: buckets inmutables cuyos objetos no pueden modificarse ni eliminarse, ni siquiera desde una cuenta de administrador, antes de que expire el periodo definido.
+- **Modos de cifrado adicionales**: SSE-C (cifrado del lado del servidor con claves proporcionadas por el cliente) y CSE (cifrado del lado del cliente).
+
 ## Precios
 
 El servicio se factura según la capacidad realmente utilizada, sin costes de salida. Las tarifas se publican en la página del producto en el sitio web de Cloud Temple:

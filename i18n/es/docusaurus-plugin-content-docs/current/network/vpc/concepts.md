@@ -128,6 +128,15 @@ El reparto de responsabilidades entre el cliente y Cloud Temple se detalla en la
 
 La configuración del VPC puede exportarse a un almacenamiento S3 durante 30 días tras la finalización del servicio.
 
+## Próximas evoluciones
+
+Las siguientes evoluciones están anunciadas; todavía no están disponibles. Siga su avance en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **VPN sitio a sitio**: conectividad segura hacia sus redes on-premise.
+- **Cloud Connect**: conectividad segura hacia Azure y AWS.
+- **Servicio DNS**: resolución de nombres interna al VPC y configuración de un DNS externo.
+- **Microsegmentación**: grupos de políticas de red para una seguridad avanzada.
+
 ## Precios
 
 Los precios del VPC se publican en la página del producto en el sitio web de Cloud Temple:

@@ -22,7 +22,7 @@ Il servizio consente di distribuire e gestire le vostre reti private senza preoc
   </div>
     <div class="card">
     <h3>Tutorial</h3>
-    <p>Guide passo passo per casi d'uso avanzati (Peering, VPN, ecc.).</p>
+    <p>Guide passo passo, come la configurazione di rete di una macchina virtuale.</p>
     <a href="./vpc/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

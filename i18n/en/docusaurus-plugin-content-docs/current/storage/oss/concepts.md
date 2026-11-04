@@ -119,6 +119,13 @@ You can retrieve your data at any time, autonomously, using standard S3 tools.
 | Outbound transfer           | No egress fees when transferring your data to another provider.                              | Free of charge |
 | Migration assistance        | Technical support on request for complex migration operations.                               | On quotation |
 
+## Upcoming changes
+
+The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **Object Lock (WORM)**: immutable buckets whose objects can be neither modified nor deleted, even by an administrator account, before the defined period expires.
+- **Additional encryption modes**: SSE-C (server-side encryption with customer-provided keys) and CSE (client-side encryption).
+
 ## Pricing
 
 The service is billed according to the capacity actually used, with no egress fees. Prices are published on the product page on the Cloud Temple website:

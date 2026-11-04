@@ -119,6 +119,13 @@ Potete recuperare i vostri dati in qualsiasi momento, in modo autonomo, con gli 
 | Trasferimento in uscita     | Nessun costo di uscita per il trasferimento dei vostri dati verso un altro fornitore.        | Gratuito   |
 | Assistenza alla migrazione  | Supporto tecnico su richiesta per le operazioni di migrazione complesse.                     | Su preventivo |
 
+## Prossime evoluzioni
+
+Le seguenti evoluzioni sono annunciate; non sono ancora disponibili. Seguite il loro avanzamento sulla [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+
+- **Object Lock (WORM)**: bucket immutabili, i cui oggetti non possono essere né modificati né eliminati, nemmeno da un account amministratore, prima della scadenza del periodo definito.
+- **Modalità di crittografia aggiuntive**: SSE-C (crittografia lato server con chiavi fornite dal cliente) e CSE (crittografia lato client).
+
 ## Prezzi
 
 Il servizio è fatturato in base alla capacità effettivamente utilizzata, senza costi di uscita. Le tariffe sono pubblicate sulla pagina del prodotto sul sito Cloud Temple:
