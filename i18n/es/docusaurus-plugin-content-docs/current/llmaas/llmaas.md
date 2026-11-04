@@ -37,7 +37,7 @@ Todas las solicitudes a la API LLMaaS deben incluir un encabezado `Authorization
 
 ## Tipos de contenido
 
-Las solicitudes de generación de texto utilizan JSON con la cabecera `Content-Type: application/json`. El streaming devuelve eventos SSE y la transcripción de archivos de audio utiliza `multipart/form-data`. Consulte la [documentation API](./api.md) para el formato de cada endpoint.
+Las solicitudes de generación de texto utilizan JSON con la cabecera `Content-Type: application/json`. El streaming devuelve eventos SSE y la transcripción de archivos de audio utiliza `multipart/form-data`. Consulte la [documentación de la API](./api.md) para el formato de cada endpoint.
 
 ## Metadatos de las respuestas
 
@@ -120,7 +120,7 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoints disponibles
 
 - `/chat/completions` : Generación de respuestas conversacionales
-- `/chat/completions/batch` : Procesamiento asíncrono de múltiples conversaciones ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Procesamiento asíncrono de múltiples conversaciones ([guía de Batch](./batch.md))
 - `/completions` : Completado de texto simple
 - `/embeddings` : Vectorización para búsqueda semántica y RAG
 - `/rerank` y `/v2/rerank` : Reordenación de resultados (compatible Cohere SDK)

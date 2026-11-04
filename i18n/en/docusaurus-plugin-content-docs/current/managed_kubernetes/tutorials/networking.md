@@ -203,12 +203,12 @@ This configuration ensures that traffic to the API and internal services remains
 
 <div class="card">
   <div class="card__header">
-    <h3>Tutoriel : Déployer votre première application</h3>
+    <h3>Tutorial: Deploy your first application</h3>
   </div>
   <div class="card__body">
-    <p>Suivez notre guide détaillé pour apprendre à exposer une application en utilisant un Ingress.</p>
+    <p>Follow our detailed guide to learn how to expose an application using an Ingress.</p>
   </div>
   <div class="card__footer">
-    <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel →</a>
+    <a href="./firstdeploy" class="button button--primary button--block">View the tutorial →</a>
   </div>
 </div>

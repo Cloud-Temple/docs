@@ -615,12 +615,12 @@ Una volta completato con successo il primo test:
 
 1. **Esplorate i modelli** : Testate diversi modelli in base alle vostre esigenze
 2. **Ottimizzate i prompt** : Migliorate la qualità delle risposte
-3. **Integrate nella vostra applicazione** : Consultate la [documentation API](./api)
+3. **Integrate nella vostra applicazione** : Consultate la [documentazione API](./api)
 4. **Casi d'uso avanzati** : Vedi i [tutoriels](./tutorials)
 
 ## Supporto
 
 In caso di problemi :
-- Consultare la [documentation API complète](./api)
+- Consultare la [documentazione API completa](./api)
 - Verificare lo stato del servizio nella Console
 - Contattare il supporto tramite la Console Cloud Temple

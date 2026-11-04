@@ -120,7 +120,7 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoint disponibili
 
 - `/chat/completions` : Generazione di risposte conversazionali
-- `/chat/completions/batch` : Elaborazione asincrona di più conversazioni ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Elaborazione asincrona di più conversazioni ([guida Batch](./batch.md))
 - `/completions` : Completamento di testo semplice
 - `/embeddings` : Vettorizzazione per la ricerca semantica e RAG
 - `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatible Cohere SDK)
