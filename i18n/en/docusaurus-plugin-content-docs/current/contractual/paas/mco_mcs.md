@@ -22,7 +22,7 @@ This policy details the responsibilities and recommendations for Operational Sup
 - Full management of the underlying infrastructure, including master nodes, OpenShift version updates, and resilience of critical services deployed by **Cloud Temple**.
 - Automatic minor/patch updates without interruption for hosted workloads, unless otherwise notified.
 - Restriction of rights and features to SecNumCloud constraints.
-- Communication of upcoming updates and break-fix updates over the next three months via the [**Cloud Temple Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Communication of upcoming updates and break-fix updates over the next three months via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 
 **User Responsibility:**
 
@@ -34,7 +34,7 @@ This policy details the responsibilities and recommendations for Operational Sup
 
 - Schedule application deployments outside of maintenance windows to avoid conflicts with automatic cluster updates.
 - Monitor **Cloud Temple** communications regarding major updates to plan necessary adjustments.
-- Track upcoming updates via the [**Product Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Track upcoming updates via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 - Subscribe to [**incident**](../../console/status.md#notification-management) notifications
 
 ---
@@ -212,7 +212,7 @@ See the [**technical support request procedure**](../../console/console_quicksta
 1. **Plan resources** : Ensure sufficient cluster capacity for peak workloads.
 2. **Validate configurations** : Test applications in staging environments before production deployment.
 3. **Monitor regularly** : Use built-in tools to track resource usage and detect issues as early as possible.
-4. **Stay informed** : Follow the roadmap and guides to avoid deprecated features.
+4. **Stay informed** : Follow the Roadmap and guides to avoid deprecated features.
 5. **Contact support** : For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#access-to-technical-support) or by email at [**contact**](mailto:contact@cloud-temple.com).
 
 To review responsibilities in detail, please refer to our [**responsibility matrix**](../../contractual/paas/raci.md).

@@ -592,7 +592,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'link',
-      label: 'Feuille de route produit',
+      label: 'Roadmap',
       href: 'https://github.com/orgs/Cloud-Temple/projects/2',
     },
     {

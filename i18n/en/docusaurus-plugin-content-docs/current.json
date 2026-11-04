@@ -207,9 +207,9 @@
     "message": "GitHub Cloud Temple",
     "description": "The label for link 'GitHub Cloud Temple' in sidebar 'docSidebar', linking to 'https://github.com/cloud-temple'"
   },
-  "sidebar.docSidebar.link.Feuille de route produit": {
-    "message": "Product roadmap",
-    "description": "The label for link 'Feuille de route produit' in sidebar 'docSidebar', linking to 'https://github.com/orgs/Cloud-Temple/projects/2'"
+  "sidebar.docSidebar.link.Roadmap": {
+    "message": "Roadmap",
+    "description": "The label for link 'Roadmap' in sidebar 'docSidebar', linking to 'https://github.com/orgs/Cloud-Temple/projects/2'"
   },
   "sidebar.docSidebar.link.Page de statut": {
     "message": "Status page",
