@@ -121,6 +121,8 @@ const config: Config = {
       logo: {
         alt: 'Cloud Temple Logo',
         src: 'img/logo.svg',
+        // Variante pour le mode sombre : même tracé, texte blanc et vert éclairci.
+        srcDark: 'img/logo-dark.svg',
         href: '/home'
       },
       items: [
