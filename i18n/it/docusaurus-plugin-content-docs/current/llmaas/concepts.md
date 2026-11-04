@@ -38,16 +38,19 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Gestione dei Token
 
-#### **Tipi di Token**
-- **Token di input** : Il tuo prompt e contesto
-- **Token di output** : Risposta generata dal modello
-- **Token di sistema** : Metadata e istruzioni
+#### **Unità di fatturazione**
+- **Token di input**: il tuo prompt e il suo contesto
+- **Token di output**: la risposta generata dal modello
+- **Token di ragionamento**: solo per i modelli «ragionatori» o «ibridi» quando il ragionamento è attivo, e solo sui token legati a questa attività
+- **Token di reranking**: il [riordinamento dei documenti](./rerank.md)
+- **Token batch** (input e output): l'[elaborazione in batch](./batch.md)
+- **Minuti audio trascritti**: ogni minuto iniziato viene conteggiato
 
 #### **Calcolo dei Costi**
 
 Per conoscere i prezzi pubblici vigenti e creare la tua stima, consulta il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-Il costo dipende dai volumi consumati (token, documenti o durata audio) e dalle unità di fatturazione applicabili.
+Il costo dipende dai volumi consumati in ciascuna di queste unità.
 
 #### **Ottimizzazione**
 - **Context window** : Riutilizza le conversazioni per risparmiare
@@ -73,7 +76,7 @@ print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
 
 ### Qualifica SecNumCloud
 
-Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della **qualifica SecNumCloud 3.2** dell'ANSSI, garantendo:
+Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della **qualifica SecNumCloud 3.2** dell'ANSSI e della **certificazione HDS** per l'hosting dei dati sanitari, garantendo:
 
 #### **Protezione dei Dati**
 - **Crittografia end-to-end** : TLS 1.3 per tutti gli scambi
@@ -84,10 +87,8 @@ Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della
 - **Diritto francese** : Conformità RGPD nativa
 - **Nessuna esposizione** : Nessun trasferimento verso cloud stranieri
 
-#### **Audit e Tracciabilità**
-- **Log completi** : Tutte le interazioni tracciate
-- **Retention** : Conservazione secondo politiche legali
-- **Compliance** : Rapporti di audit disponibili
+#### **Riservatezza dei Dati**
+- **Nessuna conservazione**: i tuoi dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione
 
 ### Controlli di Sicurezza
 
@@ -111,7 +112,6 @@ Accessibile tramite **Console Cloud Temple** :
 - Metriche di utilizzo per modello
 - Grafici di latenza e throughput
 - Alert su soglie di performance
-- Cronologia delle richieste
 
 ## 🌐 Integrazione ed Ecosistema
 

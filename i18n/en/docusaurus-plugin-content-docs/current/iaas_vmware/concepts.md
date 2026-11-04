@@ -169,6 +169,7 @@ When used with a virtualization offering, a hypervisor cluster consists only of 
 | PERFORMANCE 2 v3 blade | 768 GB       | 3.00/3.6 GHz (Gold 6354 or equivalent)    | 36 / 72 threads            | 2 X 25 Gbit/s        | |
 | PERFORMANCE 3 v3 blade | 1536 GB      | 2.60/3.5 GHz (Gold 6348 or equivalent)    | 56 / 112 threads           | 2 X 25 Gbit/s        | |
 | PERFORMANCE 4 v3 blade | 512 GB       | 2.50/4.1 GHz (Intel 6426Y or equivalent)  | 32 / 64 threads            | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
+| PERFORMANCE 5 v3 blade | 512 GB       | 2.50/4.1 GHz (Intel 6426Y or equivalent)  | 32 / 64 threads            | 2 X 25 Gbit/s        | 2 x NVIDIA H100 80GB |
 
 __Notes__:
 
@@ -178,7 +179,7 @@ __Notes__:
 
 - __(3)__ Physical connectivity is shared for network access and block storage access, as the CISCO platform is converged.
 
-- __(4)__ The available GPU offering is constantly evolving. It is based on NVIDIA L40S GPUs. By default, the PERF4 blade is delivered with 2 L40S cards with 48 GB of RAM. Contact support for further details if necessary.
+- __(4)__ The available GPU offering is constantly evolving. It is based on NVIDIA L40S and H100 GPUs. The PERF4 blade is delivered with 2 L40S cards with 48 GB of RAM; the PERF5 blade, with 2 H100 cards with 80 GB, is offered with a 24-month commitment. Contact support for further details if necessary.
 
 ### Network
 

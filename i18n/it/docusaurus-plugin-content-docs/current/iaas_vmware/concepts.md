@@ -169,6 +169,7 @@ Nell'ambito dell'utilizzo con un'offerta di virtualizzazione, un cluster di hype
 | Lama PERFORMANCE 2 v3 | 768 GB       | 3.00/3.6 GHz (Gold 6354 o equivalente)    | 36 / 72 thread             | 2 X 25 Gbit/s        | |
 | Lama PERFORMANCE 3 v3 | 1536 GB      | 2.60/3.5 GHz (Gold 6348 o equivalente)    | 56 / 112 thread            | 2 X 25 Gbit/s        | |
 | Lama PERFORMANCE 4 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y o equivalente)  | 32 / 64 thread             | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
+| Lama PERFORMANCE 5 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y o equivalente)  | 32 / 64 thread             | 2 X 25 Gbit/s        | 2 x NVIDIA H100 80GB |
 
 __Osservazioni__ :
 
@@ -178,7 +179,7 @@ __Osservazioni__ :
 
 - __(3)__ La connettività fisica è condivisa per l'accesso alla rete e l'accesso allo storage a blocchi, essendo la piattaforma CISCO convergente.
 
-- __(4)__ L'offerta GPU disponibile è in continua evoluzione. Si basa sulle GPU NVIDIA L40S. Per impostazione predefinita, la lama PERF4 viene fornita con 2 schede L40S da 48 GB di RAM. Contattate il supporto per maggiori dettagli, se necessario.
+- __(4)__ L'offerta GPU disponibile è in continua evoluzione. Si basa sulle GPU NVIDIA L40S e H100. La lama PERF4 viene fornita con 2 schede L40S da 48 GB di RAM; la lama PERF5, con 2 schede H100 da 80 GB, è proposta con un impegno di 24 mesi. Contattate il supporto per maggiori dettagli, se necessario.
 
 ### Rete
 
