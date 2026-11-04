@@ -29,14 +29,14 @@ Las URL son:
 
 - API de Kubernetes (utilizada en kubeconfig):
 
-  - **identifiant**.mk.ms-cloud-temple.com:6443  (por lo tanto, en nuestro ejemplo: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
+  - **identificador**.mk.ms-cloud-temple.com:6443  (por lo tanto, en nuestro ejemplo: [https://ctodev.mk.ms-cloud-temple.com:6443](https://ctodev.mk.ms-cloud-temple.com:6443) )
 - URL públicas :
 
-  - k10.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - grafana.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - harbor.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - opencost.external-secured.**identifiant**.mk.ms-cloud-temple.com
-  - opencost-mcp.external-secured.**identifiant**.mk.ms-cloud-temple.com
+  - k10.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - grafana.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - harbor.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - opencost.external-secured.**identificador**.mk.ms-cloud-temple.com
+  - opencost-mcp.external-secured.**identificador**.mk.ms-cloud-temple.com
 
 >ℹ️[url sécurisées]
 >Las URL anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una dirección IP pública, debe realizar una solicitud de soporte.
@@ -44,9 +44,9 @@ Las URL son:
 
 >ℹ️[url internes]
 >Las URL siguientes no están expuestas en Internet. Solo son accesibles en la red interna de Kubernetes gestionado.
->  - ceph.internal.**identifiant**.mk.ms-cloud-temple.com
->  - argocd.internal.**identifiant**.mk.ms-cloud-temple.com
->  - hubble.internal.**identifiant**.mk.ms-cloud-temple.com
+>  - ceph.internal.**identificador**.mk.ms-cloud-temple.com
+>  - argocd.internal.**identificador**.mk.ms-cloud-temple.com
+>  - hubble.internal.**identificador**.mk.ms-cloud-temple.com
 
 ---
 
@@ -66,12 +66,12 @@ En los clústeres **"Production"**, sus permisos están limitados. Dispone de un
 
 La cuenta de servicio que se le ha asignado también se ha convertido en **propietaria de un primer *tenant* Capsule**.
 Puede crear Namespaces, que se vincularán a su tenant Capsule.
-Las cuentas externas (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **namespaces** asociados al tenant. (Voir le tutoriel "Gérer les permissions avec Capsule")
+Las cuentas externas (OIDC) son miembros de este mismo tenant Capsule, lo que les permite interactuar libremente dentro de los **namespaces** asociados al tenant. (Vea el tutorial «Gestionar los permisos con Capsule»)
 
 Algunas acciones no están permitidas:
 
 - enumerar / crear tenants Capsule
-- crear CRD: Si debe desplegar una aplicación con CRD (helm chart d'un opérateur par exemple), deberá interactuar con el soporte para que estas CRD se importen (via extraction des yaml depuis le chart helm). Luego podrá desplegar su helm chart con la opción --skip-crds. Ver: [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- crear CRD: Si debe desplegar una aplicación con CRD (por ejemplo, el chart de Helm de un operador), deberá interactuar con el soporte para que estas CRD se importen (extrayendo los YAML del chart de Helm). Luego podrá desplegar su helm chart con la opción --skip-crds. Ver: [Documentación de Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
 

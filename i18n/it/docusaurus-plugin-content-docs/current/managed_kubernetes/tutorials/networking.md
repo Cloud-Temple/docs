@@ -28,7 +28,7 @@ Il range del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sotto-r
 
     - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
 
-    - 10.20.0.20 : IP virtuale (load balancée) del servizio API Kubernetes
+    - 10.20.0.20 : IP virtuale (con bilanciamento del carico) del servizio API Kubernetes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -143,7 +143,7 @@ Ad esempio, un servizio denominato `api-backend` nel namespace `production` sar�
 La zona DNS pubblica utilizzata per i cluster Kubernetes Managed è `.mk.ms-cloud-temple.com`
 
 L'ingress *"nginx-external"* (mappato sull'IP pubblico n. 2) è accessibile su `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
-Se pubblichi un'applicazione con questa ingress-class, potrai accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Déployer votre première application](./firstdeploy)
+Se pubblichi un'applicazione con questa ingress-class, potrai accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Distribuire la vostra prima applicazione](./firstdeploy)
 
 ## Hubble: l'osservabilità di rete a portata di mano
 
@@ -172,7 +172,7 @@ kubectl get ingress hubble-ui -n kube-system
 
 <img src={cillium} />
 
-### Creazione di zone DNS interne (cluster privé)
+### Creazione di zone DNS interne (cluster privato)
 
 Per rafforzare la sicurezza e semplificare l'accesso ai vostri servizi e all'API Kubernetes dalla vostra rete interna, si consiglia di creare una zona DNS interna. Questa zona consentirà di risolvere i nomi di dominio dei vostri Ingress e dell'API Kubernetes verso i rispettivi indirizzi IP privati, evitando così di transitare attraverso reti pubbliche.
 
@@ -185,7 +185,7 @@ Basandovi sugli URL forniti nella guida di avvio, potete configurare il vostro D
 
    - **Per l'API Kubernetes :**
 
-     - `. -> 10.20.0.20` (IP virtuelle de l'API)
+     - `. -> 10.20.0.20` (IP virtuale dell'API)
    - **Per i servizi interni (via l'Ingress `nginx-internal`) :**
 
      - `hubble.internal -> 10.20.1.1`

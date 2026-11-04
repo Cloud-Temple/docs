@@ -142,8 +142,8 @@ For example, a service named `api-backend` in the `production` namespace will be
 
 The public DNS zone used for Managed Kubernetes clusters is `.mk.ms-cloud-temple.com`
 
-The *"nginx-external"* ingress (mappé sur l'IP publique n°2) is accessible at `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
-If you publish an application with this ingress-class, you will be able to access it directly via this domain name. See the tutorial: [Déployer votre première application](./firstdeploy)
+The *"nginx-external"* ingress (mapped to public IP no. 2) is accessible at `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
+If you publish an application with this ingress-class, you will be able to access it directly via this domain name. See the tutorial: [Deploy your first application](./firstdeploy)
 
 ## Hubble: Network observability at your fingertips
 

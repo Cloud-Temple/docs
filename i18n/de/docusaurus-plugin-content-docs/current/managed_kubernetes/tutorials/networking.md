@@ -28,7 +28,7 @@ Der Adressbereich unseres **Beispiels** 10.20.0.0/22 ist logisch in Unternetze u
 
     - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
 
-    - 10.20.0.20 : Virtuelle IP (load balancée) des Kubernetes-API-Dienstes
+    - 10.20.0.20 : Virtuelle IP (mit Lastverteilung) des Kubernetes-API-Dienstes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -123,7 +123,7 @@ Die zweite öffentliche IP wird für den Ingress-Controller *"nginx-external"* a
 
 Anwendungen, die mit der Ingress-Klasse *"nginx-external"* bereitgestellt werden, sind somit direkt über das Internet auf dieser IP erreichbar.
 
-*Wenn Sie eine Änderung der Firewall-Regeln wünschen (ajout/retrait d'IP autorisées), müssen Sie eine Support-Anfrage stellen.*
+*Wenn Sie eine Änderung der Firewall-Regeln wünschen (Hinzufügen/Entfernen erlaubter IPs), müssen Sie eine Support-Anfrage stellen.*
 
 *Es ist möglich, weitere öffentliche IPs hinzuzufügen, falls gewünscht.*
 
@@ -143,7 +143,7 @@ Beispielsweise wird ein Dienst mit dem Namen `api-backend` im Namespace `product
 Die für verwaltete Kubernetes-Cluster verwendete öffentliche DNS-Zone lautet `.mk.ms-cloud-temple.com`
 
 Der Ingress *"nginx-external"* (gemappt auf die öffentliche IP Nr. 2) ist unter `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"` erreichbar.
-Wenn Sie eine Anwendung mit dieser Ingress-Klasse veröffentlichen, können Sie direkt über diesen Domainnamen darauf zugreifen. Siehe das Tutorial: [Déployer votre première application](./firstdeploy)
+Wenn Sie eine Anwendung mit dieser Ingress-Klasse veröffentlichen, können Sie direkt über diesen Domainnamen darauf zugreifen. Siehe das Tutorial: [Ihre erste Anwendung bereitstellen](./firstdeploy)
 
 ## Hubble : Netzwerkbeobachtbarkeit leicht zugänglich
 
@@ -185,7 +185,7 @@ Basierend auf den im Schnellstart-Leitfaden bereitgestellten URLs können Sie Ih
 
    - **Für die Kubernetes-API :**
 
-     - `. -> 10.20.0.20` (IP virtuelle de l'API)
+     - `. -> 10.20.0.20` (virtuelle IP der API)
    - **Für interne Dienste (über den Ingress `nginx-internal`) :**
 
      - `hubble.internal -> 10.20.1.1`
