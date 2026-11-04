@@ -115,7 +115,7 @@ Il vostro cluster Kubernetes gestito è stato fornito inizialmente con 2 indiriz
 
 Il primo indirizzo IP è utilizzato sulla porta 6443 per l'API Kubernetes (nel nostro esempio ctodev.mk.ms-cloud-temple.com:6443)
 
-Lo stesso indirizzo IP è inoltre indirizzato tramite NAT sull'ingress controller *"nginx-external-secured"* per la porta 443. Ciò consente l'esposizione delle diverse console a vostra disposizione (vedere la guida quickstart). L'accesso a questo indirizzo IP pubblico è **filtrato** tramite una lista di IP autorizzati.
+Lo stesso indirizzo IP è inoltre indirizzato tramite NAT sull'ingress controller *"nginx-external-secured"* per la porta 443. Ciò consente l'esposizione delle diverse console a vostra disposizione (vedere la guida introduttiva). L'accesso a questo indirizzo IP pubblico è **filtrato** tramite una lista di IP autorizzati.
 
 ---
 

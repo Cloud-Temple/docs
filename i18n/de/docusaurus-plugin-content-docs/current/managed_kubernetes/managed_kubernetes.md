@@ -16,7 +16,7 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
   <div class="card">
     <h3>Schnellstart-Anleitung</h3>
     <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

@@ -15,7 +15,7 @@ Cloud Temple pone a disposición de sus clientes bloques de __direcciones IP pú
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./internet/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./internet/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

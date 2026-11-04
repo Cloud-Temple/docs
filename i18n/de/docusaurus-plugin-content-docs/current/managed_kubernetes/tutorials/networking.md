@@ -115,7 +115,7 @@ Ihr verwalteter Kubernetes-Cluster wurde standardmäßig mit 2 öffentlichen IPv
 
 Die erste IP wird auf Port 6443 für die Kubernetes-API verwendet (in unserem Beispiel ctodev.mk.ms-cloud-temple.com:6443)
 
-Diese gleiche IP wird ebenfalls für den Ingress-Controller *"nginx-external-secured"* auf Port 443 NATed. Dies ermöglicht die Bereitstellung der verschiedenen Konsolen, die Ihnen zur Verfügung stehen (siehe die Schnellstartanleitung). Der Zugriff auf diese öffentliche IP ist **gefiltert** und basiert auf einer Liste erlaubter IPs.
+Diese gleiche IP wird ebenfalls für den Ingress-Controller *"nginx-external-secured"* auf Port 443 NATed. Dies ermöglicht die Bereitstellung der verschiedenen Konsolen, die Ihnen zur Verfügung stehen (siehe „Erste Schritte“). Der Zugriff auf diese öffentliche IP ist **gefiltert** und basiert auf einer Liste erlaubter IPs.
 
 ---
 

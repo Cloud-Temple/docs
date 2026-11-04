@@ -16,7 +16,7 @@ Con recursos escalables y gestión automatizada, disfruta de una infraestructura
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comienza rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>

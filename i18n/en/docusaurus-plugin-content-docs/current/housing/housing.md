@@ -15,9 +15,9 @@ With flexible options and a high level of security, the Housing Cloud Temple ens
     <a href="./housing/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./housing/quickstart" class="card-link">Start the Quickstart &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

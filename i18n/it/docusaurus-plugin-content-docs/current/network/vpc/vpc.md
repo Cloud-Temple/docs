@@ -16,9 +16,9 @@ Il servizio consente di distribuire e gestire le vostre reti private senza preoc
     <a href="./vpc/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guida introduttiva</h3>
     <p>Creare il vostro primo VPC e configurare le vostre reti private in pochi minuti.</p>
-    <a href="./vpc/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="./vpc/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>

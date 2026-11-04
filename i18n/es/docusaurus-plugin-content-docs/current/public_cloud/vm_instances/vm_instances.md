@@ -19,7 +19,7 @@ Se adapta a todas las necesidades gracias a sus diferentes clases de servicio: d
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Despliegue su primera máquina virtual en pocos minutos desde la Marketplace Cloud Temple.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./vm_instances/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>

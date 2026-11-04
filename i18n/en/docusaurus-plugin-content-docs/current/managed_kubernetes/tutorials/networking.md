@@ -115,7 +115,7 @@ Your Managed Kubernetes cluster was originally delivered with 2 public IPv4 addr
 
 The 1st IP is used on port 6443 for the Kubernetes API (in our example ctodev.mk.ms-cloud-temple.com:6443)
 
-This same IP is also NATed to the ingress controller *"nginx-external-secured"* for port 443. This allows the exposure of the various consoles made available to you (see the quickstart guide). Access to this public IP is **filtered** using a list of allowed IPs.
+This same IP is also NATed to the ingress controller *"nginx-external-secured"* for port 443. This allows the exposure of the various consoles made available to you (see the getting started guide). Access to this public IP is **filtered** using a list of allowed IPs.
 
 ---
 

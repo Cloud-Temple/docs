@@ -11,9 +11,9 @@ The Red Hat OpenShift offering from Cloud Temple combines the power of a recogni
     <a href="./paas_openshift/concepts" class="card-link">Explore the concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./paas_openshift/quickstart" class="card-link">Launch the Quickstart &rarr;</a>
+    <a href="./paas_openshift/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

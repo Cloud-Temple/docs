@@ -16,9 +16,9 @@ The service allows you to deploy and manage your private networks without worryi
     <a href="./vpc/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Create your first VPC and configure your private networks in just a few minutes.</p>
-    <a href="./vpc/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./vpc/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

@@ -19,7 +19,7 @@ Grazie al suo approccio orientato alla sicurezza e alle funzionalità avanzate c
   <div class="card">
     <h3>Avvio rapido</h3>
     <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./bastion/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <a href="./bastion/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>

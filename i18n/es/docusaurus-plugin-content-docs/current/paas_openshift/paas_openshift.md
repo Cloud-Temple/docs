@@ -11,9 +11,9 @@ La oferta Red Hat OpenShift de Cloud Temple combina la potencia de una plataform
     <a href="./paas_openshift/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guía de inicio</h3>
     <p>Comienza rápidamente con nuestros recursos siguiendo instrucciones claras y simples.</p>
-    <a href="./paas_openshift/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./paas_openshift/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

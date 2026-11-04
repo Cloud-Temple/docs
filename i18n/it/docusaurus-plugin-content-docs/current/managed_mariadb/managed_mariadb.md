@@ -13,7 +13,7 @@ title: Panoramica di MariaDB Gestito
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Avvia il Quickstart →</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Apri la guida introduttiva →</a>
   </div>
 </div>
 

@@ -19,7 +19,7 @@ Al colaborar con una red de socios tecnológicos reconocidos, Cloud Temple garan
   <div class="card">
     <h3>Inicio rápido</h3>
     <p>Comience rápidamente con la Marketplace siguiendo instrucciones claras y sencillas.</p>
-    <a href="./marketplace/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutoriales</h3>

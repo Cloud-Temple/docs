@@ -16,9 +16,9 @@ Der Dienst ermöglicht das Bereitstellen und Verwalten Ihrer privaten Netzwerke,
     <a href="./vpc/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Erstellen Sie Ihren ersten VPC und konfigurieren Sie Ihre privaten Netzwerke in wenigen Minuten.</p>
-    <a href="./vpc/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <a href="./vpc/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

@@ -15,9 +15,9 @@ Avec des options flexibles et un haut niveau de sécurité, le Housing Cloud Tem
     <a href="./housing/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guide de démarrage</h3>
     <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./housing/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

@@ -13,7 +13,7 @@ title: Übersicht über Managed MariaDB
   <div class="card">
     <h3>Schnellstart</h3>
     <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Quickstart starten →</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Erste Schritte öffnen →</a>
   </div>
 </div>
 
