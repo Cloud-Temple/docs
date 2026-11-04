@@ -361,7 +361,7 @@ Die Beschreibung des Endpoints enthält:
 
 ### Best Practices für den Umgang mit Deprecations
 
-1. **Überwachen Sie veraltete Funktionen** : Prüfen Sie regelmäßig die in der Konsole aufgeführten veralteten Funktionen, um über bevorstehende Deprecations informiert zu bleiben.
+1. **Überwachen Sie veraltete Funktionen** : Prüfen Sie regelmäßig die in der Konsole aufgeführten veralteten Funktionen, um die angekündigten Deprecations und ihr geplantes Entfernungsdatum zu kennen.
 
 2. **Planen Sie Ihre Migrationen** : Sobald eine Deprecation angekündigt wird, planen Sie die Migration Ihres Codes zum neuen Endpunkt innerhalb von 3 Monaten.
 

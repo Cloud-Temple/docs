@@ -361,7 +361,7 @@ El endpoint de reemplazo recomendado
 
 ### Buenas prácticas para gestionar las descontinuaciones
 
-1. **Supervisa las funcionalidades descontinuadas** : Consulta regularmente las funcionalidades descontinuadas en la consola para estar informado sobre las descontinuaciones próximas.
+1. **Supervisa las funcionalidades descontinuadas** : Consulta regularmente las funcionalidades descontinuadas en la consola para conocer las descontinuaciones anunciadas y su fecha de eliminación prevista.
 
 2. **Planifica tus migraciones** : Tan pronto como se anuncie una descontinuación, planifica la migración de tu código al nuevo endpoint en un plazo de 3 meses.
 
