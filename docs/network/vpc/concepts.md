@@ -64,7 +64,7 @@ Deux modes de consommation réseau sont proposés :
 ### Modes de déploiement
 
 * **VPC en mode dédié** : prérequis, une souscription à l'offre IaaS OpenSource. Les instances VPC (routeurs, passerelles) sont déployées directement sur votre infrastructure dédiée : les ressources de calcul qui portent vos services réseau sont physiquement isolées.
-* **VPC en mode mutualisé** : annoncé, voir les [prochaines évolutions](#prochaines-évolutions).
+* **VPC en mode mutualisé** : ce mode s'appuie sur l'offre VM Instances. Il apporte le VPC sans infrastructure dédiée préalable, pour les besoins ponctuels ou les environnements cloud-native.
 
 ## Architecture
 
@@ -132,7 +132,6 @@ La configuration du VPC peut être exportée vers un stockage S3 pendant 30 jour
 
 Les évolutions suivantes sont annoncées ; elles ne sont pas encore disponibles. Suivez leur avancement sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
 
-- **VPC en mode mutualisé** : une option sur infrastructure mutualisée, pour les clients qui ne disposent pas de l'offre IaaS OpenSource. Elle s'appuiera sur l'offre VM Instances.
 - **VPN site à site** : une connectivité sécurisée vers vos réseaux on-premise.
 - **Cloud Connect** : une connectivité sécurisée vers Azure et AWS.
 - **Service DNS** : la résolution de noms interne au VPC et la configuration d'un DNS externe.

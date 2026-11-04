@@ -98,7 +98,7 @@ Le client est responsable de la création et de la configuration de son VPC ains
 | Surveiller les **comportements anormaux** sur les flux réseau du tenant                                     | **RA** |              |
 
 *(3) Cloud Temple garantit l'isolation stricte entre VPC appartenant à des tenants différents. Aucun flux ne peut traverser cette barrière sans action explicite du client.*  
-*(4) La micro-segmentation (security groups) sera disponible au S1 2026. Les politiques de filtrage s'appliquant avant cette disponibilité sont à mettre en œuvre par le client via un équipement de sécurité dédié.*  
+*(4) La micro-segmentation (security groups) est annoncée (voir les [prochaines évolutions](../../network/vpc/concepts.md#prochaines-évolutions)). D'ici sa disponibilité, les politiques de filtrage sont à mettre en œuvre par le client via un équipement de sécurité dédié.*  
 *(5) Le filtrage applicatif des flux au sein du VPC est sous la responsabilité du client. Cloud Temple ne réalise pas d'inspection de contenu des flux du tenant.*  
 *(6) Les tests d'intrusion doivent faire l'objet d'une déclaration préalable auprès de Cloud Temple, conformément aux conditions générales d'utilisation.*
 
@@ -109,8 +109,8 @@ Le client est responsable de la création et de la configuration de son VPC ains
 | Activité                                                                                                    | Client | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Définir la stratégie d'**interconnexion** avec des environnements on-premise ou d'autres clouds            | **RA** | **C**        |
-| Souscrire et configurer un accès **VPN site-à-site** *(disponible S2 2026)*                                | **RA** | **C**        |
-| Souscrire et configurer un accès **Cloud Connect** (lien dédié) *(disponible S2 2026)*                     | **RA** | **C**        |
+| Souscrire et configurer un accès **VPN site-à-site** *(à venir)*                                | **RA** | **C**        |
+| Souscrire et configurer un accès **Cloud Connect** (lien dédié) *(à venir)*                     | **RA** | **C**        |
 | Gérer les **BGP / routes** associées aux interconnexions opérateur                                          | **RA** | **CI**       |
 | Assurer la **sécurité des flux** transitant sur les interconnexions                                         | **RA** |              |
 

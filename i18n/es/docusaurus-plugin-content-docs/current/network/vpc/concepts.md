@@ -64,7 +64,7 @@ Se proponen dos modos de consumo de red:
 ### Modos de despliegue
 
 * **VPC en modo dedicado**: requisito previo, una suscripción a la oferta IaaS OpenSource. Las instancias VPC (routers, pasarelas) se despliegan directamente en su infraestructura dedicada: los recursos de cómputo que soportan sus servicios de red están físicamente aislados.
-* **VPC en modo compartido**: anunciado, consulte las [próximas evoluciones](#próximas-evoluciones).
+* **VPC en modo compartido**: este modo se apoya en la oferta VM Instances. Aporta el VPC sin infraestructura dedicada previa, para necesidades puntuales o entornos cloud-native.
 
 ## Arquitectura
 
@@ -132,7 +132,6 @@ La configuración del VPC puede exportarse a un almacenamiento S3 durante 30 dí
 
 Las siguientes evoluciones están anunciadas; todavía no están disponibles. Siga su avance en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
 
-- **VPC en modo compartido**: una opción sobre infraestructura compartida, para los clientes que no disponen de la oferta IaaS OpenSource. Se apoyará en la oferta VM Instances.
 - **VPN sitio a sitio**: conectividad segura hacia sus redes on-premise.
 - **Cloud Connect**: conectividad segura hacia Azure y AWS.
 - **Servicio DNS**: resolución de nombres interna al VPC y configuración de un DNS externo.
