@@ -169,6 +169,7 @@ Bei der Nutzung mit einem Virtualisierungsangebot besteht ein Hypervisor-Cluster
 | Blade PERFORMANCE 2 v3 | 768 GB       | 3.00/3.6 GHz (Gold 6354 oder gleichwertig)   | 36 / 72 Threads            | 2 X 25 Gbit/s         | |
 | Blade PERFORMANCE 3 v3 | 1536 GB      | 2.60/3.5 GHz (Gold 6348 oder gleichwertig)   | 56 / 112 Threads           | 2 X 25 Gbit/s         | |
 | Blade PERFORMANCE 4 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y oder gleichwertig) | 32 / 64 Threads            | 2 X 25 Gbit/s         | 2 x NVIDIA L40S 48GB |
+| Blade PERFORMANCE 5 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y oder gleichwertig) | 32 / 64 Threads            | __(5)__               | 2 x NVIDIA H100 80GB |
 
 __Hinweise__:
 
@@ -178,7 +179,9 @@ __Hinweise__:
 
 - __(3)__ Die physische Konnektivität wird für den Netzwerkzugriff und den Blockspeicherzugriff gemeinsam genutzt, da die CISCO-Plattform konvergent ist.
 
-- __(4)__ Das verfügbare GPU-Angebot entwickelt sich ständig weiter. Es basiert auf NVIDIA-L40S-GPUs. Standardmäßig wird das Blade PERF4 mit 2 L40S-Karten mit je 48 GB RAM ausgeliefert. Wenden Sie sich bei Bedarf für weitere Details an den Support.
+- __(4)__ Das verfügbare GPU-Angebot entwickelt sich ständig weiter. Es basiert auf NVIDIA-L40S- und H100-GPUs. Das Blade PERF4 wird mit 2 L40S-Karten mit je 48 GB RAM ausgeliefert; das Blade PERF5 mit 2 H100-Karten mit je 80 GB wird mit einer Laufzeit von 24 Monaten angeboten. Wenden Sie sich bei Bedarf für weitere Details an den Support.
+
+- __(5)__ Konnektivität des Blades PERFORMANCE 5: auf Anfrage.
 
 ### Netzwerk
 

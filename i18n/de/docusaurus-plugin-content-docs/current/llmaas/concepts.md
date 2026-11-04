@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Überblick
 
-Der **LLMaaS**-Service (Large Language Models as a Service) von Cloud Temple bietet sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen mit der **SecNumCloud-Zertifizierung** der ANSSI.
+Der **LLMaaS**-Service (Large Language Models as a Service) von Cloud Temple bietet sicheren und souveränen Zugang zu den fortschrittlichsten KI-Modellen mit der **SecNumCloud-Qualifizierung** der ANSSI.
 
 ## 🏗️ Technische Architektur
 
@@ -38,16 +38,21 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Token-Verwaltung
 
-#### **Token-Arten**
-- **Eingabetokens**: Ihr Prompt und Kontext
-- **Ausgabetokens**: Vom Modell generierte Antwort
-- **Systemtokens**: Metadaten und Anweisungen
+<a id="token-arten"></a>
+
+#### **Abrechnungseinheiten**
+- **Eingabetokens**: Ihr Prompt und sein Kontext
+- **Ausgabetokens**: die vom Modell generierte Antwort
+- **Reasoning-Tokens**: nur für „Reasoning“- oder „Hybrid“-Modelle bei aktivem Reasoning und nur für die Tokens dieser Aktivität
+- **Reranking-Tokens**: das [Reranking von Dokumenten](./rerank.md)
+- **Batch-Tokens** (Eingabe und Ausgabe): die [Stapelverarbeitung](./batch.md)
+- **Transkribierte Audiominuten**: jede angefangene Minute wird gezählt
 
 #### **Kostenberechnung**
 
 Um die aktuellen öffentlichen Preise zu erfahren und Ihre Schätzung zu erstellen, konsultieren Sie den [offiziellen Cloud Temple Preis-Katalog](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-Die Kosten hängen von den verbrauchten Volumina (Tokens, Dokumente oder Audiodauer) und den geltenden Abrechnungseinheiten ab.
+Die Kosten hängen von den in jeder dieser Einheiten verbrauchten Volumina ab.
 
 #### **Optimierung**
 - **Context Window**: Wiederverwendung von Konversationen zur Einsparung
@@ -71,23 +76,24 @@ print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
 
 ## 🔒 Sicherheit und Compliance
 
-### SecNumCloud-Zertifizierung
+<a id="secnumcloud-zertifizierung"></a>
 
-Der LLMaaS-Dienst läuft auf einer technischen Infrastruktur, die die **SecNumCloud 3.2-Zertifizierung** der ANSSI genießt, was garantiert:
+### SecNumCloud-Qualifizierung
+
+Der LLMaaS-Dienst läuft auf einer technischen Infrastruktur, die die **SecNumCloud 3.2-Qualifizierung** der ANSSI und die **HDS-Zertifizierung** für das Hosting von Gesundheitsdaten genießt, was garantiert:
 
 #### **Datenschutz**
 - **End-to-End-Verschlüsselung**: TLS 1.3 für alle Übertragungen
-- **Sichere Speicherung**: Daten in Ruhe verschlüsselt (AES-256)
 
 #### **Digitale Souveränität**
 - **Hosting in Frankreich**: Zertifizierte Cloud Temple Rechenzentren
 - **Französisches Recht**: Native DSGVO-Konformität
 - **Keine Exposition**: Keine Übertragung in ausländische Clouds
 
-#### **Audit und Nachverfolgbarkeit**
-- **Vollständige Logs**: Alle Interaktionen werden protokolliert
-- **Aufbewahrung**: Speicherung gemäß gesetzlichen Richtlinien
-- **Compliance**: Audit-Berichte verfügbar
+<a id="audit-und-nachverfolgbarkeit"></a>
+
+#### **Vertraulichkeit der Daten**
+- **Keine Speicherung**: Ihre Daten bleiben streng vertraulich und werden nach der Verarbeitung weder genutzt noch gespeichert. Einzige Ausnahme: Die Ergebnisse einer [Stapelverarbeitung](./batch.md) bleiben nach Abschluss für begrenzte Zeit abrufbar (standardmäßig 24 Stunden) und werden anschließend automatisch gelöscht; siehe die [Aufbewahrungsbedingungen](./batch.md#grenzen-und-aufbewahrung)
 
 ### Sicherheitskontrollen
 
@@ -111,7 +117,6 @@ Zugriff über die **Cloud Temple Konsole**:
 - Nutzungsmetriken pro Modell
 - Latenz- und Durchsatzdiagramme
 - Alarme bei Leistungsschwellenwerten
-- Anfragehistorie
 
 ## 🌐 Integration und Ökosystem
 

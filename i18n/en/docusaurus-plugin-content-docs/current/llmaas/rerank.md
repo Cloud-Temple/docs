@@ -44,15 +44,13 @@ Compare ranking relevance on your corpus, supported languages, document length, 
 
 ## Pricing
 
-A search unit (`search_unit`) corresponds to one document submitted for reranking for a single query.
+Reranking is billed per million **reranking tokens**.
 
-All documents in the `documents` array are counted. The `top_n` parameter only limits the number of results returned; it does not reduce the number of documents processed or the cost of the request. The same document submitted across multiple queries is counted each time it is processed.
+All documents in the `documents` array are processed. The `top_n` parameter only limits the number of results returned; it reduces neither the processed volume nor the cost of the request. The same document submitted across multiple queries is processed, and billed, with each query.
 
 For current public pricing and to estimate costs, consult the [official Cloud Temple pricing catalog](https://www.cloud-temple.com/en/our-public-rates/).
 
 **Example:** 1,000 queries each containing 100 documents represent 100,000 documents processed, even if each query returns only the top 5 results (`top_n: 5`).
-
-Token counters optionally returned by the engine do not constitute the billing unit for reranking.
 
 ## Endpoints
 
@@ -138,9 +136,7 @@ Illustrative excerpt of the Jina/vLLM format described by the platform contract.
 - `index`: Original position in the `documents` array sent
 - `relevance_score`: Raw model score (logit), not normalized and not comparable to a probability. A higher score indicates a document ranked better for this query; no universal 0 to 1 range is guaranteed.
 - `document`: Document text and any multimodal data returned by the engine.
-- `usage.prompt_tokens` and `usage.total_tokens`: Engine token counters. They do not constitute the billing unit for reranking.
-
-The number of billed documents does not depend on the presence of a `search_units` field in the response: all submitted documents are counted, according to [pricing](#pricing).
+- `usage.prompt_tokens` and `usage.total_tokens`: Engine token counters.
 
 ## Implementation Examples
 

@@ -44,15 +44,13 @@ Vergleichen Sie die Ranking-Relevanz auf Ihrem Korpus, die unterstützten Sprach
 
 ## Preisgestaltung
 
-Eine Sucheinheit (`search_unit`) entspricht einem Dokument, das für eine Anfrage dem Reranking unterzogen wird.
+Das Reranking wird pro Million **Reranking-Tokens** abgerechnet.
 
-Alle Dokumente in der Liste `documents` werden gezählt. Der Parameter `top_n` begrenzt nur die Anzahl der zurückgegebenen Ergebnisse; er reduziert nicht die Anzahl der verarbeiteten Dokumente noch die Kosten der Anfrage. Dasselbe Dokument, das in mehreren Anfragen eingereicht wird, wird bei jeder Verarbeitung gezählt.
+Alle Dokumente in der Liste `documents` werden verarbeitet. Der Parameter `top_n` begrenzt nur die Anzahl der zurückgegebenen Ergebnisse; er reduziert weder das verarbeitete Volumen noch die Kosten der Anfrage. Dasselbe Dokument, das in mehreren Anfragen eingereicht wird, wird bei jeder Anfrage verarbeitet und abgerechnet.
 
 Um die aktuellen öffentlichen Preise zu erfahren und Ihre Schätzung zu erstellen, konsultieren Sie den [offiziellen Cloud Temple Preis-Katalog](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 **Beispiel:** 1 000 Anfragen, die jeweils 100 Dokumente enthalten, stellen 100 000 verarbeitete Dokumente dar, auch wenn jede Anfrage nur die ersten 5 Ergebnisse zurückgibt (`top_n: 5`).
-
-Die vom Engine möglicherweise zurückgegebenen Token-Zähler stellen nicht die Abrechnungseinheit für das Reranking dar.
 
 ## Endpoints
 
@@ -138,9 +136,7 @@ Illustratives Beispiel des von der Plattformvereinbarung beschriebenen Jina/vLLM
 - `index`: Ursprüngliche Position im gesendeten `documents`-Array.
 - `relevance_score`: Rohscore des Modells (Logit), nicht normalisiert und nicht als Wahrscheinlichkeit interpretierbar. Ein höherer Score zeigt ein besser für diese Anfrage geranktes Dokument an; keine universelle Skala von 0 bis 1 ist garantiert.
 - `document`: Text und ggf. multimodale Daten des Dokuments, wenn die Engine diese zurückgibt.
-- `usage.prompt_tokens` und `usage.total_tokens`: Token-Zähler der Engine. Sie stellen nicht die Abrechnungseinheit für das Reranking dar.
-
-Die Anzahl der abgerechneten Dokumente hängt nicht vom Vorhandensein eines `search_units`-Felds in der Antwort ab: Alle eingereichten Dokumente werden gezählt, gemäß der [Preisgestaltung](#preisgestaltung).
+- `usage.prompt_tokens` und `usage.total_tokens`: Token-Zähler der Engine.
 
 ## Implementierungsbeispiele
 

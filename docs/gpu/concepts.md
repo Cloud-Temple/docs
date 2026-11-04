@@ -49,7 +49,7 @@ Chaque lame de calcul ou worker node GPU embarque deux cartes NVIDIA. La configu
 | Offre              | Configuration GPU                                                                                         | Documentation                                                    |
 |--------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Bare Metal         | Lame PERFORMANCE 4 : 2 x NVIDIA L40S 48 Go. Lame PERFORMANCE 5 : 2 x NVIDIA H100 80 Go.                   | [Concepts Bare Metal](../iaas_bare-metal/concepts.md)            |
-| IaaS VMware        | Lame PERFORMANCE 4 : 2 x NVIDIA L40S 48 Go.                                                               | [Concepts IaaS VMware](../iaas_vmware/concepts.md)               |
+| IaaS VMware        | Lame PERFORMANCE 4 : 2 x NVIDIA L40S 48 Go. Lame PERFORMANCE 5 : 2 x NVIDIA H100 80 Go.                   | [Concepts IaaS VMware](../iaas_vmware/concepts.md)               |
 | IaaS OpenSource    | Lame PERFORMANCE 4 : 2 x NVIDIA L40S 48 Go.                                                               | [Concepts IaaS OpenSource](../iaas_opensource/concepts.md)       |
 | PaaS OpenShift     | Worker nodes GPU : 2 x NVIDIA L40S 48 Go par worker, par groupe de 3 workers, 1 par zone de disponibilité. | [Concepts PaaS OpenShift](../paas_openshift/concepts.md)         |
 | Managed Kubernetes | Nœuds workers de type Bare Metal équipés de GPU.                                                           | [Utiliser un GPU sur Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md) |

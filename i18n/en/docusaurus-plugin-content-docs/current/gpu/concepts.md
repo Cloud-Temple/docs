@@ -49,7 +49,7 @@ Each GPU compute blade or worker node is fitted with two NVIDIA cards. The GPU c
 | Offering           | GPU configuration                                                                                         | Documentation                                                    |
 |--------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Bare Metal         | PERFORMANCE 4 blade: 2 x NVIDIA L40S 48 GB. PERFORMANCE 5 blade: 2 x NVIDIA H100 80 GB.                   | [Bare Metal concepts](../iaas_bare-metal/concepts.md)            |
-| IaaS VMware        | PERFORMANCE 4 blade: 2 x NVIDIA L40S 48 GB.                                                               | [IaaS VMware concepts](../iaas_vmware/concepts.md)               |
+| IaaS VMware        | PERFORMANCE 4 blade: 2 x NVIDIA L40S 48 GB. PERFORMANCE 5 blade: 2 x NVIDIA H100 80 GB.                   | [IaaS VMware concepts](../iaas_vmware/concepts.md)               |
 | IaaS OpenSource    | PERFORMANCE 4 blade: 2 x NVIDIA L40S 48 GB.                                                               | [IaaS OpenSource concepts](../iaas_opensource/concepts.md)       |
 | PaaS OpenShift     | GPU worker nodes: 2 x NVIDIA L40S 48 GB per worker, in groups of 3 workers, 1 per availability zone.      | [PaaS OpenShift concepts](../paas_openshift/concepts.md)         |
 | Managed Kubernetes | Bare Metal worker nodes equipped with GPUs.                                                               | [Using a GPU on Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md) |

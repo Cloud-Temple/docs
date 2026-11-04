@@ -38,16 +38,21 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Gestión de Tokens
 
-#### **Tipos de Tokens**
-- **Tokens de entrada** : Su prompt y contexto
-- **Tokens de salida** : Respuesta generada por el modelo
-- **Tokens del sistema** : Metadatos e instrucciones
+<a id="tipos-de-tokens"></a>
+
+#### **Unidades de facturación**
+- **Tokens de entrada**: su prompt y su contexto
+- **Tokens de salida**: la respuesta generada por el modelo
+- **Tokens de razonamiento**: solo para los modelos «razonadores» o «híbridos» cuando el razonamiento está activo, y solo sobre los tokens vinculados a esta actividad
+- **Tokens de reranking**: la [reordenación de documentos](./rerank.md)
+- **Tokens batch** (entrada y salida): el [procesamiento por lotes](./batch.md)
+- **Minutos de audio transcritos**: todo minuto iniciado se contabiliza
 
 #### **Cálculo de Costes**
 
 Para conocer los precios públicos vigentes y elaborar su estimación, consulte el [catálogo tarifario oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
-El coste depende de los volúmenes consumidos (tokens, documentos o duración de audio) y de las unidades de facturación aplicables.
+El coste depende de los volúmenes consumidos en cada una de estas unidades.
 
 #### **Optimización**
 - **Context window** : Reutilice las conversaciones para ahorrar
@@ -73,21 +78,20 @@ print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
 
 ### Calificación SecNumCloud
 
-El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la **calificación SecNumCloud 3.2** de la ANSSI, garantizando:
+El servicio LLMaaS se ejecuta en una infraestructura técnica que cuenta con la **calificación SecNumCloud 3.2** de la ANSSI y de la **certificación HDS** para el alojamiento de datos de salud, garantizando:
 
 #### **Protección de Datos**
 - **Cifrado de extremo a extremo** : TLS 1.3 para todos los intercambios
-- **Almacenamiento seguro** : Datos cifrados en reposo (AES-256)
 
 #### Soberanía Digital
 - **Alojamiento en Francia** : Centros de datos Cloud Temple certificados
 - **Derecho francés** : Cumplimiento nativo del RGPD
 - **Sin exposición** : Ninguna transferencia hacia nubes extranjeras
 
-#### **Auditoría y Trazabilidad**
-- **Registros completos** : Todas las interacciones trazadas
-- **Retención** : Conservación según políticas legales
-- **Cumplimiento** : Informes de auditoría disponibles
+<a id="auditoría-y-trazabilidad"></a>
+
+#### **Confidencialidad de los Datos**
+- **Sin conservación**: sus datos permanecen estrictamente confidenciales y no se explotan ni se almacenan tras el procesamiento. Única excepción: los resultados de un [procesamiento por lotes](./batch.md) siguen siendo consultables durante un tiempo limitado tras su finalización (24 h por defecto) y después se purgan automáticamente; consulte las [condiciones de conservación](./batch.md#límites-y-retención)
 
 ### Controles de Seguridad
 
@@ -111,7 +115,6 @@ Acceso a través de la **Consola Cloud Temple** :
 - Métricas de uso por modelo
 - Gráficos de latencia y rendimiento
 - Alertas sobre umbrales de rendimiento
-- Historial de solicitudes
 
 ## 🌐 Integración y Ecosistema
 

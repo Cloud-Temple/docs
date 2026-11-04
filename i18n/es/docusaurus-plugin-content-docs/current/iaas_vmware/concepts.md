@@ -169,6 +169,7 @@ En el marco del uso con una oferta de virtualización, un clúster de hipervisor
 | Lama PERFORMANCE 2 v3 | 768 GB       | 3.00/3.6 GHz (Gold 6354 o equivalente)    | 36 / 72 threads             | 2 X 25 Gbit/s        | |
 | Lama PERFORMANCE 3 v3 | 1536 GB      | 2.60/3.5 GHz (Gold 6348 o equivalente)    | 56 / 112 threads            | 2 X 25 Gbit/s        | |
 | Lama PERFORMANCE 4 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y o equivalente)  | 32 / 64 threads             | 2 X 25 Gbit/s        | 2 x NVIDIA L40S 48GB |
+| Lama PERFORMANCE 5 v3 | 512 GB       | 2.50/4.1 GHz (Intel 6426Y o equivalente)  | 32 / 64 threads             | __(5)__              | 2 x NVIDIA H100 80GB |
 
 __Observaciones__ :
 
@@ -178,7 +179,9 @@ __Observaciones__ :
 
 - __(3)__ La conectividad física se comparte para el acceso a la red y el acceso al almacenamiento en bloque, ya que la plataforma CISCO es convergente.
 
-- __(4)__ La oferta de GPU disponible evoluciona permanentemente. Se basa en las GPU NVIDIA L40S. Por defecto, la lama PERF4 se entrega con 2 tarjetas L40S de 48 GB de RAM. Póngase en contacto con el soporte para obtener más precisiones si es necesario.
+- __(4)__ La oferta de GPU disponible evoluciona permanentemente. Se basa en las GPU NVIDIA L40S y H100. La lama PERF4 se entrega con 2 tarjetas L40S de 48 GB de RAM; la lama PERF5, con 2 tarjetas H100 de 80 GB, se ofrece con un compromiso de 24 meses. Póngase en contacto con el soporte para obtener más precisiones si es necesario.
+
+- __(5)__ Conectividad de la lama PERFORMANCE 5: consúltenos.
 
 ### Red
 
