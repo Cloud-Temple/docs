@@ -13,7 +13,7 @@ L'**offerta IaaS VMware** è progettata per soddisfare le esigenze critiche dell
     <a href="./iaas_vmware/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Avvio rapido</h3>
+    <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
     <a href="./iaas_vmware/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>

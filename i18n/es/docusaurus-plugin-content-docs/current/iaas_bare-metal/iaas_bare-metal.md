@@ -19,7 +19,7 @@ El acceso directo a sus servidores se realiza a través de la consola Cloud Temp
     <a href="./iaas_bare-metal/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Inicio rápido</h3>
+    <h3>Guía de inicio</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./iaas_bare-metal/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>

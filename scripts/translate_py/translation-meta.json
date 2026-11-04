@@ -19,10 +19,10 @@
       "it": "6c8e6dfa2292439f76c6643b7b66e6ffe8d05a23052f2ba08a1a2280d653c814"
     },
     "bastion/bastion.md": {
-      "en": "508636ad38b330e23d66f005320316bc0dd1c5298d32d3db7929c5b1a4c21de3",
-      "de": "508636ad38b330e23d66f005320316bc0dd1c5298d32d3db7929c5b1a4c21de3",
-      "es": "508636ad38b330e23d66f005320316bc0dd1c5298d32d3db7929c5b1a4c21de3",
-      "it": "508636ad38b330e23d66f005320316bc0dd1c5298d32d3db7929c5b1a4c21de3"
+      "en": "d3a9c1b3bd986ce3360debe5c809f79da7975eb446760e3fd9534dc0df174cbf",
+      "de": "d3a9c1b3bd986ce3360debe5c809f79da7975eb446760e3fd9534dc0df174cbf",
+      "es": "d3a9c1b3bd986ce3360debe5c809f79da7975eb446760e3fd9534dc0df174cbf",
+      "it": "d3a9c1b3bd986ce3360debe5c809f79da7975eb446760e3fd9534dc0df174cbf"
     },
     "bastion/concepts.md": {
       "en": "a7d3af87e10559d66a70330819e0f4ff44ebfd88f38836f522281af465198953",
@@ -97,10 +97,10 @@
       "it": "4d59d7ec4a54ce6744c292eb92b8e8ce51ddd5054aab479533ecfd8ef25c9509"
     },
     "console/iam/iam.md": {
-      "en": "7c7cdff4b4b08449256402e06136ffd392d9312ca2fb1044a8ea6857e34fd68a",
-      "de": "7c7cdff4b4b08449256402e06136ffd392d9312ca2fb1044a8ea6857e34fd68a",
-      "es": "7c7cdff4b4b08449256402e06136ffd392d9312ca2fb1044a8ea6857e34fd68a",
-      "it": "7c7cdff4b4b08449256402e06136ffd392d9312ca2fb1044a8ea6857e34fd68a"
+      "en": "030a3bdca8fdff7998a691e1eda9ed0b34315fb80572c5546dd8ebfc185d8a8f",
+      "de": "030a3bdca8fdff7998a691e1eda9ed0b34315fb80572c5546dd8ebfc185d8a8f",
+      "es": "030a3bdca8fdff7998a691e1eda9ed0b34315fb80572c5546dd8ebfc185d8a8f",
+      "it": "030a3bdca8fdff7998a691e1eda9ed0b34315fb80572c5546dd8ebfc185d8a8f"
     },
     "console/iam/quickstart.md": {
       "en": "6a09bfb38ae5504a7b40678029edf6caf5b4ce0c2201993da5f78736b9d78f7c",
@@ -307,10 +307,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "housing/housing.md": {
-      "en": "d2ef54c0fd55726cd5fee487b909ffbfe40757ca0884fe0ee06e4419a5f7d119",
-      "de": "d2ef54c0fd55726cd5fee487b909ffbfe40757ca0884fe0ee06e4419a5f7d119",
-      "es": "d2ef54c0fd55726cd5fee487b909ffbfe40757ca0884fe0ee06e4419a5f7d119",
-      "it": "d2ef54c0fd55726cd5fee487b909ffbfe40757ca0884fe0ee06e4419a5f7d119"
+      "en": "f16e5ba862ce215bc92e18344eaeef60e3f0071dcc1a8b597b2ffaa50980dbba",
+      "de": "f16e5ba862ce215bc92e18344eaeef60e3f0071dcc1a8b597b2ffaa50980dbba",
+      "es": "f16e5ba862ce215bc92e18344eaeef60e3f0071dcc1a8b597b2ffaa50980dbba",
+      "it": "f16e5ba862ce215bc92e18344eaeef60e3f0071dcc1a8b597b2ffaa50980dbba"
     },
     "housing/quickstart.md": {
       "en": "e6c84088d60648f23664a3a372301185374af76f4a37bfcaf6e0f12e2f3d7ffd",
@@ -337,10 +337,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_bare-metal/iaas_bare-metal.md": {
-      "en": "a1bd1986d394b8c9f6f09a4b322b7b73dccd4f10bef3e9fb7b4a42ba83b2cdd7",
-      "de": "a1bd1986d394b8c9f6f09a4b322b7b73dccd4f10bef3e9fb7b4a42ba83b2cdd7",
-      "es": "a1bd1986d394b8c9f6f09a4b322b7b73dccd4f10bef3e9fb7b4a42ba83b2cdd7",
-      "it": "a1bd1986d394b8c9f6f09a4b322b7b73dccd4f10bef3e9fb7b4a42ba83b2cdd7"
+      "en": "f46a0537fc996b6f4a69d2775afa1dc879efd7df8bb9145f2bd6ecc2f4b4c64a",
+      "de": "f46a0537fc996b6f4a69d2775afa1dc879efd7df8bb9145f2bd6ecc2f4b4c64a",
+      "es": "f46a0537fc996b6f4a69d2775afa1dc879efd7df8bb9145f2bd6ecc2f4b4c64a",
+      "it": "f46a0537fc996b6f4a69d2775afa1dc879efd7df8bb9145f2bd6ecc2f4b4c64a"
     },
     "iaas_bare-metal/quickstart.md": {
       "en": "0eb8924cdbe3cdf64883ceb34587dd9f67b8728e0e6115ec58696844fe4172d1",
@@ -367,10 +367,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_opensource/iaas_opensource.md": {
-      "en": "cc91db46a7591e8a061ba47e2968c8f279a390dab9d5f14fd137ce8e4ba96dc5",
-      "de": "cc91db46a7591e8a061ba47e2968c8f279a390dab9d5f14fd137ce8e4ba96dc5",
-      "es": "cc91db46a7591e8a061ba47e2968c8f279a390dab9d5f14fd137ce8e4ba96dc5",
-      "it": "cc91db46a7591e8a061ba47e2968c8f279a390dab9d5f14fd137ce8e4ba96dc5"
+      "en": "1bdc28e6de691cdad7e7907574a391165ea3ec854c4ed8ceba2ddd77287f862b",
+      "de": "1bdc28e6de691cdad7e7907574a391165ea3ec854c4ed8ceba2ddd77287f862b",
+      "es": "1bdc28e6de691cdad7e7907574a391165ea3ec854c4ed8ceba2ddd77287f862b",
+      "it": "1bdc28e6de691cdad7e7907574a391165ea3ec854c4ed8ceba2ddd77287f862b"
     },
     "iaas_opensource/quickstart.md": {
       "en": "c4387b21658aaedf157a86c34f1295ee5a2e26e2b0a043102c31f2a40169102c",
@@ -415,10 +415,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "iaas_vmware/iaas_vmware.md": {
-      "en": "8d3c4d6ca4104651e500fec12ae3dc59b02d0af59d8e2e069b8c82c4fe020ca3",
-      "de": "8d3c4d6ca4104651e500fec12ae3dc59b02d0af59d8e2e069b8c82c4fe020ca3",
-      "es": "8d3c4d6ca4104651e500fec12ae3dc59b02d0af59d8e2e069b8c82c4fe020ca3",
-      "it": "8d3c4d6ca4104651e500fec12ae3dc59b02d0af59d8e2e069b8c82c4fe020ca3"
+      "en": "43a631a57becb7e6f4d69d7a14f954651a3402f7a5e3fa3bcc286865c26d6e2d",
+      "de": "43a631a57becb7e6f4d69d7a14f954651a3402f7a5e3fa3bcc286865c26d6e2d",
+      "es": "43a631a57becb7e6f4d69d7a14f954651a3402f7a5e3fa3bcc286865c26d6e2d",
+      "it": "43a631a57becb7e6f4d69d7a14f954651a3402f7a5e3fa3bcc286865c26d6e2d"
     },
     "iaas_vmware/quickstart.md": {
       "en": "532b54806d9f386738d0f4a9bc63d1d4b9e24ff1aac58f252665a32210d4ca6b",
@@ -697,10 +697,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "marketplace/marketplace.md": {
-      "en": "1864b88caae898baeb75aaaf9947d243f179e3d95ab628cb62973a5f7bee4115",
-      "de": "1864b88caae898baeb75aaaf9947d243f179e3d95ab628cb62973a5f7bee4115",
-      "es": "1864b88caae898baeb75aaaf9947d243f179e3d95ab628cb62973a5f7bee4115",
-      "it": "1864b88caae898baeb75aaaf9947d243f179e3d95ab628cb62973a5f7bee4115"
+      "en": "b74ad3462b9b855d7a51e683fb457f6af2a8dbf85696f0e893bb3a748a9ecb45",
+      "de": "b74ad3462b9b855d7a51e683fb457f6af2a8dbf85696f0e893bb3a748a9ecb45",
+      "es": "b74ad3462b9b855d7a51e683fb457f6af2a8dbf85696f0e893bb3a748a9ecb45",
+      "it": "b74ad3462b9b855d7a51e683fb457f6af2a8dbf85696f0e893bb3a748a9ecb45"
     },
     "marketplace/quickstart.md": {
       "en": "d9685d9af9edefbbcab208f992bf39a29dce7a9e097f130c1642152cec967e6a",
@@ -787,10 +787,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "network/internet/internet.md": {
-      "en": "f1fd85ad11b885be2e4e595f9fad7da7caf3eff165823fd41cdfac908e233ce5",
-      "de": "f1fd85ad11b885be2e4e595f9fad7da7caf3eff165823fd41cdfac908e233ce5",
-      "es": "f1fd85ad11b885be2e4e595f9fad7da7caf3eff165823fd41cdfac908e233ce5",
-      "it": "f1fd85ad11b885be2e4e595f9fad7da7caf3eff165823fd41cdfac908e233ce5"
+      "en": "66d6e841cf2835d13f132f1a349634996aa7f70633bf63655919cfc411998eb6",
+      "de": "66d6e841cf2835d13f132f1a349634996aa7f70633bf63655919cfc411998eb6",
+      "es": "66d6e841cf2835d13f132f1a349634996aa7f70633bf63655919cfc411998eb6",
+      "it": "66d6e841cf2835d13f132f1a349634996aa7f70633bf63655919cfc411998eb6"
     },
     "network/internet/quickstart.md": {
       "en": "8aa52ce6615020f631b98f7b9e2c881d904acf7505d6d93108ca808cda6cf8c4",
@@ -871,10 +871,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "network/private_network/private_network.md": {
-      "en": "67d707a784051921e99367eae3c38f3049bfc6cfcd969a2ba9ca34e5f8b42e99",
-      "de": "67d707a784051921e99367eae3c38f3049bfc6cfcd969a2ba9ca34e5f8b42e99",
-      "es": "67d707a784051921e99367eae3c38f3049bfc6cfcd969a2ba9ca34e5f8b42e99",
-      "it": "67d707a784051921e99367eae3c38f3049bfc6cfcd969a2ba9ca34e5f8b42e99"
+      "en": "241054f209cf186dc41ce9aa411db7f83a7d4c214e23363313bcfa4359f72642",
+      "de": "241054f209cf186dc41ce9aa411db7f83a7d4c214e23363313bcfa4359f72642",
+      "es": "241054f209cf186dc41ce9aa411db7f83a7d4c214e23363313bcfa4359f72642",
+      "it": "241054f209cf186dc41ce9aa411db7f83a7d4c214e23363313bcfa4359f72642"
     },
     "network/private_network/quickstart.md": {
       "en": "fe41bd2dbf20763065f8456c74f3569fcf1060385aaf8ddb2f6b11e025c1952f",
@@ -913,10 +913,10 @@
       "it": "6882a28d4350a654fc6baf49447ecabdcdf75a80d9b00b6d88e80dc0d3465bc9"
     },
     "network/vpc/vpc.md": {
-      "en": "e4f18bcf7f4d098d832ffa83b52b52077e2689adf3a6abbc71cb39c7427938d9",
-      "de": "e4f18bcf7f4d098d832ffa83b52b52077e2689adf3a6abbc71cb39c7427938d9",
-      "es": "e4f18bcf7f4d098d832ffa83b52b52077e2689adf3a6abbc71cb39c7427938d9",
-      "it": "e4f18bcf7f4d098d832ffa83b52b52077e2689adf3a6abbc71cb39c7427938d9"
+      "en": "5c319dd1cbec2cc5fdb51ea107e7b083c82b38849bcee9a9f279d5d4498db1f4",
+      "de": "5c319dd1cbec2cc5fdb51ea107e7b083c82b38849bcee9a9f279d5d4498db1f4",
+      "es": "5c319dd1cbec2cc5fdb51ea107e7b083c82b38849bcee9a9f279d5d4498db1f4",
+      "it": "5c319dd1cbec2cc5fdb51ea107e7b083c82b38849bcee9a9f279d5d4498db1f4"
     },
     "paas_openshift/concepts.md": {
       "en": "ad922862ef6d3f22e45446c222b040d4c278e12bd4472347a357679b62dfd38a",
@@ -931,10 +931,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "paas_openshift/paas_openshift.md": {
-      "en": "20a62e77b179ddc72ce92bd5e445913dae77c96c7d09e9ad347add4aef6f233d",
-      "de": "20a62e77b179ddc72ce92bd5e445913dae77c96c7d09e9ad347add4aef6f233d",
-      "es": "20a62e77b179ddc72ce92bd5e445913dae77c96c7d09e9ad347add4aef6f233d",
-      "it": "20a62e77b179ddc72ce92bd5e445913dae77c96c7d09e9ad347add4aef6f233d"
+      "en": "2fce5c3866a6d2099faf945300ee7c7304402b750bcb73a0e76f6d3f7cc29d42",
+      "de": "2fce5c3866a6d2099faf945300ee7c7304402b750bcb73a0e76f6d3f7cc29d42",
+      "es": "2fce5c3866a6d2099faf945300ee7c7304402b750bcb73a0e76f6d3f7cc29d42",
+      "it": "2fce5c3866a6d2099faf945300ee7c7304402b750bcb73a0e76f6d3f7cc29d42"
     },
     "paas_openshift/quickstart.md": {
       "en": "151388a5e940737aa2bab7ac98c01191e13114614931c83868f5cf6512f4af7e",

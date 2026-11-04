@@ -17,9 +17,9 @@ Er passt sich dank verschiedener Serviceklassen – von der kosteneffizienten En
     <a href="./vm_instances/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Stellen Sie Ihre erste virtuelle Maschine in wenigen Minuten über den Cloud-Temple-Marktplatz bereit.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Schnellstart ausführen &rarr;</a>
+    <a href="./vm_instances/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

@@ -19,7 +19,7 @@ Il permet d’administrer des comptes locaux tout en supportant une hybridation 
     <a href="./iam/quickstart" class="card-link">Lire la FAQ &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iam/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

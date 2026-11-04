@@ -15,9 +15,9 @@ Mit flexiblen Optionen und einem hohen Sicherheitsniveau garantiert Housing Clou
     <a href="./housing/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./housing/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

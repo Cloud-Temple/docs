@@ -11,7 +11,7 @@ title: Visión general de MariaDB gestionado
     <a href="./managed_mariadb/concepts" class="card-link">Explorar los conceptos →</a>
   </div>
   <div class="card">
-    <h3>Guía de inicio rápido</h3>
+    <h3>Guía de inicio</h3>
     <p>Comience rápidamente siguiendo instrucciones claras y sencillas.</p>
     <a href="./managed_mariadb/quickstart" class="card-link">Abrir la guía de inicio →</a>
   </div>

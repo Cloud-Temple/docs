@@ -19,9 +19,9 @@ L'accesso diretto ai server avviene tramite la console Cloud Temple, offrendo un
     <a href="./iaas_bare-metal/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Avvio rapido</h3>
+    <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./iaas_bare-metal/quickstart" class="card-link">Avvia la guida rapida &rarr;</a>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>

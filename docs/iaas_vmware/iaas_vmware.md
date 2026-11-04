@@ -18,7 +18,7 @@ L'**offre IaaS VMware** est conçue pour répondre aux besoins critiques des ent
     <a href="./iaas_vmware/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iaas_vmware/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

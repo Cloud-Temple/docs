@@ -16,7 +16,7 @@ Le produit Red Hat OpenShift de Cloud Temple combine la puissance d’une platef
     <a href="./paas_openshift/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
   <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./paas_openshift/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

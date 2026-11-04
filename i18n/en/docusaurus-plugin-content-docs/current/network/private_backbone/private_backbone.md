@@ -16,7 +16,7 @@ Cloud Temple's **Private Backbone** is our legacy connectivity product, designed
     <a href="./private_backbone/concepts" class="card-link">Explore concepts →</a>
   </div>
   <div class="card">
-    <h3>Getting Started</h3>
+    <h3>Getting started</h3>
     <p>Create your first private network and configure your Internet access in a few steps.</p>
     <a href="./private_backbone/quickstart" class="card-link">Get Started →</a>
   </div>

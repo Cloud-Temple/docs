@@ -12,13 +12,13 @@ Cloud Temple offre un servizio di Reti Private progettato per soddisfare i bisog
     <a href="./private_network/concepts" class="card-link">Esplora i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Avvio rapido</h3>
+    <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./private_network/quickstart" class="card-link">Avvia l'Avvio rapido &rarr;</a>
+    <a href="./private_network/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
   </div>
   <div class="card">
-    <h3>Guide</h3>
+    <h3>Tutorial</h3>
     <p>Impara passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./private_network/tutorials" class="card-link">Scopri le guide &rarr;</a>
+    <a href="./private_network/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
   </div>
 </div>

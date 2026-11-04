@@ -14,7 +14,7 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
     <a href="./managed_kubernetes/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Getting Started Guide</h3>
+    <h3>Getting started</h3>
     <p>Get up and running quickly by following clear and simple instructions.</p>
     <a href="./managed_kubernetes/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>

@@ -19,7 +19,7 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
     <a href="./iaas_opensource/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
   <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

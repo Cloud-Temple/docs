@@ -21,7 +21,7 @@ Le service permet de déployer et gérer vos réseaux privés sans vous soucier 
     <a href="./vpc/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Guides pas à pas pour les cas d'usage avancés (Peering, VPN, etc.).</p>
     <a href="./vpc/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
