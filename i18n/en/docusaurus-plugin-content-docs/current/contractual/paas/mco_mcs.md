@@ -212,7 +212,7 @@ See the [**technical support request procedure**](../../console/console_quicksta
 1. **Plan resources** : Ensure sufficient cluster capacity for peak workloads.
 2. **Validate configurations** : Test applications in staging environments before production deployment.
 3. **Monitor regularly** : Use built-in tools to track resource usage and detect issues as early as possible.
-4. **Stay informed** : Follow the roadmap and guides to avoid deprecated features.
+4. **Stay informed** : Follow the Roadmap and guides to avoid deprecated features.
 5. **Contact support** : For unresolved issues, contact support via the [**technical support request procedure**](../../console/console_quickstart.md#access-to-technical-support) or by email at [**contact**](mailto:contact@cloud-temple.com).
 
 To review responsibilities in detail, please refer to our [**responsibility matrix**](../../contractual/paas/raci.md).

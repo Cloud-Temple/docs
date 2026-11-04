@@ -212,7 +212,7 @@ Voir la [**procédure de demande de support technique**](../../console/console_q
 1. **Planifier les ressources** : Assurer une capacité de cluster suffisante pour les charges de travail de pointe.
 2. **Valider les configurations** : Tester les applications dans des environnements de staging avant déploiement en production.
 3. **Surveiller régulièrement** : Utiliser les outils intégrés pour suivre l'utilisation des ressources et détecter les problèmes le plus tôt possible.
-4. **Se tenir informé** : Suivre la roadmap et les guides pour éviter les fonctionnalités obsolètes.
+4. **Se tenir informé** : Suivre la Roadmap et les guides pour éviter les fonctionnalités obsolètes.
 5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
 
 Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](../../contractual/paas/raci.md).
