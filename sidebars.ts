@@ -504,7 +504,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Outils de développement',
       className: 'sidebar-cat-devtools',
-      link: { type: 'doc', id: 'console/api' },
+      // Index généré : un lien vers console/api, aussi première entrée, ferait boucler « Suivant ».
+      link: { type: 'generated-index', slug: '/category/developer-tools' },
       items: [
         {
           type: 'doc',
