@@ -1,11 +1,11 @@
 ---
-title: Modell der gemeinsamen Verantwortung
+title: Modell der Verantwortungsteilung
 slug: /shared-responsibility
 hide_table_of_contents: true
 displayed_sidebar: docSidebar
 ---
 
-# Modell der geteilten Verantwortung
+# Modell der Verantwortungsteilung
 
 Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen Anbieter und Kunde. Diese RACI-Matrizen (*Responsible, Accountable, Consulted, Informed*) legen genau fest, wer für welchen Dienst welche Aufgaben übernimmt.
 

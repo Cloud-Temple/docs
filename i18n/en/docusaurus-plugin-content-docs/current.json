@@ -31,6 +31,10 @@
     "message": "Security",
     "description": "The label for category 'Sécurité' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Plateforme Cloud Temple": {
+    "message": "Cloud Temple platform",
+    "description": "The label for category 'Plateforme Cloud Temple' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.IA": {
     "message": "AI",
     "description": "The label for category 'IA' in sidebar 'docSidebar'"
@@ -215,10 +219,6 @@
     "message": "Status page",
     "description": "The label for link 'Page de statut' in sidebar 'docSidebar', linking to 'https://status.cloud-temple.com/'"
   },
-  "sidebar.docSidebar.doc.Documentation de l'API": {
-    "message": "API documentation",
-    "description": "The label for the doc item 'Documentation de l'API' in sidebar 'docSidebar', linking to the doc console/api"
-  },
   "sidebar.docSidebar.doc.Nouveautés produits": {
     "message": "Product updates",
     "description": "The label for the doc item 'Nouveautés produits' in sidebar 'docSidebar', linking to the doc changelog_produits"
@@ -226,10 +226,6 @@
   "sidebar.docSidebar.doc.global_faq": {
     "message": "Frequently asked questions",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc faq"
-  },
-  "sidebar.docSidebar.doc.Régions et zones de disponibilité": {
-    "message": "Regions and availability zones",
-    "description": "The label for the doc item 'Régions et zones de disponibilité' in sidebar 'docSidebar', linking to the doc additional_content/concepts_regional"
   },
   "sidebar.docSidebar.doc.console_overview": {
     "message": "Overview",
@@ -246,6 +242,14 @@
   "sidebar.docSidebar.doc.console_faq": {
     "message": "Frequently asked questions",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/faq"
+  },
+  "sidebar.docSidebar.doc.Régions et zones de disponibilité": {
+    "message": "Regions and availability zones",
+    "description": "The label for the doc item 'Régions et zones de disponibilité' in sidebar 'docSidebar', linking to the doc additional_content/concepts_regional"
+  },
+  "sidebar.docSidebar.doc.Responsabilité partagée": {
+    "message": "Shared responsibility",
+    "description": "The label for the doc item 'Responsabilité partagée' in sidebar 'docSidebar', linking to the doc contractual/shared-responsibility"
   },
   "sidebar.docSidebar.doc.llmaas_overview": {
     "message": "Overview",
@@ -538,6 +542,10 @@
   "sidebar.docSidebar.doc.paas_openshift_faq": {
     "message": "Frequently asked questions",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc paas_openshift/faq"
+  },
+  "sidebar.docSidebar.doc.API de la Console": {
+    "message": "Console API",
+    "description": "The label for the doc item 'API de la Console' in sidebar 'docSidebar', linking to the doc console/api"
   },
   "sidebar.docSidebar.doc.terraform_overview": {
     "message": "Overview",
