@@ -38,11 +38,11 @@ Las URL son:
   - opencost.external-secured.**identificador**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identificador**.mk.ms-cloud-temple.com
 
->ℹ️[url sécurisées]
+>ℹ️[URL seguras]
 >Las URL anteriores solo son accesibles desde direcciones IP públicas conocidas, configuradas en el firewall de la solución. Si desea agregar una dirección IP pública, debe realizar una solicitud de soporte.
 >
 
->ℹ️[url internes]
+>ℹ️[URL internas]
 >Las URL siguientes no están expuestas en Internet. Solo son accesibles en la red interna de Kubernetes gestionado.
 >  - ceph.internal.**identificador**.mk.ms-cloud-temple.com
 >  - argocd.internal.**identificador**.mk.ms-cloud-temple.com
@@ -52,10 +52,10 @@ Las URL son:
 
 ## Sus permisos
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test y Kubernetes Core]
 >Para los clústeres Kubernetes gestionados **"Dev/Test"** y los clústeres Core, la cuenta de servicio que se le ha proporcionado dispone de todos los permisos en todo el clúster (ClusterAdmin)
 
-En los clústeres **"Production"**, sus permisos están limitados. Dispone de un derecho **"Viewer Etendu"** sobre los recursos del clúster. Este derecho otorga acceso de solo lectura a recursos clave, tanto a nivel de clúster como para diagnóstico:
+En los clústeres **"Production"**, sus permisos están limitados. Dispone de un derecho **"Viewer extendido"** sobre los recursos del clúster. Este derecho otorga acceso de solo lectura a recursos clave, tanto a nivel de clúster como para diagnóstico:
 
 - Namespaces: permiten a los inquilinos enumerar los espacios de nombres para las herramientas y paneles de control.
 - Pods, deployments,  replicaset...: permiten a los inquilinos enumerar los recursos desplegados en el clúster.

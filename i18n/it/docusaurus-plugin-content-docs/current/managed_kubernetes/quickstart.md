@@ -15,7 +15,7 @@ Per interagire con il cluster, diversi elementi sono indispensabili :
 2. **Lo strumento `kubectl`** : Si tratta dell'interfaccia a riga di comando standard per gestire un cluster Kubernetes.
 3. **Lo strumento `kubelogin`** (se si utilizza OIDC) : Se il cluster è configurato per l'autenticazione tramite un provider di identità OIDC (come Entra ID/Azure AD), è necessario installare lo strumento `kubelogin` per gestire il flusso di autenticazione. Segui la [guida all'installazione di kubelogin](https://github.com/int128/kubelogin).
 
-> ℹ️[Outils graphiques recommandés:]
+> ℹ️[Strumenti grafici consigliati:]
 > Per un'esperienza più visiva e una gestione semplificata delle risorse, consigliamo l'utilizzo di **Lens**. Si tratta di un potente strumento per Kubernetes che consente di esplorare il cluster, gestire le applicazioni e visualizzarne lo stato in modo grafico.
 > Alcuni dei nostri tutorial utilizzeranno Lens per illustrare le operazioni. Puoi scaricarlo qui : [https://k8slens.dev/](https://k8slens.dev/).
 
@@ -38,11 +38,11 @@ Gli URL sono:
   - opencost.external-secured.**identificativo**.mk.ms-cloud-temple.com
   - opencost-mcp.external-secured.**identificativo**.mk.ms-cloud-temple.com
 
->ℹ️[url sécurisées]
+>ℹ️[URL protetti]
 >Gli URL sopra indicati sono accessibili solo da indirizzi IP pubblici noti, configurati nel firewall della soluzione. Se desideri aggiungere un indirizzo IP pubblico, è necessario presentare una richiesta di supporto.
 >
 
->ℹ️[url internes]
+>ℹ️[URL interni]
 >Gli URL qui sotto non sono esposti su Internet. Sono accessibili solo sulla rete interna Kubernetes Gestito.
 >  - ceph.internal.**identificativo**.mk.ms-cloud-temple.com
 >  - argocd.internal.**identificativo**.mk.ms-cloud-temple.com
@@ -52,7 +52,7 @@ Gli URL sono:
 
 ## Le tue autorizzazioni
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test e Kubernetes Core]
 >Per i cluster Kubernetes Gestiti **"Dev/Test"** e i cluster Core, l'account di servizio fornito dispone di tutte le autorizzazioni sull'intero cluster (ClusterAdmin)
 
 Sui cluster **"Production"**, le tue autorizzazioni sono limitate. Disponete di un diritto **"Viewer Esteso"** sulle risorse del cluster. Questo diritto concede un accesso in sola lettura a risorse chiave, sia a livello di cluster che per la diagnostica:

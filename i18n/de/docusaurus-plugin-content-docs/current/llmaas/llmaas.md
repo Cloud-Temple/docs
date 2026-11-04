@@ -123,7 +123,7 @@ https://api.ai.cloud-temple.com/v1/
 - `/chat/completions/batch` : Asynchrone Verarbeitung mehrerer Konversationen ([Batch-Leitfaden](./batch.md))
 - `/completions` : Einfache Textvervollständigung
 - `/embeddings` : Vektorisierung für semantische Suche und RAG
-- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (compatible Cohere SDK)
+- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (kompatibel mit dem Cohere SDK)
 - `/audio/transcriptions` : Batch-Audiotranskription (Whisper)
 - `/audio/speech` : Sprachsynthese (TTS)
 - `/images/generations` : Bildgenerierung

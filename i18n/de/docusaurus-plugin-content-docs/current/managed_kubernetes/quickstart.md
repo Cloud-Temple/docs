@@ -52,7 +52,7 @@ Die URLs lauten:
 
 ## Ihre Berechtigungen
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test und Kubernetes Core]
 >Für die verwalteten Kubernetes-Cluster **"Dev/Test"** und die Core-Cluster verfügt der Ihnen bereitgestellte Service-Account über alle Berechtigungen im gesamten Cluster (ClusterAdmin)
 
 Auf den Clustern **"Production"** sind Ihre Berechtigungen eingeschränkt. Sie verfügen über ein **"Erweiterter Viewer"**-Recht für die Cluster-Ressourcen. Dieses Recht gewährt schreibgeschützten Zugriff auf Schlüsselressourcen, sowohl auf Clusterebene als auch zur Diagnose:

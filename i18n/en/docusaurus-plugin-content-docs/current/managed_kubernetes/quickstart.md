@@ -15,7 +15,7 @@ To interact with your cluster, several elements are essential:
 2. **The `kubectl` tool**: This is the standard command-line interface for managing a Kubernetes cluster.
 3. **The `kubelogin` tool** (if OIDC is used) : If your cluster is configured to authenticate via an OIDC identity provider (such as Entra ID/Azure AD), you must install the `kubelogin` tool to handle the authentication flow. Follow the [kubelogin installation guide](https://github.com/int128/kubelogin).
 
-> ℹ️[Outils graphiques recommandés:]
+> ℹ️[Recommended graphical tools:]
 > For a more visual experience and simplified resource management, we recommend using **Lens**. It is a powerful Kubernetes tool that allows you to explore your cluster, manage your applications, and visualize their status graphically.
 > Some of our tutorials will use Lens to illustrate the procedures. You can download it here: [https://k8slens.dev/](https://k8slens.dev/).
 
@@ -52,7 +52,7 @@ The URLs are:
 
 ## Your Permissions
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test and Kubernetes Core]
 >For **"Dev/Test"** Managed Kubernetes clusters and Core clusters, the service account provided to you has all permissions across the entire cluster (ClusterAdmin)
 
 On **"Production"** clusters, your permissions are limited. You have an **"Extended Viewer"** right on cluster resources. This right grants read-only access to key resources, both at the cluster level and for diagnostics:

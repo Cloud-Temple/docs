@@ -166,7 +166,7 @@ Questa sezione fornisce esempi di script Python semplici e autonomi per illustra
 Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, database, ecc.).
 
 Il flusso è il seguente:
-1.  L'utente pone una domanda che richiede uno strumento (ex: "quel temps fait-il ?").
+1.  L'utente pone una domanda che richiede uno strumento (es.: "che tempo fa?").
 2.  Invii la domanda e l'elenco degli strumenti disponibili all'API.
 3.  Il modello, invece di rispondere direttamente, restituisce una richiesta `tool_calls` che chiede di eseguire una funzione specifica con determinati argomenti.
 4.  Il tuo codice esegue la funzione richiesta.
