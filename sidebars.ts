@@ -648,4 +648,31 @@ function translateItems(items: any[], translations: Translations): void {
 
 translateItems(sidebars.docSidebar as any[], loadTranslations());
 
+// Une catégorie qui pointe vers une page déjà présente dans son contenu (l'entrée « Vue
+// d'ensemble » d'un produit, le produit d'une famille) ferait boucler « Suivant » : Docusaurus
+// ne retient que la première occurrence d'une page. Ces catégories perdent leur lien ; un clic
+// sur leur nom les déplie.
+function docIdsIn(items: any[]): Set<string> {
+  const ids = new Set<string>();
+  for (const item of items) {
+    if (typeof item === 'string') ids.add(item);
+    else if (item.type === 'doc') ids.add(item.id);
+    else if (item.type === 'category') {
+      if (item.link?.type === 'doc') ids.add(item.link.id);
+      docIdsIn(item.items).forEach((id) => ids.add(id));
+    }
+  }
+  return ids;
+}
+
+function dropDuplicateCategoryLinks(items: any[]): void {
+  for (const item of items) {
+    if (item?.type !== 'category') continue;
+    if (item.link?.type === 'doc' && docIdsIn(item.items).has(item.link.id)) delete item.link;
+    dropDuplicateCategoryLinks(item.items);
+  }
+}
+
+dropDuplicateCategoryLinks(sidebars.docSidebar as any[]);
+
 export default sidebars;
