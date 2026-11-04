@@ -35,9 +35,9 @@
     "message": "Cloud Temple Webseite",
     "description": "The label of footer link with label=Cloud Temple Web Site linking to https://cloud-temple.com"
   },
-  "link.item.label.Cloud Temple Roadmap": {
-    "message": "Cloud Temple Roadmap",
-    "description": "The label of footer link with label=Cloud Temple Roadmap linking to https://github.com/orgs/Cloud-Temple/projects/2"
+  "link.item.label.Roadmap": {
+    "message": "Roadmap",
+    "description": "The label of footer link with label=Roadmap linking to https://github.com/orgs/Cloud-Temple/projects/2"
   },
   "link.item.label.Privacy": {
     "message": "Datenschutz",

@@ -22,7 +22,7 @@ Questa politica dettaglia le responsabilità e le raccomandazioni relative al Ma
 - Gestione completa dell'infrastruttura sottostante, inclusi i nodi master, gli aggiornamenti delle versioni OpenShift e la resilienza dei servizi critici distribuiti da **Cloud Temple**.
 - Aggiornamenti minori/patch automatici senza interruzione per i carichi di lavoro ospitati, salvo diversa comunicazione.
 - Limitazione dei diritti e delle funzionalità ai vincoli SecNumCloud.
-- Comunicazione degli aggiornamenti in arrivo e degli aggiornamenti con modifiche incompatibili (breaking changes) per i prossimi tre mesi tramite la [**Roadmap Cloud Temple**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Comunicazione degli aggiornamenti in arrivo e degli aggiornamenti con modifiche incompatibili (breaking changes) per i prossimi tre mesi tramite la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 
 **Responsabilità dell'utente :**
 
@@ -34,7 +34,7 @@ Questa politica dettaglia le responsabilità e le raccomandazioni relative al Ma
 
 - Pianificare i deployment applicativi al di fuori delle finestre di manutenzione per evitare conflitti con gli aggiornamenti automatici del cluster.
 - Seguire le comunicazioni di **Cloud Temple** relative agli aggiornamenti maggiori per pianificare le eventuali modifiche necessarie.
-- Seguire gli aggiornamenti in arrivo tramite la [**Roadmap prodotto**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Seguire gli aggiornamenti in arrivo tramite la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 - Iscriversi alle notifiche [**di incidenti**](../../console/status.md#gestione-delle-notifiche)
 
 ---

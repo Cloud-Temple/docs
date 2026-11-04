@@ -171,7 +171,7 @@ const config: Config = {
               href: 'https://cloud-temple.com',
             },
             {
-              label: 'Cloud Temple Roadmap',
+              label: 'Roadmap',
               href: 'https://github.com/orgs/Cloud-Temple/projects/2',
             }
           ],

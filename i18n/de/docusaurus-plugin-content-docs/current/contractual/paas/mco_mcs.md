@@ -22,7 +22,7 @@ Diese Richtlinie beschreibt detailliert die Verantwortlichkeiten und Empfehlunge
 - Vollständige Verwaltung der zugrunde liegenden Infrastruktur, einschließlich der Master-Knoten, OpenShift-Version-Updates und der Resilienz kritischer Dienste, die von **Cloud Temple** bereitgestellt werden.
 - Automatische Minor-Updates/Patches ohne Unterbrechung für gehostete Workloads, sofern nicht anders mitgeteilt.
 - Einschränkung von Rechten und Funktionen gemäß den SecNumCloud-Anforderungen.
-- Kommunikation bevorstehender Updates und von Updates mit Breaking Changes für die nächsten drei Monate über die [**Cloud-Temple-Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Kommunikation bevorstehender Updates und von Updates mit Breaking Changes für die nächsten drei Monate über die [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 
 **Verantwortung des Nutzers:**
 
@@ -34,7 +34,7 @@ Diese Richtlinie beschreibt detailliert die Verantwortlichkeiten und Empfehlunge
 
 - Planen Sie Anwendungsbereitstellungen außerhalb der Wartungsfenster, um Konflikte mit automatischen Cluster-Updates zu vermeiden.
 - Verfolgen Sie die Mitteilungen von **Cloud Temple** bezüglich Major-Updates, um erforderliche Anpassungen zu planen.
-- Verfolgen Sie bevorstehende Updates über die [**Produkt-Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Verfolgen Sie bevorstehende Updates über die [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
 - Abonnieren Sie [**Incident-Benachrichtigungen**](../../console/status.md#notification-management)
 
 ---
