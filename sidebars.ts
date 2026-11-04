@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // Les libellés ci-dessous sont en français (langue par défaut du site) ;
@@ -135,7 +137,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Sécurité',
           key: 'console_security',
-          link: { type: 'generated-index' },
+          // Slug figé : l'URL d'origine reste valide dans toutes les langues.
+          link: { type: 'generated-index', slug: '/category/sécurité' },
           items: [
             'console/security/security_recommendations',
             'console/security/security_alarms',
@@ -165,7 +168,7 @@ const sidebars: SidebarsConfig = {
             page('llmaas', 'quickstart', 'llmaas/quickstart'),
             'llmaas/api',
             'llmaas/models',
-            tutorials('llmaas', { type: 'generated-index' }, [
+            tutorials('llmaas', { type: 'generated-index', slug: '/category/tutoriels' }, [
               {
                 type: 'doc',
                 id: 'llmaas/tutorials',
@@ -604,5 +607,30 @@ const sidebars: SidebarsConfig = {
     },
   ],
 };
+
+// Docusaurus calcule les liens Précédent / Suivant avant d'appliquer current.json : un libellé
+// fixé ici restait donc en français dans la pagination des autres langues. On applique la
+// traduction dès le chargement du menu, en figeant la clé (key ?? label) pour que les clés de
+// current.json ne changent pas.
+type Translations = Record<string, { message: string }>;
+
+function loadTranslations(): Translations {
+  if (locale === 'fr') return {};
+  const file = path.join(__dirname, 'i18n', locale, 'docusaurus-plugin-content-docs', 'current.json');
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+}
+
+function translateItems(items: any[], translations: Translations): void {
+  for (const item of items) {
+    const kind = item.type;
+    if (item.label && ['doc', 'category', 'link'].includes(kind)) {
+      item.key = item.key ?? item.label;
+      item.label = translations[`sidebar.docSidebar.${kind}.${item.key}`]?.message ?? item.label;
+    }
+    if (item.type === 'category') translateItems(item.items, translations);
+  }
+}
+
+translateItems(sidebars.docSidebar as any[], loadTranslations());
 
 export default sidebars;
