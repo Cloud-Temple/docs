@@ -1,5 +1,5 @@
 ---
-title: Metriche
+title: Concetti
 ---
 import metricsHypervisorsCo2 from '@site/docs/console/metrics/images/metrics_hypervisors_co2.png'
 import shivaHome from '@site/docs/console/metrics/images/shiva_home.png'
@@ -20,12 +20,6 @@ import shivaMetric_014 from '@site/docs/console/metrics/images/shiva_metric_014.
 import grafanaDashboards_003 from '@site/docs/console/metrics/images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from '@site/docs/console/metrics/images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from '@site/docs/console/metrics/images/grafana_dashboards_002.png'
-import grafanaDatasourceHttp from '@site/docs/console/metrics/images/grafana_datasource_http.png'
-import grafanaDatasourceAuth from '@site/docs/console/metrics/images/grafana_datasource_auth.png'
-import grafanaDatasourceBasicAuthDetails from '@site/docs/console/metrics/images/grafana_datasource_basic_auth_details.png'
-import grafanaDatasourceAlerting from '@site/docs/console/metrics/images/grafana_datasource_alerting.png'
-import grafanaDatasourceWorking from '@site/docs/console/metrics/images/grafana_datasource_working.png'
-import grafanaDashboards_001 from '@site/docs/console/metrics/images/grafana_dashboards_001.png'
 
 ## Presentazione
 
@@ -185,49 +179,7 @@ Cloud Temple mette inoltre a disposizione una [raccolta di dashboard](https://gi
 
 <img src={grafanaDashboards_002} />
 
-#### Configurare la Console come origine dati in Grafana
-
-L'obiettivo è arricchire l'osservabilità della vostra infrastruttura Cloud tramite la telemetria Cloud Temple.
-
-##### Prerequisiti
-
-- Un'istanza Grafana con accesso alle API della Console.
-- Un accesso di amministrazione sull'istanza Grafana per poter configurare le *datasource*.
-- Un token di accesso personale con almeno l'autorizzazione `metrics_read`.
-
-##### Configurazione
-
-Nella __configurazione__ di Grafana, andare alla scheda "__datasources__" e fare clic su "__Add datasource__".
-
-Nell'__URL__, fornire l'__URL dell'API Console Metrics__ senza la versione e che termina con "__/prometheus__"
-(esempio: [https://shiva.cloud-temple.com/api/metric/prometheus](https://shiva.cloud-temple.com/api/metric/prometheus))
-
-<img src={grafanaDatasourceHttp} />
-
-Nell'__autenticazione__, attivare l'opzione __Basic Auth__.
-
-<img src={grafanaDatasourceAuth} />
-
-Nella sezione "__Basic Auth Details__", configurare il __username__ e la __password__ utilizzando
-rispettivamente l'__id__ e il __secret__ di un __Token di accesso personale__ con il permesso __metrics_read__.
-
-<img src={grafanaDatasourceBasicAuthDetails} />
-
-Nella sezione "__Alerting__", configurare la proprietà __HTTP Method__ su __GET__.
-
-<img src={grafanaDatasourceAlerting} />
-
-##### Risultato
-
-Per confermare che la configurazione sia corretta e funzionante, clicca sul pulsante "__Save & test__".
-
-Dovresti visualizzare un banner che ti informa che la configurazione è stata completata con successo.
-
-<img src={grafanaDatasourceWorking} />
-
-Troverai una serie completa di esempi di configurazione per Grafana qui: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
-
-<img src={grafanaDashboards_001} />
+Per collegare la tua istanza Grafana alla Console, segui la [guida introduttiva](quickstart.md).
 
 ## Architettura
 

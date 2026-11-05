@@ -143,6 +143,30 @@
     "message": "Monitoraggio",
     "description": "The label for category 'Supervision' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Observability": {
+    "message": "Observability",
+    "description": "The label for category 'Observability' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.observability_overview": {
+    "message": "Panoramica",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/metrics/metrics"
+  },
+  "sidebar.docSidebar.doc.observability_concepts": {
+    "message": "Concetti",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/metrics/concepts"
+  },
+  "sidebar.docSidebar.doc.observability_quickstart": {
+    "message": "Guida introduttiva",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc console/metrics/quickstart"
+  },
+  "sidebar.docSidebar.doc.observability_tutorials": {
+    "message": "Tutorial",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc console/metrics/tutorials"
+  },
+  "sidebar.docSidebar.doc.observability_faq": {
+    "message": "Domande frequenti",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/metrics/faq"
+  },
   "sidebar.docSidebar.category.security_products": {
     "message": "Sicurezza",
     "description": "The label for category 'Sécurité' in sidebar 'docSidebar'"
