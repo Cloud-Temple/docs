@@ -118,7 +118,7 @@ La massa massima delle apparecchiature è di 25 kg per 'U'. Oltre tale valore, o
 
 #### Appliance (rete, firewall…)
 
-Ogni unità rack può disporre di una o due prese elettriche di tipo C19, in base alle vostre esigenze. Ogni presa è limitata a 150 W a 220 V. Per un'apparecchiatura da 1.500 W su due alimentatori occorrono quindi 1.500 W / 150 W = 10 'U', ossia 5 'U' (750 W) per catena elettrica.
+Ogni unità rack può disporre di una o due prese elettriche di tipo C19, in base alle vostre esigenze. Ogni presa è limitata a 150 W a 220 V, ossia 150 W o 300 W per 'U'.
 
 Il raffreddamento avviene dalla parte anteriore verso la parte posteriore del rack, e __l'appliance riceve la connettività di rete sul lato anteriore del rack.__
 

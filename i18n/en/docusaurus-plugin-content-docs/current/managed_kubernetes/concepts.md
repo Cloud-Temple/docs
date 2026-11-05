@@ -142,7 +142,7 @@ The development and test cluster is deployed on a single availability zone, with
 ### Integrations
 
 - **Cloud Temple Object Storage**: logs (Loki) and backups (Kasten).
-- **Identity providers**: optional integration via OIDC.
+- **Identity providers**: integration via OIDC, included and can be disabled.
 - **Cloud Temple IaaS**: interconnection of clusters with virtualized resources, such as databases or middleware components.
 
 ## Regions and availability zones

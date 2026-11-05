@@ -118,7 +118,7 @@ La masa máxima de los equipos es de 25 kg por 'U'. Por encima de ese valor, es 
 
 #### Appliances (red, firewall…)
 
-Cada unidad de rack puede disponer de una o dos tomas eléctricas de tipo C19, según sus necesidades. Cada toma está limitada a 150 W a 220 V. Así, para un equipo de 1500 W con dos fuentes de alimentación, se necesitan 1500 W / 150 W = 10 'U', es decir, 5 'U' (750 W) por cadena eléctrica.
+Cada unidad de rack puede disponer de una o dos tomas eléctricas de tipo C19, según sus necesidades. Cada toma está limitada a 150 W a 220 V, es decir, 150 W o 300 W por 'U'.
 
 La refrigeración se realiza desde la parte frontal hacia la parte trasera del rack, y __la appliance toma su conectividad de red en la parte frontal del rack.__
 

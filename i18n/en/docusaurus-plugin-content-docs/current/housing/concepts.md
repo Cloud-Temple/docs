@@ -118,7 +118,7 @@ The maximum equipment weight is 25 kg per 'U'. Beyond that, you must order the n
 
 #### Appliances (network, firewall…)
 
-Each rack unit can have one or two C19 power outlets, according to your needs. Each outlet is limited to 150 W at 220 V. For 1,500 W equipment on two power supplies, you therefore need 1,500 W / 150 W = 10 'U', i.e. 5 'U' (750 W) per power chain.
+Each rack unit can have one or two C19 power outlets, according to your needs. Each outlet is limited to 150 W at 220 V, i.e. 150 W or 300 W per 'U'.
 
 Cooling flows from the front to the rear of the rack, and __the appliance takes its network connectivity at the front of the rack.__
 

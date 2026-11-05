@@ -118,7 +118,7 @@ La masse maximale des équipements est de 25 kg par 'U'. Au-delà, il faut comma
 
 #### Appliances (réseau, pare-feu…)
 
-Chaque unité de rack peut disposer d'une ou de deux prises électriques de type C19, selon vos besoins. Chaque prise est limitée à 150 W sous 220 V. Pour un équipement de 1 500 W sur deux alimentations, il faut ainsi 1 500 W / 150 W = 10 'U', soit 5 'U' (750 W) par chaîne électrique.
+Chaque unité de rack peut disposer d'une ou de deux prises électriques de type C19, selon vos besoins. Chaque prise est limitée à 150 W sous 220 V, soit 150 W ou 300 W par 'U'.
 
 Le refroidissement se fait de la face avant vers la face arrière de la baie, et __l'appliance prend sa connectivité réseau en face avant de la baie.__
 

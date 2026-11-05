@@ -142,7 +142,7 @@ Il cluster di sviluppo e test è distribuito su una sola zona di disponibilità,
 ### Integrazioni
 
 - **Storage a Oggetti Cloud Temple**: log (Loki) e backup (Kasten).
-- **Provider di identità**: integrazione opzionale tramite OIDC.
+- **Provider di identità**: integrazione tramite OIDC, inclusa e disattivabile.
 - **IaaS Cloud Temple**: interconnessione dei cluster con risorse virtualizzate, come database o componenti middleware.
 
 ## Regioni e zone di disponibilità

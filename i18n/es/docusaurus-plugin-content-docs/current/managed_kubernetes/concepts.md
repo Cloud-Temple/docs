@@ -142,7 +142,7 @@ El clúster de desarrollo y pruebas se despliega en una sola zona de disponibili
 ### Integraciones
 
 - **Almacenamiento de Objetos Cloud Temple**: registros (Loki) y copias de seguridad (Kasten).
-- **Proveedores de identidad**: integración opcional mediante OIDC.
+- **Proveedores de identidad**: integración mediante OIDC, incluida y desactivable.
 - **IaaS Cloud Temple**: interconexión de los clústeres con recursos virtualizados, como bases de datos o componentes middleware.
 
 ## Regiones y zonas de disponibilidad

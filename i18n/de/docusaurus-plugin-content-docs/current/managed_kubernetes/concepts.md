@@ -142,7 +142,7 @@ Der Entwicklungs- und Testcluster wird in einer einzigen Verfügbarkeitszone ber
 ### Integrationen
 
 - **Cloud Temple Object Storage**: Protokolle (Loki) und Sicherungen (Kasten).
-- **Identitätsanbieter**: optionale Integration über OIDC.
+- **Identitätsanbieter**: Integration über OIDC, inbegriffen und deaktivierbar.
 - **Cloud Temple IaaS**: Verbindung der Cluster mit virtualisierten Ressourcen, etwa Datenbanken oder Middleware-Komponenten.
 
 ## Regionen und Verfügbarkeitszonen

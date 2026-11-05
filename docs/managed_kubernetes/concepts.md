@@ -142,7 +142,7 @@ Le cluster de développement et de test est déployé sur une seule zone de disp
 ### Intégrations
 
 - **Stockage Objet Cloud Temple** : journaux (Loki) et sauvegardes (Kasten).
-- **Fournisseurs d'identité** : intégration optionnelle via OIDC.
+- **Fournisseurs d'identité** : intégration via OIDC, incluse et désactivable.
 - **IaaS Cloud Temple** : interconnexion des clusters avec des ressources virtualisées, comme des bases de données ou des composants middleware.
 
 ## Régions et zones de disponibilité
