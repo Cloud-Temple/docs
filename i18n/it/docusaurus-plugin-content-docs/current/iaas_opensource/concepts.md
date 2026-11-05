@@ -18,7 +18,7 @@ Sebbene completamente automatizzata grazie ad API e a un provider Terraform, l'o
 | Vantaggio           | Descrizione                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Fiducia digitale    | Hosting dei dati in Francia e conformità al GDPR.                                                                                              |
-| Sicurezza           | Piattaforma altamente sicura, qualificata __SecNumCloud__, certificata __HDS__ (Hébergement des Données de Santé), __ISO 27001__ e __ISAE 3402 tipo II__. |
+| Sicurezza           | Piattaforma altamente sicura, qualificata __SecNumCloud__, certificata __HDS__ (Hosting di Dati Sanitari), __ISO 27001__ e __ISAE 3402 tipo II__, conforme a __C5__. |
 | Alta disponibilità  | Tasso di disponibilità della piattaforma del 99,99 %, misurato mensilmente, finestre di manutenzione incluse.                                   |
 | Resilienza          | Implementazione di piani di continuità o di ripresa delle attività in base alle esigenze.                                                      |
 | Automazione         | Piattaforma completamente automatizzata, progettata per integrarsi in un programma di trasformazione digitale.                                  |

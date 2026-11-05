@@ -118,7 +118,7 @@ La massa massima delle apparecchiature è di 25 kg per 'U'. Oltre tale valore, o
 
 #### Appliance (rete, firewall…)
 
-Ogni unità rack può disporre di una o due prese elettriche di tipo C13, in base alle vostre esigenze. Ogni presa è limitata a 150 W a 220 V. Per un'apparecchiatura da 1.500 W su due alimentatori occorrono quindi 1.500 W / 150 W = 10 'U', ossia 5 'U' (750 W) per catena elettrica.
+Ogni unità rack può disporre di una o due prese elettriche di tipo C19, in base alle vostre esigenze. Ogni presa è limitata a 150 W a 220 V. Per un'apparecchiatura da 1.500 W su due alimentatori occorrono quindi 1.500 W / 150 W = 10 'U', ossia 5 'U' (750 W) per catena elettrica.
 
 Il raffreddamento avviene dalla parte anteriore verso la parte posteriore del rack, e __l'appliance riceve la connettività di rete sul lato anteriore del rack.__
 
@@ -144,7 +144,7 @@ Il rack dedicato è installato in una zona di hosting condiviso al di fuori di S
 
 La connettività di rete si sottoscrive in aggiunta all'hosting, per tipo di porta e larghezza di banda desiderata:
 
-- rame 100 Mbps o 1 Gbps;
+- rame 1 Gbps;
 - fibra 1 Gbps o 10 Gbps, tramite un modulo SFP fornito per la connettività lato Cloud Temple.
 
 Una connettività nella Meet Me Room consente inoltre di ricevere il vostro collegamento dell'operatore. È necessariamente in fibra ottica, a 1 Gbps o 10 Gbps.

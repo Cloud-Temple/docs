@@ -118,7 +118,7 @@ La masse maximale des équipements est de 25 kg par 'U'. Au-delà, il faut comma
 
 #### Appliances (réseau, pare-feu…)
 
-Chaque unité de rack peut disposer d'une ou de deux prises électriques de type C13, selon vos besoins. Chaque prise est limitée à 150 W sous 220 V. Pour un équipement de 1 500 W sur deux alimentations, il faut ainsi 1 500 W / 150 W = 10 'U', soit 5 'U' (750 W) par chaîne électrique.
+Chaque unité de rack peut disposer d'une ou de deux prises électriques de type C19, selon vos besoins. Chaque prise est limitée à 150 W sous 220 V. Pour un équipement de 1 500 W sur deux alimentations, il faut ainsi 1 500 W / 150 W = 10 'U', soit 5 'U' (750 W) par chaîne électrique.
 
 Le refroidissement se fait de la face avant vers la face arrière de la baie, et __l'appliance prend sa connectivité réseau en face avant de la baie.__
 
@@ -144,7 +144,7 @@ Le rack dédié est installé en zone d'hébergement mutualisé hors SecNumCloud
 
 La connectivité réseau se souscrit en complément de l'hébergement, par type de port et bande passante souhaitée :
 
-- cuivre 100 Mbps ou 1 Gbps ;
+- cuivre 1 Gbps ;
 - fibre 1 Gbps ou 10 Gbps, via un module SFP fourni pour la connectivité côté Cloud Temple.
 
 Une connectivité en Meet Me Room permet aussi de recevoir votre lien opérateur. Elle est nécessairement en fibre optique, en 1 Gbps ou 10 Gbps.

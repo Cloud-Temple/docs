@@ -18,7 +18,7 @@ Although fully automated through APIs and a Terraform provider, the offering pro
 | Benefit             | Description                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Digital trust       | Data hosting in France and GDPR compliance.                                                                                                    |
-| Security            | Highly secure platform, __SecNumCloud__-qualified, certified __HDS__ (Health Data Hosting), __ISO 27001__ and __ISAE 3402 type II__.                   |  
+| Security            | Highly secure platform, __SecNumCloud__-qualified, certified __HDS__ (Health Data Hosting), __ISO 27001__ and __ISAE 3402 type II__, __C5__-compliant.                   |  
 | High availability   | Platform availability rate of 99.99%, measured monthly, maintenance windows included.                                                          |
 | Resilience          | Implementation of business continuity or disaster recovery plans as needed.                                                                    |
 | Automation          | Fully automated platform designed to integrate into a digital transformation program.                                                          |

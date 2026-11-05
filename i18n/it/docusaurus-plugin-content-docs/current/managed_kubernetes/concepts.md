@@ -29,16 +29,18 @@ Per i team che preferiscono costruire la propria piattaforma su una base minima,
 | **Backup e migrazione**          | ❌                      | ✅Veeam Kasten              |
 | **Governance e sicurezza**       | ❌                      | ✅Kyverno, Capsule          |
 | **Gestione dei certificati**     | ❌                      | ✅Cert-Manager              |
-| **Deployment continuo (GitOps)** | ❌                      | 🔵ArgoCD                    |
-| **Container Registry**           | ❌                      | 🔵Harbor                    |
-| **Autenticazione SSO**           | ❌                      | 🔵Integrazione OIDC         |
+| **Deployment continuo (GitOps)** | ❌                      | ✅ArgoCD (disattivabile)    |
+| **Container Registry**           | ❌                      | ✅Harbor (disattivabile)    |
+| **Autenticazione SSO**           | ❌                      | ✅Integrazione OIDC (disattivabile) |
 | **Autoscaling dei pod**          | ❌                      | 🔵Keda                      |
-| **Gestione dei costi (FinOps)**  | ❌                      | 🔵OpenCost                  |
+| **Gestione dei costi (FinOps)**  | ❌                      | ✅OpenCost (disattivabile)  |
 | **Osservabilità (profiling)**    | ❌                      | 🔵Pyroscope + LLM           |
 
 ✅ : incluso
-🔵 : opzionale/disattivabile
+🔵 : opzionale
 ❌ : non incluso
+
+I componenti contrassegnati con ✅ sono inclusi nell'offerta. Quelli indicati come «disattivabile» (ArgoCD, Harbor, OpenCost e l'autenticazione SSO) possono essere disattivati.
 
 ### Destinatari e casi d'uso
 
@@ -103,14 +105,14 @@ Lo stack open source **Prometheus** è fornito di serie:
 - **Kyverno** ([https://kyverno.io/](https://kyverno.io/)): controller di ammissione che applica policy di sicurezza e di governance.
 - **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)): gestione dei permessi con la nozione di *tenant*, che centralizza e delega i diritti su più namespace. Gli utenti della piattaforma dispongono così di diritti limitati ai soli propri namespace.
 - **Cert-Manager**: gestore di certificati open source integrato nativamente.
-- **Autenticazione SSO** (opzionale): integrazione con un provider di identità esterno OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce…).
+- **Autenticazione SSO** (incluso, disattivabile): integrazione con un provider di identità esterno OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce…).
 
 ### Deployment e automazione
 
-- **ArgoCD** (opzionale): deployment automatizzati in GitOps, all'interno di una catena **CI/CD**.
-- **Harbor** (opzionale): **registro di container** che memorizza le immagini dei vostri container e i vostri chart Helm direttamente nel cluster. Esegue **scansioni delle vulnerabilità** sulle vostre immagini e si sincronizza con altri registri ([https://goharbor.io/](https://goharbor.io/)).
+- **ArgoCD** (incluso, disattivabile): deployment automatizzati in GitOps, all'interno di una catena **CI/CD**.
+- **Harbor** (incluso, disattivabile): **registro di container** che memorizza le immagini dei vostri container e i vostri chart Helm direttamente nel cluster. Esegue **scansioni delle vulnerabilità** sulle vostre immagini e si sincronizza con altri registri ([https://goharbor.io/](https://goharbor.io/)).
 - **Keda** (opzionale): autoscaling dei pod a partire da metriche avanzate, ad esempio un numero di connessioni HTTP.
-- **OpenCost** (opzionale, [https://github.com/opencost/opencost](https://github.com/opencost/opencost)): monitoraggio FinOps del consumo delle risorse Kubernetes e riaddebito per progetto o namespace.
+- **OpenCost** (incluso, disattivabile, [https://github.com/opencost/opencost](https://github.com/opencost/opencost)): monitoraggio FinOps del consumo delle risorse Kubernetes e riaddebito per progetto o namespace.
 
 ### Backup
 
