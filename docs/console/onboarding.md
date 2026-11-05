@@ -271,15 +271,15 @@ Aucun produit n'est activé d'office, ni à la création de votre organisation, 
 Ces produits s'ouvrent dans le cadre de votre contrat, avec votre interlocuteur commercial :
 
 - [IaaS VMware](/iaas_vmware) et [IaaS OpenSource](/iaas_opensource)
-- [Bare metal](/iaas_bare-metal)
+- [Bare Metal](/iaas_bare-metal)
 - [PaaS OpenShift](/paas_openshift) et [Kubernetes managé](/managed_kubernetes)
 - Bases de données managées : [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
 - [Bastion](/bastion)
-- [Housing](/housing)
-- [Backbone privé](/network/private_backbone) et [Internet](/network/internet)
+- [Colocation](/housing)
+- [Private Backbone](/network/private_backbone) et [Internet](/network/internet)
 - [Marketplace](/marketplace)
 
-Vue d'ensemble : [nos produits](/managedproducts_overview).
+Vue d'ensemble : [nos produits sur cloud-temple.com](https://www.cloud-temple.com/produits/).
 
 ### Demander un produit supplémentaire {/* #demander-un-produit-supplémentaire */}
 

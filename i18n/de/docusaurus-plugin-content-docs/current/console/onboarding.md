@@ -271,15 +271,15 @@ Kein Produkt wird standardmäßig aktiviert, weder bei der Erstellung Ihrer Orga
 Diese Produkte werden im Rahmen Ihres Vertrags mit Ihrem Vertriebsansprechpartner geöffnet:
 
 - [IaaS VMware](/iaas_vmware) und [IaaS OpenSource](/iaas_opensource)
-- [Bare metal](/iaas_bare-metal)
+- [Bare Metal](/iaas_bare-metal)
 - [PaaS OpenShift](/paas_openshift) und [Managed Kubernetes](/managed_kubernetes)
 - Verwaltete Datenbanken: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
 - [Bastion](/bastion)
-- [Housing](/housing)
+- [Colocation](/housing)
 - [Private Backbone](/network/private_backbone) und [Internet](/network/internet)
 - [Marketplace](/marketplace)
 
-Übersicht: [unsere Produkte](/managedproducts_overview).
+Übersicht: [unsere Produkte auf cloud-temple.com](https://www.cloud-temple.com/de/produkte/).
 
 ### Ein zusätzliches Produkt anfordern {/* #demander-un-produit-supplémentaire */}
 
