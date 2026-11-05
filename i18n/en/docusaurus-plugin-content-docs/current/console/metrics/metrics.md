@@ -4,7 +4,7 @@ title: Observability overview
 
 # Observability overview
 
-**Observability** provides the metrics of your Cloud Temple infrastructure in market standards: a Prometheus proxy built into the Console, dashboards in the web interface, and integration with your own visualization tool, such as Grafana.
+**Observability** provides the metrics of your Cloud Temple infrastructure using industry standards: a Prometheus proxy built into the Console, dashboards in the web interface, and integration with your own visualization tool, such as Grafana.
 
 The service is included at no extra cost in every Cloud Temple subscription. Cloud Temple provides the data source and open-source dashboard templates; you keep your own monitoring tool.
 
