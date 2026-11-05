@@ -418,9 +418,20 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Supervision',
       className: 'sidebar-cat-monitoring',
-      link: { type: 'doc', id: 'console/metrics/concepts' },
+      link: { type: 'doc', id: 'console/metrics/metrics' },
       items: [
-        'console/metrics/concepts',
+        {
+          type: 'category',
+          label: 'Observability',
+          link: { type: 'doc', id: 'console/metrics/metrics' },
+          items: [
+            page('observability', 'overview', 'console/metrics/metrics'),
+            page('observability', 'concepts', 'console/metrics/concepts'),
+            page('observability', 'quickstart', 'console/metrics/quickstart'),
+            page('observability', 'tutorials', 'console/metrics/tutorials'),
+            page('observability', 'faq', 'console/metrics/faq'),
+          ],
+        },
       ],
     },
     {
