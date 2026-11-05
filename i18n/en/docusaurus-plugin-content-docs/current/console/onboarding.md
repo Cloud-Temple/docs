@@ -271,7 +271,7 @@ No product is enabled by default, neither at the creation of your organization n
 These products are opened within the scope of your contract, with your commercial contact:
 
 - [IaaS VMware](/iaas_vmware) and [IaaS OpenSource](/iaas_opensource)
-- [Bare metal](/iaas_bare-metal)
+- [Bare Metal](/iaas_bare-metal)
 - [PaaS OpenShift](/paas_openshift) and [Managed Kubernetes](/managed_kubernetes)
 - Managed databases: [PostgreSQL](/managed_postgresql), [MariaDB](/managed_mariadb)
 - [Bastion](/bastion)
@@ -279,7 +279,7 @@ These products are opened within the scope of your contract, with your commercia
 - [Private Backbone](/network/private_backbone) and [Internet](/network/internet)
 - [Marketplace](/marketplace)
 
-Overview: [our products](/managedproducts_overview).
+Overview: [our products on cloud-temple.com](https://www.cloud-temple.com/en/products/).
 
 ### Request an additional product {/* #demander-un-produit-supplémentaire */}
 
