@@ -18,7 +18,7 @@ Aunque está completamente automatizada gracias a APIs y un provider de Terrafor
 | Ventaja             | Descripción                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Confianza digital   | Alojamiento de datos en Francia y cumplimiento del RGPD.                                                                                       |
-| Seguridad           | Plataforma altamente segura, cualificada __SecNumCloud__, certificada __HDS__ (Alojamiento de Datos de Salud), __ISO 27001__ e __ISAE 3402 tipo II__. |
+| Seguridad           | Plataforma altamente segura, cualificada __SecNumCloud__, certificada __HDS__ (Alojamiento de Datos de Salud), __ISO 27001__ e __ISAE 3402 tipo II__, conforme a __C5__. |
 | Alta disponibilidad | Tasa de disponibilidad de la plataforma del 99,99 %, medida mensualmente, incluyendo ventanas de mantenimiento.                                |
 | Resiliencia         | Implementación de planes de continuidad o de recuperación ante desastres según las necesidades.                                                 |
 | Automatización      | Plataforma completamente automatizada diseñada para integrarse en un programa de transformación digital.                                       |

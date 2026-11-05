@@ -118,7 +118,7 @@ Das maximale Gewicht der Geräte beträgt 25 kg pro 'U'. Darüber hinaus muss di
 
 #### Appliances (Netzwerk, Firewall…)
 
-Jede Höheneinheit kann je nach Bedarf über eine oder zwei Steckdosen vom Typ C13 verfügen. Jede Steckdose ist auf 150 W bei 220 V begrenzt. Für ein Gerät mit 1.500 W an zwei Netzteilen werden somit 1.500 W / 150 W = 10 'U' benötigt, also 5 'U' (750 W) pro Stromkreis.
+Jede Höheneinheit kann je nach Bedarf über eine oder zwei Steckdosen vom Typ C19 verfügen. Jede Steckdose ist auf 150 W bei 220 V begrenzt, also 150 W oder 300 W pro 'U'.
 
 Die Kühlung erfolgt von der Vorderseite zur Rückseite des Racks, und __die Appliance erhält ihre Netzwerkkonnektivität an der Vorderseite des Racks.__
 
@@ -144,7 +144,7 @@ Das dedizierte Rack wird in einer Zone für gemeinsam genutztes Hosting außerha
 
 Die Netzwerkkonnektivität wird zusätzlich zum Hosting nach Porttyp und gewünschter Bandbreite gebucht:
 
-- Kupfer 100 Mbps oder 1 Gbps;
+- Kupfer 1 Gbps;
 - Glasfaser 1 Gbps oder 10 Gbps, über ein bereitgestelltes SFP-Modul für die Konnektivität auf Cloud Temple-Seite.
 
 Eine Konnektivität im Meet Me Room ermöglicht außerdem den Empfang Ihrer Betreiberleitung. Sie erfolgt zwingend über Glasfaser, mit 1 Gbps oder 10 Gbps.

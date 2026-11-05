@@ -295,10 +295,10 @@
       "it": "08d0eceb7932bc2e24030435cd9b11655b472ac14c3de5dbab78515410ec83b7"
     },
     "housing/concepts.md": {
-      "en": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33",
-      "de": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33",
-      "es": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33",
-      "it": "3a7db69775c310ac6eee15e030115b422161e2a3c074ad4c8bdad754dbccfe33"
+      "en": "58a314c702ff46ae9d84932a2bb26b8006dfd7df0172c1f83b8754c35f63a380",
+      "de": "58a314c702ff46ae9d84932a2bb26b8006dfd7df0172c1f83b8754c35f63a380",
+      "es": "58a314c702ff46ae9d84932a2bb26b8006dfd7df0172c1f83b8754c35f63a380",
+      "it": "58a314c702ff46ae9d84932a2bb26b8006dfd7df0172c1f83b8754c35f63a380"
     },
     "housing/faq.md": {
       "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
@@ -355,10 +355,10 @@
       "it": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4"
     },
     "iaas_opensource/concepts.md": {
-      "en": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
-      "de": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
-      "es": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f",
-      "it": "a9bf7174e6d3f7fde574c0d5fa0f4b1185708d1bfaa962686a048960d387db4f"
+      "en": "003c48286c651e47bcb25faa83a073dfd82e578b49102ddced46ce626ebb0492",
+      "de": "003c48286c651e47bcb25faa83a073dfd82e578b49102ddced46ce626ebb0492",
+      "es": "003c48286c651e47bcb25faa83a073dfd82e578b49102ddced46ce626ebb0492",
+      "it": "003c48286c651e47bcb25faa83a073dfd82e578b49102ddced46ce626ebb0492"
     },
     "iaas_opensource/faq.md": {
       "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
@@ -403,10 +403,10 @@
       "it": "281289bc26113b45708ca464819f262146745b2f50de98546173ef7e908ba00f"
     },
     "iaas_vmware/concepts.md": {
-      "en": "a906f002a7e3272c5af13fba221fa5e3a6e85da6aeb91371403088fca6516a4c",
-      "de": "a906f002a7e3272c5af13fba221fa5e3a6e85da6aeb91371403088fca6516a4c",
-      "es": "a906f002a7e3272c5af13fba221fa5e3a6e85da6aeb91371403088fca6516a4c",
-      "it": "a906f002a7e3272c5af13fba221fa5e3a6e85da6aeb91371403088fca6516a4c"
+      "en": "113f5afdc2f29a0ce9a46c01b59a435adeafc115ba80cfdc3d3f95605aae41b6",
+      "de": "113f5afdc2f29a0ce9a46c01b59a435adeafc115ba80cfdc3d3f95605aae41b6",
+      "es": "113f5afdc2f29a0ce9a46c01b59a435adeafc115ba80cfdc3d3f95605aae41b6",
+      "it": "113f5afdc2f29a0ce9a46c01b59a435adeafc115ba80cfdc3d3f95605aae41b6"
     },
     "iaas_vmware/faq.md": {
       "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
@@ -529,10 +529,10 @@
       "it": "7c9300a18fea5b1b202b28915e2db721fbb04b67bd9951a8c2feb8509a99b4d0"
     },
     "managed_kubernetes/concepts.md": {
-      "en": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b",
-      "de": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b",
-      "es": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b",
-      "it": "98e4ff3a1a278453241015e0fc4993240548e5ebafdabe4b96394cef6048dd8b"
+      "en": "584264e87d5450348bce0d7854d37aa1aabcc8256d76f0fd16612143242a1aba",
+      "de": "584264e87d5450348bce0d7854d37aa1aabcc8256d76f0fd16612143242a1aba",
+      "es": "584264e87d5450348bce0d7854d37aa1aabcc8256d76f0fd16612143242a1aba",
+      "it": "584264e87d5450348bce0d7854d37aa1aabcc8256d76f0fd16612143242a1aba"
     },
     "managed_kubernetes/faq.md": {
       "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",

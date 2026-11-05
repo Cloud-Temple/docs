@@ -18,7 +18,7 @@ Obwohl das Angebot über APIs und einen Terraform-Provider vollständig automati
 | Vorteil             | Beschreibung                                                                                                                                   |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Digitales Vertrauen | Datenhosting in Frankreich und DSGVO-Konformität.                                                                                              |
-| Sicherheit          | Hochsichere Plattform, __SecNumCloud__-qualifiziert, nach __HDS__ (Hosting von Gesundheitsdaten), __ISO 27001__ und __ISAE 3402 Typ II__ zertifiziert.     |  
+| Sicherheit          | Hochsichere Plattform, __SecNumCloud__-qualifiziert, nach __HDS__ (Hosting von Gesundheitsdaten), __ISO 27001__ und __ISAE 3402 Typ II__ zertifiziert, __C5__-konform.     |  
 | Hochverfügbarkeit   | Verfügbarkeitsrate der Plattform von 99,99 %, monatlich gemessen, inklusive Wartungsfenster.                                                   |
 | Resilienz           | Umsetzung von Plänen zur Geschäftskontinuität oder zur Notfallwiederherstellung je nach Bedarf.                                                |
 | Automatisierung     | Vollständig automatisierte Plattform, konzipiert für die Integration in ein Programm zur digitalen Transformation.                              |

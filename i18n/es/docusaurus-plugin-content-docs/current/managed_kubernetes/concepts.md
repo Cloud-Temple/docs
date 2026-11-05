@@ -29,16 +29,18 @@ Para los equipos que prefieren construir su propia plataforma sobre una base mí
 | **Copia de seguridad y migración** | ❌                    | ✅Veeam Kasten              |
 | **Gobernanza y seguridad**       | ❌                      | ✅Kyverno, Capsule          |
 | **Gestión de certificados**      | ❌                      | ✅Cert-Manager              |
-| **Despliegue continuo (GitOps)** | ❌                      | 🔵ArgoCD                    |
-| **Registro de contenedores**     | ❌                      | 🔵Harbor                    |
-| **Autenticación SSO**            | ❌                      | 🔵Integración OIDC          |
+| **Despliegue continuo (GitOps)** | ❌                      | ✅ArgoCD (desactivable)     |
+| **Registro de contenedores**     | ❌                      | ✅Harbor (desactivable)     |
+| **Autenticación SSO**            | ❌                      | ✅Integración OIDC (desactivable) |
 | **Autoescalado de pods**         | ❌                      | 🔵Keda                      |
-| **Gestión de costes (FinOps)**   | ❌                      | 🔵OpenCost                  |
+| **Gestión de costes (FinOps)**   | ❌                      | ✅OpenCost (desactivable)   |
 | **Observabilidad (profiling)**   | ❌                      | 🔵Pyroscope + LLM           |
 
 ✅ : incluido
-🔵 : opcional/desactivable
+🔵 : opcional
 ❌ : no incluido
+
+Los componentes marcados con ✅ están incluidos en la oferta. Los indicados como «desactivable» (ArgoCD, Harbor, OpenCost y la autenticación SSO) pueden desactivarse.
 
 ### Destinatarios y casos de uso
 
@@ -103,14 +105,14 @@ El stack open source **Prometheus** se entrega de serie:
 - **Kyverno** ([https://kyverno.io/](https://kyverno.io/)): controlador de admisión que aplica políticas de seguridad y de gobernanza.
 - **Capsule** ([https://projectcapsule.dev/](https://projectcapsule.dev/)): gestión de permisos con la noción de *tenant*, que centraliza y delega derechos sobre varios namespaces. Los usuarios de la plataforma disponen así de derechos restringidos únicamente a sus namespaces.
 - **Cert-Manager**: gestor de certificados open source integrado de forma nativa.
-- **Autenticación SSO** (opcional): integración con un proveedor de identidad externo OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce…).
+- **Autenticación SSO** (incluido, desactivable): integración con un proveedor de identidad externo OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce…).
 
 ### Despliegue y automatización
 
-- **ArgoCD** (opcional): despliegues automatizados en GitOps, dentro de una cadena **CI/CD**.
-- **Harbor** (opcional): **registro de contenedores** que almacena las imágenes de sus contenedores y sus charts de Helm directamente en el clúster. Realiza **análisis de vulnerabilidades** de sus imágenes y se sincroniza con otros registros ([https://goharbor.io/](https://goharbor.io/)).
+- **ArgoCD** (incluido, desactivable): despliegues automatizados en GitOps, dentro de una cadena **CI/CD**.
+- **Harbor** (incluido, desactivable): **registro de contenedores** que almacena las imágenes de sus contenedores y sus charts de Helm directamente en el clúster. Realiza **análisis de vulnerabilidades** de sus imágenes y se sincroniza con otros registros ([https://goharbor.io/](https://goharbor.io/)).
 - **Keda** (opcional): autoescalado de los pods a partir de métricas avanzadas, por ejemplo un número de conexiones HTTP.
-- **OpenCost** (opcional, [https://github.com/opencost/opencost](https://github.com/opencost/opencost)): seguimiento FinOps del consumo de recursos de Kubernetes y refacturación por proyecto o namespace.
+- **OpenCost** (incluido, desactivable, [https://github.com/opencost/opencost](https://github.com/opencost/opencost)): seguimiento FinOps del consumo de recursos de Kubernetes y refacturación por proyecto o namespace.
 
 ### Copia de seguridad
 
@@ -140,7 +142,7 @@ El clúster de desarrollo y pruebas se despliega en una sola zona de disponibili
 ### Integraciones
 
 - **Almacenamiento de Objetos Cloud Temple**: registros (Loki) y copias de seguridad (Kasten).
-- **Proveedores de identidad**: integración opcional mediante OIDC.
+- **Proveedores de identidad**: integración mediante OIDC, incluida y desactivable.
 - **IaaS Cloud Temple**: interconexión de los clústeres con recursos virtualizados, como bases de datos o componentes middleware.
 
 ## Regiones y zonas de disponibilidad

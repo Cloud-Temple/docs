@@ -18,7 +18,7 @@ Bien qu'entièrement automatisée grâce à des APIs et un provider Terraform, l
 | Avantage            | Description                                                                                                                                    |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | Confiance numérique | Hébergement des données en France et conformité RGPD.                                                                                          |
-| Sécurité            | Plateforme hautement sécurisée, qualifiée __SecNumCloud__, certifiée __HDS__ (Hébergement des Données de Santé), __ISO 27001__ et __ISAE 3402 type II__. |  
+| Sécurité            | Plateforme hautement sécurisée, qualifiée __SecNumCloud__, certifiée __HDS__ (Hébergement des Données de Santé), __ISO 27001__ et __ISAE 3402 type II__, conforme __C5__. |  
 | Haute disponibilité | Taux de disponibilité de la plateforme de 99,99%, mesuré mensuellement, plages de maintenance incluses.                                        |
 | Résilience          | Mise en place de plans de continuité ou de reprise d'activité selon les besoins.                                                               |
 | Automatisation      | Plateforme entièrement automatisée pensée pour s'intégrer dans un programme de transformation numérique.                                        |
