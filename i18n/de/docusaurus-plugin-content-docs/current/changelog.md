@@ -1,6 +1,6 @@
 ---
 title: Änderungsprotokoll der Dokumentation
-sidebar_position: 2
+displayed_sidebar: docSidebar
 ---
 
 # Änderungsprotokoll der Dokumentation

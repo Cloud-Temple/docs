@@ -1,6 +1,6 @@
 ---
 title: Historique de la documentation
-sidebar_position: 2
+displayed_sidebar: docSidebar
 ---
 
 # Historique de la documentation

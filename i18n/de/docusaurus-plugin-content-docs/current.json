@@ -647,10 +647,6 @@
     "message": "Häufig gestellte Fragen",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_postgresql/faq"
   },
-  "sidebar.docSidebar.doc.Historique de la documentation": {
-    "message": "Änderungsprotokoll der Dokumentation",
-    "description": "The label for the doc item 'Historique de la documentation' in sidebar 'docSidebar', linking to the doc changelog"
-  },
   "sidebar.docSidebar.doc.iam_overview": {
     "message": "Übersicht",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/iam/iam"
