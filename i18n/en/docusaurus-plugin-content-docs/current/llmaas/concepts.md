@@ -23,7 +23,7 @@ It is intended for teams that integrate generative AI into their applications, i
 |---|---|
 | Confidentiality | Prompts and responses are neither used nor retained after processing, except for the results of a batch processing job, which are purged after a limited period. |
 | Sovereignty | Inference in France, on a SecNumCloud-qualified and HDS-certified infrastructure. |
-| OpenAI compatibility | An existing application changes its base URL and API key to use the service. |
+| OpenAI compatibility | For supported calls, an existing application changes its base URL and API key; some features differ (batch processing, completions, embeddings, audio transcription): see the "OpenAI Compatibility" section of the [API documentation](./api.md). |
 | Managed catalog | Cloud Temple adds, updates and retires models, and publishes their lifecycle. |
 | Pay-per-use billing | Only the volumes consumed are billed, per billing unit (tokens, audio minutes). |
 | Ecosystem | Common frameworks (LangChain, Haystack, Semantic Kernel…) work with the API. |
@@ -52,11 +52,15 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Key Components
 
+<a id="1-llmaas-api-gateway"></a>
+
 #### LLMaaS API Gateway
 - **OpenAI Compatible** : Seamless integration with existing ecosystems
 - **Rate Limiting** : Quota management by billing tier
 - **Load Balancing** : Distribution of requests across inference resources
 - **Monitoring** : Real-time metrics and alerting
+
+<a id="2-authentication-service"></a>
 
 #### Authentication Service
 - **API Keys** : Creation, rotation, and revocation under the client's responsibility. See the [responsibility sharing (RACI)](../contractual/llmaas/raci.md).
@@ -237,8 +241,10 @@ The distribution of responsibilities between the customer and Cloud Temple is de
 ## Reversibility
 
 - **No data to bring back**: the service retains neither prompts nor responses after processing. Only the results of a batch processing job must be retrieved before they are purged: see the [retention conditions](./batch.md#limits-and-retention).
-- **Application portability**: since the API is OpenAI-compatible, an application can be reconfigured to another compatible provider by changing the base URL and the API key.
+- **Application portability**: the API follows the OpenAI format for supported calls. An application limited to these calls can be reconfigured to another compatible provider by changing the base URL and the API key, after checking the model and the parameters. Batch processing uses a contract specific to Cloud Temple.
 - **Embeddings**: vectors depend on the embedding model; changing models requires recomputing them.
+
+<a id="cost-calculation"></a>
 
 ## Pricing
 
@@ -248,6 +254,8 @@ LLMaaS prices are published on the product page of the Cloud Temple website:
 The cost depends on the volumes consumed in each of the [billing units](#billing-units).
 
 <a id="-best-practices"></a>
+
+<a id="optimization"></a>
 
 ## Best practices
 

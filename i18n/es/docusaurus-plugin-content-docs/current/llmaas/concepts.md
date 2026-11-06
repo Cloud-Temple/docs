@@ -23,7 +23,7 @@ Está dirigido a los equipos que integran la IA generativa en sus aplicaciones, 
 |---|---|
 | Confidencialidad | Los prompts y las respuestas no se explotan ni se conservan tras el tratamiento, salvo los resultados de un procesamiento por lotes, que se purgan tras un tiempo limitado. |
 | Soberanía | Inferencia en Francia, en una infraestructura cualificada SecNumCloud y certificada HDS. |
-| Compatibilidad con OpenAI | Una aplicación existente cambia su URL base y su clave de API para usar el servicio. |
+| Compatibilidad con OpenAI | Para las llamadas admitidas, una aplicación existente cambia su URL base y su clave de API; algunas funcionalidades difieren (procesamiento por lotes, completions, embeddings, transcripción de audio): consulte la sección «Compatibilidad con OpenAI» de la [documentación de la API](./api.md). |
 | Catálogo gestionado | Cloud Temple añade, actualiza y retira los modelos, y publica su ciclo de vida. |
 | Facturación por uso | Solo se facturan los volúmenes consumidos, por unidad de facturación (tokens, minutos de audio). |
 | Ecosistema | Los frameworks habituales (LangChain, Haystack, Semantic Kernel…) funcionan con la API. |
@@ -52,11 +52,15 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Componentes Principales
 
+<a id="1-api-gateway-llmaas"></a>
+
 #### API Gateway LLMaaS
 - **Compatible con OpenAI** : Integración transparente con el ecosistema existente
 - **Rate Limiting** : Gestión de cuotas por nivel de facturación
 - **Load Balancing** : Distribución de las solicitudes sobre los recursos de inferencia
 - **Monitoring** : Métricas en tiempo real y alertas
+
+<a id="2-servicio-de-autenticación"></a>
 
 #### Servicio de Autenticación
 - **Claves API** : Creación, rotación y revocación bajo la responsabilidad del cliente. Consulte el [compartir de responsabilidades (RACI)](../contractual/llmaas/raci.md).
@@ -237,8 +241,10 @@ El reparto de responsabilidades entre el cliente y Cloud Temple se detalla en la
 ## Reversibilidad
 
 - **Ningún dato que recuperar**: el servicio no conserva ni los prompts ni las respuestas tras el tratamiento. Solo los resultados de un procesamiento por lotes deben recuperarse antes de su purga: consulte las [condiciones de conservación](./batch.md#límites-y-retención).
-- **Portabilidad de las aplicaciones**: al ser la API compatible con OpenAI, una aplicación puede reconfigurarse hacia otro proveedor compatible cambiando la URL base y la clave de API.
+- **Portabilidad de las aplicaciones**: la API sigue el formato de OpenAI para las llamadas admitidas. Una aplicación que se limita a estas llamadas puede reconfigurarse hacia otro proveedor compatible cambiando la URL base y la clave de API, tras verificar el modelo y los parámetros. El procesamiento por lotes utiliza un contrato propio de Cloud Temple.
 - **Embeddings**: los vectores dependen del modelo de embedding; un cambio de modelo obliga a recalcularlos.
+
+<a id="cálculo-de-costes"></a>
 
 ## Precios
 
@@ -248,6 +254,8 @@ Los precios de LLMaaS se publican en la página del producto del sitio web de Cl
 El coste depende de los volúmenes consumidos en cada una de las [unidades de facturación](#unidades-de-facturación).
 
 <a id="-buenas-prácticas"></a>
+
+<a id="optimización"></a>
 
 ## Buenas prácticas
 

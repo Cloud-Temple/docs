@@ -23,7 +23,7 @@ Er richtet sich an Teams, die generative KI in ihre Anwendungen integrieren, auc
 |---|---|
 | Vertraulichkeit | Prompts und Antworten werden nach der Verarbeitung weder genutzt noch gespeichert, mit Ausnahme der Ergebnisse einer Stapelverarbeitung, die nach einer begrenzten Dauer gelöscht werden. |
 | Souveränität | Inferenz in Frankreich, auf einer nach SecNumCloud qualifizierten und nach HDS zertifizierten Infrastruktur. |
-| OpenAI-Kompatibilität | Eine bestehende Anwendung ändert ihre Basis-URL und ihren API-Schlüssel, um den Dienst zu nutzen. |
+| OpenAI-Kompatibilität | Für die unterstützten Aufrufe ändert eine bestehende Anwendung ihre Basis-URL und ihren API-Schlüssel; einige Funktionen weichen ab (Stapelverarbeitung, Completions, Embeddings, Audiotranskription): siehe den Abschnitt „OpenAI-Kompatibilität“ der [API-Dokumentation](./api.md). |
 | Verwalteter Katalog | Cloud Temple fügt Modelle hinzu, aktualisiert sie und nimmt sie zurück und veröffentlicht ihren Lebenszyklus. |
 | Nutzungsbasierte Abrechnung | Abgerechnet werden nur die verbrauchten Volumen, je Abrechnungseinheit (Tokens, Audiominuten). |
 | Ökosystem | Gängige Frameworks (LangChain, Haystack, Semantic Kernel…) funktionieren mit der API. |
@@ -52,11 +52,15 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Hauptkomponenten
 
+<a id="1-llmaas-api-gateway"></a>
+
 #### LLMaaS API Gateway
 - **OpenAI-kompatibel**: Nahtlose Integration in bestehende Ökosysteme
 - **Rate Limiting**: Verwaltung von Kontingenten nach Abrechnungsstufe
 - **Load Balancing**: Verteilung der Anfragen auf Inferenz-Ressourcen
 - **Monitoring**: Echtzeitmetriken und Alarmierung
+
+<a id="2-authentifizierungsdienst"></a>
 
 #### Authentifizierungsdienst
 - **API-Schlüssel**: Erstellung, Rotation und Widerruf unter Verantwortung des Kunden. Siehe [Verantwortungsteilung (RACI)](../contractual/llmaas/raci.md).
@@ -239,8 +243,10 @@ Die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple ist
 ## Reversibilität
 
 - **Keine Daten zurückzuholen**: Der Dienst speichert nach der Verarbeitung weder Prompts noch Antworten. Nur die Ergebnisse einer Stapelverarbeitung müssen vor ihrer Löschung abgerufen werden: siehe [Aufbewahrungsbedingungen](./batch.md#grenzen-und-aufbewahrung).
-- **Portabilität der Anwendungen**: Da die API OpenAI-kompatibel ist, kann eine Anwendung durch Ändern der Basis-URL und des API-Schlüssels auf einen anderen kompatiblen Anbieter umgestellt werden.
+- **Portabilität der Anwendungen**: Die API folgt für die unterstützten Aufrufe dem OpenAI-Format. Eine Anwendung, die sich auf diese Aufrufe beschränkt, kann durch Ändern der Basis-URL und des API-Schlüssels auf einen anderen kompatiblen Anbieter umgestellt werden, nach Prüfung des Modells und der Parameter. Die Stapelverarbeitung nutzt einen Cloud-Temple-eigenen Vertrag.
 - **Embeddings**: Die Vektoren hängen vom Embedding-Modell ab; ein Modellwechsel erfordert ihre Neuberechnung.
+
+<a id="kostenberechnung"></a>
 
 ## Preise
 
@@ -250,6 +256,8 @@ Die Preise von LLMaaS sind auf der Produktseite der Cloud-Temple-Website veröff
 Die Kosten hängen von den verbrauchten Volumen in jeder der [Abrechnungseinheiten](#abrechnungseinheiten) ab.
 
 <a id="-best-practices"></a>
+
+<a id="optimierung"></a>
 
 ## Bewährte Verfahren
 
