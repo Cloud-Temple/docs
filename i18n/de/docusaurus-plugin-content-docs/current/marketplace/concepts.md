@@ -12,7 +12,7 @@ Die Cloud Temple Marketplace positioniert sich als Hebel für die digitale Trans
 
 Sie ermöglicht:
 
-- **Zentralisieren** des Zugriffs auf validierte Partnerlösungen
+- **Zentralisieren** des Zugriffs auf von Cloud Temple ausgewählte Partnerlösungen
 - **Vereinfachen** der Bereitstellung von Cloud-Umgebungen
 - **Beschleunigen** der Umsetzung digitaler Projekte
 - **Bereitstellen** in Ihren Cloud-Temple-Umgebungen, die ihre eigenen Qualifizierungen tragen; die Sicherheit der bereitgestellten Maschinen bleibt in Ihrer Verantwortung

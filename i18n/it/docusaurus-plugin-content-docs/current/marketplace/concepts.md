@@ -12,7 +12,7 @@ La Marketplace Cloud Temple si posiziona come una leva di trasformazione digital
 
 Consente di:
 
-- **Centralizzare** l'accesso alle soluzioni partner validate
+- **Centralizzare** l'accesso alle soluzioni partner selezionate da Cloud Temple
 - **Semplificare** il deployment di ambienti cloud
 - **Accelerare** l'implementazione di progetti digitali
 - **Distribuire** nei tuoi ambienti Cloud Temple, che hanno le proprie qualifiche; la sicurezza delle macchine distribuite resta di tua responsabilità

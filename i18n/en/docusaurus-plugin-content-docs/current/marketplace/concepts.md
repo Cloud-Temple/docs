@@ -12,7 +12,7 @@ The Cloud Temple Marketplace positions itself as a digital transformation driver
 
 It enables you to:
 
-- **Centralize** access to validated partner solutions
+- **Centralize** access to partner solutions selected by Cloud Temple
 - **Simplify** the deployment of cloud environments
 - **Accelerate** the implementation of digital projects
 - **Deploy** in your Cloud Temple environments, which carry their own qualifications; the security of the deployed machines remains your responsibility
