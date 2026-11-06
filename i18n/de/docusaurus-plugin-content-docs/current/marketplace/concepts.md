@@ -15,7 +15,7 @@ Sie ermöglicht:
 - **Zentralisieren** des Zugriffs auf validierte Partnerlösungen
 - **Vereinfachen** der Bereitstellung von Cloud-Umgebungen
 - **Beschleunigen** der Umsetzung digitaler Projekte
-- **Garantieren** der Compliance und Sicherheit der Bereitstellungen in Ihren Cloud-Temple-Umgebungen
+- **Bereitstellen** in Ihren Cloud-Temple-Umgebungen, die ihre eigenen Qualifizierungen tragen; die Sicherheit der bereitgestellten Maschinen bleibt in Ihrer Verantwortung
 
 Sie richtet sich an IT- und DevOps-Teams, die ihre Cloud-Temple-Umgebungen aufbauen, auch in regulierten Branchen, sowie an Fachabteilungen, die SaaS-Lösungen von Partner-Softwareherstellern suchen.
 
@@ -75,7 +75,7 @@ Virtuelle Maschinen-Images bilden derzeit das Kernstück des Marketplace-Produkt
 
 - Geprüfte und sichere Images
 - Kompatibel mit OpenIaaS- und VMware-Umgebungen
-- Bereitstellung in weniger als 10 Minuten
+- Bereitstellung in der Regel in wenigen Minuten, je nach Image und Umgebung
 - Native Integration in die Cloud Temple-Konsole
 
 ### Partnerlösungen

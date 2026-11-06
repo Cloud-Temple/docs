@@ -15,7 +15,7 @@ Consente di:
 - **Centralizzare** l'accesso alle soluzioni partner validate
 - **Semplificare** il deployment di ambienti cloud
 - **Accelerare** l'implementazione di progetti digitali
-- **Garantire** la conformità e la sicurezza dei deployment effettuati nei tuoi ambienti Cloud Temple
+- **Distribuire** nei tuoi ambienti Cloud Temple, che hanno le proprie qualifiche; la sicurezza delle macchine distribuite resta di tua responsabilità
 
 Si rivolge ai team IT e DevOps che costruiscono i propri ambienti Cloud Temple, anche nei settori regolamentati, e alle direzioni aziendali alla ricerca di soluzioni SaaS di fornitori di software partner.
 
@@ -75,7 +75,7 @@ Le immagini delle macchine virtuali costituiscono il nucleo attuale del prodotto
 
 - Immagini validate e sicure
 - Compatibile con gli ambienti OpenIaaS e VMware
-- Deployment in meno di 10 minuti
+- Distribuzione in pochi minuti in genere, a seconda dell'immagine e dell'ambiente
 - Integrazione nativa con la console Cloud Temple
 
 ### Soluzioni partner

@@ -15,7 +15,7 @@ It enables you to:
 - **Centralize** access to validated partner solutions
 - **Simplify** the deployment of cloud environments
 - **Accelerate** the implementation of digital projects
-- **Ensure** the compliance and security of deployments carried out in your Cloud Temple environments
+- **Deploy** in your Cloud Temple environments, which carry their own qualifications; the security of the deployed machines remains your responsibility
 
 It is intended for IT and DevOps teams building their Cloud Temple environments, including in regulated sectors, as well as business departments looking for SaaS solutions from partner publishers.
 
@@ -75,7 +75,7 @@ Virtual machine images currently form the core of the Marketplace product. These
 
 - Validated and secure images
 - Compatible with OpenIaaS and VMware environments
-- Deployment in under 10 minutes
+- Deployment in a few minutes in general, depending on the image and the environment
 - Native integration with the Cloud Temple console
 
 ### Partner Solutions

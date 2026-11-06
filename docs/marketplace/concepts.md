@@ -15,7 +15,7 @@ Elle permet de :
 - **Centraliser** l'accès aux solutions partenaires validées
 - **Simplifier** le déploiement d'environnements cloud
 - **Accélérer** la mise en œuvre de projets numériques
-- **Garantir** la conformité et la sécurité des déploiements réalisés dans vos environnements Cloud Temple
+- **Déployer** dans vos environnements Cloud Temple, qui portent leurs propres qualifications ; la sécurité des machines déployées reste de votre responsabilité
 
 Elle s'adresse aux équipes informatiques et DevOps qui construisent leurs environnements Cloud Temple, y compris dans les secteurs réglementés, ainsi qu'aux directions métiers à la recherche de solutions SaaS d'éditeurs partenaires.
 
@@ -75,7 +75,7 @@ Les images de machines virtuelles constituent le cœur actuel du produit Marketp
 
 - Images validées et sécurisées
 - Compatible avec les environnements OpenIaaS et VMware
-- Déploiement en moins de 10 minutes
+- Déploiement en quelques minutes en général, selon l'image et l'environnement
 - Intégration native avec la console Cloud Temple
 
 ### Solutions partenaires
