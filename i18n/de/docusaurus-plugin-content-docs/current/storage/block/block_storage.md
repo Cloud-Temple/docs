@@ -26,6 +26,8 @@ Diese Seite beschreibt, was allen Angeboten gemeinsam ist. Die Seite Konzepte je
 | **FLASH - Ultra** | 15.000 | 30.000 IOPS | 1.024 MB/s | 1 GiB | Sehr intensive Arbeitslasten |
 | **MASS STORAGE** | Nicht garantiert | Nicht garantiert | Nicht garantiert | 1 TiB | Sicherung und Archivierung |
 
+Die angegebenen Abrechnungseinheiten sind die der Angebote IaaS VMware, IaaS OpenSource und Bare Metal. VM Instances rechnet seine Volumes pro GB ab: siehe die zugehörige Seite.
+
 ### Leistungsregeln
 
 - Die effektive Leistung eines Volumes steigt linear mit der zugewiesenen Kapazität, gemäß dem IOPS/TB-Verhältnis seiner Klasse, **innerhalb der oben angegebenen Obergrenze**. Ein Volume von 0,5 TB in der Klasse Standard erhält zum Beispiel 750 IOPS; ein Volume von 10 TB in der Klasse Ultra (theoretisch 150.000 IOPS) ist auf 30.000 IOPS und 1.024 MB/s begrenzt.
@@ -51,7 +53,7 @@ Der Blockspeicher ist in der Region FR1 verfügbar, in jeder ihrer Verfügbarkei
 
 ## Sicherung und Kontinuität
 
-- **Replikation zwischen Verfügbarkeitszonen**: Die asynchrone Replikation (Global Mirror) kopiert die Volumes in eine andere Verfügbarkeitszone der Region, für Notfallwiederherstellungspläne. Sie wird mit den Funktionen des IaaS-Angebots umgesetzt, zum Beispiel in [IaaS VMware](../../iaas_vmware/concepts.md). Sie zielt auf einen RPO von 15 Minuten und einen RTO unter 4 Stunden, ist mit den Klassen Essentiel, Standard und Premium kompatibel und verringert die IOPS des replizierten Volumes um etwa 10 %. Die Leistung muss in beiden Zonen identisch sein. Eine synchrone Replikation wird nicht angeboten.
+- **Replikation zwischen Verfügbarkeitszonen**: Die asynchrone Replikation (Global Mirror) kopiert die Volumes in eine andere Verfügbarkeitszone der Region, für Notfallwiederherstellungspläne. Sie wird mit den Funktionen des IaaS-Angebots umgesetzt, zum Beispiel in [IaaS VMware](../../iaas_vmware/concepts.md). Sie zielt auf einen RPO von 15 Minuten und einen RTO unter 4 Stunden, ist mit den Klassen Essentiel, Standard und Premium kompatibel und verringert die IOPS des replizierten Volumes um etwa 10 %. Die Leistung muss in beiden Zonen identisch sein.
 - **Dauerhaftigkeit**: Die redundante Architektur (RAID, Controller, Stromversorgung) ist für eine Datendauerhaftigkeit von 99,9999999 % (9 Neunen) ausgelegt.
 
 ## Dienstverfügbarkeit

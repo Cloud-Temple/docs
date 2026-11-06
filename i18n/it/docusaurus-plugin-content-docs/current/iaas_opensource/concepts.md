@@ -98,6 +98,8 @@ Le blade di calcolo disponibili per l'offerta IaaS OpenSource offrono una gamma 
 
 ### Classi di storage in modalità blocco
 
+<a id="caratteristiche"></a>
+
 Lo storage a blocchi distribuito, basato su IBM Spectrum Virtualize, propone cinque classi Flash, da 500 a 15.000 IOPS/TB, e la classe Mass Storage per l'archiviazione. Le classi, i loro limiti di prestazione e le loro caratteristiche sono descritti nella pagina [Storage a blocchi](../storage/block/block_storage.md).
 
 ### Le reti

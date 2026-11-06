@@ -98,6 +98,8 @@ Die für das Angebot IaaS OpenSource verfügbaren Rechenblades bieten ein Leistu
 
 ### Block-Speicherklassen
 
+<a id="eigenschaften"></a>
+
 Der verteilte Blockspeicher auf Basis von IBM Spectrum Virtualize bietet fünf Flash-Klassen von 500 bis 15.000 IOPS/TB und die Klasse Mass Storage für die Archivierung. Die Klassen, ihre Leistungsobergrenzen und ihre Eigenschaften sind auf der Seite [Blockspeicher](../storage/block/block_storage.md) beschrieben.
 
 ### Die Netzwerke

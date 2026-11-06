@@ -98,6 +98,8 @@ Las láminas de cómputo disponibles para la oferta IaaS OpenSource ofrecen un r
 
 ### Clases de almacenamiento en modo bloque
 
+<a id="características"></a>
+
 El almacenamiento en bloque distribuido, basado en IBM Spectrum Virtualize, ofrece cinco clases Flash, de 500 a 15 000 IOPS/TB, y la clase Mass Storage para el archivado. Las clases, sus límites de rendimiento y sus características se describen en la página [Almacenamiento en bloque](../storage/block/block_storage.md).
 
 ### Las redes

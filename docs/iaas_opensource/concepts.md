@@ -98,6 +98,8 @@ Les lames de calcul disponibles pour l'offre IaaS OpenSource offrent une gamme d
 
 ### Classes de stockage en mode bloc
 
+<a id="caractéristiques"></a>
+
 Le stockage bloc distribué, basé sur IBM Spectrum Virtualize, propose cinq classes Flash, de 500 à 15 000 IOPS/To, et la classe Mass Storage pour l'archivage. Les classes, leurs plafonds de performance et leurs caractéristiques sont décrits sur la page [Stockage bloc](../storage/block/block_storage.md).
 
 ### Les réseaux

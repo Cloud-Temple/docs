@@ -99,6 +99,8 @@ Le lame di calcolo disponibili per l'offerta Bare Metal offrono una gamma di pre
 
 ### Classi di storage in modalità blocco
 
+<a id="caratteristiche"></a>
+
 Lo storage a blocchi distribuito propone cinque classi Flash, da 500 a 15.000 IOPS/TB, e la classe Mass Storage per l'archiviazione. Le classi, i loro limiti di prestazione e le loro caratteristiche sono descritti nella pagina [Storage a blocchi](../storage/block/block_storage.md).
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>

@@ -98,6 +98,8 @@ The compute blades available for the IaaS OpenSource offering provide a range of
 
 ### Block storage classes
 
+<a id="characteristics"></a>
+
 Distributed block storage, based on IBM Spectrum Virtualize, offers five Flash classes, from 500 to 15,000 IOPS/TB, and the Mass Storage class for archiving. The classes, their performance ceilings and their characteristics are described on the [Block storage](../storage/block/block_storage.md) page.
 
 ### Networks

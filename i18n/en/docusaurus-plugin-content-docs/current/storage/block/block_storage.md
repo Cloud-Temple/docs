@@ -26,6 +26,8 @@ This page describes what is common to all offerings. The Concepts page of each o
 | **FLASH - Ultra** | 15,000 | 30,000 IOPS | 1,024 MB/s | 1 GiB | Ultra-intensive workloads |
 | **MASS STORAGE** | Not guaranteed | Not guaranteed | Not guaranteed | 1 TiB | Backup and archiving |
 
+The billing units shown are those of the IaaS VMware, IaaS OpenSource and Bare Metal offerings. VM Instances bills its volumes per GB: see its page.
+
 ### Performance rules
 
 - The effective performance of a volume grows linearly with the allocated capacity, according to the IOPS/TB ratio of its class, **within the ceiling shown above**. For example, a 0.5 TB volume in the Standard class gets 750 IOPS; a 10 TB volume in the Ultra class (150,000 IOPS in theory) is capped at 30,000 IOPS and 1,024 MB/s.
@@ -51,7 +53,7 @@ Block storage is available in the FR1 region, in each of its availability zones.
 
 ## Backup and continuity
 
-- **Replication between availability zones**: asynchronous replication (Global Mirror) copies the volumes to another availability zone of the region, for disaster recovery plans. It is implemented with the features of the IaaS offering, for example in [IaaS VMware](../../iaas_vmware/concepts.md). It targets an RPO of 15 minutes and an RTO below 4 hours, is compatible with the Essential, Standard and Premium classes, and reduces the IOPS of the replicated volume by about 10%. Performance must be identical in both zones. Synchronous replication is not offered.
+- **Replication between availability zones**: asynchronous replication (Global Mirror) copies the volumes to another availability zone of the region, for disaster recovery plans. It is implemented with the features of the IaaS offering, for example in [IaaS VMware](../../iaas_vmware/concepts.md). It targets an RPO of 15 minutes and an RTO below 4 hours, is compatible with the Essential, Standard and Premium classes, and reduces the IOPS of the replicated volume by about 10%. Performance must be identical in both zones.
 - **Durability**: the redundant architecture (RAID, controllers, power supply) is designed for a data durability of 99.9999999% (9 nines).
 
 ## Service availability

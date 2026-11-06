@@ -99,6 +99,8 @@ The compute blades available for the Bare Metal offering provide a range of perf
 
 ### Block storage classes
 
+<a id="characteristics"></a>
+
 Distributed block storage offers five Flash classes, from 500 to 15,000 IOPS/TB, and the Mass Storage class for archiving. The classes, their performance ceilings and their characteristics are described on the [Block storage](../storage/block/block_storage.md) page.
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>

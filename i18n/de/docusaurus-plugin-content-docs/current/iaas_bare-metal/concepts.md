@@ -99,6 +99,8 @@ Die für das Bare Metal-Angebot verfügbaren Compute-Blades bieten eine Bandbrei
 
 ### Klassen des Blockspeichers
 
+<a id="merkmale"></a>
+
 Der verteilte Blockspeicher bietet fünf Flash-Klassen von 500 bis 15.000 IOPS/TB und die Klasse Mass Storage für die Archivierung. Die Klassen, ihre Leistungsobergrenzen und ihre Eigenschaften sind auf der Seite [Blockspeicher](../storage/block/block_storage.md) beschrieben.
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>

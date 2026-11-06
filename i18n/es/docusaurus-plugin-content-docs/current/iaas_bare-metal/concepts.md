@@ -99,6 +99,8 @@ Los blades de cálculo disponibles para la oferta Bare Metal ofrecen una gama de
 
 ### Clases de almacenamiento en modo bloque
 
+<a id="características"></a>
+
 El almacenamiento en bloque distribuido ofrece cinco clases Flash, de 500 a 15 000 IOPS/TB, y la clase Mass Storage para el archivado. Las clases, sus límites de rendimiento y sus características se describen en la página [Almacenamiento en bloque](../storage/block/block_storage.md).
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>

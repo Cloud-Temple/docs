@@ -26,6 +26,8 @@ Cette page décrit ce qui est commun à toutes les offres. La page Concepts de c
 | **FLASH - Ultra** | 15 000 | 30 000 IOPS | 1 024 Mo/s | 1 Gio | Charges ultra-intensives |
 | **MASS STORAGE** | Non garanti | Non garanti | Non garanti | 1 Tio | Sauvegarde et archivage |
 
+Les unités de facturation indiquées sont celles des offres IaaS VMware, IaaS OpenSource et Bare Metal. VM Instances facture ses volumes au Go : voir sa page.
+
 ### Règles de performance
 
 - La performance effective d'un volume croît de manière linéaire avec la capacité allouée, selon le ratio IOPS/To de sa classe, **dans la limite du plafond indiqué ci-dessus**. Par exemple, un volume de 0,5 To en classe Standard dispose de 750 IOPS ; un volume de 10 To en classe Ultra (150 000 IOPS en théorie) est plafonné à 30 000 IOPS et 1 024 Mo/s.
@@ -51,7 +53,7 @@ Le stockage bloc est disponible dans la région FR1, dans chacune de ses zones d
 
 ## Sauvegarde et continuité
 
-- **Réplication entre zones de disponibilité** : la réplication asynchrone (Global Mirror) copie les volumes vers une autre zone de disponibilité de la région, pour les plans de reprise d'activité. Elle se met en œuvre avec les fonctionnalités de l'offre IaaS, par exemple dans [IaaS VMware](../../iaas_vmware/concepts.md). Elle vise un RPO de 15 minutes et un RTO inférieur à 4 heures, est compatible avec les classes Essentiel, Standard et Premium, et réduit d'environ 10 % les IOPS du volume répliqué. Les performances doivent être identiques dans les deux zones. La réplication synchrone n'est pas proposée.
+- **Réplication entre zones de disponibilité** : la réplication asynchrone (Global Mirror) copie les volumes vers une autre zone de disponibilité de la région, pour les plans de reprise d'activité. Elle se met en œuvre avec les fonctionnalités de l'offre IaaS, par exemple dans [IaaS VMware](../../iaas_vmware/concepts.md). Elle vise un RPO de 15 minutes et un RTO inférieur à 4 heures, est compatible avec les classes Essentiel, Standard et Premium, et réduit d'environ 10 % les IOPS du volume répliqué. Les performances doivent être identiques dans les deux zones.
 - **Durabilité** : l'architecture redondante (RAID, contrôleurs, alimentation) est conçue pour une durabilité des données de 99,9999999 % (9 neufs).
 
 ## Disponibilité du service

@@ -26,6 +26,8 @@ Questa pagina descrive ciò che è comune a tutte le offerte. La pagina Concetti
 | **FLASH - Ultra** | 15.000 | 30.000 IOPS | 1.024 MB/s | 1 GiB | Carichi ultra-intensivi |
 | **MASS STORAGE** | Non garantito | Non garantito | Non garantito | 1 TiB | Backup e archiviazione |
 
+Le unità di fatturazione indicate sono quelle delle offerte IaaS VMware, IaaS OpenSource e Bare Metal. VM Instances fattura i suoi volumi al GB: vedi la sua pagina.
+
 ### Regole di prestazione
 
 - Le prestazioni effettive di un volume crescono in modo lineare con la capacità allocata, secondo il rapporto IOPS/TB della sua classe, **entro il limite indicato sopra**. Ad esempio, un volume da 0,5 TB in classe Standard dispone di 750 IOPS; un volume da 10 TB in classe Ultra (150.000 IOPS in teoria) è limitato a 30.000 IOPS e 1.024 MB/s.
@@ -51,7 +53,7 @@ Lo storage a blocchi è disponibile nella regione FR1, in ciascuna delle sue zon
 
 ## Backup e continuità
 
-- **Replica tra zone di disponibilità**: la replica asincrona (Global Mirror) copia i volumi verso un'altra zona di disponibilità della regione, per i piani di ripristino di emergenza. Si attua con le funzionalità dell'offerta IaaS, ad esempio in [IaaS VMware](../../iaas_vmware/concepts.md). Punta a un RPO di 15 minuti e a un RTO inferiore a 4 ore, è compatibile con le classi Essentiel, Standard e Premium e riduce di circa il 10% gli IOPS del volume replicato. Le prestazioni devono essere identiche nelle due zone. La replica sincrona non è proposta.
+- **Replica tra zone di disponibilità**: la replica asincrona (Global Mirror) copia i volumi verso un'altra zona di disponibilità della regione, per i piani di ripristino di emergenza. Si attua con le funzionalità dell'offerta IaaS, ad esempio in [IaaS VMware](../../iaas_vmware/concepts.md). Punta a un RPO di 15 minuti e a un RTO inferiore a 4 ore, è compatibile con le classi Essentiel, Standard e Premium e riduce di circa il 10% gli IOPS del volume replicato. Le prestazioni devono essere identiche nelle due zone.
 - **Durabilità**: l'architettura ridondante (RAID, controller, alimentazione) è progettata per una durabilità dei dati del 99,9999999% (9 nove).
 
 ## Disponibilità del servizio
