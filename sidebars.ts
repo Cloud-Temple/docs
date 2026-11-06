@@ -412,6 +412,11 @@ const sidebars: SidebarsConfig = {
             page('oss', 'faq', 'storage/oss/faq'),
           ],
         },
+        {
+          type: 'doc',
+          id: 'storage/block/block_storage',
+          label: 'Stockage bloc',
+        },
       ],
     },
     {

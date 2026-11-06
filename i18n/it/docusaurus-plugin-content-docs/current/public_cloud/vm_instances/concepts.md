@@ -163,6 +163,8 @@ Sono disponibili due classi di archiviazione block per i volumi aggiuntivi:
 | **Enterprise** | Archiviazione block ad alte prestazioni per carichi di lavoro sensibili alla latenza. | **7 500 IOPS/To** | **1 GB** | **2 048 GB** |
 | **Standard** | Archiviazione block standard adatta alla maggior parte dei carichi di lavoro. | **1 500 IOPS/To** | **1 GB** | **2 048 GB** |
 
+Queste classi si basano sullo [storage a blocchi](../../storage/block/block_storage.md) di Cloud Temple, la cui pagina descrive la tecnologia e l'architettura.
+
 ### Rete
 
 #### Interfaccia di rete

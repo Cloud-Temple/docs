@@ -135,6 +135,10 @@
     "message": "Object Storage",
     "description": "The label for category 'Stockage Objet' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.doc.Stockage bloc": {
+    "message": "Block storage",
+    "description": "The label for the doc item 'Stockage bloc' in sidebar 'docSidebar', linking to the doc storage/block/block_storage"
+  },
   "sidebar.docSidebar.category.oss_tutorials": {
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"

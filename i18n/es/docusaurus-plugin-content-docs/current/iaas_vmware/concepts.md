@@ -219,47 +219,13 @@ La infraestructura de red garantiza una baja latencia para un rendimiento óptim
 
 ### Almacenamiento en bloque
 
-Cloud Temple ofrece varias clases de almacenamiento basadas en la tecnología [IBM FlashSystem](https://www.ibm.com/flashsystem/)
-y [IBM SVC](https://www.ibm.com/products/san-volume-controller).
+Los datastores de IaaS VMware se apoyan en el [almacenamiento en bloque](../storage/block/block_storage.md) de Cloud Temple: cinco clases Flash, de 500 a 15 000 IOPS/TB, y la clase Mass Storage, en discos mecánicos, para el archivado. Las clases, sus límites de rendimiento, la tecnología y las reglas comunes se describen en la página [Almacenamiento en bloque](../storage/block/block_storage.md).
 
-La tecnología __IBM SVC__ permite ofrecer el nivel de rendimiento requerido para los entornos de nuestros clientes gracias a la gran
-cantidad de memoria caché integrada en los controladores y a la posibilidad de repartir el conjunto de las IOPS
-de un servidor entre varias SAN.
+Particularidades del almacenamiento en bloque en IaaS VMware:
 
-También se utiliza para permitir la replicación de sus LUNs de almacenamiento en modo bloque entre
-las zonas de disponibilidad o para facilitar las intervenciones en las cabinas de almacenamiento.
-
-El almacenamiento es principalmente de tipo FLASH NVME, dedicado a las cargas de trabajo profesionales.
-Las cabinas de almacenamiento utilizan los discos en [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
-
-
-La clase de almacenamiento __'Mass Storage'__ ofrece discos mecánicos para las necesidades de archivado
-en un contexto de eficiencia económica. Hay varios niveles de rendimiento disponibles:
-
-| Referencia                        | Unidad | Límite máximo de IOPS / LUN | Ancho de banda máximo / LUN |
-|-----------------------------------|--------|-----------------------------|-----------------------------|
-| FLASH - Esencial - 500 IOPS/TB    | 1 GiB  | 10 000 IOPS                 | 512 MB/s |
-| FLASH - Estándar - 1500 IOPS/TB   | 1 GiB  | 30 000 IOPS                 | 1024 MB/s |
-| FLASH - Premium - 3000 IOPS/TB    | 1 GiB  | 30 000 IOPS                 | 1024 MB/s |
-| FLASH - Enterprise - 7500 IOPS/TB | 1 GiB  | 30 000 IOPS                 | 1024 MB/s |
-| FLASH - Ultra - 15000 IOPS/TB     | 1 GiB  | 30 000 IOPS                 | 1024 MB/s |
-| MASS STORAGE - Archivado          | 1 TiB  | No garantizado              | No garantizado |
-
-*__Nota__ :*
-
-- *El rendimiento efectivo de una LUN (Datastore) crece de forma lineal en función del volumen asignado (según su ratio de IOPS/TB), __dentro del límite del techo de hardware absoluto definido anteriormente__.*
-
-> *Por ejemplo, un volumen de 0,5 TB en la clase 'Estándar' dispondrá de 750 IOPS.*
-> *En cambio, un volumen de 10 TB en la clase 'Ultra' (teóricamente 150 000 IOPS) quedará limitado por el límite físico absoluto y se estancará en 30 000 IOPS y 1024 MB/s.*
-
-- *Estas limitaciones (IOPS y ancho de banda) se aplican a nivel del volumen de almacenamiento, es decir, a nivel del Datastore en un entorno VMware,*
-- *No hay restricción ni cuota sobre la lectura o la escritura,*
-- *No hay facturación por IOPS,*
-- *No hay compromiso de rendimiento en la clase __'Mass Storage'__,*
-- *El tamaño mínimo de una LUN de almacenamiento es de 500GiB,*
-- *Cuando se utiliza un mecanismo de replicación de almacenamiento, el rendimiento debe ser idéntico en las dos zonas de disponibilidad,*
-- *No se aplica ningún mecanismo de optimización "inteligente" de tipo compresión o deduplicación: cuando reserva 10TiB de almacenamiento, dispone físicamente de 10TiB útiles de almacenamiento implementados en las máquinas IBM.*
-- *Las LUNs de almacenamiento están dedicadas al entorno del cliente.*
+- Los límites de rendimiento (IOPS y ancho de banda) se aplican a nivel del Datastore.
+- El tamaño mínimo de una LUN de almacenamiento es de 500 GiB.
+- La tecnología IBM SVC ofrece el nivel de rendimiento requerido gracias a la caché de memoria de sus controladoras y al reparto de las IOPS de un servidor entre varias SAN. También permite replicar sus LUN entre zonas de disponibilidad (consulte la sección «Replicación del almacenamiento en modo bloque») y facilita las intervenciones en las cabinas de almacenamiento.
 
 #### Uso en el marco de la oferta de cálculo VMware
 

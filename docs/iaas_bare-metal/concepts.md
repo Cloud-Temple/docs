@@ -99,22 +99,9 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 
 ### Classes de stockage en mode bloc
 
-Le stockage bloc distribué offre une gamme de performances adaptées à divers cas d'utilisation :
+<a id="caractéristiques"></a>
 
-| Référence                         | IOPS/To        | Plafond IOPS max / Volume | Bande passante max / Volume | Usage principal                        |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500            | 10 000 IOPS               | 512 Mo/s                    | Charges de travail légères             |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 Mo/s                   | Charges de travail standard            |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 Mo/s                   | Charges intensives                     |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 Mo/s                   | Charges critiques                      |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 Mo/s                   | Charges ultra-intensives               |
-| **MASS STORAGE - Archivage**      | Non applicable | Non garanti               | Non garanti                 | Stockage économique pour l'archivage   |
-
-#### Caractéristiques
-
-- **Performances** : la performance effective croît de manière linéaire en fonction de la volumétrie allouée (selon le ratio IOPS/To), **dans la limite du plafond matériel absolu défini ci-dessus**. Par exemple, un volume de 10 To en classe Ultra est physiquement limité à 30 000 IOPS et 1024 Mo/s.
-- **Technologie** : Flash NVMe avec **Distributed RAID 6** pour une résilience accrue.
-- **Restrictions** : pas de limitation sur les lectures ou écritures. Pas de compression ni de déduplication automatique, ce qui garantit l'utilisation intégrale des volumes réservés.
+Le stockage bloc distribué propose cinq classes Flash, de 500 à 15 000 IOPS/To, et la classe Mass Storage pour l'archivage. Les classes, leurs plafonds de performance et leurs caractéristiques sont décrits sur la page [Stockage bloc](../storage/block/block_storage.md).
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>
 

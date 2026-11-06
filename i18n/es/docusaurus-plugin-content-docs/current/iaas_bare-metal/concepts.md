@@ -99,22 +99,9 @@ Los blades de cálculo disponibles para la oferta Bare Metal ofrecen una gama de
 
 ### Clases de almacenamiento en modo bloque
 
-El almacenamiento en bloque distribuido ofrece una gama de rendimientos adaptados a diversos casos de uso:
+<a id="características"></a>
 
-| Referencia                        | IOPS/TB        | Límite máximo de IOPS / Volumen | Ancho de banda máximo / Volumen | Uso principal                    |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500            | 10 000 IOPS               | 512 MB/s                    | Cargas de trabajo ligeras              |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 MB/s                   | Cargas de trabajo estándar             |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 MB/s                   | Cargas intensivas                      |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 MB/s                   | Cargas críticas                        |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 MB/s                   | Cargas ultraintensivas                 |
-| **MASS STORAGE - Archivage**      | No aplicable   | No garantizado            | No garantizado              | Almacenamiento económico para el archivado |
-
-#### Características
-
-- **Rendimiento**: el rendimiento efectivo crece de forma lineal en función de la capacidad asignada (según la relación IOPS/TB), **dentro del límite de hardware absoluto definido anteriormente**. Por ejemplo, un volumen de 10 TB en la clase Ultra está limitado físicamente a 30 000 IOPS y 1024 MB/s.
-- **Tecnología**: Flash NVMe con **Distributed RAID 6** para una mayor resiliencia.
-- **Restricciones**: sin limitación en las lecturas o escrituras. Sin compresión ni deduplicación automática, lo que garantiza la utilización íntegra de los volúmenes reservados.
+El almacenamiento en bloque distribuido ofrece cinco clases Flash, de 500 a 15 000 IOPS/TB, y la clase Mass Storage para el archivado. Las clases, sus límites de rendimiento y sus características se describen en la página [Almacenamiento en bloque](../storage/block/block_storage.md).
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>
 

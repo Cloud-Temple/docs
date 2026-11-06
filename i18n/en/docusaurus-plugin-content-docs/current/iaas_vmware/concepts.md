@@ -219,47 +219,13 @@ The network infrastructure guarantees low latency for optimal performance:
 
 ### Block storage
 
-Cloud Temple offers several storage classes based on [IBM FlashSystem](https://www.ibm.com/flashsystem/)
-and [IBM SVC](https://www.ibm.com/products/san-volume-controller) technology.
+IaaS VMware datastores rely on Cloud Temple [block storage](../storage/block/block_storage.md): five Flash classes, from 500 to 15,000 IOPS/TB, and the Mass Storage class, on mechanical disks, for archiving. The classes, their performance ceilings, the technology and the common rules are described on the [Block storage](../storage/block/block_storage.md) page.
 
-__IBM SVC__ technology makes it possible to deliver the level of performance required for our customers' environments thanks to the large
-amount of memory cache embedded in the controllers and the ability to distribute all the IOPS
-of a server across several SANs.
+Particularities of block storage in IaaS VMware:
 
-It is also used to enable the replication of your block storage LUNs between
-availability zones or to facilitate interventions on the storage arrays.
-
-The storage is mainly NVME FLASH storage dedicated to professional workloads.
-The disks are used by the storage arrays in [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
-
-
-The __'Mass Storage'__ storage class offers mechanical disks for archiving needs
-in a cost-efficiency context. Several performance levels are available:
-
-| Reference                         | Unit  | Max IOPS ceiling / LUN | Max bandwidth / LUN      |
-|-----------------------------------|-------|------------------------|--------------------------|
-| FLASH - Essential - 500 IOPS/TB   | 1 GiB | 10 000 IOPS            | 512 MB/s |
-| FLASH - Standard - 1500 IOPS/TB   | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Premium - 3000 IOPS/TB    | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Enterprise - 7500 IOPS/TB | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Ultra - 15000 IOPS/TB     | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| MASS STORAGE - Archiving          | 1 TiB | Not guaranteed         | Not guaranteed |
-
-*__Note__:*
-
-- *The effective performance of a LUN (Datastore) increases linearly with the allocated capacity (according to its IOPS/TB ratio), __up to the absolute hardware ceiling defined above__.*
-
-> *For example, a 0.5 TB volume in the 'Standard' class will benefit from 750 IOPS.*
-> *However, a 10 TB volume in the 'Ultra' class (theoretically 150 000 IOPS) will be capped by the absolute physical limit and will plateau at 30 000 IOPS and 1024 MB/s.*
-
-- *These limitations (IOPS and bandwidth) apply at the storage volume level, i.e. at the Datastore level for a VMware environment,*
-- *There is no restriction or quota on reads or writes,*
-- *There is no IOPS-based billing,*
-- *There is no performance commitment on the __'Mass Storage'__ class,*
-- *The minimum size of a storage LUN is 500GiB,*
-- *When using a storage replication mechanism, performance must be identical in both availability zones,*
-- *No "intelligent" optimization mechanism such as compression or deduplication is implemented: when you reserve 10TiB of storage, you physically have 10TiB of usable storage implemented on the IBM machines.*
-- *Storage LUNs are dedicated to the customer environment.*
+- The performance limits (IOPS and bandwidth) apply at the Datastore level.
+- The minimum size of a storage LUN is 500 GiB.
+- IBM SVC technology delivers the required level of performance thanks to the memory cache of its controllers and to the distribution of a server's IOPS across several SANs. It is also used to replicate your LUNs between availability zones (see the "Block storage replication" section) and makes interventions on the storage arrays easier.
 
 #### Use within the VMware compute offering
 

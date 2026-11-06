@@ -163,6 +163,8 @@ Two block storage classes are available for additional volumes:
 | **Enterprise** | High-performance block storage for latency-sensitive workloads. | **7,500 IOPS/TB** | **1 GB** | **2,048 GB** |
 | **Standard** | Standard block storage suitable for most workloads. | **1,500 IOPS/TB** | **1 GB** | **2,048 GB** |
 
+These classes rely on Cloud Temple [block storage](../../storage/block/block_storage.md), whose page describes the technology and the architecture.
+
 ### Network
 
 #### Network interface

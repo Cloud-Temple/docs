@@ -163,6 +163,8 @@ Están disponibles dos clases de almacenamiento en bloque para los volúmenes ad
 | **Enterprise** | Almacenamiento en bloque de alto rendimiento para cargas de trabajo sensibles a la latencia. | **7 500 IOPS/To** | **1 GB** | **2 048 GB** |
 | **Standard** | Almacenamiento en bloque estándar adecuado para la mayoría de las cargas de trabajo. | **1 500 IOPS/To** | **1 GB** | **2 048 GB** |
 
+Estas clases se apoyan en el [almacenamiento en bloque](../../storage/block/block_storage.md) de Cloud Temple, cuya página describe la tecnología y la arquitectura.
+
 ### Red
 
 #### Interfaz de red

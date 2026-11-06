@@ -219,47 +219,13 @@ L'infrastruttura di rete garantisce una bassa latenza per prestazioni ottimali:
 
 ### Storage a blocchi
 
-Cloud Temple propone diverse classi di storage basate sulla tecnologia [IBM FlashSystem](https://www.ibm.com/flashsystem/)
-e [IBM SVC](https://www.ibm.com/products/san-volume-controller).
+I datastore di IaaS VMware si basano sullo [storage a blocchi](../storage/block/block_storage.md) di Cloud Temple: cinque classi Flash, da 500 a 15.000 IOPS/TB, e la classe Mass Storage, su dischi meccanici, per l'archiviazione. Le classi, i loro limiti di prestazione, la tecnologia e le regole comuni sono descritti nella pagina [Storage a blocchi](../storage/block/block_storage.md).
 
-La tecnologia __IBM SVC__ consente di fornire il livello di prestazioni richiesto per gli ambienti dei nostri clienti grazie alla grande
-quantità di memoria cache integrata nei controller e alla possibilità di ripartire l'insieme degli IOPS
-di un server su più SAN.
+Particolarità dello storage a blocchi in IaaS VMware:
 
-È inoltre utilizzata per consentire la replicazione delle vostre LUN di storage in modalità a blocchi tra
-le zone di disponibilità o per facilitare gli interventi sugli array di storage.
-
-Lo storage è principalmente di tipo FLASH NVME, dedicato ai carichi di lavoro professionali.
-I dischi sono utilizzati dagli array di storage in [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
-
-
-La classe di storage __'Mass Storage'__ propone dischi meccanici per le esigenze di archiviazione
-in un contesto di efficienza economica. Sono disponibili diversi livelli di prestazioni:
-
-| Riferimento                       | Unità | Limite IOPS max / LUN  | Larghezza di banda max / LUN |
-|-----------------------------------|-------|------------------------|------------------------------|
-| FLASH - Essenziale - 500 IOPS/TB  | 1 GiB | 10 000 IOPS            | 512 MB/s |
-| FLASH - Standard - 1500 IOPS/TB   | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Premium - 3000 IOPS/TB    | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Enterprise - 7500 IOPS/TB | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| FLASH - Ultra - 15000 IOPS/TB     | 1 GiB | 30 000 IOPS            | 1024 MB/s |
-| MASS STORAGE - Archiviazione      | 1 TiB | Non garantito          | Non garantito |
-
-*__Nota__ :*
-
-- *Le prestazioni effettive di una LUN (Datastore) crescono in modo lineare in funzione del volume allocato (secondo il suo rapporto IOPS/TB), __entro il limite del tetto hardware assoluto definito sopra__.*
-
-> *Ad esempio, un volume di 0,5 TB in classe 'Standard' beneficerà di 750 IOPS.*
-> *Per contro, un volume di 10 TB in classe 'Ultra' (teoricamente 150 000 IOPS) sarà limitato dal limite fisico assoluto e si fermerà a 30 000 IOPS e 1024 MB/s.*
-
-- *Queste limitazioni (IOPS e larghezza di banda) si applicano a livello del volume di storage, ossia a livello del Datastore per un ambiente VMware,*
-- *Non vi sono restrizioni né quote sulla lettura o sulla scrittura,*
-- *Non vi è fatturazione a IOPS,*
-- *Non vi è alcun impegno sulle prestazioni per la classe __'Mass Storage'__,*
-- *La dimensione minima di una LUN di storage è di 500GiB,*
-- *Quando si utilizza un meccanismo di replicazione dello storage, le prestazioni devono essere identiche sulle due zone di disponibilità,*
-- *Non viene applicato alcun meccanismo di ottimizzazione "intelligente" di tipo compressione o deduplicazione: quando prenotate 10TiB di storage, disponete fisicamente di 10TiB utili di storage implementati sulle macchine IBM.*
-- *Le LUN di storage sono dedicate all'ambiente del cliente.*
+- I limiti di prestazione (IOPS e larghezza di banda) si applicano a livello del Datastore.
+- La dimensione minima di una LUN di storage è di 500 GiB.
+- La tecnologia IBM SVC fornisce il livello di prestazioni richiesto grazie alla cache di memoria dei suoi controller e alla ripartizione degli IOPS di un server su più SAN. Permette anche di replicare le vostre LUN tra zone di disponibilità (vedi la sezione «Replicazione dello storage in modalità a blocchi») e facilita gli interventi sugli array di storage.
 
 #### Utilizzo nell'ambito dell'offerta di calcolo VMware
 
