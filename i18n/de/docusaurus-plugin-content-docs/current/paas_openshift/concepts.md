@@ -153,9 +153,10 @@ Das PaaS OpenShift ist in der Region FR1 verfügbar. Es wird nativ über drei Ve
 | OPENSHIFT - WORKER NODES - ADVANCED - 3 x ( 48 Kerne / 96 Threads - 768 GB RAM - 512 GiB FLASH 1500 iops)                    | 3 dedizierte Worker |
 | OPENSHIFT - WORKER NODES - PERF - 3 x ( 56 Kerne / 112 Threads - 1.5 TB RAM - 512 GiB FLASH 1500 iops)                       | 3 dedizierte Worker |
 | OPENSHIFT - WORKER NODES - GPU - 3 x ( 32 Kerne / 64 Threads - 512 GB RAM - 512 GiB FLASH 1500 iops - 2xNVIDIA L40S 48GB)    | 3 dedizierte Worker + GPUs |
+| OPENSHIFT - WORKER NODES - GPU - 3 x ( 32 Kerne / 64 Threads - 512 GB RAM - 512 GiB FLASH 1500 iops - 2xNVIDIA H100 80GB)    | 3 dedizierte Worker + GPUs |
 
 
-Die Red Hat OpenShift-Produkte von Cloud Temple sind im Pay-as-you-go-Modell oder mit einer 12-monatigen Reservierung verfügbar.
+Die Red Hat OpenShift-Produkte von Cloud Temple sind im Pay-as-you-go-Modell oder mit einer 12-monatigen Reservierung verfügbar. Der GPU-Worker H100 wird mit einer Laufzeit von 24 Monaten angeboten.
 
 **Hinweise**:
 
@@ -324,5 +325,5 @@ Mit Veeam Kasten K10 können Sie Ihre Anwendungen außerdem zu einer anderen Kub
 
 ## Preise
 
-Das PaaS OpenShift ist im Pay-as-you-go-Modell oder mit einer 12-monatigen Reservierung verfügbar. Die Preise sind auf der Produktseite auf der Cloud Temple-Website veröffentlicht:
+Das PaaS OpenShift ist im Pay-as-you-go-Modell oder mit einer 12-monatigen Reservierung verfügbar. Der GPU-Worker H100 wird mit einer Laufzeit von 24 Monaten angeboten. Die Preise sind auf der Produktseite auf der Cloud Temple-Website veröffentlicht:
 [PaaS OpenShift — Preise](https://www.cloud-temple.com/produits/paas-openshift/).
