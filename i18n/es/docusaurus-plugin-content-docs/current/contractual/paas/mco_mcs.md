@@ -22,7 +22,7 @@ Esta política detalla las responsabilidades y recomendaciones para el Mantenimi
 - Gestión completa de la infraestructura subyacente, incluidos los nodos maestros, las actualizaciones de versiones de OpenShift y la resiliencia de los servicios críticos implementados por **Cloud Temple**.
 - Actualizaciones menores/patches automáticas sin interrupción para las cargas de trabajo alojadas, salvo notificación en contrario.
 - Limitación de los derechos y las funcionalidades a las restricciones SecNumCloud.
-- Comunicación de las actualizaciones próximas y de las actualizaciones de ruptura en los próximos tres meses a través de la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Comunicación de las actualizaciones próximas y de las actualizaciones de ruptura en los próximos tres meses a través de la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 
 **Responsabilidad del usuario:**
 
@@ -34,7 +34,7 @@ Esta política detalla las responsabilidades y recomendaciones para el Mantenimi
 
 - Planificar los despliegues de aplicaciones fuera de las ventanas de mantenimiento para evitar conflictos con las actualizaciones automáticas del clúster.
 - Seguir las comunicaciones de **Cloud Temple** sobre las actualizaciones mayores para planificar los ajustes necesarios.
-- Seguir las actualizaciones próximas a través de la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Seguir las actualizaciones próximas a través de la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 - Suscribirse a las notificaciones [**de incidentes**](../../console/status.md#gestión-de-notificaciones)
 
 ---

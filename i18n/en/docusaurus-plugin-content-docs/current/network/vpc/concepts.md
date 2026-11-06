@@ -130,7 +130,7 @@ The VPC configuration can be exported to S3 storage for 30 days after the end of
 
 ## Upcoming changes
 
-The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3AVPC).
 
 - **Site-to-site VPN**: secure connectivity to your on-premises networks.
 - **Cloud Connect**: secure connectivity to Azure and AWS.

@@ -243,7 +243,7 @@ Cloud Temple Object Storage is a highly secure, SecNumCloud-certified object sto
     <img src={S3Create} />
     A window then appears, where you must fill in:
     1. The **region** where you want to create your bucket,
-    2. The **type** of bucket: performance or archive,
+    2. The **type** of bucket: "Performance Object Storage S3 API", the only type available today,
     3. The **name** of your bucket (it must be unique).
     <img src={S3CreatePopup_001} />
   </TabItem>
