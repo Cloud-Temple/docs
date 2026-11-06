@@ -3,13 +3,46 @@ title: Concepts
 sidebar_position: 3
 ---
 
-# Concepts et Architecture LLMaaS
+<a id="vue-densemble"></a>
 
-## Vue d'Ensemble
+## Présentation
 
-Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple fournit un accès sécurisé et souverain aux modèles d'intelligence artificielle les plus avancés, avec la **qualification SecNumCloud** de l'ANSSI.
+Le service **LLMaaS** (Large Language Models as a Service) de Cloud Temple donne accès, par une API compatible OpenAI, à un catalogue de modèles de langage dont l'inférence est réalisée en France, sur une infrastructure qualifiée SecNumCloud et certifiée HDS. Vos données ne sont ni exploitées ni conservées après traitement.
 
-## 🏗️ Architecture Technique
+Il s'adresse aux équipes qui intègrent l'IA générative dans leurs applications, y compris dans les secteurs réglementés (santé, finance, secteur public). Cas d'usage typiques :
+
+- assistants et chatbots multilingues ;
+- analyse et synthèse de documents longs, recherche augmentée par génération (RAG) ;
+- génération de code et agents ;
+- analyse d'images et de documents visuels ;
+- transcription audio et traduction.
+
+## Avantages
+
+| Avantage | Description |
+|---|---|
+| Confidentialité | Les prompts et les réponses ne sont ni exploités ni conservés après traitement, à l'exception des résultats d'un traitement par lots, purgés après une durée limitée. |
+| Souveraineté | Inférence en France, sur une infrastructure qualifiée SecNumCloud et certifiée HDS. |
+| Compatibilité OpenAI | Une application existante change d'URL de base et de clé d'API pour utiliser le service. |
+| Catalogue géré | Cloud Temple ajoute, met à jour et retire les modèles, et publie leur cycle de vie. |
+| Facturation à l'usage | Seuls les volumes consommés sont facturés, par unité de facturation (tokens, minutes audio). |
+| Écosystème | Les frameworks courants (LangChain, Haystack, Semantic Kernel…) fonctionnent avec l'API. |
+
+## Fonctionnalités
+
+| Fonctionnalité | Description |
+|---|---|
+| Catalogue de modèles | Modèles de dialogue, de raisonnement, de programmation, de vision, d'embedding, de reranking, de sécurité, de traduction, de transcription audio et de génération d'images. Voir le [guide de choix](./models.md). |
+| API compatible OpenAI | Un point d'accès unique, `https://api.ai.cloud-temple.com/v1`, avec streaming des réponses et appels de fonctions (*function calling*). |
+| Recherche documentaire (RAG) | Embeddings et [réordonnancement de documents](./rerank.md) pour construire des pipelines RAG. |
+| Analyse de documents visuels | Modèles de vision et [reconnaissance de documents](./ocr.md). |
+| Transcription audio | Transcription en lot ou en temps réel. |
+| Traitement par lots | Soumission asynchrone de lots de requêtes : voir le [traitement par lots](./batch.md). |
+| Modèles de sécurité | Modèles à appeler en pré-filtre ou en post-filtre pour détecter les contenus problématiques et les tentatives de contournement ; ils ne s'appliquent pas automatiquement. |
+
+<a id="️-architecture-technique"></a>
+
+## Architecture
 
 ### Infrastructure Cloud Temple
 
@@ -19,104 +52,18 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 
 ### Composants Principaux
 
-#### 1. **API Gateway LLMaaS**
+#### API Gateway LLMaaS
 - **Compatible OpenAI** : Intégration transparente avec écosystème existant
 - **Rate Limiting** : Gestion des quotas par tier de facturation
 - **Load Balancing** : Distribution des requêtes sur les ressources d'inférence
 - **Monitoring** : Métriques temps réel et alerting
 
-#### 2. **Service d'Authentification**
+#### Service d'Authentification
 - **Clés API** : Création, rotation et révocation sous la responsabilité du client. Voir le [partage des responsabilités (RACI)](../contractual/llmaas/raci.md).
 - **Contrôle d'accès** : Permissions granulaires par modèle
 - **Audit trails** : Traçabilité complète des accès
 
-## 🤖 Modèles et Tokens
-
-### Catalogue de Modèles
-
-*Consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) et le [guide de choix](./models.md).*
-
-### Gestion des Tokens
-
-<a id="types-de-tokens"></a>
-
-#### **Unités de facturation**
-- **Tokens d'entrée** : votre prompt et son contexte
-- **Tokens de sortie** : la réponse générée par le modèle
-- **Tokens de raisonnement** : uniquement pour les modèles « raisonneurs » ou « hybrides », lorsque le raisonnement est actif, et seulement sur les tokens liés à cette activité
-- **Tokens de reranking** : le [réordonnancement de documents](./rerank.md)
-- **Tokens batch** (entrée et sortie) : le [traitement par lots](./batch.md)
-- **Minutes audio transcrites** : toute minute commencée est comptée
-
-#### **Calcul des Coûts**
-
-Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
-
-Le coût dépend des volumes consommés dans chacune de ces unités.
-
-#### **Optimisation**
-- **Context window** : Réutilisez les conversations pour économiser
-- **Modèles appropriés** : Choisissez la taille selon la complexité
-- **Max tokens** : Limitez la longueur des réponses
-
-### Tokenisation
-
-```python
-# Exemple d'estimation de tokens
-def estimate_tokens(text: str) -> int:
-    """Estimation approximative : 1 token ≈ 4 caractères"""
-    return len(text) // 4
-
-prompt = "Expliquez la photosynthèse"
-response_max = 200  # tokens max souhaités
-
-estimated_input = estimate_tokens(prompt)  # ~6 tokens
-print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
-```
-
-## 🔒 Sécurité et Conformité
-
-### Qualification SecNumCloud
-
-Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI et de la **certification HDS** pour l'hébergement des données de santé, garantissant :
-
-#### **Protection des Données**
-- **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
-
-#### **Souveraineté Numérique**
-- **Hébergement France** : Datacenters Cloud Temple certifiés
-- **Droit français** : Conformité RGPD native
-- **Pas d'exposition** : Aucun transfert vers clouds étrangers
-
-<a id="audit-et-traçabilité"></a>
-
-#### **Confidentialité des Données**
-- **Aucune conservation** : vos données demeurent strictement confidentielles et ne sont ni exploitées, ni stockées après traitement. Seule exception : les résultats d'un [traitement par lots](./batch.md) restent consultables pendant une durée limitée après sa complétion (24 h par défaut), puis sont purgés automatiquement ; voir les [conditions de conservation](./batch.md#limites-et-conservation)
-
-### Contrôles de Sécurité
-
-import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
-
-<img src={SecurityControls} alt="Contrôles de Sécurité LLMaaS" />
-
-### Sécurité des Prompts
-
-La plateforme LLMaaS n'applique pas de filtrage automatique du contenu des prompts contre les injections ou les tentatives de contournement des instructions (*jailbreaks*).
-
-Les contrôles de contenu sont à mettre en œuvre dans votre application selon votre cas d'usage. Vous pouvez appeler explicitement un [modèle de sécurité du catalogue](./models.md#sécurité-et-guardrails) pour évaluer les entrées ou les réponses. Ces modèles ne sont pas exécutés automatiquement sur les requêtes adressées aux autres modèles.
-
-Définissez les critères de filtrage et le traitement des résultats avec vos équipes métier, puis testez-les sur vos données, notamment pour mesurer les faux positifs. Le [partage des responsabilités](../contractual/llmaas/raci.md) précise les rôles du client et de Cloud Temple.
-
-## 📈 Performance et Scalabilité
-
-### Monitoring en Temps Réel
-
-Access via **Console Cloud Temple** :
-- Métriques d'utilisation par modèle
-- Graphiques de latence et débit
-- Alertes sur seuils de performance
-
-## 🌐 Intégration et Écosystème
+<a id="-intégration-et-écosystème"></a>
 
 ### Compatibilité OpenAI
 
@@ -144,24 +91,115 @@ response = client_ct.chat.completions.create(
 
 ### Écosystème Supporté
 
-#### **Frameworks IA**
+#### Frameworks IA
 - ✅ **LangChain** : Intégration native
 - ✅ **Haystack** : Pipeline de documents
 - ✅ **Semantic Kernel** : Orchestration Microsoft
 - ✅ **AutoGen** : Agents conversationnels
 
-#### **Outils Développement**
+#### Outils Développement
 - ✅ **Jupyter** : Notebooks interactifs
 - ✅ **Streamlit** : Applications web rapides
 - ✅ **Gradio** : Interfaces utilisateur IA
 - ✅ **FastAPI** : APIs backend
 
-#### **Plateformes No-Code**
+#### Plateformes No-Code
 - ✅ **Zapier** : Automatisations
 - ✅ **Make** : Intégrations visuelles
 - ✅ **Bubble** : Applications web
 
-## 🔄 Cycle de Vie des Modèles
+## Régions et zones de disponibilité
+
+Le service est disponible dans la région FR1. L'inférence est réalisée en France, dans les datacenters de Cloud Temple.
+
+<a id="-modèles-et-tokens"></a>
+
+## Caractéristiques techniques
+
+### Catalogue de Modèles
+
+*Consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle) et le [guide de choix](./models.md).*
+
+### Gestion des Tokens
+
+<a id="types-de-tokens"></a>
+
+#### Unités de facturation
+- **Tokens d'entrée** : votre prompt et son contexte
+- **Tokens de sortie** : la réponse générée par le modèle
+- **Tokens de raisonnement** : uniquement pour les modèles « raisonneurs » ou « hybrides », lorsque le raisonnement est actif, et seulement sur les tokens liés à cette activité
+- **Tokens de reranking** : le [réordonnancement de documents](./rerank.md)
+- **Tokens batch** (entrée et sortie) : le [traitement par lots](./batch.md)
+- **Minutes audio transcrites** : toute minute commencée est comptée
+
+### Tokenisation
+
+```python
+# Exemple d'estimation de tokens
+def estimate_tokens(text: str) -> int:
+    """Estimation approximative : 1 token ≈ 4 caractères"""
+    return len(text) // 4
+
+prompt = "Expliquez la photosynthèse"
+response_max = 200  # tokens max souhaités
+
+estimated_input = estimate_tokens(prompt)  # ~6 tokens
+print(f"Tokens estimés : {estimated_input}; limite de sortie : {response_max}")
+```
+
+<a id="-performance-et-scalabilité"></a>
+
+### Monitoring en Temps Réel
+
+Depuis la **Console Cloud Temple** :
+- Métriques d'utilisation par modèle
+- Graphiques de latence et débit
+- Alertes sur seuils de performance
+
+### Limites
+
+- **Débit** : les limites de tokens par heure et par jour dépendent de votre tier ; elles sont détaillées dans la [documentation de l'API](./api.md), section « Rate Limiting et Facturation ».
+- **Contexte** : la taille de contexte maximale dépend du modèle ; consultez le [catalogue et cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle).
+- **Traitement par lots** : capacité de la file et durée de conservation des résultats dans les [limites du traitement par lots](./batch.md#limites-et-conservation).
+
+<a id="-sécurité-et-conformité"></a>
+
+## Sécurité et conformité
+
+### Qualification SecNumCloud
+
+Le service LLMaaS est calculé sur une infrastructure technique qui bénéficie de la **qualification SecNumCloud 3.2** de l'ANSSI et de la **certification HDS** pour l'hébergement des données de santé, garantissant :
+
+#### Protection des Données
+- **Chiffrement bout en bout** : TLS 1.3 pour tous les échanges
+
+#### Souveraineté Numérique
+- **Hébergement France** : Datacenters Cloud Temple certifiés
+- **Droit français** : Conformité RGPD native
+- **Pas d'exposition** : Aucun transfert vers clouds étrangers
+
+<a id="audit-et-traçabilité"></a>
+
+#### Confidentialité des Données
+- **Aucune conservation** : vos données demeurent strictement confidentielles et ne sont ni exploitées, ni stockées après traitement. Seule exception : les résultats d'un [traitement par lots](./batch.md) restent consultables pendant une durée limitée après sa complétion (24 h par défaut), puis sont purgés automatiquement ; voir les [conditions de conservation](./batch.md#limites-et-conservation)
+
+### Contrôles de Sécurité
+
+import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
+
+<img src={SecurityControls} alt="Contrôles de Sécurité LLMaaS" />
+
+### Sécurité des Prompts
+
+La plateforme LLMaaS n'applique pas de filtrage automatique du contenu des prompts contre les injections ou les tentatives de contournement des instructions (*jailbreaks*).
+
+Les contrôles de contenu sont à mettre en œuvre dans votre application selon votre cas d'usage. Vous pouvez appeler explicitement un [modèle de sécurité du catalogue](./models.md#sécurité-et-guardrails) pour évaluer les entrées ou les réponses. Ces modèles ne sont pas exécutés automatiquement sur les requêtes adressées aux autres modèles.
+
+Définissez les critères de filtrage et le traitement des résultats avec vos équipes métier, puis testez-les sur vos données, notamment pour mesurer les faux positifs. Le [partage des responsabilités](../contractual/llmaas/raci.md) précise les rôles du client et de Cloud Temple.
+
+<a id="-cycle-de-vie-des-modèles"></a>
+
+## Versions et cycle de vie
 
 Le **[cycle de vie des modèles](https://llmaas.status.cloud-temple.app/lifecycle)** publie les statuts, échéances et migrations conseillées. Consultez-le avant de choisir un modèle et pendant l'exploitation de votre application.
 
@@ -192,7 +230,26 @@ Certains anciens identifiants sont redirigés vers un modèle successeur. Une re
 
 La liste et les destinations de migration sont disponibles dans le [catalogue de cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle). Si aucune migration n'est indiquée, contactez le support avant l'échéance pour choisir une solution adaptée.
 
-## 💡 Bonnes Pratiques
+## Responsabilités
+
+La répartition des responsabilités entre le client et Cloud Temple est détaillée dans la [matrice de responsabilités (RACI) LLMaaS](../contractual/llmaas/raci.md).
+
+## Réversibilité
+
+- **Pas de données à rapatrier** : le service ne conserve ni les prompts ni les réponses après traitement. Seuls les résultats d'un traitement par lots sont à récupérer avant leur purge : voir les [conditions de conservation](./batch.md#limites-et-conservation).
+- **Portabilité des applications** : l'API étant compatible OpenAI, une application peut être reconfigurée vers un autre fournisseur compatible en changeant l'URL de base et la clé d'API.
+- **Embeddings** : les vecteurs dépendent du modèle d'embedding ; un changement de modèle impose de les recalculer.
+
+## Tarification
+
+Les tarifs de LLMaaS sont publiés sur la page produit du site Cloud Temple :
+[LLMaaS — tarifs](https://www.cloud-temple.com/produits/large-language-model-as-a-service-llmaas/).
+
+Le coût dépend des volumes consommés dans chacune des [unités de facturation](#unités-de-facturation).
+
+<a id="-bonnes-pratiques"></a>
+
+## Bonnes pratiques
 
 Pour tirer le meilleur parti de l'API LLMaaS, il est essentiel d'adopter des stratégies d'optimisation des coûts, de la performance et de la sécurité.
 
