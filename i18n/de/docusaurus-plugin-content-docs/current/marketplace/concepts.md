@@ -2,7 +2,7 @@
 title: Konzepte
 ---
 
-Die **Marketplace Cloud Temple** ist eine zentralisierte Plattform, die den Zugriff auf und die Bereitstellung von sofort einsatzbereiten Cloud-Lösungen in einer souveränen und sicheren Umgebung erleichtert.
+Die **Marketplace Cloud Temple** ist eine zentralisierte Plattform, die den Zugriff auf und die Bereitstellung von sofort einsatzbereiten Cloud-Lösungen erleichtert: Images virtueller Maschinen für Ihre Cloud-Temple-Umgebungen, Managed Services und SaaS-Lösungen von Partnern.
 
 ---
 
@@ -58,7 +58,7 @@ Der Marktplatz ist nativ in die Cloud Temple-Konsole integriert und bietet:
 
 ### Kompatibilität mit Diensten
 
-Die Lösungen des Marktplatzes sind darauf ausgelegt, sich nahtlos in folgende Dienste zu integrieren:
+Die Images virtueller Maschinen des Marketplace werden in folgenden Umgebungen bereitgestellt:
 
 - **IaaS OpenSource** : Bereitstellung auf OpenIaaS-Infrastruktur
 - **IaaS VMware** : Integration in die vSphere-Umgebung
