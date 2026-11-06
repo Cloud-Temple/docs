@@ -2,9 +2,11 @@
 title: Conceptos
 ---
 
-La **Marketplace Cloud Temple** es una plataforma centralizada que facilita el acceso y el despliegue de soluciones cloud listas para usar: imágenes de máquinas virtuales para desplegar en sus entornos Cloud Temple, servicios gestionados y soluciones SaaS de socios.
+<a id="definición-y-posicionamiento"></a>
 
-## Definición y posicionamiento
+## Presentación
+
+La **Marketplace Cloud Temple** es una plataforma centralizada que facilita el acceso y el despliegue de soluciones cloud listas para usar: imágenes de máquinas virtuales para desplegar en sus entornos Cloud Temple, servicios gestionados y soluciones SaaS de socios.
 
 La Marketplace Cloud Temple se posiciona como una palanca de transformación digital para las empresas que buscan servicios fiables, con una integración sencilla y rápida.
 
@@ -15,9 +17,53 @@ Permite:
 - **Acelerar** la implementación de proyectos digitales
 - **Garantizar** el cumplimiento y la seguridad de los despliegues realizados en sus entornos Cloud Temple
 
----
+Está dirigida a los equipos de TI y DevOps que construyen sus entornos Cloud Temple, incluso en sectores regulados, así como a las direcciones de negocio que buscan soluciones SaaS de editores socios.
 
-## Tipos de soluciones disponibles
+## Ventajas
+
+| Ventaja | Descripción |
+|---|---|
+| Acceso centralizado | Imágenes, servicios gestionados y soluciones SaaS de socios reunidos en un mismo catálogo, accesible desde la Consola Cloud Temple. |
+| Despliegue rápido | Las imágenes de máquinas virtuales se despliegan directamente en sus entornos, en pocos minutos para la mayoría. |
+| Soluciones de socios | Acceso a las soluciones de editores socios y contacto directo con ellos. |
+| Integración en la Consola | La Marketplace se utiliza desde la interfaz de gestión habitual, sin herramienta adicional. |
+
+## Funcionalidades
+
+| Funcionalidad | Descripción |
+|---|---|
+| Imágenes de máquinas virtuales | Imágenes preconfiguradas para desplegar en IaaS OpenSource e IaaS VMware: consulte la [guía de inicio](./quickstart.md). |
+| Servicios gestionados | Servicios operados para usted, presentados en el catálogo. |
+| Soluciones SaaS de socios | Soluciones de editores socios, accesibles desde el catálogo. |
+| Puesta en contacto | Contacto directo con el editor de una solución desde su ficha. |
+| Catálogo público | La lista actualizada de soluciones figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/). |
+
+<a id="integración-con-el-ecosistema-cloud-temple"></a>
+
+## Arquitectura
+
+### Consola Cloud Temple
+
+El Marketplace está integrado de forma nativa en la consola Cloud Temple, ofreciendo:
+
+- **Acceso unificado** desde la interfaz de gestión habitual
+- **Despliegue directo** de imágenes de máquinas virtuales en sus infraestructuras existentes
+- **Gestión centralizada** de las máquinas virtuales así desplegadas
+
+### Compatibilidad con los servicios
+
+Las imágenes de máquinas virtuales del Marketplace se despliegan en los siguientes entornos:
+
+- **IaaS OpenSource** : Despliegue en infraestructura OpenIaaS
+- **IaaS VMware** : Integración con el entorno vSphere
+
+## Regiones y zonas de disponibilidad
+
+Las imágenes de máquinas virtuales se despliegan en la región y las zonas de disponibilidad de su entorno Cloud Temple (región FR1). Para los servicios gestionados y las soluciones SaaS, la localización es propia de cada oferta y figura en su ficha.
+
+<a id="tipos-de-soluciones-disponibles"></a>
+
+## Especificaciones técnicas
 
 El catálogo reúne imágenes de máquinas virtuales, servicios gestionados y soluciones SaaS de editores socios. Se amplía continuamente: las soluciones descritas aquí son solo ejemplos, y la lista actualizada figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/).
 
@@ -42,26 +88,10 @@ La Marketplace también ofrece acceso a soluciones desarrolladas por nuestros pa
 - Puesta en contacto directa con el socio
 - Según la oferta, despliegue en sus entornos Cloud Temple o acceso al servicio SaaS operado por el editor
 
----
+### Límites
 
-## Integración con el ecosistema Cloud Temple
-
-### Consola Cloud Temple
-
-El Marketplace está integrado de forma nativa en la consola Cloud Temple, ofreciendo:
-
-- **Acceso unificado** desde la interfaz de gestión habitual
-- **Despliegue directo** de imágenes de máquinas virtuales en sus infraestructuras existentes
-- **Gestión centralizada** de las máquinas virtuales así desplegadas
-
-### Compatibilidad con los servicios
-
-Las imágenes de máquinas virtuales del Marketplace se despliegan en los siguientes entornos:
-
-- **IaaS OpenSource** : Despliegue en infraestructura OpenIaaS
-- **IaaS VMware** : Integración con el entorno vSphere
-
----
+- El catálogo evoluciona continuamente: las soluciones descritas en esta página son ejemplos.
+- La actualización de las soluciones de socios corresponde a sus editores, al igual que los plazos de respuesta a las solicitudes de contacto.
 
 ## Seguridad y cumplimiento
 
@@ -79,3 +109,16 @@ Las soluciones ofrecidas en el Marketplace son objeto de una selección rigurosa
 - **Compatibilidad** con la infraestructura Cloud Temple, para las soluciones que se despliegan en ella
 - **Seguridad** de las imágenes de máquinas virtuales
 - **Fiabilidad** de los socios editores
+
+## Responsabilidades
+
+Cloud Temple presta el soporte de las soluciones Cloud Temple, en el marco del soporte de la Consola. Para una solución de un socio, el soporte, las actualizaciones y los plazos de respuesta corresponden al editor. Las máquinas virtuales desplegadas desde la Marketplace son recursos de su entorno IaaS: consulte la [matriz de responsabilidades (RACI) IaaS](../contractual/iaas/raci.md).
+
+## Reversibilidad
+
+- **Imágenes de máquinas virtuales**: las máquinas desplegadas son recursos de su entorno IaaS; su reversibilidad sigue la de la oferta correspondiente, IaaS OpenSource o IaaS VMware.
+- **Soluciones de socios**: las condiciones de salida son las del editor, indicadas por este.
+
+## Precios
+
+La Marketplace no tiene coste propio. Usted paga la infraestructura en la que despliega una imagen y, según la oferta, la licencia o el servicio del socio. El detalle de cada oferta figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/).
