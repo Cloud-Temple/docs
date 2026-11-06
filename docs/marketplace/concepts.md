@@ -73,7 +73,7 @@ Les images de machines virtuelles constituent le cœur actuel du produit Marketp
 
 **Caractéristiques :**
 
-- Images validées et sécurisées
+- Images vérifiées et validées par Cloud Temple avant publication
 - Compatible avec les environnements OpenIaaS et VMware
 - Déploiement en quelques minutes en général, selon l'image et l'environnement
 - Intégration native avec la console Cloud Temple
@@ -104,11 +104,7 @@ L'hébergement et les qualifications dépendent du type de solution :
 
 ### Validation des solutions
 
-Les solutions proposées dans la Marketplace font l'objet d'une sélection rigoureuse garantissant :
-
-- **Compatibilité** avec l'infrastructure Cloud Temple, pour les solutions qui s'y déploient
-- **Sécurité** des images de machines virtuelles
-- **Fiabilité** des partenaires éditeurs
+Cloud Temple sélectionne les solutions proposées dans la Marketplace. Avant sa publication, une image de machine virtuelle est vérifiée (fichiers et métadonnées) puis validée par Cloud Temple. Cette validation ne remplace pas la sécurisation des machines déployées, qui reste de votre responsabilité. Pour une solution partenaire, l'éditeur reste responsable de son contenu et de ses mises à jour.
 
 ## Responsabilités
 

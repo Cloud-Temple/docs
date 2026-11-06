@@ -73,7 +73,7 @@ Le immagini delle macchine virtuali costituiscono il nucleo attuale del prodotto
 
 **Caratteristiche :**
 
-- Immagini validate e sicure
+- Immagini verificate e validate da Cloud Temple prima della pubblicazione
 - Compatibile con gli ambienti OpenIaaS e VMware
 - Distribuzione in pochi minuti in genere, a seconda dell'immagine e dell'ambiente
 - Integrazione nativa con la console Cloud Temple
@@ -104,11 +104,7 @@ L'hosting e le qualifiche dipendono dal tipo di soluzione:
 
 ### Validazione delle soluzioni
 
-Le soluzioni proposte nel Marketplace sono oggetto di una selezione rigorosa che garantisce:
-
-- **Compatibilità** con l'infrastruttura Cloud Temple, per le soluzioni che vi vengono distribuite
-- **Sicurezza** delle immagini di macchine virtuali
-- **Affidabilità** dei partner editori
+Cloud Temple seleziona le soluzioni proposte nel Marketplace. Prima della pubblicazione, un'immagine di macchina virtuale viene verificata (file e metadati) e poi validata da Cloud Temple. Questa validazione non sostituisce la messa in sicurezza delle macchine distribuite, che resta di tua responsabilità. Per una soluzione partner, il fornitore resta responsabile del suo contenuto e dei suoi aggiornamenti.
 
 ## Responsabilità
 

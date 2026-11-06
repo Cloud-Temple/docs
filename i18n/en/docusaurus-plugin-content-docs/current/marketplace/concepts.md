@@ -73,7 +73,7 @@ Virtual machine images currently form the core of the Marketplace product. These
 
 **Features:**
 
-- Validated and secure images
+- Images checked and validated by Cloud Temple before publication
 - Compatible with OpenIaaS and VMware environments
 - Deployment in a few minutes in general, depending on the image and the environment
 - Native integration with the Cloud Temple console
@@ -104,11 +104,7 @@ Hosting and qualifications depend on the type of solution:
 
 ### Solution Validation
 
-The solutions offered in the Marketplace undergo a rigorous selection process ensuring:
-
-- **Compatibility** with the Cloud Temple infrastructure, for solutions deployed on it
-- **Security** of virtual machine images
-- **Reliability** of publisher partners
+Cloud Temple selects the solutions offered in the Marketplace. Before it is published, a virtual machine image is checked (files and metadata) and then validated by Cloud Temple. This validation does not replace securing the deployed machines, which remains your responsibility. For a partner solution, the publisher remains responsible for its content and its updates.
 
 ## Responsibilities
 
