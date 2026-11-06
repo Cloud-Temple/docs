@@ -99,22 +99,7 @@ Le lame di calcolo disponibili per l'offerta Bare Metal offrono una gamma di pre
 
 ### Classi di storage in modalità blocco
 
-Lo storage a blocchi distribuito offre una gamma di prestazioni adatte a diversi casi d'uso:
-
-| Riferimento                       | IOPS/TB        | Limite IOPS max / Volume  | Banda passante max / Volume | Utilizzo principale                    |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500            | 10 000 IOPS               | 512 MB/s                    | Carichi di lavoro leggeri              |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 MB/s                   | Carichi di lavoro standard             |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 MB/s                   | Carichi intensivi                      |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 MB/s                   | Carichi critici                        |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 MB/s                   | Carichi ultra-intensivi                |
-| **MASS STORAGE - Archivage**      | Non applicabile | Non garantito            | Non garantito               | Storage economico per l'archiviazione  |
-
-#### Caratteristiche
-
-- **Prestazioni**: le prestazioni effettive crescono in modo lineare in funzione della capacità allocata (secondo il rapporto IOPS/TB), **entro il limite hardware assoluto definito sopra**. Ad esempio, un volume da 10 TB in classe Ultra è fisicamente limitato a 30 000 IOPS e 1024 MB/s.
-- **Tecnologia**: Flash NVMe con **Distributed RAID 6** per una maggiore resilienza.
-- **Restrizioni**: nessuna limitazione sulle letture o sulle scritture. Nessuna compressione né deduplicazione automatica, il che garantisce l'utilizzo integrale dei volumi riservati.
+Lo storage a blocchi distribuito propone cinque classi Flash, da 500 a 15.000 IOPS/TB, e la classe Mass Storage per l'archiviazione. Le classi, i loro limiti di prestazione e le loro caratteristiche sono descritti nella pagina [Storage a blocchi](../storage/block/block_storage.md).
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>
 

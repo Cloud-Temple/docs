@@ -98,22 +98,7 @@ The compute blades available for the IaaS OpenSource offering provide a range of
 
 ### Block storage classes
 
-Distributed block storage, based on __IBM Spectrum Virtualize__, offers a range of performance tiers suited to various use cases:
-
-| Reference                         | IOPS/TB        | Max IOPS cap / Volume     | Max throughput / Volume     | Primary use case                       |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essential**             | 500            | 10 000 IOPS               | 512 MB/s                    | Light workloads                        |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 MB/s                   | Standard workloads                     |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 MB/s                   | Intensive workloads                    |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 MB/s                   | Critical workloads                     |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 MB/s                   | Ultra-intensive workloads              |
-| **MASS STORAGE - Archiving**      | Not applicable | Not guaranteed            | Not guaranteed              | Cost-effective storage for archiving   |
-
-#### Characteristics
-
-- **Performance** : Effective performance grows linearly based on the allocated volume (according to the IOPS/TB ratio), **within the absolute hardware ceiling defined above**. (For example, a 10 TB volume in the Ultra class will be physically limited to 30,000 IOPS and 1024 MB/s).
-- __Technology__ : NVMe Flash with __Distributed RAID 6__ for enhanced resilience.
-- __Restrictions__ : No limitation on reads or writes. No automatic compression or deduplication, ensuring full utilization of reserved volumes.
+Distributed block storage, based on IBM Spectrum Virtualize, offers five Flash classes, from 500 to 15,000 IOPS/TB, and the Mass Storage class for archiving. The classes, their performance ceilings and their characteristics are described on the [Block storage](../storage/block/block_storage.md) page.
 
 ### Networks
 

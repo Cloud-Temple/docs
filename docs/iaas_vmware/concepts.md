@@ -219,47 +219,13 @@ L'infrastructure réseau garantit une faible latence pour des performances optim
 
 ### Stockage bloc
 
-Cloud Temple propose plusieurs classes de stockage basées sur la technologie [IBM FlashSystem](https://www.ibm.com/flashsystem/)
-et [IBM SVC](https://www.ibm.com/products/san-volume-controller).
+Les datastores IaaS VMware s'appuient sur le [stockage bloc](../storage/block/block_storage.md) de Cloud Temple : cinq classes Flash, de 500 à 15 000 IOPS/To, et la classe Mass Storage, sur disques mécaniques, pour l'archivage. Les classes, leurs plafonds de performance, la technologie et les règles communes sont décrits sur la page [Stockage bloc](../storage/block/block_storage.md).
 
-La technologie __IBM SVC__ permet de délivrer le niveau de performance requis pour les environnements de nos clients grâce à la grande
-quantité de cache mémoire embarquée dans les contrôleurs et à la possibilité de répartir l’ensemble des IOPS
-d’un serveur sur plusieurs SAN.
+Particularités du stockage bloc dans IaaS VMware :
 
-Elle est aussi utilisée pour permettre la réplication de vos LUNs de stockage en mode bloc entre
-les zones de disponibilité ou faciliter les interventions sur les baies de stockages.
-
-Le stockage est principalement du stockage de type FLASH NVME dédié aux charges de travail professionnelles.
-Les disques sont utilisés par les baies de stockage en [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties).
-
-
-Le classe de stockage __'Mass Storage'__ propose des disques mécaniques pour les besoins d'archivages
-dans un contexte d'efficience économique. Plusieurs niveaux de performances sont disponibles :
-
-| Référence                         | Unité | Plafond IOPS max / LUN | Bande passante max / LUN |
-|-----------------------------------|-------|------------------------|--------------------------|
-| FLASH - Essentiel - 500 IOPS/To   | 1 Gio | 10 000 IOPS            | 512 Mo/s |
-| FLASH - Standard - 1500 IOPS/To   | 1 Gio | 30 000 IOPS            | 1024 Mo/s |
-| FLASH - Premium - 3000 IOPS/To    | 1 Gio | 30 000 IOPS            | 1024 Mo/s |
-| FLASH - Enterprise - 7500 IOPS/To | 1 Gio | 30 000 IOPS            | 1024 Mo/s |
-| FLASH - Ultra - 15000 IOPS/To     | 1 Gio | 30 000 IOPS            | 1024 Mo/s |
-| MASS STORAGE - Archivage          | 1 Tio | Non garanti            | Non garanti |
-
-*__Nota__ :*
-
-- *La performance effective d'une LUN (Datastore) croît de manière linéaire en fonction de la volumétrie allouée (selon son ratio d'IOPS/To), __dans la limite du plafond matériel absolu défini ci-dessus__.*
-
-> *Par exemple, un volume de 0,5 To en classe 'Standard' bénéficiera de 750 IOPS.*
-> *En revanche, un volume de 10 To en classe 'Ultra' (théoriquement 150 000 IOPS) sera bridé par la limite physique absolue et plafonnera à 30 000 IOPS et 1024 Mo/s.*
-
-- *Ces limitations (IOPS et bande passante) s'appliquent au niveau du volume de stockage, soit au niveau du Datastore pour un environnement VMware,*
-- *Il n'y a pas de restriction ou de quota sur la lecture ou l'écriture,*
-- *Il n'y a pas de facturation à l'IOPS,*
-- *Il n'y a pas d'engagement de performance sur la classe __'Mass Storage'__,*
-- *La taille minimale d'une LUN de stockage est de 500Gio,*
-- *Lors de l'usage d'un mécanisme de réplication de stockage, les performances doivent être identiques sur les deux zones de disponibilité,*
-- *Aucun mécanisme d'optimisation "intelligent" de type compression ou déduplication n'est mis en œuvre : quand vous réservez 10Tio de stockage, vous avez physiquement 10Tio utile de stockage mis en œuvre sur les machines IBM.*
-- *Les LUNs de stockage sont dédiés à l'environnement client.*
+- Les limites de performance (IOPS et bande passante) s'appliquent au niveau du Datastore.
+- La taille minimale d'une LUN de stockage est de 500 Gio.
+- La technologie IBM SVC délivre le niveau de performance requis grâce au cache mémoire de ses contrôleurs et à la répartition des IOPS d'un serveur sur plusieurs SAN. Elle permet aussi de répliquer vos LUNs entre les zones de disponibilité (voir la section « Réplication du stockage en mode bloc ») et facilite les interventions sur les baies de stockage.
 
 #### Utilisation dans le cadre de l'offre de calcul vmware
 

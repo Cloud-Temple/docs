@@ -219,47 +219,13 @@ Die Netzwerkinfrastruktur garantiert eine niedrige Latenz für optimale Leistung
 
 ### Blockspeicher
 
-Cloud Temple bietet mehrere Speicherklassen auf Basis der Technologien [IBM FlashSystem](https://www.ibm.com/flashsystem/)
-und [IBM SVC](https://www.ibm.com/products/san-volume-controller) an.
+Die Datastores von IaaS VMware basieren auf dem [Blockspeicher](../storage/block/block_storage.md) von Cloud Temple: fünf Flash-Klassen von 500 bis 15.000 IOPS/TB und die Klasse Mass Storage auf mechanischen Festplatten für die Archivierung. Die Klassen, ihre Leistungsobergrenzen, die Technologie und die gemeinsamen Regeln sind auf der Seite [Blockspeicher](../storage/block/block_storage.md) beschrieben.
 
-Die Technologie __IBM SVC__ ermöglicht es, das für die Umgebungen unserer Kunden erforderliche Leistungsniveau bereitzustellen – dank der großen
-Menge an Speichercache in den Controllern und der Möglichkeit, sämtliche IOPS
-eines Servers auf mehrere SANs zu verteilen.
+Besonderheiten des Blockspeichers in IaaS VMware:
 
-Sie wird außerdem eingesetzt, um die Replikation Ihrer Blockspeicher-LUNs zwischen
-den Verfügbarkeitszonen zu ermöglichen oder Eingriffe an den Speicher-Arrays zu erleichtern.
-
-Der Speicher ist überwiegend NVME-FLASH-Speicher, der für professionelle Workloads bestimmt ist.
-Die Festplatten werden von den Speicher-Arrays im [__'Distributed Raid 6'__](https://www.ibm.com/docs/en/flashsystem-5x00/8.6.x?topic=configurations-distributed-raid-array-properties) betrieben.
-
-
-Die Speicherklasse __'Mass Storage'__ bietet mechanische Festplatten für Archivierungsanforderungen
-unter dem Gesichtspunkt der Wirtschaftlichkeit. Mehrere Leistungsstufen sind verfügbar:
-
-| Referenz                          | Einheit | Maximale IOPS-Obergrenze / LUN | Maximale Bandbreite / LUN |
-|-----------------------------------|---------|--------------------------------|---------------------------|
-| FLASH - Essentiel - 500 IOPS/TB   | 1 GiB   | 10 000 IOPS                    | 512 MB/s |
-| FLASH - Standard - 1500 IOPS/TB   | 1 GiB   | 30 000 IOPS                    | 1024 MB/s |
-| FLASH - Premium - 3000 IOPS/TB    | 1 GiB   | 30 000 IOPS                    | 1024 MB/s |
-| FLASH - Enterprise - 7500 IOPS/TB | 1 GiB   | 30 000 IOPS                    | 1024 MB/s |
-| FLASH - Ultra - 15000 IOPS/TB     | 1 GiB   | 30 000 IOPS                    | 1024 MB/s |
-| MASS STORAGE - Archivierung       | 1 TiB   | Nicht garantiert               | Nicht garantiert |
-
-*__Hinweis__:*
-
-- *Die effektive Leistung einer LUN (Datastore) steigt linear mit dem zugewiesenen Volumen (entsprechend ihrem IOPS/TB-Verhältnis), __bis zur oben definierten absoluten Hardware-Obergrenze__.*
-
-> *Beispielsweise erhält ein Volume von 0,5 TB in der Klasse 'Standard' 750 IOPS.*
-> *Ein Volume von 10 TB in der Klasse 'Ultra' (theoretisch 150 000 IOPS) wird hingegen durch die absolute physische Grenze gedrosselt und erreicht maximal 30 000 IOPS und 1024 MB/s.*
-
-- *Diese Begrenzungen (IOPS und Bandbreite) gelten auf Ebene des Speichervolumes, also auf Ebene des Datastores in einer VMware-Umgebung,*
-- *Es gibt keine Einschränkung und kein Kontingent für Lese- oder Schreibvorgänge,*
-- *Es gibt keine Abrechnung nach IOPS,*
-- *Für die Klasse __'Mass Storage'__ gibt es keine Leistungszusage,*
-- *Die Mindestgröße einer Speicher-LUN beträgt 500GiB,*
-- *Bei Verwendung eines Speicherreplikationsmechanismus muss die Leistung in beiden Verfügbarkeitszonen identisch sein,*
-- *Es wird kein „intelligenter“ Optimierungsmechanismus wie Komprimierung oder Deduplizierung eingesetzt: Wenn Sie 10TiB Speicher reservieren, stehen Ihnen physisch 10TiB nutzbarer Speicher auf den IBM-Systemen zur Verfügung.*
-- *Die Speicher-LUNs sind der Kundenumgebung vorbehalten.*
+- Die Leistungsgrenzen (IOPS und Bandbreite) gelten auf Ebene des Datastores.
+- Die Mindestgröße einer Speicher-LUN beträgt 500 GiB.
+- Die Technologie IBM SVC liefert das erforderliche Leistungsniveau dank des Speicher-Caches ihrer Controller und der Verteilung der IOPS eines Servers auf mehrere SANs. Sie dient auch dazu, Ihre LUNs zwischen Verfügbarkeitszonen zu replizieren (siehe Abschnitt „Replikation des Blockspeichers“), und erleichtert Eingriffe an den Speicher-Arrays.
 
 #### Nutzung im Rahmen des VMware-Compute-Angebots
 

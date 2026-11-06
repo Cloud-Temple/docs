@@ -98,22 +98,7 @@ Las láminas de cómputo disponibles para la oferta IaaS OpenSource ofrecen un r
 
 ### Clases de almacenamiento en modo bloque
 
-El almacenamiento distribuido en bloques, basado en __IBM Spectrum Virtualize__, ofrece un rango de rendimiento adaptado a diversos casos de uso:
-
-| Referencia                        | IOPS/To        | Límite máximo de IOPS / Volumen | Ancho de banda máximo / Volumen | Uso principal                          |
-|-----------------------------------|----------------|---------------------------------|---------------------------------|----------------------------------------|
-| **FLASH - Esencial**              | 500            | 10 000 IOPS                     | 512 MB/s                        | Cargas de trabajo ligeras              |
-| **FLASH - Estándar**              | 1500           | 30 000 IOPS                     | 1024 MB/s                       | Cargas de trabajo estándar             |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS                     | 1024 MB/s                       | Cargas intensivas                      |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS                     | 1024 MB/s                       | Cargas críticas                        |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS                     | 1024 MB/s                       | Cargas ultra-intensivas                |
-| **MASS STORAGE - Archivo**        | No aplicable   | No garantizado                  | No garantizado                  | Almacenamiento económico para archivo  |
-
-#### Características
-
-- **Rendimiento** : El rendimiento efectivo crece de manera lineal en función del volumen asignado (según la ratio IOPS/To), **dentro del límite del tope absoluto de hardware definido anteriormente**. (Por ejemplo, un volumen de 10 TB en clase Ultra estará físicamente limitado a 30 000 IOPS y 1024 MB/s).
-- __Tecnología__ : Flash NVMe con __Distributed RAID 6__ para una resiliencia mejorada.
-- __Restricciones__ : Sin limitación en las lecturas o escrituras. Sin compresión ni deduplicación automática, garantizando el uso íntegro de los volúmenes reservados.
+El almacenamiento en bloque distribuido, basado en IBM Spectrum Virtualize, ofrece cinco clases Flash, de 500 a 15 000 IOPS/TB, y la clase Mass Storage para el archivado. Las clases, sus límites de rendimiento y sus características se describen en la página [Almacenamiento en bloque](../storage/block/block_storage.md).
 
 ### Las redes
 

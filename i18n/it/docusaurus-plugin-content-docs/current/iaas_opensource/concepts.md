@@ -98,22 +98,7 @@ Le blade di calcolo disponibili per l'offerta IaaS OpenSource offrono una gamma 
 
 ### Classi di storage in modalità blocco
 
-Lo storage distribuito in modalità blocco, basato su __IBM Spectrum Virtualize__, offre una gamma di prestazioni adatte a diversi casi d'uso:
-
-| Riferimento                         | IOPS/To        | Limite massimo IOPS / Volume | Larghezza di banda max / Volume | Uso principale                        |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essenziale**             | 500            | 10 000 IOPS               | 512 MB/s                    | Carichi di lavoro leggeri             |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 MB/s                   | Carichi di lavoro standard            |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 MB/s                   | Carichi intensivi                     |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 MB/s                   | Carichi critici                      |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 MB/s                   | Carichi ultra-intensivi               |
-| **MASS STORAGE - Archiviazione**      | Non applicabile | Non garantito               | Non garantito                 | Storage economico per l'archiviazione   |
-
-#### Caratteristiche
-
-- **Prestazioni** : Le prestazioni effettive crescono in modo lineare in funzione della volumetria allocata (secondo il rapporto IOPS/To), **entro il limite del tetto hardware assoluto definito sopra**. (Ad esempio, un volume di 10 TB in classe Ultra sarà fisicamente limitato a 30 000 IOPS e 1024 MB/s).
-- __Tecnologia__ : Flash NVMe con __Distributed RAID 6__ per una resilienza aumentata.
-- __Restrizioni__ : Nessuna limitazione sulle letture o scritture. Nessuna compressione o deduplicazione automatica, garantendo l'utilizzo integrale dei volumi riservati.
+Lo storage a blocchi distribuito, basato su IBM Spectrum Virtualize, propone cinque classi Flash, da 500 a 15.000 IOPS/TB, e la classe Mass Storage per l'archiviazione. Le classi, i loro limiti di prestazione e le loro caratteristiche sono descritti nella pagina [Storage a blocchi](../storage/block/block_storage.md).
 
 ### Le reti
 

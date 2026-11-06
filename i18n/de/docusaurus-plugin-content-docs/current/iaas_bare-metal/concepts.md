@@ -99,22 +99,7 @@ Die für das Bare Metal-Angebot verfügbaren Compute-Blades bieten eine Bandbrei
 
 ### Klassen des Blockspeichers
 
-Der verteilte Blockspeicher bietet eine Bandbreite an Leistungsstufen für verschiedene Anwendungsfälle:
-
-| Referenz                          | IOPS/TB        | Max. IOPS-Obergrenze / Volume | Max. Bandbreite / Volume | Hauptverwendung                        |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500            | 10 000 IOPS               | 512 MB/s                    | Leichte Workloads                      |
-| **FLASH - Standard**              | 1500           | 30 000 IOPS               | 1024 MB/s                   | Standard-Workloads                     |
-| **FLASH - Premium**               | 3000           | 30 000 IOPS               | 1024 MB/s                   | Intensive Workloads                    |
-| **FLASH - Enterprise**            | 7500           | 30 000 IOPS               | 1024 MB/s                   | Kritische Workloads                    |
-| **FLASH - Ultra**                 | 15000          | 30 000 IOPS               | 1024 MB/s                   | Ultra-intensive Workloads              |
-| **MASS STORAGE - Archivage**      | Nicht zutreffend | Nicht garantiert        | Nicht garantiert            | Kostengünstiger Speicher für die Archivierung |
-
-#### Merkmale
-
-- **Leistung**: Die effektive Leistung steigt linear mit dem zugewiesenen Speichervolumen (gemäß dem Verhältnis IOPS/TB), **bis zur oben definierten absoluten Hardware-Obergrenze**. Beispielsweise ist ein Volume von 10 TB in der Klasse Ultra physisch auf 30 000 IOPS und 1024 MB/s begrenzt.
-- **Technologie**: NVMe-Flash mit **Distributed RAID 6** für erhöhte Ausfallsicherheit.
-- **Einschränkungen**: keine Begrenzung bei Lese- oder Schreibvorgängen. Keine automatische Komprimierung oder Deduplizierung, was die vollständige Nutzung der reservierten Volumes garantiert.
+Der verteilte Blockspeicher bietet fünf Flash-Klassen von 500 bis 15.000 IOPS/TB und die Klasse Mass Storage für die Archivierung. Die Klassen, ihre Leistungsobergrenzen und ihre Eigenschaften sind auf der Seite [Blockspeicher](../storage/block/block_storage.md) beschrieben.
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>
 

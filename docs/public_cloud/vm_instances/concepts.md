@@ -163,6 +163,8 @@ Deux classes de stockage bloc sont disponibles pour les volumes additionnels :
 | **Enterprise** | Stockage bloc haute performance pour les charges de travail sensibles à la latence. | **7 500 IOPS/To** | **1 Go** | **2 048 Go** |
 | **Standard** | Stockage bloc standard adapté à la plupart des charges de travail. | **1 500 IOPS/To** | **1 Go** | **2 048 Go** |
 
+Ces classes s'appuient sur le [stockage bloc](../../storage/block/block_storage.md) de Cloud Temple, dont la page décrit la technologie et l'architecture.
+
 ### Réseau
 
 #### Interface réseau

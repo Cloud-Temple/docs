@@ -98,22 +98,7 @@ Die für das Angebot IaaS OpenSource verfügbaren Rechenblades bieten ein Leistu
 
 ### Block-Speicherklassen
 
-Der verteilte Block-Speicher, basierend auf __IBM Spectrum Virtualize__, bietet ein Leistungsspektrum, das an verschiedene Anwendungsfälle angepasst ist:
-
-| Referenz                          | IOPS/TB         | Max. IOPS-Grenze / Volume | Max. Durchsatz / Volume     | Hauptanwendung                          |
-|-----------------------------------|-----------------|---------------------------|-----------------------------|-----------------------------------------|
-| **FLASH - Essential**             | 500             | 10 000 IOPS               | 512 MB/s                    | Leichte Workloads                       |
-| **FLASH - Standard**              | 1500            | 30 000 IOPS               | 1024 MB/s                   | Standard-Workloads                      |
-| **FLASH - Premium**               | 3000            | 30 000 IOPS               | 1024 MB/s                   | Intensive Workloads                     |
-| **FLASH - Enterprise**            | 7500            | 30 000 IOPS               | 1024 MB/s                   | Kritische Workloads                     |
-| **FLASH - Ultra**                 | 15000           | 30 000 IOPS               | 1024 MB/s                   | Ultra-intensive Workloads               |
-| **MASS STORAGE - Archivierung**   | Nicht anwendbar | Nicht garantiert          | Nicht garantiert            | Günstiger Speicher für die Archivierung |
-
-#### Eigenschaften
-
-- **Leistung** : Die effektive Leistung steigt linear mit dem zugewiesenen Volumen (gemäß dem IOPS/TB-Verhältnis), **innerhalb der oben definierten absoluten Hardware-Obergrenze**. (Zum Beispiel wird ein 10-TB-Volume in der Ultra-Klasse physisch auf 30.000 IOPS und 1024 MB/s begrenzt).
-- __Technologie__ : NVMe-Flash mit __Distributed RAID 6__ für erhöhte Resilienz.
-- __Einschränkungen__ : Keine Einschränkung bei Lese- oder Schreibvorgängen. Keine automatische Komprimierung oder Deduplizierung, was die vollständige Nutzung der reservierten Volumes gewährleistet.
+Der verteilte Blockspeicher auf Basis von IBM Spectrum Virtualize bietet fünf Flash-Klassen von 500 bis 15.000 IOPS/TB und die Klasse Mass Storage für die Archivierung. Die Klassen, ihre Leistungsobergrenzen und ihre Eigenschaften sind auf der Seite [Blockspeicher](../storage/block/block_storage.md) beschrieben.
 
 ### Die Netzwerke
 

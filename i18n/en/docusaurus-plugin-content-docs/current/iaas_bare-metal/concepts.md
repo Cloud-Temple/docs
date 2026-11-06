@@ -99,22 +99,7 @@ The compute blades available for the Bare Metal offering provide a range of perf
 
 ### Block storage classes
 
-Distributed block storage offers a range of performance levels suited to various use cases:
-
-| Reference                         | IOPS/TB        | Max IOPS cap / Volume     | Max bandwidth / Volume      | Primary use                            |
-|-----------------------------------|----------------|---------------------------|-----------------------------|----------------------------------------|
-| **FLASH - Essentiel**             | 500            | 10,000 IOPS               | 512 MB/s                    | Light workloads                        |
-| **FLASH - Standard**              | 1500           | 30,000 IOPS               | 1024 MB/s                   | Standard workloads                     |
-| **FLASH - Premium**               | 3000           | 30,000 IOPS               | 1024 MB/s                   | Intensive workloads                    |
-| **FLASH - Enterprise**            | 7500           | 30,000 IOPS               | 1024 MB/s                   | Critical workloads                     |
-| **FLASH - Ultra**                 | 15000          | 30,000 IOPS               | 1024 MB/s                   | Ultra-intensive workloads              |
-| **MASS STORAGE - Archivage**      | Not applicable | Not guaranteed            | Not guaranteed              | Cost-effective storage for archiving   |
-
-#### Characteristics
-
-- **Performance**: effective performance grows linearly with the allocated capacity (according to the IOPS/TB ratio), **within the absolute hardware cap defined above**. For example, a 10 TB volume in the Ultra class is physically limited to 30,000 IOPS and 1024 MB/s.
-- **Technology**: NVMe Flash with **Distributed RAID 6** for increased resilience.
-- **Restrictions**: no limitation on reads or writes. No automatic compression or deduplication, which guarantees full use of the reserved volumes.
+Distributed block storage offers five Flash classes, from 500 to 15,000 IOPS/TB, and the Mass Storage class for archiving. The classes, their performance ceilings and their characteristics are described on the [Block storage](../storage/block/block_storage.md) page.
 
 <a id="connectivité-réseau-des-serveurs-bare-metal"></a>
 

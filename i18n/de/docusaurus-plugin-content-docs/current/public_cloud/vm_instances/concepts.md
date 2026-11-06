@@ -163,6 +163,8 @@ Für zusätzliche Volumes stehen zwei Blockspeicherklassen zur Verfügung:
 | **Enterprise** | Hochleistungs-Blockspeicher für latenzsensitive Arbeitslasten. | **7 500 IOPS/TB** | **1 GB** | **2 048 GB** |
 | **Standard** | Standard-Blockspeicher, geeignet für die meisten Arbeitslasten. | **1 500 IOPS/TB** | **1 GB** | **2 048 GB** |
 
+Diese Klassen basieren auf dem [Blockspeicher](../../storage/block/block_storage.md) von Cloud Temple, dessen Seite die Technologie und die Architektur beschreibt.
+
 ### Netzwerk
 
 #### Netzwerkschnittstelle
