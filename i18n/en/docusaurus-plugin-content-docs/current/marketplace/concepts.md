@@ -32,7 +32,7 @@ It is intended for IT and DevOps teams building their Cloud Temple environments,
 
 | Feature | Description |
 |---|---|
-| Virtual machine images | Preconfigured images to deploy on IaaS OpenSource and IaaS VMware: see the [getting started guide](./quickstart.md). |
+| Virtual machine images | Preconfigured images to deploy on IaaS OpenSource or IaaS VMware, depending on the compatible targets of each image: see the [getting started guide](./quickstart.md). |
 | Managed services | Services operated for you, presented in the catalog. |
 | Partner SaaS solutions | Solutions from partner publishers, available from the catalog. |
 | Contact | Direct contact with the publisher of a solution from its page. |
@@ -52,7 +52,7 @@ The Marketplace is natively integrated into the Cloud Temple console, providing:
 
 ### Compatibility with services
 
-Marketplace virtual machine images are deployed in the following environments:
+Depending on the compatible targets of each image, Marketplace virtual machine images are deployed in the following environments:
 
 - **Open Source IaaS** : Deployment on OpenIaaS infrastructure
 - **VMware IaaS** : Integration with the vSphere environment
@@ -74,7 +74,7 @@ Virtual machine images currently form the core of the Marketplace product. These
 **Features:**
 
 - Images checked and validated by Cloud Temple before publication
-- Compatible with OpenIaaS and VMware environments
+- Deployment on OpenIaaS or VMware, depending on the compatible targets of each image
 - Deployment in a few minutes in general, depending on the image and the environment
 - Native integration with the Cloud Temple console
 

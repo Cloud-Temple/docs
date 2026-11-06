@@ -32,7 +32,7 @@ Sie richtet sich an IT- und DevOps-Teams, die ihre Cloud-Temple-Umgebungen aufba
 
 | Funktion | Beschreibung |
 |---|---|
-| Images virtueller Maschinen | Vorkonfigurierte Images zur Bereitstellung auf IaaS OpenSource und IaaS VMware: siehe [Erste Schritte](./quickstart.md). |
+| Images virtueller Maschinen | Vorkonfigurierte Images zur Bereitstellung auf IaaS OpenSource oder IaaS VMware, je nach den kompatiblen Zielen jedes Images: siehe [Erste Schritte](./quickstart.md). |
 | Managed Services | Für Sie betriebene Dienste, im Katalog vorgestellt. |
 | SaaS-Lösungen von Partnern | Lösungen von Partner-Softwareherstellern, über den Katalog zugänglich. |
 | Kontaktaufnahme | Direkter Kontakt mit dem Hersteller einer Lösung über ihre Seite. |
@@ -52,7 +52,7 @@ Der Marktplatz ist nativ in die Cloud Temple-Konsole integriert und bietet:
 
 ### Kompatibilität mit Diensten
 
-Die Images virtueller Maschinen des Marketplace werden in folgenden Umgebungen bereitgestellt:
+Je nach den kompatiblen Zielen jedes Images werden die Images virtueller Maschinen des Marketplace in folgenden Umgebungen bereitgestellt:
 
 - **IaaS OpenSource** : Bereitstellung auf OpenIaaS-Infrastruktur
 - **IaaS VMware** : Integration in die vSphere-Umgebung
@@ -74,7 +74,7 @@ Virtuelle Maschinen-Images bilden derzeit das Kernstück des Marketplace-Produkt
 **Eigenschaften:**
 
 - Von Cloud Temple vor der Veröffentlichung geprüfte und validierte Images
-- Kompatibel mit OpenIaaS- und VMware-Umgebungen
+- Bereitstellung auf OpenIaaS oder VMware, je nach den kompatiblen Zielen jedes Images
 - Bereitstellung in der Regel in wenigen Minuten, je nach Image und Umgebung
 - Native Integration in die Cloud Temple-Konsole
 

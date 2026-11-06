@@ -32,7 +32,7 @@ Está dirigida a los equipos de TI y DevOps que construyen sus entornos Cloud Te
 
 | Funcionalidad | Descripción |
 |---|---|
-| Imágenes de máquinas virtuales | Imágenes preconfiguradas para desplegar en IaaS OpenSource e IaaS VMware: consulte la [guía de inicio](./quickstart.md). |
+| Imágenes de máquinas virtuales | Imágenes preconfiguradas para desplegar en IaaS OpenSource o IaaS VMware, según los destinos compatibles de cada imagen: consulte la [guía de inicio](./quickstart.md). |
 | Servicios gestionados | Servicios operados para usted, presentados en el catálogo. |
 | Soluciones SaaS de socios | Soluciones de editores socios, accesibles desde el catálogo. |
 | Puesta en contacto | Contacto directo con el editor de una solución desde su ficha. |
@@ -52,7 +52,7 @@ El Marketplace está integrado de forma nativa en la consola Cloud Temple, ofrec
 
 ### Compatibilidad con los servicios
 
-Las imágenes de máquinas virtuales del Marketplace se despliegan en los siguientes entornos:
+Según los destinos compatibles de cada imagen, las imágenes de máquinas virtuales del Marketplace se despliegan en los siguientes entornos:
 
 - **IaaS OpenSource** : Despliegue en infraestructura OpenIaaS
 - **IaaS VMware** : Integración con el entorno vSphere
@@ -74,7 +74,7 @@ Las imágenes de máquinas virtuales constituyen el núcleo actual del producto 
 **Características :**
 
 - Imágenes verificadas y validadas por Cloud Temple antes de su publicación
-- Compatible con los entornos OpenIaaS y VMware
+- Despliegue en OpenIaaS o VMware, según los destinos compatibles de cada imagen
 - Despliegue en pocos minutos en general, según la imagen y el entorno
 - Integración nativa con la consola Cloud Temple
 
