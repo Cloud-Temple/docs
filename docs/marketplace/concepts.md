@@ -8,7 +8,7 @@ La **Marketplace Cloud Temple** est une plateforme centralisée qui facilite l'a
 
 ## Définition et positionnement
 
-La Marketplace Cloud Temple se positionne comme un levier de transformation numérique pour les entreprises recherchant des services fiables, hébergés en Europe, avec une intégration simple et rapide.
+La Marketplace Cloud Temple se positionne comme un levier de transformation numérique pour les entreprises recherchant des services fiables, avec une intégration simple et rapide.
 
 Elle permet de :
 
@@ -20,6 +20,8 @@ Elle permet de :
 ---
 
 ## Types de solutions disponibles
+
+Le catalogue réunit des images de machines virtuelles, des services managés et des solutions SaaS d'éditeurs partenaires. Il s'enrichit en continu : les solutions présentées ici ne sont que des exemples, et la liste à jour figure dans le [catalogue Marketplace du site Cloud Temple](https://www.cloud-temple.com/marketplace/).
 
 ### Virtual Machine Images
 
@@ -40,7 +42,7 @@ La Marketplace propose également l'accès à des solutions développées par no
 
 - Consultation du catalogue depuis la console
 - Mise en relation directe avec le partenaire
-- Déploiement sur l'infrastructure Cloud Temple
+- Selon l'offre, déploiement dans vos environnements Cloud Temple ou accès au service SaaS opéré par l'éditeur
 
 ---
 
@@ -65,12 +67,12 @@ Les solutions de la Marketplace sont conçues pour s'intégrer harmonieusement a
 
 ## Sécurité et conformité
 
-### Hébergement souverain
+### Hébergement et qualifications
 
-Toutes les solutions déployées via la Marketplace bénéficient de :
+L'hébergement et les qualifications dépendent du type de solution :
 
-- **Hébergement en France** exclusivement
-- **Qualification SecNumCloud** de l'infrastructure
+- **Images de machines virtuelles** : elles se déploient dans vos environnements Cloud Temple et relèvent de leurs qualifications.
+- **Services managés et solutions SaaS** : leur hébergement et leurs certifications sont propres à chaque offre et figurent sur sa fiche, dans le [catalogue Marketplace du site](https://www.cloud-temple.com/marketplace/).
 
 ### Validation des solutions
 

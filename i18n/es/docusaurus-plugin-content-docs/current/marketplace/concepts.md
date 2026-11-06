@@ -6,7 +6,7 @@ La **Marketplace Cloud Temple** es una plataforma centralizada que facilita el a
 
 ## Definición y posicionamiento
 
-La Marketplace Cloud Temple se posiciona como una palanca de transformación digital para las empresas que buscan servicios fiables, alojados en Europa, con una integración sencilla y rápida.
+La Marketplace Cloud Temple se posiciona como una palanca de transformación digital para las empresas que buscan servicios fiables, con una integración sencilla y rápida.
 
 Permite:
 
@@ -18,6 +18,8 @@ Permite:
 ---
 
 ## Tipos de soluciones disponibles
+
+El catálogo reúne imágenes de máquinas virtuales, servicios gestionados y soluciones SaaS de editores socios. Se amplía continuamente: las soluciones descritas aquí son solo ejemplos, y la lista actualizada figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/).
 
 ### Imágenes de máquinas virtuales
 
@@ -38,7 +40,7 @@ La Marketplace también ofrece acceso a soluciones desarrolladas por nuestros pa
 
 - Consulta del catálogo desde la consola
 - Puesta en contacto directa con el socio
-- Despliegue en la infraestructura Cloud Temple
+- Según la oferta, despliegue en sus entornos Cloud Temple o acceso al servicio SaaS operado por el editor
 
 ---
 
@@ -63,12 +65,12 @@ Las soluciones del Marketplace están diseñadas para integrarse armoniosamente 
 
 ## Seguridad y cumplimiento
 
-### Alojamiento soberano
+### Alojamiento y cualificaciones
 
-Todas las soluciones desplegadas a través de la Marketplace cuentan con:
+El alojamiento y las cualificaciones dependen del tipo de solución:
 
-- **Alojamiento en Francia** exclusivamente
-- **Certificación SecNumCloud** de la infraestructura
+- **Imágenes de máquinas virtuales**: se despliegan en sus entornos Cloud Temple y dependen de sus cualificaciones.
+- **Servicios gestionados y soluciones SaaS**: su alojamiento y sus certificaciones son propios de cada oferta y figuran en su ficha, en el [catálogo Marketplace del sitio web](https://www.cloud-temple.com/marketplace/).
 
 ### Validación de soluciones
 

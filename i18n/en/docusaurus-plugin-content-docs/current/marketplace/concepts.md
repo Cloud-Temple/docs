@@ -8,7 +8,7 @@ The **Marketplace Cloud Temple** is a centralized platform that facilitates acce
 
 ## Definition and Positioning
 
-The Cloud Temple Marketplace positions itself as a digital transformation driver for companies seeking reliable services, hosted in Europe, with simple and fast integration.
+The Cloud Temple Marketplace positions itself as a digital transformation driver for companies seeking reliable services with simple and fast integration.
 
 It enables:
 
@@ -20,6 +20,8 @@ It enables:
 ---
 
 ## Types of available solutions
+
+The catalog brings together virtual machine images, managed services and SaaS solutions from partner publishers. It grows continuously: the solutions described here are only examples, and the up-to-date list is in the [Marketplace catalog on the Cloud Temple website](https://www.cloud-temple.com/marketplace/).
 
 ### Virtual Machine Images
 
@@ -40,7 +42,7 @@ The Marketplace also provides access to solutions developed by our publisher par
 
 - Browsing the catalog from the console
 - Direct contact with the partner
-- Deployment on the Cloud Temple infrastructure
+- Depending on the offering, deployment in your Cloud Temple environments or access to the SaaS service operated by the publisher
 
 ---
 
@@ -65,12 +67,12 @@ Marketplace solutions are designed to integrate seamlessly with:
 
 ## Security and compliance
 
-### Sovereign Hosting
+### Hosting and qualifications
 
-All solutions deployed via the Marketplace benefit from:
+Hosting and qualifications depend on the type of solution:
 
-- **Hosting in France** exclusively
-- **SecNumCloud qualification** for the infrastructure
+- **Virtual machine images**: they are deployed in your Cloud Temple environments and fall under their qualifications.
+- **Managed services and SaaS solutions**: their hosting and certifications are specific to each offering and are listed on its page in the [Marketplace catalog on the website](https://www.cloud-temple.com/marketplace/).
 
 ### Solution Validation
 

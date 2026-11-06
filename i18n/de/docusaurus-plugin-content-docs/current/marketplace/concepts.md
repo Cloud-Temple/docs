@@ -8,7 +8,7 @@ Die **Marketplace Cloud Temple** ist eine zentralisierte Plattform, die den Zugr
 
 ## Definition und Positionierung
 
-Die Cloud Temple Marketplace positioniert sich als Hebel für die digitale Transformation von Unternehmen, die zuverlässige, in Europa gehostete Dienste mit einfacher und schneller Integration suchen.
+Die Cloud Temple Marketplace positioniert sich als Hebel für die digitale Transformation von Unternehmen, die zuverlässige Dienste mit einfacher und schneller Integration suchen.
 
 Sie ermöglicht:
 
@@ -20,6 +20,8 @@ Sie ermöglicht:
 ---
 
 ## Verfügbare Lösungstypen
+
+Der Katalog umfasst Images virtueller Maschinen, Managed Services und SaaS-Lösungen von Partner-Softwareherstellern. Er wächst laufend: Die hier beschriebenen Lösungen sind nur Beispiele, die aktuelle Liste finden Sie im [Marketplace-Katalog auf der Cloud-Temple-Website](https://www.cloud-temple.com/marketplace/).
 
 ### Virtual Machine Images
 
@@ -40,7 +42,7 @@ Der Marketplace bietet zudem Zugang zu Lösungen, die von unseren Partner-Softwa
 
 - Katalogeinsicht über die Konsole
 - Direkte Kontaktaufnahme mit dem Partner
-- Bereitstellung auf der Cloud-Temple-Infrastruktur
+- Je nach Angebot Bereitstellung in Ihren Cloud-Temple-Umgebungen oder Zugang zum SaaS-Dienst, den der Hersteller betreibt
 
 ---
 
@@ -65,12 +67,12 @@ Die Lösungen des Marktplatzes sind darauf ausgelegt, sich nahtlos in folgende D
 
 ## Sicherheit und Compliance
 
-### Souveränes Hosting
+### Hosting und Qualifizierungen
 
-Alle über den Marketplace bereitgestellten Lösungen profitieren von:
+Hosting und Qualifizierungen hängen vom Lösungstyp ab:
 
-- **Hosting in Frankreich** ausschließlich
-- **SecNumCloud-Zertifizierung** der Infrastruktur
+- **Images virtueller Maschinen**: Sie werden in Ihren Cloud-Temple-Umgebungen bereitgestellt und unterliegen deren Qualifizierungen.
+- **Managed Services und SaaS-Lösungen**: Hosting und Zertifizierungen sind für jedes Angebot spezifisch und auf seiner Seite im [Marketplace-Katalog der Website](https://www.cloud-temple.com/marketplace/) angegeben.
 
 ### Validierung der Lösungen
 
