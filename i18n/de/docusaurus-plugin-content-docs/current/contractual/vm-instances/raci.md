@@ -16,10 +16,10 @@ Dies ist das **RACI**-Modell, das die Aufteilung der Verantwortlichkeiten zwisch
 
 | Rolle         | Beschreibung                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Realisiert | __R__ealisiert den Prozess                                                              |
-| (A) Genehmigt | __G__enehmigt die Prozessdurchführung                                                  |
-| (C) Konsultiert | __K__onsultiert während des Prozesses                                                  |
-| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses (über die Tools, das Portal oder die Messaging-Plattform) |
+| (R) Durchführend | Führt den Prozess durch |
+| (A) Genehmigend  | Genehmigt die Durchführung des Prozesses |
+| (C) Konsultiert  | Wird während des Prozesses konsultiert |
+| (I) Informiert   | Wird über die Ergebnisse des Prozesses informiert (über die Tools, das Portal oder Messaging) |
 
 ---
 

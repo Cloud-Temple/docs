@@ -16,10 +16,10 @@ Este es el modelo **RACI** que define la distribución de responsabilidades entr
 
 | Rol          | Descripción                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Ejecuta  | __R__ealiza el proceso                                                                |
-| (A) Aprueba  | __A__prueba la realización del proceso                                                 |
-| (C) Consulta | __C__onsultado durante el proceso                                                     |
-| (I) Informado| __I__nformado de los resultados del proceso (vía herramientas, el portal o la mensajería) |
+| (R) Realiza    | __R__ealiza el proceso |
+| (A) Aprueba    | __A__prueba la realización del proceso |
+| (C) Consultado | __C__onsultado durante el proceso |
+| (I) Informado  | __I__nformado de los resultados del proceso (a través de las herramientas, el portal o la mensajería) |
 
 ---
 

@@ -532,6 +532,10 @@ Ogni VM deve essere configurata con un livello di priorità di riavvio in alta d
 
 Ogni richiesta relativa alla disponibilità deve essere dichiarata tramite un ticket di incidente.
 
+## Responsabilità
+
+La ripartizione delle responsabilità tra il cliente e Cloud Temple è dettagliata nella [matrice delle responsabilità (RACI) IaaS](../contractual/iaas/raci.md).
+
 ## Reversibilità
 
 | Operazione                        | Deliverable                                                                    | Tempistica    | Costo         |

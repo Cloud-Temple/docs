@@ -3,6 +3,19 @@ title: Matriz de Responsabilidades (RACI) - Kubernetes Gestionado
 displayed_sidebar: docSidebar
 ---
 
+Esta matriz **RACI** define el reparto de responsabilidades entre el cliente y Cloud Temple para el servicio Managed Kubernetes.
+
+## Definición de los diferentes roles
+
+Aquí se recuerdan los diferentes roles del RACI:
+
+| Rol | Descripción |
+|---|---|
+| (R) Realiza    | __R__ealiza el proceso |
+| (A) Aprueba    | __A__prueba la realización del proceso |
+| (C) Consultado | __C__onsultado durante el proceso |
+| (I) Informado  | __I__nformado de los resultados del proceso (a través de las herramientas, el portal o la mensajería) |
+
 ## RACI
 
 ### Arquitectura e Infraestructura

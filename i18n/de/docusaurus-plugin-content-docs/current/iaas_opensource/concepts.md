@@ -532,6 +532,10 @@ Jede VM muss mit einer Neustartpriorität für die Hochverfügbarkeit konfigurie
 
 Jede Anfrage im Zusammenhang mit der Verfügbarkeit muss über ein Incident-Ticket gemeldet werden.
 
+## Verantwortlichkeiten
+
+Die Aufteilung der Verantwortlichkeiten zwischen dem Kunden und Cloud Temple ist in der [IaaS-Verantwortlichkeitsmatrix (RACI)](../contractual/iaas/raci.md) beschrieben.
+
 ## Reversibilität
 
 | Vorgang                   | Liefergegenstand                                                 | Frist       | Kosten       |

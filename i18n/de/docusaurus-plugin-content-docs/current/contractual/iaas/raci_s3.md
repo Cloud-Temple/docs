@@ -13,10 +13,10 @@ Hier werden die verschiedenen Rollen des RACI-Modells erläutert:
 
 | Rolle         | Beschreibung                              |
 |--------------|------------------------------------------|
-| (R) Durchführt | __D__urchführt den Prozess                 |
-| (A) Genehmigt | __G__enehmigt die Durchführung des Prozesses |
-| (C) Beratend | __B__eratend während des Prozesses        |
-| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses   |
+| (R) Durchführend | Führt den Prozess durch |
+| (A) Genehmigend  | Genehmigt die Durchführung des Prozesses |
+| (C) Konsultiert  | Wird während des Prozesses konsultiert |
+| (I) Informiert   | Wird über die Ergebnisse des Prozesses informiert (über die Tools, das Portal oder Messaging) |
 
 ## Definieren Sie Ihre Anforderungen
 
