@@ -153,9 +153,10 @@ El PaaS OpenShift está disponible en la región FR1. Se despliega de forma nati
 | OPENSHIFT - NODOS DE TRABAJO - ADVANCED - 3 x (48 núcleos / 96 hilos - 768 GB de RAM - 512 GiB de FLASH 1500 IOPS)                | 3 nodos dedicados        |
 | OPENSHIFT - NODOS DE TRABAJO - PERF - 3 x (56 núcleos / 112 hilos - 1,5 TB de RAM - 512 GiB de FLASH 1500 IOPS)                   | 3 nodos dedicados        |
 | OPENSHIFT - NODOS DE TRABAJO - GPU - 3 x (32 núcleos / 64 hilos - 512 GB de RAM - 512 GiB de FLASH 1500 IOPS - 2xNVIDIA L40S 48GB) | 3 nodos dedicados + GPUs |
+| OPENSHIFT - NODOS DE TRABAJO - GPU - 3 x (32 núcleos / 64 hilos - 512 GB de RAM - 512 GiB de FLASH 1500 IOPS - 2xNVIDIA H100 80GB) | 3 nodos dedicados + GPUs |
 
 
-Los productos Red Hat OpenShift de Cloud Temple están disponibles con pago por uso o con reserva de 12 meses.
+Los productos Red Hat OpenShift de Cloud Temple están disponibles con pago por uso o con reserva de 12 meses. El worker GPU H100 se ofrece con un compromiso de 24 meses.
 
 **Notas**:
 
@@ -324,5 +325,5 @@ Veeam Kasten K10 también permite migrar sus aplicaciones a otra distribución K
 
 ## Precios
 
-El PaaS OpenShift está disponible con pago por uso o con reserva de 12 meses. Los precios se publican en la página del producto en el sitio web de Cloud Temple:
+El PaaS OpenShift está disponible con pago por uso o con reserva de 12 meses. El worker GPU H100 se ofrece con un compromiso de 24 meses. Los precios se publican en la página del producto en el sitio web de Cloud Temple:
 [PaaS OpenShift — precios](https://www.cloud-temple.com/produits/paas-openshift/).
