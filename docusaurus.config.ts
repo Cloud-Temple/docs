@@ -148,6 +148,10 @@ const config: Config = {
               href: 'https://status.cloud-temple.com/',
             },
             {
+              label: 'Documentation history',
+              to: '/changelog',
+            },
+            {
               label: 'Tutorials',
               to: '/tags/tutorials/',
             },

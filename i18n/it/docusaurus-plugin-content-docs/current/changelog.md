@@ -1,6 +1,6 @@
 ---
 title: Cronologia della documentazione
-sidebar_position: 2
+displayed_sidebar: docSidebar
 ---
 
 # Cronologia della documentazione

@@ -15,6 +15,10 @@
     "message": "Page d'état",
     "description": "The label of footer link with label=Status page linking to https://status.cloud-temple.com/"
   },
+  "link.item.label.Documentation history": {
+    "message": "Historique de la documentation",
+    "description": "The label of footer link with label=Documentation history linking to /changelog"
+  },
   "link.item.label.Tutorials": {
     "message": "Tutoriels",
     "description": "The label of footer link with label=Tutorials linking to /tags/tutorials/"

@@ -1,6 +1,6 @@
 ---
 title: Documentation changelog
-sidebar_position: 2
+displayed_sidebar: docSidebar
 ---
 
 # Documentation changelog

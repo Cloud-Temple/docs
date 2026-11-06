@@ -627,11 +627,6 @@ const sidebars: SidebarsConfig = {
       label: 'Page de statut',
       href: 'https://status.cloud-temple.com/',
     },
-    {
-      type: 'doc',
-      id: 'changelog',
-      label: 'Historique de la documentation',
-    },
   ],
 };
 
