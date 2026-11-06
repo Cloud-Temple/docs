@@ -53,8 +53,8 @@ Der Marketplace bietet zudem Zugang zu Lösungen, die von unseren Partner-Softwa
 Der Marktplatz ist nativ in die Cloud Temple-Konsole integriert und bietet:
 
 - **Einheitlicher Zugriff** über die übliche Verwaltungsschnittstelle
-- **Direkte Bereitstellung** auf bestehenden Infrastrukturen
-- **Zentralisiertes Management** von Ressourcen und Lösungen
+- **Direkte Bereitstellung** von Images virtueller Maschinen auf Ihren bestehenden Infrastrukturen
+- **Zentralisiertes Management** der so bereitgestellten virtuellen Maschinen
 
 ### Kompatibilität mit Diensten
 
@@ -79,5 +79,5 @@ Hosting und Qualifizierungen hängen vom Lösungstyp ab:
 Die in der Marketplace angebotenen Lösungen unterliegen einer strengen Auswahl, die Folgendes gewährleistet:
 
 - **Kompatibilität** mit der Cloud Temple-Infrastruktur, für die dort bereitgestellten Lösungen
-- **Sicherheit** von Images und Anwendungen
+- **Sicherheit** der Images virtueller Maschinen
 - **Zuverlässigkeit** der Softwarepartner

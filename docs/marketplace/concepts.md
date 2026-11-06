@@ -53,8 +53,8 @@ La Marketplace propose également l'accès à des solutions développées par no
 La Marketplace est intégrée nativement à la console Cloud Temple, offrant :
 
 - **Accès unifié** depuis l'interface de gestion habituelle
-- **Déploiement direct** sur les infrastructures existantes
-- **Gestion centralisée** des ressources et solutions
+- **Déploiement direct** des images de machines virtuelles sur vos infrastructures existantes
+- **Gestion centralisée** des machines virtuelles ainsi déployées
 
 ### Compatibilité avec les services
 
@@ -79,5 +79,5 @@ L'hébergement et les qualifications dépendent du type de solution :
 Les solutions proposées dans la Marketplace font l'objet d'une sélection rigoureuse garantissant :
 
 - **Compatibilité** avec l'infrastructure Cloud Temple, pour les solutions qui s'y déploient
-- **Sécurité** des images et applications
+- **Sécurité** des images de machines virtuelles
 - **Fiabilité** des partenaires éditeurs
