@@ -31,7 +31,7 @@ sidebar_position: 2
 | Feature                  | Description                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | S3-compatible API        | Access through the S3 API, 97% compatible with AWS S3.                      |
-| Bucket type              | Choice at creation between a "performance" or an "archive" bucket.          |
+| Bucket type              | A single type today: "Performance". The "Archive" class is an upcoming change. |
 | Replication across 3 zones | Automatic redundancy across three availability zones.                     |
 | Erasure Coding           | EC 12+4 protection.                                                         |
 | Encryption at rest       | Server-side encryption, enabled at the *namespace* level.                   |
@@ -121,10 +121,11 @@ You can retrieve your data at any time, autonomously, using standard S3 tools.
 
 ## Upcoming changes
 
-The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2).
+The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 - **Object Lock (WORM)**: immutable buckets whose objects can be neither modified nor deleted, even by an administrator account, before the defined period expires.
 - **Additional encryption modes**: SSE-C (server-side encryption with customer-provided keys) and CSE (client-side encryption).
+- **Archive storage class**: archive buckets, S3 Glacier-style, for data kept for a long time and rarely accessed.
 
 ## Pricing
 

@@ -22,7 +22,7 @@ This policy details the responsibilities and recommendations for Operational Sup
 - Full management of the underlying infrastructure, including master nodes, OpenShift version updates, and resilience of critical services deployed by **Cloud Temple**.
 - Automatic minor/patch updates without interruption for hosted workloads, unless otherwise notified.
 - Restriction of rights and features to SecNumCloud constraints.
-- Communication of upcoming updates and break-fix updates over the next three months via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Communication of upcoming updates and break-fix updates over the next three months via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 
 **User Responsibility:**
 
@@ -34,7 +34,7 @@ This policy details the responsibilities and recommendations for Operational Sup
 
 - Schedule application deployments outside of maintenance windows to avoid conflicts with automatic cluster updates.
 - Monitor **Cloud Temple** communications regarding major updates to plan necessary adjustments.
-- Track upcoming updates via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Track upcoming updates via the [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 - Subscribe to [**incident**](../../console/status.md#notification-management) notifications
 
 ---
