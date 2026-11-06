@@ -532,6 +532,10 @@ Each VM must be configured with a high availability restart priority level:
 
 Any availability-related request must be filed via an incident ticket.
 
+## Responsibilities
+
+The distribution of responsibilities between the customer and Cloud Temple is detailed in the [IaaS responsibility matrix (RACI)](../contractual/iaas/raci.md).
+
 ## Reversibility
 
 | Operation                 | Deliverable                                                      | Timeframe   | Cost            |

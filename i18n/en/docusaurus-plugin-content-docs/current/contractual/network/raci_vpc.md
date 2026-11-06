@@ -16,10 +16,10 @@ Here is the **RACI** model defining the allocation of responsibilities between t
 
 | Role         | Description                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Executes | __E__xecutes the process                                                              |
-| (A) Approves | __A__pproves the execution of the process                                             |
-| (C) Consulted| __C__onsulted during the process                                                      |
-| (I) Informed | __I__nformed of the process results (via tooling, the portal, or messaging)           |
+| (R) Responsible | __R__esponsible for carrying out the process |
+| (A) Accountable | __A__ccountable for approving the process execution |
+| (C) Consulted   | __C__onsulted during the process |
+| (I) Informed    | __I__nformed of the process results (via tooling, the portal, or messaging) |
 
 ---
 

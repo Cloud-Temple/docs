@@ -13,10 +13,10 @@ Hier werden die verschiedenen RACI-Rollen noch einmal erläutert:
 
 | Rolle         | Beschreibung                                                                           |
 | ------------ | ------------------------------------------------------------------------------------- |
-| (R) Verantwortlich | __R__ealisiert den Prozess                                                              |
-| (A) Genehmigend | __A__nordnet die Genehmigung der Prozessdurchführung                                              |
-| (C) Konsultiert | __K__onsultiert während des Prozesses                                                     |
-| (I) Informiert | __I__nformiert über die Ergebnisse des Prozesses (über die Tools, das Portal oder die Nachrichten) |
+| (R) Durchführend | Führt den Prozess durch |
+| (A) Genehmigend  | Genehmigt die Durchführung des Prozesses |
+| (C) Konsultiert  | Wird während des Prozesses konsultiert |
+| (I) Informiert   | Wird über die Ergebnisse des Prozesses informiert (über die Tools, das Portal oder Messaging) |
 
 ### Initiale Einrichtung
 
