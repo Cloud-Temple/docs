@@ -15,7 +15,7 @@ Sie ermöglicht:
 - **Zentralisieren** des Zugriffs auf validierte Partnerlösungen
 - **Vereinfachen** der Bereitstellung von Cloud-Umgebungen
 - **Beschleunigen** der Umsetzung digitaler Projekte
-- **Garantieren** der Compliance und Sicherheit der Bereitstellungen
+- **Garantieren** der Compliance und Sicherheit der Bereitstellungen in Ihren Cloud-Temple-Umgebungen
 
 ---
 
@@ -72,12 +72,12 @@ Die Lösungen des Marktplatzes sind darauf ausgelegt, sich nahtlos in folgende D
 Hosting und Qualifizierungen hängen vom Lösungstyp ab:
 
 - **Images virtueller Maschinen**: Sie werden in Ihren Cloud-Temple-Umgebungen bereitgestellt und unterliegen deren Qualifizierungen.
-- **Managed Services und SaaS-Lösungen**: Hosting und Zertifizierungen sind für jedes Angebot spezifisch und auf seiner Seite im [Marketplace-Katalog der Website](https://www.cloud-temple.com/marketplace/) angegeben.
+- **Managed Services und SaaS-Lösungen**: Hosting und Zertifizierungen sind für jedes Angebot spezifisch. Prüfen Sie die Angaben auf seiner Seite im [Marketplace-Katalog der Website](https://www.cloud-temple.com/marketplace/) und wenden Sie sich für weitere Details an den Hersteller.
 
 ### Validierung der Lösungen
 
 Die in der Marketplace angebotenen Lösungen unterliegen einer strengen Auswahl, die Folgendes gewährleistet:
 
-- **Kompatibilität** mit der Cloud Temple-Infrastruktur
+- **Kompatibilität** mit der Cloud Temple-Infrastruktur, für die dort bereitgestellten Lösungen
 - **Sicherheit** von Images und Anwendungen
 - **Zuverlässigkeit** der Softwarepartner

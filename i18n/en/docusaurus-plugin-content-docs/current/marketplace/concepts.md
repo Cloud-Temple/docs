@@ -15,7 +15,7 @@ It enables:
 - **Centralize** access to validated partner solutions
 - **Simplify** the deployment of cloud environments
 - **Accelerate** the implementation of digital projects
-- **Ensure** the compliance and security of deployments
+- **Ensure** the compliance and security of deployments carried out in your Cloud Temple environments
 
 ---
 
@@ -72,12 +72,12 @@ Marketplace solutions are designed to integrate seamlessly with:
 Hosting and qualifications depend on the type of solution:
 
 - **Virtual machine images**: they are deployed in your Cloud Temple environments and fall under their qualifications.
-- **Managed services and SaaS solutions**: their hosting and certifications are specific to each offering and are listed on its page in the [Marketplace catalog on the website](https://www.cloud-temple.com/marketplace/).
+- **Managed services and SaaS solutions**: their hosting and certifications are specific to each offering. Check the information on its page in the [Marketplace catalog on the website](https://www.cloud-temple.com/marketplace/) and, for any further detail, contact the publisher.
 
 ### Solution Validation
 
 The solutions offered in the Marketplace undergo a rigorous selection process ensuring:
 
-- **Compatibility** with the Cloud Temple infrastructure
+- **Compatibility** with the Cloud Temple infrastructure, for solutions deployed on it
 - **Security** of images and applications
 - **Reliability** of publisher partners

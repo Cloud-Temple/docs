@@ -15,7 +15,7 @@ Elle permet de :
 - **Centraliser** l'accès aux solutions partenaires validées
 - **Simplifier** le déploiement d'environnements cloud
 - **Accélérer** la mise en œuvre de projets numériques
-- **Garantir** la conformité et la sécurité des déploiements
+- **Garantir** la conformité et la sécurité des déploiements réalisés dans vos environnements Cloud Temple
 
 ---
 
@@ -72,12 +72,12 @@ Les solutions de la Marketplace sont conçues pour s'intégrer harmonieusement a
 L'hébergement et les qualifications dépendent du type de solution :
 
 - **Images de machines virtuelles** : elles se déploient dans vos environnements Cloud Temple et relèvent de leurs qualifications.
-- **Services managés et solutions SaaS** : leur hébergement et leurs certifications sont propres à chaque offre et figurent sur sa fiche, dans le [catalogue Marketplace du site](https://www.cloud-temple.com/marketplace/).
+- **Services managés et solutions SaaS** : leur hébergement et leurs certifications sont propres à chaque offre. Consultez les informations de sa fiche dans le [catalogue Marketplace du site](https://www.cloud-temple.com/marketplace/) et, pour toute précision, contactez l'éditeur.
 
 ### Validation des solutions
 
 Les solutions proposées dans la Marketplace font l'objet d'une sélection rigoureuse garantissant :
 
-- **Compatibilité** avec l'infrastructure Cloud Temple
+- **Compatibilité** avec l'infrastructure Cloud Temple, pour les solutions qui s'y déploient
 - **Sécurité** des images et applications
 - **Fiabilité** des partenaires éditeurs
