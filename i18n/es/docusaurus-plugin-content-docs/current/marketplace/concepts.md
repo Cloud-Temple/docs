@@ -112,7 +112,7 @@ Las soluciones ofrecidas en el Marketplace son objeto de una selección rigurosa
 
 ## Responsabilidades
 
-Cloud Temple presta el soporte de las soluciones Cloud Temple, en el marco del soporte de la Consola. Para una solución de un socio, el soporte, las actualizaciones y los plazos de respuesta corresponden al editor. Las máquinas virtuales desplegadas desde la Marketplace son recursos de su entorno IaaS: consulte la [matriz de responsabilidades (RACI) IaaS](../contractual/iaas/raci.md).
+El soporte de la Marketplace en sí (catálogo, despliegue de las imágenes) forma parte del soporte de la Consola Cloud Temple. Cada oferta tiene además sus propias condiciones de soporte: las del servicio para una oferta de Cloud Temple, las del editor para una solución de un socio, que también se encarga de sus actualizaciones y plazos de respuesta. Las máquinas virtuales desplegadas desde la Marketplace son recursos de su entorno IaaS: consulte la [matriz de responsabilidades (RACI) IaaS](../contractual/iaas/raci.md).
 
 ## Reversibilidad
 
@@ -121,4 +121,4 @@ Cloud Temple presta el soporte de las soluciones Cloud Temple, en el marco del s
 
 ## Precios
 
-La Marketplace no tiene coste propio. Usted paga la infraestructura en la que despliega una imagen y, según la oferta, la licencia o el servicio del socio. El detalle de cada oferta figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/).
+La Marketplace no tiene coste propio. Usted paga la infraestructura en la que despliega una imagen y, según la oferta elegida, la licencia o el servicio, proporcionado por Cloud Temple o por un socio, según sus condiciones de precio. El detalle de cada oferta figura en el [catálogo Marketplace del sitio web de Cloud Temple](https://www.cloud-temple.com/marketplace/).

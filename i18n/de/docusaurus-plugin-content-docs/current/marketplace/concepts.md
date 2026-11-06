@@ -17,7 +17,7 @@ Sie ermöglicht:
 - **Beschleunigen** der Umsetzung digitaler Projekte
 - **Garantieren** der Compliance und Sicherheit der Bereitstellungen in Ihren Cloud-Temple-Umgebungen
 
-Er richtet sich an IT- und DevOps-Teams, die ihre Cloud-Temple-Umgebungen aufbauen, auch in regulierten Branchen, sowie an Fachabteilungen, die SaaS-Lösungen von Partner-Softwareherstellern suchen.
+Sie richtet sich an IT- und DevOps-Teams, die ihre Cloud-Temple-Umgebungen aufbauen, auch in regulierten Branchen, sowie an Fachabteilungen, die SaaS-Lösungen von Partner-Softwareherstellern suchen.
 
 ## Vorteile
 
@@ -112,7 +112,7 @@ Die in der Marketplace angebotenen Lösungen unterliegen einer strengen Auswahl,
 
 ## Verantwortlichkeiten
 
-Cloud Temple leistet den Support für Cloud-Temple-Lösungen im Rahmen des Konsolen-Supports. Bei einer Partnerlösung liegen Support, Aktualisierungen und Antwortzeiten beim Hersteller. Die über den Marketplace bereitgestellten virtuellen Maschinen sind Ressourcen Ihrer IaaS-Umgebung: siehe die [IaaS-Verantwortlichkeitsmatrix (RACI)](../contractual/iaas/raci.md).
+Der Support für den Marketplace selbst (Katalog, Bereitstellung der Images) ist Teil des Supports der Cloud-Temple-Konsole. Jedes Angebot hat darüber hinaus eigene Supportbedingungen: die des Dienstes bei einem Angebot von Cloud Temple, die des Herstellers bei einer Partnerlösung, der auch für deren Aktualisierungen und Antwortzeiten zuständig ist. Die über den Marketplace bereitgestellten virtuellen Maschinen sind Ressourcen Ihrer IaaS-Umgebung: siehe die [IaaS-Verantwortlichkeitsmatrix (RACI)](../contractual/iaas/raci.md).
 
 ## Reversibilität
 
@@ -121,4 +121,4 @@ Cloud Temple leistet den Support für Cloud-Temple-Lösungen im Rahmen des Konso
 
 ## Preise
 
-Der Marketplace verursacht keine eigenen Kosten. Sie zahlen die Infrastruktur, auf der Sie ein Image bereitstellen, und je nach Angebot die Lizenz oder den Dienst des Partners. Die Einzelheiten jedes Angebots finden Sie im [Marketplace-Katalog auf der Cloud-Temple-Website](https://www.cloud-temple.com/marketplace/).
+Der Marketplace verursacht keine eigenen Kosten. Sie zahlen die Infrastruktur, auf der Sie ein Image bereitstellen, und je nach gewähltem Angebot die Lizenz oder den Dienst, bereitgestellt von Cloud Temple oder einem Partner, zu dessen Preisbedingungen. Die Einzelheiten jedes Angebots finden Sie im [Marketplace-Katalog auf der Cloud-Temple-Website](https://www.cloud-temple.com/marketplace/).
