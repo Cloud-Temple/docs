@@ -245,7 +245,7 @@ Le Stockage Objet Cloud Temple est un service de stockage d'objets hautement sé
     <img src={S3Create} />
     Une fenêtre s'affiche alors et vous devez renseigner :
     1. La **région** de création de votre bucket,
-    2. Le **type** de bucket : « Performance Object Storage S3 API », seul type disponible aujourd'hui,
+    2. Le **type** de bucket, prérempli : « Performance Object Storage S3 API », seul type disponible aujourd'hui,
     3. Le **nom** de votre bucket (il doit être unique).
     <img src={S3CreatePopup_001} />
   </TabItem>

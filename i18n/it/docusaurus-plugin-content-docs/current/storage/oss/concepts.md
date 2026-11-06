@@ -31,7 +31,7 @@ L'**Archiviazione oggetti** è un servizio di archiviazione distribuito, scalabi
 | Funzionalità             | Descrizione                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatibile S3       | Accesso tramite l'API S3, compatibile al 97% con AWS S3.                    |
-| Tipo di bucket           | Un solo tipo oggi: «Performance». La classe «Archiviazione» è una prossima evoluzione. |
+| Tipo di bucket           | Un solo tipo oggi: «Performance». La classe «Archivio» è una prossima evoluzione. |
 | Replica su 3 zone        | Ridondanza automatica su tre zone di disponibilità.                         |
 | Erasure Coding           | Protezione EC 12+4.                                                         |
 | Cifratura a riposo       | Cifratura lato server, attivata a livello del *namespace*.                  |
@@ -125,7 +125,7 @@ Le seguenti evoluzioni sono annunciate; non sono ancora disponibili. Seguite il 
 
 - **Object Lock (WORM)**: bucket immutabili, i cui oggetti non possono essere né modificati né eliminati, nemmeno da un account amministratore, prima della scadenza del periodo definito.
 - **Modalità di crittografia aggiuntive**: SSE-C (crittografia lato server con chiavi fornite dal cliente) e CSE (crittografia lato client).
-- **Classe di archiviazione Archiviazione**: bucket di archiviazione, di tipo S3 Glacier, per i dati conservati a lungo e consultati raramente.
+- **Classe di storage «Archivio»**: bucket di archiviazione, di tipo S3 Glacier, per i dati conservati a lungo e consultati raramente.
 
 ## Prezzi
 
