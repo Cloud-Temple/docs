@@ -323,6 +323,30 @@
     "message": "Preguntas frecuentes",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc gpu/faq"
   },
+  "sidebar.docSidebar.category.AIOps": {
+    "message": "AIOps",
+    "description": "The label for category 'AIOps' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.aiops_overview": {
+    "message": "Visión general",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc aiops/aiops"
+  },
+  "sidebar.docSidebar.doc.aiops_concepts": {
+    "message": "Conceptos",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc aiops/concepts"
+  },
+  "sidebar.docSidebar.doc.aiops_quickstart": {
+    "message": "Guía de inicio",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc aiops/quickstart"
+  },
+  "sidebar.docSidebar.doc.aiops_tutorials": {
+    "message": "Tutoriales",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc aiops/tutorials"
+  },
+  "sidebar.docSidebar.doc.aiops_faq": {
+    "message": "Preguntas frecuentes",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc aiops/faq"
+  },
   "sidebar.docSidebar.doc.bare_metal_overview": {
     "message": "Visión general",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/iaas_bare-metal"

@@ -18,4 +18,9 @@ Mit den KI-Diensten von Cloud Temple nutzen Sie KI-Modelle und beschleunigen Ihr
     <p>In die IaaS- und PaaS-Angebote integrierte NVIDIA-Grafikkarten H100 und L40S für maschinelles Lernen, Inferenz und Hochleistungsrechnen.</p>
     <a href="./gpu" class="card-link">GPU entdecken →</a>
   </div>
+  <div class="card">
+    <h3>AIOps</h3>
+    <p>Managed Service für operative Intelligenz: Korrelation der Alarme, Ursachenanalyse und gesteuerte Behebung in Ihrem Betrieb.</p>
+    <a href="./aiops" class="card-link">AIOps entdecken →</a>
+  </div>
 </div>
