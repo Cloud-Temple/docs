@@ -4,7 +4,7 @@ title: Sovereign SOC overview
 
 # Sovereign SOC overview
 
-The **Sovereign SOC** (Security Operations Center) is a managed service for the detection and qualification of security incidents, operated 24/7. It collects and analyzes the logs of your information systems, whether they are hosted on the Trusted Cloud or elsewhere, and combines automated pre-qualification by artificial intelligence with the validation of each incident by security analysts based in France.
+The **Sovereign SOC** (Security Operations Center) is a managed service for the detection and qualification of security incidents, operated 24/7. It collects and analyzes the logs of your information systems, whether they are hosted on the Trusted Cloud or elsewhere, and combines automated pre-qualification by artificial intelligence with the validation of each incident by French-speaking security analysts.
 
 You thus receive qualified incident tickets and remediation follow-up, without having to operate a detection platform yourself.
 

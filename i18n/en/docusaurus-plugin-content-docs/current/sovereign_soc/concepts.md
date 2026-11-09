@@ -31,7 +31,7 @@ The service is intended for CIOs and CISOs who wish to outsource security monito
 
 | Benefit                    | Description                                                                                                                                       |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Sovereignty                | The collected data is hosted in France, and the SOC analysts are based in France.                                                                  |
+| Sovereignty                | The collected data is hosted in France; with the SOC France level, the service is also operated entirely in France. |
 | Continuous monitoring      | Alerts are handled 24 hours a day, 7 days a week, all year round.                                                                                  |
 | Qualified alerts           | The combination of automated analysis and human validation limits the requests made to your teams to confirmed incidents.                         |
 | Subscription model         | The service is taken out on a subscription basis, with no upfront investment in a detection platform or in a dedicated team.                         |
@@ -50,14 +50,14 @@ The service is intended for CIOs and CISOs who wish to outsource security monito
 | Ticketing                       | Automatic creation of a ticket for each confirmed incident.                                                                       |
 | Notifications                   | Qualified alerts sent by e-mail to the contacts you have designated.                                                              |
 | Customer portal                 | Access to tickets, dashboards, the detection rules register and the service deliverables.                                         |
-| Monthly follow-up               | Monthly dashboard: ticket review, changes to the monitored scope, register of the detection rules implemented.                    |
+| Reporting and governance        | Monthly dashboard (ticket review, changes to the monitored scope, register of detection rules) and quarterly steering committee; additional committees are available as an option. |
 
 ## Architecture
 
 ### Data flow
 
 1. **Collection**: logs are collected according to the nature of each source, by a forwarding agent (forwarder) installed on your infrastructure or by API call.
-2. **Transport**: logs travel through an IPsec VPN tunnel to the SOC collection enclave.
+2. **Transport**: logs travel through an IPsec VPN tunnel or a TLS 1.3 connection to the SOC collection enclave.
 3. **Processing**: a shared collection and analysis platform applies the detection rules, complemented by an AI analysis module. Each customer's data is logically partitioned within it.
 4. **Operations**: SOC analysts handle alerts from a dedicated management console, then issue the incident tickets.
 
@@ -73,18 +73,27 @@ A security incident management procedure is drawn up with you, together with an 
 
 ## Regions and availability zones
 
-The service is operated in France: all collected data remains on national territory. The monitored systems, for their part, can be hosted on the Trusted Cloud, on a third-party cloud or on-premises, as long as their logs can be routed to the collection enclave.
+The collected data is hosted in France; with the SOC France level, the service is also operated entirely in France. The monitored systems, for their part, can be hosted on the trusted cloud, on a third-party cloud or on premises, as long as their logs can be routed to the collection enclave.
 
 ## Technical specifications
 
 | Parameter                     | Value                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------|
 | Collection                    | Forwarding agent installed on your infrastructure, or collection by API                        |
-| Transport                     | IPsec VPN tunnel; TLS 1.3-compatible collection protocols                                      |
+| Transport                     | IPsec VPN tunnel or TLS 1.3                                                                    |
 | Encryption at rest            | AES-256                                                                                        |
-| Log retention                 | 90 days; a specific retention requirement can be taken into account on request                 |
+| Log retention                 | 90 days in hot storage; optional extension in cold storage (1 year, or 7 years for regulated sectors) |
 | Detection method              | Pattern matching, rules documented according to MITRE ATT&CK                                   |
-| Monitoring hours              | 24/7, all year round                                                                           |
+| Monitoring hours              | 24/7, all year round, by French-speaking analysts                                              |
+| Qualification time            | Less than one hour between a critical alert and its qualification by an analyst; this is neither an intervention time nor a remediation time |
+
+### Service levels
+
+| Level | Description |
+|---|---|
+| SOC Core | Data hosted in France, qualification of critical alerts in less than one hour, 24/7, quarterly steering committee. |
+| SOC France | Like SOC Core, with data and service operations entirely in France. |
+| Premium option | Continuous proactive threat hunting and annual penetration test; can be combined with SOC Core or SOC France. |
 
 ### Detection rules
 
@@ -106,7 +115,7 @@ There are two types of new rules:
 1. **Subscription**: the service scope and the selected options are defined with you; you take note of the prerequisites for which you are responsible.
 2. **Build**: construction of the service with you, setup of collection and detection rules, definition of the incident management organization between your teams and the SOC.
 3. **Pre-run**: a one-month period dedicated to tuning the detection rules. At the end of it, a false positive rate target can be set with you.
-4. **Run**: active monitoring, notifications and escalations, definition and monitoring of remediation plans, monthly governance, evolution of log sources and detection rules.
+4. **Run**: active monitoring, notifications and escalations, definition and monitoring of remediation plans, monthly dashboard and quarterly steering committee, changes to log sources and detection rules.
 
 ### Options
 
@@ -130,11 +139,11 @@ The service and its information system implement technical and organizational se
 - **Partitioning**: partitioned architecture, logical isolation of each customer's data.
 - **Security maintenance** of the technical components of the service.
 - **Organizational measures**: information system usage, ethics and administration charters, background checks, confidentiality clause and security awareness training for all SOC staff.
-- **Continuous monitoring**: alerts are handled 24/7 by analysts based in France.
+- **Continuous monitoring**: alerts are handled 24/7 by French-speaking analysts; with the SOC France level, the service is operated entirely in France.
 
 ## Reversibility
 
-The collected data (logs) and the detection rules remain your property. They are returned to you on request, in standard formats.
+Logs, detection rules, custom use cases and the investigation history remain your property. You can request their export at any time, in standard formats; the export is free and carried out within 30 days, after which your environments are securely purged within 7 days.
 
 ## Pricing
 

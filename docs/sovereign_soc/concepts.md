@@ -31,7 +31,7 @@ Le service s'adresse aux DSI et RSSI qui souhaitent externaliser la surveillance
 
 | Avantage                   | Description                                                                                                                                       |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Souveraineté               | Les données collectées sont hébergées en France, et les analystes du SOC sont basés en France.                                                     |
+| Souveraineté               | Les données collectées sont hébergées en France ; avec le niveau SOC France, le service est aussi opéré entièrement en France. |
 | Surveillance continue      | Les alertes sont traitées 24 heures sur 24, 7 jours sur 7, toute l'année.                                                                           |
 | Alertes qualifiées         | La combinaison de l'analyse automatisée et de la validation humaine limite les sollicitations de vos équipes aux incidents confirmés.            |
 | Modèle à l'abonnement      | Le service est souscrit sous forme d'abonnement, sans investissement initial dans une plateforme de détection ni dans une équipe dédiée.           |
@@ -50,14 +50,14 @@ Le service s'adresse aux DSI et RSSI qui souhaitent externaliser la surveillance
 | Ticketing                       | Création automatique d'un ticket pour chaque incident confirmé.                                                                   |
 | Notifications                   | Envoi des alertes qualifiées par e-mail aux contacts que vous avez désignés.                                                      |
 | Portail client                  | Accès aux tickets, aux tableaux de bord, au registre des règles de détection et aux livrables du service.                         |
-| Suivi mensuel                   | Tableau de bord mensuel : revue des tickets, évolution du périmètre surveillé, registre des règles de détection mises en œuvre.    |
+| Reporting et gouvernance        | Tableau de bord mensuel (revue des tickets, évolution du périmètre surveillé, registre des règles de détection) et comité de pilotage trimestriel ; des comités supplémentaires sont proposés en option. |
 
 ## Architecture
 
 ### Flux de données
 
 1. **Collecte** : les journaux sont collectés selon la nature de chaque source, par un agent de transfert (forwarder) installé sur votre infrastructure ou par appel d'API.
-2. **Transport** : les journaux transitent par un tunnel VPN IPsec vers l'enclave de collecte du SOC.
+2. **Transport** : les journaux transitent par un tunnel VPN IPsec ou par une connexion TLS 1.3 jusqu'à l'enclave de collecte du SOC.
 3. **Traitement** : une plateforme de collecte et d'analyse mutualisée applique les règles de détection, complétée par un module d'analyse par IA. Les données de chaque client y sont logiquement cloisonnées.
 4. **Exploitation** : les analystes du SOC traitent les alertes depuis une console de gestion dédiée, puis émettent les tickets d'incidents.
 
@@ -73,18 +73,27 @@ Une procédure de gestion des incidents de sécurité est rédigée avec vous, a
 
 ## Régions et zones de disponibilité
 
-Le service est opéré en France : l'ensemble des données collectées reste sur le territoire national. Les systèmes surveillés peuvent, eux, être hébergés sur le Cloud de confiance, sur un cloud tiers ou on-premise, dès lors que leurs journaux peuvent être acheminés jusqu'à l'enclave de collecte.
+Les données collectées sont hébergées en France ; avec le niveau SOC France, le service est aussi opéré entièrement en France. Les systèmes surveillés peuvent, eux, être hébergés sur le Cloud de confiance, sur un cloud tiers ou on-premise, dès lors que leurs journaux peuvent être acheminés jusqu'à l'enclave de collecte.
 
 ## Caractéristiques techniques
 
 | Paramètre                     | Valeur                                                                                         |
 |-------------------------------|------------------------------------------------------------------------------------------------|
 | Collecte                      | Agent de transfert installé sur votre infrastructure, ou collecte par API                      |
-| Transport                     | Tunnel VPN IPsec ; protocoles de collecte compatibles TLS 1.3                                  |
+| Transport                     | Tunnel VPN IPsec ou TLS 1.3                                                                    |
 | Chiffrement au repos          | AES-256                                                                                        |
-| Conservation des journaux     | 90 jours ; un besoin de conservation spécifique peut être pris en compte sur demande           |
+| Conservation des journaux     | 90 jours en stockage chaud ; extension en stockage froid en option (1 an, ou 7 ans pour les secteurs régulés) |
 | Méthode de détection          | Correspondance de motifs (pattern matching), règles documentées selon MITRE ATT&CK            |
-| Plage de supervision          | 24/7, toute l'année                                                                            |
+| Plage de supervision          | 24/7, toute l'année, par des analystes francophones                                            |
+| Délai de qualification        | Moins d'une heure entre une alerte critique et sa qualification par un analyste ; ce n'est ni un délai d'intervention ni un délai de remédiation |
+
+### Niveaux de service
+
+| Niveau | Description |
+|---|---|
+| SOC Core | Données hébergées en France, qualification des alertes critiques en moins d'une heure, 24/7, comité de pilotage trimestriel. |
+| SOC France | Comme SOC Core, avec des données et une opération du service entièrement en France. |
+| Option Premium | Recherche proactive de menaces (*threat hunting*) en continu et test d'intrusion annuel ; cumulable avec SOC Core ou SOC France. |
 
 ### Règles de détection
 
@@ -106,7 +115,7 @@ On distingue deux types de nouvelles règles :
 1. **Souscription** : le périmètre du service et les options retenues sont définis avec vous ; vous prenez connaissance des prérequis à votre charge.
 2. **Build** : construction du service avec vous, mise en place de la collecte et des règles de détection, définition de l'organisation de gestion des incidents entre vos équipes et le SOC.
 3. **Pré-run** : période d'un mois consacrée à l'ajustement des règles de détection. À son issue, un objectif de taux de faux positifs peut être établi avec vous.
-4. **Run** : surveillance active, notifications et escalades, définition et suivi des plans de remédiation, gouvernance mensuelle, évolution des sources de journaux et des règles de détection.
+4. **Run** : surveillance active, notifications et escalades, définition et suivi des plans de remédiation, tableau de bord mensuel et comité de pilotage trimestriel, évolution des sources de journaux et des règles de détection.
 
 ### Options
 
@@ -130,11 +139,11 @@ Le service et son système d'information mettent en œuvre des mesures de sécur
 - **Cloisonnement** : architecture cloisonnée, isolation logique des données de chaque client.
 - **Maintien en condition de sécurité** des composants techniques du service.
 - **Mesures organisationnelles** : chartes d'usage du système d'information, d'éthique et d'administration, contrôle des antécédents, clause de confidentialité et sensibilisation à la sécurité pour l'ensemble des collaborateurs du SOC.
-- **Supervision continue** : les alertes sont traitées 24/7 par des analystes basés en France.
+- **Supervision continue** : les alertes sont traitées 24/7 par des analystes francophones ; avec le niveau SOC France, le service est opéré entièrement en France.
 
 ## Réversibilité
 
-Les données collectées (journaux) et les règles de détection restent votre propriété. Elles vous sont restituées sur demande, dans des formats standards.
+Les journaux, les règles de détection, les cas d'usage personnalisés et l'historique des investigations restent votre propriété. Vous pouvez en demander l'export à tout moment, dans des formats standards ; l'export est gratuit et réalisé sous 30 jours, puis vos environnements font l'objet d'une purge sécurisée sous 7 jours.
 
 ## Tarification
 

@@ -31,7 +31,7 @@ Der Dienst richtet sich an IT-Leiter (CIO) und Informationssicherheitsbeauftragt
 
 | Vorteil                    | Beschreibung                                                                                                                                      |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Souveränität               | Die erfassten Daten werden in Frankreich gehostet, und die Analysten des SOC sind in Frankreich ansässig.                                          |
+| Souveränität               | Die erfassten Daten werden in Frankreich gehostet; mit der Stufe SOC France wird der Dienst zudem vollständig in Frankreich betrieben. |
 | Kontinuierliche Überwachung | Die Alarme werden 24 Stunden am Tag, 7 Tage die Woche, das ganze Jahr über bearbeitet.                                                            |
 | Qualifizierte Alarme       | Die Kombination aus automatisierter Analyse und menschlicher Validierung beschränkt die Inanspruchnahme Ihrer Teams auf bestätigte Vorfälle.      |
 | Abonnementmodell           | Der Dienst wird im Abonnement bezogen, ohne Anfangsinvestition in eine Erkennungsplattform oder in ein eigenes Team.                                |
@@ -50,14 +50,14 @@ Der Dienst richtet sich an IT-Leiter (CIO) und Informationssicherheitsbeauftragt
 | Ticketing                       | Automatische Erstellung eines Tickets für jeden bestätigten Vorfall.                                                              |
 | Benachrichtigungen              | Versand der qualifizierten Alarme per E-Mail an die von Ihnen benannten Kontakte.                                                 |
 | Kundenportal                    | Zugriff auf die Tickets, die Dashboards, das Register der Erkennungsregeln und die Leistungsergebnisse des Dienstes.               |
-| Monatliche Nachverfolgung       | Monatliches Dashboard: Überprüfung der Tickets, Entwicklung des überwachten Bereichs, Register der umgesetzten Erkennungsregeln.   |
+| Reporting und Governance        | Monatliches Dashboard (Überprüfung der Tickets, Entwicklung des überwachten Umfangs, Register der Erkennungsregeln) und vierteljährlicher Lenkungsausschuss; zusätzliche Ausschüsse sind als Option erhältlich. |
 
 ## Architektur
 
 ### Datenfluss
 
 1. **Erfassung**: Die Protokolle werden je nach Art der jeweiligen Quelle erfasst, über einen auf Ihrer Infrastruktur installierten Weiterleitungsagenten (Forwarder) oder per API-Aufruf.
-2. **Transport**: Die Protokolle werden über einen IPsec-VPN-Tunnel zur Erfassungsenklave des SOC übertragen.
+2. **Transport**: Die Protokolle werden über einen IPsec-VPN-Tunnel oder eine TLS-1.3-Verbindung zur Erfassungsenklave des SOC übertragen.
 3. **Verarbeitung**: Eine gemeinsam genutzte Erfassungs- und Analyseplattform wendet die Erkennungsregeln an, ergänzt durch ein KI-Analysemodul. Die Daten jedes Kunden sind dort logisch abgeschottet.
 4. **Betrieb**: Die Analysten des SOC bearbeiten die Alarme über eine dedizierte Verwaltungskonsole und stellen anschließend die Incident-Tickets aus.
 
@@ -73,18 +73,27 @@ Gemeinsam mit Ihnen wird ein Verfahren zur Behandlung von Sicherheitsvorfällen 
 
 ## Regionen und Verfügbarkeitszonen
 
-Der Dienst wird in Frankreich betrieben: Alle erfassten Daten verbleiben im Inland. Die überwachten Systeme hingegen können in der vertrauenswürdigen Cloud, in einer Drittanbieter-Cloud oder On-Premises gehostet werden, sofern ihre Protokolle zur Erfassungsenklave geleitet werden können.
+Die erfassten Daten werden in Frankreich gehostet; mit der Stufe SOC France wird der Dienst zudem vollständig in Frankreich betrieben. Die überwachten Systeme hingegen können in der vertrauenswürdigen Cloud, in einer Drittanbieter-Cloud oder vor Ort gehostet werden, sofern ihre Protokolle zur Erfassungsenklave geleitet werden können.
 
 ## Technische Spezifikationen
 
 | Parameter                     | Wert                                                                                           |
 |-------------------------------|------------------------------------------------------------------------------------------------|
 | Erfassung                     | Auf Ihrer Infrastruktur installierter Weiterleitungsagent oder Erfassung per API               |
-| Transport                     | IPsec-VPN-Tunnel; TLS 1.3-kompatible Erfassungsprotokolle                                      |
+| Transport                     | IPsec-VPN-Tunnel oder TLS 1.3                                                                  |
 | Verschlüsselung im Ruhezustand | AES-256                                                                                       |
-| Aufbewahrung der Protokolle   | 90 Tage; ein spezifischer Aufbewahrungsbedarf kann auf Anfrage berücksichtigt werden           |
+| Aufbewahrung der Protokolle   | 90 Tage im Hot Storage; optionale Erweiterung im Cold Storage (1 Jahr oder 7 Jahre für regulierte Branchen) |
 | Erkennungsmethode             | Mustervergleich (Pattern Matching), nach MITRE ATT&CK dokumentierte Regeln                     |
-| Überwachungszeitraum          | 24/7, das ganze Jahr über                                                                      |
+| Überwachungszeitraum          | 24/7, das ganze Jahr über, durch französischsprachige Analysten                                |
+| Qualifizierungszeit           | Weniger als eine Stunde zwischen einem kritischen Alarm und seiner Qualifizierung durch einen Analysten; dies ist weder eine Eingriffs- noch eine Behebungszeit |
+
+### Servicestufen
+
+| Stufe | Beschreibung |
+|---|---|
+| SOC Core | Daten in Frankreich gehostet, Qualifizierung kritischer Alarme in weniger als einer Stunde, 24/7, vierteljährlicher Lenkungsausschuss. |
+| SOC France | Wie SOC Core, mit Daten und Betrieb des Dienstes vollständig in Frankreich. |
+| Premium-Option | Kontinuierliche proaktive Bedrohungssuche (*Threat Hunting*) und jährlicher Penetrationstest; mit SOC Core oder SOC France kombinierbar. |
 
 ### Erkennungsregeln
 
@@ -106,7 +115,7 @@ Es werden zwei Arten neuer Regeln unterschieden:
 1. **Bestellung**: Der Umfang des Dienstes und die gewählten Optionen werden mit Ihnen festgelegt; Sie nehmen die von Ihnen zu erfüllenden Voraussetzungen zur Kenntnis.
 2. **Build**: Aufbau des Dienstes gemeinsam mit Ihnen, Einrichtung der Erfassung und der Erkennungsregeln, Festlegung der Organisation des Incident-Managements zwischen Ihren Teams und dem SOC.
 3. **Pre-Run**: einmonatiger Zeitraum zur Feinabstimmung der Erkennungsregeln. Zu dessen Abschluss kann mit Ihnen ein Zielwert für die Fehlalarmquote festgelegt werden.
-4. **Run**: aktive Überwachung, Benachrichtigungen und Eskalationen, Festlegung und Nachverfolgung der Behebungspläne, monatliche Governance, Weiterentwicklung der Protokollquellen und der Erkennungsregeln.
+4. **Run**: aktive Überwachung, Benachrichtigungen und Eskalationen, Festlegung und Nachverfolgung der Behebungspläne, monatliches Dashboard und vierteljährlicher Lenkungsausschuss, Weiterentwicklung der Protokollquellen und Erkennungsregeln.
 
 ### Optionen
 
@@ -130,11 +139,11 @@ Der Dienst und sein Informationssystem setzen technische und organisatorische Si
 - **Abschottung**: abgeschottete Architektur, logische Isolierung der Daten jedes Kunden.
 - **Aufrechterhaltung der Sicherheit** der technischen Komponenten des Dienstes.
 - **Organisatorische Maßnahmen**: Richtlinien zur Nutzung des Informationssystems, zur Ethik und zur Administration, Hintergrundüberprüfungen, Vertraulichkeitsklausel und Sensibilisierung für Sicherheit für alle Mitarbeitenden des SOC.
-- **Kontinuierliche Überwachung**: Die Alarme werden rund um die Uhr (24/7) von in Frankreich ansässigen Analysten bearbeitet.
+- **Kontinuierliche Überwachung**: Die Alarme werden rund um die Uhr (24/7) von französischsprachigen Analysten bearbeitet; mit der Stufe SOC France wird der Dienst vollständig in Frankreich betrieben.
 
 ## Reversibilität
 
-Die erfassten Daten (Protokolle) und die Erkennungsregeln bleiben Ihr Eigentum. Sie werden Ihnen auf Anfrage in Standardformaten zurückgegeben.
+Die Protokolle, die Erkennungsregeln, die kundenspezifischen Anwendungsfälle und der Verlauf der Untersuchungen bleiben Ihr Eigentum. Sie können jederzeit ihren Export in Standardformaten anfordern; der Export ist kostenlos und erfolgt innerhalb von 30 Tagen, danach werden Ihre Umgebungen innerhalb von 7 Tagen sicher bereinigt.
 
 ## Preise
 

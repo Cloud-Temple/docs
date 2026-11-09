@@ -31,7 +31,7 @@ El servicio está dirigido a los directores de sistemas de información (CIO) y 
 
 | Ventaja                    | Descripción                                                                                                                                       |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Soberanía                  | Los datos recopilados están alojados en Francia, y los analistas del SOC están ubicados en Francia.                                                |
+| Soberanía                  | Los datos recopilados se alojan en Francia; con el nivel SOC France, el servicio también se opera íntegramente en Francia. |
 | Vigilancia continua        | Las alertas se tratan las 24 horas del día, los 7 días de la semana, durante todo el año.                                                          |
 | Alertas cualificadas       | La combinación del análisis automatizado y de la validación humana limita las solicitudes a sus equipos a los incidentes confirmados.             |
 | Modelo de suscripción      | El servicio se contrata en forma de suscripción, sin inversión inicial en una plataforma de detección ni en un equipo dedicado.                     |
@@ -50,14 +50,14 @@ El servicio está dirigido a los directores de sistemas de información (CIO) y 
 | Ticketing                       | Creación automática de un ticket para cada incidente confirmado.                                                                  |
 | Notificaciones                  | Envío de las alertas cualificadas por correo electrónico a los contactos que usted haya designado.                                |
 | Portal del cliente              | Acceso a los tickets, a los paneles de control, al registro de las reglas de detección y a los entregables del servicio.          |
-| Seguimiento mensual             | Panel de control mensual: revisión de los tickets, evolución del perímetro supervisado, registro de las reglas de detección implementadas. |
+| Informes y gobernanza           | Panel de control mensual (revisión de los tickets, evolución del perímetro supervisado, registro de las reglas de detección) y comité de pilotaje trimestral; se ofrecen comités adicionales como opción. |
 
 ## Arquitectura
 
 ### Flujo de datos
 
 1. **Recopilación**: los registros se recopilan según la naturaleza de cada fuente, mediante un agente de transferencia (forwarder) instalado en su infraestructura o mediante llamada a la API.
-2. **Transporte**: los registros transitan por un túnel VPN IPsec hacia el enclave de recopilación del SOC.
+2. **Transporte**: los registros transitan por un túnel VPN IPsec o por una conexión TLS 1.3 hasta el enclave de recopilación del SOC.
 3. **Tratamiento**: una plataforma compartida de recopilación y análisis aplica las reglas de detección, complementada por un módulo de análisis mediante IA. Los datos de cada cliente están aislados lógicamente en ella.
 4. **Explotación**: los analistas del SOC tratan las alertas desde una consola de gestión dedicada y, a continuación, emiten los tickets de incidentes.
 
@@ -73,18 +73,27 @@ Se redacta con usted un procedimiento de gestión de incidentes de seguridad, as
 
 ## Regiones y zonas de disponibilidad
 
-El servicio se opera en Francia: todos los datos recopilados permanecen en el territorio nacional. Los sistemas supervisados, por su parte, pueden estar alojados en la nube de confianza, en una nube de terceros u on-premise, siempre que sus registros puedan encaminarse hasta el enclave de recopilación.
+Los datos recopilados se alojan en Francia; con el nivel SOC France, el servicio también se opera íntegramente en Francia. Los sistemas supervisados, por su parte, pueden estar alojados en el Cloud de confianza, en una nube de terceros o en las instalaciones del cliente, siempre que sus registros puedan llegar hasta el enclave de recopilación.
 
 ## Especificaciones técnicas
 
 | Parámetro                     | Valor                                                                                          |
 |-------------------------------|------------------------------------------------------------------------------------------------|
 | Recopilación                  | Agente de transferencia instalado en su infraestructura, o recopilación mediante API           |
-| Transporte                    | Túnel VPN IPsec; protocolos de recopilación compatibles con TLS 1.3                            |
+| Transporte                    | Túnel VPN IPsec o TLS 1.3                                                                      |
 | Cifrado en reposo             | AES-256                                                                                        |
-| Conservación de los registros | 90 días; puede tenerse en cuenta una necesidad de conservación específica bajo petición        |
+| Conservación de los registros | 90 días en almacenamiento en caliente; ampliación opcional en almacenamiento en frío (1 año, o 7 años para los sectores regulados) |
 | Método de detección           | Correspondencia de patrones (pattern matching), reglas documentadas según MITRE ATT&CK         |
-| Horario de supervisión        | 24/7, durante todo el año                                                                      |
+| Horario de supervisión        | 24/7, durante todo el año, por analistas francófonos                                           |
+| Plazo de cualificación        | Menos de una hora entre una alerta crítica y su cualificación por un analista; no es un plazo de intervención ni de remediación |
+
+### Niveles de servicio
+
+| Nivel | Descripción |
+|---|---|
+| SOC Core | Datos alojados en Francia, cualificación de las alertas críticas en menos de una hora, 24/7, comité de pilotaje trimestral. |
+| SOC France | Como SOC Core, con los datos y la operación del servicio íntegramente en Francia. |
+| Opción Premium | Búsqueda proactiva de amenazas (*threat hunting*) continua y prueba de intrusión anual; acumulable con SOC Core o SOC France. |
 
 ### Reglas de detección
 
@@ -106,7 +115,7 @@ Se distinguen dos tipos de nuevas reglas:
 1. **Suscripción**: el perímetro del servicio y las opciones elegidas se definen con usted; usted toma conocimiento de los requisitos previos a su cargo.
 2. **Build**: construcción del servicio con usted, puesta en marcha de la recopilación y de las reglas de detección, definición de la organización de la gestión de incidentes entre sus equipos y el SOC.
 3. **Pre-run**: periodo de un mes dedicado al ajuste de las reglas de detección. Al término del mismo, puede establecerse con usted un objetivo de tasa de falsos positivos.
-4. **Run**: vigilancia activa, notificaciones y escalados, definición y seguimiento de los planes de remediación, gobernanza mensual, evolución de las fuentes de registros y de las reglas de detección.
+4. **Run**: vigilancia activa, notificaciones y escalados, definición y seguimiento de los planes de remediación, panel de control mensual y comité de pilotaje trimestral, evolución de las fuentes de registros y de las reglas de detección.
 
 ### Opciones
 
@@ -130,11 +139,11 @@ El servicio y su sistema de información implementan medidas de seguridad técni
 - **Aislamiento**: arquitectura aislada, aislamiento lógico de los datos de cada cliente.
 - **Mantenimiento en condiciones de seguridad** de los componentes técnicos del servicio.
 - **Medidas organizativas**: cartas de uso del sistema de información, de ética y de administración, verificación de antecedentes, cláusula de confidencialidad y concienciación en materia de seguridad para todos los colaboradores del SOC.
-- **Supervisión continua**: las alertas son tratadas 24/7 por analistas ubicados en Francia.
+- **Supervisión continua**: las alertas son tratadas 24/7 por analistas francófonos; con el nivel SOC France, el servicio se opera íntegramente en Francia.
 
 ## Reversibilidad
 
-Los datos recopilados (registros) y las reglas de detección siguen siendo de su propiedad. Se le restituyen bajo petición, en formatos estándar.
+Los registros, las reglas de detección, los casos de uso personalizados y el historial de las investigaciones siguen siendo de su propiedad. Puede solicitar su exportación en cualquier momento, en formatos estándar; la exportación es gratuita y se realiza en un plazo de 30 días, tras lo cual sus entornos se purgan de forma segura en un plazo de 7 días.
 
 ## Precios
 
