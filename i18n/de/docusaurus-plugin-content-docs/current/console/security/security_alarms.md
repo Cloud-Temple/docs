@@ -5,6 +5,23 @@ title: Sicherheitswarnungen
 Hier finden Sie die Sicherheitswarnungen zu unseren Cloud-Diensten.
 Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu berücksichtigen.
 
+<a id="informationen"></a>
+
+## Legende
+
+- **Datum** : Erstveröffentlichungsdatum der Cloud Temple-Sicherheitswarnung.
+- **Referenz(en)** : CVE-ID, sofern verfügbar.
+- **CVSS** : Basis-CVSS v3-Score, wie vom Hersteller oder CVE gemeldet, nicht kontextualisiert. Die Kontextualisierung wird durch den CT-Schweregrad ausgedrückt. Wenn die Warnung mehrere Schwachstellen betrifft, werden die minimalen und maximalen CVSS-Scores angegeben.
+- **Titel** : Titel der Warnung, ggf. mit Herstellerreferenz.
+- **Beschreibung** : Zusammenfassende Beschreibung mit Link(s) zu detaillierten Informationen.
+- **Dienst(e)** : Potenziell betroffene Cloud Temple-Dienste.
+- **Schweregrad** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren Schwachstellen). Die Ausnutzbarkeitskriterien werden im technischen Kontext unserer Cloud-Infrastrukturen und -Dienste berücksichtigt.
+  - 🔴 **Kritisch** : CVSS 7+-Schwachstelle mit hohem Ausnutzungsrisiko (starke Exposition, einfache Ausnutzbarkeit). Eine zeitnahe Behebung oder Minderung wird dringend empfohlen.
+  - 🟠 **Wichtig** : CVSS 7+-Schwachstelle ohne hohes Ausnutzungsrisiko (begrenzte Exposition oder Ausnutzungsbeschränkungen)
+  - 🟡 **Mittel** : CVSS 4+-Schwachstelle
+  - 🔵 **Gering** : CVSS-Schwachstelle unter 4 oder nicht ausnutzbar.
+- **Bearbeitung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ gibt an, dass eine Benutzeraktion zur Behandlung der Schwachstelle erforderlich ist. ✅ gibt an, dass die Behandlung der Schwachstelle von Cloud Temple übernommen wird.
+
 ## Schwachstellen
 
 | Datum | Referenz(en) | CVSS | Titel | Beschreibung | Dienst(e) | Schweregrad | Behandlung |
@@ -58,22 +75,3 @@ Diese Seite wird täglich aktualisiert, um neu identifizierte Schwachstellen zu 
 | 14/05/2025 | [VMSA-2025-0007](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25683) | 6.1 | **VMSA-2025-0007: Unsichere Dateiverwaltung in VMware Tools (CVE-2025-22247)** | Eine Schwachstelle der unsicheren Dateiverwaltung in VMware Tools wurde gemeldet. Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟡 Mittel | ⚠️ Wir empfehlen, VMware Tools auf Ihren virtuellen Maschinen zu aktualisieren. Die gepatchten VM Tools-Versionen sind in den von Cloud Temple bereitgestellten ESXi-Paketen enthalten. |
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005: Authentifizierungsumgehung in VMware Tools für Windows (CVE-2025-22230)** | Eine Schwachstelle zur Authentifizierungsumgehung in VMware Tools für Windows wurde gemeldet. Patches werden vom Hersteller bereitgestellt. | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen, VMware Tools auf Ihren virtuellen Maschinen zu aktualisieren. Die gepatchten VM Tools-Versionen sind in den von Cloud Temple bereitgestellten ESXi-Paketen enthalten |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004: Mehrere Schwachstellen in VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Mehrere Schwachstellen in VMware ESXi wurden gemeldet: VMCI-Heap-Überlauf (CVE-2025-22224), von VMware als Kritisch eingestuft, Willkürlicher Schreibzugriff in VMware ESXi (CVE-2025-22225), Informationspreisgabe (HGFS) (CVE-2025-22226). Patches werden vom Hersteller bereitgestellt.  | IaaS By VMware | 🟠 Wichtig | ⚠️ Wir empfehlen, Ihre Hypervisoren zu aktualisieren. Die gepatchten ESXi-Versionen sind nach Validierung durch Cloud Temple verfügbar. Die Console zeigt die ESXi-Instanzen an, die ein Update benötigen. |
-
-## Informationen
-
-- **Datum** : Erstveröffentlichungsdatum der Cloud Temple-Sicherheitswarnung.
-- **Referenz(en)** : CVE-ID, sofern verfügbar.
-- **CVSS** : Basis-CVSS v3-Score, wie vom Hersteller oder CVE gemeldet, nicht kontextualisiert. Die Kontextualisierung wird durch den CT-Schweregrad ausgedrückt. Wenn die Warnung mehrere Schwachstellen betrifft, werden die minimalen und maximalen CVSS-Scores angegeben.
-- **Titel** : Titel der Warnung, ggf. mit Herstellerreferenz.
-- **Beschreibung** : Zusammenfassende Beschreibung mit Link(s) zu detaillierten Informationen.
-- **Dienst(e)** : Potenziell betroffene Cloud Temple-Dienste.
-- **Schweregrad** : Schweregrad im Kontext der Cloud Temple-Dienste (für die kritischste Schwachstelle bei mehreren Schwachstellen). Die Ausnutzbarkeitskriterien werden im technischen Kontext unserer Cloud-Infrastrukturen und -Dienste berücksichtigt.
-
-| Schweregrad | Beschreibung |
-|--------|-------------|
-| 🔴 **Kritisch** | CVSS 7+-Schwachstelle mit hohem Ausnutzungsrisiko (starke Exposition, einfache Ausnutzbarkeit). Eine zeitnahe Behebung oder Minderung wird dringend empfohlen.|
-| 🟠 **Wichtig** | CVSS 7+-Schwachstelle ohne hohes Ausnutzungsrisiko (begrenzte Exposition oder Ausnutzungsbeschränkungen) |
-| 🟡 **Mittel** | CVSS 4+-Schwachstelle |
-| 🔵 **Gering** | CVSS-Schwachstelle unter 4 oder nicht ausnutzbar. |
-
-- **Bearbeitung** : Informationen und Empfehlungen im Kontext der Cloud Temple-Dienste. ⚠️ gibt an, dass eine Benutzeraktion zur Behandlung der Schwachstelle erforderlich ist. ✅ gibt an, dass die Behandlung der Schwachstelle von Cloud Temple übernommen wird.

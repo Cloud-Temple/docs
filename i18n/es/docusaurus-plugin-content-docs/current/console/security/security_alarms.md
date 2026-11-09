@@ -5,6 +5,23 @@ title: Alertas de seguridad
 Consulte aquí las alertas de seguridad relacionadas con nuestros servicios en la nube.
 Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades recién identificadas.
 
+<a id="información"></a>
+
+## Leyenda
+
+- **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
+- **Referencia(s)** : ID CVE, según disponibilidad.
+- **CVSS** : Puntuación CVSS v3 base tal como la reporta el editor o el CVE, sin contextualizar. La contextualización se expresa mediante la severidad CT. Si la alerta abarca varias vulnerabilidades, se indican las puntuaciones CVSS mínimas y máximas.
+- **Título** : Título de la alerta, con referencia del editor si está disponible.
+- **Descripción** : Descripción sintética, con enlace(s) a información detallada.
+- **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
+- **Severidad** : Nivel de severidad en el contexto de los servicios de Cloud Temple (para la vulnerabilidad más crítica en caso de vulnerabilidades múltiples). Los criterios de explotación se tienen en cuenta en el contexto técnico de nuestras infraestructuras y servicios en la nube.
+  - 🔴 **Crítico** : Vulnerabilidad CVSS 7+ que presenta un riesgo de explotación importante (alta exposición, facilidad de explotación). Se recomienda encarecidamente una corrección o mitigación en el menor tiempo posible.
+  - 🟠 **Importante** : Vulnerabilidad CVSS 7+ que no presenta un riesgo de explotación importante (exposición limitada o restricciones de explotación)
+  - 🟡 **Moderada** : Vulnerabilidad CVSS 4+
+  - 🔵 **Baja** : Vulnerabilidad CVSS inferior a 4, o no explotable.
+- **Gestión** : Información y recomendaciones en el contexto de los servicios de Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para abordar la vulnerabilidad. ✅ indica que la gestión de la vulnerabilidad está cubierta por Cloud Temple.
+
 ## Vulnerabilidades
 
 | Fecha | Referencia(s) | CVSS | Título | Descripción | Servicio(s) | Gravedad | Tratamiento |
@@ -58,22 +75,3 @@ Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades 
 | 14/05/2025 | [VMSA-2025-0007](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25683) | 6.1 | **VMSA-2025-0007 : Vulnerabilidad de gestión de archivos no segura en VMware Tools (CVE-2025-22247)** | Se ha reportado una vulnerabilidad de gestión de archivos no segura en VMware Tools. El editor proporciona parches. | IaaS By VMware | 🟡 Moderada | ⚠️ Le recomendamos actualizar VMware Tools en sus máquinas virtuales. Las versiones corregidas de VM Tools están incluidas en los paquetes ESXi proporcionados por Cloud Temple. |
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005 : Vulnerabilidad de evasión de autenticación en VMware Tools para Windows (CVE-2025-22230)** | Se ha reportado una vulnerabilidad de evasión de autenticación en VMware Tools para Windows. El editor proporciona parches. | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar VMware Tools en sus máquinas virtuales. Las versiones corregidas de VM Tools están incluidas en los paquetes ESXi proporcionados por Cloud Temple |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004 : Múltiples vulnerabilidades en VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Se han reportado varias vulnerabilidades en VMware ESXi: Vulnerabilidad de desbordamiento de heap VMCI (CVE-2025-22224) evaluada como Crítica por VMware, Vulnerabilidad de escritura arbitraria en VMware ESXi (CVE-2025-22225), Vulnerabilidad de divulgación de información HGFS (CVE-2025-22226). El editor proporciona parches.  | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar sus hipervisores. Las versiones corregidas de ESXi estarán disponibles una vez validadas por Cloud Temple. Console le indica qué ESXi requieren una actualización. |
-
-## Información
-
-- **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
-- **Referencia(s)** : ID CVE, según disponibilidad.
-- **CVSS** : Puntuación CVSS v3 base tal como la reporta el editor o el CVE, sin contextualizar. La contextualización se expresa mediante la severidad CT. Si la alerta abarca varias vulnerabilidades, se indican las puntuaciones CVSS mínimas y máximas.
-- **Título** : Título de la alerta, con referencia del editor si está disponible.
-- **Descripción** : Descripción sintética, con enlace(s) a información detallada.
-- **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
-- **Severidad** : Nivel de severidad en el contexto de los servicios de Cloud Temple (para la vulnerabilidad más crítica en caso de vulnerabilidades múltiples). Los criterios de explotación se tienen en cuenta en el contexto técnico de nuestras infraestructuras y servicios en la nube.
-
-| Nivel | Descripción |
-|--------|-------------|
-| 🔴 **Crítico** | Vulnerabilidad CVSS 7+ que presenta un riesgo de explotación importante (alta exposición, facilidad de explotación). Se recomienda encarecidamente una corrección o mitigación en el menor tiempo posible.|
-| 🟠 **Importante** | Vulnerabilidad CVSS 7+ que no presenta un riesgo de explotación importante (exposición limitada o restricciones de explotación) |
-| 🟡 **Moderada** | Vulnerabilidad CVSS 4+ |
-| 🔵 **Baja** | Vulnerabilidad CVSS inferior a 4, o no explotable. |
-
-- **Gestión** : Información y recomendaciones en el contexto de los servicios de Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para abordar la vulnerabilidad. ✅ indica que la gestión de la vulnerabilidad está cubierta por Cloud Temple.
