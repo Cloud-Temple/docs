@@ -42,6 +42,16 @@ const page = (product: string, slot: keyof typeof LABELS, id: string) => ({
   key: `${product}_${slot}`,
 });
 
+// Rubrique standard qui regroupe des pages complémentaires (catalogue, référence API, concepts
+// avancés) : la rubrique reste au premier niveau du produit, ses pages se rangent dessous.
+const pageWith = (product: string, slot: keyof typeof LABELS, id: string, items) => ({
+  type: 'category' as const,
+  label: LABELS[slot],
+  key: `${product}_${slot}`,
+  link: { type: 'doc' as const, id },
+  items,
+});
+
 const tutorials = (product: string, link, items) => ({
   type: 'category' as const,
   label: LABELS.tutorials,
@@ -174,10 +184,8 @@ const sidebars: SidebarsConfig = {
           link: { type: 'doc', id: 'llmaas/llmaas' },
           items: [
             page('llmaas', 'overview', 'llmaas/llmaas'),
-            page('llmaas', 'concepts', 'llmaas/concepts'),
-            page('llmaas', 'quickstart', 'llmaas/quickstart'),
-            'llmaas/api',
-            'llmaas/models',
+            pageWith('llmaas', 'concepts', 'llmaas/concepts', ['llmaas/models']),
+            pageWith('llmaas', 'quickstart', 'llmaas/quickstart', ['llmaas/api']),
             tutorials('llmaas', { type: 'generated-index', slug: '/category/tutoriels' }, [
               {
                 type: 'doc',
@@ -356,8 +364,7 @@ const sidebars: SidebarsConfig = {
               link: { type: 'doc', id: 'network/internet/internet' },
               items: [
                 page('internet', 'overview', 'network/internet/internet'),
-                page('internet', 'concepts', 'network/internet/concepts'),
-                'network/internet/advanced_concepts',
+                pageWith('internet', 'concepts', 'network/internet/concepts', ['network/internet/advanced_concepts']),
                 page('internet', 'quickstart', 'network/internet/quickstart'),
                 tutorials('internet', { type: 'generated-index', slug: '/network/internet/tutorials' }, [
                   'network/internet/tutorials/forti',
