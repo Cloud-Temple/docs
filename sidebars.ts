@@ -27,6 +27,10 @@ const section = (name: keyof typeof SECTIONS) => ({
 
 // Rubriques standard de chaque produit : Vue d'ensemble, Concepts, Guide de démarrage,
 // Tutoriels, Questions fréquentes. La clé (produit_rubrique) rend chaque libellé traduisible.
+// Un produit n'a pas d'autre entrée de menu : une page complémentaire se range sous la rubrique
+// qui lui correspond (pageWith, tutorials). Seule exception : un sous-produit, qui a lui-même
+// ces cinq rubriques, se range sous son produit parent (décision PO Console du 2026-10-27 :
+// Private Network et Internet sous Private Backbone, Anti-DDoS sous Internet).
 const LABELS = {
   overview: "Vue d'ensemble",
   concepts: 'Concepts',
@@ -569,8 +573,7 @@ const sidebars: SidebarsConfig = {
           link: { type: 'doc', id: 'managed_kubernetes/managed_kubernetes' },
           items: [
             page('managed_kubernetes', 'overview', 'managed_kubernetes/managed_kubernetes'),
-            page('managed_kubernetes', 'concepts', 'managed_kubernetes/concepts'),
-            'managed_core_kubernetes/concepts',
+            pageWith('managed_kubernetes', 'concepts', 'managed_kubernetes/concepts', ['managed_core_kubernetes/concepts']),
             page('managed_kubernetes', 'quickstart', 'managed_kubernetes/quickstart'),
             tutorials('managed_kubernetes', { type: 'generated-index', slug: '/managed_kubernetes/tutorials' }, [
               'managed_kubernetes/tutorials/firstdeploy',

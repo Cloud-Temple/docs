@@ -659,9 +659,9 @@
     "message": "Visión general",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_kubernetes/managed_kubernetes"
   },
-  "sidebar.docSidebar.doc.managed_kubernetes_concepts": {
+  "sidebar.docSidebar.category.managed_kubernetes_concepts": {
     "message": "Conceptos",
-    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc managed_kubernetes/concepts"
+    "description": "The label for category 'Concepts' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.doc.managed_kubernetes_quickstart": {
     "message": "Guía de inicio",
