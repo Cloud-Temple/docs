@@ -2,9 +2,40 @@
 title: Concepts de la Console
 ---
 
-Cette page présente le modèle sur lequel repose la Console : l'organisation, les tenants, les utilisateurs et leurs permissions, et les deux façons d'y accéder. La documentation de référence de ce modèle est le module [IAM](./iam/concepts.md).
+## Présentation
 
-## Organisation et tenants
+La **Console Cloud Temple** est le point d'entrée unique vers l'ensemble du catalogue Cloud Temple : calcul, stockage, réseau, sécurité, conteneurs, IA et services managés. Vous y commandez et gérez vos ressources en libre-service, gérez les identités et les accès, suivez vos opérations et ouvrez vos demandes de support.
+
+Elle est conçue *API-first* : l'interface web s'appuie sur l'API publique, que vous pouvez utiliser directement, avec le provider Terraform ou avec le serveur MCP.
+
+Elle s'adresse aux équipes informatiques qui administrent leur plateforme, aux équipes DevOps qui l'automatisent, aux équipes sécurité et conformité qui contrôlent les accès et la traçabilité, et aux équipes de production qui suivent les opérations.
+
+Le modèle sur lequel repose la Console (organisation, tenants, utilisateurs et permissions) est décrit dans la section Architecture ; sa documentation de référence est le module [IAM](./iam/concepts.md).
+
+## Avantages
+
+| Avantage | Description |
+|---|---|
+| Point d'entrée unique | Toutes vos ressources et tous vos services dans un même portail, avec un seul jeu d'identifiants. |
+| Libre-service | Vous créez, configurez et supprimez vos ressources à tout moment, sans intervention de Cloud Temple. |
+| Automatisation | La plateforme se pilote par API ou avec Terraform, avec des configurations versionnables et intégrables à vos chaînes CI/CD. |
+| Sécurité et traçabilité | Accès filtrés par adresse IP, double facteur, permissions par tenant et journalisation des actions. |
+
+## Fonctionnalités
+
+| Fonctionnalité | Description |
+|---|---|
+| Console web | Tableau de bord, inventaire des ressources, commandes en libre-service, accès à tous les produits souscrits. |
+| Gestion des identités et des accès | Organisation, tenants, utilisateurs et permissions : voir le module [IAM](./iam/concepts.md). |
+| API REST | API documentée au format OpenAPI 3.0, consultable depuis la Console : voir l'[API de la Console](./api.md). |
+| Provider Terraform | Provider `Cloud-Temple/cloudtemple`, publié sur le Terraform Registry : voir le [provider Terraform](../terraform/terraform.md). |
+| Serveur MCP | Connexion d'un client d'IA compatible MCP (*Model Context Protocol*) à votre tenant, pour interroger votre environnement. |
+| Suivi des opérations | [Opérations planifiées et incidents](./status.md), journal des activités. |
+| Support | Création et suivi des demandes de support depuis la Console. |
+
+## Architecture
+
+### Organisation et tenants
 
 Toute la plateforme repose sur deux niveaux.
 
@@ -23,7 +54,7 @@ Le découpage en tenants vous appartient : par environnement (production, recett
 
 Les ressources d'un tenant sont déployées dans des [régions et zones de disponibilité](../additional_content/concepts_regional.md).
 
-## Utilisateurs et permissions
+### Utilisateurs et permissions
 
 Les **identifiants** d'un utilisateur sont globaux à l'organisation. Ses **permissions**, elles, se définissent tenant par tenant : un compte peut être autorisé à commander des ressources dans un tenant, mais pas dans un autre.
 
@@ -34,7 +65,36 @@ Deux rôles sont à distinguer :
 
 Une même personne peut tenir les deux rôles. Les règles complètes sont dans [Affectation des permissions dans un tenant](./iam/concepts.md#affectation-des-permissions-dans-un-tenant) et la [liste des permissions](./iam/concepts.md#permissions).
 
-## Accéder à la Console
+### L'interface et l'API
+
+Tout ce que vous faites dans la Console est aussi possible par son [API](./api.md). Elle s'authentifie par une **clé d'API** (*Personal Access Token*), liée à un tenant et à l'utilisateur qui l'a créée. Le [provider Terraform](../terraform/terraform.md), qui pilote votre plateforme *as code*, s'authentifie lui aussi avec des identifiants d'API générés depuis la Console.
+
+## Régions et zones de disponibilité
+
+La Console et l'API sont hébergées en France. Elles pilotent les ressources de vos tenants, déployées dans les régions et zones de disponibilité propres à chaque produit.
+
+## Caractéristiques techniques
+
+### Interface
+
+La Console est disponible en français, anglais, allemand, espagnol et italien.
+
+### API et provider Terraform
+
+- L'API suit le format OpenAPI 3.0 ; sa documentation interactive est accessible depuis la Console. Chaque requête d'écriture génère une [activité](./api.md) qui permet d'en suivre l'état.
+- Le provider Terraform est compatible avec Terraform 1.0 et versions ultérieures, ainsi qu'avec OpenTofu.
+
+### Serveur MCP
+
+Le serveur MCP s'appuie sur l'API publique et en reprend les contrôles : authentification par jeton d'accès personnel, permissions, filtrage par adresse IP et journalisation des actions. Un client d'IA n'agit que dans la limite des permissions du jeton utilisé.
+
+### Limites
+
+- Les limites de débit de l'API sont définies par produit ; au-delà, l'API répond par une erreur HTTP 429 : voir l'[API de la Console](./api.md).
+
+## Sécurité et conformité
+
+### Accéder à la Console
 
 L'accès à la Console est protégé à deux niveaux :
 
@@ -43,6 +103,22 @@ L'accès à la Console est protégé à deux niveaux :
 
 La procédure est décrite dans [Vous connecter et sécuriser vos accès](./onboarding.md#étape-2-vous-connecter-et-sécuriser-vos-accès).
 
-## L'interface et l'API
+### Traçabilité
 
-Tout ce que vous faites dans la Console est aussi possible par son [API](./api.md). Elle s'authentifie par une **clé d'API** (*Personal Access Token*), liée à un tenant et à l'utilisateur qui l'a créée. Le [provider Terraform](../terraform/terraform.md), qui pilote votre plateforme *as code*, s'authentifie lui aussi avec des identifiants d'API générés depuis la Console.
+Les opérations sont journalisées : identité de l'initiateur, date, type d'opération et état. La Console étant hébergée sur une infrastructure qualifiée SecNumCloud, ses événements sont conservés au minimum 6 mois.
+
+### Certifications
+
+La Console est certifiée HDS et ISO 27001, et incluse dans les services qualifiés SecNumCloud et conformes C5.
+
+## Réversibilité
+
+La Console et l'API ne stockent pas vos données applicatives : elles conservent les métadonnées de configuration et les journaux.
+
+- **Configurations Terraform** : vos fichiers de configuration et votre fichier d'état (*state*) vous appartiennent.
+- **Journaux d'activité** : exportables par l'API de la Console.
+
+## Tarification
+
+La Console, l'API, le serveur MCP et le provider Terraform sont inclus sans surcoût dans toute souscription Cloud Temple. Les ressources que vous commandez sont facturées selon le tarif de chaque produit. Voir la page produit du site Cloud Temple :
+[Console – API – Provider Terraform](https://www.cloud-temple.com/produits/console-api-provider-terraform/).
