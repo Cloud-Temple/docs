@@ -295,13 +295,13 @@
     "message": "Panoramica",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc llmaas/llmaas"
   },
-  "sidebar.docSidebar.doc.llmaas_concepts": {
+  "sidebar.docSidebar.category.llmaas_concepts": {
     "message": "Concetti",
-    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc llmaas/concepts"
+    "description": "The label for category 'Concepts' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.doc.llmaas_quickstart": {
+  "sidebar.docSidebar.category.llmaas_quickstart": {
     "message": "Guida introduttiva",
-    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc llmaas/quickstart"
+    "description": "The label for category 'Guide de démarrage' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.doc.Intégrations & Frameworks": {
     "message": "Integrazioni e framework",
@@ -487,9 +487,9 @@
     "message": "Panoramica",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/internet/internet"
   },
-  "sidebar.docSidebar.doc.internet_concepts": {
+  "sidebar.docSidebar.category.internet_concepts": {
     "message": "Concetti",
-    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/internet/concepts"
+    "description": "The label for category 'Concepts' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.doc.internet_quickstart": {
     "message": "Guida introduttiva",
@@ -659,9 +659,9 @@
     "message": "Panoramica",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_kubernetes/managed_kubernetes"
   },
-  "sidebar.docSidebar.doc.managed_kubernetes_concepts": {
+  "sidebar.docSidebar.category.managed_kubernetes_concepts": {
     "message": "Concetti",
-    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc managed_kubernetes/concepts"
+    "description": "The label for category 'Concepts' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.doc.managed_kubernetes_quickstart": {
     "message": "Guida introduttiva",
