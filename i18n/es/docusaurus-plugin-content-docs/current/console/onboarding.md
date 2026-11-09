@@ -291,6 +291,8 @@ Visión general: [nuestros productos en cloud-temple.com](https://www.cloud-temp
 4. Una vez validado, el producto aparece en su consola
 5. Puede activarlo en uno o varios tenants
 
+Los servicios gestionados que no se controlan desde la Consola (Kubernetes gestionado, bases de datos gestionadas, AIOps) no aparecen en ella: los ponen en servicio los equipos de Cloud Temple.
+
 <img src={supportSelectProduct} />
 
 #### Cambiar de nivel de soporte

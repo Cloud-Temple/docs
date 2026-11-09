@@ -13,7 +13,7 @@ import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## Introduzione
 
-L'API Cloud Temple consente di creare e gestire l'intero insieme delle proprie risorse cloud in modo programmatico. Tutto ciò che è possibile fare tramite la console Cloud Temple può essere realizzato anche tramite l'API, dalla creazione di macchine virtuali alla configurazione della gestione delle identità e degli accessi.
+L'API Cloud Temple consente di creare e gestire in modo programmatico le risorse dei prodotti integrati nella Console. Tutto ciò che è possibile fare tramite la console Cloud Temple può essere realizzato anche tramite l'API, dalla creazione di macchine virtuali alla configurazione della gestione delle identità e degli accessi.
 
 Questa documentazione guida l'utilizzo dell'API Cloud Temple, dall'autenticazione alle best practice, passando per la gestione del ciclo di vita degli endpoint.
 

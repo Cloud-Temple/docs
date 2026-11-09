@@ -291,6 +291,8 @@ Il prodotto che desiderate non compare nella vostra console? Non è ancora prese
 4. Una volta convalidato, il prodotto compare nella vostra console
 5. Potete attivarlo su uno o più tenant
 
+I servizi gestiti che non si gestiscono dalla Console (Kubernetes gestito, database gestiti, AIOps) non vi compaiono: vengono messi in servizio dai team di Cloud Temple.
+
 <img src={supportSelectProduct} />
 
 #### Cambiare livello di supporto

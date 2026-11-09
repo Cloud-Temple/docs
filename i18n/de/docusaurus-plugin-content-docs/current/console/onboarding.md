@@ -291,6 +291,8 @@ Das Produkt, das Sie wünschen, erscheint nicht in Ihrer Konsole? Es befindet si
 4. Sobald es genehmigt wurde, erscheint das Produkt in Ihrer Konsole
 5. Sie können es auf einem oder mehreren Tenants aktivieren
 
+Managed Services, die nicht über die Konsole gesteuert werden (Managed Kubernetes, Managed-Datenbanken, AIOps), erscheinen dort nicht: Sie werden von den Teams von Cloud Temple in Betrieb genommen.
+
 <img src={supportSelectProduct} />
 
 #### Supportstufe ändern

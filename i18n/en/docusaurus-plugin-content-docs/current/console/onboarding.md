@@ -291,6 +291,8 @@ The product you want doesn't appear in your Console? It's not yet in your catalo
 4. Once approved, the product appears in your Console
 5. You can enable it on one or more tenants
 
+Managed services that are not driven from the Console (managed Kubernetes, managed databases, AIOps) do not appear in it: they are set up by Cloud Temple teams.
+
 <img src={supportSelectProduct} />
 
 #### Change support level

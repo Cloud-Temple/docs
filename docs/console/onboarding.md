@@ -291,6 +291,8 @@ Le produit que vous voulez n'apparaît pas dans votre Console ? Il n'est pas enc
 4. Une fois validé, le produit apparaît dans votre Console
 5. Vous pouvez l'activer sur un ou plusieurs tenants
 
+Les services managés qui ne se pilotent pas depuis la Console (Kubernetes managé, bases de données managées, AIOps) n'y apparaissent pas : ils sont mis en service par les équipes Cloud Temple.
+
 <img src={supportSelectProduct} />
 
 #### Changer de niveau de support
