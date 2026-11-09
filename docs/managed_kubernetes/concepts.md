@@ -6,6 +6,12 @@ import grafana from '@site/docs/managed_kubernetes/images/grafana.png'
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
+:::info[Service managé, hors Console]
+
+Managed Kubernetes se souscrit auprès des équipes Cloud Temple. Il ne se commande pas depuis la Console Cloud Temple, qui ne propose pour ce service ni vue ni API.
+
+:::
+
 <a id="nos-offres-managed-kubernetes"></a>
 
 ## Présentation
