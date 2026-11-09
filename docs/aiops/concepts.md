@@ -51,7 +51,7 @@ La tour de contrôle corrèle ces signaux, enrichit les tickets (catégorisation
 
 ### Modes de déploiement
 
-- **Stackless** (par défaut) : aucune brique ajoutée dans votre système d'information. AIOps s'appuie sur la collecte existante et fournit analyses, recommandations et suggestions ; l'exécution des actions reste à vos équipes.
+- **Stackless** (par défaut) : aucune brique intrusive ajoutée dans votre système d'information. AIOps s'appuie sur la collecte existante et fournit analyses, recommandations et suggestions ; l'exécution des actions reste à vos équipes.
 - **Stackfull** : des agents d'IA déployés dans votre système d'information exécutent des scénarios de remédiation prédéfinis, sous la gouvernance de vos processus ITSM.
 
 ### Intégrations
@@ -85,7 +85,7 @@ Les données sont hébergées en France, dans les datacenters de Cloud Temple, e
 
 ## Réversibilité
 
-Les modalités d'export et d'effacement de vos données sont définies avec les experts Cloud Temple lors de la souscription.
+Pour connaître les modalités d'export et d'effacement de vos données, consultez les experts Cloud Temple.
 
 ## Tarification
 

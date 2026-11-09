@@ -4,7 +4,7 @@ title: Concepts
 
 :::info[Managed service, outside the Console]
 
-AIOps is subscribed through Cloud Temple experts, who study with you its integration into your environment and the suitable deployment mode. It is not ordered from the Cloud Temple Console and has neither a view nor an API there.
+To subscribe to AIOps, contact Cloud Temple experts, who will assess how it can integrate into your environment and which deployment mode suits you. It is not ordered from the Cloud Temple Console and has neither a view nor an API there.
 
 :::
 
@@ -51,7 +51,7 @@ The control tower correlates these signals, enriches tickets (categorization, gr
 
 ### Deployment modes
 
-- **Stackless** (default): no component added to your information system. AIOps relies on the existing collection and provides analyses, recommendations and suggestions; the execution of actions remains with your teams.
+- **Stackless** (default): no intrusive component added to your information system. AIOps relies on the existing collection and provides analyses, recommendations and suggestions; the execution of actions remains with your teams.
 - **Stackfull**: AI agents deployed in your information system execute predefined remediation scenarios, under the governance of your ITSM processes.
 
 ### Integrations
@@ -85,8 +85,8 @@ Data is hosted in France, in Cloud Temple datacenters, and isolated per customer
 
 ## Reversibility
 
-The terms for exporting and deleting your data are defined with Cloud Temple experts at subscription time.
+To find out how your data can be exported and deleted, contact Cloud Temple experts.
 
 ## Pricing
 
-AIOps is subscribed on the basis of a study, with Cloud Temple experts: [contact us](https://www.cloud-temple.com/contactez-nous/). See also the [AIOps page on the Cloud Temple website](https://www.cloud-temple.com/produits/ai-ops/).
+To subscribe to AIOps, Cloud Temple experts first assess your needs: [contact us](https://www.cloud-temple.com/contactez-nous/). See also the [AIOps page on the Cloud Temple website](https://www.cloud-temple.com/produits/ai-ops/).

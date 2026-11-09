@@ -51,7 +51,7 @@ Der Kontrollturm korreliert diese Signale, reichert die Tickets an (Kategorisier
 
 ### Bereitstellungsmodi
 
-- **Stackless** (Standard): Keine Komponente wird Ihrem Informationssystem hinzugefügt. AIOps stützt sich auf die vorhandene Erfassung und liefert Analysen, Empfehlungen und Vorschläge; die Ausführung der Aktionen bleibt bei Ihren Teams.
+- **Stackless** (Standard): Keine invasive Komponente wird Ihrem Informationssystem hinzugefügt. AIOps stützt sich auf die vorhandene Erfassung und liefert Analysen, Empfehlungen und Vorschläge; die Ausführung der Aktionen bleibt bei Ihren Teams.
 - **Stackfull**: In Ihrem Informationssystem bereitgestellte KI-Agenten führen vordefinierte Behebungsszenarien aus, unter der Steuerung Ihrer ITSM-Prozesse.
 
 ### Integrationen
@@ -85,7 +85,7 @@ Die Daten werden in Frankreich in den Rechenzentren von Cloud Temple gehostet un
 
 ## Reversibilität
 
-Die Modalitäten für den Export und die Löschung Ihrer Daten werden bei der Buchung mit den Experten von Cloud Temple festgelegt.
+Wenden Sie sich an die Experten von Cloud Temple, um die Modalitäten für den Export und die Löschung Ihrer Daten zu erfahren.
 
 ## Preise
 

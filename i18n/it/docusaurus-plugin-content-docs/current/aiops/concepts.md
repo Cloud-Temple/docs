@@ -51,7 +51,7 @@ La torre di controllo correla questi segnali, arricchisce i ticket (categorizzaz
 
 ### Modalità di distribuzione
 
-- **Stackless** (predefinita): nessun componente aggiunto al vostro sistema informativo. AIOps si basa sulla raccolta esistente e fornisce analisi, raccomandazioni e suggerimenti; l'esecuzione delle azioni resta ai vostri team.
+- **Stackless** (predefinita): nessun componente invasivo aggiunto al vostro sistema informativo. AIOps si basa sulla raccolta esistente e fornisce analisi, raccomandazioni e suggerimenti; l'esecuzione delle azioni resta ai vostri team.
 - **Stackfull**: agenti di IA distribuiti nel vostro sistema informativo eseguono scenari di rimedio predefiniti, sotto la governance dei vostri processi ITSM.
 
 ### Integrazioni
@@ -85,7 +85,7 @@ I dati sono ospitati in Francia, nei datacenter di Cloud Temple, e isolati per c
 
 ## Reversibilità
 
-Le modalità di esportazione e di cancellazione dei vostri dati vengono definite con gli esperti di Cloud Temple al momento della sottoscrizione.
+Per conoscere le modalità di esportazione e di cancellazione dei vostri dati, consultate gli esperti di Cloud Temple.
 
 ## Prezzi
 

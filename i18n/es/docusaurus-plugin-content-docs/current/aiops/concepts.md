@@ -51,7 +51,7 @@ La torre de control correlaciona estas señales, enriquece los tickets (categori
 
 ### Modos de despliegue
 
-- **Stackless** (por defecto): no se añade ningún componente a su sistema de información. AIOps se apoya en la recopilación existente y proporciona análisis, recomendaciones y sugerencias; la ejecución de las acciones corresponde a sus equipos.
+- **Stackless** (por defecto): no se añade ningún componente intrusivo a su sistema de información. AIOps se apoya en la recopilación existente y proporciona análisis, recomendaciones y sugerencias; la ejecución de las acciones corresponde a sus equipos.
 - **Stackfull**: agentes de IA desplegados en su sistema de información ejecutan escenarios de remediación predefinidos, bajo la gobernanza de sus procesos ITSM.
 
 ### Integraciones
@@ -85,7 +85,7 @@ Los datos se alojan en Francia, en los centros de datos de Cloud Temple, y se a�
 
 ## Reversibilidad
 
-Las modalidades de exportación y de borrado de sus datos se definen con los expertos de Cloud Temple en el momento de la contratación.
+Para conocer las modalidades de exportación y de borrado de sus datos, consulte a los expertos de Cloud Temple.
 
 ## Precios
 
