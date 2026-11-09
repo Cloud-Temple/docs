@@ -470,18 +470,6 @@ const sidebars: SidebarsConfig = {
             page('bastion', 'faq', 'bastion/faq'),
           ],
         },
-        {
-          type: 'category',
-          label: 'Sovereign SOC',
-          link: { type: 'doc', id: 'sovereign_soc/sovereign_soc' },
-          items: [
-            page('sovereign_soc', 'overview', 'sovereign_soc/sovereign_soc'),
-            page('sovereign_soc', 'concepts', 'sovereign_soc/concepts'),
-            page('sovereign_soc', 'quickstart', 'sovereign_soc/quickstart'),
-            page('sovereign_soc', 'tutorials', 'sovereign_soc/tutorials'),
-            page('sovereign_soc', 'faq', 'sovereign_soc/faq'),
-          ],
-        },
       ],
     },
     {
@@ -628,6 +616,19 @@ const sidebars: SidebarsConfig = {
             page('managed_postgresql', 'faq', 'managed_postgresql/faq'),
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Sovereign SOC',
+      className: 'sidebar-cat-soc',
+      link: { type: 'doc', id: 'sovereign_soc/sovereign_soc' },
+      items: [
+        page('sovereign_soc', 'overview', 'sovereign_soc/sovereign_soc'),
+        page('sovereign_soc', 'concepts', 'sovereign_soc/concepts'),
+        page('sovereign_soc', 'quickstart', 'sovereign_soc/quickstart'),
+        page('sovereign_soc', 'tutorials', 'sovereign_soc/tutorials'),
+        page('sovereign_soc', 'faq', 'sovereign_soc/faq'),
       ],
     },
 
