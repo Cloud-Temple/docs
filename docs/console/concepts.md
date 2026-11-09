@@ -4,7 +4,7 @@ title: Concepts de la Console
 
 ## Présentation
 
-La **Console Cloud Temple** est le point d'entrée unique vers l'ensemble du catalogue Cloud Temple : calcul, stockage, réseau, sécurité, conteneurs, IA et services managés. Vous y commandez et gérez vos ressources en libre-service, gérez les identités et les accès, suivez vos opérations et ouvrez vos demandes de support.
+La **Console Cloud Temple** est le point d'entrée vers les produits Cloud Temple qu'elle intègre : calcul, stockage, réseau, sécurité, IA et autres. Certains services managés (Kubernetes managé, bases de données managées, AIOps) se souscrivent auprès des équipes Cloud Temple et ne se pilotent pas depuis la Console. Vous y commandez et gérez vos ressources en libre-service, gérez les identités et les accès, suivez vos opérations et ouvrez vos demandes de support.
 
 Elle est conçue *API-first* : l'interface web s'appuie sur l'API publique, que vous pouvez utiliser directement, avec le provider Terraform ou avec le serveur MCP.
 
@@ -16,7 +16,7 @@ Le modèle sur lequel repose la Console (organisation, tenants, utilisateurs et 
 
 | Avantage | Description |
 |---|---|
-| Point d'entrée unique | Toutes vos ressources et tous vos services dans un même portail, avec un seul jeu d'identifiants. |
+| Point d'entrée unique | Les ressources des produits intégrés à la Console dans un même portail, avec un seul jeu d'identifiants. |
 | Libre-service | Vous créez, configurez et supprimez vos ressources à tout moment, sans intervention de Cloud Temple. |
 | Automatisation | La plateforme se pilote par API ou avec Terraform, avec des configurations versionnables et intégrables à vos chaînes CI/CD. |
 | Sécurité et traçabilité | Accès filtrés par adresse IP, double facteur, permissions par tenant et journalisation des actions. |
@@ -25,7 +25,7 @@ Le modèle sur lequel repose la Console (organisation, tenants, utilisateurs et 
 
 | Fonctionnalité | Description |
 |---|---|
-| Console web | Tableau de bord, inventaire des ressources, commandes en libre-service, accès à tous les produits souscrits. |
+| Console web | Tableau de bord, inventaire des ressources, commandes en libre-service, accès aux produits souscrits intégrés à la Console. |
 | Gestion des identités et des accès | Organisation, tenants, utilisateurs et permissions : voir le module [IAM](./iam/concepts.md). |
 | API REST | API documentée au format OpenAPI 3.0, consultable depuis la Console : voir l'[API de la Console](./api.md). |
 | Provider Terraform | Provider `Cloud-Temple/cloudtemple`, publié sur le Terraform Registry : voir le [provider Terraform](../terraform/terraform.md). |

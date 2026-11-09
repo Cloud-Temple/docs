@@ -5,6 +5,12 @@ sidebar_label: Conceptos (Core)
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
+:::info[Servicio gestionado, fuera de la Consola]
+
+Managed Core Kubernetes se contrata a través de los equipos de Cloud Temple. El servicio no se pide desde la Consola Cloud Temple, que no ofrece para él ni vista ni API.
+
+:::
+
 ## Presentación
 
 Managed Core Kubernetes es una base de orquestación de contenedores gestionada, basada en estándares de código abierto validados por la CNCF. Cada clúster se despliega en un entorno dedicado al cliente, en una única zona de disponibilidad o en tres. La base proporciona los cimientos de Kubernetes (SO, red, balanceador de carga, almacenamiento distribuido) y le deja libertad para construir su plataforma con sus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.

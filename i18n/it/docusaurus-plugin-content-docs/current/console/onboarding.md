@@ -237,11 +237,11 @@ Le vostre esigenze cambiano. Ecco come far evolvere il perimetro di un ambiente 
 
 ### Attivare un prodotto
 
-Se il prodotto fa parte del vostro catalogo, compare nella console: **attivatelo in completa autonomia** sul tenant interessato. Contate qualche minuto prima che sia utilizzabile.
+Se il prodotto fa parte del vostro catalogo ed è integrato nella console, vi compare: **attivatelo in completa autonomia** sul tenant interessato. Contate qualche minuto prima che sia utilizzabile.
 
 Dall'elenco dei vostri tenant, l'azione **« Modifica i prodotti »** apre il catalogo. Selezionate quelli che volete aprire, deselezionate quelli che volete fermare, quindi **Salva**.
 
-Se non compare, significa che non è ancora presente nel vostro catalogo: vedere [Richiedere un prodotto aggiuntivo](#demander-un-produit-supplémentaire).
+Se non compare, significa che non è ancora presente nel vostro catalogo, oppure che si tratta di un servizio gestito fuori dalla Console: vedere [Richiedere un prodotto aggiuntivo](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
@@ -283,7 +283,10 @@ Panoramica: [i nostri prodotti su cloud-temple.com](https://www.cloud-temple.com
 
 ### Richiedere un prodotto aggiuntivo {/* #demander-un-produit-supplémentaire */}
 
-Il prodotto che desiderate non compare nella vostra console? Non è ancora presente nel vostro catalogo.
+Il prodotto che desiderate non compare nella vostra console? Ci sono due casi:
+
+- **Servizio gestito fuori dalla Console** (Kubernetes gestito, database gestiti, AIOps): non comparirà nella console. Richiedetelo al vostro interlocutore commerciale; i team di Cloud Temple lo mettono in servizio.
+- **Altro prodotto**: non è ancora presente nel vostro catalogo. Seguite questi passaggi:
 
 1. Dalla console, create una **richiesta di supporto**
 2. Indicate il **prodotto** interessato e il volume previsto, se lo conoscete

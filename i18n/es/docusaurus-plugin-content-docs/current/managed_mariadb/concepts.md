@@ -7,6 +7,12 @@ sidebar_position: 1
 
 Esta sección presenta los conceptos fundamentales de nuestro servicio **MariaDB Administrado**. Comprender estos principios le ayudará a aprovechar al máximo su base de datos administrada, alineando sus capacidades con sus necesidades de aplicaciones y sus requisitos de seguridad.
 
+:::info[Servicio gestionado, fuera de la Consola]
+
+MariaDB gestionado se contrata a través de los equipos de Cloud Temple. El servicio no se pide desde la Consola Cloud Temple, que no ofrece para él ni vista ni API.
+
+:::
+
 ## Soberanía y Cumplimiento SecNumCloud
 
 En el corazón de nuestro producto se encuentra la **soberanía digital**. El servicio MariaDB Administrado está alojado completamente en la infraestructura Cloud Temple, certificada **SecNumCloud 3.2** por el ANSSI.

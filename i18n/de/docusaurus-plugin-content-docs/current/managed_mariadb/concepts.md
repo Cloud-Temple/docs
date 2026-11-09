@@ -7,6 +7,12 @@ sidebar_position: 1
 
 Dieser Abschnitt stellt die grundlegenden Konzepte unseres **MariaDB Managed**-Dienstes vor. Das Verständnis dieser Prinzipien hilft Ihnen, das Beste aus Ihrer verwalteten Datenbank herauszuholen, indem Sie deren Fähigkeiten mit Ihren Anwendungsanforderungen und Sicherheitsanforderungen in Einklang bringen.
 
+:::info[Managed Service, außerhalb der Konsole]
+
+Managed MariaDB wird über die Teams von Cloud Temple gebucht. Der Dienst kann nicht über die Cloud-Temple-Konsole bestellt werden, die dafür weder eine Ansicht noch eine API bietet.
+
+:::
+
 ## Souveränität und SecNumCloud-Konformität
 
 Im Kern unseres Produkts steht die **digitale Souveränität**. Der MariaDB Managed Service wird vollständig auf der Cloud-Temple-Infrastruktur gehostet, die von der ANSSI als **SecNumCloud 3.2** qualifiziert ist.

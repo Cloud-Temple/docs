@@ -5,6 +5,12 @@ sidebar_label: Konzepte (Core)
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 
+:::info[Managed Service, außerhalb der Konsole]
+
+Managed Core Kubernetes wird über die Teams von Cloud Temple gebucht. Der Dienst kann nicht über die Cloud-Temple-Konsole bestellt werden, die dafür weder eine Ansicht noch eine API bietet.
+
+:::
+
 ## Einführung
 
 Managed Core Kubernetes ist eine verwaltete Basis für die Container-Orchestrierung, die auf von der CNCF validierten Open-Source-Standards beruht. Jeder Cluster wird in einer dem Kunden dedizierten Umgebung bereitgestellt, auf einer einzigen Verfügbarkeitszone oder auf drei. Die Basis stellt die Grundlagen von Kubernetes bereit (OS, Netzwerk, Load Balancer, verteilter Speicher) und lässt Ihnen die Freiheit, Ihre Plattform mit Ihren eigenen Tools für kontinuierliche Bereitstellung, Observability, Sicherung oder Sicherheit aufzubauen.

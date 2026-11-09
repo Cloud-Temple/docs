@@ -4,7 +4,7 @@ title: Conceptos de la Console
 
 ## Presentación
 
-La **Consola Cloud Temple** es el punto de entrada único a todo el catálogo de Cloud Temple: cálculo, almacenamiento, red, seguridad, contenedores, IA y servicios gestionados. En ella se piden y gestionan los recursos en autoservicio, se gestionan las identidades y los accesos, se siguen las operaciones y se abren las solicitudes de soporte.
+La **Consola Cloud Temple** es el punto de entrada a los productos de Cloud Temple que integra: cálculo, almacenamiento, red, seguridad, IA y otros. Algunos servicios gestionados (Kubernetes gestionado, bases de datos gestionadas, AIOps) se contratan a través de los equipos de Cloud Temple y no se controlan desde la Consola. En ella se piden y gestionan los recursos en autoservicio, se gestionan las identidades y los accesos, se siguen las operaciones y se abren las solicitudes de soporte.
 
 Está diseñada *API-first*: la interfaz web se apoya en la API pública, que puede utilizar directamente, con el proveedor Terraform o con el servidor MCP.
 
@@ -16,7 +16,7 @@ El modelo en el que se basa la Consola (organización, tenants, usuarios y permi
 
 | Ventaja | Descripción |
 |---|---|
-| Punto de entrada único | Todos sus recursos y servicios en un mismo portal, con un único juego de credenciales. |
+| Punto de entrada único | Los recursos de los productos integrados en la Consola en un mismo portal, con un único juego de credenciales. |
 | Autoservicio | Crea, configura y elimina sus recursos en cualquier momento, sin intervención de Cloud Temple. |
 | Automatización | La plataforma se controla por API o con Terraform, con configuraciones versionables e integrables en sus cadenas CI/CD. |
 | Seguridad y trazabilidad | Accesos filtrados por dirección IP, doble factor, permisos por tenant y registro de las acciones. |
@@ -25,7 +25,7 @@ El modelo en el que se basa la Consola (organización, tenants, usuarios y permi
 
 | Funcionalidad | Descripción |
 |---|---|
-| Consola web | Panel de control, inventario de recursos, pedidos en autoservicio, acceso a todos los productos contratados. |
+| Consola web | Panel de control, inventario de recursos, pedidos en autoservicio, acceso a los productos contratados integrados en la Consola. |
 | Gestión de identidades y accesos | Organización, tenants, usuarios y permisos: consulte el módulo [IAM](./iam/concepts.md). |
 | API REST | API documentada en formato OpenAPI 3.0, consultable desde la Consola: consulte la [API de la Consola](./api.md). |
 | Proveedor Terraform | Proveedor `Cloud-Temple/cloudtemple`, publicado en el Terraform Registry: consulte el [proveedor Terraform](../terraform/terraform.md). |

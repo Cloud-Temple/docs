@@ -4,7 +4,7 @@ title: Console concepts
 
 ## Introduction
 
-The **Cloud Temple Console** is the single entry point to the entire Cloud Temple catalog: compute, storage, network, security, containers, AI and managed services. You use it to order and manage your resources in self-service, manage identities and access, track your operations and open your support requests.
+The **Cloud Temple Console** is the entry point to the Cloud Temple products it integrates: compute, storage, network, security, AI and more. Some managed services (managed Kubernetes, managed databases, AIOps) are subscribed through Cloud Temple teams and are not driven from the Console. You use it to order and manage your resources in self-service, manage identities and access, track your operations and open your support requests.
 
 It is designed *API-first*: the web interface relies on the public API, which you can use directly, with the Terraform provider or with the MCP server.
 
@@ -16,7 +16,7 @@ The model on which the Console is based (organization, tenants, users and permis
 
 | Benefit | Description |
 |---|---|
-| Single entry point | All your resources and services in one portal, with a single set of credentials. |
+| Single entry point | The resources of the products integrated into the Console in one portal, with a single set of credentials. |
 | Self-service | You create, configure and delete your resources at any time, without intervention from Cloud Temple. |
 | Automation | The platform can be driven by API or with Terraform, with versionable configurations that fit into your CI/CD pipelines. |
 | Security and traceability | Access filtered by IP address, two-factor authentication, permissions per tenant and logging of actions. |
@@ -25,7 +25,7 @@ The model on which the Console is based (organization, tenants, users and permis
 
 | Feature | Description |
 |---|---|
-| Web console | Dashboard, resource inventory, self-service orders, access to all subscribed products. |
+| Web console | Dashboard, resource inventory, self-service orders, access to the subscribed products integrated into the Console. |
 | Identity and access management | Organization, tenants, users and permissions: see the [IAM](./iam/concepts.md) module. |
 | REST API | API documented in OpenAPI 3.0 format, available from the Console: see the [Console API](./api.md). |
 | Terraform provider | `Cloud-Temple/cloudtemple` provider, published on the Terraform Registry: see the [Terraform provider](../terraform/terraform.md). |

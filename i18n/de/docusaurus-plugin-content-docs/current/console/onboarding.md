@@ -237,11 +237,11 @@ Ihre Anforderungen ändern sich. Hier erfahren Sie, wie Sie den Umfang einer bes
 
 ### Ein Produkt aktivieren
 
-Wenn das Produkt Teil Ihres Katalogs ist, wird es in der Konsole angezeigt: **aktivieren Sie es vollständig autonom** auf dem betreffenden Tenant. Rechnen Sie mit einigen Minuten, bis es verfügbar ist.
+Wenn das Produkt Teil Ihres Katalogs und in die Konsole integriert ist, wird es dort angezeigt: **aktivieren Sie es vollständig autonom** auf dem betreffenden Tenant. Rechnen Sie mit einigen Minuten, bis es verfügbar ist.
 
 In der Liste Ihrer Tenants öffnet die Aktion **„Produkte bearbeiten"** den Katalog. Aktivieren Sie die Produkte, die Sie öffnen möchten, und deaktivieren Sie die, die Sie stoppen möchten, und klicken Sie dann auf **Speichern**.
 
-Wenn es nicht angezeigt wird, ist es noch nicht in Ihrem Katalog: siehe [Ein zusätzliches Produkt anfordern](#demander-un-produit-supplémentaire).
+Wenn es nicht angezeigt wird, ist es noch nicht in Ihrem Katalog, oder es handelt sich um einen Managed Service außerhalb der Konsole: siehe [Ein zusätzliches Produkt anfordern](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
@@ -283,7 +283,10 @@ Diese Produkte werden im Rahmen Ihres Vertrags mit Ihrem Vertriebsansprechpartne
 
 ### Ein zusätzliches Produkt anfordern {/* #demander-un-produit-supplémentaire */}
 
-Das Produkt, das Sie wünschen, erscheint nicht in Ihrer Konsole? Es befindet sich noch nicht in Ihrem Katalog.
+Das Produkt, das Sie wünschen, erscheint nicht in Ihrer Konsole? Es gibt zwei Fälle:
+
+- **Managed Service außerhalb der Konsole** (Managed Kubernetes, Managed-Datenbanken, AIOps): Er wird nicht in der Konsole erscheinen. Fragen Sie Ihren Vertriebsansprechpartner danach; die Teams von Cloud Temple nehmen ihn in Betrieb.
+- **Anderes Produkt**: Es befindet sich noch nicht in Ihrem Katalog. Gehen Sie wie folgt vor:
 
 1. Erstellen Sie aus der Konsole heraus eine **Support-Anfrage**
 2. Geben Sie das betreffende **Produkt** und das geplante Volumen an, sofern Sie es kennen

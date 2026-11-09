@@ -237,11 +237,11 @@ Vos besoins changent. Voici comment faire évoluer le périmètre d'un environne
 
 ### Activer un produit
 
-Si le produit fait partie de votre catalogue, il apparaît dans la Console : **activez-le en complète autonomie** sur le tenant concerné. Comptez quelques minutes avant qu'il soit utilisable.
+Si le produit fait partie de votre catalogue et s'intègre à la Console, il y apparaît : **activez-le en complète autonomie** sur le tenant concerné. Comptez quelques minutes avant qu'il soit utilisable.
 
 Depuis la liste de vos tenants, l'action **« Modifier les produits »** ouvre le catalogue. Cochez ceux que vous voulez ouvrir, décochez ceux que vous voulez arrêter, puis **Sauvegarder**.
 
-S'il n'apparaît pas, c'est qu'il n'est pas encore à votre catalogue : voir [Demander un produit supplémentaire](#demander-un-produit-supplémentaire).
+S'il n'apparaît pas, c'est qu'il n'est pas encore à votre catalogue, ou qu'il s'agit d'un service managé hors Console : voir [Demander un produit supplémentaire](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
@@ -283,7 +283,10 @@ Vue d'ensemble : [nos produits sur cloud-temple.com](https://www.cloud-temple.co
 
 ### Demander un produit supplémentaire {/* #demander-un-produit-supplémentaire */}
 
-Le produit que vous voulez n'apparaît pas dans votre Console ? Il n'est pas encore à votre catalogue.
+Le produit que vous voulez n'apparaît pas dans votre Console ? Deux cas :
+
+- **Service managé hors Console** (Kubernetes managé, bases de données managées, AIOps) : il n'apparaîtra pas dans la Console. Demandez-le à votre interlocuteur commercial ; les équipes Cloud Temple le mettent en service.
+- **Autre produit** : il n'est pas encore à votre catalogue. Suivez ces étapes :
 
 1. Depuis la Console, créez une **demande de support**
 2. Indiquez le **produit** concerné, et le volume envisagé si vous le connaissez

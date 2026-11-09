@@ -4,7 +4,7 @@ title: Konzepte der Console
 
 ## Einführung
 
-Die **Cloud-Temple-Konsole** ist der zentrale Zugang zum gesamten Cloud-Temple-Katalog: Compute, Speicher, Netzwerk, Sicherheit, Container, KI und Managed Services. Hier bestellen und verwalten Sie Ihre Ressourcen im Self-Service, verwalten Identitäten und Zugriffe, verfolgen Ihre Vorgänge und eröffnen Ihre Supportanfragen.
+Die **Cloud-Temple-Konsole** ist der Zugang zu den Cloud-Temple-Produkten, die sie integriert: Compute, Speicher, Netzwerk, Sicherheit, KI und weitere. Einige Managed Services (Managed Kubernetes, Managed-Datenbanken, AIOps) werden über die Teams von Cloud Temple gebucht und nicht über die Konsole gesteuert. Hier bestellen und verwalten Sie Ihre Ressourcen im Self-Service, verwalten Identitäten und Zugriffe, verfolgen Ihre Vorgänge und eröffnen Ihre Supportanfragen.
 
 Sie ist *API-first* konzipiert: Die Weboberfläche basiert auf der öffentlichen API, die Sie direkt, mit dem Terraform-Provider oder mit dem MCP-Server nutzen können.
 
@@ -16,7 +16,7 @@ Das Modell, auf dem die Konsole basiert (Organisation, Tenants, Benutzer und Ber
 
 | Vorteil | Beschreibung |
 |---|---|
-| Zentraler Zugang | Alle Ihre Ressourcen und Dienste in einem Portal, mit einem einzigen Satz von Zugangsdaten. |
+| Zentraler Zugang | Die Ressourcen der in die Konsole integrierten Produkte in einem Portal, mit einem einzigen Satz von Zugangsdaten. |
 | Self-Service | Sie erstellen, konfigurieren und löschen Ihre Ressourcen jederzeit, ohne Eingreifen von Cloud Temple. |
 | Automatisierung | Die Plattform lässt sich per API oder mit Terraform steuern, mit versionierbaren Konfigurationen, die sich in Ihre CI/CD-Pipelines einfügen. |
 | Sicherheit und Nachverfolgbarkeit | Nach IP-Adresse gefilterte Zugriffe, Zwei-Faktor-Authentifizierung, Berechtigungen pro Tenant und Protokollierung der Aktionen. |
@@ -25,7 +25,7 @@ Das Modell, auf dem die Konsole basiert (Organisation, Tenants, Benutzer und Ber
 
 | Funktion | Beschreibung |
 |---|---|
-| Webkonsole | Dashboard, Ressourceninventar, Bestellungen im Self-Service, Zugang zu allen abonnierten Produkten. |
+| Webkonsole | Dashboard, Ressourceninventar, Bestellungen im Self-Service, Zugang zu den abonnierten, in die Konsole integrierten Produkten. |
 | Identitäts- und Zugriffsverwaltung | Organisation, Tenants, Benutzer und Berechtigungen: siehe das Modul [IAM](./iam/concepts.md). |
 | REST-API | Im Format OpenAPI 3.0 dokumentierte API, über die Konsole abrufbar: siehe die [API der Konsole](./api.md). |
 | Terraform-Provider | Provider `Cloud-Temple/cloudtemple`, im Terraform Registry veröffentlicht: siehe den [Terraform-Provider](../terraform/terraform.md). |

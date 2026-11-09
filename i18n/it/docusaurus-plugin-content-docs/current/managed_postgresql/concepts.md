@@ -7,6 +7,12 @@ sidebar_position: 1
 
 Questa sezione presenta i concetti fondamentali del nostro servizio **PostgreSQL Gestito**. Comprendere questi principi vi aiuterà a sfruttare al meglio il vostro database gestito, allineandone le capacità alle vostre esigenze applicative e ai requisiti di sicurezza.
 
+:::info[Servizio gestito, fuori dalla Console]
+
+PostgreSQL gestito si sottoscrive tramite i team di Cloud Temple. Il servizio non si ordina dalla Console Cloud Temple, che non offre per esso né una vista né un'API.
+
+:::
+
 ## Sovranità e Conformità SecNumCloud
 
 Al centro del nostro prodotto si trova la **sovranità digitale**. Il servizio PostgreSQL Gestito è interamente ospitato sull'infrastruttura Cloud Temple, qualificata **SecNumCloud 3.2** dall'ANSSI.

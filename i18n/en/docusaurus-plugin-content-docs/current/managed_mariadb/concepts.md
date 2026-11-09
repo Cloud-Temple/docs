@@ -7,6 +7,12 @@ sidebar_position: 1
 
 This section presents the fundamental concepts of our **Managed MariaDB** service. Understanding these principles will help you get the most out of your managed database, aligning its capabilities with your application requirements and security needs.
 
+:::info[Managed service, outside the Console]
+
+To subscribe to Managed MariaDB, contact Cloud Temple teams. It cannot be ordered from the Cloud Temple Console, which offers neither a view nor an API for this service.
+
+:::
+
 ## Sovereignty and SecNumCloud Compliance
 
 At the heart of our product is **digital sovereignty**. The Managed MariaDB service is fully hosted on the Cloud Temple infrastructure, certified **SecNumCloud 3.2** by ANSSI.

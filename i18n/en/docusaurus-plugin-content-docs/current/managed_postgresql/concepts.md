@@ -7,6 +7,12 @@ sidebar_position: 1
 
 This section presents the fundamental concepts of our **Managed PostgreSQL** service. Understanding these principles will help you get the most out of your managed database, aligning its capabilities with your application needs and security requirements.
 
+:::info[Managed service, outside the Console]
+
+To subscribe to Managed PostgreSQL, contact Cloud Temple teams. It cannot be ordered from the Cloud Temple Console, which offers neither a view nor an API for this service.
+
+:::
+
 ## Sovereignty and SecNumCloud Compliance
 
 At the heart of our product lies **digital sovereignty**. The Managed PostgreSQL service is entirely hosted on the Cloud Temple infrastructure, certified **SecNumCloud 3.2** by ANSSI.
