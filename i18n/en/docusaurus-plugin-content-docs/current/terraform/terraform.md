@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Terraform provider overview
 ---
 
 The Cloud Temple Terraform provider allows you to manage your Cloud Temple account infrastructure using the Infrastructure as Code (IaC) approach. It offers complete integration with Cloud Temple infrastructure services, enabling you to provision, configure, and manage your cloud resources in a declarative and reproducible manner.

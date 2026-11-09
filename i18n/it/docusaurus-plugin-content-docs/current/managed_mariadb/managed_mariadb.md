@@ -1,8 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di MariaDB Gestito
 ---
 
-# MariaDB Gestito <span class="title-preview-badge">Anteprima</span>
+# Panoramica di MariaDB Gestito <span class="title-preview-badge">Anteprima</span>
 
 <div class="card-grid">
   <div class="card">
@@ -13,7 +13,7 @@ title: Panoramica
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Inizia rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Avvia il Quickstart →</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Apri la guida introduttiva →</a>
   </div>
 </div>
 

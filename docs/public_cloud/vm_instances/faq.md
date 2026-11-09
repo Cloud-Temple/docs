@@ -1,9 +1,9 @@
 ---
-title: Questions fréquentes
+title: Questions fréquentes sur VM Instances
 sidebar_position: 4
 ---
 
-# FAQ VM Instances
+# Questions fréquentes sur VM Instances
 
 ## Que sont les quotas VM Instances ?
 

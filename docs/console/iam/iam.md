@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de l'IAM
 ---
 
-# Identity Access Management
+# Vue d'ensemble de l'IAM
 
 Le module IAM (Identity Access Management) de la console Cloud Temple offre une solution complète pour la gestion des identités et des accès.
 Il permet d’administrer des comptes locaux tout en supportant une hybridation avec des configurations externes, compatibles avec les protocoles standards du marché tels que OIDC et SAML, pour répondre aux besoins de flexibilité et de sécurité des environnements modernes.
@@ -14,12 +14,12 @@ Il permet d’administrer des comptes locaux tout en supportant une hybridation 
     <a href="./iam/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./iam/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <h3>Questions fréquentes</h3>
+    <p>Les réponses courantes sur les comptes, les droits et l'accès à la Console.</p>
+    <a href="./iam/quickstart" class="card-link">Lire la FAQ &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iam/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

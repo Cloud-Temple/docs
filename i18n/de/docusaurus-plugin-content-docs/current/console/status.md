@@ -1,5 +1,5 @@
 ---
-title: Scheduled Operations and Incident Management
+title: Geplante Vorgänge und Incident-Management
 ---
 import shivaInterventionMenu01 from '@site/docs/console/images/shiva_intervention_menu01.png'
 import shivaInterventionMenu03 from '@site/docs/console/images/shiva_intervention_menu03.png'

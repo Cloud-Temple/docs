@@ -1,9 +1,9 @@
 ---
-title: Network
+title: Réseau
 displayed_sidebar: docSidebar
 ---
 
-# Network
+# Réseau
 
 Les services réseau de Cloud Temple vous permettent de construire une topologie adaptée à votre architecture : isolement via des réseaux privés, routage avancé avec VPC, ou connectivité Internet directe.
 

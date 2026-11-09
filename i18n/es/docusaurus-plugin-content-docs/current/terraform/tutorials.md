@@ -1,8 +1,8 @@
 ---
-title: Tutoriales
+title: Tutoriales de Terraform Cloud Temple
 ---
 
-# Terraform Cloud Temple Tutorials
+# Tutoriales de Terraform Cloud Temple
 
 This page gathers practical tutorials for using the Terraform Cloud Temple provider with various services.
 

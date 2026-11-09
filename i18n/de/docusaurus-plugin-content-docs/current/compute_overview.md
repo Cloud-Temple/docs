@@ -15,7 +15,7 @@ Die Compute-Dienste von Cloud Temple ermöglichen es Ihnen, virtuelle Maschinen 
   </div>
   <div class="card">
     <h3>IaaS OpenSource</h3>
-    <p>Open-Source-virtualisierte Infrastruktur (OpenStack). Volle Kontrolle über Ihre VMs, Netzwerke und Speicher auf einer SecNumCloud-Basis.</p>
+    <p>Open-Source-virtualisierte Infrastruktur auf Basis des XEN-Hypervisors (Vates). Volle Kontrolle über Ihre VMs, Netzwerke und Speicher auf einer SecNumCloud-Basis.</p>
     <a href="./iaas_opensource" class="card-link">IaaS OpenSource entdecken →</a>
   </div>
   <div class="card">

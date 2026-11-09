@@ -1,4 +1,4 @@
-# FAQ sull'offerta di servizio LLMaaS Cloud Temple
+# Domande frequenti su LLMaaS
 
 ## Offerta e Capacità
 

@@ -63,8 +63,7 @@
       "en": "Disk sizes no longer accept decimal values, when creating an instance as well as when adding or extending a disk"
     },
     "4.44.0|VMI|447eca7c470e": {
-      "fr": "Les indicateurs de traitement des instances et de leurs ressources sont désormais correctement rétablis après un rafraîchissement de la page",
-      "en": "The processing indicators for instances and their resources are now correctly restored after a page refresh"
+      "exclude": true
     },
     "4.44.2|VMI|059be3e4cd69": {
       "fr": "Le type de réseau (backbone privé) est désormais affiché sur les adaptateurs réseau d'une instance, y compris sans la fonctionnalité VPC",
@@ -415,8 +414,8 @@
       "en": "Infrastructure provisioning actions now take business roles (compute, network, VPC, bare metal…) into account in addition to order permissions"
     },
     "4.45.4|AI|ecd9eae70091": {
-      "fr": "Le montant minimum d’un crédit LLMaaS évolue ; consultez le catalogue tarifaire officiel Cloud Temple : https://www.cloud-temple.com/nos-tarifs-publics/",
-      "en": "The minimum LLMaaS credit amount changes; refer to the official Cloud Temple rates: https://www.cloud-temple.com/en/our-public-rates/"
+      "fr": "Le montant minimum de crédit LLMaaS évolue ; consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).",
+      "en": "The minimum LLMaaS credit amount changes; refer to the [official Cloud Temple rates](https://www.cloud-temple.com/en/our-public-rates/)."
     },
     "4.46.0|HOUSING|c81f52556bb1": {
       "fr": "Les commandes Colocation sont désormais disponibles : réservation d'emplacement, installation et dérackage d'équipements",
@@ -441,6 +440,48 @@
     "4.47.0|MP|316fc87dfac8": {
       "fr": "Vous pouvez désormais déployer une VM Instance (Public Cloud) directement depuis la fiche d'un produit Marketplace",
       "en": "You can now deploy a VM Instance (Public Cloud) directly from a Marketplace product page"
+    },
+    "4.48.0|CM|70aede4f2bfe": {
+      "fr": "Affichage d'une carte d'erreur, au lieu d'un coût nul, lorsque la récupération des consommations échoue sur le tableau de bord Organisation",
+      "en": "An error card is displayed instead of a zero cost when retrieving consumptions fails on the Organization dashboard"
+    },
+    "4.52.0|OpenIaasBACK|f832f68867d8": {
+      "exclude": true
+    },
+    "4.53.0|OpenIaasCMP|6a374b7033f3": {
+      "exclude": true
+    },
+    "4.53.2|GEN|37dd4921b929": {
+      "fr": "Améliorations techniques mineures",
+      "en": "Minor technical improvements"
+    },
+    "5.0.0|GEN|a7fe2f487c02": {
+      "fr": "Retour possible à la version précédente de la console depuis la fenêtre « Nouveautés », tant qu'elle reste disponible",
+      "en": "Option to switch back to the previous console version from the \"News\" window, while it remains available"
+    },
+    "5.1.0|GEN|918b94b6a74b": {
+      "exclude": true
+    },
+    "5.1.0|GEN|e3dab90ded71": {
+      "exclude": true
+    },
+    "5.1.0|GEN|06914d670811": {
+      "exclude": true
+    },
+    "5.1.0|GEN|683de8ae060d": {
+      "exclude": true
+    },
+    "5.1.0|OS|cdb4ad8eec05": {
+      "exclude": true
+    },
+    "5.1.0|ORG|b34888a18a78": {
+      "exclude": true
+    },
+    "5.1.0|AI|7ee3e27d94b9": {
+      "exclude": true
+    },
+    "4.51.0|SUPPORT|3050385fcc1f": {
+      "exclude": true
     }
   },
   "additions": {

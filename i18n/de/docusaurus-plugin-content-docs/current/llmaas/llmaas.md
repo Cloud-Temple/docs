@@ -1,9 +1,9 @@
 ---
-title: Übersicht
+title: Übersicht über LLM as a Service (LLMaaS)
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# Übersicht über LLM as a Service (LLMaaS)
 
 LLMaaS bietet Zugriff auf von Cloud Temple gehostete KI-Modelle über eine API: Konversationsassistenten, Programmierung und Agenten, Bildanalyse, semantische Suche, Reranking, Übersetzung sowie Audio- und Bildanwendungen.
 
@@ -20,10 +20,10 @@ Um zu beginnen, folgen Sie der [Schnellstartanleitung](./quickstart.md). Um ein 
 | Verwendung | Leitfaden |
 |-------|-------|
 | Textgenerierung, Streaming, Tool-Aufrufe und Vision | [API LLMaaS](./api.md) |
-| Generativ erweiterte Suche | [Comprendre le RAG](./rag_explained.md) |
+| Generativ erweiterte Suche | [RAG verstehen](./rag_explained.md) |
 | Dokumenten-Ranking nach Relevanz | [Reranking](./rerank.md) |
 | Asynchrone Batch-Verarbeitung von Anfragen | [Batch](./batch.md) |
-| Modellwechsel und Verwaltung veralteter IDs | [Cycle de vie et migration](./concepts.md#migration-zu-einem-anderen-modell) |
+| Modellwechsel und Verwaltung veralteter IDs | [Lebenszyklus und Migration](./concepts.md#migration-zu-einem-anderen-modell) |
 
 Inferenzoptimierungen, einschließlich der im Changelog angekündigten Mehrfach-Token-Vorhersage (*MTP*), werden serverseitig durchgeführt. Bewerten Sie deren Auswirkungen auf Ihre eigenen Anfragen anhand der Monitoring-Metriken.
 
@@ -37,7 +37,7 @@ Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem A
 
 ## Inhaltstypen
 
-Textgenerierungsanfragen verwenden JSON mit dem Header `Content-Type: application/json`. Das Streaming gibt SSE-Ereignisse zurück und die Transkription von Audiodateien verwendet `multipart/form-data`. Siehe die [documentation API](./api.md) für das Format jedes Endpunkts.
+Textgenerierungsanfragen verwenden JSON mit dem Header `Content-Type: application/json`. Das Streaming gibt SSE-Ereignisse zurück und die Transkription von Audiodateien verwendet `multipart/form-data`. Siehe die [API-Dokumentation](./api.md) für das Format jedes Endpunkts.
 
 ## Antwortmetadaten
 
@@ -102,7 +102,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Typ     | Beschreibung                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Das zu verwendende Modell (siehe [catalogue des modèles](./models.md)) |
+| `model`       | string  | Das zu verwendende Modell (siehe [Modellkatalog](./models.md)) |
 | `messages`    | array   | Liste der Nachrichten im Gespräch                         |
 | `max_tokens`  | integer | Maximale Anzahl der zu generierenden Tokens                            |
 | `temperature` | float   | Steuert die Kreativität (0.0-2.0)                              |
@@ -120,10 +120,10 @@ https://api.ai.cloud-temple.com/v1/
 ## Verfügbare Endpunkte
 
 - `/chat/completions` : Generierung konversationeller Antworten
-- `/chat/completions/batch` : Asynchrone Verarbeitung mehrerer Konversationen ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Asynchrone Verarbeitung mehrerer Konversationen ([Batch-Leitfaden](./batch.md))
 - `/completions` : Einfache Textvervollständigung
 - `/embeddings` : Vektorisierung für semantische Suche und RAG
-- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (compatible Cohere SDK)
+- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (kompatibel mit dem Cohere SDK)
 - `/audio/transcriptions` : Batch-Audiotranskription (Whisper)
 - `/audio/speech` : Sprachsynthese (TTS)
 - `/images/generations` : Bildgenerierung
@@ -136,4 +136,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-Die Antwort enthält die von der API bereitgestellten Identifikatoren. Siehe auch den [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle), um Deprekationen und Weiterleitungen zu überprüfen. Die in den Beispielen verwendeten Modelle dienen nur der Veranschaulichung; prüfen Sie ihre Verfügbarkeit vor der Ausführung.
+Die Antwort enthält die von der API bereitgestellten Identifikatoren. Siehe auch den [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle), um Deprekationen und Weiterleitungen zu überprüfen. Die in den Beispielen verwendeten Modelle dienen nur der Veranschaulichung; prüfen Sie ihre Verfügbarkeit vor der Ausführung.

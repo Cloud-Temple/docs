@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Private Backbone overview
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Advanced Connectivity
+# Private Backbone overview
 
 > **Take full control of your network with extended level 2 connectivity, designed for hybrid architectures and custom configurations.**
 
@@ -16,7 +16,7 @@ Cloud Temple's **Private Backbone** is our legacy connectivity product, designed
     <a href="./private_backbone/concepts" class="card-link">Explore concepts →</a>
   </div>
   <div class="card">
-    <h3>Getting Started</h3>
+    <h3>Getting started</h3>
     <p>Create your first private network and configure your Internet access in a few steps.</p>
     <a href="./private_backbone/quickstart" class="card-link">Get Started →</a>
   </div>

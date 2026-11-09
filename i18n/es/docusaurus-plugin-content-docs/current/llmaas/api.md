@@ -441,7 +441,7 @@ Extracto abreviado: los puntos suspensivos representan las otras componentes del
 
 Reordena una lista de documentos por relevancia respecto a una consulta. Compatible con la API Cohere (v1 y v2).
 
-**Facturación**: consulta el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Todos los documentos enviados se cuentan, incluso si `top_n` limita el número de resultados devueltos. Ver el [detalle del cálculo](./rerank.md#precios).
+**Facturación**: consulta el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). La reclasificación se factura por millón de tokens de reranking; todos los documentos enviados se procesan, incluso si `top_n` limita el número de resultados devueltos. Ver el [detalle](./rerank.md#precios).
 
 #### Solicitud
 
@@ -503,7 +503,7 @@ Extracto ilustrativo del formato Jina/vLLM descrito por el contrato de la plataf
 }
 ```
 
-Los `relevance_score` son puntuaciones brutas no normalizadas, no probabilidades entre 0 y 1. Utiliza su orden relativo; cualquier umbral debe ser [calibrado en tu modelo y corpus](./rerank.md#umbral-de-relevancia). Los contadores `usage.prompt_tokens` y `usage.total_tokens` son distintos de la facturación por documento procesado; no se requiere ningún campo `usage.billed_units.search_units` para calcular esta última.
+Los `relevance_score` son puntuaciones brutas no normalizadas, no probabilidades entre 0 y 1. Utiliza su orden relativo; cualquier umbral debe ser [calibrado en tu modelo y corpus](./rerank.md#umbral-de-relevancia).
 
 El endpoint `/v2/rerank` (SDK Cohere v2) también está disponible con el mismo formato de solicitud.
 

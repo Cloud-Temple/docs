@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Private Network overview
 slug: /network/private_network
 ---
 
@@ -12,9 +12,9 @@ Cloud Temple offers a Private Networks solution designed to meet enterprise need
     <a href="./private_network/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Getting started</h3>
     <p>Get started quickly with our resources by following clear and simple instructions.</p>
-    <a href="./private_network/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <a href="./private_network/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>

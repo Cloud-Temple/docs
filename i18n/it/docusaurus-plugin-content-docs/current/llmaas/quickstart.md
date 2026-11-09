@@ -1,9 +1,9 @@
 ---
-title: Guida introduttiva
+title: Guida introduttiva a LLMaaS
 sidebar_position: 3
 ---
 
-# Guida all'Avvio Rapido
+# Guida introduttiva a LLMaaS
 
 Questa guida ti consente di effettuare la tua prima richiesta all'API LLMaaS in meno di 5 minuti.
 
@@ -163,10 +163,10 @@ Questa sezione fornisce esempi di script Python semplici e autonomi per illustra
 
 ### 1. Esempio Semplice di Tool Calling
 
-Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, bases de données, etc.).
+Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, database, ecc.).
 
 Il flusso è il seguente:
-1.  L'utente pone una domanda che richiede uno strumento (ex: "quel temps fait-il ?").
+1.  L'utente pone una domanda che richiede uno strumento (es.: "che tempo fa?").
 2.  Invii la domanda e l'elenco degli strumenti disponibili all'API.
 3.  Il modello, invece di rispondere direttamente, restituisce una richiesta `tool_calls` che chiede di eseguire una funzione specifica con determinati argomenti.
 4.  Il tuo codice esegue la funzione richiesta.
@@ -615,12 +615,12 @@ Una volta completato con successo il primo test:
 
 1. **Esplorate i modelli** : Testate diversi modelli in base alle vostre esigenze
 2. **Ottimizzate i prompt** : Migliorate la qualità delle risposte
-3. **Integrate nella vostra applicazione** : Consultate la [documentation API](./api)
-4. **Casi d'uso avanzati** : Vedi i [tutoriels](./tutorials)
+3. **Integrate nella vostra applicazione** : Consultate la [documentazione API](./api)
+4. **Casi d'uso avanzati** : Vedi i [tutorial](./tutorials)
 
 ## Supporto
 
 In caso di problemi :
-- Consultare la [documentation API complète](./api)
+- Consultare la [documentazione API completa](./api)
 - Verificare lo stato del servizio nella Console
 - Contattare il supporto tramite la Console Cloud Temple

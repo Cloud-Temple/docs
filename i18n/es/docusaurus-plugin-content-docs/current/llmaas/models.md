@@ -3,7 +3,7 @@ title: Catálogo de Modelos de IA
 sidebar_position: 2
 ---
 
-# Catálogo de Modelos LLM como Servicio
+# Catálogo de Modelos de IA de LLMaaS
 
 ## Consultar el catálogo actualizado
 

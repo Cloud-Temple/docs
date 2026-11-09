@@ -15,7 +15,7 @@ Cloud Temple's Compute services allow you to deploy and operate virtual machines
   </div>
   <div class="card">
     <h3>IaaS OpenSource</h3>
-    <p>Open source virtualized infrastructure (OpenStack). Full control over your VMs, networks, and storage on a SecNumCloud-certified foundation.</p>
+    <p>Open source virtualized infrastructure, based on the XEN hypervisor (Vates). Full control over your VMs, networks, and storage on a SecNumCloud-qualified foundation.</p>
     <a href="./iaas_opensource" class="card-link">Discover IaaS OpenSource →</a>
   </div>
   <div class="card">

@@ -1,9 +1,9 @@
 ---
-title: Häufig gestellte Fragen
+title: Häufig gestellte Fragen zu VM Instances
 sidebar_position: 4
 ---
 
-# FAQ VM-Instanzen
+# Häufig gestellte Fragen zu VM Instances
 
 ## Was sind VM-Instanz-Quotas?
 

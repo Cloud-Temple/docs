@@ -7,45 +7,57 @@
     "message": "Console",
     "description": "The label for category 'Console' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Contenu additionnel": {
-    "message": "Additional Content",
-    "description": "The label for category 'Contenu additionnel' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.console_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Billing": {
+  "sidebar.docSidebar.category.Facturation": {
     "message": "Billing",
-    "description": "The label for category 'Billing' in sidebar 'docSidebar'"
+    "description": "The label for category 'Facturation' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Security & Identity": {
+  "sidebar.docSidebar.category.Sécurité et identité": {
     "message": "Security & Identity",
-    "description": "The label for category 'Security & Identity' in sidebar 'docSidebar'"
+    "description": "The label for category 'Sécurité et identité' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.IAM": {
     "message": "IAM",
     "description": "The label for category 'IAM' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Tutoriels IAM": {
-    "message": "IAM Tutorials",
-    "description": "The label for category 'Tutoriels IAM' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.iam_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Sécurité": {
+  "sidebar.docSidebar.category.console_security": {
     "message": "Security",
     "description": "The label for category 'Sécurité' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.AI": {
+  "sidebar.docSidebar.category.Plateforme Cloud Temple": {
+    "message": "Cloud Temple platform",
+    "description": "The label for category 'Plateforme Cloud Temple' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.IA": {
     "message": "AI",
-    "description": "The label for category 'AI' in sidebar 'docSidebar'"
+    "description": "The label for category 'IA' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.LLMaaS": {
+    "message": "LLMaaS",
+    "description": "The label for category 'LLMaaS' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.llmaas_tutorials": {
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.GPU": {
+    "message": "GPU",
+    "description": "The label for category 'GPU' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Bare Metal": {
     "message": "Bare Metal",
     "description": "The label for category 'Bare Metal' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Compute": {
+  "sidebar.docSidebar.category.Calcul": {
     "message": "Compute",
-    "description": "The label for category 'Compute' in sidebar 'docSidebar'"
+    "description": "The label for category 'Calcul' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.VM Instances": {
     "message": "VM Instances",
@@ -63,13 +75,13 @@
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.High Availability": {
-    "message": "High Availability",
-    "description": "The label for category 'High Availability' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.iaas_opensource_high_availability": {
+    "message": "High availability",
+    "description": "The label for category 'Haute disponibilité' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.iaas_opensource_backup": {
     "message": "Backup",
-    "description": "The label for category 'Backup' in sidebar 'docSidebar'"
+    "description": "The label for category 'Sauvegarde' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.IaaS VMware": {
     "message": "IaaS VMware",
@@ -81,11 +93,11 @@
   },
   "sidebar.docSidebar.category.iaas_vmware_backup": {
     "message": "Backup",
-    "description": "The label for category 'Backup' in sidebar 'docSidebar'"
+    "description": "The label for category 'Sauvegarde' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Network": {
+  "sidebar.docSidebar.category.Réseau": {
     "message": "Network",
-    "description": "The label for category 'Network' in sidebar 'docSidebar'"
+    "description": "The label for category 'Réseau' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.VPC": {
     "message": "VPC",
@@ -95,6 +107,10 @@
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.private_backbone": {
+    "message": "Private Backbone",
+    "description": "The label for category 'Private Backbone' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Private Network": {
     "message": "Private Network",
     "description": "The label for category 'Private Network' in sidebar 'docSidebar'"
@@ -103,41 +119,69 @@
     "message": "Internet",
     "description": "The label for category 'Internet' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.private_backbone": {
-    "message": "Private Backbone",
-    "description": "The label for category 'Private Backbone' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.private_backbone_tutorials": {
+  "sidebar.docSidebar.category.internet_tutorials": {
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Storage": {
-    "message": "Storage",
-    "description": "The label for category 'Storage' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.Anti-DDoS": {
+    "message": "Anti-DDoS",
+    "description": "The label for category 'Anti-DDoS' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Object Storage": {
+  "sidebar.docSidebar.category.Stockage": {
+    "message": "Storage",
+    "description": "The label for category 'Stockage' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Stockage Objet": {
     "message": "Object Storage",
-    "description": "The label for category 'Object Storage' in sidebar 'docSidebar'"
+    "description": "The label for category 'Stockage Objet' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.Stockage bloc": {
+    "message": "Block storage",
+    "description": "The label for the doc item 'Stockage bloc' in sidebar 'docSidebar', linking to the doc storage/block/block_storage"
   },
   "sidebar.docSidebar.category.oss_tutorials": {
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Monitoring": {
+  "sidebar.docSidebar.category.Supervision": {
     "message": "Monitoring",
-    "description": "The label for category 'Monitoring' in sidebar 'docSidebar'"
+    "description": "The label for category 'Supervision' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Security": {
+  "sidebar.docSidebar.category.Observability": {
+    "message": "Observability",
+    "description": "The label for category 'Observability' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.observability_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/metrics/metrics"
+  },
+  "sidebar.docSidebar.doc.observability_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/metrics/concepts"
+  },
+  "sidebar.docSidebar.doc.observability_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc console/metrics/quickstart"
+  },
+  "sidebar.docSidebar.doc.observability_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc console/metrics/tutorials"
+  },
+  "sidebar.docSidebar.doc.observability_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/metrics/faq"
+  },
+  "sidebar.docSidebar.category.security_products": {
     "message": "Security",
-    "description": "The label for category 'Security' in sidebar 'docSidebar'"
+    "description": "The label for category 'Sécurité' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.Bastion": {
     "message": "Bastion",
     "description": "The label for category 'Bastion' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Housing (Colocation)": {
-    "message": "Housing (Colocation)",
-    "description": "The label for category 'Housing (Colocation)' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.Colocation": {
+    "message": "Housing",
+    "description": "The label for category 'Colocation' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.Marketplace": {
     "message": "Marketplace",
@@ -149,7 +193,7 @@
   },
   "sidebar.docSidebar.category.containers_products": {
     "message": "Containers",
-    "description": "The label for category 'Containers' in sidebar 'docSidebar'"
+    "description": "The label for category 'Conteneurs' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.PaaS OpenShift": {
     "message": "PaaS OpenShift",
@@ -159,13 +203,13 @@
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Developer Tools": {
-    "message": "Developer Tools",
-    "description": "The label for category 'Developer Tools' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.Outils de développement": {
+    "message": "Developer tools",
+    "description": "The label for category 'Outils de développement' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Terraform Provider": {
-    "message": "Terraform Provider",
-    "description": "The label for category 'Terraform Provider' in sidebar 'docSidebar'"
+  "sidebar.docSidebar.category.Provider Terraform": {
+    "message": "Terraform provider",
+    "description": "The label for category 'Provider Terraform' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.Kubernetes": {
     "message": "Kubernetes",
@@ -175,9 +219,9 @@
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.Databases": {
+  "sidebar.docSidebar.category.Bases de données": {
     "message": "Databases",
-    "description": "The label for category 'Databases' in sidebar 'docSidebar'"
+    "description": "The label for category 'Bases de données' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.category.MariaDB Managé": {
     "message": "Managed MariaDB",
@@ -188,36 +232,64 @@
     "description": "The label for category 'PostgreSQL Managé' in sidebar 'docSidebar'"
   },
   "sidebar.docSidebar.link.Tarifs publics": {
-    "message": "Public Pricing",
+    "message": "Public pricing",
     "description": "The label for link 'Tarifs publics' in sidebar 'docSidebar', linking to 'https://www.cloud-temple.com/nos-tarifs-publics/'"
   },
   "sidebar.docSidebar.link.GitHub Cloud Temple": {
     "message": "GitHub Cloud Temple",
     "description": "The label for link 'GitHub Cloud Temple' in sidebar 'docSidebar', linking to 'https://github.com/cloud-temple'"
   },
-  "sidebar.docSidebar.link.Roadmap produit": {
-    "message": "Product Roadmap",
-    "description": "The label for link 'Roadmap produit' in sidebar 'docSidebar', linking to 'https://github.com/orgs/Cloud-Temple/projects/2'"
+  "sidebar.docSidebar.link.Roadmap": {
+    "message": "Roadmap",
+    "description": "The label for link 'Roadmap' in sidebar 'docSidebar', linking to 'https://github.com/orgs/Cloud-Temple/projects/2'"
   },
-  "sidebar.docSidebar.link.Status page": {
+  "sidebar.docSidebar.link.Page de statut": {
     "message": "Status page",
-    "description": "The label for link 'Status page' in sidebar 'docSidebar', linking to 'https://status.cloud-temple.com/'"
+    "description": "The label for link 'Page de statut' in sidebar 'docSidebar', linking to 'https://status.cloud-temple.com/'"
   },
-  "sidebar.docSidebar.doc.API Documentation": {
-    "message": "API Documentation",
-    "description": "The label for the doc item 'API Documentation' in sidebar 'docSidebar', linking to the doc console/api"
+  "sidebar.docSidebar.doc.Nouveautés produits": {
+    "message": "Product updates",
+    "description": "The label for the doc item 'Nouveautés produits' in sidebar 'docSidebar', linking to the doc changelog_produits"
   },
-  "sidebar.docSidebar.doc.Documentation Changelog": {
-    "message": "Documentation Changelog",
-    "description": "The label for the doc item 'Documentation Changelog' in sidebar 'docSidebar', linking to the doc changelog"
+  "sidebar.docSidebar.doc.global_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc faq"
   },
-  "sidebar.docSidebar.doc.Product Updates": {
-    "message": "Product Updates",
-    "description": "The label for the doc item 'Product Updates' in sidebar 'docSidebar', linking to the doc changelog_produits"
+  "sidebar.docSidebar.doc.console_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/console"
   },
-  "sidebar.docSidebar.doc.FAQs": {
-    "message": "FAQs",
-    "description": "The label for the doc item 'FAQs' in sidebar 'docSidebar', linking to the doc faq"
+  "sidebar.docSidebar.doc.console_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/concepts"
+  },
+  "sidebar.docSidebar.doc.console_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc console/onboarding"
+  },
+  "sidebar.docSidebar.doc.console_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/faq"
+  },
+  "sidebar.docSidebar.doc.Régions et zones de disponibilité": {
+    "message": "Regions and availability zones",
+    "description": "The label for the doc item 'Régions et zones de disponibilité' in sidebar 'docSidebar', linking to the doc additional_content/concepts_regional"
+  },
+  "sidebar.docSidebar.doc.Responsabilité partagée": {
+    "message": "Shared responsibility",
+    "description": "The label for the doc item 'Responsabilité partagée' in sidebar 'docSidebar', linking to the doc contractual/shared-responsibility"
+  },
+  "sidebar.docSidebar.doc.llmaas_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc llmaas/llmaas"
+  },
+  "sidebar.docSidebar.doc.llmaas_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc llmaas/concepts"
+  },
+  "sidebar.docSidebar.doc.llmaas_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc llmaas/quickstart"
   },
   "sidebar.docSidebar.doc.Intégrations & Frameworks": {
     "message": "Integrations & Frameworks",
@@ -226,5 +298,393 @@
   "sidebar.docSidebar.doc.Reconnaissance de documents (OCR)": {
     "message": "Document Recognition (OCR)",
     "description": "The label for the doc item 'Reconnaissance de documents (OCR)' in sidebar 'docSidebar', linking to the doc llmaas/ocr"
+  },
+  "sidebar.docSidebar.doc.llmaas_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc llmaas/faq"
+  },
+  "sidebar.docSidebar.doc.gpu_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc gpu/gpu"
+  },
+  "sidebar.docSidebar.doc.gpu_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc gpu/concepts"
+  },
+  "sidebar.docSidebar.doc.gpu_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc gpu/quickstart"
+  },
+  "sidebar.docSidebar.doc.gpu_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc gpu/tutorials"
+  },
+  "sidebar.docSidebar.doc.gpu_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc gpu/faq"
+  },
+  "sidebar.docSidebar.doc.bare_metal_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/iaas_bare-metal"
+  },
+  "sidebar.docSidebar.doc.bare_metal_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/concepts"
+  },
+  "sidebar.docSidebar.doc.bare_metal_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/quickstart"
+  },
+  "sidebar.docSidebar.doc.bare_metal_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/tutorials"
+  },
+  "sidebar.docSidebar.doc.bare_metal_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc iaas_bare-metal/faq"
+  },
+  "sidebar.docSidebar.doc.vm_instances_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc public_cloud/vm_instances/vm_instances"
+  },
+  "sidebar.docSidebar.doc.vm_instances_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc public_cloud/vm_instances/concepts"
+  },
+  "sidebar.docSidebar.doc.vm_instances_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc public_cloud/vm_instances/quickstart"
+  },
+  "sidebar.docSidebar.doc.vm_instances_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc public_cloud/vm_instances/faq"
+  },
+  "sidebar.docSidebar.doc.iaas_opensource_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc iaas_opensource/iaas_opensource"
+  },
+  "sidebar.docSidebar.doc.iaas_opensource_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc iaas_opensource/concepts"
+  },
+  "sidebar.docSidebar.doc.iaas_opensource_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc iaas_opensource/quickstart"
+  },
+  "sidebar.docSidebar.doc.iaas_opensource_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc iaas_opensource/faq"
+  },
+  "sidebar.docSidebar.doc.iaas_vmware_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc iaas_vmware/iaas_vmware"
+  },
+  "sidebar.docSidebar.doc.iaas_vmware_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc iaas_vmware/concepts"
+  },
+  "sidebar.docSidebar.doc.iaas_vmware_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc iaas_vmware/quickstart"
+  },
+  "sidebar.docSidebar.doc.iaas_vmware_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc iaas_vmware/faq"
+  },
+  "sidebar.docSidebar.doc.vpc_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/vpc/vpc"
+  },
+  "sidebar.docSidebar.doc.vpc_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/vpc/concepts"
+  },
+  "sidebar.docSidebar.doc.vpc_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc network/vpc/quickstart"
+  },
+  "sidebar.docSidebar.doc.vpc_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc network/vpc/faq"
+  },
+  "sidebar.docSidebar.doc.private_backbone_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/private_backbone/private_backbone"
+  },
+  "sidebar.docSidebar.doc.private_backbone_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/private_backbone/concepts"
+  },
+  "sidebar.docSidebar.doc.private_backbone_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc network/private_backbone/quickstart"
+  },
+  "sidebar.docSidebar.doc.private_backbone_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc network/private_backbone/tutorials"
+  },
+  "sidebar.docSidebar.doc.private_backbone_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc network/private_backbone/faq"
+  },
+  "sidebar.docSidebar.doc.private_network_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/private_network/private_network"
+  },
+  "sidebar.docSidebar.doc.private_network_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/private_network/concepts"
+  },
+  "sidebar.docSidebar.doc.private_network_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc network/private_network/quickstart"
+  },
+  "sidebar.docSidebar.doc.private_network_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc network/private_network/tutorials"
+  },
+  "sidebar.docSidebar.doc.private_network_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc network/private_network/faq"
+  },
+  "sidebar.docSidebar.doc.internet_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/internet/internet"
+  },
+  "sidebar.docSidebar.doc.internet_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/internet/concepts"
+  },
+  "sidebar.docSidebar.doc.internet_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc network/internet/quickstart"
+  },
+  "sidebar.docSidebar.doc.internet_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc network/internet/faq"
+  },
+  "sidebar.docSidebar.doc.anti_ddos_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc network/anti_ddos/anti_ddos"
+  },
+  "sidebar.docSidebar.doc.anti_ddos_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc network/anti_ddos/concepts"
+  },
+  "sidebar.docSidebar.doc.anti_ddos_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc network/anti_ddos/quickstart"
+  },
+  "sidebar.docSidebar.doc.anti_ddos_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc network/anti_ddos/tutorials"
+  },
+  "sidebar.docSidebar.doc.anti_ddos_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc network/anti_ddos/faq"
+  },
+  "sidebar.docSidebar.doc.oss_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc storage/oss/oss"
+  },
+  "sidebar.docSidebar.doc.oss_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc storage/oss/concepts"
+  },
+  "sidebar.docSidebar.doc.oss_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc storage/oss/quickstart"
+  },
+  "sidebar.docSidebar.doc.oss_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc storage/oss/faq"
+  },
+  "sidebar.docSidebar.doc.bastion_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc bastion/bastion"
+  },
+  "sidebar.docSidebar.doc.bastion_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc bastion/concepts"
+  },
+  "sidebar.docSidebar.doc.bastion_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc bastion/quickstart"
+  },
+  "sidebar.docSidebar.doc.bastion_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc bastion/tutorials"
+  },
+  "sidebar.docSidebar.doc.bastion_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc bastion/faq"
+  },
+  "sidebar.docSidebar.category.Sovereign SOC": {
+    "message": "Sovereign SOC",
+    "description": "The label for category 'Sovereign SOC' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc sovereign_soc/sovereign_soc"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc sovereign_soc/concepts"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc sovereign_soc/quickstart"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc sovereign_soc/tutorials"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc sovereign_soc/faq"
+  },
+  "sidebar.docSidebar.doc.housing_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc housing/housing"
+  },
+  "sidebar.docSidebar.doc.housing_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc housing/concepts"
+  },
+  "sidebar.docSidebar.doc.housing_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc housing/quickstart"
+  },
+  "sidebar.docSidebar.doc.housing_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc housing/tutorials"
+  },
+  "sidebar.docSidebar.doc.housing_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc housing/faq"
+  },
+  "sidebar.docSidebar.doc.marketplace_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc marketplace/marketplace"
+  },
+  "sidebar.docSidebar.doc.marketplace_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc marketplace/concepts"
+  },
+  "sidebar.docSidebar.doc.marketplace_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc marketplace/quickstart"
+  },
+  "sidebar.docSidebar.doc.marketplace_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc marketplace/faq"
+  },
+  "sidebar.docSidebar.doc.paas_openshift_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc paas_openshift/paas_openshift"
+  },
+  "sidebar.docSidebar.doc.paas_openshift_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc paas_openshift/concepts"
+  },
+  "sidebar.docSidebar.doc.paas_openshift_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc paas_openshift/quickstart"
+  },
+  "sidebar.docSidebar.doc.paas_openshift_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc paas_openshift/faq"
+  },
+  "sidebar.docSidebar.doc.API de la Console": {
+    "message": "Console API",
+    "description": "The label for the doc item 'API de la Console' in sidebar 'docSidebar', linking to the doc console/api"
+  },
+  "sidebar.docSidebar.doc.terraform_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc terraform/terraform"
+  },
+  "sidebar.docSidebar.doc.terraform_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc terraform/concepts"
+  },
+  "sidebar.docSidebar.doc.terraform_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc terraform/quickstart"
+  },
+  "sidebar.docSidebar.doc.terraform_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc terraform/tutorials"
+  },
+  "sidebar.docSidebar.doc.terraform_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc terraform/faq"
+  },
+  "sidebar.docSidebar.doc.managed_kubernetes_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_kubernetes/managed_kubernetes"
+  },
+  "sidebar.docSidebar.doc.managed_kubernetes_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc managed_kubernetes/concepts"
+  },
+  "sidebar.docSidebar.doc.managed_kubernetes_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc managed_kubernetes/quickstart"
+  },
+  "sidebar.docSidebar.doc.managed_kubernetes_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_kubernetes/faq"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_mariadb/managed_mariadb"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc managed_mariadb/concepts"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc managed_mariadb/quickstart"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc managed_mariadb/tutorials"
+  },
+  "sidebar.docSidebar.doc.managed_mariadb_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_mariadb/faq"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc managed_postgresql/managed_postgresql"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc managed_postgresql/concepts"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_quickstart": {
+    "message": "Getting started",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc managed_postgresql/quickstart"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_tutorials": {
+    "message": "Tutorials",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc managed_postgresql/tutorials"
+  },
+  "sidebar.docSidebar.doc.managed_postgresql_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc managed_postgresql/faq"
+  },
+  "sidebar.docSidebar.doc.iam_overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc console/iam/iam"
+  },
+  "sidebar.docSidebar.doc.iam_concepts": {
+    "message": "Concepts",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc console/iam/concepts"
+  },
+  "sidebar.docSidebar.doc.iam_faq": {
+    "message": "Frequently asked questions",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc console/iam/quickstart"
   }
 }

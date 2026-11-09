@@ -2,22 +2,70 @@
 title: Concetti
 ---
 
-La **Marketplace Cloud Temple** è una piattaforma centralizzata che facilita l'accesso e il deployment di soluzioni cloud pronte all'uso in un ambiente sovrano e sicuro.
+<a id="definizione-e-posizionamento"></a>
 
-## Definizione e posizionamento
+## Presentazione
 
-La Marketplace Cloud Temple si posiziona come una leva di trasformazione digitale per le aziende alla ricerca di servizi affidabili, ospitati in Europa, con un'integrazione semplice e rapida.
+La **Marketplace Cloud Temple** è una piattaforma centralizzata che facilita l'accesso e il deployment di soluzioni cloud pronte all'uso: immagini di macchine virtuali da distribuire nei tuoi ambienti Cloud Temple, servizi gestiti e soluzioni SaaS di partner.
+
+La Marketplace Cloud Temple si posiziona come una leva di trasformazione digitale per le aziende alla ricerca di servizi affidabili, con un'integrazione semplice e rapida.
 
 Consente di:
 
-- **Centralizzare** l'accesso alle soluzioni partner validate
+- **Centralizzare** l'accesso alle soluzioni partner selezionate da Cloud Temple
 - **Semplificare** il deployment di ambienti cloud
 - **Accelerare** l'implementazione di progetti digitali
-- **Garantire** la conformità e la sicurezza dei deployment
+- **Distribuire** nei tuoi ambienti Cloud Temple, che hanno le proprie qualifiche; la sicurezza delle macchine distribuite resta di tua responsabilità
 
----
+Si rivolge ai team IT e DevOps che costruiscono i propri ambienti Cloud Temple, anche nei settori regolamentati, e alle direzioni aziendali alla ricerca di soluzioni SaaS di fornitori di software partner.
 
-## Tipi di soluzioni disponibili
+## Vantaggi
+
+| Vantaggio | Descrizione |
+|---|---|
+| Accesso centralizzato | Immagini, servizi gestiti e soluzioni SaaS di partner riuniti in un unico catalogo, consultabile dalla Console Cloud Temple. |
+| Distribuzione rapida | Le immagini di macchine virtuali vengono distribuite direttamente nei tuoi ambienti, in pochi minuti per la maggior parte. |
+| Soluzioni partner | Accesso alle soluzioni dei fornitori di software partner e contatto diretto con loro. |
+| Integrazione nella Console | Il Marketplace si utilizza dall'interfaccia di gestione abituale, senza strumenti aggiuntivi. |
+
+## Funzionalità
+
+| Funzionalità | Descrizione |
+|---|---|
+| Immagini di macchine virtuali | Immagini preconfigurate da distribuire su IaaS OpenSource o IaaS VMware, in base alle destinazioni compatibili di ogni immagine: vedi la [guida introduttiva](./quickstart.md). |
+| Servizi gestiti | Servizi gestiti per te, presentati nel catalogo. |
+| Soluzioni SaaS di partner | Soluzioni di fornitori di software partner, accessibili dal catalogo. |
+| Messa in contatto | Contatto diretto con il fornitore di una soluzione dalla sua scheda. |
+| Catalogo pubblico | L'elenco aggiornato delle soluzioni si trova nel [catalogo Marketplace del sito Cloud Temple](https://www.cloud-temple.com/marketplace/). |
+
+<a id="integrazione-con-lecosistema-cloud-temple"></a>
+
+## Architettura
+
+### Console Cloud Temple
+
+Il Marketplace è integrato nativamente nella console Cloud Temple, offrendo:
+
+- **Accesso unificato** dall'interfaccia di gestione standard
+- **Distribuzione diretta** di immagini di macchine virtuali sulle tue infrastrutture esistenti
+- **Gestione centralizzata** delle macchine virtuali così distribuite
+
+### Compatibilità con i servizi
+
+In base alle destinazioni compatibili di ogni immagine, le immagini di macchine virtuali del Marketplace vengono distribuite nei seguenti ambienti:
+
+- **IaaS OpenSource** : Distribuzione su infrastruttura OpenIaaS
+- **IaaS VMware** : Integrazione con l'ambiente vSphere
+
+## Regioni e zone di disponibilità
+
+Le immagini di macchine virtuali vengono distribuite nella regione e nelle zone di disponibilità del tuo ambiente Cloud Temple (regione FR1). Per i servizi gestiti e le soluzioni SaaS, la localizzazione è specifica di ogni offerta e indicata nella sua scheda.
+
+<a id="tipi-di-soluzioni-disponibili"></a>
+
+## Specifiche tecniche
+
+Il catalogo riunisce immagini di macchine virtuali, servizi gestiti e soluzioni SaaS di fornitori di software partner. Si arricchisce continuamente: le soluzioni descritte qui sono solo esempi, e l'elenco aggiornato si trova nel [catalogo Marketplace del sito Cloud Temple](https://www.cloud-temple.com/marketplace/).
 
 ### Immagini delle macchine virtuali
 
@@ -25,55 +73,48 @@ Le immagini delle macchine virtuali costituiscono il nucleo attuale del prodotto
 
 **Caratteristiche :**
 
-- Immagini validate e sicure
-- Compatibile con gli ambienti OpenIaaS e VMware
-- Deployment in meno di 10 minuti
+- Immagini verificate e validate da Cloud Temple prima della pubblicazione
+- Distribuzione su OpenIaaS o VMware, in base alle destinazioni compatibili di ogni immagine
+- Distribuzione in pochi minuti in genere, a seconda dell'immagine e dell'ambiente
 - Integrazione nativa con la console Cloud Temple
 
 ### Soluzioni partner
 
-Il Marketplace offre inoltre l'accesso a soluzioni sviluppate dai nostri partner editor, che coprono diversi settori di attività.
+Il Marketplace offre inoltre l'accesso a soluzioni sviluppate dai nostri fornitori di software partner, che coprono diversi settori di attività.
 
 **Processo di accesso :**
 
 - Consultazione del catalogo dalla console
 - Contatto diretto con il partner
-- Distribuzione sull'infrastruttura Cloud Temple
+- A seconda dell'offerta, distribuzione nei tuoi ambienti Cloud Temple o accesso al servizio SaaS gestito dal fornitore
 
----
+### Limiti
 
-## Integrazione con l'ecosistema Cloud Temple
-
-### Console Cloud Temple
-
-Il Marketplace è integrato nativamente nella console Cloud Temple, offrendo:
-
-- **Accesso unificato** dall'interfaccia di gestione standard
-- **Distribuzione diretta** sulle infrastrutture esistenti
-- **Gestione centralizzata** delle risorse e delle soluzioni
-
-### Compatibilità con i servizi
-
-Le soluzioni del Marketplace sono progettate per integrarsi armoniosamente con:
-
-- **IaaS OpenSource** : Distribuzione su infrastruttura OpenIaaS
-- **IaaS VMware** : Integrazione con l'ambiente vSphere
-
----
+- Il catalogo evolve continuamente: le soluzioni descritte in questa pagina sono esempi.
+- L'aggiornamento delle soluzioni partner spetta ai rispettivi fornitori, così come i tempi di risposta alle richieste di contatto.
 
 ## Sicurezza e conformità
 
-### Hosting sovrano
+### Hosting e qualifiche
 
-Tutte le soluzioni deployate tramite la Marketplace beneficiano di:
+L'hosting e le qualifiche dipendono dal tipo di soluzione:
 
-- **Hosting in Francia** esclusivamente
-- **Qualifica SecNumCloud** dell'infrastruttura
+- **Immagini di macchine virtuali**: vengono distribuite nei tuoi ambienti Cloud Temple e rientrano nelle loro qualifiche.
+- **Servizi gestiti e soluzioni SaaS**: l'hosting e le certificazioni sono specifici di ogni offerta. Consulta le informazioni della sua scheda nel [catalogo Marketplace del sito](https://www.cloud-temple.com/marketplace/) e, per ulteriori dettagli, contatta il fornitore.
 
 ### Validazione delle soluzioni
 
-Le soluzioni proposte nel Marketplace sono oggetto di una selezione rigorosa che garantisce:
+Cloud Temple seleziona le soluzioni proposte nel Marketplace. Prima della pubblicazione, un'immagine di macchina virtuale viene verificata (file e metadati) e poi validata da Cloud Temple. Questa validazione non sostituisce la messa in sicurezza delle macchine distribuite, che resta di tua responsabilità. Per una soluzione partner, il fornitore resta responsabile del suo contenuto e dei suoi aggiornamenti.
 
-- **Compatibilità** con l'infrastruttura Cloud Temple
-- **Sicurezza** delle immagini e delle applicazioni
-- **Affidabilità** dei partner editori
+## Responsabilità
+
+Il supporto del Marketplace stesso (catalogo, distribuzione delle immagini) rientra nel supporto della Console Cloud Temple. Ogni offerta ha poi le proprie condizioni di supporto: quelle del servizio per un'offerta di Cloud Temple, quelle del fornitore per una soluzione partner, che si occupa anche dei relativi aggiornamenti e tempi di risposta. Le macchine virtuali distribuite dal Marketplace sono risorse del tuo ambiente IaaS: vedi la [matrice delle responsabilità (RACI) IaaS](../contractual/iaas/raci.md).
+
+## Reversibilità
+
+- **Immagini di macchine virtuali**: le macchine distribuite sono risorse del tuo ambiente IaaS; la loro reversibilità segue quella dell'offerta interessata, IaaS OpenSource o IaaS VMware.
+- **Soluzioni partner**: le condizioni di uscita sono quelle indicate dal fornitore.
+
+## Prezzi
+
+Il Marketplace non ha un costo proprio. Paghi l'infrastruttura su cui distribuisci un'immagine e, a seconda dell'offerta scelta, la licenza o il servizio, fornito da Cloud Temple o da un partner, alle sue condizioni di prezzo. Il dettaglio di ogni offerta si trova nel [catalogo Marketplace del sito Cloud Temple](https://www.cloud-temple.com/marketplace/).

@@ -4,7 +4,7 @@ title: Eine NVIDIA-GPU verwenden
 
 import nvidiasmi from '@site/docs/managed_kubernetes/tutorials/images/nvidiasmi.png'
 
-# GPU auf Managed Kubernetes verwenden
+# Managed Kubernetes: Eine NVIDIA-GPU verwenden
 
 Dieses Tutorial zeigt Ihnen, wie Sie einen Pod bereitstellen, der eine GPU-Ressource auf einem Managed-Kubernetes-Cluster verwendet, der mit "Bare-Metal"-Knoten konfiguriert ist, die mit NVIDIA-GPUs ausgestattet sind.
 

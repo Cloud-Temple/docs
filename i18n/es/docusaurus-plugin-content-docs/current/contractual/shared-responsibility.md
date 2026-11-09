@@ -16,7 +16,7 @@ Cloud Temple opera bajo un modelo de **responsabilidad compartida** entre el pro
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
-    <div class="contract-card-desc">Distribución de responsabilidades para los servicios de infraestructura IaaS de VMware y OpenStack.</div>
+    <div class="contract-card-desc">Distribución de responsabilidades para los servicios de infraestructura IaaS de VMware y OpenIaaS.</div>
     <a class="contract-read-link" href="./contractual/iaas/raci">Consultar el documento →</a>
   </div>
 </div>

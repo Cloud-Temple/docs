@@ -1,12 +1,12 @@
 ---
-title: Getting Started Guide
+title: Getting started with Bare Metal
 ---
 import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
 import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
-# QuickStart for the Bare Metal Offer
+# Getting started with Bare Metal
 
 This page guides you through the initial steps to use the **Bare Metal** offer from the Cloud Temple console. Follow these instructions to explore the available menus and features.
 

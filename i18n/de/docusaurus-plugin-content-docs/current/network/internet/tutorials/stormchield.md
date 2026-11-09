@@ -4,7 +4,7 @@ sidebar_label: Eine Stormshield SNS EVA Firewall deployen
 sidebar_position: 6
 ---
 
-# Eine Firewall Stormshield SNS EVA deployen
+# Eine Stormshield SNS EVA Firewall deployen
 
 ## Voraussetzungen
 

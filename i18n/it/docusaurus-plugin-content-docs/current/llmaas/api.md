@@ -441,7 +441,7 @@ Estratto abbreviato: i puntini di sospensione rappresentano le altre componenti 
 
 Riordina una lista di documenti per pertinenza rispetto a una query. Compatibile con l'API Cohere (v1 e v2).
 
-**Fatturazione**: consultare il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Tutti i documenti inviati vengono conteggiati, anche se `top_n` limita il numero di risultati restituiti. Vedere il [dettaglio del calcolo](./rerank.md#tariffazione).
+**Fatturazione**: consultare il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Il reranking è fatturato per milione di token di reranking; tutti i documenti inviati vengono elaborati, anche se `top_n` limita il numero di risultati restituiti. Vedere il [dettaglio](./rerank.md#tariffazione).
 
 #### Richiesta
 
@@ -503,7 +503,7 @@ Estratto illustrativo del formato Jina/vLLM descritto dal contratto della piatta
 }
 ```
 
-I `relevance_score` sono punteggi grezzi non normalizzati, non probabilità tra 0 e 1. Utilizzare il loro ordine relativo; qualsiasi soglia deve essere [calibrata sul proprio modello e corpus](./rerank.md#soglia-di-pertinenza). I contatori `usage.prompt_tokens` e `usage.total_tokens` sono distinti dalla fatturazione per documento elaborato; non è richiesto alcun campo `usage.billed_units.search_units` per calcolare quest'ultima.
+I `relevance_score` sono punteggi grezzi non normalizzati, non probabilità tra 0 e 1. Utilizzare il loro ordine relativo; qualsiasi soglia deve essere [calibrata sul proprio modello e corpus](./rerank.md#soglia-di-pertinenza).
 
 L'endpoint `/v2/rerank` (SDK Cohere v2) è inoltre disponibile con lo stesso formato di richiesta.
 

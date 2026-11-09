@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte mit OpenShift
 ---
 import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
 import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
@@ -8,7 +8,7 @@ import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png
 import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
 import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
-# QuickStart for the OpenShift Offering
+# Erste Schritte mit OpenShift
 
 This page guides you through the initial steps to use the **OpenShift** offering from the Cloud Temple console. Follow these instructions to explore the available menus and features.
 

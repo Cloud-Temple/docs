@@ -441,7 +441,7 @@ Abbreviated excerpt: ellipses represent other vector components. This block illu
 
 Reranks a list of documents by relevance to a query. Compatible with Cohere API (v1 and v2).
 
-**Billing**: see the [official Cloud Temple pricing catalog](https://www.cloud-temple.com/en/our-public-rates/). All submitted documents are counted, even if `top_n` limits the number of returned results. See [calculation details](./rerank.md#pricing).
+**Billing**: see the [official Cloud Temple pricing catalog](https://www.cloud-temple.com/en/our-public-rates/). Reranking is billed per million reranking tokens; all submitted documents are processed, even if `top_n` limits the number of returned results. See [details](./rerank.md#pricing).
 
 #### Request
 
@@ -503,7 +503,7 @@ Illustrative excerpt of the Jina/vLLM format described by the platform contract.
 }
 ```
 
-`relevance_score` values are raw, unnormalized scores, not probabilities between 0 and 1. Use their relative order; any threshold must be [calibrated on your model and corpus](./rerank.md#relevance-threshold). The `usage.prompt_tokens` and `usage.total_tokens` counters are distinct from billing per processed document; no `usage.billed_units.search_units` field is required to calculate the latter.
+`relevance_score` values are raw, unnormalized scores, not probabilities between 0 and 1. Use their relative order; any threshold must be [calibrated on your model and corpus](./rerank.md#relevance-threshold).
 
 The `/v2/rerank` endpoint (Cohere SDK v2) is also available with the same request format.
 

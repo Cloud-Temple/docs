@@ -1,5 +1,5 @@
 ---
-title : Desplegar a través de HelmFile
+title: Desplegar con Helmfile
 ---
 
 # Desplegar con Helmfile

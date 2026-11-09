@@ -1,10 +1,10 @@
 ---
-title: Guida introduttiva
+title: Guida introduttiva al Marketplace
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# Guida rapida per il Marketplace Cloud Temple
+# Guida introduttiva al Marketplace
 
 Questa pagina guida attraverso i passaggi iniziali per utilizzare il **Marketplace Cloud Temple** dalla console. Segui queste istruzioni per scoprire le soluzioni disponibili e distribuirle rapidamente.
 

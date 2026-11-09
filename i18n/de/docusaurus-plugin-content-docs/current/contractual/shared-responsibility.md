@@ -1,11 +1,11 @@
 ---
-title: Modell der gemeinsamen Verantwortung
+title: Modell der Verantwortungsteilung
 slug: /shared-responsibility
 hide_table_of_contents: true
 displayed_sidebar: docSidebar
 ---
 
-# Modell der geteilten Verantwortung
+# Modell der Verantwortungsteilung
 
 Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen Anbieter und Kunde. Diese RACI-Matrizen (*Responsible, Accountable, Consulted, Informed*) legen genau fest, wer für welchen Dienst welche Aufgaben übernimmt.
 
@@ -16,7 +16,7 @@ Cloud Temple arbeitet nach einem Modell der **geteilten Verantwortung** zwischen
 <div class="contract-grid">
   <div class="contract-card">
     <div class="contract-card-title">RACI IaaS (VMware & Open IaaS)</div>
-    <div class="contract-card-desc">Verteilung der Verantwortlichkeiten für die IaaS-Infrastrukturdienste VMware und OpenStack.</div>
+    <div class="contract-card-desc">Verteilung der Verantwortlichkeiten für die IaaS-Infrastrukturdienste VMware und OpenIaaS.</div>
     <a class="contract-read-link" href="./contractual/iaas/raci">Dokument anzeigen →</a>
   </div>
 </div>

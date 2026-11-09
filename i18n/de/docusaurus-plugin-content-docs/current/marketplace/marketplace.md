@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über den Marketplace
 ---
 
-# Marketplace
+# Übersicht über den Marketplace
 
 Die __Marketplace Cloud Temple__ bietet einen vereinfachten Zugang zu essenziellen Cloud-Lösungen und den besten Softwareprodukten unserer Partner-Verlage, die in wenigen Klicks in einer sicheren Umgebung bereitgestellt werden.
 
@@ -17,9 +17,9 @@ Durch die Zusammenarbeit mit einem Netzwerk anerkannter Technologiepartner gewä
     <a href="./marketplace/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell mit der Marketplace, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./marketplace/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./marketplace/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorials</h3>

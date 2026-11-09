@@ -1,5 +1,5 @@
 ---
-title: Metriken
+title: Konzepte
 ---
 import metricsHypervisorsCo2 from '@site/docs/console/metrics/images/metrics_hypervisors_co2.png'
 import shivaHome from '@site/docs/console/metrics/images/shiva_home.png'
@@ -20,12 +20,8 @@ import shivaMetric_014 from '@site/docs/console/metrics/images/shiva_metric_014.
 import grafanaDashboards_003 from '@site/docs/console/metrics/images/grafana_dashboards_003.png'
 import grafanaDashboards_004 from '@site/docs/console/metrics/images/grafana_dashboards_004.png'
 import grafanaDashboards_002 from '@site/docs/console/metrics/images/grafana_dashboards_002.png'
-import grafanaDatasourceHttp from '@site/docs/console/metrics/images/grafana_datasource_http.png'
-import grafanaDatasourceAuth from '@site/docs/console/metrics/images/grafana_datasource_auth.png'
-import grafanaDatasourceBasicAuthDetails from '@site/docs/console/metrics/images/grafana_datasource_basic_auth_details.png'
-import grafanaDatasourceAlerting from '@site/docs/console/metrics/images/grafana_datasource_alerting.png'
-import grafanaDatasourceWorking from '@site/docs/console/metrics/images/grafana_datasource_working.png'
-import grafanaDashboards_001 from '@site/docs/console/metrics/images/grafana_dashboards_001.png'
+
+## Einführung
 
 Die Mehrheit der __Cloud Temple__-Kunden verfügt über Tools zur Visualisierung, zum Monitoring und zur Metrikerfassung zur Verfolgung ihrer Operationen.
 
@@ -37,11 +33,32 @@ Es ist jedoch möglich, bestimmte Performance-Daten Ihrer Cloud-Ressourcen in de
 
 *__Hinweis:__ Die Philosophie von __Cloud Temple__ besteht nicht nur darin, Diagramme in der Weboberfläche zu integrieren, sondern auch maximal viele Informationen bereitzustellen, die über die API zugänglich sind.*
 
-## In die Web-Oberfläche integrierte Dashboards
+Der Dienst umfasst außerdem die Sichtbarkeit geplanter Vorgänge und Vorfälle (Interventionen, Wartungen, Vorfallberichte) über die Konsole, mit Benachrichtigungen per E-Mail.
+
+## Vorteile
+
+| Vorteil                      | Beschreibung                                                                                      |
+|------------------------------|---------------------------------------------------------------------------------------------------|
+| Offener Standard             | Die Metriken werden im Prometheus-Format bereitgestellt und mit PromQL abgefragt, ohne proprietäre Sprache. |
+| API-first                    | Jede in der Weboberfläche sichtbare Metrik ist auch über die API zugänglich.                     |
+| Sofortige Sichtbarkeit       | Für IaaS VMware und OpenIaaS sind Dashboards in die Konsole integriert.                          |
+| Grafana sofort einsatzbereit | Die Konsole wird in Grafana als Prometheus-Datenquelle hinzugefügt, mit Open-Source-Dashboards.  |
+| Umweltmetriken               | CO₂-Emissionen und Energieverbrauch nativ verfügbar.                                             |
+
+## Funktionen
+
+| Funktion                        | Beschreibung                                                                         |
+|---------------------------------|--------------------------------------------------------------------------------------|
+| Prometheus-Proxy                | PromQL-kompatible API, abrufbar über Grafana oder jedes kompatible Tool.             |
+| Integrierte Dashboards          | Metriken für IaaS VMware und OpenIaaS in der Weboberfläche der Konsole.              |
+| Umweltmetriken                  | CO₂ und Energieverbrauch (kWh) pro Ressource.                                        |
+| Vorgänge und Vorfälle           | Geplante Interventionen und Vorfälle in der Konsole sichtbar, E-Mail-Benachrichtigungen. |
+
+### In die Web-Oberfläche integrierte Dashboards
 
 *__Hinweis:__ Für den Zugriff auf diese Dashboards ist die Berechtigung __'metric_read'__ erforderlich.*
 
-### Übersicht
+#### Übersicht
 
 Die Startseite der Konsole zeigt das Haupt-Dashboard, das alle Metriken darstellt, die eine Statusübersicht über alle Produkte ermöglichen, für die Sie in Ihrem Geltungsbereich ein Abonnement abgeschlossen haben. Bei Problemen mit Ihren VMware- und/oder OpenIaaS-Produkten werden Warnungen angezeigt, deren Farbe der Kritikalität entspricht.
 
@@ -49,17 +66,17 @@ Diese Warnungen sind anklickbar und leiten zur entsprechenden Produktseite weite
 
 <img src={shivaHome} />
 
-### VMware-Metriken - Gesamtübersicht
+#### VMware-Metriken - Gesamtübersicht
 
 Im Menü __'VMware'__ ist ein spezifisches Dashboard im Untermenü __'Metriken'__ verfügbar. Es umfasst 4 Registerkarten :
 
-#### Übersicht
+##### Übersicht
 
 Auf diesem Tab finden sich ein Teil der Metriken, die bereits zu Beginn dieses Kapitels im globalen Dashboard behandelt wurden.
 
 <img src={shivaMetric_000} />
 
-#### Berechnung
+##### Berechnung
 
 Auf diesem Tab finden Sie die Anzahl der __AZ__, der __Clusters__, der __ESXs__, die __CO₂-Emission__, die __Verbrauchsabschätzung__ sowie 7 Diagramme,
 die eine sehr visuelle Bestandsaufnahme Ihrer VMware-Umgebung darstellen. Die Verbrauchsabschätzung in kw/h wird auf Basis des Durchschnitts der Messwerte berechnet, die den gewählten Zeitraum abdecken, und auf eine Stunde hochgerechnet.
@@ -73,13 +90,13 @@ Sie können den abzudeckenden Datumsbereich sowie den Typ der Datenaggregation a
 Beim Überfahren der einzelnen Diagramme mit der Maus werden die Details der Ressourcennamen und deren Werte angezeigt. Beim Klicken auf diese Diagramme öffnet sich eine kleine Tooltip, die es Ihnen ermöglicht, die Details zum angeklickten Datum leichter einzusehen:
 <img src={shivaMetric_014} />
 
-#### Speicher
+##### Speicher
 
 Ebenso wie auf der Registerkarte „Berechnung“ finden sich hier verschiedene Informationen: die Anzahl der __AZ__, der __Datastore-Cluster__ und der __Datastores__ sowie 2 Diagramme. Das gleiche Filterprinzip gilt hier, jedoch können wir nach __SDRS-Cluster__ und __Datastore__ gruppieren.
 
 <img src={shivaMetric_004} />
 
-#### Virtuelle Maschinen
+##### Virtuelle Maschinen
 
 Hier erhalten Sie einen globalen Überblick über den Status der virtuellen Maschinen.
 
@@ -100,33 +117,33 @@ Sie gelangen dann zur Seite zur grafischen Darstellung der historischen Daten, e
 
 <img src={shivaMetric_007} />
 
-### VMware-Metriken - Ansicht nach Ressource
+#### VMware-Metriken - Ansicht nach Ressource
 
 Zudem ist es möglich, einen Teil der VMware-bezogenen Metriken einzusehen, dieses Mal jedoch spezifischer für einen bestimmten __Host__ oder ein bestimmtes __Datastore__.
 
-#### Host
+##### Host
 
 In der Host-Ansicht können für einen bestimmten Zeitraum der __Energieverbrauch__ sowie die Schätzung der __Kohlenstoffemissionen__ eingesehen werden.
 
 <img src={shivaMetric_008} />
 
-#### Datastore
+##### Datastore
 
 In der Datastore-Ansicht können Sie für einen bestimmten Zeitraum die __IOPS__ einsehen.
 
 <img src={shivaMetric_009} />
 
-### OpenIaaS-Metriken
+#### OpenIaaS-Metriken
 
 Im Menü __'OpenIaaS'__ ist ein spezifisches Dashboard im Untermenü __'Metriken'__ verfügbar. Es umfasst 3 Registerkarten:
 
-#### Übersicht
+##### Übersicht
 
 Auf diesem Tab finden sich ein Teil der Metriken, die bereits zu Beginn dieses Kapitels im globalen Dashboard erläutert wurden.
 
 <img src={shivaMetric_010} />
 
-#### Berechnung
+##### Berechnung
 
 Auf diesem Tab finden Sie die Anzahl der __AZ__, __Clusters__ und __Hosts__ sowie 5 Diagramme, die eine sehr visuelle Übersicht Ihrer OpenIaaS-Umgebung bieten.
 
@@ -136,13 +153,13 @@ Sie können den abzudeckenden Datumsbereich sowie den Typ der Datenaggregation a
 
 <img src={shivaMetric_012} />
 
-#### Speicher
+##### Speicher
 
 Ebenso wie auf der Registerkarte "Berechnung" finden sich hier verschiedene Informationen: die Anzahl der __AZ__, der __Clusters__ und der __Datastores__ sowie ein Diagramm. Das gleiche Filterprinzip gilt auch hier, jedoch können wir nach __Block Storage__ gruppieren.
 
 <img src={shivaMetric_013} />
 
-## Verwendung mit __Grafana__
+### Verwendung mit __Grafana__
 
 Integration der Konsole mit Grafana
 
@@ -161,45 +178,36 @@ Cloud Temple stellt zudem eine [Sammlung an Dashboards](https://github.com/Cloud
 
 <img src={grafanaDashboards_002} />
 
-### Konfigurieren der Konsole als Datenquelle in Grafana
+Um Ihre Grafana-Instanz mit der Konsole zu verbinden, folgen Sie der Anleitung [Erste Schritte](quickstart.md).
 
-Das Ziel ist es, die Observability Ihrer Cloud-Infrastruktur durch Cloud-Temple-Metriken zu erweitern.
+## Architektur
 
-#### Voraussetzungen
+Ein in die Konsole integrierter Prometheus-Proxy stellt die Metriken Ihrer Ressourcen bereit. Ihr Visualisierungstool (zum Beispiel Grafana) fragt diesen Proxy als Prometheus-Datenquelle ab, mit Ihren Zugangsdaten für die Konsole.
 
-- Eine Grafana-Instanz mit Zugriff auf die API der Konsole.
-- Administrativer Zugriff auf die Grafana-Instanz, um die *Datenquellen* konfigurieren zu können.
-- Ein Personal Access Token mit mindestens der Berechtigung `metrics_read`.
+## Regionen und Verfügbarkeitszonen
 
-#### Konfiguration
+Der Dienst ist in die Cloud Temple-Konsole integriert: Die Metriken decken die Ressourcen Ihrer Tenants ab, unabhängig von ihrer Verfügbarkeitszone.
 
-Gehen Sie in der __Konfiguration__ von Grafana zum Reiter "__Datenquellen__" und klicken Sie auf "__Datenquelle hinzufügen__".
+## Technische Spezifikationen
 
-Geben Sie in das Feld URL die __URL der Console Metrics API__ ohne die Versionsnummer und endend mit "__/prometheus__" ein
-(Beispiel: [https://shiva.cloud-temple.com/api/metric/prometheus](https://shiva.cloud-temple.com/api/metric/prometheus))
+| Parameter                          | Wert                                      |
+|------------------------------------|-------------------------------------------|
+| Metrikformat                       | Prometheus, PromQL-Abfragen               |
+| Umfang der Dashboards              | IaaS VMware, OpenIaaS                     |
+| Verlauf der Vorgänge und Vorfälle  | 60 Tage                                   |
 
-<img src={grafanaDatasourceHttp} />
+## Sicherheit und Compliance
 
-Aktivieren Sie in der __Authentifizierung__ die Option __Basic Auth__.
+Observability ist nach HDS und ISO 27001 zertifiziert. Es ist in den SecNumCloud-qualifizierten und C5-konformen Diensten enthalten.
 
-<img src={grafanaDatasourceAuth} />
+## Reversibilität
 
-Im Bereich "__Basic Auth Details__" konfigurieren Sie den __Benutzernamen__ und das __Passwort__ unter Verwendung der __ID__ und des __Secrets__ eines __persönlichen Zugriffstokens__ mit der Berechtigung __metrics_read__.
+| Vorgang                           | Mittel                                             | Kosten    |
+|-----------------------------------|----------------------------------------------------|-----------|
+| Export der Metriken               | Prometheus-Erfassung in Ihren Tools, im Self-Service | Inklusive |
+| Export der Aktivitätsprotokolle   | Activity-API der Konsole                           | Inklusive |
 
-<img src={grafanaDatasourceBasicAuthDetails} />
+## Preise
 
-Im Bereich "__Alerting__" konfigurieren Sie die Eigenschaft __HTTP Method__ auf __GET__.
-
-<img src={grafanaDatasourceAlerting} />
-
-#### Ergebnis
-
-Um zu bestätigen, dass die Konfiguration korrekt und funktionsfähig ist, klicken Sie auf die Schaltfläche "__Save & test__".
-
-Es sollte eine Bestätigungsmeldung angezeigt werden, die besagt, dass die Konfiguration erfolgreich war.
-
-<img src={grafanaDatasourceWorking} />
-
-Hier finden Sie eine Vielzahl von Konfigurationsbeispielen für Grafana: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
-
-<img src={grafanaDashboards_001} />
+Observability ist ohne Aufpreis in jedem Cloud Temple-Abonnement enthalten. Siehe die Produktseite auf der Cloud Temple-Website:
+[Observability](https://www.cloud-temple.com/produits/observability/).

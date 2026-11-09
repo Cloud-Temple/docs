@@ -1,9 +1,9 @@
 ---
-title: Backbone Privado
+title: Visión general de Private Backbone
 slug: /network/private_backbone
 ---
 
-# Backbone Privado — Conectividad Avanzada
+# Visión general de Private Backbone
 
 > **Toma el control total de tu red con conectividad de nivel 2 extendida, diseñada para arquitecturas híbridas y configuraciones a medida.**
 
@@ -16,7 +16,7 @@ El **Backbone Privado** de Cloud Temple es nuestro producto de conectividad hist
     <a href="./private_backbone/concepts" class="card-link">Explorar conceptos →</a>
   </div>
   <div class="card">
-    <h3>Guía de inicio rápido</h3>
+    <h3>Guía de inicio</h3>
     <p>Crea tu primera red privada y configura tu acceso a Internet en unos pocos pasos.</p>
     <a href="./private_backbone/quickstart" class="card-link">Comenzar →</a>
   </div>

@@ -1,9 +1,9 @@
 ---
-title: Overview
+title: LLM as a Service (LLMaaS) overview
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# LLM as a Service (LLMaaS) overview
 
 LLMaaS provides access to AI models hosted by Cloud Temple via an API: conversational assistants, coding and agents, image analysis, semantic search, reranking, translation, and audio/image use cases.
 
@@ -102,7 +102,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | The model to use (see [catalogue des modèles](./models.md)) |
+| `model`       | string  | The model to use (see [model catalog](./models.md)) |
 | `messages`    | array   | List of conversation messages                         |
 | `max_tokens`  | integer | Maximum number of tokens to generate                            |
 | `temperature` | float   | Controls creativity (0.0-2.0)                              |
@@ -120,10 +120,10 @@ https://api.ai.cloud-temple.com/v1/
 ## Available Endpoints
 
 - `/chat/completions` : Generation of conversational responses
-- `/chat/completions/batch` : Asynchronous processing of multiple conversations ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Asynchronous processing of multiple conversations ([Batch guide](./batch.md))
 - `/completions` : Simple text completion
 - `/embeddings` : Vectorization for semantic search and RAG
-- `/rerank` and `/v2/rerank` : Result reranking (compatible Cohere SDK)
+- `/rerank` and `/v2/rerank` : Result reranking (compatible with the Cohere SDK)
 - `/audio/transcriptions` : Batch audio transcription (Whisper)
 - `/audio/speech` : Speech synthesis (TTS)
 - `/images/generations` : Image generation

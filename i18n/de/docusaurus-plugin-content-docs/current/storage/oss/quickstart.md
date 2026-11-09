@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 import S3ListBucket from '@site/docs/storage/oss/images/S3_list_bucket.png'
 import S3Accounts from '@site/docs/storage/oss/images/S3_accounts.png'
@@ -242,7 +242,7 @@ Der Cloud Object Storage Temple ist ein hochsicherer und SecNumCloud-zertifizier
     <img src={S3Create} />
     Es öffnet sich ein Fenster, in dem Sie folgende Angaben machen müssen:
     1. Die **Region** für die Erstellung Ihres Buckets,
-    2. Der **Typ** des Buckets: Leistungsstark oder Archivierung,
+    2. Der **Typ** des Buckets, vorausgewählt: „Performance Object Storage S3 API“, derzeit der einzige verfügbare Typ,
     3. Der **Name** Ihres Buckets (er muss eindeutig sein).
     <img src={S3CreatePopup_001} />
   </TabItem>

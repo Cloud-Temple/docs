@@ -30,7 +30,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concept
 
-Le suivi du déploiement de nouvelles ressources se fait dans le menu __'Commandes'__ accessible dans le bandeau vert à gauche de l'écran.
+Le suivi du déploiement de nouvelles ressources se fait dans le menu __'Marketplace'__ > __'Commandes'__ accessible dans le bandeau vert à gauche de l'écran.
 
 Il permet de visualiser les ressources Cloud commandées, en cours de déploiement et les eventuelles erreurs au sein d'un [Tenant](iam/concepts.md#tenant) de votre [Organisation](iam/concepts.md#organisations).
 
@@ -52,7 +52,7 @@ __Note__ : __Il n'est pas possible de lancer plusieurs commandes du même type d
 
 ## Commander une nouvelle zone de disponibilité
 
-Il est possible d'ajouter une nouvelle zone de disponibilité en accédant au menu "__Commande__". Cette option vous permet d'étendre vos ressources et d'améliorer la disponibilité et la résilience de vos applications en quelques clics seulement :
+Il est possible d'ajouter une nouvelle zone de disponibilité en accédant au menu "__Marketplace__ > __Commandes__". Cette option vous permet d'étendre vos ressources et d'améliorer la disponibilité et la résilience de vos applications en quelques clics seulement :
 
 <img src={shivaOrderAz_01} />
 
@@ -126,7 +126,7 @@ Vous obtenez ensuite un résumé des options séléctionnées avant de valider v
 
 ### Déployer un nouveau cluster de stockage
 
-Dans le menu "__commande__", procédez à la commande d'un __nouveau cluster de stockage__ pour votre environnement en sélectionnant les options qui correspondent à vos besoins en termes de capacité, de performance et de redondance. Sélectionnez l'emplacement :
+Dans le menu "__Marketplace__ > __Commandes__", procédez à la commande d'un __nouveau cluster de stockage__ pour votre environnement en sélectionnant les options qui correspondent à vos besoins en termes de capacité, de performance et de redondance. Sélectionnez l'emplacement :
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Flexibilité des réseaux__ :
 - Un réseau peut être __terminé en zone de hosting__ pour vos équipements physiques
 - __Limite__ : Maximum de 20 réseaux par commande. Vous pouvez effectuer plusieurs commandes successives pour étendre ce nombre selon vos besoins
 
-La commande d'un nouveau réseau et les décisions de partage entre vos tenants, sont réalisées dans le menu __'Réseau'__ du bandeau vert à gauche de l'écran. Les réseaux seront d'abord créés, puis une commande distincte sera générée pour les propager. Vous pouvez suivre l'avancement des commandes en cours en accédant à l'onglet "Commande" dans le menu, ou en cliquant sur les labels d'information qui vous redirigent vers les commandes actives ou en cours de traitement.
+La commande d'un nouveau réseau et les décisions de partage entre vos tenants, sont réalisées dans le menu __'Réseau'__ du bandeau vert à gauche de l'écran. Les réseaux seront d'abord créés, puis une commande distincte sera générée pour les propager. Vous pouvez suivre l'avancement des commandes en cours en accédant au menu "Marketplace > Commandes", ou en cliquant sur les labels d'information qui vous redirigent vers les commandes actives ou en cours de traitement.
 
 <img src={shivaOrdersNet_002} />
 

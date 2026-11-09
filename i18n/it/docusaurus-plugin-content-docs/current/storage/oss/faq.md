@@ -56,6 +56,17 @@ Il servizio verifica:
 
 Ogni condizione non soddisfatta comporta il rifiuto dell'accesso.
 
+## Perché un account di archiviazione non può accedere a un bucket aggiuntivo?
+
+Un account di archiviazione può accedere al massimo a **10 bucket**. Oltre questo limite, l'assegnazione dell'accesso a un 11° bucket non riesce. Il limite riguarda l'**account di archiviazione**, non il bucket.
+
+Due soluzioni:
+
+- revocare l'accesso dell'account a un bucket di cui non ha più bisogno, dalla scheda '__Policies__' di quel bucket;
+- utilizzare un altro account di archiviazione per i bucket aggiuntivi.
+
+Vedere [Gestione delle politiche di accesso](./quickstart.md#gestione-delle-politiche-di-accesso).
+
 ## Scenari di utilizzo consigliati
 
 - **Archiviazione interna cliente**: bucket privati accessibili esclusivamente dalle IP pubbliche dedicate del cliente (gestione tramite whitelist).

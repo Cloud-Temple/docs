@@ -1,9 +1,9 @@
 ---
-title: Object Storage Service (OSS)
+title: Object Storage Service (OSS) overview
 sidebar_position: 1
 ---
 
-# Object Storage Service (OSS)
+# Object Storage Service (OSS) overview
 
 ## Overview
 

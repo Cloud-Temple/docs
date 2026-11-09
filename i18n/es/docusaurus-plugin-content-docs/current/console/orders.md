@@ -30,7 +30,7 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concepto
 
-El seguimiento del despliegue de nuevos recursos se realiza en el menú __'Pedidos'__ accesible en la barra verde a la izquierda de la pantalla.
+El seguimiento del despliegue de nuevos recursos se realiza en el menú __'Marketplace'__ > __'Pedidos'__ accesible en la barra verde a la izquierda de la pantalla.
 
 Permite visualizar los recursos Cloud pedidos, en proceso de despliegue y los posibles errores dentro de un [Tenant](iam/concepts.md#tenant) de su [Organización](iam/concepts.md#organizaciones).
 
@@ -52,7 +52,7 @@ __Nota__ : __No es posible iniciar varios pedidos del mismo tipo de recurso simu
 
 ## Solicitar una nueva zona de disponibilidad
 
-Es posible agregar una nueva zona de disponibilidad accediendo al menú "__Pedido__". Esta opción le permite ampliar sus recursos y mejorar la disponibilidad y la resiliencia de sus aplicaciones con solo unos pocos clics:
+Es posible añadir una nueva zona de disponibilidad accediendo al menú "__Marketplace__ > __Pedidos__". Esta opción le permite extender sus recursos y mejorar la disponibilidad y la resiliencia de sus aplicaciones en solo unos clics :
 
 <img src={shivaOrderAz_01} />
 
@@ -126,7 +126,7 @@ A continuación, obtendrá un resumen de las opciones seleccionadas antes de val
 
 ### Desplegar un nuevo clúster de almacenamiento
 
-En el menú "__pedido__", proceda a solicitar un __nuevo clúster de almacenamiento__ para su entorno seleccionando las opciones que se ajusten a sus necesidades de capacidad, rendimiento y redundancia. Seleccione la ubicación:
+En el menú "__Marketplace__ > __Pedidos__", proceda a la solicitud de un __nuevo clúster de almacenamiento__ para su entorno seleccionando las opciones que corresponden a sus necesidades en términos de capacidad, rendimiento y redundancia. Seleccione la ubicación :
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Flexibilidad de las redes__ :
 - Una red puede ser __terminada en una zona de hosting__ para sus equipos físicos
 - __Límite__ : Máximo de 20 redes por solicitud. Puede realizar varias solicitudes consecutivas para ampliar este número según sus necesidades
 
-La solicitud de una nueva red y las decisiones de compartición entre sus tenants se realizan en el menú __'Red'__ de la barra verde a la izquierda de la pantalla. Las redes se crearán primero, y luego se generará una solicitud separada para propagarlas. Puede seguir el progreso de las solicitudes en curso accediendo a la pestaña "Solicitud" en el menú, o haciendo clic en las etiquetas de información que lo redirigen a las solicitudes activas o en proceso.
+La solicitud de una nueva red y las decisiones de compartición entre sus tenants, se realizan en el menú __'Red'__ de la barra verde a la izquierda de la pantalla. Las redes serán primero creadas, luego un pedido distinto será generado para propagarlas. Puede seguir el avance de los pedidos en curso accediendo al menú "Marketplace > Pedidos", o haciendo clic en las etiquetas de información que le redirigen a los pedidos activos o en curso de procesamiento.
 
 <img src={shivaOrdersNet_002} />
 

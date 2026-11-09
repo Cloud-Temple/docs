@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de la colocation
 ---
 
-# Housing Cloud Temple
+# Vue d'ensemble de la colocation
 
 Le **Housing Cloud Temple** offre une solution d'hébergement physique pour vos infrastructures IT dans des zones de disponibilité fiables et sécurisées. Conçue pour répondre aux besoins des entreprises, Ce produit permet d’héberger vos équipements dans des racks mutualisés ou dédiés, tout en assurant une connectivité réseau performante et des services professionnels d'assistance en datacenter.
 
@@ -15,12 +15,12 @@ Avec des options flexibles et un haut niveau de sécurité, le Housing Cloud Tem
     <a href="./housing/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guide de démarrage</h3>
     <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./housing/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
     <div class="card">
-    <h3>Tutorials</h3>
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./housing/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>

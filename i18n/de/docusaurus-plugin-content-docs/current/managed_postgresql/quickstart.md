@@ -1,5 +1,5 @@
 ---
-title: Schnellstart
+title: Erste Schritte
 ---
 
 Willkommen beim Einstiegsguide für **Verwaltetes PostgreSQL** von Cloud Temple.

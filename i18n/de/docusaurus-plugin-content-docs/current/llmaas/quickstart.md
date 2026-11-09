@@ -1,9 +1,9 @@
 ---
-title: Einstiegsguide
+title: Erste Schritte mit LLMaaS
 sidebar_position: 3
 ---
 
-# Schnellstartanleitung
+# Erste Schritte mit LLMaaS
 
 Dieser Leitfaden ermöglicht es Ihnen, Ihre erste Anfrage an die LLMaaS-API in weniger als 5 Minuten zu stellen.
 
@@ -102,9 +102,9 @@ else:
 
 ## Modellwahl
 
-Die Beispiele verwenden `gpt-oss:120b`. Bevor Sie sie ausführen, stellen Sie sicher, dass diese Kennung in `/v1/models` aufgeführt ist, und konsultieren Sie den [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle).
+Die Beispiele verwenden `gpt-oss:120b`. Bevor Sie sie ausführen, stellen Sie sicher, dass diese Kennung in `/v1/models` aufgeführt ist, und konsultieren Sie den [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle).
 
-Wählen Sie für Ihre Anwendung basierend auf den erforderlichen Fähigkeiten, der Qualität auf Ihren Daten und dem Support-Zeithorizont. Der [guide du catalogue](./models.md) erläutert diese Kriterien im Detail. Die Vision-Beispiele erfordern ein multimodales Modell, und die Beispiele für Tool-Aufrufe erfordern ein Modell, das *tool calling* unterstützt.
+Wählen Sie für Ihre Anwendung basierend auf den erforderlichen Fähigkeiten, der Qualität auf Ihren Daten und dem Support-Zeithorizont. Der [Katalogleitfaden](./models.md) erläutert diese Kriterien im Detail. Die Vision-Beispiele erfordern ein multimodales Modell, und die Beispiele für Tool-Aufrufe erfordern ein Modell, das *tool calling* unterstützt.
 
 Die Reasoning-Einstellungen hängen vom Modell ab. Gehen Sie nicht davon aus, dass eine Textanweisung diesen Modus für alle Modelle derselben Familie aktiviert oder deaktiviert.
 

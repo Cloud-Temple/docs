@@ -1,8 +1,8 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva al provider Terraform
 ---
 
-# Guida di avvio rapido
+# Guida introduttiva al provider Terraform
 
 Questa guida ti accompagna passo dopo passo nel distribuire la tua prima infrastruttura Cloud Temple con Terraform.
 

@@ -1,12 +1,12 @@
 ---
-title: Schnellstart
+title: Erste Schritte mit Bare Metal
 ---
 import shivaBareMetalMenu from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_menu.png'
 import shivaBareMetalList from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_list.png'
 import shivaBareMetalDetails from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_details.png'
 import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_bare-metal_storagelist.png'
 
-# Schnellstart für das Bare-Metal-Angebot
+# Erste Schritte mit Bare Metal
 
 Diese Seite führt Sie durch die ersten Schritte zur Nutzung des **Bare-Metal**-Angebots über die Cloud Temple-Konsole. Befolgen Sie diese Anleitung, um die verfügbaren Menüs und Funktionen kennenzulernen.
 

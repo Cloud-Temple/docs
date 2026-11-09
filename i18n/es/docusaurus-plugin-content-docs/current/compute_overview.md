@@ -3,7 +3,7 @@ title: Cómputo
 displayed_sidebar: docSidebar
 ---
 
-# Compute
+# Cómputo
 
 Los servicios Compute de Cloud Temple le permiten desplegar y operar máquinas virtuales en una infraestructura soberana y segura. Elija la tecnología que se adapte a sus necesidades: instancias cloud compartidas, infraestructura open source o virtualización VMware.
 
@@ -15,7 +15,7 @@ Los servicios Compute de Cloud Temple le permiten desplegar y operar máquinas v
   </div>
   <div class="card">
     <h3>IaaS OpenSource</h3>
-    <p>Infraestructura virtualizada open source (OpenStack). Control total sobre sus VMs, redes y almacenamiento sobre una base SecNumCloud.</p>
+    <p>Infraestructura virtualizada open source, basada en el hipervisor XEN (Vates). Control total sobre sus VMs, redes y almacenamiento sobre una base SecNumCloud.</p>
     <a href="./iaas_opensource" class="card-link">Descubrir IaaS OpenSource →</a>
   </div>
   <div class="card">

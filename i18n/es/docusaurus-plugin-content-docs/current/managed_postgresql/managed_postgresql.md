@@ -1,8 +1,8 @@
 ---
-title: Vista general
+title: Visión general de PostgreSQL gestionado
 ---
 
-# PostgreSQL Administrado <span class="title-preview-badge">Preview</span>
+# Visión general de PostgreSQL gestionado <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">
@@ -11,9 +11,9 @@ title: Vista general
     <a href="./managed_postgresql/concepts" class="card-link">Explorar los conceptos →</a>
   </div>
   <div class="card">
-    <h3>Guía de inicio rápido</h3>
+    <h3>Guía de inicio</h3>
     <p>Comience rápidamente siguiendo instrucciones claras y sencillas.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Iniciar el Quickstart →</a>
+    <a href="./managed_postgresql/quickstart" class="card-link">Abrir la guía de inicio →</a>
   </div>
 </div>
 

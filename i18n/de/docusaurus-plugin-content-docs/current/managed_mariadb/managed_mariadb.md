@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über Managed MariaDB
 ---
 
-# Managed MariaDB <span class="title-preview-badge">Preview</span>
+# Übersicht über Managed MariaDB <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">
@@ -11,9 +11,9 @@ title: Übersicht
     <a href="./managed_mariadb/concepts" class="card-link">Konzepte erkunden →</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Quickstart starten →</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Erste Schritte öffnen →</a>
   </div>
 </div>
 

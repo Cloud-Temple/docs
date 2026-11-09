@@ -1,5 +1,5 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva
 ---
 import shivaVmHome from '@site/docs/iaas_vmware/images/shiva_vm_home.png'
 import shivaVmHomeDesc from '@site/docs/iaas_vmware/images/shiva_vm_home_desc.png'

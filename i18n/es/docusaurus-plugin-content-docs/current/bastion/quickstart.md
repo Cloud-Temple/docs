@@ -1,18 +1,17 @@
 ---
 title: Guía de inicio
 ---
-import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
 import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
 import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
 import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
-Esta guía de inicio le presenta cómo solicitar la creación de una Appliance y cómo crear una nueva sesión y conectarse a ella.
+Esta guía de inicio presenta cómo activar el producto Bastion, registrar un equipo y conectarse a él.
 
 ## Prerrequisitos
 
-1. Haber suscrito el producto Cloud Temple (suscripción Appliance Bastion).
+1. Haber activado el producto Bastion para su organización.
 2. Los equipos a administrar deben ser accesibles desde la red donde se ha desplegado la Appliance Bastion.
 3. Contar con los permisos sobre el módulo Bastion.
 4. En el caso de un despliegue de la Appliance onpremise, los flujos correspondientes deben estar abiertos.
@@ -39,16 +38,15 @@ Se requieren varios flujos para el correcto funcionamiento del Appliance Bastion
 |--------------------------|-----------------------------|-----------|
 | Appliance bastión del cliente | Las instancias a administrar | TCP/22    |
 
-## Solicitar la creación de una Appliance
+<a id="demander-la-création-dune-appliance"></a>
 
-Antes de poder implementar una Appliance, es necesario realizar una solicitud de suscripción a una Appliance a través de una solicitud al soporte.
-El soporte es accesible en la Consola desde el icono de salvavidas en la barra superior derecha de la ventana.
+## Activar el producto Bastion
 
-<img src={shivaSupport} />
+El producto Bastion se activa en autoservicio desde la vista Organización de la consola Cloud Temple. También puede recurrir a su contacto comercial habitual.
 
 ## Registrar un equipo
 
-Para acceder regularmente a un equipo que deba administrarse, es más adecuado crear una sesión, que solo solicitará su nombre de usuario y contraseña en cada conexión.
+Para acceder regularmente a un equipo que deba administrarse, es más adecuado registrarlo: solo se le solicitarán su nombre de usuario y su contraseña en cada conexión.
 
 Para ello, vaya a la pestaña « Equipos » del menú « Bastión » y, a continuación, haga clic en el botón « Nuevo equipo ».
 
@@ -65,7 +63,7 @@ A continuación, complete la información necesaria para crear su equipo :
 
 <img src={creerSession2} />
 
-Debería aparecer una notificación que indique la creación del equipo en la esquina superior derecha de la página. La sesión se añade posteriormente a la lista de sus equipos.
+Debería aparecer una notificación que indique la creación del equipo en la esquina superior derecha de la página. El equipo se añade posteriormente a la lista de sus equipos.
 
 Para crear un nuevo equipo, también puede acceder a la pestaña « Appliances » haciendo clic en la barra de acciones de la Appliance a la que desea asociar un equipo.
 

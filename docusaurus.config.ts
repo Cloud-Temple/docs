@@ -121,6 +121,8 @@ const config: Config = {
       logo: {
         alt: 'Cloud Temple Logo',
         src: 'img/logo.svg',
+        // Variante pour le mode sombre : même tracé, texte blanc et vert éclairci.
+        srcDark: 'img/logo-dark.svg',
         href: '/home'
       },
       items: [
@@ -144,6 +146,10 @@ const config: Config = {
             {
               label: 'Status page',
               href: 'https://status.cloud-temple.com/',
+            },
+            {
+              label: 'Documentation history',
+              to: '/changelog',
             },
             {
               label: 'Tutorials',
@@ -171,7 +177,7 @@ const config: Config = {
               href: 'https://cloud-temple.com',
             },
             {
-              label: 'Cloud Temple Roadmap',
+              label: 'Roadmap',
               href: 'https://github.com/orgs/Cloud-Temple/projects/2',
             }
           ],

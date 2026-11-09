@@ -18,7 +18,7 @@ Diese Tutorials helfen Ihnen, einen Bastion Cloud Temple über die Konsole berei
 
 ## Voraussetzungen
 
-1. Das Cloud Temple-Produkt (Appliance Bastion-Abonnement) muss abonniert sein.
+1. Das Produkt Bastion muss für Ihre Organisation aktiviert sein.
 2. Die zu verwaltenden Geräte müssen vom Netzwerk aus erreichbar sein, in dem die Appliance Bastion bereitgestellt ist.
 3. Es müssen die Berechtigungen für das Bastion-Modul vorhanden sein.
 4. Bei einer On-Premise-Bereitstellung der Appliance müssen die entsprechenden Netzwerkflüsse freigegeben sein.
@@ -33,7 +33,7 @@ Nach der Anmeldung im Web-Konsolenportal wechseln Sie zum Register „Bastion“
 Verbindung über eine Bastion-Appliance. Für jedes Gerät werden der Name, die Tags, die
 Beschreibung, die zugehörige Appliance, der Verbindungstyp (SSH oder RDP), die Host-IP und schließlich das Tastaturlayout angezeigt.
 
-Sie können die Liste Ihrer Geräte nach zugewiesenen Tags filtern, und über ein Suchfeld können Sie eine Sitzung nach deren Namen suchen.
+Sie können die Liste Ihrer Geräte nach zugewiesenen Tags filtern, und über ein Suchfeld können Sie ein Gerät nach dessen Namen suchen.
 
 <img src={sessions2} />
 
@@ -45,7 +45,7 @@ Ein Suchfeld steht zur Verfügung, um eine Appliance nach deren Namen zu suchen.
 
 ## Eine Appliance bereitstellen
 
-Bevor eine Appliance bereitgestellt werden kann, muss ein Abonnement für eine Appliance über eine Anfrage an den Support beantragt werden.
+Aktivieren Sie vor der Bereitstellung einer Appliance das Produkt Bastion. Es wird im Self-Service über die Ansicht Organisation der Cloud Temple-Konsole oder über Ihren gewohnten Vertriebsansprechpartner aktiviert.
 
 ## Eine Verbindung zu einem Gerät öffnen
 

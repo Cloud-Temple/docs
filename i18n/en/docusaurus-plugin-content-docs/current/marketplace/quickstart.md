@@ -1,10 +1,10 @@
 ---
-title: Getting Started Guide
+title: Getting started with the Marketplace
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# QuickStart for the Cloud Temple Marketplace
+# Getting started with the Marketplace
 
 This page guides you through the initial steps to use the **Cloud Temple Marketplace** from the console. Follow these instructions to discover available solutions and deploy them quickly.
 

@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de MariaDB Managé
 ---
 
-# MariaDB Managé <span class="title-preview-badge">Preview</span>
+# Vue d'ensemble de MariaDB Managé <span class="title-preview-badge">Preview</span>
 
 <div class="card-grid">
   <div class="card">
@@ -13,7 +13,7 @@ title: Vue d'ensemble
   <div class="card">
     <h3>Guide de démarrage</h3>
     <p>Commencez rapidement en suivant des instructions claires et simples.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Lancer le Quickstart →</a>
+    <a href="./managed_mariadb/quickstart" class="card-link">Ouvrir le guide de démarrage →</a>
   </div>
 </div>
 

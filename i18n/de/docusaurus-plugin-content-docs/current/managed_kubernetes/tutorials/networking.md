@@ -26,9 +26,9 @@ Der Adressbereich unseres **Beispiels** 10.20.0.0/22 ist logisch in Unternetze u
 
     - 10.20.0.0/24 wird den Cluster-Knoten zugewiesen:
 
-    - 10.20.0.10 : ctodev-gitrunner (la machine qui pilote l'infrastructure)
+    - 10.20.0.10 : ctodev-gitrunner (der Rechner, der die Infrastruktur steuert)
 
-    - 10.20.0.20 : Virtuelle IP (load balancée) des Kubernetes-API-Dienstes
+    - 10.20.0.20 : Virtuelle IP (mit Lastverteilung) des Kubernetes-API-Dienstes
         - 10.20.0.21 : ctodev-cp-01 (control plane 01)
         - 10.20.0.22 : ctodev-cp-02 (control plane 02)
         - 10.20.0.23 : ctodev-cp-03 (control plane 03)
@@ -56,7 +56,7 @@ Der Adressbereich unseres **Beispiels** 10.20.0.0/22 ist logisch in Unternetze u
 
     - Services: 10.95.0.0/12
 
-> ⚠[Ranges Pods et Services]
+> ⚠[Pod- und Service-Bereiche]
 > Die Pods- und Services-Bereiche werden beim Kunden bei der Cluster-Einrichtung festgelegt. Sie können später nicht mehr geändert werden.
 
 ## Verwendung von MetalLB
@@ -113,9 +113,9 @@ spec:
 
 Ihr verwalteter Kubernetes-Cluster wurde standardmäßig mit 2 öffentlichen IPv4-Adressen bereitgestellt.
 
-Die erste IP wird auf Port 6443 für die Kubernetes-API verwendet (dans notre exemple ctodev.mk.ms-cloud-temple.com:6443)
+Die erste IP wird auf Port 6443 für die Kubernetes-API verwendet (in unserem Beispiel ctodev.mk.ms-cloud-temple.com:6443)
 
-Diese gleiche IP wird ebenfalls für den Ingress-Controller *"nginx-external-secured"* auf Port 443 NATed. Dies ermöglicht die Bereitstellung der verschiedenen Konsolen, die Ihnen zur Verfügung stehen (voir le guide quickstart). Der Zugriff auf diese öffentliche IP ist **gefiltert** und basiert auf einer Liste erlaubter IPs.
+Diese gleiche IP wird ebenfalls für den Ingress-Controller *"nginx-external-secured"* auf Port 443 NATed. Dies ermöglicht die Bereitstellung der verschiedenen Konsolen, die Ihnen zur Verfügung stehen (siehe „Erste Schritte“). Der Zugriff auf diese öffentliche IP ist **gefiltert** und basiert auf einer Liste erlaubter IPs.
 
 ---
 
@@ -123,7 +123,7 @@ Die zweite öffentliche IP wird für den Ingress-Controller *"nginx-external"* a
 
 Anwendungen, die mit der Ingress-Klasse *"nginx-external"* bereitgestellt werden, sind somit direkt über das Internet auf dieser IP erreichbar.
 
-*Wenn Sie eine Änderung der Firewall-Regeln wünschen (ajout/retrait d'IP autorisées), müssen Sie eine Support-Anfrage stellen.*
+*Wenn Sie eine Änderung der Firewall-Regeln wünschen (Hinzufügen/Entfernen erlaubter IPs), müssen Sie eine Support-Anfrage stellen.*
 
 *Es ist möglich, weitere öffentliche IPs hinzuzufügen, falls gewünscht.*
 
@@ -131,8 +131,8 @@ Anwendungen, die mit der Ingress-Klasse *"nginx-external"* bereitgestellt werden
 
 Für das interne DNS (CoreDNS) verfügt der Cluster über folgende Parameter:
 
-- Clustername : `<identifiant du cluster>`
-- Interner Domainname : `<identifiant du cluster>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
+- Clustername : `<Cluster-Kennung>`
+- Interner Domainname : `<Cluster-Kennung>-cluster.local` (in unserem Beispiel: ctodev-cluster.local)
 
 Diese interne Domain ist entscheidend für die Kommunikation zwischen Diensten innerhalb des Clusters. Sie ermöglicht es einer Anwendung, eine andere Anwendung einfach über ihren Kubernetes-Dienstnamen zu erreichen, ohne dessen interne IP-Adresse kennen zu müssen.
 
@@ -142,8 +142,8 @@ Beispielsweise wird ein Dienst mit dem Namen `api-backend` im Namespace `product
 
 Die für verwaltete Kubernetes-Cluster verwendete öffentliche DNS-Zone lautet `.mk.ms-cloud-temple.com`
 
-Der Ingress *"nginx-external"* (gemappt auf die öffentliche IP Nr. 2) ist unter `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"` erreichbar.
-Wenn Sie eine Anwendung mit dieser Ingress-Klasse veröffentlichen, können Sie direkt über diesen Domainnamen darauf zugreifen. Siehe das Tutorial: [Déployer votre première application](./firstdeploy)
+Der Ingress *"nginx-external"* (gemappt auf die öffentliche IP Nr. 2) ist unter `"*.external.<Ihre Cluster-Kennung>.mk.ms-cloud-temple.com"` erreichbar.
+Wenn Sie eine Anwendung mit dieser Ingress-Klasse veröffentlichen, können Sie direkt über diesen Domainnamen darauf zugreifen. Siehe das Tutorial: [Ihre erste Anwendung bereitstellen](./firstdeploy)
 
 ## Hubble : Netzwerkbeobachtbarkeit leicht zugänglich
 
@@ -162,7 +162,7 @@ Die grafische Benutzeroberfläche von Hubble wird über eine interne URL Ihres C
 
 Um darauf zuzugreifen, müssen Sie mit dem internen Netzwerk des Clusters verbunden sein (z. B. über einen Bastion-Host oder ein VPN). Die zu verwendende URL lautet:
 
-`http://hubble.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
+`http://hubble.internal.<ihre-cluster-kennung>.mk.ms-cloud-temple.com`
 
 Damit diese URL von Ihrem Arbeitsplatzrechner aufgelöst werden kann, müssen Sie wahrscheinlich einen Eintrag in Ihrer `hosts`-Datei oder in Ihrem internen DNS hinzufügen. Sie können die interne IP-Adresse des Hubble-Ingress mit dem folgenden Befehl abrufen:
 
@@ -180,12 +180,12 @@ Um die Sicherheit zu erhöhen und den Zugriff auf Ihre Dienste und die Kubernete
 
 Basierend auf den im Schnellstart-Leitfaden bereitgestellten URLs können Sie Ihren internen DNS wie folgt konfigurieren :
 
-1. **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<identifiant du cluster>.mk.ms-cloud-temple.com`
+1. **Erstellen Sie die private DNS-Zone** auf Ihren internen DNS-Servern für `.<Cluster-Kennung>.mk.ms-cloud-temple.com`
 2. **Fügen Sie die folgenden A-Einträge** hinzu :
 
    - **Für die Kubernetes-API :**
 
-     - `. -> 10.20.0.20` (IP virtuelle de l'API)
+     - `. -> 10.20.0.20` (virtuelle IP der API)
    - **Für interne Dienste (über den Ingress `nginx-internal`) :**
 
      - `hubble.internal -> 10.20.1.1`
