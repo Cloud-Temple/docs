@@ -543,6 +543,30 @@
     "message": "Domande frequenti",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc bastion/faq"
   },
+  "sidebar.docSidebar.category.Sovereign SOC": {
+    "message": "Sovereign SOC",
+    "description": "The label for category 'Sovereign SOC' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_overview": {
+    "message": "Panoramica",
+    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc sovereign_soc/sovereign_soc"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_concepts": {
+    "message": "Concetti",
+    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc sovereign_soc/concepts"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_quickstart": {
+    "message": "Guida introduttiva",
+    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc sovereign_soc/quickstart"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_tutorials": {
+    "message": "Tutorial",
+    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc sovereign_soc/tutorials"
+  },
+  "sidebar.docSidebar.doc.sovereign_soc_faq": {
+    "message": "Domande frequenti",
+    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc sovereign_soc/faq"
+  },
   "sidebar.docSidebar.doc.housing_overview": {
     "message": "Panoramica",
     "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc housing/housing"
