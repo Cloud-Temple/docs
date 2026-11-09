@@ -205,6 +205,18 @@ const sidebars: SidebarsConfig = {
             page('gpu', 'faq', 'gpu/faq'),
           ],
         },
+        {
+          type: 'category',
+          label: 'AIOps',
+          link: { type: 'doc', id: 'aiops/aiops' },
+          items: [
+            page('aiops', 'overview', 'aiops/aiops'),
+            page('aiops', 'concepts', 'aiops/concepts'),
+            page('aiops', 'quickstart', 'aiops/quickstart'),
+            page('aiops', 'tutorials', 'aiops/tutorials'),
+            page('aiops', 'faq', 'aiops/faq'),
+          ],
+        },
       ],
     },
     {
