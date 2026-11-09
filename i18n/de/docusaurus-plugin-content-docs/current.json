@@ -223,6 +223,18 @@
     "message": "Datenbanken",
     "description": "The label for category 'Bases de données' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.containers_managed": {
+    "message": "Container",
+    "description": "The label for category 'Conteneurs' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.security_managed": {
+    "message": "Sicherheit",
+    "description": "The label for category 'Sécurité' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.ai_managed": {
+    "message": "KI",
+    "description": "The label for category 'IA' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.MariaDB Managé": {
     "message": "Managed MariaDB",
     "description": "The label for category 'MariaDB Managé' in sidebar 'docSidebar'"
