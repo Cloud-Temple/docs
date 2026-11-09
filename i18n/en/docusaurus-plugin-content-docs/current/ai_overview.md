@@ -18,9 +18,4 @@ Cloud Temple's artificial intelligence services let you use AI models and accele
     <p>NVIDIA H100 and L40S graphics cards integrated into the IaaS and PaaS offerings, for machine learning, inference and high-performance computing.</p>
     <a href="./gpu" class="card-link">Discover GPU →</a>
   </div>
-  <div class="card">
-    <h3>AIOps</h3>
-    <p>Managed operational intelligence service: alert correlation, root cause analysis and governed remediation of your operations.</p>
-    <a href="./aiops" class="card-link">Discover AIOps →</a>
-  </div>
 </div>

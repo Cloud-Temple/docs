@@ -205,18 +205,6 @@ const sidebars: SidebarsConfig = {
             page('gpu', 'faq', 'gpu/faq'),
           ],
         },
-        {
-          type: 'category',
-          label: 'AIOps',
-          link: { type: 'doc', id: 'aiops/aiops' },
-          items: [
-            page('aiops', 'overview', 'aiops/aiops'),
-            page('aiops', 'concepts', 'aiops/concepts'),
-            page('aiops', 'quickstart', 'aiops/quickstart'),
-            page('aiops', 'tutorials', 'aiops/tutorials'),
-            page('aiops', 'faq', 'aiops/faq'),
-          ],
-        },
       ],
     },
     {
@@ -629,6 +617,19 @@ const sidebars: SidebarsConfig = {
         page('sovereign_soc', 'quickstart', 'sovereign_soc/quickstart'),
         page('sovereign_soc', 'tutorials', 'sovereign_soc/tutorials'),
         page('sovereign_soc', 'faq', 'sovereign_soc/faq'),
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AIOps',
+      className: 'sidebar-cat-aiops',
+      link: { type: 'doc', id: 'aiops/aiops' },
+      items: [
+        page('aiops', 'overview', 'aiops/aiops'),
+        page('aiops', 'concepts', 'aiops/concepts'),
+        page('aiops', 'quickstart', 'aiops/quickstart'),
+        page('aiops', 'tutorials', 'aiops/tutorials'),
+        page('aiops', 'faq', 'aiops/faq'),
       ],
     },
 

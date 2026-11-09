@@ -18,9 +18,4 @@ Los servicios de inteligencia artificial de Cloud Temple le permiten utilizar mo
     <p>Tarjetas gráficas NVIDIA H100 y L40S integradas en las ofertas IaaS y PaaS, para el aprendizaje automático, la inferencia y la computación de alto rendimiento.</p>
     <a href="./gpu" class="card-link">Descubrir GPU →</a>
   </div>
-  <div class="card">
-    <h3>AIOps</h3>
-    <p>Servicio gestionado de inteligencia operativa: correlación de alertas, análisis de causas raíz y remediación controlada de su explotación.</p>
-    <a href="./aiops" class="card-link">Descubrir AIOps →</a>
-  </div>
 </div>
