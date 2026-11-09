@@ -237,11 +237,11 @@ Sus necesidades cambian. A continuación se explica cómo hacer evolucionar el p
 
 ### Activar un producto
 
-Si el producto forma parte de su catálogo, aparece en la consola: **actívelo con total autonomía** en el tenant correspondiente. Calcule unos minutos antes de que sea utilizable.
+Si el producto forma parte de su catálogo y está integrado en la consola, aparece en ella: **actívelo con total autonomía** en el tenant correspondiente. Calcule unos minutos antes de que sea utilizable.
 
 Desde la lista de sus tenants, la acción **« Modificar los productos »** abre el catálogo. Marque los que desee abrir, desmarque los que desee detener y, a continuación, **Guardar**.
 
-Si no aparece, es que aún no está en su catálogo: ver [Solicitar un producto adicional](#demander-un-produit-supplémentaire).
+Si no aparece, es que aún no está en su catálogo, o que se trata de un servicio gestionado fuera de la Consola: ver [Solicitar un producto adicional](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
@@ -283,15 +283,16 @@ Visión general: [nuestros productos en cloud-temple.com](https://www.cloud-temp
 
 ### Solicitar un producto adicional {/* #demander-un-produit-supplémentaire */}
 
-¿El producto que desea no aparece en su consola? Todavía no está en su catálogo.
+¿El producto que desea no aparece en su consola? Hay dos casos:
+
+- **Servicio gestionado fuera de la Consola** (Kubernetes gestionado, bases de datos gestionadas, AIOps): no aparecerá en la consola. Solicítelo a su interlocutor comercial; los equipos de Cloud Temple lo ponen en servicio.
+- **Otro producto**: todavía no está en su catálogo. Siga estos pasos:
 
 1. Desde la consola, cree una **solicitud de soporte**
 2. Indique el **producto** en cuestión, y el volumen previsto si lo conoce
 3. Nos pondremos en contacto con usted sobre las condiciones
 4. Una vez validado, el producto aparece en su consola
 5. Puede activarlo en uno o varios tenants
-
-Los servicios gestionados que no se controlan desde la Consola (Kubernetes gestionado, bases de datos gestionadas, AIOps) no aparecen en ella: los ponen en servicio los equipos de Cloud Temple.
 
 <img src={supportSelectProduct} />
 

@@ -237,11 +237,11 @@ Your needs change. Here is how to evolve the scope of an existing environment.
 
 ### Enable a product
 
-If the product is part of your catalog, it appears in the Console: **enable it in full autonomy** on the relevant tenant. Allow a few minutes before it becomes available.
+If the product is part of your catalog and is integrated into the Console, it appears there: **enable it in full autonomy** on the relevant tenant. Allow a few minutes before it becomes available.
 
 From the list of your tenants, the action **"Modify products"** opens the catalog. Check the ones you want to enable, uncheck the ones you want to stop, then **Save**.
 
-If it does not appear, it is not yet in your catalog: see [Request an additional product](#demander-un-produit-supplémentaire).
+If it does not appear, it is not yet in your catalog, or it is a managed service outside the Console: see [Request an additional product](#demander-un-produit-supplémentaire).
 
 <img src={tenantProductsEdit} />
 
@@ -283,15 +283,16 @@ Overview: [our products on cloud-temple.com](https://www.cloud-temple.com/en/pro
 
 ### Request an additional product {/* #demander-un-produit-supplémentaire */}
 
-The product you want doesn't appear in your Console? It's not yet in your catalog.
+The product you want doesn't appear in your Console? There are two cases:
+
+- **Managed service outside the Console** (managed Kubernetes, managed databases, AIOps): it will not appear in the Console. Ask your sales contact for it; Cloud Temple teams set it up.
+- **Other product**: it is not yet in your catalog. Follow these steps:
 
 1. From the Console, create a **support request**
 2. Specify the **product** concerned, and the expected volume if you know it
 3. We will get back to you with the terms
 4. Once approved, the product appears in your Console
 5. You can enable it on one or more tenants
-
-Managed services that are not driven from the Console (managed Kubernetes, managed databases, AIOps) do not appear in it: they are set up by Cloud Temple teams.
 
 <img src={supportSelectProduct} />
 
