@@ -2,6 +2,12 @@
 title: Conceptos
 ---
 
+:::info[Servicio gestionado, fuera de la Consola]
+
+Sovereign SOC se contrata a través de los equipos de Cloud Temple. El servicio no se pide desde la Consola Cloud Temple, que no ofrece para él ni vista ni API.
+
+:::
+
 ## Presentación
 
 El Sovereign SOC es un servicio gestionado de cibervigilancia. Se encarga de la recopilación, el análisis y la cualificación de los eventos de seguridad de sus sistemas de información, ya estén alojados en la nube de confianza o en otro entorno. El servicio es de extremo a extremo: incluye la plataforma técnica de detección, el análisis automatizado y la validación humana 24/7 por parte de un equipo de analistas de seguridad. Usted solo recibe tickets de incidentes cualificados, acompañados de un plan de remediación con seguimiento.
