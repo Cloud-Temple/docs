@@ -70,7 +70,7 @@ displayed_sidebar: docSidebar
 - **Navegación — Red** : Agrupación de VPC (preview) y Private Backbone bajo una única categoría **Red** en la navegación.
 - **Documentos contractuales** : Reestructuración completa de la documentación contractual — creación de una página hub `/contracts` (condiciones generales, condiciones particulares, convenios de servicio SecNumCloud, SLA de instancias VM) y de una página hub `/shared-responsibility` (matrices RACI por servicio : IaaS, S3, PaaS, Kubernetes, LLMaaS, Red). El menú lateral contractual se reemplaza por una columna dedicada **Contractual** en el pie de página. Traducciones disponibles EN/DE/ES/IT.
 - **Instancias VM** : Actualización del compromiso de nivel de servicio (SLA) del 99,9 % al 99,95 %.
-- **IaaS OpenSource** : Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo, migración hacia Glacier prevista en el T1 2027).
+- **IaaS OpenSource** : Adición de una nota sobre la duración máxima de retención de las copias de seguridad (24 meses máximo).
 
 ### 15 de abril de 2026 : Nueva documentación de instancias VM (Cloud Público)
 

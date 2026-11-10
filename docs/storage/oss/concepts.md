@@ -121,11 +121,7 @@ Vous récupérez vos données à tout moment, de manière autonome, avec les out
 
 ## Prochaines évolutions
 
-Les évolutions suivantes sont annoncées ; elles ne sont pas encore disponibles. Suivez leur avancement sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
-
-- **Object Lock (WORM)** : des buckets immuables, dont les objets ne peuvent être ni modifiés ni supprimés, même par un compte administrateur, avant l'expiration de la période définie.
-- **Modes de chiffrement supplémentaires** : SSE-C (chiffrement côté serveur avec des clés fournies par le client) et CSE (chiffrement côté client).
-- **Classe de stockage Archivage** : des buckets d'archivage, de type S3 Glacier, pour les données conservées longtemps et rarement consultées.
+Suivez l'évolution du produit sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 ## Tarification
 

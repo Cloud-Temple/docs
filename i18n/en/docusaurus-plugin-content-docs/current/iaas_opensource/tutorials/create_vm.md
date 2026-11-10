@@ -83,7 +83,7 @@ For each network adapter:
 - **MAC Address**: Optional, automatically generated if not specified
 
 :::info[VPC]
-VPC network configuration is only available from the Network tab of the virtual machine once the operation is complete. Configuration from this form will be available soon.
+VPC network configuration is only available from the Network tab of the virtual machine once the operation is complete.
 :::
 
 Click **Add network adapter** to create a new interface.

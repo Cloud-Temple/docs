@@ -98,7 +98,7 @@ Der Kunde ist für die Erstellung und Konfiguration seines VPC sowie der darin e
 | Überwachung **anomaler Verhaltensweisen** im Mandantendatenverkehr                                     | **RA** |              |
 
 *(3) Cloud Temple garantiert die strikte Trennung zwischen VPCs verschiedener Mandanten. Kein Datenverkehr kann diese Barriere ohne explizite Aktion des Kunden durchlaufen.*  
-*(4) Die Mikrosegmentierung (security groups) ist angekündigt (siehe die [kommenden Entwicklungen](../../network/vpc/concepts.md#kommende-entwicklungen)). Bis zu ihrer Verfügbarkeit sind Filterrichtlinien vom Kunden über eine dedizierte Sicherheitsinfrastruktur umzusetzen.*  
+*(4) Der VPC bietet keine Mikrosegmentierung (security groups): Filterrichtlinien sind vom Kunden über eine dedizierte Sicherheitsausrüstung umzusetzen.*  
 *(5) Die anwendungsbezogene Filterung des Datenverkehrs innerhalb des VPC liegt in der Verantwortung des Kunden. Cloud Temple führt keine Inhaltsprüfung des Mandantendatenverkehrs durch.*  
 *(6) Penetrationstests sind gemäß den Allgemeinen Geschäftsbedingungen vorab bei Cloud Temple anzumelden.*
 
@@ -107,8 +107,6 @@ Der Kunde ist für die Erstellung und Konfiguration seines VPC sowie der darin e
 | Aktivität                                                                                                    | Client | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Strategie für die **Interkonnektion** mit On-Premise-Umgebungen oder anderen Clouds festlegen            | **RA** | **C**        |
-| Zugang zu einem **Site-to-Site-VPN** abonnieren und konfigurieren *(in Vorbereitung)*                                | **RA** | **C**        |
-| Zugang zu **Cloud Connect** (dedizierte Verbindung) abonnieren und konfigurieren *(in Vorbereitung)*                     | **RA** | **CI**       |
 | Verwaltung der **BGP / Routes** im Zusammenhang mit Operator-Interkonnektionen                                          | **RA** | **CI**       |
 | Gewährleistung der **Sicherheit der Datenflüsse** über die Interkonnektionen                                         | **RA** |              |
 
@@ -131,7 +129,6 @@ Der Kunde ist für die Erstellung und Konfiguration seines VPC sowie der darin e
 |-------------------------------------------------------------------------------------------------------------|-------|--------------|
 | Überwachung des Betriebs der **Kernkomponenten des VPC** (Router, Gateway)                             | **I**  | **RA**       |
 | Überwachung der **Backbone-Performance** des Cloud Temple-Netzwerks                                      | **I**  | **RA**       |
-| Sammlung und Analyse der **Netzwerkfluss-Logs** (flow logs) des VPC *(verfügbar H1 2026)*                | **RA** | **I**        |
 | Einrichtung eines **Monitorings der Anwendungsflüsse** im VPC                                        | **RA** |              |
 | Überwachung der **Latenz und Bandbreite** der Flüsse innerhalb des VPC                                       | **RA** | **I**        |
 

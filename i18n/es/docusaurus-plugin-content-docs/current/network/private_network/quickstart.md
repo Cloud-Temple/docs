@@ -67,7 +67,7 @@ Todas las acciones posibles sobre sus redes se encuentran en el menú __*Accione
 - La eliminación de una propagación dentro de un tenant.
 - La modificación de una propagación dentro de un tenant.
 
-> La eliminación de una red aún no está disponible.
+> La eliminación de una red no está disponible.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />

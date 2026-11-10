@@ -121,11 +121,7 @@ You can retrieve your data at any time, autonomously, using standard S3 tools.
 
 ## Upcoming changes
 
-The following changes have been announced; they are not available yet. Follow their progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
-
-- **Object Lock (WORM)**: immutable buckets whose objects can be neither modified nor deleted, even by an administrator account, before the defined period expires.
-- **Additional encryption modes**: SSE-C (server-side encryption with customer-provided keys) and CSE (client-side encryption).
-- **Archive storage class**: archive buckets, S3 Glacier-style, for data kept for a long time and rarely accessed.
+Follow the product's progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 ## Pricing
 

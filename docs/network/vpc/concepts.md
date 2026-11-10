@@ -130,12 +130,7 @@ La configuration du VPC peut être exportée vers un stockage S3 pendant 30 jour
 
 ## Prochaines évolutions
 
-Les évolutions suivantes sont annoncées ; elles ne sont pas encore disponibles. Suivez leur avancement sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3AVPC).
-
-- **VPN site à site** : une connectivité sécurisée vers vos réseaux on-premise.
-- **Cloud Connect** : une connectivité sécurisée vers Azure et AWS.
-- **Service DNS** : la résolution de noms interne au VPC et la configuration d'un DNS externe.
-- **Micro-segmentation** : des groupes de politiques réseau pour une sécurité avancée.
+Suivez l'évolution du produit sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3AVPC).
 
 ## Tarification
 

@@ -121,11 +121,7 @@ Sie können Ihre Daten jederzeit selbstständig mit den Standard-S3-Tools abrufe
 
 ## Kommende Entwicklungen
 
-Die folgenden Entwicklungen sind angekündigt; sie sind noch nicht verfügbar. Verfolgen Sie ihren Fortschritt auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
-
-- **Object Lock (WORM)**: unveränderliche Buckets, deren Objekte vor Ablauf des festgelegten Zeitraums weder geändert noch gelöscht werden können, auch nicht von einem Administratorkonto.
-- **Zusätzliche Verschlüsselungsmodi**: SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) und CSE (clientseitige Verschlüsselung).
-- **Speicherklasse Archiv**: Archiv-Buckets nach dem Vorbild von S3 Glacier, für Daten, die lange aufbewahrt und selten abgerufen werden.
+Verfolgen Sie die Entwicklung des Produkts auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 ## Preise
 

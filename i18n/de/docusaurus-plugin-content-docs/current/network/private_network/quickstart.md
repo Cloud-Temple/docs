@@ -67,7 +67,7 @@ Alle möglichen Aktionen für Ihre Netzwerke finden Sie im Menü __*Aktionen*__ 
 - Das Löschen einer Propagierung innerhalb eines Tenants.
 - Die Änderung einer Propagierung innerhalb eines Tenants.
 
-> Das Löschen eines Netzwerks ist noch nicht verfügbar.
+> Das Löschen eines Netzwerks ist nicht verfügbar.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />

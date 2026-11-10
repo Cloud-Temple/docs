@@ -67,7 +67,7 @@ All possible actions on your networks are found in the __*Actions*__ menu of eac
 - Removing a propagation within a tenant.
 - Modifying a propagation within a tenant.
 
-> Network deletion is not yet available.
+> Network deletion is not available.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />

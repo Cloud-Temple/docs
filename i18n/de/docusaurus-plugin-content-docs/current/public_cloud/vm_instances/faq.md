@@ -191,7 +191,7 @@ Ja, eine Migration kann durch Wiederherstellung mit **Veeam im Bare Metal Recove
 
 Für eine aus einer Kundenumgebung wiederhergestellte VM bezieht sich der Support auf die VM-Infrastruktur. Die ordnungsgemäße Funktion des Gast-Betriebssystems, der Anwendungen und der erforderlichen Agenten ist nicht garantiert, wenn diese nicht korrekt installiert oder konfiguriert sind. Der Support für das Gast-Betriebssystem ist dann eingeschränkt.
 
-Eine zweite Methode, durch Import von **VHD/VMDK**-Datenträgern, ist in Entwicklung und für das **vierte Quartal 2026** vorgesehen. Sie wird es ermöglichen, eine VM aus einem bestehenden Image zu erstellen, ist aber noch nicht verfügbar.
+Der Import von **VHD/VMDK**-Datenträgern ist nicht verfügbar. Verfolgen Sie die Entwicklung des Produkts auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22VM+Instances%22).
 
 ## Ist der Systemdatenträger kostenlos enthalten?
 
@@ -203,8 +203,7 @@ Ja, die virtuellen Appliances Stormshield und FortiVM sind mit der **Enterprise-
 
 ## Ist die automatische Replikation einer VM zwischen Verfügbarkeitszonen enthalten?
 
-Nein. Die VM-Replikation ist nicht standardmäßig in VM-Instanzen enthalten. Ihre
-Untersuchung ist für das zweite Halbjahr 2026 vorgesehen.
+Nein. Die VM-Replikation ist nicht standardmäßig in VM-Instanzen enthalten.
 
 Die Wahl einer Verfügbarkeitszone beim Deployment stellt daher keine
 automatische Replikation der VM dar.

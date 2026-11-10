@@ -21,7 +21,7 @@ Questa guida vi accompagna nella creazione del vostro primo Virtual Private Clou
 
 ## Prerequisiti
 
-Attualmente, l'attivazione del servizio VPC richiede di aver sottoscritto un prodotto **IaaS Open Source**. (Questa condizione sarà rimossa in un secondo momento).
+L'attivazione del servizio VPC richiede di aver sottoscritto un prodotto **IaaS Open Source**.
 
 ## Passo 1: Accedere alla Console
 

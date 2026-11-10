@@ -67,7 +67,7 @@ L'ensemble des actions possibles sur vos réseaux se trouve dans le menu __*Acti
 - La suppression d'une propagation au sein d'un tenant.
 - La modification d'une propagation au sein d'un tenant.
 
-> La suppression d'un réseau n'est pas encore disponible.
+> La suppression d'un réseau n'est pas disponible.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />

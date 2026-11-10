@@ -36,7 +36,7 @@ Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli 
 
 <img src={shivaOrdersList} />
 
-*__Nota : al momento, non è ancora possibile visualizzare globalmente, a livello di organizzazione, l'insieme delle risorse deployate nei diversi tenant.__ Questo argomento verrà trattato in seguito con l'implementazione di un portale dedicato al committente (nel senso di firmatario) e alla gestione della propria organizzazione.*
+*__Nota: la visualizzazione globale, a livello di organizzazione, dell'insieme delle risorse deployate nei diversi tenant non è disponibile.__*
 
 Il deployment delle risorse o la loro rimozione avvengono in ciascun prodotto nei menu __'IaaS'__ e __'Rete'__ a sinistra dello schermo nella barra verde.
 
