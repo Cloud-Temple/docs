@@ -1046,11 +1046,15 @@ footer.footer--dark .footer__copyright a:hover {
 .navbar-sidebar__brand { background-color: #242428; }
 .navbar .navbar__toggle,
 .navbar .clean-btn { color: #e6e6e6; }
+/* Bouton « Retour au menu principal » : couleur du texte du thème, pas le gris clair
+   des boutons de la barre (illisible sur le fond clair du tiroir). */
+.navbar .navbar-sidebar__back { color: var(--ifm-font-color-base); }
 
 /* ─── Direction artistique du site cloud-temple.com ─────────────────────────
    Relevé du 2026-11-10 : fond anthracite #242428, blocs #2f2f33 bordés d'un
    filet vert-bleu, angles droits, Montserrat, tableaux à en-tête vert-bleu,
-   aucun dégradé ni halo. */
+   aucun dégradé ni halo. Exception voulue : en-têtes de tableaux neutres ici, le
+   vert-bleu étant réservé à ce qui est cliquable. */
 
 h1 { font-weight: 500; }
 h2 { font-weight: 700; }
