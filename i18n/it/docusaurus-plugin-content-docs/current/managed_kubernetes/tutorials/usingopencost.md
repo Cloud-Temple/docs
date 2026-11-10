@@ -53,7 +53,7 @@ Un dashboard Grafana è inoltre disponibile per visualizzare i dati di OpenCost.
 
 <img src={opencostgrafana} alt="OpenCost Grafana Dashboard"/>
 
-## Utilizzo Avanzato: Integrazione con un'IA (Serveur MCP)
+## Utilizzo Avanzato: Integrazione con un'IA (Server MCP)
 
 Per gli utenti avanzati, OpenCost può essere interrogato direttamente dall'assistente conversazionale Cline (o altro) grazie al sistema di **MCP (Model Context Protocol) servers**. Ciò vi consente di automatizzare le query e ottenere i dati sui costi direttamente nelle vostre conversazioni.
 

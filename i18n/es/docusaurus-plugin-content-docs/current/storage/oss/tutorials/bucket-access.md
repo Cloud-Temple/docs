@@ -37,3 +37,5 @@ La interfaz de configuración de buckets ofrece tres modos de gestión de acceso
 Todos los prefijos CIDR proporcionados por Cloud Temple son prefijos de enrutamiento (route prefixes). Esto significa que, para estas subredes, **todas las direcciones que cubren, incluidas las direcciones de red y de difusión, pueden utilizarse como orígenes válidos** de acceso en la política. Por eso el editor de la Consola incluye sistemáticamente estas direcciones especiales en el modo Private.
 
 Esta particularidad distingue su entorno de ciertas redes clásicas en las que estas direcciones están reservadas y no pueden utilizarse.
+
+:::

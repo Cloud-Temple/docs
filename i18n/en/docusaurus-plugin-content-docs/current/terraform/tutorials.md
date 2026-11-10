@@ -760,15 +760,15 @@ Create `cloud-init/network-config.yml`:
 version: 2
 ethernets:
   ens160:
-dhcp4: false
-addresses:
-  - 0.0.0.0/24
-routes:
-  - to: default
-    via: 0.0.0.0
-nameservers:
-  addresses:
-    - 0.0.0.0
+    dhcp4: false
+    addresses:
+      - 0.0.0.0/24
+    routes:
+      - to: default
+        via: 0.0.0.0
+    nameservers:
+      addresses:
+        - 0.0.0.0
 ```
 
 :::important[Note]

@@ -61,7 +61,7 @@ El equipo de soporte de Cloud Temple le enviará una URL que tendrá un aspecto 
 
 #### Adición de una aprobación de parte de confianza
 
-En su servidor ADFS, vaya a __"Agregar una aprobación de parte de confianza"__.
+En su servidor ADFS, vaya a __"Ajouter une approbation de partie de confiance"__ (etiqueta de la interfaz ADFS en francés, como en la captura; en una interfaz en inglés: "Add Relying Party Trust").
 
 <img src={ssoAdfs_001} />
 

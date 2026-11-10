@@ -154,7 +154,7 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 ```hcl
 # Recuperación de la Biblioteca de Contenidos
 data "cloudtemple_compute_content_library" "public" {
-  name = "PÚBLICO"
+  name = "PUBLIC"
 }
 
 # Recuperación de un elemento específico
@@ -472,7 +472,7 @@ data "cloudtemple_compute_iaas_opensource_host" "host" {
 
 # Recuperación del repositorio de almacenamiento
 data "cloudtemple_compute_iaas_opensource_storage_repository" "sr" {
-  name = "sr001-almacenamiento-local"
+  name = "sr001-local-storage"
 }
 
 # Recuperación de la red
@@ -557,15 +557,15 @@ data "cloudtemple_marketplace_item" "ubuntu_2404" {
 }
 
 data "cloudtemple_compute_iaas_opensource_storage_repository" "sr" {
-  name = "sr001-storage-compartido"
+  name = "sr001-shared-storage"
 }
 
 data "cloudtemple_compute_iaas_opensource_network" "network" {
-  name = "RED-PROD"
+  name = "PROD-NETWORK"
 }
 
 data "cloudtemple_backup_iaas_opensource_policy" "nobackup" {
-  name = "sin_copia_de_seguridad"
+  name = "nobackup"
 }
 
 # Deployment from Marketplace
@@ -762,15 +762,15 @@ Cree `cloud-init/network-config.yml`:
 version: 2
 ethernets:
   ens160:
-dhcp4: false
-addresses:
-  - 0.0.0.0/24
-routes:
-  - to: default
-    via: 0.0.0.0
-nameservers:
-  addresses:
-    - 0.0.0.0
+    dhcp4: false
+    addresses:
+      - 0.0.0.0/24
+    routes:
+      - to: default
+        via: 0.0.0.0
+    nameservers:
+      addresses:
+        - 0.0.0.0
 ```
 
 :::important[A tener en cuenta]

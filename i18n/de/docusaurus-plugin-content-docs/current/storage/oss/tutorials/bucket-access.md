@@ -1,39 +1,41 @@
 ---
-title: Access Management for S3 Buckets via the Cloud Temple Console
+title: Verwaltung der Zugriffe auf S3-Buckets über die Cloud Temple-Konsole
 ---
 import S3CustomAccess from '@site/docs/storage/oss/images/S3_access_custom.png'
 import S3PrivateAccess from '@site/docs/storage/oss/images/S3_access_private.png'
 import S3PublicAccess from '@site/docs/storage/oss/images/S3_access_public.png'
 
-The bucket configuration interface offers three access management modes according to the desired IP restriction type:
+Die Konfigurationsoberfläche der Buckets bietet je nach gewünschter Art der IP-Beschränkung drei Modi für die Zugriffsverwaltung:
 
-### **Public Access**
+### **Öffentlicher Zugriff (Public)**
 
 <img src={S3PublicAccess} />
 
-- Functionality: No IP address restrictions are applied.
-- Consequence: The bucket is accessible from all IP addresses, without filtering.
+- Funktionsweise: Es wird keine Beschränkung nach IP-Adressen angewendet.
+- Folge: Der Bucket ist ohne Filterung von allen IP-Adressen aus erreichbar.
 
-### **Private Access (automatic)**
+### **Privater Zugriff (Private, automatisch)**
 
 <img src={S3PrivateAccess} />
 
-- Functionality: All CIDR ranges assigned to the tenant are automatically added by the editor, without requiring manual intervention.
-- Specificity of the Console: Network addresses (first address of the block) and broadcast addresses (last address of the block), which are typically reserved on an IP network, are also automatically included.
-- Consequence: The user does not need to manage these subtleties—everything is handled automatically by the tool.
+- Funktionsweise: Alle dem Tenant zugewiesenen CIDR-Bereiche werden vom Editor automatisch hinzugefügt, ohne manuellen Eingriff.
+- Besonderheit der Konsole: Die Netzwerkadressen (erste Adresse des Blocks) und Broadcast-Adressen (letzte Adresse des Blocks), die in einem IP-Netzwerk in der Regel reserviert sind, werden ebenfalls automatisch hinzugefügt.
+- Folge: Der Benutzer muss sich nicht um diese Feinheiten kümmern; das Tool berücksichtigt alles.
 
-### **Custom Access (manual)**
+### **Benutzerdefinierter Zugriff (Custom, manuell)**
 
 <img src={S3CustomAccess} />
 
-- How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
-- Example: If you want to allow the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
-- Consequence: Offers full flexibility, but requires complete and rigorous configuration.
+- Funktionsweise: Der Benutzer muss alle zuzulassenden CIDR-Bereiche sowie die Netzwerk- und Broadcast-Adressen explizit angeben.
+- Beispiel: Wenn Sie das Präfix `80.75.153.200/29` zulassen möchten, müssen Sie zusätzlich die Adressen `80.75.153.200/32` (Netzwerkadresse) und `80.75.153.207/32` (Broadcast-Adresse) explizit hinzufügen, damit diese in die Zugriffsrichtlinie aufgenommen werden.
+- Folge: Bietet volle Freiheit, erfordert aber eine vollständige und sorgfältige Konfiguration.
 
 :::info
 
-### Nature of the CIDR prefixes provided by Cloud Temple
+### Art der von Cloud Temple bereitgestellten CIDR-Präfixe
 
-All CIDR prefixes provided by Cloud Temple are route prefixes. This means that for these address ranges, **all addresses they cover—including network and broadcast addresses—are usable as valid source addresses** in access policies. This is why the Console editor consistently includes these special addresses in Private mode.
+Alle von Cloud Temple bereitgestellten CIDR-Präfixe sind Routing-Präfixe (route prefixes). Das bedeutet, dass für diese Bereiche **alle von ihnen abgedeckten Adressen, einschließlich der Netzwerk- und Broadcast-Adressen, als gültige Zugriffsquellen** in der Richtlinie verwendet werden können. Deshalb nimmt der Editor der Konsole diese speziellen Adressen im Modus Private systematisch auf.
 
-This characteristic distinguishes your environment from certain traditional networks, where such addresses are reserved and not usable.
+Diese Besonderheit unterscheidet Ihre Umgebung von bestimmten klassischen Netzwerken, in denen diese Adressen reserviert und nicht nutzbar sind.
+
+:::

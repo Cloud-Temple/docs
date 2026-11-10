@@ -252,11 +252,11 @@ terraform apply
 Terraform fordert Ihre Bestätigung an:
 
 ```
-Möchten Sie diese Aktionen durchführen?
-  Terraform wird die oben beschriebenen Aktionen durchführen.
-  Nur "yes" wird akzeptiert, um die Bestätigung zu geben.
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
 
-  Geben Sie einen Wert ein: 
+  Enter a value: 
 ```
 
 Geben Sie `yes` ein und drücken Sie die Eingabetaste.
@@ -264,14 +264,14 @@ Geben Sie `yes` ein und drücken Sie die Eingabetaste.
 Terraform erstellt die Ressourcen:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt...
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt... [10s vergangen]
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt... [20s vergangen]
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung abgeschlossen nach 25s [id=12345678-1234-1234-1234-123456789abc]
+cloudtemple_compute_virtual_machine.my_first_vm: Creating...
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [10s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [20s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Creation complete after 25s [id=12345678-1234-1234-1234-123456789abc]
 
-Anwendung abgeschlossen! Ressourcen: 1 hinzugefügt, 0 geändert, 0 entfernt.
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
-Ausgaben:
+Outputs:
 
 vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
@@ -333,17 +333,17 @@ terraform apply
 Terraform erkennt die Änderung und aktualisiert die VM:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Zustand wird aktualisiert... [id=xxx]
+cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
 
-Terraform wird die folgenden Aktionen ausführen:
+Terraform will perform the following actions:
 
-  # cloudtemple_compute_virtual_machine.my_first_vm wird in-place aktualisiert
+  # cloudtemple_compute_virtual_machine.my_first_vm will be updated in-place
   ~ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
       ~ memory = 4294967296 -> 8589934592
         # (andere Attribute bleiben unverändert)
     }
 
-Plan: 0 hinzuzufügen, 1 zu ändern, 0 zu entfernen.
+Plan: 0 to add, 1 to change, 0 to destroy.
 ```
 
 ## Schritt 10: Ressourcen zerstören

@@ -180,7 +180,7 @@ Per guidarvi in queste azioni, fate riferimento a :
 
 - Le guide di indurimento degli editori dei software che utilizzate ;
 - [Guides essentiels et bonnes pratiques de cybersécurité | ANSSI (FR)](https://cyber.gouv.fr/guides-essentiels-et-bonnes-pratiques-de-cybersecurite-par-ou-commencer) ;
-- [Guides sécurité CIS Benchmarks® | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
+- [Guide di sicurezza CIS Benchmarks® | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
 
 Queste best practice costituiscono la prima linea di difesa per proteggere i vostri sistemi nel cloud.
 

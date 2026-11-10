@@ -122,14 +122,14 @@ terraform init
 Debería ver lo siguiente:
 
 ```
-Inicializando el backend...
+Initializing the backend...
 
-Inicializando los plugins del proveedor...
-- Buscando versiones de Cloud-Temple/cloudtemple que coincidan con "~> 1.0"...
-- Instalando Cloud-Temple/cloudtemple v1.x.x...
-- Instalado Cloud-Temple/cloudtemple v1.x.x (firmado por HashiCorp)
+Initializing provider plugins...
+- Finding Cloud-Temple/cloudtemple versions matching "~> 1.0"...
+- Installing Cloud-Temple/cloudtemple v1.x.x...
+- Installed Cloud-Temple/cloudtemple v1.x.x (signed by HashiCorp)
 
-¡Terraform se ha inicializado correctamente!
+Terraform has been successfully initialized!
 ```
 
 ## Paso 5: Cree su primer recurso
@@ -252,11 +252,11 @@ terraform apply
 Terraform le solicita confirmación:
 
 ```
-¿Desea realizar estas acciones?
-  Terraform realizará las acciones descritas anteriormente.
-  Solo se aceptará 'yes' para aprobar.
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
 
-  Introduzca un valor: 
+  Enter a value: 
 ```
 
 Escriba `yes` y presione Intro.
@@ -264,14 +264,14 @@ Escriba `yes` y presione Intro.
 Terraform crea los recursos:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Creando...
-cloudtemple_compute_virtual_machine.my_first_vm: Aún creando... [10s transcurridos]
-cloudtemple_compute_virtual_machine.my_first_vm: Aún creando... [20s transcurridos]
-cloudtemple_compute_virtual_machine.my_first_vm: Creación completada tras 25s [id=12345678-1234-1234-1234-123456789abc]
+cloudtemple_compute_virtual_machine.my_first_vm: Creating...
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [10s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [20s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Creation complete after 25s [id=12345678-1234-1234-1234-123456789abc]
 
-Aplicación completa. Recursos: 1 añadidos, 0 modificados, 0 destruidos.
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
-Salidas:
+Outputs:
 
 vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
@@ -333,17 +333,17 @@ terraform apply
 Terraform detecta la modificación y actualiza la VM:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Actualizando estado... [id=xxx]
+cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
 
-Terraform realizará las siguientes acciones:
+Terraform will perform the following actions:
 
-  # cloudtemple_compute_virtual_machine.my_first_vm se actualizará in situ
+  # cloudtemple_compute_virtual_machine.my_first_vm will be updated in-place
   ~ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
       ~ memory = 4294967296 -> 8589934592
         # (otros atributos sin cambios)
     }
 
-Plan: 0 para añadir, 1 para modificar, 0 para destruir.
+Plan: 0 to add, 1 to change, 0 to destroy.
 ```
 
 ## Paso 10: Eliminar los recursos
@@ -357,25 +357,25 @@ terraform destroy
 Terraform mostrará qué se va a eliminar y pedirá confirmación:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Actualizando estado... [id=xxx]
+cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
 
-Terraform realizará las siguientes acciones:
+Terraform will perform the following actions:
 
-  # cloudtemple_compute_virtual_machine.my_first_vm será destruido
-  - recurso "cloudtemple_compute_virtual_machine" "my_first_vm" {
+  # cloudtemple_compute_virtual_machine.my_first_vm will be destroyed
+  - resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
       - cpu    = 2
       - memory = 8589934592
       - name   = "terraform-vm-01"
       ...
     }
 
-Plan: 0 para añadir, 0 para cambiar, 1 para destruir.
+Plan: 0 to add, 0 to change, 1 to destroy.
 
-¿Realmente desea destruir todos los recursos?
-  Terraform destruirá toda su infraestructura gestionada.
-  Solo se aceptará 'yes' para confirmar.
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure.
+  Only 'yes' will be accepted to confirm.
 
-  Introduzca un valor:
+  Enter a value:
 ```
 
 Escriba `yes` para confirmar la eliminación.
@@ -398,18 +398,18 @@ terraform-cloudtemple/
 ### Ejemplo de .gitignore
 
 ```gitignore
-# Terraform Files
+# Archivos Terraform
 .terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
 .terraform.lock.hcl
 
-# Crash files
+# Archivos de crash
 crash.log
 crash.*.log
 
-# Sensitive variable files
+# Archivos de variables sensibles
 *.auto.tfvars
 override.tf
 override.tf.json
@@ -490,13 +490,12 @@ terraform {
 ### 4. Comente su código
 
 ```hcl
-# Virtual machine for the production web server
-
-# CPU and memory sized to handle 1000 req/s
+# Máquina virtual para el servidor web de producción
+# CPU y memoria dimensionadas para gestionar 1000 req/s
 resource "cloudtemple_compute_virtual_machine" "web_prod" {
   name = "web-prod-01"
   
-  # Hardware configuration based on internal benchmarks
+  # Configuración de hardware basada en los benchmarks internos
   memory = 16 * 1024 * 1024 * 1024  # 16 GB
   cpu    = 8
   # ...

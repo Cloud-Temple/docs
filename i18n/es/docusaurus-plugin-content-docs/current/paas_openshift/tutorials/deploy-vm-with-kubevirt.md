@@ -1,5 +1,5 @@
 ---
-title: Deploy a Virtual Machine (VM) with KubeVirt
+title: Desplegar una máquina virtual (VM) con KubeVirt
 ---
 
 ## Objetivos
@@ -45,7 +45,7 @@ Antes de comenzar, asegúrese de lo siguiente:
    - **qemu-img** (para la conversión de discos al formato `qcow2`)  
 5. De tener acceso al blob de Azure donde se almacenará la imagen de Windows Server.
 
-## Demo Plan
+## Plan de demostración
 
 ### Visión general de los pasos
 
