@@ -1,4 +1,6 @@
 ---
+title: Home
+hide_title: true
 tags:
   - home
   - home

@@ -421,5 +421,9 @@
   "consoleMap.note": {
     "message": "Der Datenverkehr Ihrer Anwendungen läuft nicht über die Console",
     "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Suchen",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
   }
 }

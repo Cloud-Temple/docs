@@ -309,5 +309,9 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.SearchBar.label": {
+    "message": "Rechercher",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
   }
 }

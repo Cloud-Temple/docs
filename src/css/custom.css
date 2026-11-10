@@ -1250,3 +1250,56 @@ details,
 [class*='tag_'] {
   border-radius: 0 !important;
 }
+
+/* ─── Un seul modèle de carte, une seule couleur d'action ───────────────────
+   Le vert-bleu signale ce qui est cliquable. Une carte = toute la carte est
+   cliquable, titre dans la couleur du texte, action en vert-bleu, texte aligné
+   à gauche. */
+.card { text-align: left; min-height: 0; position: relative; }
+.card h3 {
+  color: var(--ifm-font-color-base);
+  text-align: left;
+  justify-content: flex-start;
+  height: auto;
+  margin-bottom: 8px;
+}
+.card p {
+  text-align: left;
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+/* Grille : autant de colonnes que la largeur le permet, cartes de 200 px au moins. */
+.card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.card-link {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-align: left;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.card-link:hover { color: var(--ifm-color-primary-darker); text-decoration: none; }
+/* Lien étiré : la carte entière devient cliquable, sans changer le HTML des pages. */
+.card .card-link::after { content: ''; position: absolute; inset: 0; }
+.card:hover { border-color: var(--ifm-color-primary); }
+/* Pages populaires : titre dans la couleur du texte, flèche vert-bleu. */
+.popular-link-title { color: var(--ifm-font-color-base); }
+.popular-link-title span { color: var(--ifm-color-primary); opacity: 1; }
+/* Premiers pas : même signal d'action, une flèche vert-bleu après le titre. */
+.quickstart-title::after { content: ' →'; color: var(--ifm-color-primary); }
+/* FAQ générale : une seule couleur de liseré, celle de la charte. */
+.book-card--green,
+.book-card--blue,
+.book-card--violet,
+.book-card--orange { --book-color: var(--ifm-color-primary); }
+
+/* Étiquettes de bas de page (home, accueil, onboarding…) : sans utilité pour le lecteur. */
+.theme-doc-footer-tags-row { display: none; }
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+/* Titre du bandeau : taille qui suit la largeur, jamais coupé au milieu d'un mot. */
+.hero-title { font-size: clamp(1.5rem, 6vw, 2.2rem); overflow-wrap: normal; word-break: normal; hyphens: manual; }
+/* Trame de points masquée sur petit écran : elle passerait sous les badges. */
+@media (max-width: 996px) {
+  .hero-banner::after { display: none; }
+}

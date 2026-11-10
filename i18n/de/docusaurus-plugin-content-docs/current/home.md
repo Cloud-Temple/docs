@@ -1,4 +1,6 @@
 ---
+title: Startseite
+hide_title: true
 tags:
   - home
   - accueil

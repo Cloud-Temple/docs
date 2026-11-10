@@ -421,5 +421,9 @@
   "consoleMap.note": {
     "message": "Your application traffic does not go through the Console",
     "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
   }
 }

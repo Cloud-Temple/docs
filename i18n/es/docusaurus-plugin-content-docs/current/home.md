@@ -1,4 +1,6 @@
 ---
+title: Inicio
+hide_title: true
 tags:
   - inicio
   - inicio
