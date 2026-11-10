@@ -21,9 +21,9 @@ En Linux/macOS, instale Rclone con el script oficial:
 curl https://rclone.org/install.sh | sudo bash
 ```
 
-En otros sistemas, consulta la [documentación de instalación oficial](https://rclone.org/install/).
+En otros sistemas, consulte la [documentación de instalación oficial](https://rclone.org/install/).
 
-Verifica la instalación:
+Verifique la instalación:
 
 ```bash
 rclone version
@@ -92,7 +92,7 @@ rclone copy /data/backup cloudtemple-s3:nom-du-bucket/ --verbose
 El comando `rclone sync` hace que el destino sea **idéntico** a la fuente. Los archivos presentes en el destino pero ausentes en la fuente serán **eliminados**.
 
 :::danger[Atención]
-`rclone sync` **elimina** archivos del destino que ya no existen en la fuente. Siempre prueba con `--dry-run` antes de ejecutar el comando.
+`rclone sync` **elimina** archivos del destino que ya no existen en la fuente. Pruebe siempre con `--dry-run` antes de ejecutar el comando.
 :::
 
 ### Prueba en modo simulación

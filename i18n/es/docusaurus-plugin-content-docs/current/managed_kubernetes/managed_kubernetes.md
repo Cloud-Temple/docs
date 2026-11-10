@@ -37,7 +37,7 @@ Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos do
 Esta oferta está diseñada para equipos con un **excelente dominio de Kubernetes** y herramientas Cloud Native, que desean construir su propia plataforma sobre bases minimalistas y robustas. Se dirige a los entusiastas del código abierto que buscan una solución depurada, portátil, sin capas adicionales del proveedor, sobre un sistema operativo minimalista e inmutable diseñado para la automatización y la seguridad.
 
 - **SO y Red incluidos**: Talos OS, Rook-Ceph (almacenamiento), Cilium (CNI), MetalLB (Balanceador de carga).
-- **Filosofía**: A partir de esta base eficiente y estandarizada, tienes la libertad de integrar tus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.
+- **Filosofía**: A partir de esta base eficiente y estandarizada, tiene la libertad de integrar sus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.
 - **Más información**: [Conceptos de Managed Core Kubernetes](../managed_core_kubernetes/concepts.md).
 
 ### 2. Managed Kubernetes (La plataforma completa)

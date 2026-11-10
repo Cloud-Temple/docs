@@ -5,7 +5,7 @@ slug: /network/private_backbone
 
 # Visión general de Private Backbone
 
-> **Toma el control total de tu red con conectividad de nivel 2 extendida, diseñada para arquitecturas híbridas y configuraciones a medida.**
+> **Tome el control total de su red con conectividad de nivel 2 extendida, diseñada para arquitecturas híbridas y configuraciones a medida.**
 
 El **Backbone Privado** de Cloud Temple es nuestro producto de conectividad histórico, diseñado para expertos. Basado en una infraestructura de red de nivel 2 (VPLS), permite crear redes privadas extendidas entre las zonas de disponibilidad de una región. Es la solución ideal para empresas que desean construir arquitecturas cloud híbridas complejas y mantener un control total sobre su topología de red.
 
@@ -17,12 +17,12 @@ El **Backbone Privado** de Cloud Temple es nuestro producto de conectividad hist
   </div>
   <div class="card">
     <h3>Guía de inicio</h3>
-    <p>Crea tu primera red privada y configura tu acceso a Internet en unos pocos pasos.</p>
+    <p>Cree su primera red privada y configure su acceso a Internet en unos pocos pasos.</p>
     <a href="./private_backbone/quickstart" class="card-link">Comenzar →</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>
-    <p>Configura un FortiGate o pfSense con BGP para gestionar tu conectividad externa.</p>
+    <p>Configure un FortiGate o pfSense con BGP para gestionar su conectividad externa.</p>
     <a href="./private_backbone/tutorials" class="card-link">Ver tutoriales →</a>
   </div>
 </div>
@@ -31,7 +31,7 @@ El **Backbone Privado** de Cloud Temple es nuestro producto de conectividad hist
 
 ## Descripción del producto
 
-El **Private Backbone** proporciona un conjunto completo de servicios de bajo nivel para interconectar y exponer tus infraestructuras en una nube soberana. Se compone de dos pilares:
+El **Private Backbone** proporciona un conjunto completo de servicios de bajo nivel para interconectar y exponer sus infraestructuras en una nube soberana. Se compone de dos pilares:
 
 - **Redes Privadas (VPLS)**: Creación de redes de nivel 2 extendidas y aisladas entre zonas de disponibilidad, ideal para arquitecturas híbridas complejas.
 - **Acceso a Internet**: Conectividad a Internet de alto rendimiento con asignación de direcciones IP públicas (IPv4/IPv6) y protección Anti-DDoS nativa.

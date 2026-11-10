@@ -163,23 +163,23 @@ Esta sección proporciona ejemplos de scripts de Python simples y autónomos par
 
 ### 1. Ejemplo Simple de Tool Calling
 
-El "Tool Calling" (o llamada a función) permite que un modelo de lenguaje solicite la ejecución de una función que hayas definido en tu código. Es una funcionalidad potente para conectar los LLMs con herramientas externas (APIs, bases de datos, etc.).
+El "Tool Calling" (o llamada a función) permite que un modelo de lenguaje solicite la ejecución de una función que haya definido en su código. Es una funcionalidad potente para conectar los LLMs con herramientas externas (APIs, bases de datos, etc.).
 
 El flujo es el siguiente:
 1.  El usuario hace una pregunta que requiere una herramienta (ej: "¿qué tiempo hace?").
-2.  Envías la pregunta y la lista de herramientas disponibles a la API.
+2.  Envía la pregunta y la lista de herramientas disponibles a la API.
 3.  El modelo, en lugar de responder directamente, devuelve una solicitud `tool_calls` pidiendo ejecutar una función específica con ciertos argumentos.
-4.  Tu código ejecuta la función solicitada.
-5.  Devuelves el resultado de la función al modelo.
+4.  Su código ejecuta la función solicitada.
+5.  Devuelve el resultado de la función al modelo.
 6.  El modelo utiliza este resultado para formular una respuesta final al usuario.
 
 **Estructura de los archivos**
 
-Para este ejemplo, crea un directorio `simple_tool_calling` con los siguientes archivos:
+Para este ejemplo, cree un directorio `simple_tool_calling` con los siguientes archivos:
 
 -   `test_tool_calling.py`: El script principal.
 -   `requirements.txt`: Las dependencias de Python.
--   `.env`: El archivo de configuración que debes completar con tu clave API.
+-   `.env`: El archivo de configuración que debe completar con su clave API.
 
 **`requirements.txt`**
 ```txt
@@ -409,14 +409,14 @@ if __name__ == "__main__":
 
 **Uso**
 
-1.  **Desde el directorio padre, abre el directorio creado e instala las dependencias:**
+1.  **Desde el directorio padre, abra el directorio creado e instale las dependencias:**
     ```bash
     cd simple_tool_calling
     python -m pip install -r requirements.txt
     ```
-2.  **Configura tu clave API:**
-    En el archivo `.env` presentado anteriormente, reemplaza `"votre_cle_api_ici"` por tu clave API LLMaaS. Verifica también que `DEFAULT_MODEL` apunte a un modelo disponible con las capacidades requeridas.
-3.  **Desde este mismo directorio, ejecuta el script:**
+2.  **Configure su clave API:**
+    En el archivo `.env` presentado anteriormente, reemplace `"votre_cle_api_ici"` por su clave API LLMaaS. Verifique también que `DEFAULT_MODEL` apunte a un modelo disponible con las capacidades requeridas.
+3.  **Desde este mismo directorio, ejecute el script:**
     ```bash
     python test_tool_calling.py
     ```

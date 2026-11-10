@@ -83,11 +83,11 @@ spec:
   type: LoadBalancer
 ```
 
-Después de aplicar este manifiesto, a tu servicio se le asignará una dirección IP en el rango `10.20.1.1 – 10.20.1.127` y será accesible desde tu red interna conectada al clúster.
+Después de aplicar este manifiesto, a su servicio se le asignará una dirección IP en el rango `10.20.1.1 – 10.20.1.127` y será accesible desde su red interna conectada al clúster.
 
 **Ejemplo : Exponer un servicio en la red externa**
 
-Para solicitar una dirección IP desde el rango externo (`10.20.1.128 – 10.20.1.254`), debes agregar la etiqueta `lb-type: external` a tu servicio.
+Para solicitar una dirección IP desde el rango externo (`10.20.1.128 – 10.20.1.254`), debe agregar la etiqueta `lb-type: external` a su servicio.
 
 ```yaml
 apiVersion: v1
@@ -107,7 +107,7 @@ spec:
   type: LoadBalancer
 ```
 
-> **Importante** : Este rango permanece **en un espacio de direcciones privadas**. Para una **exposición pública**, es necesario crear una **regla NAT (DNAT)** en el firewall de tu infraestructura para redirigir el tráfico desde una de tus IPs públicas externas hacia la dirección IP privada asignada por MetalLB.
+> **Importante** : Este rango permanece **en un espacio de direcciones privadas**. Para una **exposición pública**, es necesario crear una **regla NAT (DNAT)** en el firewall de su infraestructura para redirigir el tráfico desde una de sus IPs públicas externas hacia la dirección IP privada asignada por MetalLB.
 
 ## IP Públicas
 

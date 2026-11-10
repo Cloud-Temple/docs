@@ -61,11 +61,11 @@ hide_table_of_contents: true
 <div class="popular-links-grid">
   <a class="popular-link" href="./console/onboarding">
     <div class="popular-link-title">Onboarding <span>→</span></div>
-    <div class="popular-link-desc">Tus primeros pasos en la plataforma, desde el registro hasta el primer despliegue</div>
+    <div class="popular-link-desc">Sus primeros pasos en la plataforma, desde el registro hasta el primer despliegue</div>
   </a>
   <a class="popular-link" href="./managed_kubernetes/quickstart">
     <div class="popular-link-title">Kubernetes Gestionado <span>→</span></div>
-    <div class="popular-link-desc">Despliega tu primer clúster de Kubernetes</div>
+    <div class="popular-link-desc">Despliegue su primer clúster de Kubernetes</div>
   </a>
   <a class="popular-link" href="./llmaas/api">
     <div class="popular-link-title">Documentación de la API LLMaaS <span>→</span></div>
@@ -73,14 +73,14 @@ hide_table_of_contents: true
   </a>
   <a class="popular-link" href="./bastion/quickstart">
     <div class="popular-link-title">Bastión — Acceso seguro <span>→</span></div>
-    <div class="popular-link-desc">Conexión SSH segura a tus recursos</div>
+    <div class="popular-link-desc">Conexión SSH segura a sus recursos</div>
   </a>
   <a class="popular-link" href="./iaas_vmware/concepts">
     <div class="popular-link-title">Arquitectura IaaS de VMware <span>→</span></div>
-    <div class="popular-link-desc">Comprende la infraestructura virtualizada de Cloud Temple</div>
+    <div class="popular-link-desc">Comprenda la infraestructura virtualizada de Cloud Temple</div>
   </a>
   <a class="popular-link" href="./console/iam">
     <div class="popular-link-title">IAM y Gestión de accesos <span>→</span></div>
-    <div class="popular-link-desc">Identidades, roles y permisos en tu tenant</div>
+    <div class="popular-link-desc">Identidades, roles y permisos en su tenant</div>
   </a>
 </div>

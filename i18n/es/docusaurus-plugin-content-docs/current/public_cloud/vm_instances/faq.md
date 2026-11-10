@@ -91,7 +91,7 @@ constituyen, por sí solos, una reserva.
 ## ¿Es necesario suscribirse a una activación de zona de disponibilidad para VMI?
 
 No. La suscripción a una activación AZ facturada corresponde a la oferta **IaaS**;
-no es necesaria para utilizar **Instancias VM**. Sin embargo, elige
+no es necesaria para utilizar **Instancias VM**. Sin embargo, usted elige
 la AZ de alojamiento durante el despliegue de la VM.
 
 El tenant es una suscripción recurrente. La activación AZ de la oferta IaaS es

@@ -570,7 +570,7 @@ if __name__ == "__main__":
 
 **Configuración del SDK OpenAI para LLMaaS**
 
-Este ejemplo utiliza las llamadas compatibles con LLMaaS. Para adaptar una aplicación existente, consulta las [diferencias documentadas](./api.md#compatibilidad-con-openai).
+Este ejemplo utiliza las llamadas compatibles con LLMaaS. Para adaptar una aplicación existente, consulte las [diferencias documentadas](./api.md#compatibilidad-con-openai).
 
 ```python
 from openai import OpenAI
@@ -799,7 +799,7 @@ Este ejemplo muestra cómo configurar LlamaIndex para utilizar la API LLMaaS par
     * **`Settings`** : El objeto `Settings` de LlamaIndex es una forma práctica de configurar los componentes por defecto (LLM, modelo de embedding, tamaño de los chunks, etc.) que serán utilizados por los demás objetos de LlamaIndex.
     * **Ingestión de datos** : `SimpleDirectoryReader` carga los documentos de una carpeta.
     * **Creación del índice** : `VectorStoreIndex.from_documents` es el método de alto nivel de LlamaIndex. Gestiona automáticamente el fragmentado en chunks, la vectorización de los chunks (utilizando el `embed_model` configurado en `Settings`), y la creación del índice en memoria.
-    * **Motor de consultas** : `.as_query_engine()` crea una interfaz simple para hacer preguntas a nuestro índice. Cuando se llama a `.query()`, el motor vectoriza tu pregunta, encuentra los documentos más relevantes en el índice, y los envía al LLM (configurado en `Settings`) junto con la pregunta para generar una respuesta.
+    * **Motor de consultas** : `.as_query_engine()` crea una interfaz simple para hacer preguntas a nuestro índice. Cuando se llama a `.query()`, el motor vectoriza la pregunta, encuentra los documentos más relevantes en el índice, y los envía al LLM (configurado en `Settings`) junto con la pregunta para generar una respuesta.
 
 ```python
 # Dépendances:
@@ -912,11 +912,11 @@ Ahora puede seleccionar un modelo en CLINE y utilizarlo para generar código, re
 
 ## 💡 Ejemplos Avanzados
 
-Encontrarás en el siguiente repositorio de GitHub una colección de ejemplos de código y scripts que demuestran las distintas funcionalidades y casos de uso de la oferta LLM as a Service (LLMaaS) de Cloud Temple:
+Encontrará en el siguiente repositorio de GitHub una colección de ejemplos de código y scripts que demuestran las distintas funcionalidades y casos de uso de la oferta LLM as a Service (LLMaaS) de Cloud Temple:
 
 [Cloud-Temple/product-llmaas-how-to](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main)
 
-Allí encontrarás guías prácticas para:
+Allí encontrará guías prácticas para:
 - __Extracción de Información y Análisis de Texto:__ Capacidad de analizar documentos para extraer datos estructurados como entidades, eventos, relaciones y atributos, basándose en ontologías específicas de dominios (ej: legal, RRHH, TI).
 
 - __Interacción Conversacional y Chatbots:__ Desarrollo de agentes conversacionales capaces de dialogar, mantener un historial de intercambio, utilizar instrucciones del sistema (prompts del sistema) e invocar herramientas externas.
@@ -930,4 +930,4 @@ Allí encontrarás guías prácticas para:
 - __Streaming de Respuestas en Tiempo Real:__ Demostración de la capacidad de recibir y mostrar las respuestas de los modelos de manera progresiva (token por token), esencial para aplicaciones interactivas.
 - __Pipeline RAG con Base de Conocimientos en Memoria:__ Demostrador RAG educativo para ilustrar el funcionamiento de la Generación Aumentada por Recuperación (RAG). Utiliza la API LLMaaS para la incrustación (embedding) y la generación, con almacenamiento de vectores en memoria (FAISS) para una comprensión clara del proceso.
 - __Pipeline RAG con Base de Datos Vectorial (Qdrant):__ Demostrador RAG completo y contenedorizado que utiliza Qdrant como base de datos vectorial. La API LLMaaS se utiliza para la incrustación (embedding) de documentos y la generación de respuestas aumentadas.
-- __OCR y Análisis de Documentos (DeepSeek-OCR):__ Guía completa y herramienta de demostración para convertir imágenes y PDFs en Markdown estructurado, extraer tablas y transcribir fórmulas matemáticas. Consulta la [documentación dedicada](./ocr).
+- __OCR y Análisis de Documentos (DeepSeek-OCR):__ Guía completa y herramienta de demostración para convertir imágenes y PDFs en Markdown estructurado, extraer tablas y transcribir fórmulas matemáticas. Consulte la [documentación dedicada](./ocr).

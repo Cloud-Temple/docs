@@ -109,7 +109,7 @@ Después de la configuración, puede utilizar las herramientas de LLM para reali
 #### Ejemplo
 
 "usa el MCP "opencost-bestie", y dime qué porcentaje de los costos del clúster no están asignados a recursos"
-Obtendrás esto:
+Obtendrá esto:
 <img src={opencostmcp} alt="réponse IA opencost"/>
 
 #### Ejemplo 2

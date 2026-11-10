@@ -228,7 +228,7 @@ Algunos antiguos identificadores se redirigen hacia un modelo sucesor. Una solic
 2. Verifique el identificador del sucesor con `GET /v1/models` y sus capacidades : visión, llamadas a herramientas, razonamiento y contexto según su uso.
 3. Pruebe el sucesor en una muestra representativa de sus solicitudes : calidad, formatos de salida, herramientas, latencia y consumo.
 4. Actualice el parámetro `model` en la configuración de su aplicación tras la validación, y luego supervise los resultados.
-5. Para los embeddings, prevé recalcular los vectores y reconstruir el índice si el modelo cambia.
+5. Para los embeddings, prevea recalcular los vectores y reconstruir el índice si el modelo cambia.
 
 ### Modelos obsoletos
 
@@ -326,9 +326,9 @@ La reactividad de su aplicación depende de la manera en que gestione las llamad
 
 ### Seguridad
 
-La seguridad de tu aplicación es primordial, especialmente cuando se procesan entradas del usuario.
+La seguridad de su aplicación es primordial, especialmente cuando se procesan entradas del usuario.
 
-1.  **Validación y Limpieza de Entradas (Sanitization)**: Nunca confíes en las entradas del usuario. Antes de enviarlas a la API, límpialas para eliminar cualquier código potencialmente malicioso o instrucciones de "inyección de prompt". También limita su tamaño para evitar abusos.
+1.  **Validación y Limpieza de Entradas (Sanitization)**: Nunca confíe en las entradas del usuario. Antes de enviarlas a la API, límpielas para eliminar cualquier código potencialmente malicioso o instrucciones de "inyección de prompt". Limite también su tamaño para evitar abusos.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Ejemplo simple: eliminar delimitadores de código y limitar la longitud.
@@ -337,7 +337,7 @@ La seguridad de tu aplicación es primordial, especialmente cuando se procesan e
         return cleaned[:2000]  # Limita el tamaño a 2000 caracteres
     ```
 
-2.  **Gestión Robusta de Errores**: Envuelve siempre tus llamadas a la API en bloques `try...except` para gestionar errores de red, errores de la API (por ejemplo, 429 Límite de tasa, 500 Error interno del servidor) y proporcionar una experiencia de usuario degradada pero funcional.
+2.  **Gestión Robusta de Errores**: Envuelva siempre sus llamadas a la API en bloques `try...except` para gestionar errores de red, errores de la API (por ejemplo, 429 Límite de tasa, 500 Error interno del servidor) y proporcionar una experiencia de usuario degradada pero funcional.
     ```python
     from openai import APIError, APITimeoutError
 
