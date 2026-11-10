@@ -98,7 +98,7 @@ Der Kunde ist für die Erstellung und Konfiguration seines VPC sowie der darin e
 | Überwachung **anomaler Verhaltensweisen** im Mandantendatenverkehr                                     | **RA** |              |
 
 *(3) Cloud Temple garantiert die strikte Trennung zwischen VPCs verschiedener Mandanten. Kein Datenverkehr kann diese Barriere ohne explizite Aktion des Kunden durchlaufen.*  
-*(4) Der VPC bietet keine Mikrosegmentierung (security groups): Filterrichtlinien sind vom Kunden über eine dedizierte Sicherheitsausrüstung umzusetzen.*  
+*(4) Der VPC enthält Flussrichtlinien (Nord-Süd- und Ost-West-Filterung, siehe die [Konzepte](../../network/vpc/concepts.md)), aber keine Mikrosegmentierung über Sicherheitsgruppen (security groups): Diese setzt der Kunde über eine dedizierte Sicherheitsausrüstung um.*  
 *(5) Die anwendungsbezogene Filterung des Datenverkehrs innerhalb des VPC liegt in der Verantwortung des Kunden. Cloud Temple führt keine Inhaltsprüfung des Mandantendatenverkehrs durch.*  
 *(6) Penetrationstests sind gemäß den Allgemeinen Geschäftsbedingungen vorab bei Cloud Temple anzumelden.*
 

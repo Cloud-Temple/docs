@@ -318,4 +318,4 @@ If you receive this error, check the following:
 
 ### Bucket not found
 
-Make sure to use **path-style addressing** (`s3={'addressing_style': 'path'}`) in the configuration. Virtual-hosted style will be supported in S2 2026.
+Make sure to use **path-style addressing** (`s3={'addressing_style': 'path'}`) in the configuration.

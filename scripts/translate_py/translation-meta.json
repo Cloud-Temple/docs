@@ -211,10 +211,10 @@
       "it": "2aa726e267e97355ca8116c22474ec7a33cc8094469067129bfaebf8fea39f46"
     },
     "contractual/network/raci_vpc.md": {
-      "en": "be7e1a42b2cf047f1857011382e966e7257290f497c4a982893d77deb9625f0d",
-      "de": "be7e1a42b2cf047f1857011382e966e7257290f497c4a982893d77deb9625f0d",
-      "es": "be7e1a42b2cf047f1857011382e966e7257290f497c4a982893d77deb9625f0d",
-      "it": "be7e1a42b2cf047f1857011382e966e7257290f497c4a982893d77deb9625f0d"
+      "en": "70f933267b1da693f91b4de24656c1a6d91e284e4ec0512fedb592d3d8235ed9",
+      "de": "70f933267b1da693f91b4de24656c1a6d91e284e4ec0512fedb592d3d8235ed9",
+      "es": "70f933267b1da693f91b4de24656c1a6d91e284e4ec0512fedb592d3d8235ed9",
+      "it": "70f933267b1da693f91b4de24656c1a6d91e284e4ec0512fedb592d3d8235ed9"
     },
     "contractual/paas/mco_mcs.md": {
       "en": "aba52aa346d13e3002447e4b3eeb01537c493f4224cacfff5fc0a1e5ff5d007a",
@@ -865,10 +865,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "network/vpc/quickstart.md": {
-      "en": "6684220e1281bd5fb615a822e78a0c3d1fe4ae8770d4eac93f5367af94382765",
-      "de": "6684220e1281bd5fb615a822e78a0c3d1fe4ae8770d4eac93f5367af94382765",
-      "es": "6684220e1281bd5fb615a822e78a0c3d1fe4ae8770d4eac93f5367af94382765",
-      "it": "6684220e1281bd5fb615a822e78a0c3d1fe4ae8770d4eac93f5367af94382765"
+      "en": "84b365eda21892a0eab9c1088c6dada460db67f0faff77fb77c188fc0d3d9d44",
+      "de": "84b365eda21892a0eab9c1088c6dada460db67f0faff77fb77c188fc0d3d9d44",
+      "es": "84b365eda21892a0eab9c1088c6dada460db67f0faff77fb77c188fc0d3d9d44",
+      "it": "84b365eda21892a0eab9c1088c6dada460db67f0faff77fb77c188fc0d3d9d44"
     },
     "network/vpc/tutorials/vm_configuration.md": {
       "en": "6882a28d4350a654fc6baf49447ecabdcdf75a80d9b00b6d88e80dc0d3465bc9",
@@ -979,10 +979,10 @@
       "it": "e9b43f9903535589d7066c9e0bb8a11d81ea66e15b9d601ccf5c6a76f4f2dbde"
     },
     "storage/oss/concepts.md": {
-      "en": "c1a193758815c8a67b6236750a6b35b4bc85f637ac3aaec5d1137e0485e6c4e2",
-      "de": "c1a193758815c8a67b6236750a6b35b4bc85f637ac3aaec5d1137e0485e6c4e2",
-      "es": "c1a193758815c8a67b6236750a6b35b4bc85f637ac3aaec5d1137e0485e6c4e2",
-      "it": "c1a193758815c8a67b6236750a6b35b4bc85f637ac3aaec5d1137e0485e6c4e2"
+      "en": "e2f2cf979a253b3c3e36da6942a244c84c3bf6c75f66e3e24ba1bb302e10f06a",
+      "de": "e2f2cf979a253b3c3e36da6942a244c84c3bf6c75f66e3e24ba1bb302e10f06a",
+      "es": "e2f2cf979a253b3c3e36da6942a244c84c3bf6c75f66e3e24ba1bb302e10f06a",
+      "it": "e2f2cf979a253b3c3e36da6942a244c84c3bf6c75f66e3e24ba1bb302e10f06a"
     },
     "storage/oss/faq.md": {
       "en": "72e438079dfb46c3d4fd5255c5d9a81a1201633d74e8b943765c2b2cb4e3a035",
@@ -1039,10 +1039,10 @@
       "it": "3c2845975fee1434fc338fba31af1d03552d4c364da1544817f4f4e5cc50cde9"
     },
     "storage/oss/tutorials/python-boto3.md": {
-      "en": "303d4814922f0d9f5e3a1d52b7bcc2c30af0ca73ace899b4db2156fbc6af7103",
-      "de": "303d4814922f0d9f5e3a1d52b7bcc2c30af0ca73ace899b4db2156fbc6af7103",
-      "es": "303d4814922f0d9f5e3a1d52b7bcc2c30af0ca73ace899b4db2156fbc6af7103",
-      "it": "303d4814922f0d9f5e3a1d52b7bcc2c30af0ca73ace899b4db2156fbc6af7103"
+      "en": "6d4ecf72426609cb362e6da9bca60f555f44ca5ab3594c11acfc59491bd6bea4",
+      "de": "6d4ecf72426609cb362e6da9bca60f555f44ca5ab3594c11acfc59491bd6bea4",
+      "es": "6d4ecf72426609cb362e6da9bca60f555f44ca5ab3594c11acfc59491bd6bea4",
+      "it": "6d4ecf72426609cb362e6da9bca60f555f44ca5ab3594c11acfc59491bd6bea4"
     },
     "storage/oss/tutorials/rclone.md": {
       "en": "e402a3a1a87ed18530d934398baf5a885cf1fa4cc229ed0472fcba7a0e806acd",

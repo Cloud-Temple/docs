@@ -31,7 +31,7 @@ Le **Stockage Objet** est un service de stockage distribué, évolutif et écono
 | Fonctionnalité           | Description                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatible S3        | Accès par l'API S3, compatible à 97 % avec AWS S3.                          |
-| Type de bucket           | Un seul type aujourd'hui : « Performance ». La classe « Archivage » est une prochaine évolution. |
+| Type de bucket           | Un seul type : « Performance ». |
 | Réplication sur 3 zones  | Redondance automatique sur trois zones de disponibilité.                    |
 | Erasure Coding           | Protection EC 12+4.                                                         |
 | Chiffrement au repos     | Chiffrement côté serveur, activé au niveau du *namespace*.                  |

@@ -31,7 +31,7 @@ El **Almacenamiento de objetos** es un servicio de almacenamiento distribuido, e
 | Funcionalidad            | Descripción                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatible con S3    | Acceso mediante la API S3, compatible al 97 % con AWS S3.                   |
-| Tipo de bucket           | Un único tipo hoy: «Performance». La clase «Archivado» es una próxima evolución. |
+| Tipo de bucket           | Un único tipo: «Performance». |
 | Replicación en 3 zonas   | Redundancia automática en tres zonas de disponibilidad.                     |
 | Erasure Coding           | Protección EC 12+4.                                                         |
 | Cifrado en reposo        | Cifrado del lado del servidor, activado a nivel del *namespace*.            |

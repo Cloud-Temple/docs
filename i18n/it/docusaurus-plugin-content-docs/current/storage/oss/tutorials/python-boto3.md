@@ -318,4 +318,4 @@ Se ricevete questo errore, verificate:
 
 ### Il bucket non trovato
 
-Assicuratevi di utilizzare lo **stile di indirizzamento per percorso** (`s3={'addressing_style': 'path'}`) nella configurazione. Lo stile di indirizzamento con host virtuale sarà supportato a partire dal S2 2026.
+Assicuratevi di utilizzare lo **stile di indirizzamento per percorso** (`s3={'addressing_style': 'path'}`) nella configurazione.

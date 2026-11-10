@@ -98,7 +98,7 @@ The client is responsible for creating and configuring their VPC as well as the 
 | Monitor **anomalous behavior** on tenant network traffic                                                   | **RA** |              |
 
 *(3) Cloud Temple guarantees strict isolation between VPCs belonging to different tenants. No traffic can cross this barrier without explicit action from the client.*  
-*(4) The VPC does not provide micro-segmentation (security groups): filtering policies must be implemented by the client using dedicated security equipment.*  
+*(4) The VPC includes flow policies (north-south and east-west filtering, see the [concepts](../../network/vpc/concepts.md)), but not micro-segmentation through security groups: the client implements it using dedicated security equipment.*  
 *(5) Application-level traffic filtering within the VPC is the client's responsibility. Cloud Temple does not perform content inspection of tenant traffic.*  
 *(6) Penetration tests must be declared in advance to Cloud Temple, in accordance with the terms of service.*
 

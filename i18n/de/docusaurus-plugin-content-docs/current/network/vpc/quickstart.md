@@ -21,7 +21,7 @@ Dieser Guide begleitet Sie bei der Erstellung Ihres ersten Virtual Private Cloud
 
 ## Voraussetzungen
 
-Die Aktivierung des VPC-Dienstes erfordert den Abschluss eines **IaaS Open Source**-Produkts.
+Ein VPC im dedizierten Modus erfordert den Abschluss des Angebots **IaaS Open Source**; der gemeinsam genutzte Modus basiert auf dem Angebot VM Instances (siehe die Bereitstellungsmodi in den [Konzepten](./concepts.md)).
 
 ## Schritt 1: Zugriff auf die Konsole
 

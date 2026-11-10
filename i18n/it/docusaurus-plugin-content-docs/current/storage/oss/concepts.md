@@ -31,7 +31,7 @@ L'**Archiviazione oggetti** è un servizio di archiviazione distribuito, scalabi
 | Funzionalità             | Descrizione                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatibile S3       | Accesso tramite l'API S3, compatibile al 97% con AWS S3.                    |
-| Tipo di bucket           | Un solo tipo oggi: «Performance». La classe «Archivio» è una prossima evoluzione. |
+| Tipo di bucket           | Un solo tipo: «Performance». |
 | Replica su 3 zone        | Ridondanza automatica su tre zone di disponibilità.                         |
 | Erasure Coding           | Protezione EC 12+4.                                                         |
 | Cifratura a riposo       | Cifratura lato server, attivata a livello del *namespace*.                  |

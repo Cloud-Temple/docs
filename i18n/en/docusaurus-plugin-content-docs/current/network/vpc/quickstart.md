@@ -21,7 +21,7 @@ This guide walks you through creating your first Virtual Private Cloud (VPC) and
 
 ## Prerequisites
 
-Activating the VPC service requires having subscribed to an **IaaS Open Source** product.
+A VPC in dedicated mode requires a subscription to the **IaaS Open Source** offer; shared mode relies on the VM Instances offer (see the deployment modes in the [concepts](./concepts.md)).
 
 ## Step 1: Access the Console
 

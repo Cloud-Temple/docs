@@ -31,7 +31,7 @@ sidebar_position: 2
 | Feature                  | Description                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | S3-compatible API        | Access through the S3 API, 97% compatible with AWS S3.                      |
-| Bucket type              | A single type today: "Performance". The "Archive" class is an upcoming change. |
+| Bucket type              | A single type: "Performance". |
 | Replication across 3 zones | Automatic redundancy across three availability zones.                     |
 | Erasure Coding           | EC 12+4 protection.                                                         |
 | Encryption at rest       | Server-side encryption, enabled at the *namespace* level.                   |

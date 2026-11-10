@@ -31,7 +31,7 @@ Der **Objektspeicher** ist ein verteilter, skalierbarer und kostengünstiger Spe
 | Funktion                 | Beschreibung                                                                |
 |--------------------------|-----------------------------------------------------------------------------|
 | S3-kompatible API        | Zugriff über die S3-API, zu 97 % kompatibel mit AWS S3.                     |
-| Bucket-Typ               | Derzeit ein einziger Typ: „Performance“. Die Klasse „Archiv“ ist eine kommende Entwicklung. |
+| Bucket-Typ               | Ein einziger Typ: „Performance“. |
 | Replikation über 3 Zonen | Automatische Redundanz über drei Verfügbarkeitszonen.                       |
 | Erasure Coding           | EC-12+4-Schutz.                                                             |
 | Verschlüsselung ruhender Daten | Serverseitige Verschlüsselung, aktiviert auf *Namespace*-Ebene.       |

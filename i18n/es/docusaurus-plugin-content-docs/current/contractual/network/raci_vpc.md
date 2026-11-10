@@ -98,7 +98,7 @@ El cliente es responsable de la creación y configuración de su VPC, así como 
 | Supervisar los **comportamientos anómalos** en los flujos de red del inquilino                                     | **RA**  |              |
 
 *(3) Cloud Temple garantiza el aislamiento estricto entre VPC pertenecientes a inquilinos diferentes. Ningún flujo puede atravesar esta barrera sin una acción explícita del cliente.*  
-*(4) El VPC no ofrece microsegmentación (security groups): las políticas de filtrado deben implementarse por parte del cliente mediante un equipo de seguridad dedicado.*  
+*(4) El VPC integra políticas de flujo (filtrado norte-sur y este-oeste, consulte los [conceptos](../../network/vpc/concepts.md)), pero no microsegmentación mediante grupos de seguridad (security groups): el cliente la implementa mediante un equipo de seguridad dedicado.*  
 *(5) El filtrado de flujos a nivel de aplicación dentro del VPC es responsabilidad del cliente. Cloud Temple no realiza inspección de contenido de los flujos del inquilino.*  
 *(6) Las pruebas de intrusión deben declararse previamente a Cloud Temple, de conformidad con las condiciones generales de uso.*
 
