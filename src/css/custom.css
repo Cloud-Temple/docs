@@ -1063,13 +1063,6 @@ h1 { font-weight: 500; }
 h2 { font-weight: 700; }
 h3 { font-weight: 500; }
 
-/* Bandeau d'accueil : aplat, angles droits, sans dégradé ni halo. */
-.hero-banner {
-  background: #242428;
-  border: 1px solid #41a890;
-  border-radius: 0;
-}
-[data-theme='dark'] .hero-banner { background: #2f2f33; }
 /* Trame de points, comme sur les bandeaux du site : un bloc sur la droite du bandeau
    (pas de second bloc en bas à gauche, qui passerait sous les badges de conformité). */
 .hero-banner { overflow: hidden; }
@@ -1370,20 +1363,23 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
    La graisse 600 paraissait lourde en Montserrat, plus large que Nunito. */
 [class*='sidebar-cat-'] > .menu__list-item-collapsible > .menu__link { font-weight: 500; }
 
-/* ─── Bandeau d'accueil compact (modèle « bandeau + démarrage rapide ») ─────
-   Pleine largeur, collé à la barre de navigation et au menu, sans cadre :
-   titre, sous-titre et conformités. Les actions de démarrage sont les cartes
-   « Premiers pas » juste en dessous. Décor : trame de points en haut à droite,
-   masquée sur mobile. */
+/* ─── Bandeau d'accueil : un bloc détaché du haut de la page ────────────────
+   Rectangle aux angles arrondis (12 px, choix assumé : seul élément arrondi de
+   la page), séparé de la barre de navigation par une marge, comme les blocs du
+   site : anthracite en clair, #2f2f33 bordé d'un filet gris en sombre, comme les cartes (où
+   l'anthracite se confondrait avec le fond). Titre, sous-titre et conformités ;
+   les actions de démarrage sont les cartes « Premiers pas » juste en dessous.
+   Décor : trame de points en haut à droite, masquée sur mobile. */
 .hero-banner {
   position: relative;
-  margin: calc(-1 * var(--ifm-spacing-horizontal)) calc(-1 * var(--ifm-spacing-horizontal)) 2.5rem;
-  padding: 36px 200px 32px var(--ifm-spacing-horizontal);
+  margin: 0.5rem 0 2.5rem;
+  padding: 36px 200px 34px 40px;
   background: #242428;
-  border: 0;
+  border: 1px solid #242428;
+  border-radius: 12px;
   overflow: hidden;
 }
-[data-theme='dark'] .hero-banner { background: #242428; border-bottom: 1px solid #2f2f33; }
+[data-theme='dark'] .hero-banner { background: #2f2f33; border-color: #3a3a3f; }
 .hero-content { max-width: 720px; position: relative; z-index: 1; }
 .hero-title { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; margin: 0 0 8px 0; }
 .hero-subtitle { color: rgba(255, 255, 255, 0.82); font-size: 1.02rem; line-height: 1.55; margin: 0 0 16px 0; }
@@ -1403,6 +1399,6 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
 .cert-chip + .cert-chip::before { content: '·'; color: #41a890; margin: 0 10px; font-weight: 700; }
 .hero-banner::after { top: 24px; right: 40px; bottom: auto; transform: none; width: 85px; height: 120px; }
 @media (max-width: 996px) {
-  .hero-banner { padding: 28px var(--ifm-spacing-horizontal) 24px; }
+  .hero-banner { padding: 28px 24px 24px; }
   .hero-banner::after { display: none; }
 }
