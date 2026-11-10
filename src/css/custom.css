@@ -1049,6 +1049,9 @@ footer.footer--dark .footer__copyright a:hover {
 /* Bouton « Retour au menu principal » : couleur du texte du thème, pas le gris clair
    des boutons de la barre (illisible sur le fond clair du tiroir). */
 .navbar .navbar-sidebar__back { color: var(--ifm-font-color-base); }
+/* Bascule de thème : au survol, Docusaurus pose un fond gris clair en mode clair,
+   sous une icône claire (contraste 1,06:1). Fond clair translucide, comme sur fond sombre. */
+.navbar [class*='toggleButton_']:hover { background: rgba(255, 255, 255, 0.12); }
 
 /* ─── Direction artistique du site cloud-temple.com ─────────────────────────
    Relevé du 2026-11-10 : fond anthracite #242428, blocs #2f2f33 bordés d'un
