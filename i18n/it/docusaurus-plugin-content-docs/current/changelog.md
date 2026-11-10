@@ -9,7 +9,7 @@ displayed_sidebar: docSidebar
 
 - **Presentazione**: La documentazione adotta l'identità visiva del sito cloud-temple.com: colori, carattere Montserrat, modalità scura predefinita, una pagina iniziale ridisegnata e una ricerca tradotta nelle cinque lingue.
 - **Navigazione**: Ogni prodotto presenta le stesse sezioni (Panoramica, Concetti, Guida introduttiva, Tutorial, Domande frequenti) e la sua panoramica rimanda a ciascuna di esse. I prodotti gestiti sono raggruppati per famiglie, come gli altri prodotti.
-- **Pagine Concetti**: La maggior parte delle pagine Concetti dei prodotti segue ora un modello comune e sono allineate alle pagine prodotto del sito cloud-temple.com.
+- **Pagine Concetti**: La maggior parte delle pagine Concetti dei prodotti segue ora un modello comune ed è allineata alle pagine prodotto del sito cloud-temple.com.
 - **Nuova documentazione**: [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) e [AIOps](./aiops/aiops.md). Un riquadro segnala i servizi gestiti che non si ordinano dalla Console.
 - **GPU**: Le GPU sono documentate all'interno delle offerte che le includono: IaaS VMware, IaaS OpenSource e Bare Metal. PaaS OpenShift offre un worker GPU H100.
 - **Console**: Un percorso di avvio unico, l'[Onboarding](./console/onboarding.md), etichette allineate alla Console 5.1 e schermate della nuova interfaccia.
