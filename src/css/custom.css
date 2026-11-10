@@ -1089,7 +1089,26 @@ h3 { font-weight: 500; }
   border-radius: 0;
 }
 [data-theme='dark'] .hero-banner { background: #2f2f33; }
-.hero-banner::after { display: none; }
+/* Trame de points, comme sur les bandeaux du site : un bloc sur la droite du bandeau
+   (pas de second bloc en bas à gauche, qui passerait sous les badges de conformité). */
+.hero-banner { overflow: hidden; }
+.hero-banner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  left: auto;
+  width: 120px;
+  height: 205px;
+  transform: translateY(-50%);
+  border-radius: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.32) 1.6px, transparent 2px) 0 0 / 17px 17px;
+}
+@media (max-width: 996px) {
+  .hero-banner::after { width: 68px; right: 14px; }
+}
 .hero-badge { border-radius: 0; }
 
 /* Cartes : blocs du site (fond #2f2f33 en sombre, filet vert-bleu, angles droits). */
