@@ -2,6 +2,12 @@
 title: Concepts
 ---
 
+:::info[Service managé, hors Console]
+
+Sovereign SOC se souscrit auprès des équipes Cloud Temple. Il ne se commande pas depuis la Console Cloud Temple, qui ne propose pour ce service ni vue ni API.
+
+:::
+
 ## Présentation
 
 Le Sovereign SOC est un service de cyber-surveillance managé. Il assure la collecte, l'analyse et la qualification des événements de sécurité de vos systèmes d'information, qu'ils soient hébergés sur le Cloud de confiance ou dans un autre environnement. Le service est bout en bout : il inclut la plateforme technique de détection, l'analyse automatisée et la validation humaine 24/7 par une équipe d'analystes sécurité. Vous ne recevez que des tickets d'incidents qualifiés, accompagnés d'un plan de remédiation suivi.
