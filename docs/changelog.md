@@ -5,6 +5,18 @@ displayed_sidebar: docSidebar
 
 # Historique de la documentation
 
+### 10 Novembre 2026 : Nouvelle présentation et documentation harmonisée
+
+- **Présentation** : La documentation adopte la charte du site cloud-temple.com : couleurs, police Montserrat, mode sombre par défaut, page d'accueil repensée et recherche traduite dans les cinq langues.
+- **Navigation** : Chaque produit présente les mêmes rubriques (Vue d'ensemble, Concepts, Guide de démarrage, Tutoriels, Questions fréquentes) et sa vue d'ensemble renvoie vers chacune d'elles. Les produits managés sont rangés par familles, comme les autres produits.
+- **Pages Concepts** : Les pages Concepts des produits suivent une trame commune et sont alignées sur les pages produit du site cloud-temple.com.
+- **Nouvelles documentations** : [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) et [AIOps](./aiops/aiops.md). Un encadré signale les services managés qui ne se commandent pas depuis la Console.
+- **GPU** : Les GPU sont documentés au sein des offres qui les embarquent : IaaS VMware, IaaS OpenSource et Bare Metal. PaaS OpenShift propose un worker GPU H100.
+- **Console** : Un parcours de démarrage unique, l'[Onboarding](./console/onboarding.md), des libellés alignés sur la Console 5.1 et des captures d'écran de la nouvelle interface.
+- **Pages communes** : Nouvelles pages [Régions et zones de disponibilité](./additional_content/concepts_regional.md) et [Stockage bloc](./storage/block/block_storage.md).
+- **Évolutions des produits** : Elles se suivent sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2), filtrée par produit, et ne sont plus annoncées dans les pages.
+- **Traductions** : Les versions anglaise, allemande, espagnole et italienne sont resynchronisées avec le français.
+
 ### 30 Octobre 2026 : Console v5.1.0
 
 - **Console** : Les [notes de version produits](./changelog_produits.md) présentent les versions 4.53.2 et 5.1.0 : nouveau thème « Système » qui suit le mode clair ou sombre du système d’exploitation, rapport de consommation intégré au Gestionnaire des coûts avec des filtres par produit, SKU et tenant, et menu Commandes déplacé sous le Marketplace.

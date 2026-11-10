@@ -5,6 +5,18 @@ displayed_sidebar: docSidebar
 
 # Documentation changelog
 
+### November 10, 2026: New look and harmonized documentation
+
+- **Look and feel**: The documentation adopts the cloud-temple.com website's visual identity: colors, Montserrat font, dark mode by default, a redesigned home page, and search translated into all five languages.
+- **Navigation**: Every product offers the same sections (Overview, Concepts, Getting started, Tutorials, FAQ), and its overview links to each of them. Managed products are grouped into families, like the other products.
+- **Concepts pages**: Product Concepts pages follow a common template and are aligned with the product pages of the cloud-temple.com website.
+- **New documentation**: [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) and [AIOps](./aiops/aiops.md). A notice identifies managed services that are not ordered from the Console.
+- **GPU**: GPUs are documented within the offers that include them: IaaS VMware, IaaS OpenSource and Bare Metal. PaaS OpenShift offers an H100 GPU worker.
+- **Console**: A single getting-started path, [Onboarding](./console/onboarding.md), labels aligned with Console 5.1, and screenshots of the new interface.
+- **Shared pages**: New [Regions and availability zones](./additional_content/concepts_regional.md) and [Block storage](./storage/block/block_storage.md) pages.
+- **Product changes**: Follow them on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2), filtered by product; they are no longer announced in the pages.
+- **Translations**: The English, German, Spanish and Italian versions are resynchronized with the French source.
+
 ### October 30, 2026: Console v5.1.0
 
 - **Console**: The [product release notes](./changelog_produits.md) cover versions 4.53.2 and 5.1.0: a new "System" theme that follows the operating system's light or dark mode, the consumption report integrated into the Cost Manager with filters by product, SKU and tenant, and the Orders menu moved under the Marketplace.

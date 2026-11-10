@@ -5,6 +5,18 @@ displayed_sidebar: docSidebar
 
 # Änderungsprotokoll der Dokumentation
 
+### 10. November 2026 : Neues Erscheinungsbild und vereinheitlichte Dokumentation
+
+- **Erscheinungsbild**: Die Dokumentation übernimmt die visuelle Identität der Website cloud-temple.com: Farben, Schriftart Montserrat, standardmäßig dunkler Modus, eine neu gestaltete Startseite und eine in alle fünf Sprachen übersetzte Suche.
+- **Navigation**: Jedes Produkt bietet dieselben Rubriken (Übersicht, Konzepte, Schnellstart, Tutorials, Häufige Fragen), und seine Übersicht verweist auf jede davon. Die verwalteten Produkte sind wie die anderen Produkte nach Familien geordnet.
+- **Konzeptseiten**: Die Konzeptseiten der Produkte folgen einer gemeinsamen Vorlage und sind auf die Produktseiten der Website cloud-temple.com abgestimmt.
+- **Neue Dokumentationen**: [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) und [AIOps](./aiops/aiops.md). Ein Hinweis kennzeichnet verwaltete Dienste, die nicht über die Konsole bestellt werden.
+- **GPU**: GPUs werden innerhalb der Angebote dokumentiert, die sie enthalten: IaaS VMware, IaaS OpenSource und Bare Metal. PaaS OpenShift bietet einen GPU-Worker H100.
+- **Konsole**: Ein einheitlicher Einstieg, das [Onboarding](./console/onboarding.md), an die Konsole 5.1 angepasste Bezeichnungen und Screenshots der neuen Oberfläche.
+- **Gemeinsame Seiten**: Neue Seiten [Regionen und Verfügbarkeitszonen](./additional_content/concepts_regional.md) und [Blockspeicher](./storage/block/block_storage.md).
+- **Produktentwicklungen**: Sie werden in der nach Produkt gefilterten [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2) verfolgt und nicht mehr auf den Seiten angekündigt.
+- **Übersetzungen**: Die englische, deutsche, spanische und italienische Fassung sind wieder mit der französischen Quelle synchronisiert.
+
 ### 30. Oktober 2026 : Konsole v5.1.0
 
 - **Konsole** : Die [Produkt-Versionshinweise](./changelog_produits.md) präsentieren die Versionen 4.53.2 und 5.1.0: neues Theme „System“, das dem hellen oder dunklen Modus des Betriebssystems folgt, in den Kostenmanager integrierter Verbrauchsbericht mit Filtern nach Produkt, SKU und Tenant sowie Menü „Orders“ unter den Marketplace verschoben.

@@ -5,6 +5,18 @@ displayed_sidebar: docSidebar
 
 # Historial de la documentación
 
+### 10 de noviembre de 2026 : Nueva presentación y documentación armonizada
+
+- **Presentación**: La documentación adopta la identidad visual del sitio cloud-temple.com: colores, tipografía Montserrat, modo oscuro por defecto, una página de inicio rediseñada y una búsqueda traducida a los cinco idiomas.
+- **Navegación**: Cada producto presenta las mismas secciones (Visión general, Conceptos, Guía de inicio, Tutoriales, Preguntas frecuentes) y su visión general remite a cada una de ellas. Los productos gestionados se agrupan por familias, como los demás productos.
+- **Páginas de Conceptos**: Las páginas de Conceptos de los productos siguen una plantilla común y están alineadas con las páginas de producto del sitio cloud-temple.com.
+- **Nueva documentación**: [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) y [AIOps](./aiops/aiops.md). Un recuadro indica los servicios gestionados que no se contratan desde la Consola.
+- **GPU**: Las GPU se documentan dentro de las ofertas que las incluyen: IaaS VMware, IaaS OpenSource y Bare Metal. PaaS OpenShift ofrece un worker GPU H100.
+- **Consola**: Un recorrido de inicio único, el [Onboarding](./console/onboarding.md), etiquetas alineadas con la Consola 5.1 y capturas de pantalla de la nueva interfaz.
+- **Páginas comunes**: Nuevas páginas [Regiones y zonas de disponibilidad](./additional_content/concepts_regional.md) y [Almacenamiento en bloque](./storage/block/block_storage.md).
+- **Evolución de los productos**: Siga su evolución en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2), filtrada por producto; ya no se anuncia en las páginas.
+- **Traducciones**: Las versiones inglesa, alemana, española e italiana están resincronizadas con la fuente francesa.
+
 ### 30 de octubre de 2026 : Consola v5.1.0
 
 - **Consola** : Las [notas de versión de productos](./changelog_produits.md) presentan las versiones 4.53.2 y 5.1.0: nuevo tema « System » que sigue el modo claro u oscuro del sistema operativo, informe de consumo integrado en el Gestor de costes con filtros por producto, SKU y tenant, y menú « Orders » trasladado bajo el Marketplace.
