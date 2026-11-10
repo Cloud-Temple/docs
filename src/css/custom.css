@@ -512,15 +512,9 @@ h3 { font-size: 1.15rem; }
   text-decoration: none !important;
   color: inherit !important;
   background: var(--ifm-background-surface-color);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.18s ease;
   cursor: pointer;
   min-height: 148px;
-}
-
-.book-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-  text-decoration: none !important;
 }
 
 /* Tranche du livre */
@@ -528,11 +522,6 @@ h3 { font-size: 1.15rem; }
   width: 6px;
   flex-shrink: 0;
   background: var(--book-color, #338370);
-  transition: width 0.18s ease;
-}
-
-.book-card:hover .book-card-spine {
-  width: 9px;
 }
 
 /* Corps */
@@ -585,10 +574,6 @@ h3 { font-size: 1.15rem; }
 
 [data-theme='dark'] .book-card {
   border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .book-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
 }
 
 /* Masque le titre H1 auto-généré par Docusaurus sur les pages avec hero banner */
@@ -783,16 +768,10 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   border-radius: 10px;
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  transition: border-color 0.2s ease;
   background: var(--ifm-background-surface-color);
 }
 
-.quickstart-card:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 16px rgba(51, 131, 112, 0.12);
-  transform: translateY(-2px);
-  text-decoration: none !important;
-}
 
 .quickstart-icon {
   font-size: 1.8rem;
@@ -1060,6 +1039,11 @@ footer.footer--dark .footer__copyright a:hover {
   font-family: 'Montserrat', var(--ifm-font-family-base);
   font-weight: 500;
 }
+/* Menu mobile (tiroir) : il hérite du fond anthracite de la barre, mais ses liens
+   suivent le thème. Fond de surface du thème (blanc en clair), bandeau du logo gardé anthracite
+   (logo blanc). */
+.navbar-sidebar { background-color: var(--ifm-background-surface-color); }
+.navbar-sidebar__brand { background-color: #242428; }
 .navbar .navbar__toggle,
 .navbar .clean-btn { color: #e6e6e6; }
 
@@ -1294,7 +1278,6 @@ details,
 /* Survol : le même pour toutes les cartes, un filet vert-bleu, ni ombre ni décalage. */
 .card:hover,
 .book-card:hover,
-[data-theme='dark'] .book-card:hover,
 .quickstart-card:hover {
   border-color: var(--ifm-color-primary);
   box-shadow: none;
