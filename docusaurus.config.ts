@@ -141,6 +141,8 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      // Logo blanc, comme le pied de page du site cloud-temple.com.
+      logo: { alt: 'Cloud Temple', src: 'img/logo-dark.svg', href: 'https://www.cloud-temple.com', width: 170 },
       links: [
         {
           title: 'Tools',

@@ -11,8 +11,13 @@ hide_table_of_contents: true
 
 <div class="hero-banner">
   <div class="hero-content">
+    <p class="hero-eyebrow">Documentación técnica</p>
     <h1 class="hero-title">Documentación de Cloud Temple</h1>
     <p class="hero-subtitle">Todo lo que necesita para gestionar los servicios cloud soberanos de Cloud Temple.</p>
+    <div class="hero-actions">
+      <a class="hero-button hero-button--primary" href="./console/onboarding">Empezar en la plataforma</a>
+      <a class="hero-button" href="./console">Descubrir la Consola</a>
+    </div>
     <div class="cert-row">
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
