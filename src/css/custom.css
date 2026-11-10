@@ -1212,3 +1212,41 @@ html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
   box-shadow: none;
   color: #aaaaaa;
 }
+
+/* ─── Angles droits partout, comme le site ──────────────────────────────────
+   Le thème Infima code certains arrondis en dur (menu, listes déroulantes,
+   fil d'Ariane, pagination…) et les composants maison avaient les leurs
+   (cartes de l'accueil, badges de conformité). Un seul vocabulaire : l'angle
+   droit. Les vrais cercles (50 %) ne sont pas concernés. */
+:root {
+  --ifm-breadcrumb-border-radius: 0;
+  --ifm-pagination-nav-border-radius: 0;
+  --ifm-badge-border-radius: 0;
+  --ifm-button-border-radius: 0;
+  --ifm-pills-border-radius: 0;
+  --ifm-tabs-border-radius: 0;
+}
+.menu__link,
+.menu__caret,
+.menu__list-item-collapsible,
+.dropdown__menu,
+.dropdown__link,
+.clean-btn,
+.breadcrumbs__link,
+.pagination-nav__link,
+.table-of-contents__link,
+.theme-admonition,
+.alert,
+.tabs__item,
+.theme-code-block,
+.prism-code,
+.badge,
+.button,
+details,
+.cert-chip,
+.quickstart-card,
+.popular-links-grid,
+[class*='categoryLink_'],
+[class*='tag_'] {
+  border-radius: 0 !important;
+}
