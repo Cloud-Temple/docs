@@ -98,7 +98,7 @@ Le blade di calcolo disponibili per l'offerta IaaS OpenSource offrono una gamma 
 
 ### GPU
 
-La classe di blade PERFORMANCE 4 integra due schede NVIDIA L40S da 48 GB. Il numero e il modello delle schede sono fissati dalla classe di blade: la configurazione GPU di un blade non si può modificare.
+La classe di blade PERFORMANCE 4 integra due schede NVIDIA L40S da 48 GB. Il numero e il modello delle schede sono fissati dalla classe di blade: la configurazione GPU di una blade non si può modificare.
 
 | Parametro               | NVIDIA L40S  |
 |-------------------------|--------------|
