@@ -52,29 +52,29 @@ Il sottomenu **Clusters** presenta una tabella con tutti i cluster OpenShift dis
 
 💡 **Per accedere ai dettagli completi di un cluster, fate clic sul suo nome nella tabella.**
 
-### 2. Cluster details
+### 2. Dettaglio di un cluster
 
-When you click on a **cluster name** in the list, a detailed page appears with complete cluster information:
+Quando fate clic sul **nome di un cluster** nell'elenco, viene visualizzata una pagina dettagliata con le informazioni complete del cluster:
 
-**Connectivity information:**
+**Informazioni di connettività:**
 
-- **Access URL**: Web interface of the cluster
-- **API URL**: API endpoint for CLI operations
+- **URL di accesso**: Interfaccia web del cluster
+- **URL API**: Punto di accesso API per le operazioni CLI
 
-**General information:**
+**Informazioni generali:**
 
-- **Status**: Current state of the cluster
-- **Last updated**: Date of the last modification
-- **Version**: OpenShift version deployed
+- **Stato**: Stato attuale del cluster
+- **Ultimo aggiornamento**: Data dell'ultima modifica
+- **Versione**: Versione di OpenShift distribuita
 
-**Cluster nodes:**
+**Nodi del cluster:**
 
-A table lists each node with the following information:
+Una tabella descrive ciascun nodo con le seguenti informazioni:
 
-- **Node name**
-- **Type**
+- **Nome del nodo**
+- **Tipo**
 - **AZ** (Availability Zone)
-- **Status**
+- **Stato**
 - **CPU**
 - **RAM**
 
@@ -90,32 +90,32 @@ Dopo l'autenticazione, potrete gestire il vostro cluster:
 
 <img src={oshiftMenu_003} />
 
-### Resources of your environment
+### Risorse del vostro ambiente
 
-Here are the connection and configuration details specific to your OpenShift environment.
+Ecco le informazioni di connessione e di configurazione specifiche del vostro ambiente OpenShift.
 
 #### Dettagli di connessione
 
 Per accedere ai diversi componenti OpenShift, assicuratevi che il vostro tenant sia registrato nell'elenco bianco nella console (consultate la documentazione: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
 - **URL Console Tenant** :
-  [https://**il-tuo-id-tenant**.shiva.cloud-temple.com/](https://**il-tuo-id-tenant**.shiva.cloud-temple.com/)
+  [https://**vostro-id-tenant**.shiva.cloud-temple.com/](https://**vostro-id-tenant**.shiva.cloud-temple.com/)
 
 - **OpenShift UI** :
-  [https://ui-ocp01-**il-tuo-id**.paas.cloud-temple.com/](https://ui-ocp01-**il-tuo-id**.paas.cloud-temple.com/)
+  [https://ui-ocp01-**vostro-id**.paas.cloud-temple.com/](https://ui-ocp01-**vostro-id**.paas.cloud-temple.com/)
 
 - **API esterna** :
-  [https://api-ocp01-**il-tuo-id**.paas.cloud-temple.com](https://api-ocp01-**il-tuo-id**.paas.cloud-temple.com)
+  [https://api-ocp01-**vostro-id**.paas.cloud-temple.com](https://api-ocp01-**vostro-id**.paas.cloud-temple.com)
 
 - **GitOps (ARGOCD)** :
-  [https://gitops-ocp01-**il-tuo-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**il-tuo-id**.paas.cloud-temple.com/applications)
+  [https://gitops-ocp01-**vostro-id**.paas.cloud-temple.com/applications](https://gitops-ocp01-**vostro-id**.paas.cloud-temple.com/applications)
 
 #### Connessione al cluster tramite CLI
 
 Per connettervi tramite riga di comando (CLI), utilizzate il comando seguente:
 
 ```bash
-oc login https://api-ocp01-{tuo-id}.paas.cloud-temple.com/ --web
+oc login https://api-ocp01-{vostro-id}.paas.cloud-temple.com/ --web
 ```
 
 #### Accesso al registro
@@ -123,16 +123,16 @@ oc login https://api-ocp01-{tuo-id}.paas.cloud-temple.com/ --web
 Per accedere al registro, effettuate il login utilizzando i seguenti comandi:
 
 ```bash
-oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
-docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
+oc login https://api-ocp01-{vostro-id}.paas.cloud-temple.com --web
+docker login -u {vostro-utente} -p $(oc whoami -t) registry-ocp01-{vostro-id}.paas.cloud-temple.com
 ```
 
 Successivamente, verificate la costruzione e il caricamento di un'immagine Docker:
 
 ```bash
 docker build -t <namespace>/temp:latest .
-docker tag <namespace>/temp:latest registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
-docker push registry-ocp01-{your-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker tag <namespace>/temp:latest registry-ocp01-{vostro-id}.paas.cloud-temple.com/<namespace>/temp:latest
+docker push registry-ocp01-{vostro-id}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
 #### Configurazione dei router e dei load balancer
@@ -154,11 +154,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS Interconnection
+#### Interconnessione IaaS
 
-Network configurations play a crucial role in securing communications with OpenShift.
+Le configurazioni di rete svolgono un ruolo cruciale per proteggere le comunicazioni con OpenShift.
 
-- **Interconnection network**: 100.67.0.0/28
-- **Private load balancer VIP**: 100.67.0.3
+- **Rete di interconnessione**: 100.67.0.0/28
+- **VIP del load balancer privato**: 100.67.0.3
 
-Ensure your firewall has a dedicated interface and allows traffic between the specified networks.
+Verificate che il vostro firewall disponga di un'interfaccia dedicata e autorizzi il traffico tra le reti specificate.

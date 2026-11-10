@@ -4,7 +4,7 @@ title: Erste Schritte mit dem Terraform-Provider
 
 # Erste Schritte mit dem Terraform-Provider
 
-This guide walks you step by step through deploying your first Cloud Temple infrastructure with Terraform.
+Dieser Leitfaden begleitet Sie Schritt für Schritt bei der Bereitstellung Ihrer ersten Cloud Temple-Infrastruktur mit Terraform.
 
 ## Voraussetzungen
 
@@ -40,13 +40,13 @@ Laden Sie die ausführbare Datei von [terraform.io](https://www.terraform.io/dow
 choco install terraform
 ```
 
-### Installation verification
+### Überprüfung der Installation
 
 ```bash
 terraform version
 ```
 
-You should see output similar to:
+Sie sollten eine Ausgabe ähnlich der folgenden sehen:
 
 ```
 Terraform v1.6.0
@@ -54,12 +54,12 @@ Terraform v1.6.0
 
 ## Schritt 2: API-Schlüssel erhalten
 
-### Generating an API Key in the Console
+### Generieren eines API-Schlüssels in der Konsole
 
-These credentials can be generated in the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#api-keys).
+Diese Anmeldeinformationen können in der Cloud Temple-Konsole gemäß [diesem Verfahren](https://docs.cloud-temple.com/console/api#api-keys) generiert werden.
 
-:::warning[Security]
-    Store these credentials securely. The Secret ID will be displayed only once.
+:::warning[Sicherheit]
+Bewahren Sie diese Anmeldeinformationen sicher auf. Die Secret ID wird nur ein einziges Mal angezeigt.
 :::
 
 ### Konfiguration der Umgebungsvariablen
@@ -113,13 +113,13 @@ provider "cloudtemple" {
 
 ## Schritt 4: Terraform initialisieren
 
-Initialize your Terraform project to download the provider:
+Initialisieren Sie Ihr Terraform-Projekt, um den Provider herunterzuladen:
 
 ```bash
 terraform init
 ```
 
-You should see:
+Sie sollten Folgendes sehen:
 
 ```
 Initializing the backend...
@@ -209,19 +209,19 @@ output "vm_moref" {
 }
 ```
 
-:::note[Adaptation of names]
-    The names of datacenters, clusters, and datastores must match those available in your Cloud Temple environment. Check the console to identify the available resources.
+:::note[Anpassung der Namen]
+Die Namen der Datacenter, Cluster und Datastores müssen mit denen übereinstimmen, die in Ihrer Cloud Temple-Umgebung verfügbar sind. Prüfen Sie in der Konsole, welche Ressourcen verfügbar sind.
 :::
 
 ## Schritt 6: Änderungen planen
 
-Before applying the changes, visualize what will be created:
+Bevor Sie die Änderungen anwenden, lassen Sie sich anzeigen, was erstellt wird:
 
 ```bash
 terraform plan
 ```
 
-Terraform displays a detailed plan:
+Terraform zeigt einen detaillierten Plan an:
 
 ```
 Terraform will perform the following actions:
@@ -243,7 +243,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 ## Schritt 7: Konfiguration anwenden
 
-Bereiten Sie Ihre Infrastruktur bereit:
+Stellen Sie Ihre Infrastruktur bereit:
 
 ```bash
 terraform apply
@@ -278,32 +278,32 @@ vm_moref = "vm-123"
 ```
 
 :::success[Herzlichen Glückwunsch!]
-    Sie haben soeben Ihre erste virtuelle Maschine Cloud Temple mit Terraform erstellt!
+Sie haben soeben Ihre erste virtuelle Maschine Cloud Temple mit Terraform erstellt!
 :::
 
 ## Schritt 8: Erstellung überprüfen
 
-### In the Cloud Temple console
+### In der Cloud Temple-Konsole
 
-1. Log in to the [Cloud Temple Console](https://shiva.cloud-temple.com)
-2. Navigate to **IaaS VMWare** > **Virtual Machines**
-3. You should see your Virtual Machine `terraform-vm-01`
+1. Melden Sie sich bei der [Cloud Temple-Konsole](https://shiva.cloud-temple.com) an
+2. Navigieren Sie zu **IaaS VMWare** > **Virtuelle Maschinen**
+3. Sie sollten Ihre virtuelle Maschine `terraform-vm-01` sehen
 
-### With Terraform
+### Mit Terraform
 
-Display the current state:
+Zeigen Sie den aktuellen Zustand an:
 
 ```bash
 terraform show
 ```
 
-List the managed resources:
+Listen Sie die verwalteten Ressourcen auf:
 
 ```bash
 terraform state list
 ```
 
-Display the outputs:
+Zeigen Sie die Outputs an:
 
 ```bash
 terraform output
@@ -348,13 +348,13 @@ Plan: 0 hinzuzufügen, 1 zu ändern, 0 zu entfernen.
 
 ## Schritt 10: Ressourcen zerstören
 
-When you have finished your tests, delete the created resources:
+Wenn Sie Ihre Tests abgeschlossen haben, löschen Sie die erstellten Ressourcen:
 
 ```bash
 terraform destroy
 ```
 
-Terraform displays what will be deleted and asks for confirmation:
+Terraform zeigt an, was gelöscht wird, und fordert eine Bestätigung an:
 
 ```
 cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
@@ -378,7 +378,7 @@ Do you really want to destroy all resources?
   Enter a value:
 ```
 
-Type `yes` to confirm deletion.
+Geben Sie `yes` ein, um das Löschen zu bestätigen.
 
 ## Empfohlene Projektstruktur
 
@@ -454,7 +454,7 @@ resource "cloudtemple_compute_virtual_machine" "vm" {
 }
 ```
 
-### 2. Organize with modules
+### 2. Organisieren Sie mit Modulen
 
 ```hcl
 # modules/vm/main.tf
@@ -519,7 +519,7 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 }
 ```
 
-## Troubleshooting
+## Fehlerbehebung
 
 ### Fehler: "Error: Failed to query available provider packages"
 
@@ -527,19 +527,19 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 
 **Lösung**: Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut mit `terraform init`.
 
-### Error: "Error: failed to login"
+### Fehler: "Error: failed to login"
 
 ```
 Error: failed to login: Unexpected response code: 401
 ```
 
-**Cause**: Invalid or expired credentials.
+**Ursache**: Ungültige oder abgelaufene Anmeldeinformationen.
 
-**Solution**:
+**Lösung**:
 
-1. Check your environment variables
-2. Generate a new API key in the console
-3. Verify the permissions of your API key
+1. Überprüfen Sie Ihre Umgebungsvariablen
+2. Generieren Sie in der Konsole einen neuen API-Schlüssel
+3. Überprüfen Sie die Berechtigungen Ihres API-Schlüssels
 
 ### Fehler: "Error: resource not found"
 

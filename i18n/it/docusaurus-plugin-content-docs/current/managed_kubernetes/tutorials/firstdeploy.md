@@ -168,7 +168,7 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
->⚠[Pour aller plus loin : la sécurité en production]
+>⚠[Per approfondire: la sicurezza in produzione]
 >Questo tutorial vi ha mostrato le basi del deployment. Per un ambiente di produzione, è cruciale applicare ulteriori misure di sicurezza:
 >
 >- **Utilizzate immagini sicure** : Privilegiate immagini provenienti dal vostro registro aziendale sicuro come **Harbor** piuttosto che immagini pubbliche.

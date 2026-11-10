@@ -55,7 +55,7 @@ Un dashboard Grafana è inoltre disponibile per visualizzare i dati di OpenCost.
 
 ## Utilizzo Avanzato: Integrazione con un'IA (Serveur MCP)
 
-Per gli utenti avanzati, OpenCost può essere interrogato direttamente dall'assistente conversazionale Cline (ou autre) grazie al sistema di **MCP (Model Context Protocol) servers**. Ciò vi consente di automatizzare le query e ottenere i dati sui costi direttamente nelle vostre conversazioni.
+Per gli utenti avanzati, OpenCost può essere interrogato direttamente dall'assistente conversazionale Cline (o altro) grazie al sistema di **MCP (Model Context Protocol) servers**. Ciò vi consente di automatizzare le query e ottenere i dati sui costi direttamente nelle vostre conversazioni.
 
 ### 1. Configurazione del MCP OpenCost in Cline
 
@@ -110,7 +110,7 @@ Dopo la configurazione, è possibile utilizzare gli strumenti LLM per eseguire q
 
 "usa il MCP "opencost-bestie", e dimmi quale percentuale dei costi del cluster non è allocata alle risorse"
 Otterrete questo:
-<img src={opencostmcp} alt="réponse IA opencost"/>
+<img src={opencostmcp} alt="risposta IA opencost"/>
 
 #### Esempio 2
 
@@ -120,10 +120,10 @@ Otterrete questo:
 
 #### Esempio 3
 
-"utilizza il MCP opencost-bestie, e dimmi quale percentuale dei costi del cluster è allocata all'applicazione con il label "nginx" . (filtre de la forme filter: "label:app:frontend" )"
+"utilizza il MCP opencost-bestie, e dimmi quale percentuale dei costi del cluster è allocata all'applicazione con il label "nginx" . (filtro nella forma filter: "label:app:frontend" )"
 
-<img src={opencostmcp3} alt="réponse IA opencost 3"/>
+<img src={opencostmcp3} alt="risposta IA opencost 3"/>
 
-## Conclusion
+## Conclusione
 
 OpenCost fornisce strumenti potenti per un'analisi dettagliata e in tempo reale dei costi del vostro cluster Kubernetes. Utilizzando principalmente la vista **Allocations** e combinandola con una buona strategia di labeling, è possibile ottenere una visione chiara delle vostre spese, allineata sia ai vostri deployment tecnici che alla vostra organizzazione interna. L'utilizzo degli LLM e del server MCP opencost consente di andare oltre nello sfruttamento dei dati.

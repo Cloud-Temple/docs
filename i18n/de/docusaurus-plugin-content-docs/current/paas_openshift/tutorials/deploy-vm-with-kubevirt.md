@@ -1,5 +1,5 @@
 ---
-title: Deploy a Virtual Machine (VM) with KubeVirt
+title: Bereitstellen einer virtuellen Maschine (VM) mit KubeVirt
 ---
 
 ## Ziele
@@ -25,13 +25,13 @@ Zwei Szenarien werden behandelt:
 - **Kompatibilität mit Windows und Linux**: Unterstützt Fedora und Windows Server.  
 - **Einfache Integration**: Nutzt die integrierten Dienste von KubeVirt und OpenShift (PVC, Port-Forwarding, Ingress).
 
-## Software Versions
+## Softwareversionen
 
-- OpenShift: v4.15 or higher  
-- Kubernetes: v1.24 or higher  
-- KubeVirt: v0.56 or higher  
-- VMware Workstation (for Windows Server conversion): Version 16 or higher  
-- qemu-img: Version 6.1 or higher
+- OpenShift: v4.15 oder höher  
+- Kubernetes: v1.24 oder höher  
+- KubeVirt: v0.56 oder höher  
+- VMware Workstation (für die Konvertierung von Windows Server): Version 16 oder höher  
+- qemu-img: Version 6.1 oder höher
 
 ## Voraussetzungen
 
@@ -45,14 +45,14 @@ Stellen Sie vor Beginn sicher:
    - **qemu-img** (zur Konvertierung von Festplatten in das `qcow2`-Format)  
 5. Dass Sie Zugriff auf den Azure-Blob besitzen, in dem das Windows Server-Image gespeichert wird.
 
-## Demonstration Plan
+## Demonstrationsplan
 
-### Overview of the Steps
+### Überblick über die Schritte
 
-1. Deploy a Fedora VM with NGINX.  
-2. Deploy a Windows Server VM with IIS.  
-3. Configure network access (SSH for Fedora, RDP for Windows).  
-4. Verify that the services (NGINX/IIS) are accessible from your browser.
+1. Eine Fedora-VM mit NGINX bereitstellen.  
+2. Eine Windows Server-VM mit IIS bereitstellen.  
+3. Den Netzwerkzugriff konfigurieren (SSH für Fedora, RDP für Windows).  
+4. Prüfen, ob die Dienste (NGINX/IIS) über Ihren Browser erreichbar sind.
 
 ## Erforderliche Dateien
 
@@ -63,7 +63,7 @@ Sie benötigen die folgenden Dateien für die Bereitstellung:
 3. **rdp-port-forward.yaml**: Manifest zur Konfiguration des RDP-Zugriffs auf die Windows-VM.  
 4. **iis-expose.yaml**: Manifest zur Exposition von IIS in OpenShift.
 
-## Deployment流程
+## Ablauf der Bereitstellung
 
 ---
 

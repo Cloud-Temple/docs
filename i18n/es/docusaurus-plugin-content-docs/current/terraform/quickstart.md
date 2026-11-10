@@ -6,7 +6,7 @@ title: Guía de inicio
 
 Esta guía le acompaña paso a paso para implementar su primera infraestructura Cloud Temple con Terraform.
 
-## Requis previos
+## Requisitos previos
 
 Antes de comenzar, asegúrese de contar con:
 
@@ -132,7 +132,7 @@ Inicializando los plugins del proveedor...
 ¡Terraform se ha inicializado correctamente!
 ```
 
-## Paso 5: Cree su primera recurso
+## Paso 5: Cree su primer recurso
 
 ### Ejemplo sencillo: Máquina virtual VMware
 
@@ -210,7 +210,7 @@ output "vm_moref" {
 ```
 
 :::note[Adaptación de los nombres]
-    Los nombres de los datacenters, clusters y datastores deben coincidir con los disponibles en su entorno Cloud Temple. Consulte la consola para identificar las recursos disponibles.
+    Los nombres de los datacenters, clusters y datastores deben coincidir con los disponibles en su entorno Cloud Temple. Consulte la consola para identificar los recursos disponibles.
 :::
 
 ## Paso 6: Planificar los cambios
@@ -426,7 +426,7 @@ override.tf.json
 | `terraform fmt` | Formatea automáticamente los archivos |
 | `terraform plan` | Muestra el plan de ejecución |
 | `terraform apply` | Aplica los cambios |
-| `terraform destroy` | Destruye todas las recursos |
+| `terraform destroy` | Destruye todos los recursos |
 | `terraform show` | Muestra el estado actual |
 | `terraform output` | Muestra los valores de las salidas |
 | `terraform state list` | Lista los recursos gestionados |
@@ -454,7 +454,7 @@ resource "cloudtemple_compute_virtual_machine" "vm" {
 }
 ```
 
-### 2. Organize with modules
+### 2. Organice con módulos
 
 ```hcl
 # modules/vm/main.tf
@@ -475,7 +475,7 @@ module "web_vm" {
 }
 ```
 
-### 3. Use a remote backend
+### 3. Use un backend remoto
 
 ```hcl
 terraform {
@@ -503,9 +503,9 @@ resource "cloudtemple_compute_virtual_machine" "web_prod" {
 }
 ```
 
-### 5. Use data sources
+### 5. Use datasources
 
-Do not recreate what already exists. Use data sources to reference existing resources:
+No vuelva a crear lo que ya existe. Use datasources para referenciar los recursos existentes:
 
 ```hcl
 # Referenciar una red existente
@@ -523,9 +523,9 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 
 ### Error: "Error: Failed to query available provider packages"
 
-**Cause**: Connection issue with the Terraform Registry.
+**Causa**: Problema de conexión con el Terraform Registry.
 
-**Solution**: Check your internet connection and retry `terraform init`.
+**Solución**: Verifique su conexión a Internet y vuelva a intentar `terraform init`.
 
 ### Error: "Error: failed to login"
 
@@ -533,9 +533,9 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 Error: failed to login: Unexpected response code: 401
 ```
 
-**Cause**: Credenciales inválidas o caducadas.
+**Causa**: Credenciales inválidas o caducadas.
 
-**Solution**:
+**Solución**:
 
 1. Verifique sus variables de entorno
 2. Genere una nueva clave API en la consola
@@ -547,12 +547,12 @@ Error: failed to login: Unexpected response code: 401
 Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 ```
 
-**Cause**: The referenced resource (datacenter, cluster, etc.) does not exist or you do not have access to it.
+**Causa**: El recurso referenciado (datacenter, cluster, etc.) no existe o usted no tiene acceso a él.
 
-**Solution**:
+**Solución**:
 
-1. Verify the exact name (or UUID) in the Cloud Temple console
-2. Check your access rights to this resource
+1. Verifique el nombre exacto (o el UUID) en la consola Cloud Temple
+2. Verifique sus derechos de acceso a este recurso
 
 ## Próximos pasos
 

@@ -12,7 +12,7 @@ import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.p
 
 Esta página le guía a través de los pasos iniciales para utilizar la oferta **OpenShift** desde la consola Cloud Temple. Siga estas instrucciones para explorar los menús y funcionalidades disponibles.
 
-## Requis previos
+## Requisitos previos
 
 Antes de comenzar, asegúrese de cumplir los siguientes puntos:
 

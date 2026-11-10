@@ -92,12 +92,12 @@ La lógica de asignación de almacenamiento en modo bloque en los clústeres de 
 - Para __Bare Metal__ : en forma de __volúmenes__
 - Para __Open IaaS__ : en forma de __Storage Repository (SR)__
 
-Cada datastore hereda una __clase de rendimiento__ definida en IOPS/TiB (de 500 a 15000 IOPS/TiB pour le FLASH, ou sans garantie pour le MASS STORAGE). La limitación de IOPS se aplica __a nivel del datastore__ (y no por VM), lo que significa que todas las máquinas virtuales que comparten el mismo datastore comparten la cuota de IOPS asignada.
+Cada datastore hereda una __clase de rendimiento__ definida en IOPS/TB (de 500 a 15000 IOPS/TB para el FLASH, o sin garantía para el MASS STORAGE). La limitación de IOPS se aplica __a nivel del datastore__ (y no por VM), lo que significa que todas las máquinas virtuales que comparten el mismo datastore comparten la cuota de IOPS asignada.
 
 __Puntos clave a tener en cuenta__ :
 
 - __Tamaño mínimo__ : 500 GiB por LUN
-- __Rendimiento__ : Proporcional al volumen asignado, __dentro del límite de un techo físico absoluto por LUN__ (ex: 2 To en classe Standard = 3000 IOPS, mais une LUN de 10 To plafonnera à 30 000 IOPS maximum). Este techo varía según la clase (10 000 IOPS / 512 Mo/s pour la classe Essentiel, et 30 000 IOPS / 1024 Mo/s pour les classes supérieures).
+- __Rendimiento__ : Proporcional al volumen asignado, __dentro del límite de un techo físico absoluto por LUN__ (p. ej.: 2 TB en clase Standard = 3000 IOPS, pero una LUN de 10 TB tendrá un techo de 30 000 IOPS como máximo). Este techo varía según la clase (10 000 IOPS / 512 MB/s para la clase Essentiel, y 30 000 IOPS / 1024 MB/s para las clases superiores).
 - __Organización__ : Los datastores del mismo tipo se agrupan automáticamente en clústeres de datastores
 - __Disponibilidad__ : 99,99 % medido mensualmente, incluidos los períodos de mantenimiento
 - __Espacio necesario__ : Prever siempre un 10 % de espacio libre para las instantáneas de copia de seguridad y el equivalente a la suma de la RAM de las VM para los archivos .VSWP
@@ -224,7 +224,7 @@ La adición de hipervisores a un clúster de cálculo se realiza en el menú __'
 En el siguiente ejemplo, añadiremos capacidad de cálculo a un clúster de hipervisores que utiliza la tecnología VMware.
 
 Vaya al submenú __'Infrastructure'__ y luego a __'VMWare'__. Seleccione entonces la stack vmware, la zona de disponibilidad y el clúster de cálculo.
-En este ejemplo, se trata del __'clu001-ucs12'__. Haga clic en el botón __'Ajouter un host'__ que se encuentra en la tabla con la lista de hosts, en la parte superior derecha.
+En este ejemplo, se trata del __'clu001-ucs12'__. Haga clic en el botón __'Añadir un host'__ que se encuentra en la tabla con la lista de hosts, en la parte superior derecha.
 
 __nota__ :
 

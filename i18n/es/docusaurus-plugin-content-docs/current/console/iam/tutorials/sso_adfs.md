@@ -1,5 +1,5 @@
 ---
-title: Example of Identity Federation with Microsoft ADFS
+title: Ejemplo de federación de identidad con Microsoft ADFS
 tags:
   - iam
   - tutorials
@@ -18,15 +18,15 @@ import ssoAdfs_010 from '@site/docs/console/iam/tutorials/images/sso_adfs_010.pn
 import ssoAdfs_011 from '@site/docs/console/iam/tutorials/images/sso_adfs_011.png'
 import ssoAdfs_012 from '@site/docs/console/iam/tutorials/images/sso_adfs_012.png'
 
-Here is an example configuration of the identity repository for a Cloud Temple organization using __Microsoft ADFS__.
+A continuación se muestra un ejemplo de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft ADFS__.
 
-Configuring your Microsoft identity repository at the Cloud Temple organization level simplifies user authentication on the Console.  
-This helps avoid the proliferation of authentication factors and reduces the attack surface.  
-If your users are already authenticated to their Microsoft accounts, authentication to the Console services will be seamless.
+La configuración de su repositorio Microsoft a nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la Consola.  
+Esto permite evitar la multiplicación de los factores de autenticación y reducir la superficie de ataque.  
+Si sus usuarios están autenticados en su cuenta Microsoft, la autenticación en los servicios de la Consola será transparente.
 
-Below are the steps to complete this configuration:
+Estos son los diferentes pasos para realizar esta configuración:
 
-## Requis
+## Requisitos previos
 
 Su servidor Microsoft ADFS debe poder acceder a [la URL Cloud Temple](https://keycloak-shiva.cloud-temple.com/auth/).
 
@@ -34,7 +34,7 @@ ADFS debe ser accesible desde las redes de Cloud Temple y __debe exponer un cert
 
 Los usuarios que deseen conectarse al portal deben tener su correo electrónico, nombre y apellido registrados en el Directorio Activo.
 
-## Paso 2: Solicitar la configuración del SSO (Single Sign-On) de su organización
+## Paso 1: Solicitar la configuración del SSO (Single Sign-On) de su organización
 
 Esta parte de la configuración se realiza a nivel de organización por parte del equipo Cloud Temple.
 
@@ -55,13 +55,13 @@ El equipo de soporte de Cloud Temple le enviará una URL que tendrá un aspecto 
 
 *Puede pegar la URL en un navegador para probarla. Si funciona correctamente, debería ver aparecer un archivo XML*
 
-## Step 3: ADFS Configuration Implementation
+## Paso 2: Realización de la configuración ADFS
 
 ### Configuración de la federación de autenticación
 
-#### Adding a trusted party approval
+#### Adición de una aprobación de parte de confianza
 
-On your ADFS server, go to __"Add a trusted party approval"__.
+En su servidor ADFS, vaya a __"Agregar una aprobación de parte de confianza"__.
 
 <img src={ssoAdfs_001} />
 
@@ -101,17 +101,17 @@ Solo le quedará rellenar la información tal como se indica en la captura de pa
 
 <img src={ssoAdfs_009} />
 
-### Add claims
+### Añadir los claims
 
-Add a second rule, this time using the template "Send LDAP attributes as claims".
+Añada una segunda regla, esta vez con el modelo "Enviar los atributos LDAP como reclamaciones".
 
 <img src={ssoAdfs_010} />
 
-Select the attribute store and add the attributes "E-Mail Addresses, Given-Name, Surname, and SAM-Account-Name" as shown in the screenshot below.
+Seleccione el almacén de atributos y añada los atributos "E-Mail Addresses, Given-Name, Surname y SAM-Account-Name" como se indica en la captura de pantalla a continuación.
 
 <img src={ssoAdfs_011} />
 
-Simply apply the changes.
+Solo tiene que aplicar los cambios.
 
 ## Paso 3: Finalización
 

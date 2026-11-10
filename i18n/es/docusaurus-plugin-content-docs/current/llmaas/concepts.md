@@ -265,7 +265,7 @@ Para sacar el máximo partido de la API LLMaaS, es esencial adoptar estrategias 
 
 El control de los costes se basa en un uso inteligente de los tokens y los modelos.
 
-1.  **Elección del Modelo** : Compare varios modelos en ejemplos representativos de su uso. Quedese con el que responda a sus requisitos de calidad y latencia, y luego mida su consumo de tokens. Consulte el [catálogo de ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para identificar los modelos disponibles y sus sucesores. La facturación depende de la tarifa aplicable y de los volúmenes consumidos; el tamaño del modelo por sí solo no determina el coste facturado.
+1.  **Elección del Modelo** : Compare varios modelos en ejemplos representativos de su uso. Quédese con el que responda a sus requisitos de calidad y latencia, y luego mida su consumo de tokens. Consulte el [catálogo de ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) para identificar los modelos disponibles y sus sucesores. La facturación depende de la tarifa aplicable y de los volúmenes consumidos; el tamaño del modelo por sí solo no determina el coste facturado.
 
 2.  **Gestión del Contexto** : El historial de la conversación (`messages`) se devuelve en cada llamada, consumiendo tokens de entrada. Para conversaciones largas, considere estrategias de resumen o de ventana para conservar solo la información relevante.
     ```python

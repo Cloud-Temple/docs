@@ -67,7 +67,7 @@ Die WAN-Schnittstelle Ihres Firewalls muss in Ihrem Internet-VLAN mit einer IP a
 
 Geben Sie auf der **LAN**-Schnittstelle des Firewalls eine IP-Adresse aus Ihrem internen Netzwerk ein, zusammen mit der Subnetzmaske und dem Gateway.
 
-![Paramètres LAN](/img/screenshots/lan.png)
+![LAN-Parameter](/img/screenshots/lan.png)
 
 Platzieren Sie anschließend die Management-VM in diesemselben Netzwerk.  
 Für die Demonstration verwenden wir Ubuntu 22.04, mit einer IP-Adresse aus demselben Subnetz, die über Netplan zugewiesen wird.
@@ -76,7 +76,7 @@ Für die Demonstration verwenden wir Ubuntu 22.04, mit einer IP-Adresse aus dems
   
 Sie sollten nun auf die Verwaltungsoberfläche von OPNsense zugreifen können.
 
-![Login firewall](/img/screenshots/login-fw.png)
+![Firewall-Anmeldung](/img/screenshots/login-fw.png)
 
 <div align="center">
 
@@ -86,7 +86,7 @@ Passwort: **opnsense**
 
 </div>
 
-:::warning[Changez le mot de passe tout de suite]
+:::warning[Ändern Sie das Passwort sofort]
 Bevor Sie weitermachen, ersetzen Sie das Standard-Passwort `root`.
 :::
 
@@ -104,7 +104,7 @@ Geben Sie zuerst das **Gateway** WAN mit der in Schritt 1 notierten gemeinsamen 
 
 Konfigurieren Sie auf der WAN-Schnittstelle eine IP aus dem Interconnect-Präfix und ordnen Sie die Schnittstelle dem gerade erstellten Gateway zu.
 
-![Interface WAN](/img/screenshots/ip-wan.png)
+![WAN-Schnittstelle](/img/screenshots/ip-wan.png)
 
 # Schritt 5 — BGP-Session aufbauen
 
@@ -131,7 +131,7 @@ Aktivieren Sie das Feld **multi-hop**. Die Route Servern befinden sich auf mehr 
 
 Fügen Sie unter **Routing > Static** die Routen hinzu, um diese Server zu erreichen (jeweils als `/32`).
 
-![Activer les routes statiques](/img/screenshots/routing-static-enable.png)
+![Statische Routen aktivieren](/img/screenshots/routing-static-enable.png)
 ![Route RS1](/img/screenshots/routes-peer1.png)
 ![Route RS2](/img/screenshots/routes-peer2.png)
 
@@ -139,8 +139,8 @@ Fügen Sie unter **Routing > Static** die Routen hinzu, um diese Server zu errei
 
 Erlauben Sie die **Umverteilung der statischen und direkt verbundenen Routen**, um Ihr öffentliches Präfix anzukündigen.
 
-![Redistribution des routes statiques](/img/screenshots/redistribute-static.png)
-![Redistribution des routes connectées](/img/screenshots/redistribute-connected.png)
+![Umverteilung der statischen Routen](/img/screenshots/redistribute-static.png)
+![Umverteilung der direkt verbundenen Routen](/img/screenshots/redistribute-connected.png)
 
 ## 5.4 — Session überprüfen
 
@@ -156,7 +156,7 @@ Immer noch in **Routing > Static**, erstellen Sie eine Route, die auf die **Loop
 
 Diese Route ermöglicht es, Ihr öffentliches Präfix den Route-Servern anzukündigen.
 
-![Préfixe public / route blackhole](/img/screenshots/prefix-pub.png)
+![Öffentliches Präfix / Blackhole-Route](/img/screenshots/prefix-pub.png)
 
 # Schritt 7 — NAT konfigurieren
 

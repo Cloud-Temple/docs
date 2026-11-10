@@ -33,7 +33,7 @@ Se abordarán dos escenarios:
 - VMware Workstation (para la conversión de Windows Server): Versión 16 o superior  
 - qemu-img: Versión 6.1 o superior
 
-## Requis previos
+## Requisitos previos
 
 Antes de comenzar, asegúrese de lo siguiente:
 

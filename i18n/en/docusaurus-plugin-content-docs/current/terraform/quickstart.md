@@ -59,7 +59,7 @@ Terraform v1.6.0
 These credentials can be generated from the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#api-keys).
 
 :::warning[Security]
-    Store these credentials securely. The Secret ID will be displayed only once.
+Store these credentials securely. The Secret ID will be displayed only once.
 :::
 
 ### Setting Environment Variables
@@ -211,7 +211,7 @@ output "vm_moref" {
 ```
 
 :::note[Naming adaptation]
-    The names of datacenters, clusters, and datastores must match those available in your Cloud Temple environment. Check the console to identify the available resources.
+The names of datacenters, clusters, and datastores must match those available in your Cloud Temple environment. Check the console to identify the available resources.
 :::
 
 ## Step 6: Plan the Changes
@@ -279,7 +279,7 @@ vm_moref = "vm-123"
 ```
 
 :::success[Congratulations!]
-    You've just created your first Cloud Temple virtual machine using Terraform!
+You've just created your first Cloud Temple virtual machine using Terraform!
 :::
 
 ## Step 8: Verify Creation
@@ -453,6 +453,7 @@ resource "cloudtemple_compute_virtual_machine" "vm" {
     environment = var.environment
   }
 }
+```
 
 ### 2. Organize with modules
 
@@ -473,6 +474,7 @@ module "web_vm" {
   memory = 8 * 1024 * 1024 * 1024
   cpu    = 4
 }
+```
 
 ### 3. Use a remote backend
 
@@ -500,6 +502,7 @@ resource "cloudtemple_compute_virtual_machine" "web_prod" {
   cpu    = 8
   # ...
 }
+```
 
 ### 5. Use data sources
 

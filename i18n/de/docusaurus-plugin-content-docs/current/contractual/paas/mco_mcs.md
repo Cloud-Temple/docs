@@ -35,7 +35,7 @@ Diese Richtlinie beschreibt detailliert die Verantwortlichkeiten und Empfehlunge
 - Planen Sie Anwendungsbereitstellungen außerhalb der Wartungsfenster, um Konflikte mit automatischen Cluster-Updates zu vermeiden.
 - Verfolgen Sie die Mitteilungen von **Cloud Temple** bezüglich Major-Updates, um erforderliche Anpassungen zu planen.
 - Verfolgen Sie bevorstehende Updates über die [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
-- Abonnieren Sie [**Incident-Benachrichtigungen**](../../console/status.md#notification-management)
+- Abonnieren Sie [**Incident-Benachrichtigungen**](../../console/status.md#verwaltung-der-benachrichtigungen)
 
 ---
 
@@ -144,7 +144,7 @@ Schwachstellen in der Infrastruktur und den der Angebotsleistung zugrunde liegen
 **Empfehlung :**
 
 - Nutzen Sie das Alerting des Clusters, das von **[Quay]** bereitgestellt wird, um Schwachstellen zu analysieren und anomales Verhalten in den vom **Kunden** genutzten Images zu erkennen.
-- Abonnieren Sie die Benachrichtigungen zu [**Incidents**](../../console/status.md#notification-management).
+- Abonnieren Sie die Benachrichtigungen zu [**Incidents**](../../console/status.md#verwaltung-der-benachrichtigungen).
 
 ### Verschlüsselung
 

@@ -39,7 +39,7 @@ Configureremo l'interfaccia LAN per accedere all'interfaccia web del firewall al
 Nell'interfaccia shiva di cloud temple sarà necessario recuperare gli elementi seguenti per configurare la sessione BGP che dà accesso a internet
 
 - **Prefisso pubblico** : il vostro blocco di IP pubbliche (scheda « IP pubbliche »)
-- **Prefisso di interconnessione** : la sottorete point-to-point che porta la liaison BGP (scheda « IP d'interco »)
+- **Prefisso di interconnessione** : la sottorete point-to-point che porta il collegamento BGP (scheda « IP d'interco »)
 - **Indirizzo del gateway condiviso** (scheda « IP d'interco »)
 - **AS locale** : il numero di AS della vostra organizzazione
 - **AS partner** : il numero di AS di Cloud Temple
@@ -49,8 +49,8 @@ Nell'interfaccia shiva di cloud temple sarà necessario recuperare gli elementi 
 
 Tenete questa lista a portata d'occhio, vi tornerà utile al passo WAN.
 
-![Paramètres BGP dans Shiva](/img/screenshots/shiva.png)
-![IP publiques](/img/screenshots/ip-publiques.png)
+![Parametri BGP in Shiva](/img/screenshots/shiva.png)
+![IP pubbliche](/img/screenshots/ip-publiques.png)
 ![IP d'interco](/img/screenshots/ip-dintercos.png)
 
 # Passo 2 — Creare le due VM
@@ -67,10 +67,10 @@ L'interfaccia WAN del vostro firewall deve essere configurata nel vostro vlan In
 
 Sull'interfaccia **LAN** del firewall, impostate un IP della vostra rete interna, con la sua maschera di sottorete e il suo gateway.
 
-![Paramètres LAN](/img/screenshots/lan.png)
+![Parametri LAN](/img/screenshots/lan.png)
 
 Posizionate quindi la VM di management nella stessa rete.  
-Per la dimostrazione utilizziamo Ubuntu 22.04, con un IP dello stesso sottorete assegnato tramite Netplan.
+Per la dimostrazione utilizziamo Ubuntu 22.04, con un IP della stessa sottorete assegnato tramite Netplan.
 
 Aprite un browser sulla VM di management e inserite l'IP LAN del firewall.  
   
@@ -86,7 +86,7 @@ Password : **opnsense**
 
 </div>
 
-:::warning[Changez le mot de passe tout de suite]
+:::warning[Cambiate subito la password]
 Prima di procedere, sostituite la password predefinita `root`.
 :::
 
@@ -131,7 +131,7 @@ Spuntate la casella **multi-hop**. I route server sono a più di un hop, mentre 
 
 In **Routing > Static**, aggiungete le route per raggiungere questi server (ciascuna in `/32`).
 
-![Activer les routes statiques](/img/screenshots/routing-static-enable.png)
+![Attivare le rotte statiche](/img/screenshots/routing-static-enable.png)
 ![Route RS1](/img/screenshots/routes-peer1.png)
 ![Route RS2](/img/screenshots/routes-peer2.png)
 
@@ -139,8 +139,8 @@ In **Routing > Static**, aggiungete le route per raggiungere questi server (cias
 
 Autorizzate la **ridistribuzione delle rotte statiche e connesse** per annunciare il vostro prefisso pubblico.
 
-![Redistribution des routes statiques](/img/screenshots/redistribute-static.png)
-![Redistribution des routes connectées](/img/screenshots/redistribute-connected.png)
+![Ridistribuzione delle rotte statiche](/img/screenshots/redistribute-static.png)
+![Ridistribuzione delle rotte connesse](/img/screenshots/redistribute-connected.png)
 
 ## 5.4 — Verificare la sessione
 

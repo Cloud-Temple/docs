@@ -1,5 +1,5 @@
 ---
-title: Example of Identity Federation with Microsoft ADFS
+title: Beispiel für eine Identitätsföderation mit Microsoft ADFS
 tags:
   - iam
   - tutorials
@@ -18,13 +18,13 @@ import ssoAdfs_010 from '@site/docs/console/iam/tutorials/images/sso_adfs_010.pn
 import ssoAdfs_011 from '@site/docs/console/iam/tutorials/images/sso_adfs_011.png'
 import ssoAdfs_012 from '@site/docs/console/iam/tutorials/images/sso_adfs_012.png'
 
-Here is an example configuration of an organization's identity repository with __Microsoft ADFS__.
+Hier ist ein Beispiel für die Konfiguration des Authentifizierungsverzeichnisses einer Cloud Temple-Organisation mit __Microsoft ADFS__.
 
-Configuring your Microsoft identity repository at the Cloud Temple organization level simplifies user authentication on the Console.  
-This helps avoid the proliferation of authentication factors and reduces the attack surface.  
-If your users are already authenticated to their Microsoft accounts, authentication to the Console services will be seamless.
+Die Konfiguration Ihres Microsoft-Verzeichnisses auf Ebene einer Cloud Temple-Organisation erleichtert die Authentifizierung Ihrer Benutzer in der Konsole.  
+Dadurch wird eine Vervielfachung der Authentifizierungsfaktoren vermieden und die Angriffsfläche verringert.  
+Wenn Ihre Benutzer bei ihrem Microsoft-Konto angemeldet sind, erfolgt die Authentifizierung bei den Diensten der Konsole transparent.
 
-Below are the steps to complete this configuration:
+Nachfolgend die einzelnen Schritte zur Durchführung dieser Konfiguration:
 
 ## Voraussetzungen
 
@@ -34,34 +34,34 @@ ADFS muss von den Netzwerken von Cloud Temple aus erreichbar sein und __ein TLS-
 
 Die Benutzer, die sich auf dem Portal anmelden möchten, müssen ihre E-Mail-Adresse, ihren Namen und Vornamen in der Active Directory angegeben haben.
 
-## Step 2: Request SSO (Single Sign-On) Configuration for Your Organization
+## Schritt 1: Konfiguration des SSO (Single Sign-On) für Ihre Organisation anfordern
 
-This configuration step is performed at the organization level by the Cloud Temple team.
+Dieser Teil der Konfiguration wird vom Cloud Temple-Team auf Ebene der Organisation durchgeführt.
 
-To proceed, please __submit a support request__ in the console indicating your intention to set up your Microsoft ADFS authentication repository.
+Stellen Sie dazu in der Konsole __eine Supportanfrage__, in der Sie angeben, dass Sie Ihr Microsoft ADFS-Authentifizierungsverzeichnis konfigurieren möchten.
 
-Please provide the following information in your support request:
+Bitte geben Sie in der Supportanfrage die folgenden Informationen an:
 
 ```
-    Name of your Organization
-    Name of a contact person, including their email address and phone number, to finalize the configuration
-    Public URL of the ADFS federation metadata (<ADFS domain name>/FederationMetadata/2007-06/FederationMetadata.xml)
-    (Example: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
+    Name Ihrer Organisation
+    Name eines Ansprechpartners mit E-Mail-Adresse und Telefonnummer zur Fertigstellung der Konfiguration
+    Öffentliche URL der Föderationsmetadaten des ADFS (<Domänenname des ADFS>/FederationMetadata/2007-06/FederationMetadata.xml)
+    (Beispiel: https://adfs.test.local/FederationMetadata/2007-06/FederationMetadata.xml)
 ```
 
-Once the configuration is completed on the Console side, the designated contact will be notified.
+Sobald die Konfiguration auf Seiten der Konsole abgeschlossen ist, wird der angegebene Ansprechpartner informiert.
 
-The Cloud Temple support team will send you a URL that will look like this: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
+Das Cloud Temple-Supportteam übermittelt Ihnen eine URL, die etwa wie folgt aussieht: [https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor](https://keycloak-shiva.cloud-temple.com/auth/realms/companytest/broker/adfs_test/endpoint/descriptor)
 
-*You can paste the URL into a browser to test it. If it works correctly, you should see an XML document displayed.*
+*Sie können die URL zum Testen in einen Browser einfügen. Wenn sie korrekt funktioniert, sollte ein XML-Dokument angezeigt werden.*
 
-## Step 3: Configuration of ADFS
+## Schritt 2: Durchführung der ADFS-Konfiguration
 
-### Authentication Federation Configuration
+### Konfiguration der Authentifizierungsföderation
 
-#### Adding a trusted party approval
+#### Hinzufügen einer Vertrauensstellung der vertrauenden Seite
 
-On your ADFS server, go to __"Add a trusted party approval"__.
+Öffnen Sie auf Ihrem ADFS-Server __„Vertrauensstellung der vertrauenden Seite hinzufügen“__.
 
 <img src={ssoAdfs_001} />
 
@@ -101,20 +101,20 @@ Geben Sie nun die Informationen wie in der folgenden Abbildung angegeben ein.
 
 <img src={ssoAdfs_009} />
 
-### Add claims
+### Claims hinzufügen
 
-Add a second rule, this time using the template "Send LDAP attributes as claims".
+Fügen Sie eine zweite Regel hinzu, diesmal mit der Vorlage „LDAP-Attribute als Ansprüche senden“.
 
 <img src={ssoAdfs_010} />
 
-Select the attribute store and add the attributes "E-Mail Addresses, Given-Name, Surname, and SAM-Account-Name" as shown in the screenshot below.
+Wählen Sie den Attributspeicher aus und fügen Sie die Attribute „E-Mail-Addresses, Given-Name, Surname und SAM-Account-Name“ hinzu, wie im folgenden Screenshot gezeigt.
 
 <img src={ssoAdfs_011} />
 
-Simply apply the changes.
+Sie müssen die Änderungen nur noch übernehmen.
 
-## Step 3: Finalization
+## Schritt 3: Abschluss
 
-You can now test by going to the Console and clicking the button corresponding to the ADFS client authentication; in this example, it is __"ADFS Test"__.
+Sie können die Konfiguration nun testen, indem Sie die Konsole aufrufen und auf die Schaltfläche für die ADFS-Authentifizierung des Kunden klicken; in diesem Beispiel ist dies __„ADFS Test“__.
 
 <img src={ssoAdfs_012} />

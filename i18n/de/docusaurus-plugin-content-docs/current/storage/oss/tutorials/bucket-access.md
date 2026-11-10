@@ -34,6 +34,6 @@ The bucket configuration interface offers three access management modes accordin
 
 ### Nature of the CIDR prefixes provided by Cloud Temple
 
-All CIDR prefixes provided by Cloud Temple are [translate:route prefixes]. This means that for these address ranges, **all addresses they cover—including network and broadcast addresses—are usable as valid source addresses** in access policies. This is why the Console editor consistently includes these special addresses in Private mode.
+All CIDR prefixes provided by Cloud Temple are route prefixes. This means that for these address ranges, **all addresses they cover—including network and broadcast addresses—are usable as valid source addresses** in access policies. This is why the Console editor consistently includes these special addresses in Private mode.
 
 This characteristic distinguishes your environment from certain traditional networks, where such addresses are reserved and not usable.

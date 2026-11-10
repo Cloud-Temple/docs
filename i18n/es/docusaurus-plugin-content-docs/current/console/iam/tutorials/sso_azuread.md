@@ -1,5 +1,5 @@
 ---
-title: Example of Identity Federation with Microsoft EntraID
+title: Ejemplo de federación de identidad con Microsoft EntraID
 tags:
   - iam
   - tutorials
@@ -23,15 +23,15 @@ import ssoAad_016 from '@site/docs/console/iam/tutorials/images/sso_aad_016.png'
 import ssoAad_017 from '@site/docs/console/iam/tutorials/images/sso_aad_017.png'
 import ssoAad_018 from '@site/docs/console/iam/tutorials/images/sso_aad_018.png'
 
-Here is an example configuration of the authentication repository for a Cloud Temple organization using __Microsoft EntraID__ (Azure Active Directory).
+A continuación se muestra un ejemplo de configuración del repositorio de autenticación de una organización Cloud Temple con __Microsoft EntraID__ (Azure Active Directory).
 
-Configuring your Microsoft EntraID repository at the Cloud Temple organization level simplifies user authentication on the Console. This helps avoid the proliferation of authentication factors and reduces the attack surface.
+La configuración de su repositorio Microsoft a nivel de una organización Cloud Temple facilita la autenticación de sus usuarios en la Consola. Esto permite evitar la multiplicación de los factores de autenticación y reducir la superficie de ataque.
 
-If your users are already authenticated to their Microsoft accounts, logging into the Console services will be seamless and transparent.
+Si sus usuarios están autenticados en su cuenta Microsoft, la autenticación en los servicios de la Consola será transparente.
 
-Below are the steps to complete this configuration:
+Estos son los diferentes pasos para realizar esta configuración:
 
-## Step 1: SSO configuration on Microsoft Azure side
+## Paso 1: Configuración del SSO en el lado de Microsoft Azure
 
 ### Registro de una nueva aplicación Azure (portal Azure)
 
@@ -47,7 +47,7 @@ En la página "Registrar una aplicación", indique lo siguiente:
 
 <img src={ssoEntra_001} />
 
-Las siguientes informaciones son las que deben proporcionarse en la solicitud de soporte a la equipe Cloud Temple para habilitar la autenticación de Microsoft Entra ID a nivel de su organización:
+Las siguientes informaciones son las que deben proporcionarse en la solicitud de soporte al equipo Cloud Temple para habilitar la autenticación de Microsoft Entra ID a nivel de su organización:
 
 - __Application (client) ID__
 - __Directory (tenant) ID__
@@ -82,14 +82,14 @@ A continuación, vaya a "Permisos de API" y haga clic en __"Conceder consentimie
 
 <img src={ssoAad_008} />
 
-### Additional security configurations (optional but recommended)
+### Configuraciones de seguridad adicionales (opcional pero recomendado)
 
-By default, Microsoft Entra ID, as configured, will allow any user in your Azure tenant to sign in to your Cloud Temple organization.  
-It is possible to restrict access at the __"App Registration"__ level, allowing only a specific list of users or groups to sign in to your Cloud Temple organization.
+Por defecto, Microsoft EntraID tal como está configurado dará a cualquier usuario de su tenant Azure la posibilidad de conectarse a su organización Cloud Temple.  
+Es posible restringir los accesos a nivel de __"App Registration"__ para autorizar solo a una lista de usuarios o grupos a conectarse a su organización Cloud Temple.
 
-Follow these steps:
+Este es el procedimiento a seguir:
 
-#### Access additional "App Registration" settings
+#### Acceder a los parámetros adicionales de "App Registration"
 
 ##### Opción 1
 
@@ -103,39 +103,39 @@ Diríjase a "Aplicaciones empresariales" y busque utilizando el nombre de la apl
 
 <img src={ssoAad_010} />
 
-#### Authentication restriction to users assigned to the application
+#### Restricción de la autenticación a los usuarios asignados a la aplicación
 
-Indicate here the requirement for user assignment to the application to allow authentication:
+Indique aquí la necesidad de asignar el usuario a la aplicación para autorizar su autenticación:
 
 <img src={ssoAad_011} />
 
-#### Assigning users and groups to the application
+#### Asignación de los usuarios y grupos a la aplicación
 
-Only the users and groups assigned to the application will be able to sign in to your Cloud Temple organization via the app registration.
+Solo los grupos y usuarios asignados a la aplicación podrán conectarse a su organización Cloud Temple a través del app registration.
 
 <img src={ssoAad_012} />
 
-Finally, you will only need to apply the assignment by clicking on "Assign".
+Por último, solo tendrá que aplicar la asignación haciendo clic en "Assign".
 
 <img src={ssoAad_013} />
 
-From now on, the assigned users will be able to sign in to your Cloud Temple organization through the created application.
+A partir de ahora, los usuarios asignados a la aplicación podrán conectarse a su organización Cloud Temple a través de la aplicación creada.
 
-## Step 2: Request your organization's SSO (Single Sign-On) configuration
+## Paso 2: Solicitar la configuración del SSO (Single Sign-On) de su organización
 
-This configuration step is performed at the organization level by the Cloud Temple team.
+Esta parte de la configuración la realiza el equipo Cloud Temple a nivel de la organización.
 
-To proceed, please __submit a support request__ in the console indicating your intention to set up Microsoft Entra ID SSO.
+Para ello, realice __una solicitud de asistencia__ en la consola indicando su deseo de configurar un SSO Microsoft EntraID.
 
-Include the following information in your support request:
+Proporcione la siguiente información en la solicitud de asistencia:
 
-- Name of your Organization
-- Name of a contact person, along with their email address and phone number, to finalize the configuration
-- Application ID (unique identifier associated with the previously created application)
-- Directory ID (corresponds to the Azure AD tenant ID in Azure)
-- Secret (secret associated with the previously created application)
+- El nombre de su Organización
+- El nombre de un contacto con su correo electrónico y su número de teléfono para finalizar la configuración
+- Application ID (identificador único asociado a la aplicación creada anteriormente)
+- Directory ID (corresponde al identificador Azure AD del tenant Azure)
+- Secret (secreto asociado a la aplicación creada anteriormente)
 
-Once the configuration is completed on the Console side, the designated contact will be notified.
+En cuanto la configuración se haya realizado en el lado de la Consola, se informará al contacto indicado.
 
 ## Paso 3: Finalización de la configuración
 

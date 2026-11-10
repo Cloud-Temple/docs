@@ -2,9 +2,9 @@
 title: Tutorials
 ---
 
-# Terraform Cloud Temple Tutorials
+# Terraform Cloud Temple-Tutorials
 
-This page gathers practical tutorials for using the Terraform Cloud Temple provider with various services.
+Diese Seite enthält praktische Tutorials zur Nutzung des Terraform-Providers von Cloud Temple mit verschiedenen Diensten.
 
 ## Inhaltsverzeichnis
 
@@ -139,11 +139,11 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 }
 ```
 
-**Explanations**:
+**Erklärungen**:
 
-- `marketplace_item_id`: References a ready-to-use image
-- `datastore_id`: Specific datastore required for Marketplace deployment
-- The image already includes a pre-configured operating system
+- `marketplace_item_id`: Verweist auf ein sofort einsatzbereites Image
+- `datastore_id`: Spezifischer Datastore, der für die Bereitstellung aus der Marketplace erforderlich ist
+- Das Image enthält bereits ein konfiguriertes Betriebssystem
 
 ### VM aus Content Library erstellen
 
@@ -212,10 +212,10 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 }
 ```
 
-**Explanations**:
+**Erklärungen**:
 
-- The `os_disk` and `os_network_adapter` blocks configure the template's resources
-- These blocks can only be used at creation (see dedicated section)
+- Die Blöcke `os_disk` und `os_network_adapter` konfigurieren die Ressourcen des Templates
+- Diese Blöcke können nur bei der Erstellung verwendet werden (siehe eigener Abschnitt)
 
 ### Cloud-Init VMware konfigurieren
 
@@ -348,17 +348,17 @@ resource "cloudtemple_compute_virtual_disk" "data_disk" {
 }
 ```
 
-**Available disk modes**:
+**Verfügbare Laufwerksmodi**:
 
-- `persistent`: Changes are immediately and permanently written to the virtual disk.
-- `independent_nonpersistent`: Changes made to the virtual disk are recorded in a rollback journal and discarded upon shutdown.
-- `independent_persistent`: Changes are immediately and permanently written to the virtual disk. Unaffected by snapshots.
+- `persistent`: Änderungen werden sofort und dauerhaft auf das virtuelle Laufwerk geschrieben.
+- `independent_nonpersistent`: Änderungen am virtuellen Laufwerk werden in einem Wiederherstellungsprotokoll aufgezeichnet und beim Ausschalten verworfen.
+- `independent_persistent`: Änderungen werden sofort und dauerhaft auf das virtuelle Laufwerk geschrieben. Nicht von Snapshots betroffen.
 
-**Provisioning types**:
+**Bereitstellungstypen**:
 
-- `dynamic`: Saves storage space by dynamically allocating space as needed. Creation is fast.
-- `staticImmediate`: Allocates all disk space during creation, but blocks are zeroed out on first write.
-- `staticDiffered`: Allocates and zeros out all disk space during creation.
+- `dynamic`: Spart Speicherplatz, indem Speicher dynamisch nach Bedarf zugewiesen wird. Die Erstellung erfolgt schnell.
+- `staticImmediate`: Weist den gesamten Speicherplatz bei der Erstellung zu, die Blöcke werden jedoch erst beim ersten Schreibvorgang auf null gesetzt.
+- `staticDiffered`: Weist den gesamten Speicherplatz bei der Erstellung zu und setzt ihn auf null.
 
 ### Erstellen einer Netzwerkschnittstelle und Anhängen an eine VM
 
@@ -398,8 +398,8 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 }
 ```
 
-:::info[Supported Network Adapter Types]
-  The supported adapter types depend on the operating system running on the virtual machine as well as the version of VMware.
+:::info[Unterstützte Netzwerkadaptertypen]
+  Welche kompatiblen Adaptertypen verwendet werden können, hängt vom Betriebssystem der virtuellen Maschine sowie von der VMware-Version ab.
 :::
 
 ---
@@ -428,7 +428,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 }
 ```
 
-**Controller types**:
+**Controllertypen**:
 
 - `USB2`
 - `USB3`
@@ -645,10 +645,10 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 }
 ```
 
-**Explanations**:
+**Erklärungen**:
 
-- `interval`: Replication interval. Can be specified in `minutes` or `hours`.
-- `storage_repository_id`: Storage repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
+- `interval`: Replikationsintervall. Kann in `minutes` oder `hours` angegeben werden.
+- `storage_repository_id`: Storage Repository, auf das die Laufwerke der VM repliziert werden. Muss sich in einer anderen AZ als die ursprüngliche VM befinden.
 
 ### Backup konfigurieren
 
@@ -680,8 +680,8 @@ data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
 }
 ```
 
-:::info[Mandatory Backup]
-In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
+:::info[Backup verpflichtend]
+In einer SecNumCloud-Umgebung muss mindestens eine Backup-Richtlinie definiert sein, damit die VM gestartet werden kann.
 :::
 ---
 
@@ -714,15 +714,15 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "besteff_ha" {
 }
 ```
 
-**Available HA modes**:
+**Verfügbare HA-Modi**:
 
-See documentation on [High Availability](https://docs.cloud-temple.com/iaas_opensource/concepts#haute-disponibilit%C3%A9) in the OpenSource infrastructure
+Siehe Dokumentation zur [Hochverfügbarkeit](https://docs.cloud-temple.com/iaas_opensource/concepts#haute-disponibilit%C3%A9) in der OpenSource-Infrastruktur
 
-| Mode | Description | Usage |
+| Modus | Beschreibung | Verwendung |
 |------|-------------|-------|
-| `disabled` | No HA | Development environments |
-| `restart` | High-priority restart | Critical production |
-| `best-effort` | Restart if resources available | Standard production |
+| `disabled` | Keine HA | Entwicklungsumgebungen |
+| `restart` | Neustart mit hoher Priorität | Kritische Produktion |
+| `best-effort` | Neustart, sofern Ressourcen verfügbar sind | Standardproduktion |
 
 ### Cloud-Init OpenSource konfigurieren
 
@@ -828,21 +828,21 @@ data.cloudtemple_backup_iaas_opensource_policy.daily.id
 
 ### os_disk und os_network_adapter verstehen
 
-The `os_disk` and `os_network_adapter` blocks are special blocks that can be used **only during the creation** of a virtual machine from:
+Die Blöcke `os_disk` und `os_network_adapter` sind spezielle Blöcke, die **nur bei der Erstellung** einer virtuellen Maschine aus folgenden Quellen verwendet werden können:
 
 - Content Library  
 - Template  
-- Marketplace Cloud Template  
-- Clone of an existing VM  
+- Marketplace Cloud Temple  
+- Klon einer bestehenden VM  
 
 :::info[info  ]
-  They are used to reference virtual disks and network adapters deployed by the template, allowing their parameters to be modified later without manually importing them. These blocks do **not** create any new resources.  
+  Sie dienen dazu, die vom Template bereitgestellten virtuellen Laufwerke und Netzwerkadapter zu referenzieren, damit deren Parameter später geändert werden können, ohne sie manuell importieren zu müssen. Sie erstellen in keinem Fall eine neue Ressource.  
 :::
 
-**Important characteristics**:
+**Wichtige Merkmale**:
 
-1. **Creation only**: These blocks can only be defined during the initial `terraform apply`  
-2. **Alternative**: Use the `terraform import` command to manually import them
+1. **Nur bei der Erstellung**: Diese Blöcke können nur beim initialen `terraform apply` definiert werden  
+2. **Alternative**: Verwenden Sie den Befehl `terraform import`, um sie manuell zu importieren
 
 ### os_disk verwenden
 
@@ -1008,16 +1008,16 @@ output "bucket_namespace" {
 }
 ```
 
-**Access types**:
+**Zugriffstypen**:
 
-- `private`: Restricted access to tenant IP addresses
-- `public`: Public read access
-- `custom`: Limited access to IPs on the whitelist
+- `private`: Zugriff auf die IP-Adressen des Tenants beschränkt
+- `public`: Öffentlicher Lesezugriff
+- `custom`: Zugriff auf die IP-Adressen der Whitelist beschränkt
 
-**Versioning**:
+**Versionierung**:
 
-- `Enabled`: Enables object versioning
-- `Suspended`: Suspends versioning (preserves existing versions)
+- `Enabled`: Aktiviert die Versionierung der Objekte
+- `Suspended`: Setzt die Versionierung aus (bestehende Versionen bleiben erhalten)
 
 ### Ein Speicherkonto erstellen
 
@@ -1046,8 +1046,8 @@ output "s3_endpoint" {
 }
 ```
 
-:::warning[Sensitive information]
-The credentials are displayed only once. Store them securely (e.g., HashiCorp Vault, AWS Secrets Manager).
+:::warning[Sensible Informationen]
+Die Anmeldeinformationen werden nur ein einziges Mal angezeigt. Speichern Sie sie sicher (z. B. HashiCorp Vault, AWS Secrets Manager).
 :::
 ---
 
@@ -1101,12 +1101,12 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 }
 ```
 
-**Available roles**:
+**Verfügbare Rollen**:
 
-- `read_write`: Read and write
-- `write_only`: Write only
-- `read_only`: Read only
-- `maintainer`: Full access
+- `read_write`: Lesen und Schreiben
+- `write_only`: Nur Schreiben
+- `read_only`: Nur Lesen
+- `maintainer`: Vollzugriff
 
 ### ACLs direkt im Bucket konfigurieren
 
@@ -1150,10 +1150,10 @@ role            = data.cloudtemple_object_storage_role.maintainer.name
 }
 ```
 
-**Difference compared to dedicated ACL resources**:
+**Unterschied zu den dedizierten ACL-Ressourcen**:
 
-- **Inline**: ACLs defined directly inside the bucket (simpler for static configurations)
-- **Dedicated resource**: ACLs managed separately (more flexible, allows independent modifications)
+- **Inline**: Direkt im Bucket definierte ACLs (einfacher bei statischen Konfigurationen)
+- **Dedizierte Ressource**: Separat verwaltete ACLs (flexibler, ermöglicht unabhängige Änderungen)
 
 ### Datenquellen verwenden
 

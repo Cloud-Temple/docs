@@ -159,7 +159,7 @@ The client is responsible for creating and configuring their VPC as well as the 
 
 ---
 
-## Logs (logs)
+## Logs
 
 | Activity                                                                                                    | Client | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|

@@ -168,7 +168,7 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
->⚠[Pour aller plus loin : la sécurité en production]
+>⚠[Weiterführend: Sicherheit in der Produktion]
 >Dieses Tutorial hat Ihnen die Grundlagen der Bereitstellung gezeigt. Für eine Produktionsumgebung ist es entscheidend, zusätzliche Sicherheitsmaßnahmen zu ergreifen:
 >
 >- **Verwenden Sie sichere Images**: Bevorzugen Sie Images aus Ihrem sicheren Unternehmens-Registry wie **Harbor** gegenüber öffentlichen Images.

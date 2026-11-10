@@ -12,7 +12,7 @@ import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_
 
 This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
 
-## Requis previos
+## Requisitos previos
 
 * Tener un VPC y una red privada creados.
 * Tener una VM desplegada (IaaS de código abierto o VMware).

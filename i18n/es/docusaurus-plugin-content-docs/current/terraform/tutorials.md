@@ -4,7 +4,7 @@ title: Tutoriales de Terraform Cloud Temple
 
 # Tutoriales de Terraform Cloud Temple
 
-This page gathers practical tutorials for using the Terraform Cloud Temple provider with various services.
+Esta página reúne tutoriales prácticos para utilizar el proveedor Terraform Cloud Temple con diferentes servicios.
 
 ## Índice
 
@@ -139,11 +139,11 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- `marketplace_item_id`: References a ready-to-use image
-- `datastore_id`: Specific datastore required for Marketplace deployment
-- The image already includes a pre-configured operating system
+- `marketplace_item_id`: Hace referencia a una imagen lista para usar
+- `datastore_id`: Datastore específico requerido para el despliegue Marketplace
+- La imagen ya incluye un sistema operativo configurado
 
 ### Crear una VM desde Content Library
 
@@ -212,10 +212,10 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- The `os_disk` and `os_network_adapter` blocks configure the template's resources
-- These blocks can only be used at creation (see dedicated section)
+- Los bloques `os_disk` y `os_network_adapter` configuran los recursos del template
+- Estos bloques solo pueden utilizarse durante la creación (ver la sección dedicada)
 
 ### Configurar Cloud-Init VMware
 
@@ -398,8 +398,8 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 }
 ```
 
-:::info[Supported network adapter types]
-  The compatible adapter types that can be used depend on the OS running on the virtual machine as well as the version of VMware.
+:::info[Tipos de adaptadores de red compatibles]
+  Los tipos de adaptadores compatibles que pueden utilizarse dependen del SO utilizado en la máquina virtual, así como de la versión de VMware.
 :::
 
 ---
@@ -428,7 +428,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 }
 ```
 
-**Controller types**:
+**Tipos de controladores**:
 
 - `USB2`
 - `USB3`
@@ -645,10 +645,10 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- `interval`: Replication interval. Can be specified in `minutes` or `hours`.
-- `storage_repository_id`: Storage Repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
+- `interval`: Intervalo de replicación. Puede expresarse en `minutes` o `hours`.
+- `storage_repository_id`: Storage Repository al que se replicarán los discos de la VM. Debe estar en una AZ diferente de la VM de origen.
 
 ### Configurar la Copia de Seguridad
 
@@ -680,8 +680,8 @@ data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
 }
 ```
 
-:::info[Mandatory backup]
-In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
+:::info[Backup obligatorio]
+En un entorno SecNumCloud, debe definirse al menos una política de backup para poder iniciar la VM.
 :::
 
 ### Configurar la Alta Disponibilidad
@@ -835,7 +835,7 @@ Los bloques `os_disk` y `os_network_adapter` son bloques especiales que se puede
 - Clonación de una VM existente
 
 :::info[info]
-  Sirven para hacer referencia a los discos virtuales y adaptadores de red desplegados por la plantilla, con el fin de poder modificar sus parámetros posteriormente sin tener que importarlos manualmente. En ningún caso crean una nueva recurso.
+  Sirven para hacer referencia a los discos virtuales y adaptadores de red desplegados por la plantilla, con el fin de poder modificar sus parámetros posteriormente sin tener que importarlos manualmente. En ningún caso crean un nuevo recurso.
 :::
 
 **Características importantes**:
@@ -944,7 +944,7 @@ attached        = true
 ```
 
 :::info[A tener en cuenta]
-  Puede combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante las recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
+  Puede combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante los recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
 :::
 
 ---
@@ -1045,8 +1045,8 @@ output "s3_endpoint" {
 }
 ```
 
-:::warning[Sensitive information]
-Credentials are displayed only once. Store them securely (e.g., HashiCorp Vault, AWS Secrets Manager).
+:::warning[Información sensible]
+Las credenciales se muestran una sola vez. Almacénelas de forma segura (p. ej.: HashiCorp Vault, AWS Secrets Manager).
 :::
 ---
 
@@ -1100,12 +1100,12 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 }
 ```
 
-**Available roles**:
+**Roles disponibles**:
 
-- `read_write`: Read and write
-- `write_only`: Write only
-- `read_only`: Read only
-- `maintainer`: Full access
+- `read_write`: Lectura y escritura
+- `write_only`: Solo escritura
+- `read_only`: Solo lectura
+- `maintainer`: Acceso total
 
 ### Configurar ACL directamente en el bucket
 
@@ -1156,7 +1156,7 @@ role            = data.cloudtemple_object_storage_role.maintainer.name
 
 ### Usar los datasources
 
-**Objetivo**: Consultar las metadatos de los buckets y listar los archivos.
+**Objetivo**: Consultar los metadatos de los buckets y listar los archivos.
 
 **Código**:
 

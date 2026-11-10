@@ -2,15 +2,15 @@
 title: Tutorial
 ---
 
-# Terraform Cloud Temple Tutorials
+# Tutorial Terraform Cloud Temple
 
-This page gathers practical tutorials for using the Terraform Cloud Temple provider with various services.
+Questa pagina raccoglie tutorial pratici per utilizzare il provider Terraform Cloud Temple con diversi servizi.
 
 ## Sommario
 
 - [IaaS VMware](#iaas-vmware)
 - [IaaS OpenSource]
-- [Archiviazione oggetto]()
+- [Archiviazione oggetti](#archiviazione-oggetti)
 
 ## IaaS VMware
 
@@ -139,11 +139,11 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 }
 ```
 
-**Explanations**:
+**Spiegazioni**:
 
-- `marketplace_item_id`: References a ready-to-use image
-- `datastore_id`: Specific datastore required for Marketplace deployment
-- The image already includes a pre-configured operating system
+- `marketplace_item_id`: Fa riferimento a un'immagine pronta all'uso
+- `datastore_id`: Datastore specifico richiesto per la distribuzione dalla Marketplace
+- L'immagine include già un sistema operativo configurato
 
 ### Creare una VM dalla Content Library
 
@@ -212,10 +212,10 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 }
 ```
 
-**Explanations**:
+**Spiegazioni**:
 
-- The `os_disk` and `os_network_adapter` blocks configure the template's resources
-- These blocks can only be used at creation (see dedicated section)
+- I blocchi `os_disk` e `os_network_adapter` configurano le risorse del template
+- Questi blocchi possono essere utilizzati solo alla creazione (vedere la sezione dedicata)
 
 ### Configurare Cloud-Init VMware
 
@@ -357,8 +357,8 @@ resource "cloudtemple_compute_virtual_disk" "data_disk" {
 **Tipi di provisioning**:
 
 - `dynamic`: Risparmia spazio di archiviazione allocando lo spazio in modo dinamico in base alle esigenze. La creazione è rapida.
-- `staticImmediate`: Alloca tutto lo spazio del disco durante la creazione, ma i blocchi vengono azzerati al primo scrittura.
-- `staticDiffered`: Alloca e azzeri tutto lo spazio del disco durante la creazione.
+- `staticImmediate`: Alloca tutto lo spazio del disco durante la creazione, ma i blocchi vengono azzerati alla prima scrittura.
+- `staticDiffered`: Alloca e azzera tutto lo spazio del disco durante la creazione.
 
 ### Creare un'interfaccia di rete e collegarla a una VM
 
@@ -398,8 +398,8 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 }
 ```
 
-:::info[Supported network adapter types]
-  The compatible adapter types that can be used depend on the OS running on the virtual machine as well as the version of VMware.
+:::info[Tipi di adattatori di rete supportati]
+  I tipi di adattatori compatibili che possono essere utilizzati dipendono dall'OS in uso sulla macchina virtuale e dalla versione di VMware.
 :::
 
 ---
@@ -428,7 +428,7 @@ resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
 }
 ```
 
-**Controller types**:
+**Tipi di controller**:
 
 - `USB2`
 - `USB3`
@@ -645,10 +645,10 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
 }
 ```
 
-**Explanations**:
+**Spiegazioni**:
 
-- `interval`: Replication interval. Can be specified in `minutes` or `hours`.
-- `storage_repository_id`: Storage Repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
+- `interval`: Intervallo di replica. Può essere espresso in `minutes` o `hours`.
+- `storage_repository_id`: Storage Repository verso cui verranno replicati i dischi della VM. Deve trovarsi in una AZ diversa da quella della VM di origine.
 
 ### Configurare il Backup
 
@@ -680,8 +680,8 @@ data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
 }
 ```
 
-:::info[Mandatory backup]
-In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
+:::info[Backup obbligatorio]
+In un ambiente SecNumCloud, deve essere definita almeno una politica di backup per poter avviare la VM.
 :::
 ---
 
@@ -832,7 +832,7 @@ I blocchi `os_disk` e `os_network_adapter` sono blocchi speciali utilizzabili **
 
 - Content Library  
 - Template  
-- Marketplace Cloud Template  
+- Marketplace Cloud Temple  
 - Clonazione di una VM esistente  
 
 :::info[info  ]
@@ -945,7 +945,7 @@ attached        = true
 ```
 
 :::info[Da notare]
-  È possibile combinare entrambe le approcci facendo riferimento ai dischi e/o agli adattatori di rete di una VM e aggiungendone altri tramite le risorse `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` e `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
+  È possibile combinare entrambi gli approcci facendo riferimento ai dischi e/o agli adattatori di rete di una VM e aggiungendone altri tramite le risorse `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` e `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
 :::
 
 ---
@@ -1101,12 +1101,12 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 }
 ```
 
-**Available roles**:
+**Ruoli disponibili**:
 
-- `read_write`: Read and write
-- `write_only`: Write only
-- `read_only`: Read only
-- `maintainer`: Full access
+- `read_write`: Lettura e scrittura
+- `write_only`: Sola scrittura
+- `read_only`: Sola lettura
+- `maintainer`: Accesso completo
 
 ### Configurare le ACL direttamente nel bucket
 

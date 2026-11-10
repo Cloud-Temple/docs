@@ -2,7 +2,7 @@
 title: Conceptos
 ---
 
-# Conceptos de Terraform dans el proveedor Cloud Temple
+# Conceptos de Terraform en el proveedor Cloud Temple
 
 Esta página presenta los conceptos fundamentales necesarios para comprender y utilizar eficazmente el proveedor Terraform Cloud Temple.
 
@@ -18,9 +18,9 @@ Infrastructure as Code es un enfoque que consiste en gestionar y aprovisionar la
 - **Documentación**: El código describe explícitamente la infraestructura
 - **Reproducibilidad**: Despliegue de entornos idénticos en unos pocos minutos
 
-## Terraform Provider
+## Proveedor de Terraform
 
-A Terraform provider is a plugin that enables Terraform to interact with a specific API. The Cloud Temple provider acts as an abstraction layer between your Terraform configuration files and the Cloud Temple APIs.
+Un proveedor de Terraform es un plugin que permite a Terraform interactuar con una API específica. El proveedor Cloud Temple actúa como una capa de abstracción entre sus archivos de configuración de Terraform y las APIs de Cloud Temple.
 
 ### Declaración del provider
 
@@ -70,7 +70,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 }
 ```
 
-### Types de recursos Cloud Temple
+### Tipos de recursos Cloud Temple
 
 #### IaaS VMware
 
@@ -169,10 +169,10 @@ Puede encontrar la lista completa de las fuentes de datos disponibles en el prov
 
 #### Backup
 
-| Datasource | Description |
+| Datasource | Descripción |
 |------------|-------------|
-| `cloudtemple_backup_sla_policy` | VMware backup SLA policy |
-| `cloudtemple_backup_iaas_opensource_policy` | OpenSource backup policy |
+| `cloudtemple_backup_sla_policy` | Política SLA de backup VMware |
+| `cloudtemple_backup_iaas_opensource_policy` | Política de backup OpenSource |
 
 #### Almacenamiento de objetos
 
@@ -274,7 +274,7 @@ Terraform:
 
 ### 4. Destrucción (terraform destroy)
 
-Elimina todas las recursos gestionados:
+Elimina todos los recursos gestionados:
 
 ```bash
 terraform destroy
@@ -375,7 +375,7 @@ resource "cloudtemple_compute_virtual_machine" "example" {
 
 ### Outputs
 
-Expose information after the application:
+Exponen información después de la aplicación:
 
 ```hcl
 output "vm_id" {
