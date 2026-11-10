@@ -15,7 +15,7 @@ This tutorial aims to familiarize you with the fundamental networking concepts o
 
 We will use as an **example** a cluster named **"ctodev"**, to which the range **10.20.0.0/22** has been assigned.
 
-> ⚠[définition des ranges]
+> ⚠[Range definitions]
 > This private IP range X.Y.Z.0/22 (RFC 1918) is defined with the client during cluster setup. It cannot be modified later.
 
 ## IP Addressing Plan
@@ -113,9 +113,9 @@ spec:
 
 Your Managed Kubernetes cluster was originally delivered with 2 public IPv4 addresses.
 
-The 1st IP is used on port 6443 for the Kubernetes API (dans notre exemple ctodev.mk.ms-cloud-temple.com:6443)
+The 1st IP is used on port 6443 for the Kubernetes API (in our example ctodev.mk.ms-cloud-temple.com:6443)
 
-This same IP is also NATed to the ingress controller *"nginx-external-secured"* for port 443. This allows the exposure of the various consoles made available to you (see the quickstart guide). Access to this public IP is **filtered** using a list of allowed IPs.
+This same IP is also NATed to the ingress controller *"nginx-external-secured"* for port 443. This allows the exposure of the various consoles made available to you (see the getting started guide). Access to this public IP is **filtered** using a list of allowed IPs.
 
 ---
 
@@ -131,8 +131,8 @@ Applications exposed with the ingress class *"nginx-external"* will therefore be
 
 For internal DNS (CoreDNS), the cluster will have these settings:
 
-- Cluster name: `<identifiant du cluster>`
-- Internal domain: `<identifiant du cluster>-cluster.local` (dans notre exemple : ctodev-cluster.local)
+- Cluster name: `<cluster identifier>`
+- Internal domain: `<cluster identifier>-cluster.local` (in our example: ctodev-cluster.local)
 
 This internal domain is crucial for inter-service communication within the cluster. It allows an application to contact another application using simply its Kubernetes service name, without needing to know its internal IP address.
 
@@ -142,8 +142,8 @@ For example, a service named `api-backend` in the `production` namespace will be
 
 The public DNS zone used for Managed Kubernetes clusters is `.mk.ms-cloud-temple.com`
 
-The *"nginx-external"* ingress (mappé sur l'IP publique n°2) is accessible at `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
-If you publish an application with this ingress-class, you will be able to access it directly via this domain name. See the tutorial: [Déployer votre première application](./firstdeploy)
+The *"nginx-external"* ingress (mapped to public IP no. 2) is accessible at `"*.external.<your cluster identifier>.mk.ms-cloud-temple.com"`.
+If you publish an application with this ingress-class, you will be able to access it directly via this domain name. See the tutorial: [Deploy your first application](./firstdeploy)
 
 ## Hubble: Network observability at your fingertips
 
@@ -162,7 +162,7 @@ The Hubble graphical interface is exposed on an internal URL of your cluster. Ac
 
 To access it, you must be connected to the cluster's internal network (for example, via a bastion host or a VPN). The URL to use is as follows:
 
-`http://hubble.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
+`http://hubble.internal.<your-cluster-identifier>.mk.ms-cloud-temple.com`
 
 For this URL to be resolvable by your workstation, you will likely need to add an entry to your `hosts` file or your internal DNS. You can obtain the internal IP address of the Hubble Ingress using the following command:
 
@@ -203,12 +203,12 @@ This configuration ensures that traffic to the API and internal services remains
 
 <div class="card">
   <div class="card__header">
-    <h3>Tutoriel : Déployer votre première application</h3>
+    <h3>Tutorial: Deploy your first application</h3>
   </div>
   <div class="card__body">
-    <p>Suivez notre guide détaillé pour apprendre à exposer une application en utilisant un Ingress.</p>
+    <p>Follow our detailed guide to learn how to expose an application using an Ingress.</p>
   </div>
   <div class="card__footer">
-    <a href="./firstdeploy" class="button button--primary button--block">Voir le tutoriel →</a>
+    <a href="./firstdeploy" class="button button--primary button--block">View the tutorial →</a>
   </div>
 </div>

@@ -16,10 +16,10 @@ Here is the **RACI** model defining the allocation of responsibilities between t
 
 | Role         | Description                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Executes | __E__xecutes the process                                                              |
-| (A) Approves | __A__pproves the execution of the process                                             |
-| (C) Consulted| __C__onsulted during the process                                                      |
-| (I) Informed | __I__nformed of the process results (via tooling, the portal, or messaging)           |
+| (R) Responsible | __R__esponsible for carrying out the process |
+| (A) Accountable | __A__ccountable for approving the process execution |
+| (C) Consulted   | __C__onsulted during the process |
+| (I) Informed    | __I__nformed of the process results (via tooling, the portal, or messaging) |
 
 ---
 
@@ -98,7 +98,7 @@ The client is responsible for creating and configuring their VPC as well as the 
 | Monitor **anomalous behavior** on tenant network traffic                                                   | **RA** |              |
 
 *(3) Cloud Temple guarantees strict isolation between VPCs belonging to different tenants. No traffic can cross this barrier without explicit action from the client.*  
-*(4) Micro-segmentation (security groups) will be available in S1 2026. Filtering policies applicable prior to this availability must be implemented by the client using dedicated security equipment.*  
+*(4) The VPC includes flow policies (north-south and east-west filtering, see the [concepts](../../network/vpc/concepts.md)), but not micro-segmentation through security groups: the client implements it using dedicated security equipment.*  
 *(5) Application-level traffic filtering within the VPC is the client's responsibility. Cloud Temple does not perform content inspection of tenant traffic.*  
 *(6) Penetration tests must be declared in advance to Cloud Temple, in accordance with the terms of service.*
 
@@ -109,8 +109,6 @@ The client is responsible for creating and configuring their VPC as well as the 
 | Activity                                                                                                    | Client | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Define the **interconnection** strategy with on-premise environments or other clouds                      | **RA** | **C**        |
-| Subscribe to and configure **site-to-site VPN** access *(available H2 2026)*                                | **RA** | **C**        |
-| Subscribe to and configure **Cloud Connect** access (dedicated link) *(available H2 2026)*                     | **RA** | **C**        |
 | Manage **BGP / routes** associated with operator interconnections                                          | **RA** | **CI**       |
 | Ensure **traffic security** across interconnections                                         | **RA** |              |
 
@@ -133,7 +131,6 @@ The client is responsible for creating and configuring their VPC as well as the 
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Monitor the operation of **core VPC components** (router, gateway)                                         | **I**  | **RA**       |
 | Monitor the **performance of the Cloud Temple network backbone**                                            | **I**  | **RA**       |
-| Collect and analyze VPC **network flow logs** (flow logs) *(available H1 2026)*                            | **RA** | **I**        |
 | Implement **application flow monitoring** within the VPC                                                    | **RA** |              |
 | Monitor the **latency and bandwidth** of traffic within the VPC                                             | **RA** | **I**        |
 
@@ -159,7 +156,7 @@ The client is responsible for creating and configuring their VPC as well as the 
 
 ---
 
-## Logs (logs)
+## Logs
 
 | Activity                                                                                                    | Client | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|

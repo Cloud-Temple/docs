@@ -57,7 +57,7 @@ La fornitura di un'IPv4 avviene **nei limiti delle scorte disponibili** per i no
 
 L'ordine di indirizzi IPv4 viene effettuato dal menu ***'Indirizzi pubblici'*** del menu Reti nella barra verde a sinistra, tramite il pulsante ***"Ordina indirizzi IPv4 o prefissi IPv6"***.
 
-È possibile visualizzare i blocchi di indirizzi assegnati a te in questo stesso menu.
+È possibile visualizzare i blocchi di indirizzi assegnati a voi in questo stesso menu.
 
 | Riferimento                   | Unità  | SKU                          |
 | ----------------------------- | ------ | ---------------------------- |
@@ -83,7 +83,7 @@ Questo approccio consente di mantenere la vostra identità IP durante la migrazi
 
 ### Processo di integrazione
 
-Il tuo prefisso IP (ad esempio `203.0.113.0/24`) viene integrato nella rete backbone di CloudTemple e annunciato dal nostro AS. Una volta integrato, il prefisso può essere associato liberamente alle tue macchine virtuali, bilanciatori di carico o altri servizi.
+Il vostro prefisso IP (ad esempio `203.0.113.0/24`) viene integrato nella rete backbone di CloudTemple e annunciato dal nostro AS. Una volta integrato, il prefisso può essere associato liberamente alle vostre macchine virtuali, bilanciatori di carico o altri servizi.
 
 **Tutti gli indirizzi del prefisso migrato beneficiano automaticamente della protezione anti-DDoS F5**, senza configurazione aggiuntiva né costi aggiuntivi.
 
@@ -93,16 +93,16 @@ La migrazione dei prefissi IP richiede che il prefisso sia registrato in un regi
 
 ## Riserva di banda internet
 
-La banda internet è prenotabile in incrementi di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del tuo gateway.
+La banda internet è prenotabile in incrementi di 100 Mbps. La capacità massima disponibile per un gateway è di 10 Gbps, potenzialmente limitata dalle caratteristiche tecniche del vostro gateway.
 
-La fatturazione si basa sul 95° percentile durante il periodo di fatturazione, solitamente un mese. Puoi quindi occasionalmente usufruire di un burst oltre la capacità prenotata.
+La fatturazione si basa sul 95° percentile durante il periodo di fatturazione, solitamente un mese. Potete quindi occasionalmente usufruire di un burst oltre la capacità prenotata.
 
 | Riferimento                                 | Unità    | SKU                                     |
 | ----------------------------------------- | -------- | --------------------------------------- |
 | Rete - Banda internet prenotata | 100 Mbps | csp:(region):network:trafic:internet:v1 |
 
 ***Nota:***
-*Non è prevista una **fatturazione volumetrica** di tipo **'egress fees'. Paghi solo la prenotazione della banda.***
+*Non è prevista una **fatturazione volumetrica** di tipo **'egress fees'. Pagate solo la prenotazione della banda.***
 
 ## Disponibilità per prodotto
 

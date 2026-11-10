@@ -49,9 +49,9 @@ In the Shiva interface of Cloud Temple, you will need to retrieve the following 
 
 Keep this list in mind, we will come back to it at the WAN step.
 
-![Paramètres BGP dans Shiva](/img/screenshots/shiva.png)
-![IP publiques](/img/screenshots/ip-publiques.png)
-![IP d'interco](/img/screenshots/ip-dintercos.png)
+![BGP parameters in Shiva](/img/screenshots/shiva.png)
+![Public IPs](/img/screenshots/ip-publiques.png)
+![Interco IPs](/img/screenshots/ip-dintercos.png)
 
 # Step 2 — Deploy the two VMs
 
@@ -104,7 +104,7 @@ First, set the **gateway** WAN with the shared gateway address noted in step 1.
 
 Configure an IP on the WAN interface taken from the interconnection prefix, and associate the interface with the gateway you just created.
 
-![Interface WAN](/img/screenshots/ip-wan.png)
+![WAN interface](/img/screenshots/ip-wan.png)
 
 # Step 5 — Establish the BGP session
 
@@ -131,7 +131,7 @@ Check the **multi-hop** box. Route servers are more than one hop away, and an eB
 
 In **Routing > Static**, add the routes to reach these servers (each as `/32`).
 
-![Activer les routes statiques](/img/screenshots/routing-static-enable.png)
+![Enable static routes](/img/screenshots/routing-static-enable.png)
 ![Route RS1](/img/screenshots/routes-peer1.png)
 ![Route RS2](/img/screenshots/routes-peer2.png)
 
@@ -156,7 +156,7 @@ Still in **Routing > Static**, create a route that points to the **loopback** of
 
 This route allows you to announce your public prefix to the route servers.
 
-![Préfixe public / route blackhole](/img/screenshots/prefix-pub.png)
+![Public prefix / blackhole route](/img/screenshots/prefix-pub.png)
 
 # Step 7 — Configure NAT
 

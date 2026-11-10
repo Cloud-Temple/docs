@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Distribuire la tua prima applicazione
+title: Tutorial - Distribuire la vostra prima applicazione
 ---
 
 ## Obiettivi
@@ -12,12 +12,12 @@ Questo tutorial vi guida passo dopo passo per realizzare il vostro primo deploym
 
 ## Prerequisiti
 
-- Hai configurato l'accesso al cluster come descritto nella [guida di avvio rapido](../quickstart.md).
-- Dispori di un namespace su cui hai i diritti di deployment. In questo tutorial, utilizzeremo un namespace denominato `hello-world`.
+- Avete configurato l'accesso al cluster come descritto nella [guida di avvio rapido](../quickstart.md).
+- Disponete di un namespace su cui avete i diritti di deployment. In questo tutorial, utilizzeremo un namespace denominato `hello-world`.
 
 ## Passo 1: Creare un namespace
 
-Se non è già stato fatto, crea un namespace per isolare la tua applicazione.
+Se non è già stato fatto, create un namespace per isolare la vostra applicazione.
 
 ```bash
 kubectl create namespace hello-world
@@ -27,7 +27,7 @@ kubectl create namespace hello-world
 
 Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina web.
 
-1. Crea un file denominato `deployment.yaml` con il seguente contenuto:
+1. Create un file denominato `deployment.yaml` con il seguente contenuto:
 
     ```yaml
     apiVersion: apps/v1
@@ -54,22 +54,22 @@ Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina we
             - containerPort: 80
     ```
 
-2. Applica questo manifesto al tuo cluster:
+2. Applicate questo manifesto al vostro cluster:
 
     ```bash
     kubectl apply -f deployment.yaml
     ```
 
-3. Verifica che il deployment sia stato creato e che i pod siano in esecuzione:
+3. Verificate che il deployment sia stato creato e che i pod siano in esecuzione:
 
     ```bash
     kubectl get deployment -n hello-world
-    # Vous devriez voir votre déploiement avec 2/2 replicas prêts.
+    # Dovreste vedere il vostro deployment con 2/2 repliche pronte.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # Vous devriez voir deux pods avec le statut "Running".
+    # Dovreste vedere due pod con lo stato "Running".
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
@@ -79,7 +79,7 @@ Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina we
 
 Per consentire ai diversi componenti del cluster di comunicare con la nostra applicazione, dobbiamo creare un **Service**.
 
-1. Crea un file denominato `service.yaml` :
+1. Create un file denominato `service.yaml` :
 
     ```yaml
     apiVersion: v1
@@ -97,13 +97,13 @@ Per consentire ai diversi componenti del cluster di comunicare con la nostra app
       type: ClusterIP
     ```
 
-2. Applica il manifesto :
+2. Applicate il manifesto :
 
     ```bash
     kubectl apply -f service.yaml
     ```
 
-    La tua applicazione è ora accessibile tramite il nome `hello-world-service.hello-world` da qualsiasi altro pod del cluster.
+    La vostra applicazione è ora accessibile tramite il nome `hello-world-service.hello-world` da qualsiasi altro pod del cluster.
 
 ## Passo 4: Rendere l'applicazione accessibile da Internet (Ingress)
 
@@ -120,7 +120,7 @@ Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**
     spec:
       ingressClassName: nginx-external
       rules:
-      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # changez moi
+      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # da modificare
         http:
           paths:
           - path: /
@@ -147,7 +147,7 @@ Le applicazioni pubblicate su questo suffisso DNS sono quindi direttamente acces
 curl http://hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com
 ```
 
-Dovresti ricevere una risposta dal server NGINX di demo.
+Dovreste ricevere una risposta dal server NGINX di demo.
 
 ```bash
 StatusCode        : 200
@@ -168,20 +168,20 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
->⚠[Pour aller plus loin : la sécurité en production]
->Questo tutorial ti ha mostrato le basi del deployment. Per un ambiente di produzione, è cruciale applicare ulteriori misure di sicurezza:
+>⚠[Per approfondire: la sicurezza in produzione]
+>Questo tutorial vi ha mostrato le basi del deployment. Per un ambiente di produzione, è cruciale applicare ulteriori misure di sicurezza:
 >
->- **Utilizza immagini sicure** : Privilegia immagini provenienti dal tuo registro aziendale sicuro come **Harbor** piuttosto che immagini pubbliche.
->- **Controlla i flussi di rete** : Implementa `NetworkPolicies` per limitare le comunicazioni ai soli flussi necessari tra le tue applicazioni.
->- **Applica politiche di governance** : Utilizza strumenti come **Kyverno** per imporre regole di sicurezza (es: vietare i container "root", richiedere `requests` e `limits` di risorse, ecc.).
->- **Applica Pod Disruption Budget** : un PDB garantisce che le tue applicazioni rimangano sempre disponibili.
+>- **Utilizzate immagini sicure** : Privilegiate immagini provenienti dal vostro registro aziendale sicuro come **Harbor** piuttosto che immagini pubbliche.
+>- **Controllate i flussi di rete** : Implementate `NetworkPolicies` per limitare le comunicazioni ai soli flussi necessari tra le vostre applicazioni.
+>- **Applicate politiche di governance** : Utilizzate strumenti come **Kyverno** per imporre regole di sicurezza (es: vietare i container "root", richiedere `requests` e `limits` di risorse, ecc.).
+>- **Applicate Pod Disruption Budget** : un PDB garantisce che le vostre applicazioni rimangano sempre disponibili.
 
 ## Pulizia
 
-Per eliminare tutte le risorse che hai creato durante questo tutorial, puoi semplicemente eliminare il namespace:
+Per eliminare tutte le risorse che avete creato durante questo tutorial, potete semplicemente eliminare il namespace:
 
 ```bash
 kubectl delete namespace hello-world
 ```
 
-Congratulazioni, hai distribuito ed esposto la tua prima applicazione su Managed Kubernetes!
+Congratulazioni, avete distribuito ed esposto la vostra prima applicazione su Managed Kubernetes!

@@ -1,5 +1,5 @@
 ---
-title: Documentation API
+title: Documentation de l'API de la Console
 ---
 import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
 import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'
@@ -13,7 +13,7 @@ import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
 ## Introduction
 
-L'API Cloud Temple vous permet de créer et gérer l'ensemble de vos ressources cloud de manière programmatique. Tout ce que vous pouvez faire via la console Cloud Temple peut également être réalisé via l'API, de la création de machines virtuelles à la configuration de la gestion des identités et des accès.
+L'API Cloud Temple vous permet de créer et gérer de manière programmatique les ressources des produits intégrés à la Console. Tout ce que vous pouvez faire via la console Cloud Temple peut également être réalisé via l'API, de la création de machines virtuelles à la configuration de la gestion des identités et des accès.
 
 Cette documentation vous guide dans l'utilisation de l'API Cloud Temple, de l'authentification aux bonnes pratiques en passant par la gestion du cycle de vie des endpoints.
 
@@ -21,28 +21,52 @@ Cette documentation vous guide dans l'utilisation de l'API Cloud Temple, de l'au
 
 :::info[En résumé - 3 étapes pour démarrer]
 1. 🔑 **Générer votre PAT** depuis la console
-2. 🚀 **Tester avec curl** sur `/iam/v2/roles`
-3. ✅ **Analyser la réponse** JSON
+2. 🔄 **Échanger son ID et son secret contre un JWT**
+3. 🚀 **Appeler l'API avec ce JWT** dans l'en-tête `Authorization`
 :::
 
 ### Prérequis
 
-Avant de commencer, vous devez disposer d'un compte Cloud Temple avec les permissions appropriées pour générer des clés API.
+Avant de commencer, vérifiez les points suivants :
+
+- **Compte et tenant** : votre compte dispose de la permission `iam_offline_access` dans le tenant où vous souhaitez **créer** le PAT.
+- **Permissions du PAT** : sélectionnez uniquement les permissions nécessaires aux opérations que votre script réalisera. Il n'est pas nécessaire d'ajouter `iam_offline_access` aux permissions du PAT pour l'utiliser sur le point d'authentification.
+- **Accès réseau** : l'IP publique de sortie utilisée par votre script doit être autorisée pour l'organisation. Consultez [l'ajout d'une adresse IP dans Administration > Accès](./onboarding.md#ajouter-une-adresse-ip). Prévoyez environ **10 minutes** pour la prise en compte d'un ajout. La consultation et la modification de cette liste nécessitent respectivement `console_public_access_read` et `console_public_access_write` ; ces permissions ne sont pas nécessaires au PAT pour s'authentifier.
+- **Outils** : les exemples ci-dessous utilisent `curl` et un shell compatible Bash.
+
+:::warning[Le navigateur et le script peuvent utiliser des IP différentes]
+Une connexion réussie à la Console ne valide pas l'accès réseau de votre script. Un proxy, un VPN ou un runner CI peut utiliser une autre IP publique de sortie. L'adresse configurée pour joindre un proxy n'est pas nécessairement l'adresse publique avec laquelle il sort sur Internet. Faites confirmer cette dernière par votre équipe réseau et autorisez-la pour l'organisation concernée.
+:::
 
 ### Étapes
 
-1. **Générer votre clé API** : Connectez-vous à la [console Cloud Temple](https://shiva.cloud-temple.com/login) et générez votre Personal Access Token (voir section [Clés API](#clés-api-personal-access-token) ci-dessous).
+1. **Générer votre PAT** : connectez-vous à la [console Cloud Temple](https://shiva.cloud-temple.com/login), sélectionnez le tenant concerné et créez un Personal Access Token (voir [Clés API](#clés-api-personal-access-token)). Conservez son **ID** et son **secret**. L'ID attendu est celui du PAT, pas celui du tenant, de l'organisation ou de l'utilisateur.
 
-2. **Tester votre première requête** : Exécutez la commande curl suivante en remplaçant `<votre-personal-access-token>` par votre token :
+2. **Obtenir un token d'accès JWT** : remplacez les valeurs fictives `ID_DU_PAT` et `SECRET_DU_PAT` par celles du même PAT, non expiré et non révoqué. Envoyez une requête **POST**, avec un corps JSON valide et l'en-tête `Content-Type: application/json`, à l'URL complète ci-dessous, qui inclut **`/api/iam`**. Aucun Bearer token préalable n'est nécessaire sur ce point d'authentification.
 
 ```bash
-curl -X GET \
-  -H "Authorization: Bearer <votre-personal-access-token>" \
-  -H "Content-Type: application/json" \
-  "https://shiva.cloud-temple.com/api/iam/v2/roles"
+ACCESS_TOKEN=$(curl --fail --silent --show-error \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"ID_DU_PAT","secret":"SECRET_DU_PAT"}' \
+  'https://shiva.cloud-temple.com/api/iam/v2/auth/personal_access_token')
 ```
 
-3. **Analyser la réponse** : Vous recevrez la liste des rôles IAM disponibles dans votre tenant, ce qui vous permet de comprendre les permissions existantes.
+En cas de succès (HTTP 200), le corps de la réponse contient le JWT, conservé ici dans la variable `ACCESS_TOKEN`. Si la commande échoue, consultez le [dépannage](#dépanner-lauthentification-pat) avant de continuer.
+
+3. **Appeler une API avec le JWT** : utilisez ce token d'accès dans `Authorization: Bearer`. L'exemple suivant interroge la liste des rôles IAM :
+
+```bash
+curl --fail --silent --show-error \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  'https://shiva.cloud-temple.com/api/iam/v2/roles'
+```
+
+Le Bearer attendu est le **JWT obtenu à l'étape 2**, ni l'ID ni le secret du PAT. Les opérations suivantes restent soumises aux permissions accordées au PAT.
+
+:::caution[Protéger les identifiants]
+Les valeurs de l'exemple sont fictives. Dans vos automatisations, fournissez le secret via votre gestionnaire de secrets et évitez de l'enregistrer dans le code, l'historique du shell ou les journaux. Ne partagez ni le secret du PAT ni le JWT obtenu.
+:::
 
 ## Authentification
 
@@ -50,7 +74,7 @@ curl -X GET \
 
 La __clé API__ permet de s'authentifier lorsque vous souhaitez faire des requêtes sur l'API. La génération d'une clé API, aussi appelée __Personal Access Token (PAT)__, est une manière sécurisée de se connecter aux API Console sans passer par une interface graphique. Chacun de ces tokens est lié à un tenant et à l'utilisateur qui l'a créé.
 
-La création de ce token se fait depuis votre compte. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits.
+La création de ce token se fait depuis votre compte et nécessite la permission `iam_offline_access`. Il est possible de générer plusieurs clés et de configurer pour chacune les autorisations dans la limite de vos droits. Cette permission de création est distincte des permissions métier du PAT : l'échange de son ID et de son secret contre un JWT ne nécessite pas qu'il porte lui-même `iam_offline_access`.
 
 #### Créer une clé API
 
@@ -88,10 +112,23 @@ Vous voyez ensuite le nouveau jeton créé et sa future date d'expiration.
 Lorsque vous utilisez votre __Personal Access Token (PAT)__ pour vous authentifier auprès de l'API, vous recevez en retour un token d'accès. Il est important de noter que ce token d'accès est un __JSON Web Token (JWT)__ avec une durée de vie limitée.
 
 - __Durée de vie__ : Chaque token JWT est valide pour une durée de __5 minutes__.
-- __Vérification__ : Vous pouvez vérifier la date d'émission (`iat`) et la date d'expiration (`exp`) de votre token en le décodant. Des outils en ligne comme [jwt.io](https://jwt.io) vous permettent de le faire facilement.
+- __Vérification__ : Vous pouvez consulter la date d'émission (`iat`) et la date d'expiration (`exp`) en décodant le JWT localement. Ne transmettez pas un token actif à un service de décodage tiers. Le décodage seul ne vérifie pas sa signature.
 
 Une fois le token expiré, vous devrez vous ré-authentifier avec votre PAT pour en obtenir un nouveau. Il est donc recommandé de gérer ce cycle de vie dans vos scripts et applications en prévoyant un renouvellement automatique du token.
 :::
+
+### Dépanner l'authentification PAT
+
+Commencez par identifier la requête qui échoue : **l'échange ID/secret** ou **l'appel métier avec le JWT**. Les contrôles à effectuer ne sont pas les mêmes.
+
+| Symptôme | Vérifications |
+|---|---|
+| Requête d'authentification rejetée | Vérifiez la méthode **POST**, l'URL complète `https://shiva.cloud-temple.com/api/iam/v2/auth/personal_access_token`, le type `application/json` et un corps contenant les chaînes `id` et `secret`. Dans Postman, choisissez un corps **raw / JSON**. N'envoyez pas ce corps avec une méthode GET. |
+| Échec d'authentification malgré une requête conforme | Vérifiez que l'ID et le secret correspondent au **même PAT**, dans le tenant attendu, et que ce PAT n'est ni expiré ni révoqué. N'utilisez pas l'ID du tenant à la place de l'ID du PAT. |
+| **HTTP 403**, notamment avec une page HTML de refus | Ce statut ne prouve pas un manque de permissions IAM. Vérifiez l'IP publique de sortie effective et la liste d'accès de l'organisation, puis le proxy et la forme de la requête : un proxy ou un pare-feu applicatif (WAF) peut rejeter la requête avant qu'elle n'atteigne l'API. Un corps HTML peut aider à identifier ce refus, sans suffire à en déterminer la cause. |
+| L'échange réussit, mais l'appel métier échoue | Vérifiez que l'en-tête Bearer contient le JWT obtenu, que celui-ci n'est pas expiré, et que le PAT possède les permissions requises par l'opération dans le bon tenant. Ajouter `iam_offline_access` au PAT ne résout pas à lui seul un refus sur une opération métier. |
+
+Si le problème persiste, transmettez au support l'heure du test **avec le fuseau horaire**, la méthode et l'URL, le statut HTTP, l'IP publique de sortie confirmée, ainsi que la réponse et un éventuel identifiant de requête. Fournissez une commande ou une capture **expurgée** : masquez le secret, le JWT, les en-têtes `Authorization` et `Proxy-Authorization`, ainsi que les cookies. Le statut HTTP seul ne permet pas d'identifier avec certitude le composant qui a refusé la requête.
 
 ## Accès au portail API
 
@@ -99,7 +136,7 @@ La documentation OpenAPI 3.0 (Swagger) des APIs de la console Cloud Temple est d
 
 <img src={ShivaApi001} />
 
-L'accès aux APIs nécessite d'être authentifié. Une fois authentifié toutes les opérations doivent avoir le header __'Authorization'__ avec le bearer access token obtenu lors de la phase d'authentification.
+Les opérations protégées des APIs nécessitent l'en-tête __`Authorization`__ avec le Bearer JWT obtenu lors de la phase d'authentification. L'échange initial de l'ID et du secret du PAT décrit ci-dessus ne nécessite pas cet en-tête.
 
 L'URL des points d'accès est directement donnée dans __Swagger__ (dans l'objet "Servers" de chaque page APIs).
 
@@ -361,7 +398,7 @@ La description de l'endpoint inclut :
 
 ### Bonnes pratiques pour gérer les dépréciations
 
-1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciée dans la console pour être informé des dépréciations à venir.
+1. **Surveillez les fonctionnalités dépréciées** : Consultez régulièrement les fonctionnalités dépréciées dans la console pour connaître les dépréciations annoncées et leur date de suppression prévue.
 
 2. **Planifiez vos migrations** : Dès qu'une dépréciation est annoncée, planifiez la migration de votre code vers le nouvel endpoint dans les 3 mois.
 

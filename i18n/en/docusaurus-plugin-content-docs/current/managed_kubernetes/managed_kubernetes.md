@@ -1,33 +1,38 @@
 ---
-title: Overview
+title: Managed Kubernetes overview
 ---
 
 import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 
-# Managed Kubernetes
+# Managed Kubernetes overview
+
+**Managed Kubernetes** by Cloud Temple is a container orchestration solution based on open source standards (CNCF). It is designed to provide a high level of security, resilience, and automation and it is available on SecNumCloud-qualified services. Each cluster is deployed in a Cloud-Temple IaaS environment fully dedicated to the client.
+
+To best meet your teams' needs, we offer two versions of this product: **Managed Core Kubernetes** (a minimal base) and **Managed Kubernetes** (a complete "out-of-the-box" platform).
 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
     <a href="./managed_kubernetes/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Getting Started Guide</h3>
-    <p>Get up and running quickly by following clear and simple instructions.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Launch Quickstart &rarr;</a>
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step by step how to configure and use our services with detailed guides.</p>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
     <a href="./managed_kubernetes/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
 </div>
-
-**Managed Kubernetes** by Cloud Temple is a container orchestration solution based on open source standards (CNCF). It is designed to provide a high level of security, resilience, and automation on Cloud Temple's SecNumcloud platforms. Each cluster is deployed in a Cloud-Temple IaaS environment fully dedicated to the client.
-
-To best meet your teams' needs, we offer two versions of this product: **Managed Core Kubernetes** (a minimal base) and **Managed Kubernetes** (a complete "out-of-the-box" platform).
 
 ---
 
@@ -38,6 +43,7 @@ This offering is designed for teams with **excellent Kubernetes expertise** and 
 
 - **OS and Networking included** : Talos OS, Rook-Ceph (stockage), Cilium (CNI), MetalLB (Load Balancer).
 - **Philosophy** : Starting from this high-performance and standardized foundation, you are free to integrate your own continuous deployment, observability, backup, or security tools.
+- **Learn more** : [Managed Core Kubernetes Concepts](../managed_core_kubernetes/concepts.md).
 
 ### 2. Managed Kubernetes (La plateforme complète)
 This turnkey offering is designed for teams seeking a **native, out-of-the-box, and all-in-one** solution, integrating the best open-source standards to cover all application lifecycle needs without having to assemble and maintain the components themselves.
@@ -58,7 +64,7 @@ Regardless of the chosen offering, our Kubernetes clusters share these fundament
 
 - **Sovereignty and Reversibility** : The solution relies on open source standards to avoid any technological dependency (*vendor lock-in*) and guarantee full portability of your applications. (With Veeam Kasten included in the full version to facilitate inter-cloud migrations).
 - **"Zero-Trust" Security by design** : The architecture is built on **Talos OS**, an immutable and ephemeral Linux operating system specifically designed for Kubernetes. It provides no direct access (neither shell nor SSH), which drastically reduces the attack surface.
-- **Cost Control** : The pricing model is transparent, based exclusively on the underlying consumed IaaS resources, with no additional licensing cost for the orchestrator.
+- **Cost Control** : The pricing model is transparent: the managed service is billed per cluster, in addition to the underlying IaaS resources, with no additional licensing cost for the orchestrator.
 
 ---
 
@@ -82,7 +88,7 @@ Ideal for POC environments, this compact architecture deploys all resources with
 
 ### Production Architecture (Multi-AZ)
 
-Designed for production and critical applications, this architecture distributes resources across three availability zones (AZ) to ensure high availability and maximum resilience, in compliance with SecNumCloud requirements.
+Designed for production and critical applications, this architecture distributes resources across three availability zones (AZ) to ensure high availability and maximum resilience.
 
 - **Use Case** : Production applications, critical services, platforms requiring an SLA.
 - **Key Points** :

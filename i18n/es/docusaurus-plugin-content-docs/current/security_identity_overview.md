@@ -1,11 +1,11 @@
 ---
-title: Security & Identity
+title: Seguridad e identidad
 displayed_sidebar: docSidebar
 ---
 
-# Security & Identity
+# Seguridad e identidad
 
-Gestione identidades, derechos de acceso y la seguridad de su infraestructura Cloud Temple desde un panel centralizado. Aplique el principio de mínimo privilegio y supervise actividades sospechosas en tiempo real.
+Gestione las identidades y los derechos de acceso a su infraestructura Cloud Temple aplicando el principio de mínimo privilegio. Siga las buenas prácticas y las alertas de seguridad publicadas sobre nuestros servicios, y aproveche los registros de actividad para detectar acciones sensibles o sospechosas.
 
 <div class="card-grid">
   <div class="card">
@@ -15,7 +15,7 @@ Gestione identidades, derechos de acceso y la seguridad de su infraestructura Cl
   </div>
   <div class="card">
     <h3>Seguridad</h3>
-    <p>Recomendaciones de seguridad, alertas y políticas de cumplimiento para reforzar la postura de seguridad de su tenant.</p>
+    <p>Buenas prácticas de seguridad y alertas de seguridad publicadas sobre nuestros servicios.</p>
     <a href="./console/security/security_recommendations" class="card-link">Descubrir Seguridad →</a>
   </div>
 </div>

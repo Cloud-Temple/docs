@@ -7,16 +7,16 @@ sidebar_position: 6
 
 La Batch API procesa varias conversaciones independientes con el mismo modelo de forma asíncrona. Es adecuada para tareas diferidas de clasificación, síntesis o extracción de texto.
 
-Envía las conversaciones directamente en JSON a `POST /v1/chat/completions/batch`, y luego recupera su estado y resultados con `GET /v1/chat/completions/batch/{id}`. Este contrato es específico de LLMaaS: no se basa en los endpoints de archivos y lotes del SDK de OpenAI.
+Envíe las conversaciones directamente en JSON a `POST /v1/chat/completions/batch`, y luego recupere su estado y resultados con `GET /v1/chat/completions/batch/{id}`. Este contrato es específico de LLMaaS: no se basa en los endpoints de archivos y lotes del SDK de OpenAI.
 
 ## Funcionamiento
 
-1. Prepara un array de conversaciones con un modelo y parámetros comunes.
-2. Envía el lote: la API devuelve **HTTP 202**, un identificador `id` y el estado `queued`.
-3. Guarda este identificador y consulta el estado cada 30 a 60 segundos.
-4. Recupera el array `results` cuando el procesamiento haya terminado, y guarda los resultados en tu aplicación.
+1. Prepare un array de conversaciones con un modelo y parámetros comunes.
+2. Envíe el lote: la API devuelve **HTTP 202**, un identificador `id` y el estado `queued`.
+3. Guarde este identificador y consulte el estado cada 30 a 60 segundos.
+4. Recupere el array `results` cuando el procesamiento haya terminado, y guarde los resultados en su aplicación.
 
-Utiliza la **misma clave API** para enviar y consultar el lote. Otra clave, incluso si está asociada a la misma cuenta, no permite recuperar sus resultados.
+Utilice la **misma clave API** para enviar y consultar el lote. Otra clave, incluso si está asociada a la misma cuenta, no permite recuperar sus resultados.
 
 ## Enviar un lote
 
@@ -45,16 +45,16 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch" \
   }'
 ```
 
-Verifica el identificador del modelo con `GET /v1/models` y su [ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) antes de ejecutar.
+Verifique el identificador del modelo con `GET /v1/models` y su [ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle) antes de ejecutar.
 
 | Campo | Descripción |
 |-------|-------------|
 | `model` | Identificador del modelo utilizado para todas las conversaciones. |
 | `messages` | Array no vacío de conversaciones, cada una representada por un array de mensajes. |
 | `max_tokens`, `temperature`, `top_p`, etc. | Parámetros aplicados a cada conversación, según las capacidades del modelo. |
-| `tools`, `tool_choice`, `response_format` | Parámetros transmitidos al modelo cuando se utilizan; la ejecución de herramientas sigue siendo responsabilidad de tu aplicación. |
+| `tools`, `tool_choice`, `response_format` | Parámetros transmitidos al modelo cuando se utilizan; la ejecución de herramientas sigue siendo responsabilidad de su aplicación. |
 
-El procesamiento fuerza `stream: false`. Las conversaciones y sus resultados se asocian por su posición en los arrays; conserva esta correspondencia en tu aplicación.
+El procesamiento fuerza `stream: false`. Las conversaciones y sus resultados se asocian por su posición en los arrays; conserve esta correspondencia en su aplicación.
 
 Fragmento ilustrativo de la respuesta de creación:
 
@@ -73,7 +73,7 @@ Fragmento ilustrativo de la respuesta de creación:
 }
 ```
 
-`model_requested` indica el nombre solicitado; `model` indica el modelo resuelto, que puede diferir en caso de alias. Reutiliza el identificador `id` efectivamente devuelto por el servicio, sin reconstruirlo.
+`model_requested` indica el nombre solicitado; `model` indica el modelo resuelto, que puede diferir en caso de alias. Reutilice el identificador `id` efectivamente devuelto por el servicio, sin reconstruirlo.
 
 ## Seguir el procesamiento y recuperar los resultados
 
@@ -88,8 +88,8 @@ curl "https://api.ai.cloud-temple.com/v1/chat/completions/batch/$BATCH_ID" \
 |--------|---------------|
 | `queued` | En espera de procesamiento o reanudación en la próxima ventana de procesamiento. |
 | `in_progress` | Procesamiento en curso. |
-| `completed` | Procesamiento terminado; inspecciona cada resultado para detectar errores individuales. |
-| `failed` | Fallo global; inspecciona `error` y los resultados eventualmente disponibles. |
+| `completed` | Procesamiento terminado; inspeccione cada resultado para detectar errores individuales. |
+| `failed` | Fallo global; inspeccione `error` y los resultados eventualmente disponibles. |
 | `expired` | Estado de expiración; tras la purga, el GET devuelve HTTP 404. |
 
 El array `results` se adjunta para los estados `completed` y `failed`. Cada elemento es o bien una respuesta de chat, o bien un objeto `error`. No hay archivo de salida para descargar.
@@ -124,11 +124,11 @@ Fragmento ilustrativo con un éxito y un error:
 }
 ```
 
-**`completed` no significa que todas las conversaciones hayan tenido éxito.** Una vez procesado el lote, `results[i]` corresponde a la conversación `messages[i]`. Para reanudar los errores, construye un nuevo lote que contenga únicamente las conversaciones afectadas.
+**`completed` no significa que todas las conversaciones hayan tenido éxito.** Una vez procesado el lote, `results[i]` corresponde a la conversación `messages[i]`. Para reanudar los errores, construya un nuevo lote que contenga únicamente las conversaciones afectadas.
 
 ## Ejemplo completo en Python
 
-Instala `httpx`, define `LLMAAS_API_KEY` en tu entorno, y guarda el script como `batch_demo.py` ejecutando `python batch_demo.py`.
+Instale `httpx`, defina `LLMAAS_API_KEY` en su entorno, y guarde el script como `batch_demo.py` ejecutando `python batch_demo.py`.
 
 ```bash
 pip install httpx
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Si el script se detiene después del envío, reanuda el seguimiento con el GET y el identificador mostrado. No envíes automáticamente el mismo lote tras una pérdida de conexión: puede haber sido aceptado, lo que crearía un duplicado.
+Si el script se detiene después del envío, reanude el seguimiento con el GET y el identificador mostrado. No envíe automáticamente el mismo lote tras una pérdida de conexión: puede haber sido aceptado, lo que crearía un duplicado.
 
 ## Límites y retención
 
@@ -227,7 +227,7 @@ Los valores siguientes son los parámetros por defecto del servicio; pueden ajus
 
 Un lote puede permanecer en espera fuera de la ventana de procesamiento y ser suspendido y luego reanudado si esta ventana termina. **La retención de 24 h no constituye una garantía de procesamiento en 24 h.**
 
-El estado del lote (cola, progreso y resultados consultables por GET) se conserva en memoria en la instancia de procesamiento, sin mecanismo de recuperación en disco. Un reinicio de esta instancia provoca la pérdida de este estado. Recupera y guarda tus resultados antes de su expiración. Conserva la clave que creó el lote hasta su recuperación.
+El estado del lote (cola, progreso y resultados consultables por GET) se conserva en memoria en la instancia de procesamiento, sin mecanismo de recuperación en disco. Un reinicio de esta instancia provoca la pérdida de este estado. Recupere y guarde sus resultados antes de su expiración. Conserve la clave que creó el lote hasta su recuperación.
 
 Este contrato trata de conversaciones de chat. No ofrece subida JSONL, procesamiento de embeddings en lote, lista de lotes o cancelación vía API.
 
@@ -235,18 +235,18 @@ Este contrato trata de conversaciones de chat. No ofrece subida JSONL, procesami
 
 | Código HTTP | Causa o acción |
 |-----------|-----------------|
-| `400` | Solicitud incorrecta, conversaciones ausentes o mal estructuradas, tamaño máximo superado. Corrige el cuerpo enviado. |
-| `401` | Autenticación inválida. Verifica tu clave API. |
+| `400` | Solicitud incorrecta, conversaciones ausentes o mal estructuradas, tamaño máximo superado. Corrija el cuerpo enviado. |
+| `401` | Autenticación inválida. Verifique su clave API. |
 | `403` | La clave utilizada para consultar el lote difiere de la que lo creó. |
 | `404` | Identificador desconocido, lote expirado o estado perdido tras reinicio. |
-| `501` | Procesamiento Batch desactivado en la instancia concernida. Contacta con soporte. |
-| `503` | Cola saturada o instancia de procesamiento no disponible. Reintenta más tarde según el mensaje devuelto. |
+| `501` | Procesamiento Batch desactivado en la instancia concernida. Contacte con soporte. |
+| `503` | Cola saturada o instancia de procesamiento no disponible. Reintente más tarde según el mensaje devuelto. |
 
 Los errores propios de una conversación se encuentran en `results[].error`, incluso si el GET devolvió HTTP 200.
 
 ## Tarifas y recursos
 
-Los parámetros de generación se aplican a cada conversación. Para las tarifas Batch, consulta el [catálogo tarifario oficial Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+Los parámetros de generación se aplican a cada conversación. Para las tarifas Batch, consulte el [catálogo tarifario oficial Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 - [API de generación de chat](./api.md#post-v1chatcompletions)
 - [Elegir un modelo](./models.md)

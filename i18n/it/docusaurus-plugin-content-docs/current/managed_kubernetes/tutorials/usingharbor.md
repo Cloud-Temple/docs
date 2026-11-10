@@ -15,7 +15,7 @@ In questa guida, sostituire le seguenti variabili con i vostri valori:
 
 ## Prerequisiti
 
-- Accesso alla Console e al servizio Managed Kubernetes
+- Un cluster Managed Kubernetes e l'accesso alla sua interfaccia Harbor (`<HARBOR_URL>`)
 - Un progetto Harbor esistente (o diritti per crearne uno)
 - Strumenti installati localmente:
   - Docker o Podman
@@ -109,7 +109,7 @@ kubectl create secret docker-registry harbor-pull-secret \
 
 >ℹ️Il parametro --docker-email non è più richiesto nelle versioni recenti di kubectl (e può essere ignorato).
 
-### 2) Riferire il segreto ai tuoi workload
+### 2) Riferire il segreto ai vostri workload
 
 - Tramite ServiceAccount:
 

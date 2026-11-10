@@ -1,5 +1,5 @@
 ---
-title: Schnellstart
+title: Erste Schritte
 ---
 
 Willkommen im Schnellstart-Leitfaden für **Gemanagtes MariaDB** von Cloud Temple.

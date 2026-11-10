@@ -32,11 +32,11 @@ Existen 2 formas de clonar una máquina virtual:
 <img src={backupCloneIaas_002} />
 
 - La segunda opción consiste en clonar la máquina virtual utilizando __una copia de seguridad__ de la máquina virtual y, a continuación, utilizando __la restauración en modo clonar__ de una copia de seguridad.
-Ve a la sección __'Copia de seguridad'__ de su máquina virtual y selecciona la acción __'Restaurar'__:
+Vaya a la sección __'Copia de seguridad'__ de su máquina virtual y seleccione la acción __'Restaurar'__:
 
 <img src={backupRestoIaas_001} />
 
-Selecciona a continuación la opción __'Clonar'__ de restauración:
+Seleccione a continuación la opción __'Clonar'__ de restauración:
 
 <img src={backupCloneIaas_004} />
 
@@ -97,7 +97,7 @@ Acceda a la página __'Máquinas Virtuales'__, seleccione una máquina virtual y
 El __quiescing__ es un proceso que consiste en notificar al sistema para que se ponga en un estado adecuado antes de iniciar la instantánea.
 Por defecto, el __quiescing está activado__. Puede desactivarse manualmente en el caso de que el sistema gestione mal la instantánea o si el agente del hipervisor no está instalado en la máquina virtual.
 
-Para ello, en la sección __'Copias de seguridad'__ de tu máquina virtual, haz clic en __'Modificar opciones'__ y desactiva el __quiescing__:
+Para ello, en la sección __'Copias de seguridad'__ de su máquina virtual, haga clic en __'Modificar opciones'__ y desactive el __quiescing__:
 
 <img src={backupPolicyIaas_007} />
 

@@ -1,9 +1,9 @@
 ---
-title: Tutoriali
+title: Integrazioni e framework di LLMaaS
 sidebar_position: 6
 ---
 
-# Tutoriali LLMaaS
+# Integrazioni e framework di LLMaaS
 
 :::info[Scegliere i modelli prima di eseguire gli esempi]
 Le credenziali utilizzate illustrano le integrazioni. Verificarne la disponibilità con `GET /v1/models`, le loro capacità e il loro [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle). Adattare la configurazione al proprio utilizzo; un nome obsoleto potrebbe essere reindirizzato a un successore.
@@ -166,14 +166,14 @@ if __name__ == "__main__":
 
 ### 2. RAG (Retrieval-Augmented Generation) con l'API LLMaaS
 
-Il RAG è una tecnica potente che permette a un LLM di rispondere a domande basandosi su una base di conoscenze esterna. Questo tutorial ti guida attraverso la creazione di una pipeline RAG semplice utilizzando la nostra API per gli embeddings e la generazione, e FAISS, una libreria di similarità vettoriale, per creare un indice in memoria.
+Il RAG è una tecnica potente che permette a un LLM di rispondere a domande basandosi su una base di conoscenze esterna. Questo tutorial vi guida attraverso la creazione di una pipeline RAG semplice utilizzando la nostra API per gli embeddings e la generazione, e FAISS, una libreria di similarità vettoriale, per creare un indice in memoria.
 
 #### Il codice spiegato
 
 Il pipeline si scompone in diverse fasi logiche:
 
 1. **Configurazione**: Importiamo le librerie necessarie e carichiamo la nostra chiave API dalle variabili di ambiente. Definiamo i modelli da utilizzare: `granite-embedding:278m` per la vettorizzazione e `gpt-oss:120b` per la generazione.
-2. **`OpenAIEmbeddings`**: Il client standard invia i testi a LLMaaS con `check_embedding_ctx_length=False` e richiede vettori numerici con `encoding_format="float"`. La suddivisione dei documenti avviene prima della chiamata; consulta le [impostazioni embeddings](./api.md#utilizzo-degli-embeddings).
+2. **`OpenAIEmbeddings`**: Il client standard invia i testi a LLMaaS con `check_embedding_ctx_length=False` e richiede vettori numerici con `encoding_format="float"`. La suddivisione dei documenti avviene prima della chiamata; consultate le [impostazioni embeddings](./api.md#utilizzo-degli-embeddings).
 3. **`setup_rag_pipeline`**: Questa funzione coordina la creazione del pipeline.
     * **Caricamento dei documenti**: `DirectoryLoader` carica i file di testo dalla nostra base di conoscenza.
     * **Divisione in chunk**: `RecursiveCharacterTextSplitter` divide i documenti in pezzi più piccoli. Questo è essenziale affinché il modello di embedding possa elaborare il testo in modo efficiente e affinché la ricerca per similarità sia precisa.
@@ -303,15 +303,15 @@ Questo tutorial adatta il pipeline RAG precedente per utilizzare Qdrant.
 2. **`setup_qdrant_rag_pipeline`**:
     * **Embeddings e Documenti**: La creazione degli embeddings e dei documenti rimane identica all'esempio precedente.
     * **Connessione a Qdrant**: Invece di creare un indice FAISS, utilizziamo `QdrantVectorStore.from_documents`. Questo metodo LangChain gestisce diversi passaggi:
-        a. Si connette alla tua istanza Qdrant tramite l'URL fornito.
+        a. Si connette alla vostra istanza Qdrant tramite l'URL fornito.
         b. Crea una nuova "collezione" (l'equivalente di una tabella in un database SQL) se non esiste.
         c. Chiama il client `OpenAIEmbeddings` per vettorizzare i documenti.
         d. Inserisce i documenti e i loro vettori nella collezione Qdrant.
-    * **`force_recreate=True`**: Per questo tutorial, utilizziamo questo parametro per assicurarci che la collezione sia vuota ad ogni esecuzione. In produzione, lo imposterebbe a `False` per conservare i tuoi dati.
+    * **`force_recreate=True`**: Per questo tutorial, utilizziamo questo parametro per assicurarci che la collezione sia vuota ad ogni esecuzione. In produzione, lo impostereste a `False` per conservare i vostri dati.
 3. **Il resto del pipeline** (configurazione del LLM, creazione della catena `RetrievalQA`) è identico, il che dimostra la flessibilità di LangChain: basta cambiare la fonte del `retriever` (il cercatore di informazioni) per passare da FAISS a Qdrant.
 
 :::info[Prerequisiti: Avviare Qdrant]
-Per questo tutorial, avrai bisogno di un'istanza di Qdrant. Puoi avviarla facilmente con Docker:
+Per questo tutorial, avrete bisogno di un'istanza di Qdrant. Potete avviarla facilmente con Docker:
 
 ```bash
 # 1. Télécharger la dernière image de Qdrant
@@ -322,7 +322,7 @@ docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
 ```
 :::
 
-Il codice sottostante mostra come adattare il pipeline RAG per utilizzare Qdrant come database vettoriale. I documenti di dimostrazione sono brevi; per i tuoi documenti, applica una suddivisione preventiva come nel tutorial FAISS.
+Il codice sottostante mostra come adattare il pipeline RAG per utilizzare Qdrant come database vettoriale. I documenti di dimostrazione sono brevi; per i vostri documenti, applicate una suddivisione preventiva come nel tutorial FAISS.
 
 ```python
 import os
@@ -570,7 +570,7 @@ if __name__ == "__main__":
 
 **Configurazione dell'SDK OpenAI per LLMaaS**
 
-Questo esempio utilizza le chiamate supportate da LLMaaS. Per adattare un'applicazione esistente, consulta le [differenze documentate](./api.md#compatibilità-openai).
+Questo esempio utilizza le chiamate supportate da LLMaaS. Per adattare un'applicazione esistente, consultate le [differenze documentate](./api.md#compatibilità-openai).
 
 ```python
 from openai import OpenAI
@@ -878,35 +878,35 @@ if __name__ == "__main__":
 
 ### 8. Configurazione dell'estensione CLINE per VSCode
 
-Questo tutorial ti guida nella configurazione dell'estensione CLINE in Visual Studio Code per utilizzare i modelli di linguaggio di Cloud Temple direttamente dal tuo editor.
+Questo tutorial vi guida nella configurazione dell'estensione CLINE in Visual Studio Code per utilizzare i modelli di linguaggio di Cloud Temple direttamente dal vostro editor.
 
 #### Passaggi di configurazione
 
-1. **Aprire le impostazioni di CLINE** : In VSCode, apri le impostazioni dell'estensione CLINE.
-2. **Creare un nuovo modello** : Aggiungi una nuova configurazione del modello.
-3. **Compilare i campi** : Configura i campi come segue, basandoti sull'immagine sottostante.
+1. **Aprire le impostazioni di CLINE** : In VSCode, aprite le impostazioni dell'estensione CLINE.
+2. **Creare un nuovo modello** : Aggiungete una nuova configurazione del modello.
+3. **Compilare i campi** : Configurate i campi come segue, basandovi sull'immagine sottostante.
 
     ![Configurazione di CLINE per LLMaaS](@site/docs/llmaas/images/cline_configuration.png)
 
-    * **API Provider**: Seleziona `OpenAI Compatible`.
-    * **Base URL**: Inserisci l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
-    * **OpenAI Compatible API Key**: Incolla la chiave API che hai generato dalla console Cloud Temple.
+    * **API Provider**: Selezionate `OpenAI Compatible`.
+    * **Base URL**: Inserite l'endpoint dell'API LLMaaS di Cloud Temple: `https://api.ai.cloud-temple.com/v1`.
+    * **OpenAI Compatible API Key**: Incollate la chiave API che avete generato dalla console Cloud Temple.
 
     :::tip[Generazione della chiave API]
-    Per generare la tua chiave API, vai nella console Cloud Temple, sezione **LLMaaS** > **Chiavi API**, e clicca su **"Crea una chiave API"**.
+    Per generare la vostra chiave API, andate nella console Cloud Temple, sezione **LLMaaS** > **Chiavi API**, e cliccate su **"Crea una chiave API"**.
 
     ![Creazione di una chiave API dalla console](@site/docs/llmaas/images/console_create_api_key.png)
     :::
 
-    * **Model ID**: Specifica il modello che desideri utilizzare, ad esempio `qwen3.6:35b`. Puoi trovare l'elenco dei modelli disponibili nella sezione [Modelli](./models.md).
+    * **Model ID**: Specificate il modello che desiderate utilizzare, ad esempio `qwen3.6:35b`. Potete trovare l'elenco dei modelli disponibili nella sezione [Modelli](./models.md).
     * **Model Configuration**:
-        * **Supports Images**: Spunta questa casella se il modello supporta le immagini.
-        * **Supports browser use**: Spunta questa casella.
-        * **Context Window Size**: Indica la dimensione della finestra di contesto del modello (es: `128000`).
-        * **Max Output Tokens**: Lascia a `-1` per un'uscita non limitata di default.
-        * **Temperature**: Regola la temperatura in base alle tue esigenze (es: `0`).
+        * **Supports Images**: Spuntate questa casella se il modello supporta le immagini.
+        * **Supports browser use**: Spuntate questa casella.
+        * **Context Window Size**: Indicate la dimensione della finestra di contesto del modello (es: `128000`).
+        * **Max Output Tokens**: Lasciate a `-1` per un'uscita non limitata di default.
+        * **Temperature**: Regolate la temperatura in base alle vostre esigenze (es: `0`).
 
-Ora puoi selezionare un modello in CLINE e utilizzarlo per generare codice, rispondere a domande, ecc.
+Ora potete selezionare un modello in CLINE e utilizzarlo per generare codice, rispondere a domande, ecc.
 
 ---
 

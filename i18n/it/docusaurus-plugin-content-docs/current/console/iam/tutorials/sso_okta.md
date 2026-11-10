@@ -20,11 +20,11 @@ La configurazione della federazione di identità con Okta consente di integrare 
 
 ### Fase 1: Configurazione lato Okta
 
-1. Accedi alla tua console di amministrazione Okta
-2. Vai su **Applications** > **Applications**
-3. Fai clic su **Create App Integration**
-4. Seleziona **SAML 2.0** come metodo di autenticazione
-5. Configura le impostazioni SAML per Cloud Temple
+1. Accedete alla vostra console di amministrazione Okta
+2. Andate su **Applications** > **Applications**
+3. Fate clic su **Create App Integration**
+4. Selezionate **SAML 2.0** come metodo di autenticazione
+5. Configurate le impostazioni SAML per Cloud Temple
 
 ### Passo 2: Configurazione dei parametri SAML
 
@@ -36,7 +36,7 @@ Configurare i seguenti parametri in Okta:
 
 ### Fase 3: Richiesta di configurazione Cloud Temple
 
-Per configurare la federazione con Okta, crea una richiesta di supporto nella console Cloud Temple specificando:
+Per configurare la federazione con Okta, create una richiesta di supporto nella console Cloud Temple specificando:
 
 - Il nome della vostra Organizzazione
 - Il nome di un contatto con la relativa email e numero di telefono

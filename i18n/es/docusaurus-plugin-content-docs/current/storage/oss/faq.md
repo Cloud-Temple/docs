@@ -56,6 +56,17 @@ El servicio verifica:
 
 Cualquier condición no cumplida provoca el rechazo del acceso.
 
+## ¿Por qué una cuenta de almacenamiento no puede acceder a un bucket adicional?
+
+Una cuenta de almacenamiento puede acceder a **10 buckets** como máximo. Más allá, la asignación de acceso a un 11.º bucket falla. El límite se aplica a la **cuenta de almacenamiento**, no al bucket.
+
+Dos soluciones:
+
+- revocar el acceso de la cuenta a un bucket que ya no necesita, desde la pestaña '__Policies__' de ese bucket;
+- utilizar otra cuenta de almacenamiento para los buckets adicionales.
+
+Consulte [Gestión de políticas de acceso](./quickstart.md#gestión-de-políticas-de-acceso).
+
 ## Escenarios de uso recomendados
 
 - **Archivado interno del cliente**: buckets privados accesibles únicamente desde las IP públicas dedicadas del cliente (gestión mediante lista blanca).

@@ -30,13 +30,13 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concetto
 
-Il monitoraggio del deployment di nuove risorse avviene nel menu __'Comandi'__ accessibile nella barra verde a sinistra dello schermo.
+Il monitoraggio del deployment di nuove risorse si effettua nel menu __'Marketplace'__ > __'Ordini'__ accessibile nella barra verde a sinistra dello schermo.
 
-Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della tua [Organisation](iam/concepts.md#organizzazioni).
+Consente di visualizzare le risorse Cloud ordinate, in fase di deployment e gli eventuali errori all'interno di un [Tenant](iam/concepts.md#tenant) della vostra [Organisation](iam/concepts.md#organizzazioni).
 
 <img src={shivaOrdersList} />
 
-*__Nota : al momento, non è ancora possibile visualizzare globalmente, a livello di organizzazione, l'insieme delle risorse deployate nei diversi tenant.__ Questo argomento verrà trattato in seguito con l'implementazione di un portale dedicato al committente (nel senso di firmatario) e alla gestione della propria organizzazione.*
+*__Nota: la visualizzazione globale, a livello di organizzazione, dell'insieme delle risorse deployate nei diversi tenant non è disponibile.__*
 
 Il deployment delle risorse o la loro rimozione avvengono in ciascun prodotto nei menu __'IaaS'__ e __'Rete'__ a sinistra dello schermo nella barra verde.
 
@@ -48,11 +48,11 @@ Dalla pagina dei comandi, è possibile visualizzare lo stato di avanzamento di u
 
 <img src={shivaOrderStatus} />
 
-__Nota__ : __non è possibile avviare più comandi dello stesso tipo di risorsa simultaneamente. Dovrai quindi attendere che il comando in corso venga elaborato e completato prima di poterne eseguire uno nuovo. Ciò garantisce una gestione efficiente e ordinata delle risorse all'interno del tuo ambiente.__
+__Nota__ : __non è possibile avviare più comandi dello stesso tipo di risorsa simultaneamente. Dovrete quindi attendere che il comando in corso venga elaborato e completato prima di poterne eseguire uno nuovo. Ciò garantisce una gestione efficiente e ordinata delle risorse all'interno del vostro ambiente.__
 
 ## Ordinare una nuova zona di disponibilità
 
-È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Ordine__". Questa opzione consente di estendere le proprie risorse e migliorare la disponibilità e la resilienza delle applicazioni con pochi semplici clic:
+È possibile aggiungere una nuova zona di disponibilità accedendo al menu "__Marketplace__ > __Ordini__". Questa opzione consente di estendere le proprie risorse e di migliorare la disponibilità e la resilienza delle proprie applicazioni in pochi clic :
 
 <img src={shivaOrderAz_01} />
 
@@ -104,29 +104,29 @@ __Punti chiave da ricordare__ :
 
 ### Distribuire un nuovo cluster di calcolo
 
-Procedi all'ordine di un cluster di hypervisor selezionando le opzioni adatte alle tue esigenze di virtualizzazione. Definisci le caratteristiche chiave come il numero di hypervisor, il tipo di cluster, la quantità di memoria, nonché le risorse di calcolo richieste:
+Procedete all'ordine di un cluster di hypervisor selezionando le opzioni adatte alle vostre esigenze di virtualizzazione. Definite le caratteristiche chiave come il numero di hypervisor, il tipo di cluster, la quantità di memoria, nonché le risorse di calcolo richieste:
 
 <img src={shivaOrderClucalc_01} />
 
-Seleziona la zona di disponibilità:
+Selezionate la zona di disponibilità:
 
 <img src={shivaOrderClucalc_02} />
 
-Scegli il tipo di blade di calcolo:
+Scegliete il tipo di blade di calcolo:
 
 <img src={shivaOrderClucalc_03} />
 
-Hai successivamente la possibilità di selezionare reti già esistenti e di propagarle, oppure di crearne di nuove direttamente in questa fase, in base alle esigenze della tua infrastruttura. Tieni presente che il numero totale di reti configurabili è limitato a un massimo di 20:
+Avete successivamente la possibilità di selezionare reti già esistenti e di propagarle, oppure di crearne di nuove direttamente in questa fase, in base alle esigenze della vostra infrastruttura. Tenete presente che il numero totale di reti configurabili è limitato a un massimo di 20:
 
 <img src={shivaOrderClucalc_04} />
 
-Otterrai successivamente un riepilogo delle opzioni selezionate prima di confermare il tuo ordine e potrai successivamente visualizzare il tuo ordine in corso:
+Otterrete successivamente un riepilogo delle opzioni selezionate prima di confermare il vostro ordine e potrete successivamente visualizzare il vostro ordine in corso:
 
 <img src={shivaOrderClucalc_05} />
 
 ### Distribuire un nuovo cluster di storage
 
-Nel menu "__ordine__", procedere all'ordine di un __nuovo cluster di storage__ per il proprio ambiente selezionando le opzioni che corrispondono alle proprie esigenze in termini di capacità, prestazioni e ridondanza. Selezionare la posizione:
+Nel menu "__Marketplace__ > __Ordini__", procedere all'ordine di un __nuovo cluster di storage__ per il proprio ambiente selezionando le opzioni che corrispondono alle proprie esigenze in termini di capacità, performance e ridondanza. Selezionare la posizione :
 
 <img src={shivaOrderClusto_01} />
 
@@ -145,10 +145,10 @@ Si accede quindi a un riepilogo completo delle opzioni selezionate, che consente
 ### Distribuire un nuovo datastore all'interno di un cluster SDRS VMware
 
 In questo esempio, aggiungeremo storage a blocchi per un'infrastruttura VMware.
-Per aggiungere un datastore aggiuntivo nel tuo cluster di storage SDRS, vai nel sottomenu __'Infrastruttura'__ e poi __'VMWare'__.
-Seleziona quindi lo stack vmware e la zona di disponibilità. Vai quindi nel sottomenu __'Storage'__.
+Per aggiungere un datastore aggiuntivo nel vostro cluster di storage SDRS, andate nel sottomenu __'Infrastruttura'__ e poi __'VMWare'__.
+Selezionate quindi lo stack vmware e la zona di disponibilità. Andate quindi nel sottomenu __'Storage'__.
 
-Seleziona il cluster SDRS corrispondente alle caratteristiche di prestazioni desiderate e fai clic sul pulsante __'Aggiungi datastore'__ che si trova nella tabella
+Selezionate il cluster SDRS corrispondente alle caratteristiche di prestazioni desiderate e fate clic sul pulsante __'Aggiungi datastore'__ che si trova nella tabella
 con l'elenco dei datastore.
 
 <img src={shivaOrdersIaasSpoolDs} />
@@ -157,7 +157,7 @@ __nota__ :
 
 - *La dimensione della più piccola LUN attivabile su un cluster è di __500 GiB__.*
 - *Le prestazioni di un datastore vanno da 500 IOPS/TiB in media fino a 15000 IOPS/TiB in media. __Si tratta di una limitazione software realizzata a livello dei controller di storage__, soggetta a un limite hardware assoluto di 30 000 IOPS e 1024 MB/s massimo per LUN.*
-- *Il calcolo del volume di disco consumato dalla tua organizzazione è la somma di tutte le LUN su tutte le AZ utilizzate*.*
+- *Il calcolo del volume di disco consumato dalla vostra organizzazione è la somma di tutte le LUN su tutte le AZ utilizzate*.*
 - *I permessi __'order'__ e __'compute'__ sono necessari all'account per eseguire questa azione.*
 
 ### Ordinare nuove reti
@@ -179,7 +179,7 @@ __Flessibilità delle reti__ :
 - Una rete può essere __terminata in una zona di hosting__ per le proprie apparecchiature fisiche
 - __Limite__ : Massimo 20 reti per ordine. È possibile effettuare più ordini consecutivi per estendere questo numero in base alle proprie esigenze
 
-L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant vengono eseguite nel menu __'Rete'__ della barra verde a sinistra dello schermo. Le reti verranno prima create, quindi verrà generato un ordine separato per propagarle. È possibile monitorare l'avanzamento degli ordini in corso accedendo alla scheda "Ordine" nel menu, oppure facendo clic sulle etichette informative che reindirizzano agli ordini attivi o in fase di elaborazione.
+L'ordine di una nuova rete e le decisioni di condivisione tra i propri tenant, vengono effettuate nel menu __'Rete'__ della barra verde a sinistra dello schermo. Le reti verranno prima create, poi un ordine distinto verrà generato per propagarle. È possibile seguire l'avanzamento degli ordini in corso accedendo al menu "Marketplace > Ordini", o cliccando sui label di informazione che reindirizzano verso gli ordini attivi o in corso di elaborazione.
 
 <img src={shivaOrdersNet_002} />
 
@@ -193,7 +193,7 @@ Fare clic sull'opzione "Propaga" per una rete già esistente, quindi selezionare
 
 ### Disattivazione di una rete
 
-Una rete può essere disattivata anche se necessario. Questa opzione consente di mettere temporaneamente in pausa l'accesso o l'utilizzo della rete senza eliminarla definitivamente, offrendo così flessibilità nella gestione della tua infrastruttura in base alle tue esigenze.
+Una rete può essere disattivata anche se necessario. Questa opzione consente di mettere temporaneamente in pausa l'accesso o l'utilizzo della rete senza eliminarla definitivamente, offrendo così flessibilità nella gestione della vostra infrastruttura in base alle vostre esigenze.
 
 L'opzione di disattivazione si trova nelle opzioni della rete selezionata. '
 
@@ -223,8 +223,8 @@ __Alta disponibilità__ :
 L'aggiunta di hypervisor a un cluster di calcolo avviene nel menu __'IaaS'__ nella barra verde a sinistra dello schermo.
 Nell'esempio seguente, aggiungeremo capacità di calcolo a un cluster di hypervisor che utilizza la tecnologia VMware.
 
-Vai nel sottomenu __'Infrastructure'__ quindi __'VMWare'__. Scegli quindi lo stack vmware, la zona di disponibilità e il cluster di calcolo.
-In questo esempio, si tratta del __'clu001-ucs12'__. Clicca sul pulsante __'Aggiungi host'__ che si trova nella tabella con l'elenco degli host, in alto a destra.
+Andate nel sottomenu __'Infrastructure'__ quindi __'VMWare'__. Scegliete quindi lo stack vmware, la zona di disponibilità e il cluster di calcolo.
+In questo esempio, si tratta del __'clu001-ucs12'__. Cliccate sul pulsante __'Aggiungi host'__ che si trova nella tabella con l'elenco degli host, in alto a destra.
 
 __nota__ :
 

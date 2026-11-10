@@ -8,12 +8,16 @@
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.Market Place": {
-    "message": "Market Place",
+    "message": "Centrales de compra",
     "description": "The title of the footer links column with title=Market Place in the footer"
   },
   "link.item.label.Status page": {
-    "message": "StatusPage",
+    "message": "Página de estado",
     "description": "The label of footer link with label=Status page linking to https://status.cloud-temple.com/"
+  },
+  "link.item.label.Documentation history": {
+    "message": "Historial de la documentación",
+    "description": "The label of footer link with label=Documentation history linking to /changelog"
   },
   "link.item.label.Tutorials": {
     "message": "Tutoriales",
@@ -35,9 +39,9 @@
     "message": "Sitio web de Cloud Temple",
     "description": "The label of footer link with label=Cloud Temple Web Site linking to https://cloud-temple.com"
   },
-  "link.item.label.Cloud Temple Roadmap": {
-    "message": "Hoja de ruta de Cloud Temple",
-    "description": "The label of footer link with label=Cloud Temple Roadmap linking to https://github.com/orgs/Cloud-Temple/projects/2"
+  "link.item.label.Roadmap": {
+    "message": "Roadmap",
+    "description": "The label of footer link with label=Roadmap linking to https://github.com/orgs/Cloud-Temple/projects/2"
   },
   "link.item.label.Privacy": {
     "message": "Privacidad",
@@ -58,5 +62,17 @@
   "copyright": {
     "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"/contracts\">Contratos</a> |\n        <a href=\"/privacy\">Política de privacidad</a>\n        <br />\n        Copyright © 2026 Cloud Temple.\n      </div>\n    ",
     "description": "The footer copyright"
+  },
+  "link.title.Contractual": {
+    "message": "Contratos",
+    "description": "The title of the footer link column with title=Contractual in the footer"
+  },
+  "link.item.label.Contractual Documents": {
+    "message": "Documentos contractuales",
+    "description": "The label of the footer link with label=Contractual Documents in the footer"
+  },
+  "link.item.label.Shared Responsibility Model": {
+    "message": "Modelo de responsabilidad compartida",
+    "description": "The label of the footer link with label=Shared Responsibility Model in the footer"
   }
 }

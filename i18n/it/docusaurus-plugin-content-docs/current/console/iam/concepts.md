@@ -21,7 +21,7 @@ import shivaTenantRessources_01 from '@site/docs/console/iam/images/shiva_tenant
 
 La gestione degli accessi nella Console si basa su due livelli annidati:
 
-- l'__[organizzazione](#organizzazioni)__: l'entità contrattuale. Contiene gli account utente, la configurazione di autenticazione e l'insieme dei tuoi tenant;
+- l'__[organizzazione](#organizzazioni)__: l'entità contrattuale. Contiene gli account utente, la configurazione di autenticazione e l'insieme dei vostri tenant;
 - il __[tenant](#tenant)__: un raggruppamento di risorse all'interno dell'organizzazione. Contiene le risorse tecniche e i permessi degli utenti.
 
 Tra i due si colloca un __perimetro comune__: l'identità dell'utente. Un account viene creato una sola volta nell'organizzazione e successivamente utilizzato in tutti i tenant ai quali ha accesso.
@@ -45,21 +45,21 @@ I permessi non vengono __mai__ configurati a livello di organizzazione: sono def
 ## Perimetro comune: l'account utente
 
 Gli account di accesso alla Console vengono creati dall'account master del committente su invito (indipendentemente dalla directory di autenticazione).
-Le credenziali sono globali per la tua [Organizzazione](#organizzazioni): un utente dispone di un solo account, indipendentemente dal numero di tenant in cui opera.
+Le credenziali sono globali per la vostra [Organizzazione](#organizzazioni): un utente dispone di un solo account, indipendentemente dal numero di tenant in cui opera.
 
 *__Nota:__ [La federazione delle identità viene gestita a livello di organizzazione](#meccanismi-di-autenticazione)*
 
-Le azioni descritte di seguito riguardano l'account in sé, indipendentemente dal tenant al quale sei connesso.
+Le azioni descritte di seguito riguardano l'account in sé, indipendentemente dal tenant al quale siete connessi.
 
 ### Aggiornare il proprio profilo
 
 Questa azione è disponibile solo per un account locale (non SSO).
 
-Seleziona nel tuo __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e seleziona l'azione __'Aggiorna il tuo profilo'__.
+Selezionate nel vostro __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e selezionate l'azione __'Aggiorna il tuo profilo'__.
 
-Vai quindi alla tua casella di posta e fai clic sul link generato dalla Console. Segui semplicemente i passaggi per aggiornare il tuo profilo.
+Andate quindi alla vostra casella di posta e fate clic sul link generato dalla Console. Seguite semplicemente i passaggi per aggiornare il vostro profilo.
 
-__Avviso__: Verifica di essere tu a richiedere l'aggiornamento del profilo. Segnala tramite un ticket di supporto tutte le richieste che non provengono da te.
+__Avviso__: Verificate di essere voi a richiedere l'aggiornamento del profilo. Segnalate tramite un ticket di supporto tutte le richieste che non provengono da voi.
 
 <img src={shivaProfil_014} />
 
@@ -67,11 +67,11 @@ __Avviso__: Verifica di essere tu a richiedere l'aggiornamento del profilo. Segn
 
 Questa azione è disponibile solo per un account locale (non SSO).
 
-Seleziona nel tuo __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e seleziona l'azione __'Reimposta password'__.
+Selezionate nel vostro __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e selezionate l'azione __'Reimposta password'__.
 
-Quindi, accedi alla tua casella di posta e fai clic sul link generato dalla Console. Segui semplicemente i passaggi per aggiornare la tua password.
+Quindi, accedete alla vostra casella di posta e fate clic sul link generato dalla Console. Seguite semplicemente i passaggi per aggiornare la vostra password.
 
-__Avviso__: Assicurati di essere tu a richiedere la reimpostazione della password. Segnala eventuali richieste non effettuate da te tramite un ticket di supporto.
+__Avviso__: Assicuratevi di essere voi a richiedere la reimpostazione della password. Segnalate eventuali richieste non effettuate da voi tramite un ticket di supporto.
 
 <img src={shivaProfil_015} />
 
@@ -79,11 +79,11 @@ __Avviso__: Assicurati di essere tu a richiedere la reimpostazione della passwor
 
 Questa azione è disponibile solo per un account locale (non SSO).
 
-Seleziona nel tuo __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e seleziona l'azione __'Reimposta MFA'__.
+Selezionate nel vostro __'Profilo'__, in alto a destra dello schermo, quindi __'Impostazioni utente'__ e selezionate l'azione __'Reimposta MFA'__.
 
-Quindi, accedi alla tua casella di posta elettronica e fai clic sul link generato dalla Console. Segui semplicemente i passaggi per aggiornare la tua autenticazione a due fattori.
+Quindi, accedete alla vostra casella di posta elettronica e fate clic sul link generato dalla Console. Seguite semplicemente i passaggi per aggiornare la vostra autenticazione a due fattori.
 
-__Attenzione__: Assicurati di essere tu a richiedere la reimpostazione della tua autenticazione a due fattori. Segnala tramite un ticket di supporto qualsiasi richiesta che non proviene da te.
+__Attenzione__: Assicuratevi di essere voi a richiedere la reimpostazione della vostra autenticazione a due fattori. Segnalate tramite un ticket di supporto qualsiasi richiesta che non proviene da voi.
 
 <img src={shivaProfil_016} />
 
@@ -127,9 +127,9 @@ L'organizzazione ha quattro ruoli principali:
 - Rappresenta __l'entità contrattuale__ per gli aspetti di monitoraggio e fatturazione,
 - Definisce __la configurazione globale del meccanismo di autenticazione__: l'autenticazione può essere locale a livello di Console o remota tramite un servizio di federazione delle identità,
 - Gestisce l'insieme dei __account utente__,
-- __Raggruppa i tenant__ (Produzione, Preproduzione, Dev, Applicazione 1, Applicazione 2, ...) che definisci per le esigenze della tua architettura Cloud.
+- __Raggruppa i tenant__ (Produzione, Preproduzione, Dev, Applicazione 1, Applicazione 2, ...) che definite per le esigenze della vostra architettura Cloud.
 
-I ruoli (diritti/permessi) degli utenti sono configurabili per ogni tenant definito nella tua organizzazione. Ad esempio, un account può essere autorizzato a richiedere risorse in un tenant, ma non in un altro.
+I ruoli (diritti/permessi) degli utenti sono configurabili per ogni tenant definito nella vostra organizzazione. Ad esempio, un account può essere autorizzato a richiedere risorse in un tenant, ma non in un altro.
 
 ### Cosa si gestisce a livello di organizzazione
 
@@ -138,11 +138,11 @@ Il perimetro dell'organizzazione comprende:
 - il __meccanismo di autenticazione__ comune a tutti gli account,
 - il __ciclo di vita degli account utente__: invito, reiscrizione, eliminazione,
 - la __designazione dei proprietari dell'organizzazione__,
-- l'__elenco dei tenant__ della tua architettura,
+- l'__elenco dei tenant__ della vostra architettura,
 - gli __indirizzi IP autorizzati__ ad accedere alla Console, un elenco unico valido per tutti i tenant.
 
 :::warning[I permessi non si gestiscono qui]
-La pagina __'Utenti'__ dell'organizzazione consente di creare un account, designarlo come proprietario ed eliminarlo. __Non__ consente di assegnare permessi: questi sono propri di ciascun tenant e si configurano dal tenant interessato (vedi [Assegnazione dei permessi in un tenant](#assegnazione-dei-permessi-in-un-tenant)).
+La pagina __'Utenti'__ dell'organizzazione consente di creare un account, designarlo come proprietario ed eliminarlo. __Non__ consente di assegnare permessi: questi sono propri di ciascun tenant e si configurano dal tenant interessato (vedete [Assegnazione dei permessi in un tenant](#assegnazione-dei-permessi-in-un-tenant)).
 :::
 
 ### Meccanismi di autenticazione
@@ -166,15 +166,17 @@ I seguenti repository esterni sono supportati:
 È richiesto un indirizzo e-mail per tutti gli account derivanti da una federazione di identità. Gli account creati senza indirizzo e-mail non potranno effettuare l'accesso e potrebbero essere eliminati automaticamente.
 :::
 
-### Creazione di un account utente nella tua organizzazione
+<a id="creazione-di-un-account-utente-nella-tua-organizzazione"></a>
 
-La creazione di un account utente nella tua organizzazione avviene tramite invito. Per invitare un utente in una [Organizzazione](#organizzazioni), vai al menu __'Amministrazione'__ a sinistra dello schermo sulla barra verde e poi nel sottomenu __'Utenti'__.
+### Creazione di un account utente nella vostra organizzazione
 
-Fai clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
+La creazione di un account utente nella vostra organizzazione avviene tramite invito. Per invitare un utente in una [Organizzazione](#organizzazioni), andate al menu __'Amministrazione'__ a sinistra dello schermo sulla barra verde e poi nel sottomenu __'Utenti'__.
+
+Fate clic sul pulsante __'Nuovo Utente'__ dalla pagina degli utenti.
 
 <img src={shivaOnboard_003} />
 
-Indica quindi l'indirizzo email dell'utente
+Indicate quindi l'indirizzo email dell'utente
 
 <img src={shivaOnboard_004} />
 
@@ -213,7 +215,7 @@ __Attenzione__: Assicurarsi di essere l'effettivo richiedente della reiscrizione
 
 L'eliminazione di un utente deve essere eseguita nella scheda __'Utente'__ del pannello Amministrazione, in basso a sinistra dello schermo.
 
-Seleziona l'utente che desideri eliminare, quindi fai clic sul pulsante di azione alla fine della riga e su __'Elimina'__.
+Selezionate l'utente che desiderate eliminare, quindi fate clic sul pulsante di azione alla fine della riga e su __'Elimina'__.
 
 <img src={shivaProfil_013} />
 <img src={shivaProfil_010} />
@@ -281,7 +283,7 @@ L'elenco delle autorizzazioni e le relative definizioni sono accessibili [qui](#
 
 ### Gestione dei proprietari su un tenant
 
-Ogni tenant dispone di almeno un proprietario, garantendo così una responsabilità chiara e una gestione efficace delle risorse associate. Inoltre, è possibile assegnare più proprietari allo stesso tenant, consentendo una collaborazione e una presa di decisioni condivisa. Di seguito, troverai informazioni importanti da considerare durante la gestione di questi proprietari.
+Ogni tenant dispone di almeno un proprietario, garantendo così una responsabilità chiara e una gestione efficace delle risorse associate. Inoltre, è possibile assegnare più proprietari allo stesso tenant, consentendo una collaborazione e una presa di decisioni condivisa. Di seguito, troverete informazioni importanti da considerare durante la gestione di questi proprietari.
 
 Il proprietario di un tenant è un ruolo distinto dal [proprietario dell'organizzazione](#gestione-dei-proprietari-dellorganizzazione): assume la responsabilità di un perimetro di risorse, non del rapporto contrattuale.
 
@@ -321,7 +323,7 @@ Nota: *La rimozione di un IP autorizzato avviene tramite una richiesta di suppor
 
 È possibile visualizzare le risorse cloud consumate all'interno di un tenant, offrendo così una vista dettagliata dell'utilizzo dei diversi servizi distribuiti. Questa funzionalità consente agli utenti di monitorare in tempo reale il consumo delle proprie risorse, identificare i servizi più sollecitati e ottimizzarne l'utilizzo in base alle esigenze.
 
-Nel menu della console, fare clic su "Report di consumo" e selezionare il periodo di tempo desiderato. In questo modo sarà possibile visualizzare nel dettaglio il consumo delle risorse cloud nel periodo definito, consentendo di analizzare l'utilizzo dei servizi e ottimizzare di conseguenza la propria gestione:
+Nel menu **Gestore dei costi**, aprire la scheda "Report di consumo" quindi selezionare il periodo di tempo desiderato. Sarà così possibile visualizzare in dettaglio la consumazione delle risorse cloud nel periodo definito, il che consentirà di analizzare l'utilizzo dei servizi e di ottimizzare la gestione di conseguenza:
 
 <img src={shivaTenantRessources_01} />
 
@@ -331,11 +333,13 @@ La Console consente una gestione granulare dei diritti degli utenti di un'organi
 Inizialmente, è l'account principale del committente a consentire la configurazione iniziale degli account e dei permessi associati.
 Successivamente, il permesso __'iam_write'__ consente a un account di gestire i permessi degli altri utenti, nel tenant in cui tale diritto gli è stato concesso.
 
-### Permessi disponibili per gli utenti della tua organizzazione
+<a id="permessi-disponibili-per-gli-utenti-della-tua-organizzazione"></a>
+
+### Permessi disponibili per gli utenti della vostra organizzazione
 
 Quando un utente viene creato, non dispone di alcun permesso di default. Ogni permesso viene assegnato individualmente e funziona in modo unitario, senza sovrapposizioni con altri permessi. Si applicano congiuntamente, il che significa che un utente deve disporre di tutti i permessi richiesti per eseguire un'azione specifica.
 
-I seguenti permessi sono configurabili per ogni utente e per ogni tenant della tua organizzazione :
+I seguenti permessi sono configurabili per ogni utente e per ogni tenant della vostra organizzazione :
 
 - Permessi di tipo “read” : consentono esclusivamente la consultazione delle risorse senza possibilità di modifica.
 - Permessi di tipo “write” : autorizzano la modifica delle configurazioni.

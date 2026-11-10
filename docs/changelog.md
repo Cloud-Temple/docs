@@ -1,13 +1,35 @@
 ---
-title: Suivi des Changements
-sidebar_position: 2
+title: Historique de la documentation
+displayed_sidebar: docSidebar
 ---
 
-# Suivi des Changements
+# Historique de la documentation
+
+### 10 Novembre 2026 : Nouvelle présentation et documentation harmonisée
+
+- **Présentation** : La documentation adopte la charte du site cloud-temple.com : couleurs, police Montserrat, mode sombre par défaut, page d'accueil repensée et recherche traduite dans les cinq langues.
+- **Navigation** : Chaque produit présente les mêmes rubriques (Vue d'ensemble, Concepts, Guide de démarrage, Tutoriels, Questions fréquentes) et sa vue d'ensemble renvoie vers chacune d'elles. Les produits managés sont rangés par familles, comme les autres produits.
+- **Pages Concepts** : La plupart des pages Concepts des produits suivent désormais une trame commune et sont alignées sur les pages produit du site cloud-temple.com.
+- **Nouvelles documentations** : [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) et [AIOps](./aiops/aiops.md). Un encadré signale les services managés qui ne se commandent pas depuis la Console.
+- **GPU** : Les GPU sont documentés au sein des offres qui les embarquent : IaaS VMware, IaaS OpenSource et Bare Metal. PaaS OpenShift propose un worker GPU H100.
+- **Console** : Un parcours de démarrage unique, l'[Onboarding](./console/onboarding.md), des libellés alignés sur la Console 5.1 et des captures d'écran de la nouvelle interface.
+- **Pages communes** : Nouvelle page [Stockage bloc](./storage/block/block_storage.md) ; la page [Régions et zones de disponibilité](./additional_content/concepts_regional.md) est réorganisée et décrit les zones de disponibilité.
+- **API** : Le [guide de l'API](./console/api.md) corrige l'authentification : la clé d'API (Personal Access Token) s'échange contre un jeton JWT, à utiliser ensuite comme jeton Bearer ; prérequis réseau et dépannage précisés.
+- **VM Instances** : La [FAQ](./public_cloud/vm_instances/faq.md) explique les quotas (vCPU, RAM, stockage), les opérations refusées quand ils sont atteints, la demande d'augmentation et la différence entre quotas et facturation.
+- **Évolutions des produits** : Elles se suivent sur la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2), filtrée par produit, et ne sont plus annoncées dans les pages.
+- **Traductions** : Les versions anglaise, allemande, espagnole et italienne sont resynchronisées avec le français.
+
+### 30 Octobre 2026 : Console v5.1.0
+
+- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les versions 4.53.2 et 5.1.0 : nouveau thème « Système » qui suit le mode clair ou sombre du système d’exploitation, rapport de consommation intégré au Gestionnaire des coûts avec des filtres par produit, SKU et tenant, et menu Commandes déplacé sous le Marketplace.
+
+### 21 Octobre 2026 : Nouvelle console Cloud Temple (v5.0.0)
+
+- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les versions 4.52.2 à 5.0.0, dont la nouvelle console : refonte complète de l’interface avec thème sombre, navigation simplifiée, nouvelle page de détail des machines virtuelles, pages Calcul et Stockage repensées et explorateur de fichiers Object Storage. L’ancienne version de la console reste accessible jusqu’à début décembre 2026 depuis la fenêtre « Nouveautés ».
 
 ### 12 Octobre 2026 : Notes de version de la Console jusqu’à la v4.52.0
 
-- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les nouveautés et correctifs des versions 4.50.0, 4.51.0 et 4.52.0, notamment les évolutions du réseau VPC, du déploiement cloud-init et de la restauration des machines virtuelles.
+- **Console** : Les [notes de version produits](./changelog_produits.md) présentent les nouveautés des versions 4.50.0, 4.51.0 et 4.52.0, notamment les évolutions du réseau VPC, du déploiement cloud-init et de la restauration des machines virtuelles.
 
 ### 10 Septembre 2026 : Documentation LLMaaS actualisée
 
@@ -62,7 +84,7 @@ sidebar_position: 2
 - **Navigation — Network** : Regroupement de VPC (preview) et Private Backbone sous une unique catégorie **Network** dans la navigation.
 - **Documents contractuels** : Restructuration complète de la documentation contractuelle — création d'une page hub `/contracts` (conditions générales, conditions particulières, conventions de service SecNumCloud, SLA VM instances) et d'une page hub `/shared-responsibility` (matrices RACI par service : IaaS, S3, PaaS, Kubernetes, LLMaaS, Réseau). Le menu latéral contractuel est remplacé par une colonne dédiée **Contractuel** dans le footer. Traductions disponibles EN/DE/ES/IT.
 - **VM Instances** : Mise à jour de l'engagement de niveau de service (SLA) de 99,9 % à 99,95 %.
-- **IaaS OpenSource** : Ajout d'une note sur la durée maximale de rétention des sauvegardes (24 mois maximum, migration vers Glacier prévue au T1 2027).
+- **IaaS OpenSource** : Ajout d'une note sur la durée maximale de rétention des sauvegardes (24 mois maximum).
 
 ### 15 Avril 2026 : Nouvelle documentation VM instances (Cloud Public)
 

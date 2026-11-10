@@ -1,4 +1,6 @@
 ---
+title: Accueil
+hide_title: true
 tags:
   - home
   - accueil
@@ -15,10 +17,6 @@ hide_table_of_contents: true
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">Gaia-X</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">CISPE</a>
     </div>
   </div>
 </div>
@@ -36,7 +34,7 @@ hide_table_of_contents: true
   <a href="./storage/oss/quickstart" class="quickstart-card">
     <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span>
     <div>
-      <div class="quickstart-title">Stockage Object S3</div>
+      <div class="quickstart-title">Stockage Objet S3</div>
       <div class="quickstart-desc">Configurez votre premier bucket compatible S3 en quelques minutes.</div>
     </div>
   </a>
@@ -59,9 +57,9 @@ hide_table_of_contents: true
 ## Pages populaires
 
 <div class="popular-links-grid">
-  <a class="popular-link" href="./console/console_quickstart">
-    <div class="popular-link-title">Quickstart Console <span>→</span></div>
-    <div class="popular-link-desc">Prise en main rapide de la Console Cloud Temple</div>
+  <a class="popular-link" href="./console/onboarding">
+    <div class="popular-link-title">Onboarding <span>→</span></div>
+    <div class="popular-link-desc">Vos premiers pas sur la plateforme, de l'inscription au premier déploiement</div>
   </a>
   <a class="popular-link" href="./managed_kubernetes/quickstart">
     <div class="popular-link-title">Kubernetes Managé <span>→</span></div>

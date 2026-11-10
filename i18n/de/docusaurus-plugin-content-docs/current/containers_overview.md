@@ -62,7 +62,7 @@ Unsere beratende Rolle besteht darin, Sie bei dieser Entscheidung zu begleiten. 
         <h3>PaaS OpenShift</h3>
       </div>
       <div className="card__body">
-        <p>Entdecken Sie unsere "as a Service"-Plattform, um Ihre Anwendungen auf einer SecNumCloud-zertifizierten Basis zu modernisieren.</p>
+        <p>Entdecken Sie unsere "as a Service"-Plattform, um Ihre Anwendungen auf einer SecNumCloud-qualifizierten Basis zu modernisieren.</p>
       </div>
       <div className="card__footer">
         <a href="./paas_openshift" className="button button--primary button--block">Mehr erfahren</a>

@@ -26,17 +26,17 @@ import backupInvIaas_001 from '@site/docs/iaas_vmware/tutorials/backup/images/ba
 
 Esistono 2 modi per clonare una macchina virtuale :
 
-- La prima opzione consente di clonare una macchina virtuale direttamente dall'icona __'Clona'__ della tua macchina virtuale :
+- La prima opzione consente di clonare una macchina virtuale direttamente dall'icona __'Clona'__ della vostra macchina virtuale :
 
 <img src={backupCloneIaas_001} />
 <img src={backupCloneIaas_002} />
 
 - La seconda soluzione consiste nel clonare la macchina virtuale utilizzando __un backup__ della macchina virtuale e successivamente __il ripristino in modalità clone__ di un backup.
-Vai alla sezione __'Backup'__ della tua macchina virtuale e scegli l'azione __'Ripristina'__ :
+Andate alla sezione __'Backup'__ della vostra macchina virtuale e scegliete l'azione __'Ripristina'__ :
 
 <img src={backupRestoIaas_001} />
 
-Seleziona quindi l'opzione __'Clona'__ per il ripristino :
+Selezionate quindi l'opzione __'Clona'__ per il ripristino :
 
 <img src={backupCloneIaas_004} />
 
@@ -47,21 +47,21 @@ un certo periodo (spiegando la loro presenza nei report di backup) ma che __non 
 
 #### Come aggiungere una politica di backup a una macchina virtuale?
 
-Vai alla pagina __'Macchine Virtuali'__ nella sezione __'IaaS'__ della barra del menu verde sul lato sinistro dello schermo.
+Andate alla pagina __'Macchine Virtuali'__ nella sezione __'IaaS'__ della barra del menu verde sul lato sinistro dello schermo.
 
-Seleziona una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina :
+Selezionate una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina :
 
 <img src={backupPolicyIaas_001} />
 
-Aggiungi la politica di backup desiderata :
+Aggiungete la politica di backup desiderata :
 
 <img src={backupPolicyIaas_002} />
 
 ### Come eliminare una politica di backup da una macchina virtuale?
 
-Vai alla pagina __'Macchine Virtuali'__, seleziona una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina.
+Andate alla pagina __'Macchine Virtuali'__, selezionate una macchina virtuale e poi la scheda __'Politiche di backup'__ di questa macchina.
 
-Elimina la politica di backup desiderata e conferma l'eliminazione:
+Eliminate la politica di backup desiderata e confermate l'eliminazione:
 
 <img src={backupPolicyIaas_003} />
 
@@ -71,24 +71,24 @@ __*Nota:*__ *Attenzione! __Secnumcloud richiede che ci sia almeno una politica d
 
 Sono disponibili 2 soluzioni possibili:
 
-1. Vai alla pagina __'Jobs'__ del menu __'Backup'__ nella barra verde a sinistra dello schermo. Scegli il job corrispondente al backup e selezionalo.
-Successivamente, individua la *jobsession* corrispondente al tuo backup e selezionala tramite il menu __'Actions'__.
+1. Andate alla pagina __'Jobs'__ del menu __'Backup'__ nella barra verde a sinistra dello schermo. Scegliete il job corrispondente al backup e selezionatelo.
+Successivamente, individuate la *jobsession* corrispondente al vostro backup e selezionatela tramite il menu __'Actions'__.
 
 <img src={backupPolicyIaas_006} />
 
-Queste azioni consentono di visualizzare i log dettagliati dell'esecuzione del backup. Puoi cercare nei log di backup:
+Queste azioni consentono di visualizzare i log dettagliati dell'esecuzione del backup. Potete cercare nei log di backup:
 
 <img src={backupPolicyIaas_005} />
 
-1. Vai alla pagina __'Report di backup'__ e seleziona la policy di tuo interesse:
+1. Andate alla pagina __'Report di backup'__ e selezionate la policy di vostro interesse:
 
 <img src={backupPolicyIaas_004} />
 
-Puoi quindi filtrare per data, scaricare il report in formato __PDF__ o __CSV__ per elaborarlo con strumenti di terze parti.
+Potete quindi filtrare per data, scaricare il report in formato __PDF__ o __CSV__ per elaborarlo con strumenti di terze parti.
 
 ### Come eseguire un ripristino?
 
-Vai alla pagina __'Macchine Virtuali'__, seleziona una macchina virtuale e poi la scheda __'Backup'__ di questa macchina. Per avviare il ripristino, seleziona il backup da ripristinare.
+Andate alla pagina __'Macchine Virtuali'__, selezionate una macchina virtuale e poi la scheda __'Backup'__ di questa macchina. Per avviare il ripristino, selezionate il backup da ripristinare.
 
 <img src={backupCloneIaas_003} />
 
@@ -97,7 +97,7 @@ Vai alla pagina __'Macchine Virtuali'__, seleziona una macchina virtuale e poi l
 Il __quiescing__ è un processo che consiste nel notificare al sistema di entrare in uno stato appropriato prima dell'inizio dello snapshot.
 Per impostazione predefinita, il __quiescing è attivato__. Può essere disattivato manualmente nel caso in cui il sistema gestisca male lo snapshot o se l'agent dell'ipervisors non è installato sulla macchina virtuale.
 
-Per fare ciò, nella sezione __'Backup'__ della tua macchina virtuale, fai clic su __'Modifica opzioni'__ e disattiva il __quiescing__ :
+Per fare ciò, nella sezione __'Backup'__ della vostra macchina virtuale, fate clic su __'Modifica opzioni'__ e disattivate il __quiescing__ :
 
 <img src={backupPolicyIaas_007} />
 
@@ -119,7 +119,7 @@ Per fare ciò, nella sezione __'Backup'__ della tua macchina virtuale, fai clic 
 
 ### Come ripristinare e sostituire la macchina virtuale di produzione, senza conservare la macchina virtuale attualmente in produzione?
 
-Seleziona la modalità di ripristino __'Produzione'__. L'opzione 'sovrascrivere la macchina virtuale' è impostata per impostazione predefinita.
+Selezionate la modalità di ripristino __'Produzione'__. L'opzione 'sovrascrivere la macchina virtuale' è impostata per impostazione predefinita.
 
 <img src={backupRestoreIaas_003} />
 
@@ -147,7 +147,7 @@ Si noti che è indicata la data dell'ultimo inventario.
 
 ### Perché il backup della mia macchina virtuale fallisce indicando un problema di snapshot?
 
-Questo errore indica che è la prima volta che la tua macchina viene sottoposta a backup.
+Questo errore indica che è la prima volta che la vostra macchina viene sottoposta a backup.
 
 __Durante il primo backup di una macchina virtuale, non deve essere presente alcuno snapshot sulla macchina.__
 
@@ -155,16 +155,16 @@ __Durante il primo backup di una macchina virtuale, non deve essere presente alc
 
 Ecco come procedere:
 
-- Scegli la modalità __'CLONE'__ (la modalità clone comporta una modifica dell’indirizzo MAC e dell’UUID della macchina virtuale),
-- Rinomina la macchina virtuale ripristinata con il nome definitivo (della vm di produzione),
-- Rinomina la vecchia macchina virtuale di produzione (in _OLD).
+- Scegliete la modalità __'CLONE'__ (la modalità clone comporta una modifica dell’indirizzo MAC e dell’UUID della macchina virtuale),
+- Rinominate la macchina virtuale ripristinata con il nome definitivo (della vm di produzione),
+- Rinominate la vecchia macchina virtuale di produzione (in _OLD).
 
 ### Come ripristinare una macchina virtuale, senza sostituire la macchina virtuale originale?
 
 Ecco come procedere:
 
-- Scegli la modalità __'CLONE'__ (la modalità clone comporta un cambiamento dell’indirizzo MAC e dell’UUID della macchina virtuale)
-- Definisci il nome del clone (_REST o altri)
+- Scegliete la modalità __'CLONE'__ (la modalità clone comporta un cambiamento dell’indirizzo MAC e dell’UUID della macchina virtuale)
+- Definite il nome del clone (_REST o altri)
 
 ### Perché non posso eliminare un disco in modalità instant access sulla mia macchina virtuale?
 

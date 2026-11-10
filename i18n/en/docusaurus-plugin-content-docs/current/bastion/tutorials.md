@@ -18,7 +18,7 @@ These tutorials help you deploy and manage a Bastion Cloud Temple from the Conso
 
 ## Prerequisites
 
-1. Subscribe to the Cloud Temple product (Appliance Bastion subscription).
+1. Have activated the Bastion product for your organization.
 2. The devices to be managed must be accessible from the network where the Appliance Bastion is deployed.
 3. Have permissions for the Bastion module.
 4. For an on-premise Appliance deployment, the corresponding traffic flows must be allowed.
@@ -33,7 +33,7 @@ The « Devices » tab allows you to view the list of your devices. A device corr
 connection via a Bastion Appliance. For each device, its name, tags,
 description, associated Appliance, connection type (SSH ou RDP), host IP, and finally the keyboard layout are displayed.
 
-You can filter the list of your devices by their assigned tags, and a search bar allows you to search for a session by its name.
+You can filter the list of your devices by their assigned tags, and a search bar allows you to search for a device by its name.
 
 <img src={sessions2} />
 
@@ -45,7 +45,7 @@ A search bar is available to allow you to search for an Appliance by its name.
 
 ## Deploy an Appliance
 
-Before you can deploy an Appliance, you must submit an Appliance subscription request via a support request.
+Before deploying an Appliance, activate the Bastion product. It is activated in self-service from the Organization view of the Cloud Temple Console, or through your usual sales contact.
 
 ## Open a connection to a device
 

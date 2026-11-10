@@ -309,5 +309,141 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
+  },
+  "emptySection.quickstart.title": {
+    "message": "Guía de inicio",
+    "description": "Titre de la carte d'un guide de démarrage vide"
+  },
+  "emptySection.tutorials.title": {
+    "message": "Tutoriales",
+    "description": "Titre de la carte d'une rubrique Tutoriels vide"
+  },
+  "emptySection.faq.title": {
+    "message": "Preguntas frecuentes",
+    "description": "Titre de la carte d'une rubrique Questions fréquentes vide"
+  },
+  "emptySection.quickstart.message": {
+    "message": "Todavía no hay ninguna guía de inicio disponible, pero estamos trabajando activamente en ella. ¡Vuelva pronto para saber más!",
+    "description": "Message d'un guide de démarrage vide"
+  },
+  "emptySection.tutorials.message": {
+    "message": "Todavía no hay ningún tutorial disponible, pero estamos trabajando activamente en ello. ¡Vuelva pronto para saber más!",
+    "description": "Message d'une rubrique Tutoriels vide"
+  },
+  "emptySection.faq.message": {
+    "message": "Todavía no hay preguntas frecuentes disponibles, pero estamos trabajando activamente en ello. ¡Vuelva pronto para saber más!",
+    "description": "Message d'une rubrique Questions fréquentes vide"
+  },
+  "emptySection.homeLink": {
+    "message": "Ir a la página de inicio →",
+    "description": "Lien vers la page d'accueil depuis une rubrique vide"
+  },
+  "consoleMap.title": {
+    "message": "Dónde se sitúa la Console",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.desc": {
+    "message": "Sus equipos gestionan sus tenants desde la Console, cuyo acceso está filtrado por dirección IP y protegido por doble factor, o desde la API con una clave de API. Los usuarios de sus aplicaciones llegan a sus recursos a través de las ofertas de red, sin pasar por la Console.",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.lane.pilot": {
+    "message": "Gestión de la infraestructura",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.browser": {
+    "message": "Navegador",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.browser.sub": {
+    "message": "Sus equipos",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.scripts": {
+    "message": "Scripts, Terraform",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.scripts.sub": {
+    "message": "Automatización",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.console": {
+    "message": "Console",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.console.sub": {
+    "message": "IP autorizadas + MFA",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.api": {
+    "message": "API de la Console",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.api.sub": {
+    "message": "Clave de API (PAT)",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.tenants": {
+    "message": "Sus tenants",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.tenants.regions": {
+    "message": "Regiones",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.tenants.zones": {
+    "message": "Zonas de disponibilidad",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.tenants.resources": {
+    "message": "VM, almacenamiento, red…",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.lane.usage": {
+    "message": "Uso de sus aplicaciones",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.users": {
+    "message": "Usuarios",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.users.sub": {
+    "message": "De sus aplicaciones",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.network": {
+    "message": "Ofertas de red",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.network.sub": {
+    "message": "Internet, Private Network…",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "consoleMap.note": {
+    "message": "El tráfico de sus aplicaciones no pasa por la Console",
+    "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Buscar",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Buscar",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Buscar en la documentación",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Introduzca una búsqueda para mostrar los resultados.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "No se ha encontrado ningún documento.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "Ver todos los resultados",
+    "description": "Fenêtre de recherche"
   }
 }

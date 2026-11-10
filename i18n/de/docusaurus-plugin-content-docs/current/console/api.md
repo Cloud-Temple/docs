@@ -1,5 +1,5 @@
 ---
-title: API-Dokumentation
+title: Dokumentation der API der Konsole
 ---
 import ShivaProfil001 from '@site/docs/console/images/shiva_profil_001.png'
 import ShivaProfil002 from '@site/docs/console/images/shiva_profil_002.png'
@@ -11,106 +11,143 @@ import ShivaApi002 from '@site/docs/console/images/shiva_api_002.png'
 import ShivaApi003 from '@site/docs/console/images/shiva_api_003.png'
 import ShivaApi004 from '@site/docs/console/images/shiva_api_004.png'
 
-## Introduction
+## Einführung
 
-Die Cloud Temple API ermöglicht es Ihnen, alle Ihre Cloud-Ressourcen programmatisch zu erstellen und zu verwalten. Alles, was Sie über die Cloud Temple-Konsole tun können, lässt sich auch über die API durchführen, von der Erstellung virtueller Maschinen bis zur Konfiguration der Identitäts- und Zugriffsverwaltung.
+Die Cloud Temple API ermöglicht es Ihnen, die Ressourcen der in die Konsole integrierten Produkte programmgesteuert zu erstellen und zu verwalten. Alles, was Sie über die Cloud Temple Konsole tun können, lässt sich auch über die API umsetzen – von der Erstellung virtueller Maschinen bis zur Konfiguration der Identitäts- und Zugriffsverwaltung.
 
-Diese Dokumentation führt Sie durch die Nutzung der Cloud Temple API, von der Authentifizierung über Best Practices bis hin zum Lifecycle-Management der Endpunkte.
+Diese Dokumentation führt Sie durch die Nutzung der Cloud Temple API, von der Authentifizierung über bewährte Verfahren bis hin zur Lebenszyklusverwaltung der Endpunkte.
 
-## Schnellstart: Ihre erste API-Anfrage
+## Quickstart: Ihre erste API-Anfrage
 
-:::info[Zusammenfassung - 3 Schritte zum Einstieg]
-1. 🔑 **Generieren Sie Ihr PAT** über die Konsole
-2. 🚀 **Testen Sie mit curl** auf `/iam/v2/roles`
-3. ✅ **Analysieren Sie die JSON-Antwort**
+:::info[Zusammenfassung – 3 Schritte zum Start]
+1. 🔑 **Ihren PAT generieren** über die Konsole
+2. 🔄 **ID und Secret gegen ein JWT austauschen**
+3. 🚀 **Die API mit diesem JWT** im Header `Authorization` aufrufen
 :::
 
 ### Voraussetzungen
 
-Bevor Sie beginnen, benötigen Sie ein Cloud Temple-Konto mit den entsprechenden Berechtigungen, um API-Schlüssel zu generieren.
+Bevor Sie beginnen, prüfen Sie folgende Punkte:
+
+- **Konto und Tenant**: Ihr Konto verfügt über die Berechtigung `iam_offline_access` im Tenant, in dem Sie den PAT **erstellen** möchten.
+- **Berechtigungen des PAT**: Wählen Sie nur die Berechtigungen aus, die für die Operationen erforderlich sind, die Ihr Skript ausführt. Es ist nicht erforderlich, `iam_offline_access` zu den Berechtigungen des PAT hinzuzufügen, um ihn am Authentifizierungspunkt zu verwenden.
+- **Netzwerkzugriff**: Die ausgehende öffentliche IP-Adresse, die von Ihrem Skript verwendet wird, muss für die Organisation freigegeben sein. Siehe [Hinzufügen einer IP-Adresse unter Verwaltung > Zugriff](./onboarding.md#eine-ip-adresse-hinzufügen). Planen Sie etwa **10 Minuten** für die Berücksichtigung einer Hinzufügung ein. Das Anzeigen und Ändern dieser Liste erfordert jeweils `console_public_access_read` und `console_public_access_write`; diese Berechtigungen sind für die Authentifizierung des PAT nicht erforderlich.
+- **Werkzeuge**: Die folgenden Beispiele verwenden `curl` und ein Bash-kompatibles Shell.
+
+:::warning[Browser und Skript können unterschiedliche IPs verwenden]
+Eine erfolgreiche Verbindung zur Konsole bestätigt nicht den Netzwerkzugriff Ihres Skripts. Ein Proxy, ein VPN oder ein CI-Runner kann eine andere ausgehende öffentliche IP-Adresse verwenden. Die konfigurierte Adresse zum Erreichen eines Proxys ist nicht unbedingt die öffentliche Adresse, mit der er ins Internet hinausgeht. Lassen Sie diese durch Ihr Netzwerkteam bestätigen und geben Sie sie für die betreffende Organisation frei.
+:::
 
 ### Schritte
 
-1. **API-Schlüssel generieren**: Melden Sie sich bei der [Cloud Temple-Konsole](https://shiva.cloud-temple.com/login) an und generieren Sie Ihren Personal Access Token (siehe Abschnitt [API-Schlüssel](#api-schlüssel-personal-access-token) unten).
+1. **Ihren PAT generieren**: Melden Sie sich in der [Cloud Temple Konsole](https://shiva.cloud-temple.com/login) an, wählen Sie den betreffenden Tenant aus und erstellen Sie einen Personal Access Token (siehe [API-Schlüssel](#api-schlüssel-personal-access-token)). Bewahren Sie dessen **ID** und **Secret** auf. Die erwartete ID ist die des PAT, nicht die des Tenants, der Organisation oder des Benutzers.
 
-2. **Erste Anfrage testen**: Führen Sie den folgenden curl-Befehl aus, indem Sie `<votre-personal-access-token>` durch Ihr Token ersetzen:
+2. **Ein JWT-Zugriffstoken abrufen**: Ersetzen Sie die fiktiven Werte `ID_DU_PAT` und `SECRET_DU_PAT` durch die des gleichen PAT, der nicht abgelaufen und nicht widerrufen ist. Senden Sie eine **POST**-Anfrage mit einem gültigen JSON-Körper und dem Header `Content-Type: application/json` an die vollständige URL unten, die **`/api/iam`** enthält. Ein vorheriges Bearer-Token ist an diesem Authentifizierungspunkt nicht erforderlich.
 
 ```bash
-curl -X GET \
-  -H "Authorization: Bearer <votre-personal-access-token>" \
-  -H "Content-Type: application/json" \
-  "https://shiva.cloud-temple.com/api/iam/v2/roles"
+ACCESS_TOKEN=$(curl --fail --silent --show-error \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --data '{"id":"ID_DU_PAT","secret":"SECRET_DU_PAT"}' \
+  'https://shiva.cloud-temple.com/api/iam/v2/auth/personal_access_token')
 ```
 
-3. **Antwort analysieren**: Sie erhalten die Liste der im Tenant verfügbaren IAM-Rollen, wodurch Sie die vorhandenen Berechtigungen nachvollziehen können.
+Bei Erfolg (HTTP 200) enthält der Antwortkörper das JWT, das hier in der Variable `ACCESS_TOKEN` gespeichert wird. Falls der Befehl fehlschlägt, konsultieren Sie die [Fehlerbehebung](#fehlerbehebung-der-pat-authentifizierung), bevor Sie fortfahren.
+
+3. **Eine API mit dem JWT aufrufen**: Verwenden Sie dieses Zugriffstoken in `Authorization: Bearer`. Das folgende Beispiel fragt die Liste der IAM-Rollen ab:
+
+```bash
+curl --fail --silent --show-error \
+  --header "Authorization: Bearer ${ACCESS_TOKEN}" \
+  'https://shiva.cloud-temple.com/api/iam/v2/roles'
+```
+
+Das erwartete Bearer ist das **in Schritt 2 erhaltene JWT**, weder die ID noch das Secret des PAT. Die folgenden Operationen unterliegen weiterhin den dem PAT erteilten Berechtigungen.
+
+:::caution[Zugangsdaten schützen]
+Die Werte im Beispiel sind fiktiv. Stellen Sie in Ihren Automatisierungen das Secret über Ihren Secret-Manager bereit und vermeiden Sie, es im Code, im Shell-Verlauf oder in den Protokollen zu speichern. Teilen Sie weder das Secret des PAT noch das erhaltene JWT.
+:::
 
 ## Authentifizierung
 
 ### API-Schlüssel (Personal Access Token)
 
-Der __API-Schlüssel__ ermöglicht die Authentifizierung, wenn Sie Anfragen an die API stellen möchten. Die Generierung eines API-Schlüssels, auch als __Personal Access Token (PAT)__ bezeichnet, ist eine sichere Methode zur Anmeldung bei der API Console ohne Verwendung einer grafischen Benutzeroberfläche. Jeder dieser Tokens ist mit einem Tenant und dem Benutzer verknüpft, der ihn erstellt hat.
+Der __API-Schlüssel__ dient der Authentifizierung, wenn Sie Anfragen an die API senden möchten. Die Generierung eines API-Schlüssels, auch __Personal Access Token (PAT)__ genannt, ist eine sichere Methode, sich mit den API-Konsolen zu verbinden, ohne eine grafische Benutzeroberfläche zu verwenden. Jeder dieser Tokens ist an einen Tenant und den Benutzer gebunden, der ihn erstellt hat.
 
-Die Erstellung dieses Tokens erfolgt über Ihr Konto. Es ist möglich, mehrere Schlüssel zu generieren und für jeden einzelnen die Berechtigungen entsprechend Ihren Rechten zu konfigurieren.
+Die Erstellung dieses Tokens erfolgt über Ihr Konto und erfordert die Berechtigung `iam_offline_access`. Es ist möglich, mehrere Schlüssel zu generieren und für jeden die Berechtigungen im Rahmen Ihrer Rechte zu konfigurieren. Diese Erstellungsberechtigung ist von den API-Operation-Berechtigungen des PAT getrennt: Der Austausch seiner ID und seines Secrets gegen ein JWT erfordert nicht, dass er selbst `iam_offline_access` trägt.
 
-#### API-Schlüssel erstellen
+#### Einen API-Schlüssel erstellen
 
-Um einen API-Schlüssel zu erstellen, __klicken Sie einfach auf Ihr Profil__ :
+Um einen API-Schlüssel zu erstellen, müssen Sie nur auf Ihr __Profil klicken__:
 
 <img src={ShivaProfil001} style={{maxWidth: '300px', width: '100%'}} />
 
-Klicken Sie im Profilmenü auf __'Persönliches Zugriffstoken'__
+Im Profilmenü auf __'Persönliches Zugriffstoken'__ klicken
 
 <img src={ShivaProfil003} />
 
-Auf dem Bildschirm werden nun alle API-Schlüssel angezeigt, die für diesen Benutzer in diesem Tenant erstellt wurden. Klicken Sie auf __'Neues persönliches Zugriffstoken'__
+Sie sehen nun auf dem Bildschirm alle API-Schlüssel, die für diesen Benutzer in diesem Tenant erstellt wurden. Auf __'Neues persönliches Zugriffstoken'__ klicken
 
 <img src={ShivaProfil002} />
 
-Sie müssen nun:
+Sie müssen dann:
 
 - Den Namen dieses neuen Tokens angeben,
 - Ein Ablaufdatum angeben (maximal 12 Monate Gültigkeit),
 - Die dem Token zugeordneten Berechtigungen auswählen.
 
-Die Details zu Ihrem Token werden anschließend angezeigt. __Achtung, ein nachträglicher Zugriff ist nicht mehr möglich.__
+Die Details zu Ihrem Token werden dann angezeigt. __Achtung, ein nachträglicher Zugriff ist nicht mehr möglich.__
 
 Wenn Sie diese Informationen nicht notieren, müssen Sie das Token löschen und neu erstellen.
 
 <img src={ShivaProfil004} style={{maxWidth: '600px', width: '100%'}} />
 
-Aus Sicherheitsgründen wird empfohlen, mehrere Tokens mit jeweils spezifischem Verwendungszweck zu erstellen (ein Token pro Anwendung oder pro Geschäftsprozess), anstatt ein einzelnes Token mit allen Rechten zu erstellen.
+Aus Sicherheitsgründen wird empfohlen, mehrere Tokens mit jeweils einem spezifischen Zweck zu erstellen (ein Token pro Anwendung oder pro Geschäftsprozess), anstatt ein Token mit allen Rechten zu erstellen.
 
-Anschließend sehen Sie das neu erstellte Token und sein zukünftiges Ablaufdatum.
+Sie sehen anschließend das neu erstellte Token und sein künftiges Ablaufdatum.
 
 <img src={ShivaProfil005} />
 
 :::info[Lebenszyklus des Authentifizierungstokens]
-Wenn Sie Ihr __Personal Access Token (PAT)__ zur Authentifizierung bei der API verwenden, erhalten Sie im Gegenzug ein Zugriffstoken. Es ist wichtig zu beachten, dass dieses Zugriffstoken ein __JSON Web Token (JWT)__ mit begrenzter Lebensdauer ist.
+Wenn Sie Ihren __Personal Access Token (PAT)__ zur Authentifizierung gegenüber der API verwenden, erhalten Sie als Antwort ein Zugriffstoken. Es ist wichtig zu beachten, dass dieses Zugriffstoken ein __JSON Web Token (JWT)__ mit einer begrenzten Lebensdauer ist.
 
-- __Lebensdauer__ : Jedes JWT-Token ist für __5 Minuten__ gültig.
-- __Überprüfung__ : Sie können das Ausstellungsdatum (`iat`) und das Ablaufdatum (`exp`) Ihres Tokens durch Dekodierung überprüfen. Online-Tools wie [jwt.io](https://jwt.io) erleichtern dies.
+- __Lebensdauer__: Jedes JWT-Token ist für eine Dauer von __5 Minuten__ gültig.
+- __Prüfung__: Sie können das Ausstellungsdatum (`iat`) und das Ablaufdatum (`exp`) einsehen, indem Sie das JWT lokal entschlüsseln. Übermitteln Sie kein aktives Token an einen externen Entschlüsselungsdienst. Die Entschlüsselung allein überprüft nicht dessen Signatur.
 
-Nach Ablauf des Tokens müssen Sie sich erneut mit Ihrem PAT authentifizieren, um ein neues zu erhalten. Es wird daher empfohlen, diesen Lebenszyklus in Ihren Skripten und Anwendungen zu verwalten, indem ein automatisches Token-Update eingeplant wird.
+Sobald das Token abgelaufen ist, müssen Sie sich mit Ihrem PAT erneut authentifizieren, um ein neues zu erhalten. Es wird daher empfohlen, diesen Lebenszyklus in Ihren Skripten und Anwendungen durch eine automatische Token-Erneuerung zu verwalten.
 :::
+
+### Fehlerbehebung der PAT-Authentifizierung
+
+Beginnen Sie damit, die fehlschlagende Anfrage zu identifizieren: **der ID/Secret-Austausch** oder **der API-Operation-Aufruf mit dem JWT**. Die durchzuführenden Prüfungen sind unterschiedlich.
+
+| Symptom | Prüfungen |
+|---|---|
+| Authentifizierungsanfrage abgelehnt | Prüfen Sie die Methode **POST**, die vollständige URL `https://shiva.cloud-temple.com/api/iam/v2/auth/personal_access_token`, den Typ `application/json` und einen Körper, der die Zeichenfolgen `id` und `secret` enthält. Wählen Sie in Postman einen Körper **raw / JSON**. Senden Sie diesen Körper nicht mit der Methode GET. |
+| Authentifizierungsschlag trotz konformer Anfrage | Prüfen Sie, dass ID und Secret zum **gleichen PAT** gehören, im erwarteten Tenant, und dass dieser PAT weder abgelaufen noch widerrufen ist. Verwenden Sie nicht die ID des Tenants anstelle der ID des PAT. |
+| **HTTP 403**, insbesondere mit einer HTML-Fehlerseite | Dieser Status beweist nicht einen Mangel an IAM-Berechtigungen. Prüfen Sie die tatsächliche ausgehende öffentliche IP-Adresse und die Zugriffsliste der Organisation, dann den Proxy und die Form der Anfrage: Ein Proxy oder ein Web Application Firewall (WAF) kann die Anfrage ablehnen, bevor sie die API erreicht. Ein HTML-Körper kann helfen, diese Ablehnung zu identifizieren, ohne jedoch auszureichen, um deren Ursache zu bestimmen. |
+| Der Austausch gelingt, aber der API-Operation-Aufruf schlägt fehl | Prüfen Sie, dass der Bearer-Header das erhaltene JWT enthält, dass dieses nicht abgelaufen ist und dass der PAT die für die Operation im richtigen Tenant erforderlichen Berechtigungen besitzt. Das Hinzufügen von `iam_offline_access` zum PAT löst eine Ablehnung bei einer API-Operation nicht allein. |
+
+Wenn das Problem persistiert, übermitteln Sie dem Support die Testzeit **mit der Zeitzone**, die Methode und die URL, den HTTP-Status, die bestätigte ausgehende öffentliche IP-Adresse sowie die Antwort und eine mögliche Anfragekennung. Stellen Sie einen bereinigten Screenshot oder einen Befehl bereit: Maskieren Sie das Secret, das JWT, die Header `Authorization` und `Proxy-Authorization` sowie die Cookies. Der HTTP-Status allein reicht nicht aus, um mit Sicherheit die Komponente zu identifizieren, die die Anfrage abgelehnt hat.
 
 ## Zugriff auf das API-Portal
 
-Die OpenAPI 3.0-Dokumentation (Swagger) der APIs der Cloud Temple-Konsole ist direkt in der Anwendung verfügbar:
+Die OpenAPI 3.0 (Swagger)-Dokumentation der APIs der Cloud Temple Konsole ist direkt in der Anwendung verfügbar:
 
 <img src={ShivaApi001} />
 
-Der Zugriff auf die APIs erfordert eine Authentifizierung. Nach der Authentifizierung müssen alle Anfragen den Header __'Authorization'__ mit dem bei der Authentifizierung erhaltenen Bearer-Access-Token enthalten.
+Die geschützten Operationen der APIs erfordern den Header __`Authorization`__ mit dem Bearer JWT, das während der Authentifizierungsphase erhalten wurde. Der oben beschriebene initiale Austausch der ID und des Secrets des PAT erfordert diesen Header nicht.
 
-Die URL der Endpunkte wird direkt in __Swagger__ angegeben (im Objekt "Servers" auf jeder API-Seite).
+Die URL der Zugangspunkte wird direkt in __Swagger__ angegeben (im Objekt "Servers" jeder API-Seite).
 
-### Interaktive Dokumentation erkunden
+### Die interaktive Dokumentation erkunden
 
 Das API-Portal ermöglicht es Ihnen:
 
-- Alle verfügbaren Endpunkte pro Modul einsehen
-- Anfragen direkt über die Oberfläche testen
-- Datenmodelle (Schemata) für jede Ressource anzeigen
-- Mögliche Antwortcodes für jeden Endpunkt einsehen
+- Alle verfügbaren Endpunkte pro Modul einzusehen
+- Anfragen direkt aus der Oberfläche zu testen
+- Die Datenmodelle (Schemata) für jede Ressource anzuzeigen
+- Die möglichen Antwortcodes für jeden Endpunkt einzusehen
 
 ## Struktur der Endpunkte
 
@@ -123,9 +160,9 @@ https://shiva.cloud-temple.com/api/{module}/v{version}/{ressource}
 ```
 
 Wobei:
-- `{module}` : Das betroffene Modul (compute, iam, network, backup, etc.)
-- `{version}` : Die API-Version (v1, v2, etc.)
-- `{ressource}` : Die zu verwaltende Ressource (virtual-machines, users, networks, etc.)
+- `{module}`: Das betreffende Modul (compute, iam, network, backup usw.)
+- `{version}`: Die API-Version (v1, v2 usw.)
+- `{ressource}`: Die zu bearbeitende Ressource (virtual-machines, users, networks usw.)
 
 ### Beispiele für Endpunkte
 
@@ -152,32 +189,32 @@ POST   https://shiva.cloud-temple.com/api/network/v1/virtual-networks
 Die Cloud Temple API ist in funktionale Module unterteilt:
 
 | Modul | Beschreibung | Basis-URL |
-|-------|-------------|-----------|
+|--------|-------------|----------|
 | Cloud Temple Konsole | Allgemeine Funktionen | `/api/v1/` |
-| Identität (IAM) | Benutzerverwaltung und Zugriff | `/iam/v1/` |
-| IaaS VMware | VMware Virtualisierungsressourcen | `/compute/v1/` |
+| Identität (IAM) | Verwaltung von Benutzern und Zugriffen | `/iam/v1/` |
+| IaaS VMware | VMware-Virtualisierungsressourcen | `/compute/v1/` |
 | OpenIaaS | Xen Orchestra-Ressourcen | `/openiaas/v1/` |
 | S3 | Objektspeicher | `/s3/v1/` |
 | OpenShift | PaaS-Plattform | `/openshift/v1/` |
 | Bastion | SSH/RDP-Bastion-Appliances | `/bastion/v1/` |
-| Netzwerk | Netzwerkverwaltung Layer 2 und 3 | `/network/v1/` |
+| Netzwerk | Netzwerkverwaltung Ebene 2 und 3 | `/network/v1/` |
 | Hosting | Colocation und Housing | `/housing/v1/` |
-| Marketplace | Lösungskatalog | `/marketplace/v1/` |
-| Support | Tickets und Support | `/support/v1/` |
+| Marketplace | Katalog von Lösungen | `/marketplace/v1/` |
+| Support | Tickets und Assistance | `/support/v1/` |
 | Benachrichtigung | Benachrichtigungssystem | `/notification/v1/` |
 | LLMaaS | Künstliche Intelligenz | `/llmaas/v1/` |
 
 ## Die Aktivitäten
 
-Die Nachverfolgung von Schreibanfragen (POST, PUT, PATCH, DELETE) erfolgt über die Verwaltung der Aktivitäten. Jede Anfrage dieses Typs generiert automatisch eine zugehörige Aktivität. Ein HTTP-Statuscode 201 bestätigt die erfolgreiche Erstellung der Aktivität. Die eindeutige ID dieser Aktivität wird in den Antwort-Headern unter dem Schlüssel 'Location' zurückgegeben.
+Das Tracking von Schreib-Anfragen (POST, PUT, PATCH, DELETE) wird über die Aktivitätsverwaltung sichergestellt. Jede Anfrage dieses Typs erzeugt automatisch eine zugehörige Aktivität. Ein HTTP-Statuscode 201 bestätigt die erfolgreiche Erstellung der Aktivität. Die eindeutige Kennung dieser Aktivität wird in den Antwortheadern unter dem Schlüssel 'Location' zurückgegeben.
 
 <img src={ShivaApi002} />
 
-Sobald die ID abgerufen wurde, können die Details der Aktivität über die API des Activity-Moduls abgerufen werden:
+Sobald die Kennung abgerufen wurde, ist es möglich, auf die Details der Aktivität zuzugreifen, indem die API des Moduls Activity verwendet wird:
 
 <img src={ShivaApi003} />
 
-Der Inhalt der Aktivität enthält alle wesentlichen Informationen zur Identifizierung der Operation, ihres Ausführungsdatums sowie ihres Fortschrittsstatus. Nachfolgend das Modell einer Aktivität:
+Der Inhalt der Aktivität umfasst alle wesentlichen Informationen zur Identifizierung der Operation, ihres Ausführungsdatums sowie ihres Fortschrittszustands. Hier ist das Modell einer Aktivität:
 
 ```json
 {
@@ -199,13 +236,13 @@ Der Inhalt der Aktivität enthält alle wesentlichen Informationen zur Identifiz
 }
 ```
 
-### Status einer Aktivität
+### Zustände einer Aktivität
 
-Das Objekt __state__ kann je nach Status der Aktivität verschiedene Formen annehmen, nämlich:
+Das Objekt __state__ kann je nach Zustand der Aktivität verschiedene Formen annehmen, nämlich:
 
-#### wartend
+#### waiting
 
-Status vor Beginn des Vorgangs:
+Zustand, bevor die Operation begonnen hat:
 
 ```json
 waiting: {}
@@ -213,7 +250,7 @@ waiting: {}
 
 #### running
 
-Status, wenn der Vorgang ausgeführt wird:
+Zustand, wenn die Operation läuft:
 
 ```json
 running: {
@@ -223,9 +260,9 @@ running: {
 }
 ```
 
-#### fehlgeschlagen
+#### failed
 
-Status, wenn der Vorgang fehlgeschlagen ist:
+Zustand, wenn die Operation fehlgeschlagen ist:
 
 ```json
 failed: {
@@ -235,9 +272,9 @@ failed: {
 }
 ```
 
-#### abgeschlossen
+#### completed
 
-Status, wenn der Vorgang abgeschlossen ist:
+Zustand, wenn die Operation abgeschlossen ist:
 
 ```json
 completed: {
@@ -255,24 +292,24 @@ Die Kennung (UUIDv4) der erstellten Ressource ist im Ergebnis der Aktivität ver
 
 ### Warum Limits?
 
-Die Cloud Temple-Konsole definiert __Grenzwerte für das Anfragsvolumen__, die ein Benutzer innerhalb eines bestimmten Zeitraums an die API senden kann. Die Einführung dieser Ratenbegrenzungen ist eine gängige Maßnahme im API-Management und wird aus mehreren wesentlichen Gründen ergriffen:
+Die Cloud Temple Konsole definiert __Obergrenzen für das Anfragevolumen__, das ein Benutzer innerhalb eines bestimmten Zeitraums an die API senden kann. Die Einführung dieser Frequenzgrenzen ist eine gängige Maßnahme in der API-Verwaltung, die aus mehreren wesentlichen Gründen übernommen wird:
 
-- __Missbrauchsprävention__ : Diese Limits tragen zum Schutz der API-Integrität bei, indem sie missbräuchliche oder unangemessene Nutzung verhindert, die deren Funktionsweise beeinträchtigen könnte.
-- __Sicherstellung der Servicequalität__ : Durch die Steuerung des API-Zugriffs gewährleisten wir eine faire Ressourcenverteilung, sodass alle Nutzer eine stabile und performante Erfahrung machen können.
+- __Missbrauchsvorbeugung__: Diese Limits tragen zur Wahrung der Integrität der API bei, indem sie missbräuchliche oder unvorsichtige Nutzungen verhindern, die deren Funktionsfähigkeit gefährden könnten.
+- __Gewährleistung der Servicequalität__: Durch die Regulierung des API-Zugriffs sorgen wir für eine faire Ressourcenverteilung, sodass alle Benutzer von einem stabilen und leistungsfähigen Erlebnis profitieren.
 
-Nehmen wir das Beispiel eines schlecht konzipierten oder ineffizienten Skripts, das wiederholt API-Aufrufe versucht und dadurch Ressourcen überlastet sowie die Leistung beeinträchtigt. Durch die Festlegung von Anfragegrenzwerten verhindern wir derartige Situationen und gewährleisten __einen reibungslosen und unterbrechungsfreien Service__ für unsere gesamte Kundschaft.
+Nehmen wir das Beispiel eines schlecht konzipierten oder ineffizienten Skripts, das wiederholte API-Aufrufe versucht und dabei die Ressourcen überlasten und die Leistung beeinträchtigen könnte. Durch die Festlegung von Anfragegrenzen verhindern wir diese Situationen und stellen sicher, dass __ein flüssiger und unterbrechungsfreier Service__ für unsere gesamte Kundschaft aufrechterhalten wird.
 
-### Welche Ratenbegrenzungen gelten für die API der Cloud-Temple-Konsole?
+### Welche Ratenlimits gelten für die API der Cloud Temple-Konsole?
 
-Für jedes Produkt gelten mengenbasierte Einschränkungen für die Benutzerinteraktionen mit der Konsole.
+Wir wenden quantitative Einschränkungen für die Interaktionen der Benutzer mit der Konsole für jedes Produkt an.
 
-Die Limits werden in __Anfragen pro Sekunde (r/s) pro Quell-IP__ definiert. Wird der Grenzwert überschritten, antwortet das System mit dem HTTP-Fehlercode 429, der anzeigt, dass das Limit für zulässige Anfragen überschritten wurde.
+Die Limits sind in __Anfragen pro Sekunde (r/s) und pro Quell-IP__ definiert. Wird der Schwellenwert überschritten, antwortet das System mit dem HTTP-Fehlercode 429, der signalisiert, dass das zulässige Anfrage-Limit überschritten wurde.
 
-Nachfolgend finden Sie die festgelegten Limits:
+Hier sind die definierten Limits:
 
-| Produkt | Grenzwert |
+| Produkt | Schwellenwert |
 |---|---|
-| Console Cloud Temple | 25 r/s |
+| Cloud Temple-Konsole | 25 r/s |
 | Identität (IAM) | 25 r/s |
 | IaaS VMware | 25 r/s |
 | OpenIaaS | 25 r/s |
@@ -281,24 +318,24 @@ Nachfolgend finden Sie die festgelegten Limits:
 | Bastion | 25 r/s |
 | Netzwerk | 25 r/s |
 | Hosting | 25 r/s |
-| Marktplatz | 25 r/s |
+| Marketplace | 25 r/s |
 | Support | 25 r/s |
 | Benachrichtigung | 25 r/s |
 | LLMaaS | 25 r/s |
 
 ### Spezifische Routen
 
-Bestimmte API-Endpunkte, insbesondere solche im Zusammenhang mit der Authentifizierung oder sensiblen Aktionen, unterliegen strengeren Limits, um die Sicherheit zu erhöhen und die Stabilität zu gewährleisten.
+Bestimmte API-Endpunkte, insbesondere solche, die mit der Authentifizierung oder sensiblen Aktionen zusammenhängen, unterliegen strengeren Limits zur Stärkung der Sicherheit und Gewährleistung der Stabilität.
 
-| Route | Grenzwert |
+| Route | Schwellenwert |
 |---|---|
 | Authentifizierung (IAM) | 5 r/s |
-| IaaS - Speicher (Datastores) | 20 r/s |
-| Marketplace (Kontakt) | 1 r/min - 5 r/h |
+| IaaS – Speicher (Datastores) | 20 r/s |
+| Marketplace (Contact) | 1 r/min – 5 r/h |
 
-### Wie funktionieren Rate-Limits?
+### Wie funktionieren die Ratenlimits?
 
-Wenn die Anzahl der an einen API-Endpunkt gesendeten Anfragen die zulässige Grenze überschreitet, reagiert der API-Endpunkt mit der Rückgabe von __einem HTTP-Antwortcode 429__. Dieser Code zeigt an, dass der Benutzer die erlaubte Anzahl an Anfragen überschritten hat. In diesem Fall liefert der API-Endpunkt zusätzlich ein JSON-Objekt als Antwort, das detaillierte Informationen zur angewendeten Begrenzung enthält:
+Wenn die Anzahl der an einen API-Endpunkt gesendeten Anfragen das zulässige Limit überschreitet, reagiert der API-Endpunkt, indem er __einen HTTP-Antwortcode 429__ zurückgibt. Dieser Code gibt an, dass der Benutzer die Anzahl der erlaubten Anfragen überschritten hat. In diesem Fall liefert der API-Endpunkt zusätzlich ein JSON-Objekt als Antwort, das detaillierte Informationen zur angewendeten Drosselung enthält:
 
 ```json
 {
@@ -309,73 +346,73 @@ Wenn die Anzahl der an einen API-Endpunkt gesendeten Anfragen die zulässige Gre
 }
 ```
 
-### Wie vermeiden Sie zu viele Anfragen?
+### Wie vermeidet man zu viele Anfragen?
 
-Es wird empfohlen, die Anzahl der von Ihrer Automatisierung durchgeführten API-Aufrufe zu begrenzen, um unter der für den Endpunkt festgelegten Ratenbegrenzung zu bleiben.
+Es wird empfohlen, die Anzahl der API-Aufrufe in Ihrer Automatisierung so zu begrenzen, dass Sie unter dem für den Endpunkt festgelegten Ratenlimit bleiben.
 
-Dies tritt häufig auf, wenn mehrere Anfragen parallel mit mehreren Prozessen oder Threads ausgeführt werden.
+Diese Situation tritt häufig auf, wenn mehrere Anfragen parallel ausgeführt werden, beispielsweise mit mehreren Prozessen oder Threads.
 
-Es gibt mehrere Möglichkeiten, die Effizienz Ihrer Automatisierung zu verbessern, insbesondere durch die Verwendung von __Caching__ und die Implementierung eines __Systems mit Wiederholungsversuchen und Backoff__. Bei dieser Methode wird eine kurze Pause eingelegt, wenn ein Ratenbegrenzungsfehler auftritt, und die Anfrage anschließend erneut gesendet. Falls die Anfrage erneut fehlschlägt, wird die Pausendauer schrittweise erhöht, bis die Anfrage erfolgreich ist oder eine maximale Anzahl von Wiederholungsversuchen erreicht wird.
+Es gibt mehrere Möglichkeiten, die Effizienz Ihrer Automatisierung zu verbessern, darunter die Nutzung von __Caching-Mechanismen__ und die Implementierung eines __Retry-Systems mit exponentiellem Backoff__. Dabei wird bei einer Ratenlimit-Fehlermeldung eine kurze Pause eingelegt und die Anfrage anschließend erneut versucht. Wenn die Anfrage erneut fehlschlägt, wird die Pausendauer schrittweise verlängert, bis die Anfrage erfolgreich ist oder eine maximale Anzahl von Wiederholungsversuchen erreicht wird.
 
 Dieser Ansatz bietet zahlreiche Vorteile:
 
-- __Backoff__ stellt sicher, dass die ersten Versuche schnell ausgeführt werden, während bei wiederholtem Fehlschlag längere Verzögerungen eingeplant werden.
-- Das Hinzufügen einer __zufälligen Variation__ zur Pause trägt dazu bei, zu verhindern, dass alle Versuche gleichzeitig stattfinden.
+- __Exponentielles Backoff__ stellt sicher, dass die ersten Versuche schnell ausgeführt werden, während bei wiederholtem Fehlschlag längere Wartezeiten eingeplant sind.
+- Das Hinzufügen einer __zufälligen Variation__ zur Pause trägt dazu bei, dass nicht alle Versuche gleichzeitig erfolgen.
 
-Es ist wichtig zu beachten, dass __fehlgeschlagene Anfragen Ihr Rate-Limit nicht beeinträchtigen__. Das kontinuierliche Wiederholen einer Anfrage ist jedoch möglicherweise keine langfristige Lösung, da sich dieses Verhalten in der Zukunft ändern könnte. Wir empfehlen daher, sich nicht ausschließlich auf diesen Mechanismus zu verlassen.
+Es ist wichtig zu beachten, dass __fehlgeschlagene Anfragen Ihr Ratenlimit nicht beeinträchtigen__. Allerdings kann das ständige erneute Senden einer Anfrage langfristig keine tragfähige Lösung sein, da dieses Verhalten in Zukunft geändert werden könnte. Wir empfehlen daher, sich nicht ausschließlich auf diesen Mechanismus zu verlassen.
 
-Die Python-Bibliotheken __[Backoff](https://pypi.org/project/backoff/)__ und __[Tenacity](https://pypi.org/project/tenacity/)__ sind gute Ausgangspunkte zur Implementierung von Backoff-Strategien.
+Die Bibliotheken __[Backoff](https://pypi.org/project/backoff/)__ und __[Tenacity](https://pypi.org/project/tenacity/)__ in Python sind gute Ausgangspunkte für die Implementierung von Backoff-Strategien.
 
 ## Lebenszyklus und Deprecation von Endpunkten
 
 ### Deprecation-Richtlinie
 
-Cloud Temple verpflichtet sich, die Kompatibilität seiner API langfristig zu gewährleisten. Wenn es jedoch erforderlich ist, die API weiterzuentwickeln (neue Funktionen, Optimierungen, Sicherheitsupdates), können bestimmte Endpunkte deprecated und anschließend entfernt werden.
+Cloud Temple verpflichtet sich, die Kompatibilität seiner API langfristig aufrechtzuerhalten. Wenn jedoch eine Weiterentwicklung der API erforderlich ist (neue Funktionen, Optimierungen, Sicherheitskorrekturen), können bestimmte Endpunkte als veraltet markiert und anschließend entfernt werden.
 
-#### Regel für mindestens 3 Monate
+#### Regel der mindestens 3 Monate
 
 Wenn ein Endpunkt als veraltet markiert wird:
 
-1. **Offizielle Ankündigung**: Die Deprecation wird in den Release Notes der Konsole angekündigt
-2. **Übergangsphase**: Der Endpunkt bleibt **mindestens 3 Monate nach der Ankündigung zugänglich und funktionsfähig**
-3. **Löschdatum**: Ein genaues Datum für die endgültige Entfernung wird bereits bei der Ankündigung mitgeteilt
+1. **Offizielle Ankündigung**: Die Deprecation wird in den Versionshinweisen der Konsole angekündigt
+2. **Übergangszeitraum**: Der Endpunkt bleibt **mindestens 3 Monate nach der Ankündigung zugänglich und funktionsfähig**
+3. **Entfernungsdatum**: Ein genaues Datum für die endgültige Entfernung wird bereits bei der Ankündigung mitgeteilt
 4. **Dokumentierte Alternative**: Der neue Ersatz-Endpunkt ist dokumentiert und verfügbar
 
-Diese 3-Monats-Regel gibt Ihnen die notwendige Zeit, Ihren Code anzupassen und zu den neuen Endpunkten zu migrieren.
+Diese 3-Monats-Regel gibt Ihnen die nötige Zeit, Ihren Code anzupassen und auf die neuen Endpunkte zu migrieren.
 
-### Wie identifiziert man einen veralteten Endpunkt?
+### Wie erkennt man einen veralteten Endpunkt?
 
 #### Im API-Portal (Swagger)
 
-Veraltete Endpoints werden in der Swagger-Dokumentation durchgestrichen angezeigt:
+Veraltete Endpunkte erscheinen in der Swagger-Dokumentation durchgestrichen:
 
 
 ~~POST /v1/ancien/endpoint~~
 
-Die Beschreibung des Endpoints enthält:
-- Das Datum der Ankündigung der Veraltung
-- Das geplante Datum der Entfernung
-- Der empfohlene Ersatz-Endpoint
+Die Beschreibung des Endpunkts enthält:
+- Das Datum der Deprecation-Ankündigung
+- Das geplante Entfernungsdatum
+- Den empfohlenen Ersatz-Endpunkt
 
 <img src={ShivaApi004} />
 
-### Best Practices für den Umgang mit Deprecations
+### Best Practices für die Verwaltung von Deprecations
 
-1. **Überwachen Sie veraltete Funktionen** : Prüfen Sie regelmäßig die in der Konsole aufgeführten veralteten Funktionen, um über bevorstehende Deprecations informiert zu bleiben.
+1. **Veraltete Funktionen überwachen**: Prüfen Sie regelmäßig die veralteten Funktionen in der Konsole, um angekündigte Deprecations und deren geplantes Entfernungsdatum zu kennen.
 
-2. **Planen Sie Ihre Migrationen** : Sobald eine Deprecation angekündigt wird, planen Sie die Migration Ihres Codes zum neuen Endpunkt innerhalb von 3 Monaten.
+2. **Migrationen planen**: Sobald eine Deprecation angekündigt wird, planen Sie die Migration Ihres Codes auf den neuen Endpunkt innerhalb von 3 Monaten.
 
-3. **Testen Sie die neuen Endpunkte** : Testen Sie die neuen Endpunkte ab deren Verfügbarkeit, auch während der Übergangsphase.
+3. **Neue Endpunkte testen**: Testen Sie die neuen Endpunkte, sobald sie verfügbar sind, auch während des Übergangszeitraums.
 
-4. **Dokumentieren Sie Ihre Abhängigkeiten** : Führen Sie eine Liste der Endpunkte, die Ihre Anwendung verwendet, um zukünftige Migrationen zu erleichtern.
+4. **Abhängigkeiten dokumentieren**: Führen Sie eine Liste der Endpunkte, die Ihre Anwendung nutzt, um zukünftige Migrationen zu erleichtern.
 
 ## Best Practices
 
 ### Token-Sicherheit
 
 :::danger[Essentielle Sicherheitsregeln]
-- 🚫 Tokens niemals in versioniertem Code (Git, etc.) veröffentlichen
-- 🔐 Umgebungsvariablen zur Speicherung der Tokens verwenden
+- 🚫 Token niemals in versioniertem Code (Git usw.) offenlegen
+- 🔐 Umgebungsvariablen zur Speicherung von Tokens verwenden
 - 🎯 Tokens mit minimalen Berechtigungen erstellen (Prinzip der geringsten Rechte)
 - 🔄 Tokens regelmäßig erneuern (maximal 12 Monate)
 - ⚠️ Kompromittierte Tokens sofort widerrufen
@@ -388,24 +425,25 @@ Behandeln Sie HTTP-Fehler immer in Ihrem Code. Achten Sie besonders auf die folg
 | Code | Beschreibung | Empfohlene Maßnahme |
 |------|-------------|-------------------|
 | **401** Unauthorized | Token abgelaufen oder ungültig | Mit Ihrem PAT neu authentifizieren |
-| **403** Forbidden | Unzureichende Berechtigungen | Token-Berechtigungen überprüfen |
-| **429** Too Many Requests | Ratenbegrenzung erreicht | Vor dem erneuten Versuch warten (backoff) |
-| **500/503** Server Error | Temporärer Serverfehler | Später erneut versuchen |
+| **403** Forbidden | Unzureichende Berechtigungen | Berechtigungen des Tokens prüfen |
+| **429** Too Many Requests | Ratenlimit erreicht | Warten, bevor erneut versucht wird (Backoff) |
+| **500/503** Server Error | Vorübergehender Serverfehler | Später erneut versuchen |
 
 ### Optimierung der API-Aufrufe
-- Paginierung für umfangreiche Listen verwenden
-- Daten, die sich selten ändern, zwischenspeichern
+
+- Pagination für umfangreiche Listen verwenden
+- Daten, die sich selten ändern, cachen
 - Filter verwenden, um die zurückgegebenen Daten zu begrenzen
-- Operationen nach Möglichkeit gruppieren
+- Operationen zusammenfassen, wenn möglich
 - Den Status asynchroner Aktivitäten verfolgen, anstatt intensives Polling durchzuführen
 
 ### Retry mit exponentiellem Backoff
 
-Um temporäre Fehler oder Rate Limiting (HTTP 429) zu behandeln, implementieren Sie eine Retry-Strategie mit exponentiellem Backoff:
+Um vorübergehende Fehler oder Rate Limiting (HTTP 429) zu behandeln, implementieren Sie eine Retry-Strategie mit exponentiellem Backoff:
 
 :::tip[Empfohlene Retry-Strategie]
-- ⏱️ **Stufenweise Wartezeit** : 1s, 2s, 4s, 8s...
-- 🎲 **Zufällige Variation** : Verhindert, dass alle Clients gleichzeitig erneut versuchen
-- 🔄 **Anzahl der Versuche begrenzen** : Maximum 3-5 Versuche
-- 📚 **Python-Bibliotheken** : [Backoff](https://pypi.org/project/backoff/) oder [Tenacity](https://pypi.org/project/tenacity/)
+- ⏱️ **Progressives Warten**: 1s, 2s, 4s, 8s...
+- 🎲 **Zufällige Variation**: Verhindert, dass alle Clients gleichzeitig erneut versuchen
+- 🔄 **Versuchslimit**: Maximum 3–5 Versuche
+- 📚 **Python-Bibliotheken**: [Backoff](https://pypi.org/project/backoff/) oder [Tenacity](https://pypi.org/project/tenacity/)
 :::

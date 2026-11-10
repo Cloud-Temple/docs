@@ -1,14 +1,14 @@
 ---
-title: Tutorial de OCR
+title: Reconocimiento de documentos (OCR) con DeepSeek
 sidebar_position: 4
 ---
 
-# Guía: Dominar el OCR con DeepSeek
+# Reconocimiento de documentos (OCR) con DeepSeek
 
 Esta guía detalla el uso del modelo **DeepSeek-OCR**, una solución de vanguardia para la compresión óptica de contexto y el análisis de documentos.
 
 :::info[Disponibilidad del modelo OCR]
-Esta guía describe la integración de DeepSeek-OCR. Antes de utilizarlo, verifica que el modelo esté expuesto por `GET /v1/models` y consulta el [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle). Si no está disponible, selecciona un modelo de visión adecuado y utiliza el formato de solicitud correspondiente; los parámetros específicos de esta guía no son universales.
+Esta guía describe la integración de DeepSeek-OCR. Antes de utilizarlo, verifique que el modelo esté expuesto por `GET /v1/models` y consulte el [catálogo y ciclo de vida](https://llmaas.status.cloud-temple.app/lifecycle). Si no está disponible, seleccione un modelo de visión adecuado y utilice el formato de solicitud correspondiente; los parámetros específicos de esta guía no son universales.
 :::
 
 ## Arquitectura y funcionamiento
@@ -32,7 +32,7 @@ El modelo adapta su consumo de tokens a la resolución de la imagen. Cuanto mayo
 | **Gundam** | Dinámico | ~800 | Periódicos, planos, escaneos complejos |
 
 :::tip[Optimización]
-Para optimizar tus costos y la latencia, redimensiona tus imágenes a la resolución mínima necesaria para que el texto siga siendo legible.
+Para optimizar sus costos y la latencia, redimensione sus imágenes a la resolución mínima necesaria para que el texto siga siendo legible.
 :::
 
 ### Soporte multilingüe
@@ -78,7 +78,7 @@ Para listar y localizar todos los objetos visibles.
 
 ## Tutorial de implementación (Python)
 
-Aquí tienes un ejemplo completo que muestra cómo estructurar tu llamada a la API para utilizar estas capacidades.
+Aquí tiene un ejemplo completo que muestra cómo estructurar su llamada a la API para utilizar estas capacidades.
 
 ### Requisitos previos: formato de la imagen y dependencias
 -   **Formato** : JPEG o PNG.
@@ -86,7 +86,7 @@ Aquí tienes un ejemplo completo que muestra cómo estructurar tu llamada a la A
 -   **PDF** : Deben convertirse a imágenes previamente (150-300 DPI).
 -   **Tamaño** : Se recomienda redimensionar las imágenes de muy alta resolución para evitar errores de límite de tamaño (413 Payload Too Large).
 
-Instala las librerías necesarias:
+Instale las librerías necesarias:
 ```bash
 pip install requests Pillow
 ```
@@ -97,7 +97,7 @@ Tomemos el ejemplo de este ticket de caja suizo:
 
 ![Ejemplo de ticket de caja](@site/docs/llmaas/images/ReceiptSwiss.jpg)
 
-Aquí tienes un script robusto que maneja el redimensionamiento y la codificación óptima de la imagen:
+Aquí tiene un script robusto que maneja el redimensionamiento y la codificación óptima de la imagen:
 
 ```python
 import base64
@@ -193,7 +193,7 @@ Bar    Tisch   7/01
 
 ### Código: análisis de gráfico (deep parsing)
 
-Para analizar un gráfico financiero en un informe, simplemente cambia el texto del prompt en el payload anterior:
+Para analizar un gráfico financiero en un informe, simplemente cambie el texto del prompt en el payload anterior:
 
 ```python
 # ... dans le payload ...
@@ -224,7 +224,7 @@ Estos datos ilustran la extracción de una tabla; no definen plantillas comercia
 | Serveur de test | 3 | 2 | 8 |
 ```
 
-Para los precios públicos del servicio, consulta el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+Para los precios públicos del servicio, consulte el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 ### Fórmulas matemáticas (LaTeX)
 Ideal para documentos académicos. El modelo reconoce las ecuaciones y las exporta en sintaxis LaTeX estándar.
@@ -265,6 +265,6 @@ $$
 
 ## Limitaciones conocidas
 
--   **Orientación** : El modelo no maneja la rotación automática. Asegúrate de que tus imágenes estén bien orientadas (texto horizontal).
+-   **Orientación** : El modelo no maneja la rotación automática. Asegúrese de que sus imágenes estén bien orientadas (texto horizontal).
 -   **Texto manuscrito** : Aunque es eficiente, la tasa de error es más alta en la escritura manuscrita cursiva compleja que en el texto impreso.
--   **Muy alta resolución** : Las imágenes que superan las dimensiones del modo "Gundam" (~2000x2000) se redimensionan, lo que puede hacer ilegible el texto microscópico. Divide los planos muy grandes en varias imágenes.
+-   **Muy alta resolución** : Las imágenes que superan las dimensiones del modo "Gundam" (~2000x2000) se redimensionan, lo que puede hacer ilegible el texto microscópico. Divida los planos muy grandes en varias imágenes.

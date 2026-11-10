@@ -1,9 +1,9 @@
 ---
-title: OCR Tutorial
+title: Document Recognition (OCR) with DeepSeek
 sidebar_position: 4
 ---
 
-# Guide: Mastering OCR with DeepSeek
+# Document Recognition (OCR) with DeepSeek
 
 This guide details the usage of the **DeepSeek-OCR** model, a state-of-the-art solution for optical context compression and document analysis.
 

@@ -1,17 +1,17 @@
 ---
-title: Deploy a Virtual Machine (VM) with KubeVirt
+title: Distribuire una macchina virtuale (VM) con KubeVirt
 ---
 
 ## Obiettivi
 
-Questo tutorial ha lo scopo di fornire passaggi chiari per distribuire e configurare macchine virtuali (VM) in **KubeVirt** sul tuo cluster OpenShift.
+Questo tutorial ha lo scopo di fornire passaggi chiari per distribuire e configurare macchine virtuali (VM) in **KubeVirt** sul vostro cluster OpenShift.
 
 Verranno trattati due scenari:
 
 1. Creazione e distribuzione di una macchina virtuale Fedora con NGINX.
 2. Creazione di una macchina virtuale Windows Server 2022 personalizzata con IIS.
 
-## Note notevoli
+## Limitazioni note
 
 - I template mancanti nel catalogo OpenShift possono essere recuperati dal repository ufficiale KubeVirt:  
   [https://github.com/kubevirt/common-templates/tree/master](https://github.com/kubevirt/common-templates/tree/master).  
@@ -35,17 +35,17 @@ Verranno trattati due scenari:
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati che:
+Prima di iniziare, assicuratevi che:
 
 1. KubeVirt sia correttamente installato su OpenShift.  
-2. Disponga di un accesso amministrativo al progetto OpenShift in cui verrà distribuita la VM.  
-3. Disponga delle chiavi SSH per accedere alla macchina virtuale Fedora.  
-4. Abbia installato e configurato gli strumenti seguenti:  
+2. Disponiate di un accesso amministrativo al progetto OpenShift in cui verrà distribuita la VM.  
+3. Disponiate delle chiavi SSH per accedere alla macchina virtuale Fedora.  
+4. Abbiate installato e configurato gli strumenti seguenti:  
    - **OpenShift CLI (`oc`)**  
    - **qemu-img** (per la conversione dei dischi nel formato `qcow2`)  
-5. Abbia accesso al blob Azure in cui verrà archiviata l'immagine di Windows Server.
+5. Abbiate accesso al blob Azure in cui verrà archiviata l'immagine di Windows Server.
 
-## Demo Plan
+## Piano dimostrativo
 
 ### Panoramica dei passaggi
 
@@ -54,9 +54,9 @@ Prima di iniziare, assicurati che:
 3. Configurare l'accesso di rete (SSH per Fedora, RDP per Windows).  
 4. Verificare che i servizi (NGINX/IIS) siano accessibili dal vostro browser.
 
-## File necessarie
+## File necessari
 
-Ti serviranno i seguenti file per il deployment:
+Vi serviranno i seguenti file per il deployment:
 
 1. **ssh-port-forward.yaml** : Manifesto per configurare l'accesso SSH alla VM Fedora.  
 2. **nginx-expose.yaml** : Manifesto per esporre NGINX in OpenShift.  
@@ -67,56 +67,56 @@ Ti serviranno i seguenti file per il deployment:
 
 ---
 
-### Step 1: Deploy a Fedora VM with NGINX
+### Passo 1: Distribuire una VM Fedora con NGINX
 
-1. **Create a Fedora VM in OpenShift**:
+1. **Creare una VM Fedora in OpenShift**:
 
-   - Go to the **Administrator** view in OpenShift and select **Virtualization**.
-   - Navigate to the **Catalog** tab and click **Create a new VM**.
-   - Fill in the following settings:
+   - Accedete alla vista **Administrator** in OpenShift e selezionate **Virtualization**.
+   - Andate nella scheda **Catalog** e fate clic su **Create a new VM**.
+   - Compilate i seguenti parametri:
      - **Operating System**: Fedora
-     - **Instance Type**: U Series with **2 CPUs and 8 GB RAM**
+     - **Instance Type**: U Series con **2 CPU e 8 GB di RAM**
      - **VM Name**: `fedora-nginx`
-   - Add your public SSH key (`mysshkey`) to access the VM.
-   - Click **Create**.
+   - Aggiungete la vostra chiave SSH pubblica (`mysshkey`) per accedere alla VM.
+   - Fate clic su **Create**.
 
-2. **Configure CLI access to OpenShift**:
+2. **Configurare l'accesso CLI a OpenShift**:
 
-   - Run the following command to work on the correct OpenShift project:
+   - Eseguite il comando seguente per lavorare sul progetto OpenShift corretto:
 
      ```bash
      oc project demokubevirt
      ```
 
-   - Log in to the OpenShift API:
+   - Connettetevi all'API OpenShift:
 
      ```bash
      oc login --server=api-ocp01-{your-id}.paas.cloud-temple.com --web
      ```
 
-3. **Configure SSH access to the Fedora VM**:
+3. **Configurare l'accesso SSH alla VM Fedora**:
 
-   - Apply the manifest to set up SSH port forwarding:
+   - Applicate il manifesto per configurare il port forwarding per SSH:
 
      ```bash
      oc apply -f ssh-port-forward.yaml
      ```
 
-   - Forward the port locally from your machine:
+   - Reindirizzate la porta in locale dalla vostra macchina:
 
      ```bash
      oc port-forward svc/fedora-service-ssh 2222:22
      ```
 
-   - Connect to the VM from a new terminal:
+   - Connettetevi alla VM da un nuovo terminale:
 
      ```bash
      ssh cloud-user@127.0.0.1 -p 2222 -o StrictHostKeyChecking=no
      ```
 
-4. **Deploy NGINX on Fedora**:
+4. **Distribuire NGINX su Fedora**:
 
-   - Connect to the VM as described above and run the following commands:
+   - Connettetevi alla VM come indicato sopra ed eseguite i comandi:
 
      ```bash
      sudo dnf update -y
@@ -125,82 +125,82 @@ Ti serviranno i seguenti file per il deployment:
      sudo systemctl enable nginx
      ```
 
-   - Verify that NGINX is running correctly:
+   - Verificate che NGINX funzioni correttamente:
 
      ```bash
      sudo systemctl status nginx
      ```
 
-5. **Expose NGINX in OpenShift**:
+5. **Esporre NGINX in OpenShift**:
 
-   - Apply the following manifest to expose the service:
+   - Applicate il manifesto seguente per esporre il servizio:
 
      ```bash
      oc apply -f nginx-expose.yaml
      ```
 
-6. **Access the NGINX website**:
+6. **Accedere al sito web NGINX**:
 
-   - Open your browser and go to:
+   - Aprite il vostro browser e accedete a:
      `https://nginx-fedora.apps-ocp01-{your-id}.paas.cloud-temple.com`.
 
-### Step 2: Deploy a Windows Server VM with IIS
+### Passo 2: Distribuire una VM Windows Server con IIS
 
-1. **Create a custom Windows image**:
+1. **Creare un'immagine Windows personalizzata**:
 
-   - Deploy a Windows Server VM in VMware Workstation with the following settings:  
-     - Drivers: **Virtio**, SATA, e1000e, UEFI.  
-     - Perform a **Sysprep**.  
-     - Export the image in **OVF** format.
+   - Installate una VM Windows Server in VMware Workstation con:  
+     - Driver: **Virtio**, SATA, e1000e, UEFI.  
+     - Eseguite un **Sysprep**.  
+     - Esportate l'immagine nel formato **OVF**.
 
-   - Convert the disk image to **qcow2** format using `qemu-img`:
+   - Convertite l'immagine disco nel formato **qcow2** utilizzando `qemu-img`:
 
      ```bash
      qemu-img convert -f vmdk -O qcow2 WindowsServer2022-OC-disk1.vmdk output.qcow2
      ```
 
-   - Upload the converted image to an Azure blob and retrieve the SAS key.
+   - Caricate l'immagine convertita in un blob Azure e recuperate la chiave SAS.
 
-2. **Create a custom template for Windows Server in KubeVirt**:
+2. **Creare un template personalizzato per Windows Server in KubeVirt**:
 
-   - From the **catalog** tab in OpenShift, create a template with the following parameters:  
-     - **2 CPUs, 8 GB RAM, 100 GB storage**.  
-     - Configure storage to use **virtio**.  
-     - Use the blob URL as the disk source and include the SAS key.
+   - Dalla scheda **catalog** di OpenShift, create un template con i seguenti parametri:  
+     - **2 CPU, 8 GB di RAM, 100 GB di storage**.  
+     - Configurate lo storage per utilizzare **virtio**.  
+     - Utilizzate l'URL del blob come sorgente del disco e integrate la chiave SAS.
 
-3. **Configure IIS on Windows**:
+3. **Configurare IIS su Windows**:
 
-   - Connect to the VM (administrator password, keyboard, etc.).
-   - Install **IIS** via the console:
+   - Connettetevi alla VM (password di amministratore, tastiera, ecc.).
+   - Installate **IIS** dalla console:
 
      ```powershell
      Install-WindowsFeature -name Web-Server -IncludeManagementTools
      ```
 
-4. **Configure RDP access**:
+4. **Configurare l'accesso RDP**:
 
-   - Apply the following YAML files:
+   - Applicate i seguenti file YAML:
 
      ```bash
      oc apply -f rdp-port-forward.yaml
      oc apply -f iis-expose.yaml
      ```
 
-   - Forward the RDP port locally:
+   - Reindirizzate la porta RDP in locale:
 
      ```bash
      oc port-forward svc/windows-service-rdp 2222:3389
      ```
 
-   - Connect using your RDP client:
+   - Connettetevi tramite il vostro client RDP:
 
      ```bash
      mstsc -v 127.0.0.1:2222
      ```
 
-5. **Access the IIS website**:
+5. **Accedere al sito web IIS**:
 
-   - In your browser, navigate to:  
+   - Nel vostro browser, accedete a:  
      `https://iis-windows.apps-ocp01-{your-id}.paas.cloud-temple.com`.
 
 ## Criteri di validazione
@@ -211,4 +211,4 @@ Ti serviranno i seguenti file per il deployment:
 
 ## Conclusione
 
-Questo guida ti ha permesso di distribuire macchine virtuali Fedora e Windows Server su KubeVirt con OpenShift. Hai imparato a configurare i collegamenti di rete (SSH/RDP) e a esporre servizi web. Questi passaggi possono essere ripetuti per diversi scenari in cui sono necessarie macchine virtuali in un ambiente PaaS OpenShift **Cloud Temple**. 🚀
+Questa guida vi ha permesso di distribuire macchine virtuali Fedora e Windows Server su KubeVirt con OpenShift. Avete imparato a configurare i collegamenti di rete (SSH/RDP) e a esporre servizi web. Questi passaggi possono essere ripetuti per diversi scenari in cui sono necessarie macchine virtuali in un ambiente PaaS OpenShift **Cloud Temple**. 🚀

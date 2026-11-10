@@ -1,12 +1,12 @@
 ---
-title: Utilizzare ArgoCD per i tuoi deployment GitOps
+title: Utilizzare ArgoCD per i vostri deployment GitOps
 ---
 
 import argocdguestbook from '@site/docs/managed_kubernetes/tutorials/images/argocdguestbook.png'
 
 ## Obiettivi
 
-Questo tutorial spiega come utilizzare **ArgoCD**, lo strumento di distribuzione continua GitOps integrato nel tuo cluster **Managed Kubernetes**. Al termine di questa guida, saprai:
+Questo tutorial spiega come utilizzare **ArgoCD**, lo strumento di distribuzione continua GitOps integrato nel vostro cluster **Managed Kubernetes**. Al termine di questa guida, saprete:
 
 - Cos'è l'approccio GitOps.
 - Come accedere all'interfaccia di ArgoCD.
@@ -117,24 +117,24 @@ Ora che il namespace è pronto, possiamo dichiarare l'applicazione ad ArgoCD.
 
 ### 4. Verificare la sincronizzazione
 
-Non appena applichi il manifest, ArgoCD rileva questa nuova risorsa `Application` e inizia il suo lavoro.
+Non appena applicate il manifest, ArgoCD rileva questa nuova risorsa `Application` e inizia il suo lavoro.
 
 1. **Via l'interfaccia web:**
-    - Accedi all'interfaccia di ArgoCD.
-    - Dovresti vedere una nuova card per l'applicazione `guestbook`.
+    - Accedete all'interfaccia di ArgoCD.
+    - Dovreste vedere una nuova card per l'applicazione `guestbook`.
     - Dopo qualche istante, il suo stato dovrebbe passare a `Healthy` e `Synced`.
-    - Facendo clic sulla card, puoi visualizzare tutte le risorse Kubernetes (Deployment, Service, ecc.) che sono state create.
+    - Facendo clic sulla card, potete visualizzare tutte le risorse Kubernetes (Deployment, Service, ecc.) che sono state create.
 
 <img src={argocdguestbook} />
 
 1. **Via la riga di comando:**
-    - Verifica che il namespace `guestbook` sia stato creato:
+    - Verificate che il namespace `guestbook` sia stato creato:
 
       ```bash
       kubectl get ns guestbook
       ```
 
-    - Verifica che le risorse dell'applicazione siano state distribuite correttamente in questo namespace:
+    - Verificate che le risorse dell'applicazione siano state distribuite correttamente in questo namespace:
 
       ```bash
       kubectl get all -n guestbook
@@ -153,31 +153,31 @@ Non appena applichi il manifest, ArgoCD rileva questa nuova risorsa `Application
 
 ### 5. Il ciclo GitOps
 
-Ora, se modifichi un manifesto nel repository Git, ArgoCD rileverà la modifica e aggiornerà automaticamente l'applicazione nel cluster. È la magia del GitOps!
+Ora, se modificate un manifesto nel repository Git, ArgoCD rileverà la modifica e aggiornerà automaticamente l'applicazione nel cluster. È la magia del GitOps!
 
 ## Pulizia
 
 Per eliminare l'applicazione e tutte le risorse associate, è sufficiente eliminare la risorsa `Application` di ArgoCD.
 
 1. **Via l'interfaccia web:**
-    - Nell'interfaccia utente di ArgoCD, individua l'applicazione `guestbook`.
-    - Fai clic sui tre punti (...) per aprire il menu e seleziona **"Delete"**.
-    - Seleziona l'opzione **"Foreground"** per assicurarti che tutte le risorse gestite (pod, servizi, ecc.) vengano eliminate a cascata.
+    - Nell'interfaccia utente di ArgoCD, individuate l'applicazione `guestbook`.
+    - Fate clic sui tre punti (...) per aprire il menu e selezionate **"Delete"**.
+    - Selezionate l'opzione **"Foreground"** per assicurarvi che tutte le risorse gestite (pod, servizi, ecc.) vengano eliminate a cascata.
 2. **Via `kubectl`:**
-    - Elimina il file `app-guestbook.yaml` che hai creato:
+    - Eliminate il file `app-guestbook.yaml` che avete creato:
 
       ```bash
       kubectl delete -f app-guestbook.yaml
       ```
 
-ArgoCD eliminerà ora tutti i componenti dell'applicazione `guestbook`. Una volta completata la sincronizzazione di eliminazione, il namespace `guestbook` sarà vuoto. Potrai quindi eliminarlo con il seguente comando:
+ArgoCD eliminerà ora tutti i componenti dell'applicazione `guestbook`. Una volta completata la sincronizzazione di eliminazione, il namespace `guestbook` sarà vuoto. Potrete quindi eliminarlo con il seguente comando:
 
 ```bash
 kubectl delete namespace guestbook
 ```
 
 >ℹ️[Per approfondire: la gestione dei segreti]
->Questo tutorial utilizza un repository pubblico senza dati sensibili. Per le tue applicazioni in produzione, è fondamentale non memorizzare mai segreti (password, chiavi API) in chiaro nel tuo repository Git. >Soluzioni come **Sealed Secrets** o **OpenTofu** si integrano con ArgoCD per gestire i tuoi segreti in modo sicuro.
+>Questo tutorial utilizza un repository pubblico senza dati sensibili. Per le vostre applicazioni in produzione, è fondamentale non memorizzare mai segreti (password, chiavi API) in chiaro nel vostro repository Git. >Soluzioni come **Sealed Secrets** o **OpenTofu** si integrano con ArgoCD per gestire i vostri segreti in modo sicuro.
 
 ## Conclusione
 

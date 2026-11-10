@@ -74,6 +74,6 @@ Esto garantiza que sus proyectos cumplan con los límites de consumo (CPU, memor
 
 ## Conclusion
 
-Gracias a Capsule, cuentas con una autonomía completa para gestionar los Namespaces de tus equipos, al tiempo que te beneficias de un marco seguro y preconfigurado por los administradores del clúster. Puedes crear, modificar y eliminar Namespaces a voluntad, sabiendo que las medidas de seguridad necesarias se aplican automáticamente.
+Gracias a Capsule, cuenta con una autonomía completa para gestionar los Namespaces de sus equipos, al tiempo que se beneficia de un marco seguro y preconfigurado por los administradores del clúster. Puede crear, modificar y eliminar Namespaces a voluntad, sabiendo que las medidas de seguridad necesarias se aplican automáticamente.
 
-Si necesitas crear un nuevo Tenant para aislar otro conjunto de proyectos o equipos, puedes realizar la solicitud al soporte de Cloud Temple.
+Si necesita crear un nuevo Tenant para aislar otro conjunto de proyectos o equipos, puede realizar la solicitud al soporte de Cloud Temple.

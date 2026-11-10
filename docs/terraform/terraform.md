@@ -1,10 +1,33 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble du provider Terraform
 ---
 
-# Provider Terraform
+# Vue d'ensemble du provider Terraform
 
 Le provider Terraform Cloud Temple vous permet de gérer l'infrastructure de votre compte Cloud Temple en utilisant l'approche Infrastructure as Code (IaC). Il offre une intégration complète avec les services d'infrastructure Cloud Temple, permettant de provisionner, configurer et gérer vos ressources cloud de manière déclarative et reproductible.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./terraform/concepts" class="card-link">Explorer les concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./terraform/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./terraform/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./terraform/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
+</div>
 
 ## Fonctionnalités principales
 

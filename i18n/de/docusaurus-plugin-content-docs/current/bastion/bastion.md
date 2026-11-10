@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über Bastion
 ---
 
-# Bastion
+# Übersicht über Bastion
 
 Der **Bastion Cloud Temple** ist ein sicherer und verwalteter Dienst, der die Verwaltung Ihrer Infrastrukturen über RDP- oder SSH-Verbindungen vereinfacht.
 
@@ -17,13 +17,18 @@ Mit seinem sicherheitsorientierten Ansatz und erweiterten Funktionen wie Infrast
     <a href="./bastion/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./bastion/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./bastion/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
     <a href="./bastion/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./bastion/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>

@@ -153,7 +153,7 @@ Tan pronto como aplique el manifiesto, ArgoCD detecta este nuevo recurso `Applic
 
 ### 5. El ciclo GitOps
 
-Ahora, si modificas un manifiesto en el repositorio Git, ArgoCD detectará el cambio y actualizará automáticamente la aplicación en el clúster. ¡Esa es la magia de GitOps!
+Ahora, si modifica un manifiesto en el repositorio Git, ArgoCD detectará el cambio y actualizará automáticamente la aplicación en el clúster. ¡Esa es la magia de GitOps!
 
 ## Limpieza
 

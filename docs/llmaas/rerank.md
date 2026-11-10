@@ -44,15 +44,13 @@ Comparez la pertinence du classement sur votre corpus, les langues prises en cha
 
 ## Tarification
 
-Une unité de recherche (`search_unit`) correspond à un document soumis au reranking pour une requête.
+Le reranking est facturé au million de **tokens de reranking**.
 
-Tous les documents du tableau `documents` sont comptés. Le paramètre `top_n` limite uniquement le nombre de résultats retournés : il ne réduit pas le nombre de documents traités ni le coût de la requête. Un même document soumis dans plusieurs requêtes est compté à chaque traitement.
+Tous les documents du tableau `documents` sont traités. Le paramètre `top_n` limite uniquement le nombre de résultats retournés : il ne réduit ni le volume traité ni le coût de la requête. Un même document soumis dans plusieurs requêtes est traité, et facturé, à chaque requête.
 
 Pour connaître les prix publics en vigueur et établir votre estimation, consultez le [catalogue tarifaire officiel Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 **Exemple :** 1 000 requêtes contenant chacune 100 documents représentent 100 000 documents traités, même si chaque requête ne retourne que les 5 premiers résultats (`top_n: 5`).
-
-Les compteurs de tokens éventuellement renvoyés par le moteur ne constituent pas l'unité de facturation du reranking.
 
 ## Endpoints
 
@@ -138,9 +136,7 @@ Extrait illustratif du format Jina/vLLM décrit par le contrat de la plateforme.
 - `index` : Position originale dans le tableau `documents` envoyé
 - `relevance_score` : Score brut du modèle (logit), non normalisé et non assimilable à une probabilité. Un score plus élevé indique un document mieux classé pour cette requête ; aucune plage universelle de 0 à 1 n'est garantie.
 - `document` : Texte et éventuelles données multimodales du document, lorsque le moteur les retourne.
-- `usage.prompt_tokens` et `usage.total_tokens` : Compteurs de tokens du moteur. Ils ne constituent pas l’unité de facturation du reranking.
-
-Le nombre de documents facturés ne dépend pas de la présence d’un champ `search_units` dans la réponse : tous les documents soumis sont comptés, selon la [tarification](#tarification).
+- `usage.prompt_tokens` et `usage.total_tokens` : Compteurs de tokens du moteur.
 
 ## Exemples d'Implémentation
 

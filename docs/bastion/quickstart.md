@@ -1,18 +1,17 @@
 ---
 title: Guide de démarrage
 ---
-import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
 import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
 import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
 import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
-Ce guide de démarrage vous présente comment demander la création d'une Appliance et comment enregistrer une nouvelle session et s'y connecter.
+Ce guide de démarrage présente comment activer le produit Bastion, enregistrer un équipement et vous y connecter.
 
 ## Prérequis
 
-1. Avoir souscrit à le produit Cloud Temple (souscription Appliance Bastion).
+1. Avoir activé le produit Bastion pour votre organisation.
 2. Les équipements à administrer doivent être accessibles depuis le réseau où est déployée l'Appliance Bastion.
 3. Avoir les droits sur le module Bastion.
 4. Dans le cadre d'un déploiement de l'Appliance onpremise, les flux correspondants doivent être ouverts.
@@ -39,16 +38,15 @@ Plusieurs flux sont nécessaires pour le bon fonctionnement de l'Appliance Basti
 |--------------------------|-----------------------------|-----------|
 | Appliance bastion client | Les instances à administrer | TCP/22    |
 
-## Demander la création d'une Appliance
+<a id="demander-la-création-dune-appliance"></a>
 
-Avant de pouvoir déployer une Appliance, il faut faire une demande de souscription à une Appliance via une demande au support.
-Le support est accessible dans la Console depuis l'icône de bouée sur la barre en haut à droite de la fenêtre.
+## Activer le produit Bastion
 
-<img src={shivaSupport} />
+Le produit Bastion s'active en libre-service depuis la vue Organisation de la Console Cloud Temple. Vous pouvez aussi passer par votre contact commercial habituel.
 
 ## Enregistrer un équipement
 
-Pour accéder régulièrement à un équipement à administrer, il est plus adapté de créer une session, qui ne demandera que votre nom d’utilisateur et votre mot de passe à chaque connexion.
+Pour accéder régulièrement à un équipement à administrer, il est plus adapté de l'enregistrer : seuls votre nom d’utilisateur et votre mot de passe seront demandés à chaque connexion.
 
 Pour cela, rendez-vous dans l’onglet « Equipements » du menu « Bastion », puis, cliquez sur le bouton « Nouveau équipement ».
 
@@ -65,7 +63,7 @@ Renseignez ensuite les informations nécessaires à la création de votre équip
 
 <img src={creerSession2} />
 
-Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. La session s’ajoute ensuite à la liste de vos équipements.
+Une notification vous indiquant la création de l'équipement devrait apparaître en haut à droite de la page. L'équipement s’ajoute ensuite à la liste de vos équipements.
 
 Pour créer un nouvel équipement, vous pouvez également passer par l’onglet « Appliances » en cliquant sur la barre d’action de l’Appliance à laquelle vous souhaitez associer un équipement.
 

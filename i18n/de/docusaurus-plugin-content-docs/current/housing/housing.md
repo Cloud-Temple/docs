@@ -1,8 +1,8 @@
 ---
-title: Übersicht
+title: Übersicht über Colocation
 ---
 
-# Housing Cloud Temple
+# Übersicht über Colocation
 
 Das **Housing Cloud Temple** bietet eine Lösung für das physische Hosting Ihrer IT-Infrastrukturen in zuverlässigen und sicheren Verfügbarkeitszonen. Entwickelt, um den Anforderungen von Unternehmen gerecht zu werden, ermöglicht dieses Produkt das Unterbringen Ihrer Geräte in gemeinsam genutzten oder dedizierten Racks und gewährleistet gleichzeitig eine leistungsstarke Netzwerkverbindung sowie professionelle Datacenter-Supportdienste.
 
@@ -11,17 +11,22 @@ Mit flexiblen Optionen und einem hohen Sicherheitsniveau garantiert Housing Clou
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
     <a href="./housing/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
+    <h3>Erste Schritte</h3>
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./housing/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <a href="./housing/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie schrittweise die Konfiguration und Nutzung unserer Dienste anhand detaillierter Anleitungen.</p>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
     <a href="./housing/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./housing/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>

@@ -12,7 +12,7 @@ import shivaIncident_004 from '@site/docs/console/images/shiva_incident_004.png'
 import shivaIncident_005 from '@site/docs/console/images/shiva_incident_005.png'
 import shivaIncident_006 from '@site/docs/console/images/shiva_incident_006.png'
 
-As with any cloud infrastructure platform, the Temple Cloud platform undergoes regular hardware and software maintenance and updates.
+As with any cloud infrastructure platform, the Cloud Temple platform undergoes regular hardware and software maintenance and updates.
 
 ## Access to Current Operations and Incidents
 

@@ -22,18 +22,20 @@ La interfaz de configuración de buckets ofrece tres modos de gestión de acceso
 - Especificidad de la Consola: Las direcciones de red (primera dirección del bloque) y de difusión (última dirección del bloque), que normalmente están reservadas en una red IP, también se añaden automáticamente.
 - Consecuencia: El usuario no tiene que gestionar estas sutilezas, todo se tiene en cuenta automáticamente por la herramienta.
 
-### **Custom Access (manual)**
+### **Acceso Custom (manual)**
 
 <img src={S3CustomAccess} />
 
-- How it works: The user must explicitly provide all CIDR ranges as well as the network and broadcast addresses to be authorized.
-- Example: If you want to authorize the prefix `80.75.153.200/29`, you must also explicitly add the addresses `80.75.153.200/32` (network address) and `80.75.153.207/32` (broadcast address) so that these are included in the access policy.
-- Consequence: Offers full flexibility, but requires complete and rigorous configuration.
+- Funcionamiento: El usuario debe proporcionar explícitamente todas las subredes CIDR, así como las direcciones de red y de difusión que se deben autorizar.
+- Ejemplo: Si desea autorizar el prefijo `80.75.153.200/29`, también debe añadir explícitamente las direcciones `80.75.153.200/32` (dirección de red) y `80.75.153.207/32` (dirección de difusión) para que estas queden incluidas en la política de acceso.
+- Consecuencia: Ofrece una libertad total, pero exige una configuración completa y rigurosa.
 
 :::info
 
-### Nature of the CIDR prefixes provided by Cloud Temple
+### Naturaleza de los prefijos CIDR proporcionados por Cloud Temple
 
-All CIDR prefixes provided by Cloud Temple are [translate:route prefixes]. This means that for these address ranges, **all addresses they cover—including network and broadcast addresses—are usable as valid source addresses** in access policies. This is why the Console editor systematically includes these special addresses in Private mode.
+Todos los prefijos CIDR proporcionados por Cloud Temple son prefijos de enrutamiento (route prefixes). Esto significa que, para estas subredes, **todas las direcciones que cubren, incluidas las direcciones de red y de difusión, pueden utilizarse como orígenes válidos** de acceso en la política. Por eso el editor de la Consola incluye sistemáticamente estas direcciones especiales en el modo Private.
 
-This characteristic distinguishes your environment from certain traditional networks, where these addresses are reserved and not usable.
+Esta particularidad distingue su entorno de ciertas redes clásicas en las que estas direcciones están reservadas y no pueden utilizarse.
+
+:::

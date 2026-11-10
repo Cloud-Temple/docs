@@ -5,10 +5,31 @@ title: Alertas de seguridad
 Consulte aquí las alertas de seguridad relacionadas con nuestros servicios en la nube.
 Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades recién identificadas.
 
+<a id="información"></a>
+
+## Leyenda
+
+- **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
+- **Referencia(s)** : ID CVE, según disponibilidad.
+- **CVSS** : Puntuación CVSS v3 base tal como la reporta el editor o el CVE, sin contextualizar. La contextualización se expresa mediante la severidad CT. Si la alerta abarca varias vulnerabilidades, se indican las puntuaciones CVSS mínimas y máximas.
+- **Título** : Título de la alerta, con referencia del editor si está disponible.
+- **Descripción** : Descripción sintética, con enlace(s) a información detallada.
+- **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
+- **Severidad** : Nivel de severidad en el contexto de los servicios de Cloud Temple (para la vulnerabilidad más crítica en caso de vulnerabilidades múltiples). Los criterios de explotación se tienen en cuenta en el contexto técnico de nuestras infraestructuras y servicios en la nube.
+  - 🔴 **Crítico** : Vulnerabilidad CVSS 7+ que presenta un riesgo de explotación importante (alta exposición, facilidad de explotación). Se recomienda encarecidamente una corrección o mitigación en el menor tiempo posible.
+  - 🟠 **Importante** : Vulnerabilidad CVSS 7+ que no presenta un riesgo de explotación importante (exposición limitada o restricciones de explotación)
+  - 🟡 **Moderada** : Vulnerabilidad CVSS 4+
+  - 🔵 **Baja** : Vulnerabilidad CVSS inferior a 4, o no explotable.
+- **Gestión** : Información y recomendaciones en el contexto de los servicios de Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para abordar la vulnerabilidad. ✅ indica que la gestión de la vulnerabilidad está cubierta por Cloud Temple.
+
 ## Vulnerabilidades
 
-| Date | Référence(s) | CVSS | Titre | Description | Service(s) | Sévérité | Traitement |
+| Fecha | Referencia(s) | CVSS | Título | Descripción | Servicio(s) | Gravedad | Tratamiento |
 |---------------------|-----------------|-------------|--------------|---------|-------------|----------------|-------------|
+| 21/10/2026 | [CVE-2026-113610](https://nvd.nist.gov/vuln/detail/CVE-2026-113610) | 5.4 | **Vulnerabilidad en Xen Orchestra (CVE-2026-113610)** | Omisión de autorización en el método de API user.set de xo-server que permite a un usuario autenticado restringido modificar las preferencias de otros usuarios. | IaaS OpenSource | 🟡 Moderada | ✅ La actualización de sus instancias Xen Orchestra está programada una vez que los parches sean validados por Cloud Temple. No es necesaria ninguna acción por su parte. |
+| 14/10/2026 | [CVE-2026-110111](https://nvd.nist.gov/vuln/detail/CVE-2026-110111) | 7.5 | **Vulnerabilidad en Xen Orchestra (CVE-2026-110111)** | Fallo de control de acceso en Xen Orchestra que permite a un usuario autenticado elevar sus privilegios a administrador y ejecutar código arbitrario de forma remota mediante archivos .vmx manipulados. | IaaS OpenSource | 🟠 Importante | ✅ La actualización de sus instancias Xen Orchestra está programada una vez que los parches sean validados por Cloud Temple. No es necesaria ninguna acción por su parte. |
+| 14/10/2026 | [CVE-2026-79611](https://nvd.nist.gov/vuln/detail/CVE-2026-79611) | ? | **Vulnerabilidad en XCP-ng (CVE-2026-79611)** | Denegación de servicio en Xen Project causada por un fallo de VMEntry relacionado con ciertos estados de VMX, lo que permite a un atacante provocar la caída de una máquina virtual invitada. | IaaS OpenSource | ⚪ No evaluada | ✅ La actualización de sus instancias XCP-ng está planificada tras la validación de los parches por parte de Cloud Temple. No es necesaria ninguna acción por su parte. |
+| 14/10/2026 | [CVE-2026-102700](https://nvd.nist.gov/vuln/detail/CVE-2026-102700) | ? | **Vulnerabilidad en XCP-ng (CVE-2026-102700)** | Una vulnerabilidad de tipo use-after-free en GNTTAB_cache_flush de Xen permite a un atacante con acceso a dominios especiales del sistema corromper la memoria. | IaaS OpenSource | ⚪ No evaluada | ✅ La actualización de sus instancias XCP-ng está planificada tras la validación de los parches por parte de Cloud Temple. No es necesaria ninguna acción por su parte. |
 | 09/10/2026 | [CVE-2026-93017](https://nvd.nist.gov/vuln/detail/CVE-2026-93017) | 7.7 | **Vulnerabilidad en Red Hat OpenShift (CVE-2026-93017)** | Una vulnerabilidad de exceso de privilegios en el ClusterRole insights-operator-gather de OpenShift permite a un atacante que pueda crear un pod acceder a todos los secretos del clúster. | PaaS OpenShift | 🟠 Importante | ✅ La actualización de sus instancias OpenShift está programada una vez que los parches sean validados por Cloud Temple. No es necesaria ninguna acción por su parte. |
 | 17/09/2026 | [CVE-2026-70416](https://nvd.nist.gov/vuln/detail/CVE-2026-70416) | 10.0 | **Vulnerabilidad en Dell ECS / ObjectScale (CVE-2026-70416)** | Una deserialización de datos no confiables permite a un atacante remoto no autenticado ejecutar código arbitrario. | Object Storage | 🔴 Crítica | ✅ La remediación de sus entornos ObjectScale está gestionada por Cloud Temple. No es necesaria ninguna acción por su parte. |
 | 17/09/2026 | [CVE-2025-43936](https://nvd.nist.gov/vuln/detail/CVE-2025-43936) | 8.1 | **Vulnerabilidad en Dell ECS / ObjectScale (CVE-2025-43936)** | Vulnerabilidad de autenticación incorrecta que permite a un atacante remoto no autenticado obtener acceso no autorizado al sistema Dell ObjectScale. | Object Storage | 🟠 Importante | ✅ La remediación de sus entornos ObjectScale está gestionada por Cloud Temple. No es necesaria ninguna acción por su parte. |
@@ -54,22 +75,3 @@ Esta página se actualiza diariamente para tener en cuenta las vulnerabilidades 
 | 14/05/2025 | [VMSA-2025-0007](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25683) | 6.1 | **VMSA-2025-0007 : Vulnerabilidad de gestión de archivos no segura en VMware Tools (CVE-2025-22247)** | Se ha reportado una vulnerabilidad de gestión de archivos no segura en VMware Tools. El editor proporciona parches. | IaaS By VMware | 🟡 Moderada | ⚠️ Le recomendamos actualizar VMware Tools en sus máquinas virtuales. Las versiones corregidas de VM Tools están incluidas en los paquetes ESXi proporcionados por Cloud Temple. |
 | 25/03/2025 | [VMSA-2025-0005](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518) | 7.8 | **VMSA-2025-0005 : Vulnerabilidad de evasión de autenticación en VMware Tools para Windows (CVE-2025-22230)** | Se ha reportado una vulnerabilidad de evasión de autenticación en VMware Tools para Windows. El editor proporciona parches. | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar VMware Tools en sus máquinas virtuales. Las versiones corregidas de VM Tools están incluidas en los paquetes ESXi proporcionados por Cloud Temple |
 | 04/03/2025 | [VMSA-2025-0004](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390) | 7.1-9.3 | **VMSA-2025-0004 : Múltiples vulnerabilidades en VMware ESXi (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)** | Se han reportado varias vulnerabilidades en VMware ESXi: Vulnerabilidad de desbordamiento de heap VMCI (CVE-2025-22224) evaluada como Crítica por VMware, Vulnerabilidad de escritura arbitraria en VMware ESXi (CVE-2025-22225), Vulnerabilidad de divulgación de información HGFS (CVE-2025-22226). El editor proporciona parches.  | IaaS By VMware | 🟠 Importante | ⚠️ Le recomendamos actualizar sus hipervisores. Las versiones corregidas de ESXi estarán disponibles una vez validadas por Cloud Temple. Console le indica qué ESXi requieren una actualización. |
-
-## Información
-
-- **Fecha** : Fecha de publicación inicial de la alerta de seguridad de Cloud Temple.
-- **Referencia(s)** : ID CVE, según disponibilidad.
-- **CVSS** : Puntuación CVSS v3 base tal como la reporta el editor o el CVE, sin contextualizar. La contextualización se expresa mediante la severidad CT. Si la alerta abarca varias vulnerabilidades, se indican las puntuaciones CVSS mínimas y máximas.
-- **Título** : Título de la alerta, con referencia del editor si está disponible.
-- **Descripción** : Descripción sintética, con enlace(s) a información detallada.
-- **Servicio(s)** : Servicio(s) de Cloud Temple que podrían verse afectados.
-- **Severidad** : Nivel de severidad en el contexto de los servicios de Cloud Temple (para la vulnerabilidad más crítica en caso de vulnerabilidades múltiples). Los criterios de explotación se tienen en cuenta en el contexto técnico de nuestras infraestructuras y servicios en la nube.
-
-| Nivel | Descripción |
-|--------|-------------|
-| 🔴 **Crítico** | Vulnerabilidad CVSS 7+ que presenta un riesgo de explotación importante (alta exposición, facilidad de explotación). Se recomienda encarecidamente una corrección o mitigación en el menor tiempo posible.|
-| 🟠 **Importante** | Vulnerabilidad CVSS 7+ que no presenta un riesgo de explotación importante (exposición limitada o restricciones de explotación) |
-| 🟡 **Moderada** | Vulnerabilidad CVSS 4+ |
-| 🔵 **Baja** | Vulnerabilidad CVSS inferior a 4, o no explotable. |
-
-- **Gestión** : Información y recomendaciones en el contexto de los servicios de Cloud Temple. ⚠️ indica que se requiere una acción por parte de los usuarios para abordar la vulnerabilidad. ✅ indica que la gestión de la vulnerabilidad está cubierta por Cloud Temple.

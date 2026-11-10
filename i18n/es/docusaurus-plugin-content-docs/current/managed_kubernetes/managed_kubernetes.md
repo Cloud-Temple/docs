@@ -1,33 +1,38 @@
 ---
-title: Vista general
+title: Visión general de Managed Kubernetes
 ---
 
 import archiOverview1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
 import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 
-# Managed Kubernetes
+# Visión general de Managed Kubernetes
+
+**Managed Kubernetes** de Cloud Temple es una solución de orquestación de contenedores basada en estándares de código abierto (CNCF). Está diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización, y está disponible en servicios cualificados SecNumCloud. Cada clúster se despliega en un entorno IaaS Cloud-Temple completamente dedicado al cliente.
+
+Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos dos variantes de este producto: **Managed Core Kubernetes** (una base minimalista) y **Managed Kubernetes** (una plataforma completa "lista para usar").
 
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra los fundamentos y principios esenciales para dominar nuestra infraestructura.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./managed_kubernetes/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Guía de inicio rápido</h3>
-    <p>Comience rápidamente siguiendo instrucciones claras y sencillas.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./managed_kubernetes/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
 </div>
-
-**Managed Kubernetes** de Cloud Temple es una solución de orquestación de contenedores basada en estándares de código abierto (CNCF). Está diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización en las plataformas SecNumcloud de Cloud Temple. Cada clúster se despliega en un entorno IaaS Cloud-Temple completamente dedicado al cliente.
-
-Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos dos variantes de este producto: **Managed Core Kubernetes** (una base minimalista) y **Managed Kubernetes** (una plataforma completa "lista para usar").
 
 ---
 
@@ -37,7 +42,8 @@ Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos do
 Esta oferta está diseñada para equipos con un **excelente dominio de Kubernetes** y herramientas Cloud Native, que desean construir su propia plataforma sobre bases minimalistas y robustas. Se dirige a los entusiastas del código abierto que buscan una solución depurada, portátil, sin capas adicionales del proveedor, sobre un sistema operativo minimalista e inmutable diseñado para la automatización y la seguridad.
 
 - **SO y Red incluidos**: Talos OS, Rook-Ceph (almacenamiento), Cilium (CNI), MetalLB (Balanceador de carga).
-- **Filosofía**: A partir de esta base eficiente y estandarizada, tienes la libertad de integrar tus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.
+- **Filosofía**: A partir de esta base eficiente y estandarizada, tiene la libertad de integrar sus propias herramientas de despliegue continuo, observabilidad, copia de seguridad o seguridad.
+- **Más información**: [Conceptos de Managed Core Kubernetes](../managed_core_kubernetes/concepts.md).
 
 ### 2. Managed Kubernetes (La plataforma completa)
 Esta oferta integral está diseñada para equipos que buscan una solución **nativa, lista para usar y todo en uno**, que integre los mejores estándares de código abierto para cubrir todas las necesidades del ciclo de vida de la aplicación sin tener que ensamblar y mantener los componentes por su cuenta.
@@ -58,7 +64,7 @@ Independientemente de la oferta elegida, nuestros clústeres de Kubernetes compa
 
 - **Soberanía y Reversibilidad** : La solución se basa en estándares de código abierto para evitar cualquier dependencia tecnológica (*vendor lock-in*) y garantizar la portabilidad total de sus aplicaciones. (Con Veeam Kasten incluido en la versión completa para facilitar las migraciones intercloud).
 - **Seguridad "Zero-Trust" por diseño** : La arquitectura se basa en **Talos OS**, un sistema operativo Linux inmutable y efímero diseñado específicamente para Kubernetes. No cuenta con ningún acceso directo (ni shell, ni SSH), lo que reduce drásticamente la superficie de ataque.
-- **Control de Costos** : El modelo económico es transparente, basado exclusivamente en los recursos subyacentes de IaaS consumidos, sin costo de licencia adicional para el orquestador.
+- **Control de Costos** : El modelo económico es transparente: el servicio gestionado se factura por clúster, además de los recursos IaaS subyacentes, sin costo de licencia adicional para el orquestador.
 
 ---
 
@@ -82,7 +88,7 @@ Ideal para entornos de POC, esta arquitectura compacta despliega todos los recur
 
 ### Arquitectura de Producción (Multi-AZ)
 
-Diseñada para producción y aplicaciones críticas, esta arquitectura distribuye los recursos en tres zonas de disponibilidad (AZ) para garantizar alta disponibilidad y máxima resiliencia, de acuerdo con los requisitos de SecNumCloud.
+Diseñada para producción y aplicaciones críticas, esta arquitectura distribuye los recursos en tres zonas de disponibilidad (AZ) para garantizar alta disponibilidad y máxima resiliencia.
 
 - **Caso de uso** : Aplicaciones de producción, servicios críticos, plataformas que requieren un SLA.
 - **Puntos clave** :

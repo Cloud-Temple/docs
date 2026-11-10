@@ -100,9 +100,9 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
 
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    Cuando haces clic en el nombre de un bucket, accedes primero a la pestaña '__Archivos__' para ver su contenido:
+    Cuando hace clic en el nombre de un bucket, accede primero a la pestaña '__Archivos__' para ver su contenido:
     <img src={S3Files} />
-    En la pestaña '__Configuración__' puedes ver los detalles de información de tu bucket S3:
+    En la pestaña '__Configuración__' puede ver los detalles de información de su bucket S3:
     <img src={S3Params} />
 
     **Importante**: El concepto de '__Protección contra eliminación__' se refiere a la duración de protección de los datos, y no a una eliminación programada. Los datos permanecen accesibles durante todo el período configurado. Para provocar la eliminación automática de los datos al finalizar el período de retención, es necesario definir una política de ciclo de vida (lifecycle).
@@ -131,7 +131,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
     }
     ```
 
-    Si usas AWS CLI:
+    Si usa AWS CLI:
 
     ```bash
     aws --endpoint-url https://<ecs-endpoint> \
@@ -243,7 +243,7 @@ El almacenamiento objeto Cloud Temple es un servicio de almacenamiento de objeto
     <img src={S3Create} />
     A continuación, aparece una ventana donde debe indicar:
     1. La **región** de creación de su bucket,
-    2. El **tipo** de bucket: rendimiento o archivado,
+    2. El **tipo** de bucket, preseleccionado: «Performance Object Storage S3 API», el único tipo disponible hoy,
     3. El **nombre** de su bucket (debe ser único).
     <img src={S3CreatePopup_001} />
   </TabItem>

@@ -11,7 +11,7 @@ import open_iaas_pool_ha_vm_errors from '@site/docs/iaas_opensource/tutorials/im
 Pour gérer la haute disponibilité d'un pool, il vous suffit d'aller sur la page du pool. L'état de la haute disponibilité est directement affiché :
 <img src={open_iaas_pool_ha_how_to_find} />
 
-Pour activer la haute disponibilité sur un pool, vous devez sélectionner un Block Storage en tant que Heartbeat :
+Pour activer la haute disponibilité sur un pool, ouvrez le menu d'actions (⋮) puis « Modifier la haute disponibilité », et sélectionnez un Block Storage en tant que Heartbeat :
 <img src={open_iaas_pool_ha_how_to_modify} />
 <img src={open_iaas_pool_enable_ha} />
 

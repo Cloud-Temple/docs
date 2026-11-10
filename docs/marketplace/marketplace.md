@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de la Marketplace
 ---
 
-# Marketplace
+# Vue d'ensemble de la Marketplace
 
 La __Marketplace Cloud Temple__ offre un accès simplifié aux solutions cloud essentielles et aux meilleurs logiciels de nos partenaires éditeurs, déployés en quelques clics dans un environnement sécurisé.
 
@@ -13,17 +13,22 @@ En collaborant avec un réseau de partenaires technologiques reconnus, Cloud Tem
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Découvrez les bases et principes essentiels pour comprendre et utiliser la Marketplace.</p>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
     <a href="./marketplace/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Commencez rapidement avec la Marketplace en suivant des instructions claires et simples.</p>
-    <a href="./marketplace/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./marketplace/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
-    <div class="card">
-    <h3>Tutorials</h3>
-    <p>Apprenez étape par étape à utiliser la Marketplace avec des guides détaillés.</p>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./marketplace/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./marketplace/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>

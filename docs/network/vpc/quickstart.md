@@ -1,5 +1,5 @@
 ---
-title: Quickstart
+title: Guide de démarrage du VPC
 ---
 import newTabNetwork from '@site/docs/network/vpc/images/new_tab_network.png'
 import vpcCreateButton from '@site/docs/network/vpc/images/vpc_create_button.png'
@@ -15,13 +15,13 @@ import vpcNewStaticIps from '@site/docs/network/vpc/images/vpc_new_static_ips.pn
 import vpcNewStaticIpsModale from '@site/docs/network/vpc/images/vpc_new_static_ips_modale.png'
 import vpcStaticIpsAssociate from '@site/docs/network/vpc/images/vpc_static_ips_associate_png.png'
 
-# Démarrage Rapide VPC
+# Guide de démarrage du VPC
 
 Ce guide vous accompagne dans la création de votre premier Virtual Private Cloud (VPC) et le déploiement de vos premiers réseaux privés.
 
 ## Prérequis
 
-Actuellement, l'activation du service VPC nécessite d'avoir souscrit à un produit **IaaS Open Source**. (Cette condition sera levée ultérieurement).
+Le VPC en mode dédié nécessite d'avoir souscrit à l'offre **IaaS Open Source** ; le mode mutualisé s'appuie sur l'offre VM Instances (voir les modes de déploiement dans les [concepts](./concepts.md)).
 
 ## Étape 1 : Accéder à la Console
 
@@ -44,9 +44,9 @@ Actuellement, l'activation du service VPC nécessite d'avoir souscrit à un prod
 
 > **Note** : Le provisionnement du VPC est entièrement automatisé et prend généralement moins d'une heure.
 
-### Alternative : Via l'onglet Commandes
+### Alternative : Via le menu Commandes
 
-Vous pouvez également initier la commande de ressources VPC directement depuis le menu **Commandes**.
+Vous pouvez également initier la commande de ressources VPC directement depuis le menu **Marketplace** > **Commandes**.
 
 <img src={vpcOrders} />
 

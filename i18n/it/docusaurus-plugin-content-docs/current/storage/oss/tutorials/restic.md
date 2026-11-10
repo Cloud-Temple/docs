@@ -4,7 +4,7 @@ title: Backup con Restic su Object Storage (S3)
 
 ## Introduzione
 
-Restic è uno strumento veloce, sicuro ed efficiente per il backup, compatibile con numerosi backend, inclusi i servizi basati su S3. Questa guida ti accompagna passo dopo passo nella configurazione di un backup verso un archivio oggetti compatibile con S3 (come AWS S3, MinIO, Wasabi, ecc.).
+Restic è uno strumento veloce, sicuro ed efficiente per il backup, compatibile con numerosi backend, inclusi i servizi basati su S3. Questa guida vi accompagna passo dopo passo nella configurazione di un backup verso un archivio oggetti compatibile con S3 (come AWS S3, MinIO, Wasabi, ecc.).
 
 ## Prerequisiti
 
@@ -12,14 +12,14 @@ Restic è uno strumento veloce, sicuro ed efficiente per il backup, compatibile 
 * Le credenziali di accesso (Access Key e Secret Key)
 * Il nome della regione (per AWS)
 * L'URL del endpoint S3 (nel caso di un fornitore non-AWS)
-* Restic installato sulla tua macchina
+* Restic installato sulla vostra macchina
 
 ## Installazione di Restic
 
 ### Debian/Ubuntu
 
 ```bash
-sudo apt aggiorna
+sudo apt update
 sudo apt install restic
 ```
 
@@ -31,7 +31,7 @@ brew install restic
 
 ### Windows
 
-Scarica il binario da: [https://github.com/restic/restic/releases](https://github.com/restic/restic/releases)
+Scaricate il binario da: [https://github.com/restic/restic/releases](https://github.com/restic/restic/releases)
 
 ## Configurazione delle variabili di ambiente
 
@@ -43,7 +43,7 @@ export AWS_SECRET_ACCESS_KEY="il_tuo_secret_key"
 export RESTIC_PASSWORD="il_tuo_password"
 ```
 
-Per un endpoint S3 personalizzato (non AWS), aggiungi anche:
+Per un endpoint S3 personalizzato (non AWS), aggiungete anche:
 
 ```bash
 export RESTIC_REPOSITORY="s3:https://endpoint.personalizzato:porta/nome_bucket"
@@ -57,7 +57,7 @@ export RESTIC_REPOSITORY="s3:https://s3.miaazienda.local:9000/backup"
 
 ## Inizializzare il repository Restic
 
-Una sola volta, inizializza il repository nel bucket:
+Una sola volta, inizializzate il repository nel bucket:
 
 ```bash
 restic init
@@ -79,7 +79,7 @@ restic snapshots
 
 ## Ripristinare un backup
 
-Ripristina l'ultimo backup:
+Ripristinate l'ultimo backup:
 
 ```bash
 restic restore latest --target /percorso/ripristino
@@ -116,4 +116,4 @@ Assicurarsi che tutte le variabili d'ambiente siano esportate in un file caricat
 * Documentazione ufficiale: [https://restic.readthedocs.io](https://restic.readthedocs.io)
 * Restic con altri backend: B2, Azure, Google Cloud, ecc.
 
-Questo tutorial ti fornisce una solida base per integrare Restic in una politica di backup affidabile, crittografato e compatibile con i moderni sistemi di archiviazione come S3.
+Questo tutorial vi fornisce una solida base per integrare Restic in una politica di backup affidabile, crittografato e compatibile con i moderni sistemi di archiviazione come S3.

@@ -441,7 +441,7 @@ Kurzer Auszug: Die Auslassungspunkte (...) repräsentieren die anderen Komponent
 
 Ordnet eine Liste von Dokumenten nach Relevanz in Bezug auf eine Anfrage neu. Kompatibel mit der Cohere-API (v1 und v2).
 
-**Abrechnung**: Siehe [offizieller Cloud Temple Preis-Katalog](https://www.cloud-temple.com/nos-tarifs-publics/). Alle eingereichten Dokumente werden gezählt, auch wenn `top_n` die Anzahl der zurückgegebenen Ergebnisse begrenzt. Siehe [Details zur Berechnung](./rerank.md#preisgestaltung).
+**Abrechnung**: Siehe [offizieller Cloud Temple Preis-Katalog](https://www.cloud-temple.com/nos-tarifs-publics/). Das Reranking wird pro Million Reranking-Tokens abgerechnet; alle eingereichten Dokumente werden verarbeitet, auch wenn `top_n` die Anzahl der zurückgegebenen Ergebnisse begrenzt. Siehe [Details](./rerank.md#preisgestaltung).
 
 #### Anfrage
 
@@ -503,7 +503,7 @@ Beispielhafter Auszug des von der Plattform-Spezifikation beschriebenen Jina/vLL
 }
 ```
 
-Die `relevance_score` sind rohe, nicht normalisierte Scores, keine Wahrscheinlichkeiten zwischen 0 und 1. Verwenden Sie ihre relative Reihenfolge; jeder Schwellenwert muss [auf Ihr Modell und Ihren Korpus kalibriert werden](./rerank.md#relevanzschwelle). Die Zähler `usage.prompt_tokens` und `usage.total_tokens` sind von der Abrechnung pro verarbeitetem Dokument getrennt; kein Feld `usage.billed_units.search_units` ist für die Berechnung dieser erforderlich.
+Die `relevance_score` sind rohe, nicht normalisierte Scores, keine Wahrscheinlichkeiten zwischen 0 und 1. Verwenden Sie ihre relative Reihenfolge; jeder Schwellenwert muss [auf Ihr Modell und Ihren Korpus kalibriert werden](./rerank.md#relevanzschwelle).
 
 Der Endpunkt `/v2/rerank` (Cohere SDK v2) ist ebenfalls mit demselben Anfrageformat verfügbar.
 

@@ -1,20 +1,20 @@
 ---
-title: Guida introduttiva
+title: Guida introduttiva al Marketplace
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# Guida rapida per il Marketplace Cloud Temple
+# Guida introduttiva al Marketplace
 
-Questa pagina guida attraverso i passaggi iniziali per utilizzare il **Marketplace Cloud Temple** dalla console. Segui queste istruzioni per scoprire le soluzioni disponibili e distribuirle rapidamente.
+Questa pagina guida attraverso i passaggi iniziali per utilizzare il **Marketplace Cloud Temple** dalla console. Seguite queste istruzioni per scoprire le soluzioni disponibili e distribuirle rapidamente.
 
 ---
 
 ## Prerequisi
 
-Prima di iniziare, verifica i seguenti punti:
+Prima di iniziare, verificate i seguenti punti:
 
-1. **Sottoscrizione attiva** : Per consentire i deployment, la tua organizzazione deve aver sottoscritto almeno un servizio Cloud Temple (IaaS OpenSource ou IaaS VMware). Nel caso di contatto con i nostri partner, non è necessaria una sottoscrizione specifica.
+1. **Sottoscrizione attiva** : Per consentire i deployment, la vostra organizzazione deve aver sottoscritto almeno un servizio Cloud Temple (IaaS OpenSource ou IaaS VMware). Nel caso di contatto con i nostri partner, non è necessaria una sottoscrizione specifica.
 2. **Autorizzazioni utente** : L'account utente deve disporre dei permessi necessari per accedere alla console e dei diritti di scrittura sugli ambienti target quando si desidera distribuire risorse.
 3. **Ambiente target** : Avere un tenant configurato per il deployment delle soluzioni.
 
@@ -64,9 +64,9 @@ A seconda del tipo di soluzione, sono possibili diverse azioni:
 
 ### Distribuzione di immagini di macchine virtuali
 
-Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi distribuire direttamente dal Marketplace.
+Per le soluzioni compatibili con i vostri ambienti OpenIaaS o VMware, potete distribuire direttamente dal Marketplace.
 
-**Nota importante:** La distribuzione diretta è disponibile solo per le immagini che includono il tuo ambiente tra i target compatibili.
+**Nota importante:** La distribuzione diretta è disponibile solo per le immagini che includono il vostro ambiente tra i target compatibili.
 
 **Guide dettagliate:**
 
@@ -75,7 +75,7 @@ Per le soluzioni compatibili con i tuoi ambienti OpenIaaS o VMware, puoi distrib
 
 ### Contatto con i partner
 
-Per le soluzioni che richiedono un'intermediazione, puoi contattare direttamente il partner editore.
+Per le soluzioni che richiedono un'intermediazione, potete contattare direttamente il partner editore.
 
 **Guida dettagliata :**
 

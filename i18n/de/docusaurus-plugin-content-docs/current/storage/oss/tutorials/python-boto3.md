@@ -318,4 +318,4 @@ Wenn dieser Fehler auftritt, prüfen Sie Folgendes:
 
 ### Bucket nicht gefunden
 
-Stellen Sie sicher, dass Sie **Path-Style Addressing** (`s3={'addressing_style': 'path'}`) in der Konfiguration verwenden. Virtual-Hosted Style wird erst ab Q2 2026 unterstützt.
+Stellen Sie sicher, dass Sie **Path-Style Addressing** (`s3={'addressing_style': 'path'}`) in der Konfiguration verwenden.

@@ -168,7 +168,7 @@
 - ✅ `compute_overview.md` : **NOUVEAU** — Vue d'ensemble Compute
 - ✅ `containers_overview.md` : Comparaison offres Containers
 - ✅ `databases_overview.md` : **NOUVEAU** — Vue d'ensemble Bases de données
-- ✅ `managedproducts_overview.md` : **NOUVEAU** — Vue d'ensemble Produits managés
+- ❌ `managedproducts_overview.md` : **SUPPRIMÉE le 2026-11-05** — hors menu depuis avril 2026 ; le lien de l'onboarding renvoie au catalogue de cloud-temple.com
 - ✅ `security_identity_overview.md` : **NOUVEAU** — Vue d'ensemble Sécurité/Identité
 - ✅ `market_place_public.md` : Marketplace public
 - ✅ `privacy.md` : Politique de confidentialité

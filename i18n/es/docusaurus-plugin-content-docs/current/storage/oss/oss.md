@@ -1,15 +1,38 @@
 ---
-title: Servicio de Almacenamiento de Objetos (OSS)
+title: Visión general del Servicio de Almacenamiento de Objetos (OSS)
 sidebar_position: 1
 ---
 
-# Servicio de Almacenamiento de Objetos (OSS)
+# Visión general del Servicio de Almacenamiento de Objetos (OSS)
 
 ## Visión general
 
 El servicio de almacenamiento de objetos (Object Storage Service - OSS) de Cloud Temple es una solución de almacenamiento altamente escalable, duradera y segura, diseñada para almacenar y recuperar cualquier cantidad de datos, desde cualquier lugar.
 
 Basado en una API compatible con S3, nuestro servicio OSS es ideal para una amplia variedad de casos de uso, desde la copia de seguridad y el archivado hasta el alojamiento de contenido estático para aplicaciones web, pasando por el almacenamiento de datos para análisis Big Data y aplicaciones nativas en la nube.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="./oss/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./oss/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./oss/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./oss/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
+</div>
 
 ## Certificación SecNumCloud
 

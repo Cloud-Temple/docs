@@ -20,7 +20,7 @@ L'icona di monitoraggio delle operazioni consente di visualizzare le operazioni 
 
 <img src={shivaInterventionMenu01} />
 
-L'obiettivo di questa icona è fornire una visibilità sulle interventi pianificati, in corso e completati, nonché sugli incidenti relativi al tenant.
+L'obiettivo di questa icona è fornire una visibilità sugli interventi pianificati, in corso e completati, nonché sugli incidenti relativi al tenant.
 
 Quando sono in corso interventi e/o incidenti, un numero viene visualizzato sull'icona.
 
@@ -60,15 +60,15 @@ Di seguito un esempio dell'interfaccia che visualizza tali report:
 
 <img src={shivaIncident_003} />
 
-### Incidents within a customer scope
+### Incidenti su un perimetro committente
 
-Visibility of incidents specific to a customer scope requires the __incident_read__ permission. These incidents are represented by a dedicated icon, accompanied by a red badge indicating the number of ongoing incidents.
+La visibilità degli incidenti specifici di un perimetro cliente richiede l'autorizzazione __incident_read__. Questi incidenti sono rappresentati da un'icona dedicata, accompagnata da un badge rosso che indica il numero di incidenti in corso.
 
-The icon is clickable, allowing you to list the tickets associated with the incidents. Each ticket includes a link to the incident details, enabling you to track the progress of their resolution. Resolved incidents and their reports (CRs) remain accessible for 60 days, allowing for retrospective analysis and monitoring of corrective actions implemented.
+L'icona è cliccabile e consente di elencare i ticket associati agli incidenti. Ogni ticket include un collegamento ai dettagli dell'incidente, che permette di seguire l'avanzamento della loro risoluzione. Gli incidenti risolti e i relativi resoconti (CR) restano consultabili per 60 giorni, consentendo un'analisi retrospettiva e un monitoraggio delle azioni correttive messe in atto.
 
 <img src={shivaIncident_004} />
 
-To view the details of an incident, you must either be the author of the incident ticket or have the __support_management__ permission.
+Per consultare i dettagli di un incidente, è necessario essere l'autore del ticket di incidente oppure disporre dell'autorizzazione __support_management__.
 
 ### Gestione delle notifiche
 

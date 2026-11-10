@@ -1,8 +1,8 @@
 ---
-title: Visión general
+title: Visión general de Bare Metal
 ---
 
-# Metal desnudo
+# Visión general de Bare Metal
 
 El producto __Metal desnudo__ de Cloud Temple ofrece servidores dedicados, totalmente personalizables, para satisfacer las necesidades de los clientes que buscan una autonomía total sobre su infraestructura.
 
@@ -15,18 +15,23 @@ El acceso directo a sus servidores se realiza a través de la consola Cloud Temp
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra los fundamentos y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./iaas_bare-metal/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Inicio rápido</h3>
+    <h3>Guía de inicio</h3>
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./iaas_bare-metal/quickstart" class="card-link">Iniciar el Quickstart &rarr;</a>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./iaas_bare-metal/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./iaas_bare-metal/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>
 

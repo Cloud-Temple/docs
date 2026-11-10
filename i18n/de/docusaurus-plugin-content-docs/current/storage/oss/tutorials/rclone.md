@@ -1,11 +1,11 @@
 ---
-title: Copy and synchronize with Rclone
+title: Kopieren und Synchronisieren mit Rclone
 ---
 
-[Rclone](https://rclone.org/) is an open-source command-line tool that allows you to copy and synchronize files to numerous cloud storage services, including S3-compatible storage. It is particularly well-suited for backups, data migrations, and directory synchronization.
+[Rclone](https://rclone.org/) ist ein Open-Source-Befehlszeilentool, mit dem Sie Dateien auf zahlreiche Cloud-Speicherdienste kopieren und synchronisieren können, darunter S3-kompatible Speicher. Es eignet sich besonders für Backups, Datenmigrationen und die Synchronisierung von Verzeichnissen.
 
-:::caution[Required version]
-Make sure you are using a **recent version of Rclone** to ensure compatibility with Cloud Temple object storage. You can check your version using `rclone version`.
+:::caution[Erforderliche Version]
+Stellen Sie sicher, dass Sie eine **aktuelle Version von Rclone** verwenden, um die Kompatibilität mit dem Cloud Temple-Objektspeicher zu gewährleisten. Sie können Ihre Version mit `rclone version` überprüfen.
 :::
 
 ## Voraussetzungen
@@ -29,7 +29,7 @@ Für andere Systeme konsultieren Sie die [offizielle Installationsdokumentation]
 rclone version
 ```
 
-## Configuration
+## Konfiguration
 
 Erstellen Sie die Rclone-Konfigurationsdatei für Ihren S3-Cloud-Temple-Speicher:
 
@@ -81,7 +81,7 @@ Testen Sie vor jeder Operation mit `--dry-run`, um zu sehen, was ausgeführt wir
 rclone copy /data/backup cloudtemple-s3:nom-du-bucket/ --dry-run --verbose
 ```
 
-### Effective copy
+### Tatsächliches Kopieren
 
 ```bash
 rclone copy /data/backup cloudtemple-s3:nom-du-bucket/ --verbose
@@ -95,13 +95,13 @@ Der Befehl `rclone sync` macht das Ziel **identisch** mit der Quelle. Dateien, d
 `rclone sync` **löscht** Dateien im Ziel, die nicht mehr in der Quelle vorhanden sind. Testen Sie die Befehlsausführung immer mit `--dry-run`, bevor Sie den Befehl ausführen.
 :::
 
-### Test in Simulationsmodus
+### Test im Simulationsmodus
 
 ```bash
 rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --dry-run --verbose
 ```
 
-### Effektive Synchronisation
+### Tatsächliche Synchronisierung
 
 ```bash
 rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --delete-during --verbose
@@ -131,13 +131,13 @@ rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ \
   --verbose
 ```
 
-## Automation mit cron
+## Automatisierung mit cron
 
-Um eine tägliche Sicherung zu automatisieren, fügen Sie eine cron-Einträge hinzu:
+Um eine tägliche Sicherung zu automatisieren, fügen Sie einen cron-Eintrag hinzu:
 
 ```bash
 
 
-# Daily backup at 2 AM
+# Tägliche Sicherung um 2 Uhr morgens
 0 2 * * * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
 ```

@@ -1,100 +1,58 @@
 ---
-title: Overview
+title: Console overview
 ---
 
-## The Cloud Temple Console
+import { ConsoleMap } from '@site/src/components/ConsoleMap';
 
-The Cloud Temple console is Cloud Temple's integrated cloud management platform (**Cloud Management Platform**). It serves as the central hub for managing all your cloud resources, providing you with a single, high-performance interface.
-
-With the **Console**, you can monitor and operate your cloud infrastructures with great ease. Here is an overview of its main features:
+The Cloud Temple Console is the management interface of your cloud platform. You use it to create your environments, manage your teams' access, activate your products, order resources and track your consumption. Everything you do in the Console is also available through its [API](./api.md), and the [Terraform provider](../terraform/terraform.md) lets you manage your platform *as code*.
 
 <div class="card-grid">
   <div class="card">
-    <h3>The IAM Module</h3>
-    <p>Discover the IAM (Identity Access Management) module of the Cloud Temple console.</p>
-    <a href="./console/iam" class="card-link">Click here &rarr;</a>
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./console/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
-
   <div class="card">
-    <h3>Support</h3>
-    <p>View scheduled operations and manage Incidents</p>
-    <a href="./console/status" class="card-link">Click here &rarr;</a>
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./console/onboarding" class="card-link">Open the getting started guide &rarr;</a>
   </div>
-
   <div class="card">
-    <h3>Deploy Infrastructure</h3>
-    <p>Order and track the deployment of new resources.</p>
-    <a href="./console/orders" class="card-link">Explore menus &rarr;</a>
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./console/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
-
   <div class="card">
-    <h3>Metrics</h3>
-    <p>Order and track the deployment of new resources.</p>
-    <a href="./console/metrics/concepts" class="card-link">Explore menus &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Cost Manager</h3>
-    <p>Track and analyze your cloud resource consumption by product and service.</p>
-    <a href="./console/billing/concepts" class="card-link">Access module &rarr;</a>
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./console/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
 
-### Management of your Cloud Temple products and services
+## Where the Console sits
 
-The console allows you to efficiently manage your virtual servers, storage, networks, and Cloud services from a centralized interface.
+<ConsoleMap />
 
-### Monitoring and reporting
+Two paths should be kept apart:
 
-Gain a comprehensive view of your resources with integrated monitoring and reporting tools to ensure your environments operate optimally.
+- **Management.** Your teams connect to the Console from a browser, at [shiva.cloud-temple.com](https://shiva.cloud-temple.com). Access is restricted to the [public IP addresses you have allowed](./onboarding.md#add-an-ip-address) and [two-factor authentication](./onboarding.md#two-factor-authentication-is-mandatory) is mandatory. Your scripts and Terraform go through the API, authenticated with an API key (*Personal Access Token*).
+- **Usage.** The users of your applications reach your machines and services through the [Network](../network/network_overview.md) offerings, such as Internet or Private Network. This traffic does not go through the Console: the Console manages your infrastructure, it does not serve it.
 
-### Automation and orchestration
+Your resources are organised in **tenants**, isolated environments within your organisation, and deployed in [regions and availability zones](../additional_content/concepts_regional.md). The [concepts](./concepts.md) page describes this model.
 
-With its **powerful API**, the console simplifies the automation of repetitive tasks and the orchestration of complex workflows. Deploy, manage, and scale your resources with a few clicks or through custom scripts.
+## What you do there
 
-### Security and compliance
+- **[Set up your environments](./console/onboarding)**: Create your organisation and your tenants, then activate your products.
+- **[Manage access](./console/iam)**: Users, per-tenant permissions and identity federation.
+- **[Track your costs](./console/billing/concepts)**: Consumption by product, by service and by tenant.
+- **[Monitor your resources](./console/metrics/concepts)**: Metrics in Prometheus format, available in the Console or in your own tooling.
+- **[Follow operations and incidents](./console/status)**: Scheduled interventions on the platform and ongoing incidents.
+- **[Contact support](./console/console_quickstart#access-to-technical-support)**: Advice, account assistance, incidents or professional services: all your requests to support.
+- **[Order resources](./console/orders)**: Availability zones, clusters, storage and networks, with order tracking.
+- **[Automate](./console/api)**: Every Console function through the API, and your infrastructure as code with Terraform.
 
-The console integrates advanced features to:
+## Where to start
 
-- Manage identities and access,
-- Filter access to meet regulatory requirements,
-- Strengthen your security policies.
-
-### Technical Support and Customer Support
-
-The console provides direct access to your technical support tickets. You receive:
-
-- Dedicated customer support to resolve your technical issues,
-- Assistance with the initial configuration of your services.
-
-### Professional Services
-
-Need expertise? Take advantage of our engineers' support for:
-
-- Personalized consulting,
-- Assistance with implementing cloud architectures,
-- Training for your teams.
-
-The Cloud Temple **'Console'** portal is **the integrated cloud management platform** (Cloud Management Plateform) of **Cloud Temple**.
-
-The Cloud Temple Console allows you to manage cloud resources such as virtual servers, storage, networks, and application services.
-It is a centralized management interface that enables you to design and operate your cloud infrastructure.
-
-The Cloud Temple Console specifically enables your teams to:
-
-- **Management of your Cloud Temple products and services**,
-- **Monitoring and reporting** on the operation of your cloud resources,
-- **Automation and orchestration**: The Console, through its API, allows you to automate repetitive tasks and orchestrate complex workflows to deploy, manage, and scale your cloud resources,
-- **Security and compliance**: The Console enables identity control and access filtering to ensure regulatory compliance and adherence to your security policies,
-- **Integration of Cloud Adoption Frameworks** (Cloud Adoption Framework): thanks to its hybridization features, you can ensure operational continuity with third-party cloud providers (Microsoft Azure et Amazon AWS) from a single interface, facilitating the integration and management of your multi-cloud application environments.
-- **Access and tracking of technical support tickets**: Dedicated technical support is also available. This includes customer support for resolving technical issues as well as assistance with initial configuration.
-- **The ability to subscribe to professional services**: to effectively manage your Cloud environments, your teams can benefit from our engineers' assistance for consulting, architecture implementation support, or training.
-
-## Access to user features via the API
-
-Access to all Console features is available via the Console API.
-You can view details of the methods and configurations via **'Profile'** and **'APIs'**
-
-## Terraform Provider
-
-Cloud Temple provides you with a [Terraform provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest) to manage your Cloud platform *"as code".
+- **You are new to Cloud Temple**: follow the [getting started guide](./onboarding.md), from creating your organisation to activating your products.
+- **You want to understand the model** of organisation, tenants and permissions: read the [concepts](./concepts.md).
+- **You are looking for a function in the interface**: take the [Console tour](./console_quickstart.md).

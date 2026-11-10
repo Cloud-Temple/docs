@@ -1,10 +1,10 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte mit dem Marketplace
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# Schnellstart für die Cloud Temple Marketplace
+# Erste Schritte mit dem Marketplace
 
 Diese Seite führt Sie durch die ersten Schritte zur Nutzung der **Cloud Temple Marketplace** über die Konsole. Befolgen Sie diese Anweisungen, um die verfügbaren Lösungen kennenzulernen und schnell bereitzustellen.
 

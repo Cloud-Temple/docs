@@ -9,18 +9,18 @@ import S3Cloudberry_003 from '@site/docs/storage/oss/images/S3_cloudberry_003.pn
 
 ### 1. Configurazione della connessione
 
-Connettiti utilizzando il tuo endpoint (endpoint), la tua chiave di accesso e la tua chiave segreta.
+Connettetevi utilizzando il vostro endpoint (endpoint), la vostra chiave di accesso e la vostra chiave segreta.
 
 <img src={S3Cloudberry_001} />
 
 ### 2. Accesso al bucket
 
-Dopo esserti connesso, inserisci il nome del bucket desiderato nella barra di navigazione per accedervi.
+Dopo esservi connessi, inserite il nome del bucket desiderato nella barra di navigazione per accedervi.
 
 <img src={S3Cloudberry_002} />
 
 ### 3. Gestione dei file
 
-Ora puoi gestire il contenuto del tuo bucket come faresti con un esploratore di file classico.
+Ora potete gestire il contenuto del vostro bucket come fareste con un esploratore di file classico.
 
 <img src={S3Cloudberry_003} />

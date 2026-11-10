@@ -309,5 +309,29 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.SearchBar.label": {
+    "message": "Rechercher",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Rechercher",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Rechercher dans la documentation",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Saisissez une recherche pour afficher les résultats.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "Aucun document trouvé.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "Voir tous les résultats",
+    "description": "Fenêtre de recherche"
   }
 }

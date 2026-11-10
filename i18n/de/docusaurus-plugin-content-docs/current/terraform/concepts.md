@@ -52,7 +52,7 @@ Der Provider authentifiziert sich bei den Cloud Temple APIs mit:
 Diese Anmeldeinformationen werden über die Cloud Temple-Konsole generiert und ermöglichen es dem Provider, Operationen in Ihrem Namen durchzuführen.
 
 :::info[Best Practices]
-    Speichern Sie Ihre Anmeldeinformationen in Umgebungsvariablen oder einem Secrets-Manager, niemals direkt im Code.
+Speichern Sie Ihre Anmeldeinformationen in Umgebungsvariablen oder einem Secrets-Manager, niemals direkt im Code.
 :::
 
 ## Ressourcen
@@ -219,11 +219,11 @@ terraform {
 ```
 
 :::warning
-    Die Datei `terraform.tfstate` enthält sensible Informationen. Commiten Sie sie niemals in Git und verwenden Sie ein sicheres Backend für die Speicherung.
+Die Datei `terraform.tfstate` enthält sensible Informationen. Commiten Sie sie niemals in Git und verwenden Sie ein sicheres Backend für die Speicherung.
 :::
 
 :::info
-    OpenTofu bietet die Verschlüsselung des States standardmäßig an ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+OpenTofu bietet die Verschlüsselung des States standardmäßig an ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
 
 ## Terraform-Lebenszyklus

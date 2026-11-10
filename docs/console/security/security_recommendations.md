@@ -22,7 +22,7 @@ L’accès à la Console est la porte d’entrée vers l’ensemble de vos servi
 
 L'accès à la console de gestion cloud est limité aux adresses IP préalablement autorisées. Cette restriction permet d’autoriser l'accès uniquement aux utilisateurs provenant des plages d'IP spécifiées, minimisant ainsi les risques d'accès non autorisés.
 
-Vous pouvez configurer ces restrictions IP dans les paramètres de votre organisation. Pour savoir comment configurer le filtrage IP, consultez la [Gestion des accès et authentification | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#gestion-des-accès-et-authentification).
+Vous pouvez configurer ces restrictions IP dans les paramètres de votre organisation. Pour savoir comment configurer le filtrage IP, consultez la [Comment autoriser une nouvelle adresse IP à accéder à la Console ? | Documentation Cloud Temple](../../console/iam/quickstart#comment-autoriser-une-nouvelle-adresse-ip-à-accéder-à-la-console-).
 
 Pour maximiser l'efficacité de ce mécanisme, veillez à :
 
@@ -129,7 +129,7 @@ Pour assurer une surveillance efficace de votre environnement cloud et réagir r
 
 - **Surveiller la disponibilité des services** via la [Status page | Cloud Temple](https://status.cloud-temple.com/), afin d’être alerté en cas d’incidents ou de pannes globales ;
 - **Activer les notifications thématiques** pertinentes pour votre usage depuis la Console, afin de recevoir en temps réel les alertes importantes (voir [Abonnement aux notifications thématiques | Documentation Cloud Temple](../../console/iam/concepts#abonnement-aux-notifications-thématiques)) ;
-- **Exploiter les journaux d’activité Cloud** pour identifier les actions sensibles ou suspectes sur vos ressources (voir section « Journalisation - Suivi des Activités » du [Guide de démarrage | Documentation Cloud Temple](../../iaas_vmware/quickstart)). La collecte et l’analyse des journaux d’activité peut être automatisée via les API Console, afin d’intégrer les événements à vos outils de supervision ou de détection d’incidents.
+- **Exploiter les journaux d’activité Cloud** pour identifier les actions sensibles ou suspectes sur vos ressources (voir section « Journalisation - Suivi des Activités » du [Guide de démarrage | Documentation Cloud Temple](../console_quickstart.md#journalisation---suivi-des-activités)). La collecte et l’analyse des journaux d’activité peut être automatisée via les API Console, afin d’intégrer les événements à vos outils de supervision ou de détection d’incidents.
 
 ## Sécuriser les ressources hébergées
 

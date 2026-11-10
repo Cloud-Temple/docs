@@ -1,18 +1,17 @@
 ---
 title: Guida introduttiva
 ---
-import shivaSupport from '@site/docs/bastion/images/shiva_support.png'
 import creerSession from '@site/docs/bastion/images/creer_session.png'
 import creerSession2 from '@site/docs/bastion/images/creer_session2.png'
 import creerSession3 from '@site/docs/bastion/images/creer_session3.png'
 import ouvrirSession from '@site/docs/bastion/images/ouvrir_session.png'
 import ouvrirSession2 from '@site/docs/bastion/images/ouvrir_session2.png'
 
-Questa guida introduttiva illustra come richiedere la creazione di un'Appliance e come registrare una nuova sessione e connettersi ad essa.
+Questa guida introduttiva illustra come attivare il prodotto Bastion, registrare un dispositivo e connettersi ad esso.
 
 ## Prerequisiti
 
-1. Avere sottoscritto il prodotto Cloud Temple (sottoscrizione Appliance Bastion).
+1. Avere attivato il prodotto Bastion per la propria organizzazione.
 2. I dispositivi da amministrare devono essere accessibili dalla rete in cui è stata distribuita l'Appliance Bastion.
 3. Avere i permessi sul modulo Bastion.
 4. Nel caso di distribuzione on-premise dell'Appliance, i flussi corrispondenti devono essere aperti.
@@ -39,22 +38,21 @@ Diversi flussi sono necessari per il corretto funzionamento dell'Appliance Basti
 |----------------------------|------------------------------|------------|
 | Appliance bastion client | Le istanze da amministrare | TCP/22    |
 
-## Richiedere la creazione di un'Appliance
+<a id="demander-la-création-dune-appliance"></a>
 
-Prima di poter distribuire un'Appliance, è necessario presentare una richiesta di sottoscrizione per un'Appliance tramite una richiesta al supporto.
-Il supporto è accessibile nella Console tramite l'icona a forma di salvagente nella barra in alto a destra della finestra.
+## Attivare il prodotto Bastion
 
-<img src={shivaSupport} />
+Il prodotto Bastion si attiva in self-service dalla vista Organizzazione della console Cloud Temple. È anche possibile rivolgersi al proprio contatto commerciale abituale.
 
 ## Registrare un dispositivo
 
-Per accedere regolarmente a un dispositivo da amministrare, è più opportuno creare una sessione, che richiederà solo il nome utente e la password ad ogni connessione.
+Per accedere regolarmente a un dispositivo da amministrare, è più opportuno registrarlo: ad ogni connessione verranno richiesti solo il nome utente e la password.
 
-Per farlo, vai alla scheda « Dispositivi » del menu « Bastion », quindi fai clic sul pulsante « Nuovo dispositivo ».
+Per farlo, andate alla scheda « Dispositivi » del menu « Bastion », quindi fate clic sul pulsante « Nuovo dispositivo ».
 
 <img src={creerSession} />
 
-Compila quindi le informazioni necessarie per la creazione del tuo dispositivo :
+Compilate quindi le informazioni necessarie per la creazione del vostro dispositivo :
 
     - Nome del dispositivo ;
     - Descrizione ;
@@ -65,15 +63,15 @@ Compila quindi le informazioni necessarie per la creazione del tuo dispositivo :
 
 <img src={creerSession2} />
 
-Dovrebbe apparire una notifica che conferma la creazione del dispositivo in alto a destra della pagina. La sessione viene quindi aggiunta all'elenco dei tuoi dispositivi.
+Dovrebbe apparire una notifica che conferma la creazione del dispositivo in alto a destra della pagina. Il dispositivo viene quindi aggiunto all'elenco dei vostri dispositivi.
 
-Per creare un nuovo dispositivo, puoi anche passare alla scheda « Appliances » facendo clic sulla barra delle azioni dell'Appliance a cui desideri associare un dispositivo.
+Per creare un nuovo dispositivo, potete anche passare alla scheda « Appliances » facendo clic sulla barra delle azioni dell'Appliance a cui desiderate associare un dispositivo.
 
 <img src={creerSession3} />
 
 ## Connettersi a un dispositivo
 
-Vai alla scheda « Dispositivi » della scheda « Bastione ». Fai clic sulla barra delle azioni del dispositivo che desideri aprire e clicca sul pulsante « Apri ».
+Andate alla scheda « Dispositivi » della scheda « Bastione ». Fate clic sulla barra delle azioni del dispositivo che desiderate aprire e cliccate sul pulsante « Apri ».
 
 <img src={ouvrirSession} />
 
@@ -81,4 +79,4 @@ Ad ogni connessione al dispositivo, è necessario inserire solo le proprie infor
 
 <img src={ouvrirSession2} />
 
-Dopo aver immesso le credenziali, viene visualizzata una notifica che conferma l'avvio della connessione al dispositivo e si apre la console verso la tua macchina virtuale.
+Dopo aver immesso le credenziali, viene visualizzata una notifica che conferma l'avvio della connessione al dispositivo e si apre la console verso la vostra macchina virtuale.

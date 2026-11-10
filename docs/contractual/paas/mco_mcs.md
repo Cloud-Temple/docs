@@ -22,7 +22,7 @@ Cette politique détaille les responsabilités et les recommandations pour le Ma
 - Gestion complète de l'infrastructure sous-jacente, incluant les nœuds maîtres, les mises à jour de versions OpenShift, et la résilience des services critiques déployés par **Cloud Temple**.
 - Mises à jour mineures/patches automatiques sans interruption pour les charges de travail hébergées, sauf notification contraire.
 - Limitation des droits et des fonctionnalités aux contraintes SecNumCloud.
-- Communication des mises à jour à venir et des mises à jour de fractures sur les trois prochains mois via la [**Roadmap Cloud Temple**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Communication des mises à jour à venir et des mises à jour de fractures sur les trois prochains mois via la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 
 **Responsabilité de l'utilisateur :**
 
@@ -34,7 +34,7 @@ Cette politique détaille les responsabilités et les recommandations pour le Ma
 
 - Planifier les déploiements applicatifs en dehors des fenêtres de maintenance pour éviter les conflits avec les mises à jour automatiques du cluster.
 - Suivre les communications **Cloud Temple** concernant les mises à jour majeures pour planifier les ajustements nécessaires.
-- Suivre les mises à jour à venir via la [**Roadmap produit**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Suivre les mises à jour à venir via la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 - S'abonner aux notifications [**d'incidents**](../../console/status.md#gestion-des-notifications)
 
 ---
@@ -212,7 +212,7 @@ Voir la [**procédure de demande de support technique**](../../console/console_q
 1. **Planifier les ressources** : Assurer une capacité de cluster suffisante pour les charges de travail de pointe.
 2. **Valider les configurations** : Tester les applications dans des environnements de staging avant déploiement en production.
 3. **Surveiller régulièrement** : Utiliser les outils intégrés pour suivre l'utilisation des ressources et détecter les problèmes le plus tôt possible.
-4. **Se tenir informé** : Suivre la roadmap et les guides pour éviter les fonctionnalités obsolètes.
+4. **Se tenir informé** : Suivre la Roadmap et les guides pour éviter les fonctionnalités obsolètes.
 5. **Contacter le support** : Pour les problèmes non résolus, contacter le support via la [**procédure de demande de support technique**](../../console/console_quickstart.md#accès-au-support-technique) ou par mail à l'adresse [**contact**](mailto:contact@cloud-temple.com).
 
 Pour retrouver les responsabilités en détail, merci de prendre connaissance de notre [**matrice de responsabilité**](../../contractual/paas/raci.md).

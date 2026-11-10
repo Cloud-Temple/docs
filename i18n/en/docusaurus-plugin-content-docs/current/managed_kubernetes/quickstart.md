@@ -13,9 +13,9 @@ To interact with your cluster, several elements are essential:
 
 1. **The `kubeconfig` file**: This file, provided to you by the Cloud Temple teams upon service delivery, contains all the information needed to connect securely.
 2. **The `kubectl` tool**: This is the standard command-line interface for managing a Kubernetes cluster.
-3. **The `kubelogin` tool** (si OIDC est utilisé) : If your cluster is configured to authenticate via an OIDC identity provider (comme Entra ID/Azure AD), you must install the `kubelogin` tool to handle the authentication flow. Follow the [guide d&#39;installation de kubelogin](https://github.com/int128/kubelogin).
+3. **The `kubelogin` tool** (if OIDC is used) : If your cluster is configured to authenticate via an OIDC identity provider (such as Entra ID/Azure AD), you must install the `kubelogin` tool to handle the authentication flow. Follow the [kubelogin installation guide](https://github.com/int128/kubelogin).
 
-> ℹ️[Outils graphiques recommandés:]
+> ℹ️[Recommended graphical tools:]
 > For a more visual experience and simplified resource management, we recommend using **Lens**. It is a powerful Kubernetes tool that allows you to explore your cluster, manage your applications, and visualize their status graphically.
 > Some of our tutorials will use Lens to illustrate the procedures. You can download it here: [https://k8slens.dev/](https://k8slens.dev/).
 
@@ -52,7 +52,7 @@ The URLs are:
 
 ## Your Permissions
 
->⚠[Dev/Test et Kubernetes Core]
+>⚠[Dev/Test and Kubernetes Core]
 >For **"Dev/Test"** Managed Kubernetes clusters and Core clusters, the service account provided to you has all permissions across the entire cluster (ClusterAdmin)
 
 On **"Production"** clusters, your permissions are limited. You have an **"Extended Viewer"** right on cluster resources. This right grants read-only access to key resources, both at the cluster level and for diagnostics:
@@ -66,12 +66,12 @@ On **"Production"** clusters, your permissions are limited. You have an **"Exten
 
 The service account entrusted to you has also been made the **owner of a first Capsule *tenant***.
 You can create Namespaces, which will be attached to your Capsule tenant.
-External accounts (OIDC) are members of this same Capsule tenant, allowing them to interact freely within the **namespaces** associated with the tenant. (Voir le tutoriel "Gérer les permissions avec Capsule")
+External accounts (OIDC) are members of this same Capsule tenant, allowing them to interact freely within the **namespaces** associated with the tenant. (See the tutorial "Managing permissions with Capsule")
 
 Some actions are not permitted:
 
 - list / create Capsule tenants
-- create CRDs: If you need to deploy an application with CRDs (helm chart d'un opérateur par exemple), you will need to interact with support to have these CRDs imported (via extraction des yaml depuis le chart helm). You can then deploy your Helm chart with the --skip-crds option. See: [Documentation Helm 3](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
+- create CRDs: If you need to deploy an application with CRDs (an operator's Helm chart, for example), you will need to interact with support to have these CRDs imported (by extracting the YAML from the Helm chart). You can then deploy your Helm chart with the --skip-crds option. See: [Helm 3 documentation](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/)
 
 ---
 

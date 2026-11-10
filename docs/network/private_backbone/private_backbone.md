@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Vue d'ensemble du Private Backbone
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Connectivité Avancée
+# Vue d'ensemble du Private Backbone
 
 > **Prenez le contrôle total de votre réseau avec une connectivité de niveau 2 étendue, conçue pour les architectures hybrides et les configurations sur mesure.**
 
@@ -12,18 +12,23 @@ Le **Backbone Privé** de Cloud Temple est notre produit de connectivité histor
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Architecture VPLS, réseaux privés régionaux, accès Internet, adressage public IPv4/IPv6.</p>
-    <a href="./private_backbone/concepts" class="card-link">Explorer les concepts →</a>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./private_backbone/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
-    <p>Créez votre premier réseau privé et configurez votre accès Internet en quelques étapes.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Démarrer →</a>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriels</h3>
-    <p>Configurez un FortiGate ou pfSense avec BGP pour gérer votre connectivité externe.</p>
-    <a href="./private_backbone/tutorials" class="card-link">Voir les tutoriels →</a>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./private_backbone/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>
 

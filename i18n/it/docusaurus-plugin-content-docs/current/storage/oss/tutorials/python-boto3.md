@@ -2,7 +2,7 @@
 title: Usare il SDK Python (Boto3)
 ---
 
-Boto3 è il kit di sviluppo software (SDK) AWS per Python. Ti permette di creare, configurare e gestire i servizi compatibili con S3, come il storage oggetti Cloud Temple, direttamente dalle tue applicazioni Python.
+Boto3 è il kit di sviluppo software (SDK) AWS per Python. Vi permette di creare, configurare e gestire i servizi compatibili con S3, come il storage oggetti Cloud Temple, direttamente dalle vostre applicazioni Python.
 
 ## Installazione
 
@@ -31,7 +31,7 @@ bucket_name = 'il-mio-bucket-test'
 ```
 
 :::info[Regione]
-La regione da utilizzare per l'archiviazione oggetti Cloud Temple è **`fr1`**. Assicurati di impostare correttamente questo valore nel parametro `region_name`.
+La regione da utilizzare per l'archiviazione oggetti Cloud Temple è **`fr1`**. Assicuratevi di impostare correttamente questo valore nel parametro `region_name`.
 :::
 
 ### Specificità della firma (SigV2 / SigV4)
@@ -83,7 +83,7 @@ client_metadata = boto3.client(
 ```
 
 :::tip[Configurazione semplificata]
-Se desideri utilizzare un solo client, preferisci **SigV2** (`signature_version='s3'`) con l'indirizzamento in stile path, che funziona per la maggior parte delle operazioni:
+Se desiderate utilizzare un solo client, preferite **SigV2** (`signature_version='s3'`) con l'indirizzamento in stile path, che funziona per la maggior parte delle operazioni:
 
 ```python
 config = Config(
@@ -198,7 +198,7 @@ result = s3.put_object(
 
 ## 3. Leggere un oggetto (Download)
 
-Per recuperare il contenuto di un oggetto, utilizza il metodo `get_object`. Esso restituisce un oggetto di tipo `StreamingBody` che puoi leggere per ottenere i dati grezzi.
+Per recuperare il contenuto di un oggetto, utilizzate il metodo `get_object`. Esso restituisce un oggetto di tipo `StreamingBody` che potete leggere per ottenere i dati grezzi.
 
 ```python
 #!/usr/bin/env python3
@@ -254,10 +254,10 @@ print(f"Eliminazione: {result['ResponseMetadata']['HTTPStatusCode']}")
 
 ## 5. Rendere un oggetto pubblico (Read All)
 
-Se un oggetto esiste già, puoi modificare i suoi permessi per renderlo accessibile in lettura da chiunque utilizzando il metodo `put_object_acl`.
+Se un oggetto esiste già, potete modificare i suoi permessi per renderlo accessibile in lettura da chiunque utilizzando il metodo `put_object_acl`.
 
 :::danger[Attenzione]
-Rendere un oggetto pubblico significa che chiunque disponga dell'URL potrà accedervi. Utilizza questa opzione con cautela e in conformità con la tua politica di sicurezza.
+Rendere un oggetto pubblico significa che chiunque disponga dell'URL potrà accedervi. Utilizzate questa opzione con cautela e in conformità con la vostra politica di sicurezza.
 :::
 
 ```python
@@ -310,12 +310,12 @@ config = Config(
 
 ### Errore `SignatureDoesNotMatch`
 
-Se ricevi questo errore, verifica:
+Se ricevete questo errore, verificate:
 
-1. Che le tue chiavi di accesso (`access_key_id` e `secret_access_key`) siano corrette
+1. Che le vostre chiavi di accesso (`access_key_id` e `secret_access_key`) siano corrette
 2. Che la regione sia correttamente impostata su `fr1`
-3. Che tu stia utilizzando il giusto endpoint (formato: `https://IL_TUO_NAMESPACE.s3.fr1.cloud-temple.com`)
+3. Che stiate utilizzando il giusto endpoint (formato: `https://IL_TUO_NAMESPACE.s3.fr1.cloud-temple.com`)
 
 ### Il bucket non trovato
 
-Assicurati di utilizzare lo **stile di indirizzamento per percorso** (`s3={'addressing_style': 'path'}`) nella configurazione. Lo stile di indirizzamento con host virtuale sarà supportato a partire dal S2 2026.
+Assicuratevi di utilizzare lo **stile di indirizzamento per percorso** (`s3={'addressing_style': 'path'}`) nella configurazione.

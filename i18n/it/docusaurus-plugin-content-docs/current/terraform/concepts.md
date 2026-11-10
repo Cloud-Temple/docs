@@ -46,13 +46,13 @@ provider "cloudtemple" {
 
 Il provider si autentica presso le API di Cloud Temple utilizzando:
 
-1. **Client ID**: Identificativo univoco della tua applicazione  
+1. **Client ID**: Identificativo univoco della vostra applicazione  
 2. **Secret ID**: Chiave segreta associata al Client ID
 
-Questi identificativi vengono generati dalla Console di Cloud Temple e consentono al provider di eseguire operazioni a tuo nome.
+Questi identificativi vengono generati dalla Console di Cloud Temple e consentono al provider di eseguire operazioni a vostro nome.
 
 :::info[Best practice  ]
-Memorizza le tue credenziali in variabili d'ambiente o in un gestore di segreti, mai direttamente nel codice.  
+Memorizzate le vostre credenziali in variabili d'ambiente o in un gestore di segreti, mai direttamente nel codice.  
 :::
 
 ## Risorse
@@ -111,7 +111,7 @@ resource "cloudtemple_compute_virtual_machine" "example" {
   # id, moref, machine_manager_id, ecc.
 }
 
-# Reference to an attribute
+# Riferimento a un attributo
 output "vm_id" {
   value = cloudtemple_compute_virtual_machine.example.id
 }
@@ -145,7 +145,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ### Principali fonti dati
 
-Puoi trovare l'elenco completo delle fonti dati disponibili nel provider Terraform Cloud Temple nella [documentazione Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+Potete trovare l'elenco completo delle fonti dati disponibili nel provider Terraform Cloud Temple nella [documentazione Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
 
 #### Infrastruttura Compute
 
@@ -184,7 +184,7 @@ Puoi trovare l'elenco completo delle fonti dati disponibili nel provider Terrafo
 
 ## Stato Terraform
 
-Lo stato Terraform è un file che mantiene il collegamento tra la tua configurazione e le risorse effettive nel cloud.
+Lo stato Terraform è un file che mantiene il collegamento tra la vostra configurazione e le risorse effettive nel cloud.
 
 ### File terraform.tfstate
 
@@ -206,7 +206,7 @@ Lo stato Terraform è un file che mantiene il collegamento tra la tua configuraz
 
 ### Backend remoto
 
-Per un lavoro di squadra, memorizza lo stato in un backend remoto:
+Per un lavoro di squadra, memorizzate lo stato in un backend remoto:
 
 ```hcl
 terraform {
@@ -219,7 +219,7 @@ terraform {
 ```
 
 :::warning
-    Il file `terraform.tfstate` contiene informazioni sensibili. Non committerlo mai su Git e utilizza un backend sicuro per il suo archiviazione.
+    Il file `terraform.tfstate` contiene informazioni sensibili. Non committatelo mai su Git e utilizzate un backend sicuro per il suo archiviazione.
 :::
 
 :::info
@@ -324,7 +324,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
   # ...
 }
 
-# Finally the disk is attached (dependency via virtual_machine_id)
+# Infine il disco viene collegato (dipendenza tramite virtual_machine_id)
 resource "cloudtemple_compute_virtual_disk" "data" {
   name               = "data-disk"
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id
@@ -334,7 +334,7 @@ resource "cloudtemple_compute_virtual_disk" "data" {
 
 ### Dipendenze esplicite
 
-Per impostare un ordine specifico, utilizza `depends_on`:
+Per impostare un ordine specifico, utilizzate `depends_on`:
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "web" {
@@ -472,5 +472,5 @@ resource "cloudtemple_compute_virtual_machine" "web" {
 
 ## Passi successivi
 
-- [Guida introduttiva](quickstart.md): Creare la tua prima infrastruttura con Terraform
+- [Guida introduttiva](quickstart.md): Creare la vostra prima infrastruttura con Terraform
 - [Tutorial](tutorials.md): Esempi pratici per ogni servizio

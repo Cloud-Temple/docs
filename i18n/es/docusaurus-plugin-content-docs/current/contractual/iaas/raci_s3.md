@@ -13,10 +13,10 @@ Aquí recordamos los distintos roles del RACI:
 
 | Rol          | Descripción                              |
 |--------------|------------------------------------------|
-| (R) Ejecuta  | __E__jecuta el proceso                   |
-| (A) Aprueba  | __A__prueba la ejecución del proceso     |
-| (C) Consulta | __C__onsultado durante el proceso        |
-| (I) Informado| __I__nformado de los resultados del proceso |
+| (R) Realiza    | __R__ealiza el proceso |
+| (A) Aprueba    | __A__prueba la realización del proceso |
+| (C) Consultado | __C__onsultado durante el proceso |
+| (I) Informado  | __I__nformado de los resultados del proceso (a través de las herramientas, el portal o la mensajería) |
 
 ## Definir sus requisitos
 

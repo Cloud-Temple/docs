@@ -1,5 +1,5 @@
 ---
-title: Deploy a Virtual Machine (VM) with KubeVirt
+title: Desplegar una máquina virtual (VM) con KubeVirt
 ---
 
 ## Objetivos
@@ -33,7 +33,7 @@ Se abordarán dos escenarios:
 - VMware Workstation (para la conversión de Windows Server): Versión 16 o superior  
 - qemu-img: Versión 6.1 o superior
 
-## Requis previos
+## Requisitos previos
 
 Antes de comenzar, asegúrese de lo siguiente:
 
@@ -45,7 +45,7 @@ Antes de comenzar, asegúrese de lo siguiente:
    - **qemu-img** (para la conversión de discos al formato `qcow2`)  
 5. De tener acceso al blob de Azure donde se almacenará la imagen de Windows Server.
 
-## Demo Plan
+## Plan de demostración
 
 ### Visión general de los pasos
 

@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Private Backbone overview
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Advanced Connectivity
+# Private Backbone overview
 
 > **Take full control of your network with extended level 2 connectivity, designed for hybrid architectures and custom configurations.**
 
@@ -12,18 +12,23 @@ Cloud Temple's **Private Backbone** is our legacy connectivity product, designed
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>VPLS architecture, regional private networks, Internet access, IPv4/IPv6 public addressing.</p>
-    <a href="./private_backbone/concepts" class="card-link">Explore concepts →</a>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./private_backbone/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Getting Started</h3>
-    <p>Create your first private network and configure your Internet access in a few steps.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Get Started →</a>
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Configure a FortiGate or pfSense with BGP to manage your external connectivity.</p>
-    <a href="./private_backbone/tutorials" class="card-link">View tutorials →</a>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./private_backbone/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
 

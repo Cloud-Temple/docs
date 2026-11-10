@@ -1,12 +1,12 @@
 ---
-title: Backup con Restic en Storage Objet (S3)
+title: Copia de seguridad con Restic en Object Storage (S3)
 ---
 
 ## Introducción
 
-Restic es una herramienta de copia de seguridad rápida, segura y eficiente, compatible con múltiples backends, incluidos servicios tipo S3. Este tutorial te guiará paso a paso para configurar una copia de seguridad hacia un almacenamiento de objetos compatible con S3 (como AWS S3, MinIO, Wasabi, etc.).
+Restic es una herramienta de copia de seguridad rápida, segura y eficiente, compatible con múltiples backends, incluidos servicios tipo S3. Este tutorial le guiará paso a paso para configurar una copia de seguridad hacia un almacenamiento de objetos compatible con S3 (como AWS S3, MinIO, Wasabi, etc.).
 
-## Requis
+## Requisitos previos
 
 * Un bucket S3 existente
 * Las credenciales de acceso (Access Key y Secret Key)
@@ -87,7 +87,7 @@ restic restore latest --target /ruta/restauracion
 
 ## Eliminar las copias de seguridad antiguas
 
-Por ejemplo, mantener los últimos 7 instantáneos:
+Por ejemplo, conservar los 7 últimos snapshots:
 
 ```bash
 restic forget --keep-last 7 --prune

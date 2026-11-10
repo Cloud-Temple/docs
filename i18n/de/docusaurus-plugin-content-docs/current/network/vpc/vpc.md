@@ -1,9 +1,9 @@
 ---
-title: Übersicht
+title: Übersicht über VPC
 slug: /network/vpc
 ---
 
-# VPC
+# Übersicht über VPC
 
 Der VPC (Virtual Private Cloud) von Cloud Temple ist ein verwalteter Netzwerkdienst mit **SecNumCloud**-Zertifizierung, der die vollständig automatisierte Erstellung privater, isolierter und sicherer Umgebungen ermöglicht. Entwickelt für ein cloud-native Erlebnis, vereinfacht er das Management von Datenflüssen, dem Internetzugang und IP-Adressen, während er gleichzeitig die Souveränität Ihrer Daten gewährleistet.
 
@@ -12,17 +12,22 @@ Der Dienst ermöglicht das Bereitstellen und Verwalten Ihrer privaten Netzwerke,
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die Architektur, die Komponenten (Private Networks, Gateway) und die Vorteile des VPC.</p>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
     <a href="./vpc/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Erstellen Sie Ihren ersten VPC und konfigurieren Sie Ihre privaten Netzwerke in wenigen Minuten.</p>
-    <a href="./vpc/quickstart" class="card-link">Quickstart starten &rarr;</a>
+    <h3>Erste Schritte</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./vpc/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Schritt-für-Schritt-Anleitungen für erweiterte Anwendungsfälle (Peering, VPN, etc.).</p>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
     <a href="./vpc/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./vpc/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>

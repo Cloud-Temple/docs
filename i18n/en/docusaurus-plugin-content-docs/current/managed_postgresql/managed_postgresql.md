@@ -1,21 +1,8 @@
 ---
-title: Overview
+title: Managed PostgreSQL overview
 ---
 
-# Managed PostgreSQL <span class="title-preview-badge">Preview</span>
-
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts →</a>
-  </div>
-  <div class="card">
-    <h3>Getting Started Guide</h3>
-    <p>Get up and running quickly by following clear and straightforward instructions.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Start the Quickstart →</a>
-  </div>
-</div>
+# Managed PostgreSQL overview <span class="title-preview-badge">Preview</span>
 
 ---
 
@@ -24,6 +11,29 @@ title: Overview
 **Managed PostgreSQL (on Kubernetes) by Cloud Temple** is a managed PostgreSQL database engine solution, hosted on Kubernetes and based on the **CloudNative-PG (CNPG)** operator. It complements the managed database engine offerings on virtual machines (referred to here as **Managed PostgreSQL (on IaaS)**).
 
 This product is suited for clients with Kubernetes workloads requiring PostgreSQL databases, or for clients who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster. It is particularly well-suited for databases that do not require highly specific system tuning. For very large-scale databases requiring specific OS-level tuning, it is preferable to opt for the **Managed PostgreSQL (on IaaS)** product.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
 
 ### Key Benefits
 

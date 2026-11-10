@@ -1,5 +1,5 @@
 ---
-title: Guía de inicio
+title: Guía de inicio de OpenShift
 ---
 import oshiftMenu_001 from '@site/docs/paas_openshift/images/oshift_menu_001.png'
 import oshiftSubMenu_001 from '@site/docs/paas_openshift/images/oshift_sub_menu_001.png'
@@ -8,11 +8,11 @@ import oshiftMenu_002 from '@site/docs/paas_openshift/images/oshift_menu_002.png
 import oshiftMenu_003 from '@site/docs/paas_openshift/images/oshift_menu_003.png'
 import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.png'
 
-# Guía Rápida para la oferta OpenShift
+# Guía de inicio de OpenShift
 
 Esta página le guía a través de los pasos iniciales para utilizar la oferta **OpenShift** desde la consola Cloud Temple. Siga estas instrucciones para explorar los menús y funcionalidades disponibles.
 
-## Requis previos
+## Requisitos previos
 
 Antes de comenzar, asegúrese de cumplir los siguientes puntos:
 
@@ -52,29 +52,29 @@ El submenú **Clusters** le presenta una tabla que muestra todos los clusters Op
 
 💡 **Para acceder a los detalles completos de un cluster, haga clic en su nombre en la tabla.**
 
-### 2. Cluster details
+### 2. Detalle de un cluster
 
-When you click on a **cluster name** in the list, a detailed page appears with complete cluster information:
+Cuando hace clic en el **nombre de un cluster** en la lista, se muestra una página detallada con la información completa del cluster:
 
-**Connectivity information:**
+**Información de conectividad:**
 
-- **Access URL**: Web interface of the cluster
-- **API URL**: API endpoint for CLI operations
+- **URL de acceso**: Interfaz web del cluster
+- **URL de API**: Punto de entrada API para las operaciones CLI
 
-**General information:**
+**Información general:**
 
-- **Status**: Current state of the cluster
-- **Last updated**: Date of the last modification
-- **Version**: OpenShift version deployed
+- **Estado**: Estado actual del cluster
+- **Última actualización**: Fecha de la última modificación
+- **Versión**: Versión de OpenShift desplegada
 
-**Cluster nodes:**
+**Nodos del cluster:**
 
-A table details each node with the following information:
+Una tabla detalla cada nodo con la siguiente información:
 
-- **Node name**
-- **Type**
+- **Nombre del nodo**
+- **Tipo**
 - **AZ** (Availability Zone)
-- **Status**
+- **Estado**
 - **CPU**
 - **RAM**
 
@@ -90,9 +90,9 @@ Tras autenticarse, podrá administrar su clúster:
 
 <img src={oshiftMenu_003} />
 
-### Resources of your environment
+### Recursos de su entorno
 
-Here are the connection and configuration details specific to your OpenShift environment.
+Esta es la información de conexión y de configuración propia de su entorno OpenShift.
 
 #### Detalles de conexión
 
@@ -154,11 +154,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS Interconnection
+#### Interconexión IaaS
 
-Network configurations play a crucial role in securing communications with OpenShift.
+Las configuraciones de red desempeñan un papel crucial para proteger las comunicaciones con OpenShift.
 
-- **Interconnection network**: 100.67.0.0/28
-- **Private load balancer VIP**: 100.67.0.3
+- **Red de interconexión**: 100.67.0.0/28
+- **VIP del load balancer privado**: 100.67.0.3
 
-Ensure your firewall has a dedicated interface and allows traffic between the specified networks.
+Verifique que su firewall disponga de una interfaz dedicada y autorice el tráfico entre las redes especificadas.

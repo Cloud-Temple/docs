@@ -25,29 +25,29 @@ import ssoAad_018 from '@site/docs/console/iam/tutorials/images/sso_aad_018.png'
 
 Ecco un esempio di configurazione del repository di autenticazione di un'organizzazione Cloud Temple con __Microsoft EntraID__ (Azure Active Directory).
 
-La configurazione del tuo repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console. Ciò permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.
+La configurazione del vostro repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console. Ciò permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.
 
 Se gli utenti sono autenticati con il loro account Microsoft, l'autenticazione ai servizi della Console avverrà in modo trasparente.
 
 Di seguito sono riportati i diversi passaggi necessari per completare questa configurazione:
 
-## Step 1: SSO configuration on Microsoft Azure side
+## Passo 1: Configurazione dell'SSO lato Microsoft Azure
 
-### Registration of a new Azure application (Azure portal)
+### Registrazione di una nuova applicazione Azure (portale Azure)
 
-To create the __app registration__, go to the Microsoft Azure portal, then navigate to Microsoft Entra ID, and select __"Add > App Registration"__.
+Per creare l'__app registration__, accedete al portale Microsoft Azure, poi a Microsoft EntraID, __"ADD > App Registration"__.
 
-In the "Register an application" page, please specify:
+Nella pagina "Register an application", indicate:
 
 ```
-- __Name__ : Enter "__SHIVA__"
-- __Supported account types__ : __Accounts in this organizational directory only__ (__<Your Azure Tenant>__ only - Single tenant)
-- __Redirect URL__ : Do not configure this field at this stage. The URL will be provided by Cloud Temple support and should be added to this field later.
+- __Name__ : Indicate "__SHIVA__"
+- __Supported account types__ : __Accounts in this organizational directory only__ (__<Il vostro Tenant Azure>__ only - Single tenant)
+- __Redirect URL__ : Da non configurare in un primo momento. L'URL sarà fornito dal supporto Cloud Temple e andrà aggiunto in questo campo in seguito.
 ```
 
 <img src={ssoEntra_001} />
 
-The __Application (client) ID__ and __Directory (tenant) ID__ are the key details to provide in your support request to the Cloud Temple team to enable Microsoft Entra ID authentication for your organization.
+Le informazioni __Application (client) ID__ e __Directory (tenant) ID__ sono quelle da fornire nella richiesta di supporto al team Cloud Temple per attivare l'autenticazione Microsoft EntraID a livello della vostra organizzazione.
 
 <img src={ssoEntra_002} />
 
@@ -79,30 +79,30 @@ Successivamente, recarsi su "API permissions" e fare clic su __"Grant admin cons
 
 <img src={ssoAad_008} />
 
-### Additional security configurations (optional but recommended)
+### Configurazioni di sicurezza aggiuntive (opzionali ma raccomandate)
 
-By default, Microsoft Entra ID, as configured, will allow any user from your Azure tenant to sign in to your Cloud Temple organization.  
-It is possible to restrict access at the __"App Registration"__ level, allowing only a specific list of users or groups to sign in to your Cloud Temple organization.
+Per impostazione predefinita, Microsoft EntraID così configurato consentirà a qualsiasi utente del vostro tenant Azure di accedere alla vostra organizzazione Cloud Temple.  
+È possibile limitare gli accessi a livello di __"App Registration"__ per autorizzare solo un elenco di utenti o gruppi ad accedere alla vostra organizzazione Cloud Temple.
 
-Follow these steps:
+Ecco la procedura da seguire:
 
 #### Accedere alle impostazioni aggiuntive "App Registration"
 
 ##### Opzione 1
 
-Vai sulla scheda "Overview" e fai clic sul nome dell'applicazione (il collegamento situato dopo "Managed application").
+Andate sulla scheda "Overview" e fate clic sul nome dell'applicazione (il collegamento situato dopo "Managed application").
 
 <img src={ssoAad_009} />
 
 ##### Opzione 2
 
-Passare alle "Applicazioni aziendali" e cercare utilizzando il nome dell'applicazione creata in precedenza.
+Passare alle "Enterprise applications" e cercare utilizzando il nome dell'applicazione creata in precedenza.
 
 <img src={ssoAad_010} />
 
-#### Authentication restriction to users assigned to the application
+#### Limitazione dell'autenticazione agli utenti assegnati all'applicazione
 
-Indicate here the need for user assignment to the application to allow authentication:
+Indicate qui che l'utente deve essere assegnato all'applicazione per poter essere autenticato:
 
 <img src={ssoAad_011} />
 
@@ -112,47 +112,47 @@ Solo gli utenti e i gruppi assegnati all'applicazione potranno accedere alla vos
 
 <img src={ssoAad_012} />
 
-Infine, dovrete applicare l'assegnazione facendo clic su "Assegna".
+Infine, dovrete applicare l'assegnazione facendo clic su "Assign".
 
 <img src={ssoAad_013} />
 
 A partire da ora, gli utenti assegnati all'applicazione potranno accedere alla vostra organizzazione Cloud Temple tramite l'applicazione creata.
 
-## Step 2: Request your organization's SSO (Single Sign-On) configuration
+## Passo 2: Richiedere la configurazione dell'SSO (Single Sign-On) della vostra organizzazione
 
-This configuration step is performed at the organization level by the Cloud Temple team.
+Questa parte della configurazione viene eseguita a livello di organizzazione dal team Cloud Temple.
 
-To proceed, please __submit a support request__ in the console indicating your intention to set up Microsoft Entra ID SSO.
+Per farlo, inviate __una richiesta di assistenza__ dalla console indicando che desiderate configurare un SSO Microsoft EntraID.
 
-Please include the following information in your support request:
+Fornite le seguenti informazioni nella richiesta di assistenza:
 
-- Name of your Organization
-- Name of a contact person, along with their email address and phone number, to finalize the configuration
-- Application ID (unique identifier associated with the previously created application)
-- Directory ID (corresponds to the Azure AD tenant ID of your Azure environment)
-- Secret (secret associated with the previously created application)
+- Il nome della vostra Organizzazione
+- Il nome di un referente, con la sua email e il suo numero di telefono, per finalizzare la configurazione
+- Application ID (identificativo univoco associato all'applicazione creata in precedenza)
+- Directory ID (corrisponde all'identificativo Azure AD del tenant Azure)
+- Secret (segreto associato all'applicazione creata in precedenza)
 
-Once the configuration is completed on the Console side, the designated contact will be notified.
+Non appena la configurazione sarà stata eseguita lato Console, il referente indicato verrà informato.
 
-## Step 3: Finalization of the configuration
+## Passo 3: Finalizzazione della configurazione
 
-On the App Registration home page, in the Overview menu, click on "Add a Redirect URL".
+Nella pagina iniziale dell'App Registration, nel menu Overview, fate clic su "Add a Redirect URL".
 
 <img src={ssoAad_014} />
 
-Next, go to "Add a platform" and add one of type Web.
+Quindi andate su "Add a platform" e aggiungetene una di tipo Web.
 
 <img src={ssoAad_015} />
 
-Enter the "Redirect URL" provided by the Applications Product Team.
+È sufficiente inserire il "Redirect URL" fornito dal Team Prodotto Applications.
 
 <img src={ssoAad_016} />
 
-You should see this result once the "Redirect URL" has been added.
+Una volta aggiunto il "Redirect URL", dovreste ottenere questo risultato.
 
 <img src={ssoAad_017} />
 
-The configuration of the "Redirect URL" may take a few minutes to take effect.  
-Once all steps are completed, you can authenticate to your Cloud Temple organization via your SSO.
+La configurazione del "Redirect URL" può richiedere qualche minuto prima di diventare effettiva.  
+Una volta completati tutti i passaggi, potete autenticarvi alla vostra organizzazione Cloud Temple tramite il vostro SSO.
 
 <img src={ssoAad_018} />

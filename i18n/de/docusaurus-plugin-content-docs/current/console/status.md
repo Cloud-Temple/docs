@@ -1,5 +1,5 @@
 ---
-title: Scheduled Operations and Incident Management
+title: Geplante Vorgänge und Incident-Management
 ---
 import shivaInterventionMenu01 from '@site/docs/console/images/shiva_intervention_menu01.png'
 import shivaInterventionMenu03 from '@site/docs/console/images/shiva_intervention_menu03.png'
@@ -12,19 +12,19 @@ import shivaIncident_004 from '@site/docs/console/images/shiva_incident_004.png'
 import shivaIncident_005 from '@site/docs/console/images/shiva_incident_005.png'
 import shivaIncident_006 from '@site/docs/console/images/shiva_incident_006.png'
 
-As with any cloud infrastructure platform, the Temple Cloud platform regularly undergoes maintenance and hardware/software updates.
+Wie jede Cloud-Infrastrukturplattform ist auch die Cloud Temple-Plattform regelmäßig Gegenstand von Arbeiten sowie von Hardware- und Softwarewartung.
 
-## Access to ongoing operations and incidents
+## Zugriff auf laufende Vorgänge und Incidents
 
-The operations tracking icon allows you to view planned operations on the Cloud Temple infrastructure as well as open incidents on the tenant. This icon is accessible in the icon bar in the top-left corner of the screen and appears as the __'Tools'__ icon.
+Über das Symbol zur Vorgangsverfolgung können Sie die geplanten Vorgänge an der Cloud Temple-Infrastruktur sowie die offenen Incidents des Tenants einsehen. Dieses Symbol befindet sich in der Symbolleiste oben links auf dem Bildschirm und hat die Form eines __'Werkzeuge'__-Symbols.
 
 <img src={shivaInterventionMenu01} />
 
-This icon is designed to provide visibility into planned, ongoing, and completed interventions, as well as incidents on the tenant.
+Dieses Symbol bietet einen Überblick über geplante, laufende und abgeschlossene Interventionen und/oder Incidents des Tenants.
 
-When ongoing interventions and/or incidents exist, a number appears on the icon.
+Wenn Interventionen und/oder Incidents laufen, erscheint eine Zahl auf dem Symbol.
 
-By clicking on "Quick view," you can see the ongoing interventions. It is also possible to click on __'All Interventions'__ or __'All Incidents and Tenant Reports'__ to display more details.
+Mit einem Klick auf die Schnellansicht finden Sie die laufenden Interventionen. Sie können auch auf __'Alle Interventionen'__ oder __'Alle Incidents und Berichte des Tenants'__ klicken, um weitere Details anzuzeigen.
 
 <img src={shivaInterventionMenu03} />
 
@@ -40,42 +40,43 @@ Die abgeschlossenen Interventionen sind in der zweiten Registerkarte „Abgeschl
 
 Der Zugriff auf diese Informationen erfordert für das Benutzerprofil die Berechtigung '__intervention_read__'.
 
-## Incident Management
+## Incident-Management
 
-Two types of incidents need to be distinguished: global incidents, which affect the entire system, and client-specific incidents, which impact only the resources or services associated with a particular client.
+Es sind zwei Arten von Incidents zu unterscheiden: globale Incidents, die das gesamte System betreffen, und Incidents, die spezifisch für einen Kundenbereich sind und nur die Ressourcen oder Dienste eines bestimmten Kunden beeinträchtigen.
 
-### Global Incidents
+### Globale Incidents
 
-Retrieving information about global incidents does not require any special permissions. A red banner is displayed immediately upon logging into the console to alert users of an ongoing global incident currently being resolved. Users have the option to temporarily hide this banner during their session, but it will reappear on every new login or page refresh as long as the incident remains unresolved.
+Für den Abruf von Informationen zu globalen Incidents ist keine besondere Berechtigung erforderlich. Direkt nach der Anmeldung an der Konsole wird ein rotes Banner angezeigt, das auf einen laufenden globalen Incident hinweist, an dessen Behebung gearbeitet wird. Der Benutzer kann dieses Banner während seiner Sitzung vorübergehend ausblenden; es erscheint jedoch bei jeder neuen Anmeldung oder beim Aktualisieren der Seite erneut, solange der Incident nicht behoben ist.
 
 <img src={shivaIncident_001} />
 
-A button labeled __'Learn more'__ redirects to the public incident tracking page, providing additional details about the current incident:
+Eine Schaltfläche __'Mehr erfahren'__ leitet auf die öffentliche Seite zur Verfolgung von Incidents weiter, auf der weitere Informationen zum laufenden Incident verfügbar sind:
 
 <img src={shivaIncident_002} />
 
-Global incident reports can be accessed. Access to these reports requires the specific permission '__incident_management__'. Global incident reports are archived and remain accessible for 60 days after resolution, ensuring full traceability of system events.
+Die Berichte zu globalen Incidents können abgerufen werden. Der Zugriff auf diese Berichte erfordert die spezifische Berechtigung '__incident_management__'. Die Berichte zu globalen Incidents werden archiviert und bleiben nach ihrer Behebung 60 Tage lang zugänglich, was eine vollständige Nachvollziehbarkeit der Systemereignisse gewährleistet.
 
-Here is an example of the tab displaying these reports:
+Hier ein Beispiel für den Tab, in dem diese Berichte angezeigt werden:
 
 <img src={shivaIncident_003} />
 
-### Incidents within a Customer Scope
+### Incidents in einem Auftraggeberbereich
 
-Visibility of incidents specific to a customer scope requires the __incident_read__ permission. These incidents are represented by a dedicated icon, accompanied by a red badge indicating the number of ongoing incidents.
+Die Sichtbarkeit von Incidents, die spezifisch für einen Kundenbereich sind, erfordert die Berechtigung __incident_read__. Diese Incidents werden durch ein eigenes Symbol dargestellt, begleitet von einem roten Badge, das die Anzahl der laufenden Incidents angibt.
 
-The icon is clickable, allowing you to list the tickets associated with the incidents. Each ticket includes a link to the incident details, enabling you to track the progress of resolution. Resolved incidents and their incident reports (CRs) remain accessible for 60 days, allowing for retrospective analysis and follow-up on corrective actions taken.
+Das Symbol ist anklickbar und listet die mit den Incidents verbundenen Tickets auf. Jedes Ticket enthält einen Link zu den Details des Incidents, sodass Sie den Fortschritt der Behebung verfolgen können. Behobene Incidents und ihre Berichte (CRs) bleiben 60 Tage lang einsehbar, was eine rückblickende Analyse und die Nachverfolgung der umgesetzten Korrekturmaßnahmen ermöglicht.
 
 <img src={shivaIncident_004} />
 
-To view the details of an incident, you must either be the ticket author or hold the __support_management__ permission.
+Um die Details eines Incidents einzusehen, müssen Sie entweder der Autor des Incident-Tickets sein oder über die Berechtigung __support_management__ verfügen.
 
-### Notification Management
+<a id="notification-management"></a>
+### Verwaltung der Benachrichtigungen
 
-To quickly inform users about new incidents, an email notification system has been implemented. From their user profile, users can subscribe to notifications for both types of incidents via a tab titled '*My Subscriptions*'. As a result, they will receive an email shortly after an incident is reported or resolved.
+Um die Benutzer bei einem neuen Incident schnell zu informieren, wurde ein E-Mail-Benachrichtigungssystem eingerichtet. In ihrem Benutzerprofil können die Benutzer über einen Tab mit dem Titel '*Meine Abonnements*' die Benachrichtigungen für beide Arten von Incidents abonnieren. So erhalten sie sehr kurzfristig eine E-Mail, wenn ein Incident gemeldet oder behoben wird.
 
 <img src={shivaIncident_005} />
 
-The email subject will indicate the type of incident, and in the case of an incident related to a scope, it will include the name of the affected scope. The notification will also contain a link allowing direct access to the incident details:
+Der Betreff der E-Mail gibt die Art des Incidents an und enthält bei einem bereichsbezogenen Incident den Namen des betroffenen Bereichs. Die Benachrichtigung enthält außerdem einen Link, über den Sie direkt auf die Details des Incidents zugreifen können:
 
 <img src={shivaIncident_006} />

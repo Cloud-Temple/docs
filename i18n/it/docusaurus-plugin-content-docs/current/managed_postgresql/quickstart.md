@@ -35,7 +35,7 @@ Vengono creati due secret principali :
 - `<cluster-name>-superuser` : Credenziali dell'amministratore di sistema (`postgres`).
 - `<cluster-name>-app` : Credenziali dell'utente applicativo (`app`).
 
-Per recuperare la password dell'utente `postgres`, esegui il seguente comando (sostituendo con i tuoi valori) :
+Per recuperare la password dell'utente `postgres`, eseguite il seguente comando (sostituendo con i vostri valori) :
 
 ```bash
 kubectl get secret <cluster-name>-superuser \
@@ -59,13 +59,13 @@ kubectl port-forward svc/<cluster-name>-rw 5432:5432 -n <votre-namespace>
 
 ### Passo 2: Avviare la connessione psql
 
-In un altro terminale, connettiti con il client `psql` :
+In un altro terminale, connettetevi con il client `psql` :
 
 ```bash
 psql -h localhost -U postgres
 ```
 
-*(Il vous sera demandé de saisir le mot de passe récupéré à l'étape 2)*
+*(Vi verrà chiesto di inserire la password recuperata al passaggio 2)*
 
 ---
 

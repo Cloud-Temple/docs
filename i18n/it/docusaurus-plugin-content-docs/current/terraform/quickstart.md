@@ -1,19 +1,19 @@
 ---
-title: Guida di avvio
+title: Guida introduttiva al provider Terraform
 ---
 
-# Guida di avvio rapido
+# Guida introduttiva al provider Terraform
 
-Questa guida ti accompagna passo dopo passo nel distribuire la tua prima infrastruttura Cloud Temple con Terraform.
+Questa guida vi accompagna passo dopo passo nel distribuire la vostra prima infrastruttura Cloud Temple con Terraform.
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati di disporre di:
+Prima di iniziare, assicuratevi di disporre di:
 
 - Un account Cloud Temple attivo
 - Accesso alla [Console Cloud Temple](https://shiva.cloud-temple.com)
 - Chiave API (Client ID e Secret ID)
-- Terraform installato sulla tua macchina (versione 1.0 o successiva)
+- Terraform installato sulla vostra macchina (versione 1.0 o successiva)
 
 ## Passo 1: Installare Terraform
 
@@ -34,7 +34,7 @@ brew install hashicorp/tap/terraform
 
 ### Windows
 
-Scarica l'eseguibile da [terraform.io](https://www.terraform.io/downloads) oppure utilizza Chocolatey:
+Scaricate l'eseguibile da [terraform.io](https://www.terraform.io/downloads) oppure utilizzate Chocolatey:
 
 ```powershell
 choco install terraform
@@ -46,7 +46,7 @@ choco install terraform
 terraform version
 ```
 
-Dovresti vedere un output simile a:
+Dovreste vedere un output simile a:
 
 ```
 Terraform v1.6.0
@@ -59,12 +59,12 @@ Terraform v1.6.0
 Queste credenziali possono essere generate dalla Console Cloud Temple seguendo [questa procedura](https://docs.cloud-temple.com/console/api#chiavi-api).
 
 :::warning[Sicurezza]
-    Conserva queste credenziali in un luogo sicuro. L'ID del segreto verrà visualizzato solo una volta.
+    Conservate queste credenziali in un luogo sicuro. L'ID del segreto verrà visualizzato solo una volta.
 :::
 
 ### Configurazione delle variabili di ambiente
 
-Esporta le tue credenziali come variabili di ambiente:
+Esportate le vostre credenziali come variabili di ambiente:
 
 **Linux/macOS:**
 
@@ -80,7 +80,7 @@ $env:CLOUDTEMPLE_CLIENT_ID="12345678-1234-1234-1234-123456789abc"
 $env:CLOUDTEMPLE_SECRET_ID="87654321-4321-4321-4321-cba987654321"
 ```
 
-## Passo 3: Creare il tuo progetto Terraform
+## Passo 3: Creare il vostro progetto Terraform
 
 ### Creare la directory del progetto
 
@@ -91,7 +91,7 @@ cd terraform-cloudtemple-quickstart
 
 ### Creare il file di configurazione del provider
 
-Crea un file `versions.tf`:
+Create un file `versions.tf`:
 
 ```hcl
 terraform {
@@ -113,13 +113,13 @@ provider "cloudtemple" {
 
 ## Passo 4: Inizializzare Terraform
 
-Inizializza il tuo progetto Terraform per scaricare il provider:
+Inizializzate il vostro progetto Terraform per scaricare il provider:
 
 ```bash
 terraform init
 ```
 
-Dovresti vedere:
+Dovreste vedere:
 
 ```
 Initializing the backend...
@@ -132,30 +132,30 @@ Initializing provider plugins...
 Terraform has been successfully initialized!
 ```
 
-## Passo 5: Creare la tua prima risorsa
+## Passo 5: Creare la vostra prima risorsa
 
 ### Esempio semplice: Macchina virtuale VMware
 
-Crea un file `main.tf` con una configurazione minima:
+Create un file `main.tf` con una configurazione minima:
 
 ```hcl
 # Recupero delle risorse esistenti necessarie
 data "cloudtemple_compute_machine_manager" "vc-vstack-01" {
-  name = "vc-vstack-001-t0001" # Adatta con il nome del tuo vCenter
+  name = "vc-vstack-001-t0001" # Adattate con il nome del vostro vCenter
 }
 
 data "cloudtemple_compute_virtual_datacenter" "dc" {
-  name = "DC-EQX6"  # Adatta con il nome del tuo datacenter
+  name = "DC-EQX6"  # Adattate con il nome del vostro datacenter
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_host_cluster" "cluster" {
-  name = "clu001-ucs01"  # Adatta con il nome del tuo cluster
+  name = "clu001-ucs01"  # Adattate con il nome del vostro cluster
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_datastore_cluster" "datastore" {
-  name = "sdrs001-LIVE"  # Adatta con il nome del tuo datastore cluster
+  name = "sdrs001-LIVE"  # Adattate con il nome del vostro datastore cluster
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
@@ -210,12 +210,12 @@ output "vm_moref" {
 ```
 
 :::note[Adattamento dei nomi]
-    I nomi dei datacenter, cluster e datastore devono corrispondere a quelli disponibili nel tuo ambiente Cloud Temple. Consulta la console per identificare le risorse disponibili.
+    I nomi dei datacenter, cluster e datastore devono corrispondere a quelli disponibili nel vostro ambiente Cloud Temple. Consultate la console per identificare le risorse disponibili.
 :::
 
 ## Passo 6: Pianificare le modifiche
 
-Prima di applicare le modifiche, visualizza cosa verrà creato:
+Prima di applicare le modifiche, visualizzate cosa verrà creato:
 
 ```bash
 terraform plan
@@ -243,7 +243,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 ## Passo 7: Applicare la configurazione
 
-Distribuisci la tua infrastruttura:
+Distribuite la vostra infrastruttura:
 
 ```bash
 terraform apply
@@ -259,7 +259,7 @@ Do you want to perform these actions?
   Enter a value: 
 ```
 
-Digita `yes` e premi Invio.
+Digitate `yes` e premete Invio.
 
 Terraform crea le risorse:
 
@@ -278,20 +278,20 @@ vm_moref = "vm-123"
 ```
 
 :::success[Congratulazioni!]
-    Hai appena creato la tua prima macchina virtuale Cloud Temple con Terraform!
+    Avete appena creato la vostra prima macchina virtuale Cloud Temple con Terraform!
 :::
 
 ## Passo 8: Verificare la creazione
 
 ### Nella console Cloud Temple
 
-1. Accedi alla [Console Cloud Temple](https://shiva.cloud-temple.com)
-2. Naviga verso **IaaS VMWare** > **Macchine virtuali**
-3. Dovresti vedere la tua macchina virtuale `terraform-vm-01`
+1. Accedete alla [Console Cloud Temple](https://shiva.cloud-temple.com)
+2. Navigate verso **IaaS VMWare** > **Macchine virtuali**
+3. Dovreste vedere la vostra macchina virtuale `terraform-vm-01`
 
 ### Con Terraform
 
-Visualizza lo stato corrente:
+Visualizzate lo stato corrente:
 
 ```bash
 terraform show
@@ -303,7 +303,7 @@ Elenco delle risorse gestite:
 terraform state list
 ```
 
-Visualizza gli output:
+Visualizzate gli output:
 
 ```bash
 terraform output
@@ -311,19 +311,19 @@ terraform output
 
 ## Passo 9: Modificare l'infrastruttura
 
-Modifica il file `main.tf` per aumentare la memoria a 8 GB:
+Modificate il file `main.tf` per aumentare la memoria a 8 GB:
 
 ```hcl
 resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   name = "terraform-vm-01"
   
-  memory = 8 * 1024 * 1024 * 1024  # 8 GB instead of 4 GB
+  memory = 8 * 1024 * 1024 * 1024  # 8 GB invece di 4 GB
   cpu    = 2
-  # ... remaining configuration
+  # ... resto della configurazione
 }
 ```
 
-Pianifica e applica le modifiche:
+Pianificate e applicate le modifiche:
 
 ```bash
 terraform plan
@@ -348,7 +348,7 @@ Plan: 0 to add, 1 to change, 0 to destroy.
 
 ## Passo 10: Eliminare le risorse
 
-Quando hai finito i tuoi test, elimina le risorse create:
+Quando avete finito i vostri test, eliminate le risorse create:
 
 ```bash
 terraform destroy
@@ -378,11 +378,11 @@ Do you really want to destroy all resources?
   Enter a value:
 ```
 
-Digita `yes` per confermare l'eliminazione.
+Digitate `yes` per confermare l'eliminazione.
 
 ## Struttura del progetto consigliata
 
-Per progetti più complessi, organizza i tuoi file in questo modo:
+Per progetti più complessi, organizzate i vostri file in questo modo:
 
 ```
 terraform-cloudtemple/
@@ -398,18 +398,18 @@ terraform-cloudtemple/
 ### Esempio di .gitignore
 
 ```gitignore
-# Terraform Files
+# File Terraform
 .terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
 .terraform.lock.hcl
 
-# Crash files
+# File di crash
 crash.log
 crash.*.log
 
-# Sensitive variable files
+# File di variabili sensibili
 *.auto.tfvars
 override.tf
 override.tf.json
@@ -433,7 +433,7 @@ override.tf.json
 
 ## Best practices
 
-### 1. Usa le variabili
+### 1. Usate le variabili
 
 ```hcl
 # variables.tf
@@ -454,7 +454,7 @@ resource "cloudtemple_compute_virtual_machine" "vm" {
 }
 ```
 
-### 2. Organizza con i moduli
+### 2. Organizzate con i moduli
 
 ```hcl
 # modules/vm/main.tf
@@ -475,7 +475,7 @@ module "web_vm" {
 }
 ```
 
-### 3. Usa un backend remoto
+### 3. Usate un backend remoto
 
 ```hcl
 terraform {
@@ -487,25 +487,25 @@ terraform {
 }
 ```
 
-### 4. Commenta il tuo codice
+### 4. Commentate il vostro codice
 
 ```hcl
-# Virtual machine for the production web server
+# Macchina virtuale per il server web di produzione
 
-# CPU and memory sized to handle 1000 req/s
+# CPU e memoria dimensionate per gestire 1000 req/s
 resource "cloudtemple_compute_virtual_machine" "web_prod" {
   name = "web-prod-01"
   
-  # Hardware configuration based on internal benchmarks
+  # Configurazione hardware basata sui benchmark interni
   memory = 16 * 1024 * 1024 * 1024  # 16 GB
   cpu    = 8
   # ...
 }
 ```
 
-### 5. Usa i datasources
+### 5. Usate i datasources
 
-Non ricreare ciò che esiste già. Utilizzate i datasources per fare riferimento alle risorse esistenti:
+Non ricreate ciò che esiste già. Utilizzate i datasources per fare riferimento alle risorse esistenti:
 
 ```hcl
 # Referenziare una rete esistente
@@ -525,7 +525,7 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 
 **Causa**: Problema di connessione con Terraform Registry.
 
-**Soluzione**: Verifica la tua connessione a Internet e riprova il comando `terraform init`.
+**Soluzione**: Verificate la vostra connessione a Internet e riprovate il comando `terraform init`.
 
 ### Errore: "Error: failed to login"
 
@@ -537,9 +537,9 @@ Error: failed to login: Unexpected response code: 401
 
 **Soluzione**:
 
-1. Verifica le tue variabili d'ambiente
-2. Genera una nuova chiave API dalla console
-3. Verifica le autorizzazioni della tua chiave API
+1. Verificate le vostre variabili d'ambiente
+2. Generate una nuova chiave API dalla console
+3. Verificate le autorizzazioni della vostra chiave API
 
 ### Errore: "Error: resource not found"
 
@@ -547,16 +547,16 @@ Error: failed to login: Unexpected response code: 401
 Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 ```
 
-**Causa**: La risorsa richiamata (datacenter, cluster, ecc.) non esiste oppure non ne hai accesso.
+**Causa**: La risorsa richiamata (datacenter, cluster, ecc.) non esiste oppure non ne avete accesso.
 
 **Soluzione**:
 
-1. Verifica il nome esatto (o l'uuid) nella console Cloud Temple
-2. Verifica i tuoi diritti di accesso a questa risorsa
+1. Verificate il nome esatto (o l'uuid) nella console Cloud Temple
+2. Verificate i vostri diritti di accesso a questa risorsa
 
 ## Passi successivi
 
-Ora che hai acquis le basi, esplora i tutorial avanzati:
+Ora che avete acquis le basi, esplorate i tutorial avanzati:
 
 - [Tutorial IaaS VMware](tutorials.md#iaas-vmware): Distribuzione avanzata di VM, gestione dei dischi, configurazione di rete  
 - [Tutorial IaaS OpenSource](tutorials.md): Macchine virtuali XCP-ng, replica, alta disponibilità  

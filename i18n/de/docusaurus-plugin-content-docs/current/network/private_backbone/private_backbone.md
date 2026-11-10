@@ -1,9 +1,9 @@
 ---
-title: Private Backbone
+title: Übersicht über Private Backbone
 slug: /network/private_backbone
 ---
 
-# Private Backbone — Erweiterte Konnektivität
+# Übersicht über Private Backbone
 
 > **Übernehmen Sie die volle Kontrolle über Ihr Netzwerk mit einer erweiterten Konnektivität der Ebene 2, die für hybride Architekturen und maßgeschneiderte Konfigurationen entwickelt wurde.**
 
@@ -12,18 +12,23 @@ Der **Private Backbone** von Cloud Temple ist unser historisches Konnektivitäts
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>VPLS-Architektur, regionale private Netzwerke, Internetzugang, öffentliche Adressierung IPv4/IPv6.</p>
-    <a href="./private_backbone/concepts" class="card-link">Konzepte erkunden →</a>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="./private_backbone/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstartanleitung</h3>
-    <p>Erstellen Sie Ihr erstes privates Netzwerk und konfigurieren Sie Ihren Internetzugang in wenigen Schritten.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Starten →</a>
+    <h3>Erste Schritte</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Konfigurieren Sie ein FortiGate oder pfSense mit BGP, um Ihre externe Konnektivität zu verwalten.</p>
-    <a href="./private_backbone/tutorials" class="card-link">Tutorials anzeigen →</a>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./private_backbone/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>
 

@@ -61,7 +61,7 @@ El rango de nuestro **ejemplo** 10.20.0.0/22 se divide lógicamente en subrangos
 
 ## Uso de MetalLB
 
-MetalLB es el componente que permite exponer servicios de capa 3 (non web / L7) directamente en una dirección IP, ya sea interna o externa, utilizando el tipo de servicio `LoadBalancer`. Es una alternativa a los Ingress para aplicaciones no HTTP o para casos de uso específicos.
+MetalLB es el componente que permite exponer servicios de capa 3 (no web / L7) directamente en una dirección IP, ya sea interna o externa, utilizando el tipo de servicio `LoadBalancer`. Es una alternativa a los Ingress para aplicaciones no HTTP o para casos de uso específicos.
 
 Para utilizar MetalLB, bastará con crear un servicio de tipo `LoadBalancer`. MetalLB le asignará automáticamente una dirección IP desde los rangos preconfigurados. La distinción entre los rangos `interne` y `externe` es una medida de seguridad para garantizar que una aplicación destinada a un uso interno no se exponga en una red pública por error.
 
@@ -83,11 +83,11 @@ spec:
   type: LoadBalancer
 ```
 
-Después de aplicar este manifiesto, a tu servicio se le asignará una dirección IP en el rango `10.20.1.1 – 10.20.1.127` y será accesible desde tu red interna conectada al clúster.
+Después de aplicar este manifiesto, a su servicio se le asignará una dirección IP en el rango `10.20.1.1 – 10.20.1.127` y será accesible desde su red interna conectada al clúster.
 
 **Ejemplo : Exponer un servicio en la red externa**
 
-Para solicitar una dirección IP desde el rango externo (`10.20.1.128 – 10.20.1.254`), debes agregar la etiqueta `lb-type: external` a tu servicio.
+Para solicitar una dirección IP desde el rango externo (`10.20.1.128 – 10.20.1.254`), debe agregar la etiqueta `lb-type: external` a su servicio.
 
 ```yaml
 apiVersion: v1
@@ -107,7 +107,7 @@ spec:
   type: LoadBalancer
 ```
 
-> **Importante** : Este rango permanece **en un espacio de direcciones privadas**. Para una **exposición pública**, es necesario crear una **regla NAT (DNAT)** en el firewall de tu infraestructura para redirigir el tráfico desde una de tus IPs públicas externas hacia la dirección IP privada asignada por MetalLB.
+> **Importante** : Este rango permanece **en un espacio de direcciones privadas**. Para una **exposición pública**, es necesario crear una **regla NAT (DNAT)** en el firewall de su infraestructura para redirigir el tráfico desde una de sus IPs públicas externas hacia la dirección IP privada asignada por MetalLB.
 
 ## IP Públicas
 
@@ -142,7 +142,7 @@ Por ejemplo, un servicio llamado `api-backend` en el namespace `production` ser�
 
 La zona DNS pública utilizada para los clústeres Kubernetes Administrados es `.mk.ms-cloud-temple.com`
 
-El ingress *"nginx-external"* (mapeado a la IP pública n°2) es accesible en `"*.external.<votre identifiant de cluster>.mk.ms-cloud-temple.com"`.
+El ingress *"nginx-external"* (mapeado a la IP pública n°2) es accesible en `"*.external.<su identificador de clúster>.mk.ms-cloud-temple.com"`.
 Si publica una aplicación con esta ingress-class, podrá acceder a ella directamente a través de este nombre de dominio. Vea el tutorial : [Desplegar su primera aplicación](./firstdeploy)
 
 ## Hubble : La observabilidad de red al alcance de la mano
@@ -162,7 +162,7 @@ La interfaz gráfica de Hubble se expone en una URL interna de su clúster. El a
 
 Para acceder a ella, debe estar conectado a la red interna del clúster (por ejemplo, a través de un bastión o una VPN). La URL a utilizar es la siguiente:
 
-`http://hubble.internal.<votre-identifiant-de-cluster>.mk.ms-cloud-temple.com`
+`http://hubble.internal.<su-identificador-de-cluster>.mk.ms-cloud-temple.com`
 
 Para que esta URL sea resoluble desde su estación de trabajo, probablemente deberá agregar una entrada en su archivo `hosts` o en su DNS interno. Puede obtener la dirección IP interna del Ingress de Hubble con el siguiente comando:
 

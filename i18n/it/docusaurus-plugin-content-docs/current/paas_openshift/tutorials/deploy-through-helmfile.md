@@ -1,5 +1,5 @@
 ---
-title : Deployare tramite HelmFile
+title: Distribuire con Helmfile
 ---
 
 # Distribuire con Helmfile
@@ -40,7 +40,7 @@ Il contesto di questa dimostrazione è il seguente:
 
 ## Prerequisiti
 
-Prima di iniziare questa dimostrazione, assicurati di avere gli strumenti e le risorse seguenti:
+Prima di iniziare questa dimostrazione, assicuratevi di avere gli strumenti e le risorse seguenti:
 
 1. **Strumenti CLI**  
    - **OpenShift CLI (`oc`)** : [Documentazione](https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html)  
@@ -170,14 +170,14 @@ Seguire le seguenti guide se necessario:
 
 ### 2. Connessione al cluster OpenShift
 
-Effettua l'autenticazione sul tuo cluster OpenShift con il seguente comando:
+Effettuate l'autenticazione sul vostro cluster OpenShift con il seguente comando:
 
 ```bash
 oc login --server=https://api.openshift.example.com:6443 --web
 ```
 
 > **Attenzione** :  
-> Modifica `--server=url` con l'URL della tua istanza Cloud Temple PaaS.
+> Modificate `--server=url` con l'URL della vostra istanza Cloud Temple PaaS.
 
 ---
 
@@ -217,7 +217,7 @@ Esporre i servizi distribuiti per testarne l'accessibilità e il corretto funzio
 
 #### 1. Creazione di route
 
-Esponi il servizio Nginx configurando route HTTP o HTTPS :
+Esponete il servizio Nginx configurando route HTTP o HTTPS :
 
 - **Per HTTPS** :
 
@@ -233,7 +233,7 @@ oc create route edge nginx --service=nginx -n poc-helmfile --port=8080
 
 #### 2. Aggiungere un'etichetta per l'esposizione pubblica
 
-Aggiungi un'etichetta specifica al router per rendere il servizio accessibile pubblicamente:
+Aggiungete un'etichetta specifica al router per rendere il servizio accessibile pubblicamente:
 
 - Per la route HTTPS:
 
@@ -268,14 +268,14 @@ Esempio di output:
 | nginx       | nginx-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com             | nginx    | 8080  | Nessuno         | `ct-router-type=public`                   |
 | nginx-tls   | nginx-tls-poc-helmfile.apps-ocp**number**-**cluster**.paas.cloud-temple.com         | nginx    | 8080  | Edge (TLS)      | `ct-router-type=public`                   |
 
-#### 2. Accedi alle applicazioni
+#### 2. Accedete alle applicazioni
 
-Utilizza gli URL elencati nella colonna « Host/Porta » per accedere alle applicazioni. Ecco un esempio :
+Utilizzate gli URL elencati nella colonna « Host/Porta » per accedere alle applicazioni. Ecco un esempio :
 
 - Per HTTP : `http://nginx-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 - Per HTTPS : `https://nginx-tls-poc-helmfile.apps-ocp{number}-{cluster}.paas.cloud-temple.com`
 
-> Dovresti vedere una risposta di tipo server web dal **front-end Nginx** distribuito.
+> Dovreste vedere una risposta di tipo server web dal **front-end Nginx** distribuito.
 
 ---
 

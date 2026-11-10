@@ -136,10 +136,6 @@ rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ \
 To automate a daily backup, add a cron entry:
 
 ```bash
-```
-
 # Daily backup at 2 AM
-
-0 2 ** * rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --log-file=/var/log/rclone-backup.log --log-level INFO
-
+0 2 * * * rclone sync /data/backup cloudtemple-s3:nom-du-bucket/ --log-file=/var/log/rclone-backup.log --log-level INFO
 ```

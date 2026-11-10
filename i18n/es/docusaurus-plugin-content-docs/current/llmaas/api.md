@@ -307,7 +307,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 :::warning
 **Nota** : El endpoint `/v1/completions` utiliza el mismo formato que `/v1/chat/completions` con mensajes.
-Para la finalización de texto simple, utiliza un mensaje de usuario con tu prompt.
+Para la finalización de texto simple, utilice un mensaje de usuario con su prompt.
 :::
 
 Finalizaciones de texto mediante formato chat.
@@ -441,7 +441,7 @@ Extracto abreviado: los puntos suspensivos representan las otras componentes del
 
 Reordena una lista de documentos por relevancia respecto a una consulta. Compatible con la API Cohere (v1 y v2).
 
-**Facturación**: consulta el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). Todos los documentos enviados se cuentan, incluso si `top_n` limita el número de resultados devueltos. Ver el [detalle del cálculo](./rerank.md#precios).
+**Facturación**: consulte el [catálogo de tarifas oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/). La reclasificación se factura por millón de tokens de reranking; todos los documentos enviados se procesan, incluso si `top_n` limita el número de resultados devueltos. Ver el [detalle](./rerank.md#precios).
 
 #### Solicitud
 
@@ -503,7 +503,7 @@ Extracto ilustrativo del formato Jina/vLLM descrito por el contrato de la plataf
 }
 ```
 
-Los `relevance_score` son puntuaciones brutas no normalizadas, no probabilidades entre 0 y 1. Utiliza su orden relativo; cualquier umbral debe ser [calibrado en tu modelo y corpus](./rerank.md#umbral-de-relevancia). Los contadores `usage.prompt_tokens` y `usage.total_tokens` son distintos de la facturación por documento procesado; no se requiere ningún campo `usage.billed_units.search_units` para calcular esta última.
+Los `relevance_score` son puntuaciones brutas no normalizadas, no probabilidades entre 0 y 1. Utilice su orden relativo; cualquier umbral debe ser [calibrado en su modelo y corpus](./rerank.md#umbral-de-relevancia).
 
 El endpoint `/v2/rerank` (SDK Cohere v2) también está disponible con el mismo formato de solicitud.
 
@@ -537,13 +537,13 @@ for result in results.results:
 
 Envía varias conversaciones independientes con un modelo común para un procesamiento asíncrono. El campo `messages` es un array de conversaciones. La respuesta HTTP 202 contiene el identificador del lote.
 
-Utiliza `GET /v1/chat/completions/batch/{id}` con la misma clave API para seguir el procesamiento y recuperar los resultados. Consulta la [guía Batch](./batch.md) para el formato, los límites y un ejemplo completo.
+Utilice `GET /v1/chat/completions/batch/{id}` con la misma clave API para seguir el procesamiento y recuperar los resultados. Consulte la [guía Batch](./batch.md) para el formato, los límites y un ejemplo completo.
 
 ### GET /v1/models
 
-Lista de identificadores de modelos expuestos por la API. Utiliza esta respuesta para rellenar el parámetro `model`.
+Lista de identificadores de modelos expuestos por la API. Utilice esta respuesta para rellenar el parámetro `model`.
 
-Consulta también el [ciclo de vida de los modelos](https://llmaas.status.cloud-temple.app/lifecycle) para las descontinuaciones, fechas de fin de soporte y migraciones. Un identificador puede conservarse como redirección hacia un sucesor; su presencia en esta lista no garantiza el mantenimiento del modelo original.
+Consulte también el [ciclo de vida de los modelos](https://llmaas.status.cloud-temple.app/lifecycle) para las descontinuaciones, fechas de fin de soporte y migraciones. Un identificador puede conservarse como redirección hacia un sucesor; su presencia en esta lista no garantiza el mantenimiento del modelo original.
 
 #### Solicitud
 
@@ -554,7 +554,7 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 
 #### Respuesta
 
-Este extracto es ilustrativo: los identificadores y los valores de metadatos, incluido `max_model_len`, no constituyen las características actuales del servicio. Utiliza la respuesta de `GET /v1/models` para obtener los valores efectivos.
+Este extracto es ilustrativo: los identificadores y los valores de metadatos, incluido `max_model_len`, no constituyen las características actuales del servicio. Utilice la respuesta de `GET /v1/models` para obtener los valores efectivos.
 
 ```json
 {

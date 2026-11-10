@@ -34,7 +34,7 @@ L'interface de configuration des buckets propose trois modes de gestion des acc�
 
 ### Nature des préfixes CIDR fournis par Cloud Temple
 
-Tous les préfixes CIDR fournis par Cloud Temple sont des [translate:préfixes de routage] (route prefixes). Cela signifie que pour ces plages, **toutes les adresses qu’ils couvrent, y compris les adresses réseau et broadcast, sont utilisables comme sources valides** d’accès dans la politique. C’est donc pourquoi l’éditeur de la Console inclut systématiquement ces adresses spéciales dans le mode Private.
+Tous les préfixes CIDR fournis par Cloud Temple sont des préfixes de routage (route prefixes). Cela signifie que pour ces plages, **toutes les adresses qu’ils couvrent, y compris les adresses réseau et broadcast, sont utilisables comme sources valides** d’accès dans la politique. C’est donc pourquoi l’éditeur de la Console inclut systématiquement ces adresses spéciales dans le mode Private.
 
 Cette particularité distingue votre environnement de certains réseaux classiques où ces adresses sont réservées et non utilisables.
 

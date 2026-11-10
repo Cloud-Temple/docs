@@ -25,3 +25,4 @@ Pour synchroniser le contenu du dossier local `./mon-site` vers le bucket `s3://
 ❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
 (dryrun) delete: s3://demo-app/old-file.html
 (dryrun) upload: mon-site/new-file.css to s3://demo-app/new-file.css
+```

@@ -34,6 +34,8 @@ L'interfaccia di configurazione dei bucket propone tre modalità di gestione deg
 
 ### Nature dei prefissi CIDR forniti da Cloud Temple
 
-Tutti i prefissi CIDR forniti da Cloud Temple sono [translate:prefissi di routing] (route prefixes). Ciò significa che per queste gamme, **tutte le indirizzi che coprono, inclusi gli indirizzi di rete e broadcast, sono utilizzabili come origini valide** nell'ambito della politica di accesso. È per questo motivo che l'editor della Console include sistematicamente queste indirizzi speciali in modalità Private.
+Tutti i prefissi CIDR forniti da Cloud Temple sono prefissi di routing (route prefixes). Ciò significa che per queste gamme, **tutte le indirizzi che coprono, inclusi gli indirizzi di rete e broadcast, sono utilizzabili come origini valide** nell'ambito della politica di accesso. È per questo motivo che l'editor della Console include sistematicamente queste indirizzi speciali in modalità Private.
 
 Questa caratteristica distingue il vostro ambiente da alcuni reti classiche in cui questi indirizzi sono riservati e non utilizzabili.
+
+:::

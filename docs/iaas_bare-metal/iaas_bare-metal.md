@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de Bare Metal
 ---
 
-# Bare metal
+# Vue d'ensemble de Bare Metal
 
 Le produit __Bare Metal__ de Cloud Temple propose des serveurs dédiés, entièrement personnalisables, pour répondre aux besoins des clients en quête d’autonomie totale sur leur infrastructure.
 
@@ -19,14 +19,19 @@ L’accès direct à vos serveurs se fait via la console Cloud Temple, offrant u
     <a href="./iaas_bare-metal/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
+    <h3>Guide de démarrage</h3>
     <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./iaas_bare-metal/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
-    <div class="card">
-    <h3>Tutorials</h3>
+  <div class="card">
+    <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iaas_bare-metal/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./iaas_bare-metal/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>
 

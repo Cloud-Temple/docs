@@ -98,10 +98,10 @@ terraform {
   required_version = ">= 1.0"
   
   required_providers {
-cloudtemple = {
-  source  = "Cloud-Temple/cloudtemple"
-  version = "~> 1.0"
-}
+    cloudtemple = {
+      source  = "Cloud-Temple/cloudtemple"
+      version = "~> 1.0"
+    }
   }
 }
 

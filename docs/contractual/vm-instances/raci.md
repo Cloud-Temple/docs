@@ -16,9 +16,9 @@ Voici le modèle **RACI** définissant la répartition des responsabilités entr
 
 | Rôle         | Description                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Réalise  | __R__éalise le processus                                                              |
-| (A) Approuve | __A__pprouve la réalisation du processus                                              |
-| (C) Consulte | __C__onsulté pendant le processus                                                     |
+| (R) Réalise  | __R__éalise le processus |
+| (A) Approuve | __A__pprouve la réalisation du processus |
+| (C) Consulté | __C__onsulté pendant le processus |
 | (I) Informé  | __I__nformé des résultats du processus (via l'outillage, le portail ou la messagerie) |
 
 ---

@@ -44,15 +44,13 @@ Compare la relevancia del orden en su corpus, los idiomas admitidos, la longitud
 
 ## Precios
 
-Una unidad de búsqueda (`search_unit`) corresponde a un documento sometido a reclasificación para una consulta.
+La reclasificación se factura por millón de **tokens de reranking**.
 
-Todos los documentos de la tabla `documents` se cuentan. El parámetro `top_n` limita únicamente el número de resultados devueltos: no reduce el número de documentos procesados ni el coste de la consulta. Un mismo documento sometido en varias consultas se cuenta en cada procesamiento.
+Todos los documentos de la tabla `documents` se procesan. El parámetro `top_n` limita únicamente el número de resultados devueltos: no reduce ni el volumen procesado ni el coste de la consulta. Un mismo documento sometido en varias consultas se procesa, y se factura, en cada consulta.
 
 Para conocer los precios públicos vigentes y realizar su estimación, consulte el [catálogo de precios oficial de Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 **Ejemplo:** 1 000 consultas que contienen cada una 100 documentos representan 100 000 documentos procesados, incluso si cada consulta devuelve solo los 5 primeros resultados (`top_n: 5`).
-
-Los contadores de tokens eventualmente devueltos por el motor no constituyen la unidad de facturación de la reclasificación.
 
 ## Endpoints
 
@@ -138,9 +136,7 @@ Extracto ilustrativo del formato Jina/vLLM descrito por el contrato de la plataf
 - `index`: Posición original en la tabla `documents` enviada.
 - `relevance_score`: Puntuación bruta del modelo (logit), no normalizada y no comparable a una probabilidad. Una puntuación más alta indica un documento mejor clasificado para esta consulta; no se garantiza ningún rango universal de 0 a 1.
 - `document`: Texto y eventuales datos multimodales del documento, cuando el motor los devuelve.
-- `usage.prompt_tokens` y `usage.total_tokens`: Contadores de tokens del motor. No constituyen la unidad de facturación de la reclasificación.
-
-El número de documentos facturados no depende de la presencia de un campo `search_units` en la respuesta: todos los documentos sometidos se cuentan, según la [tarificación](#precios).
+- `usage.prompt_tokens` y `usage.total_tokens`: Contadores de tokens del motor.
 
 ## Ejemplos de Implementación
 
@@ -355,9 +351,9 @@ top_docs = rerank_documents(query, candidates, top_n=5)
 
 ### Umbral de Relevancia
 
-Comienza utilizando el ranking relativo y `top_n` para seleccionar los documentos. No existe un umbral universal, como 0,3, aplicable a todos los modelos y corpus.
+Comience utilizando el ranking relativo y `top_n` para seleccionar los documentos. No existe un umbral universal, como 0,3, aplicable a todos los modelos y corpus.
 
-Si tu aplicación debe descartar documentos poco relevantes, calibra un umbral sobre un conjunto representativo de consultas y documentos cuya relevancia haya sido evaluada. Mide los documentos relevantes conservados y los eliminados erróneamente. Reevalúa este umbral ante un cambio de modelo o de corpus; no compares directamente las puntuaciones de modelos diferentes.
+Si su aplicación debe descartar documentos poco relevantes, calibre un umbral sobre un conjunto representativo de consultas y documentos cuya relevancia haya sido evaluada. Mida los documentos relevantes conservados y los eliminados erróneamente. Reevalúe este umbral ante un cambio de modelo o de corpus; no compare directamente las puntuaciones de modelos diferentes.
 
 ## Recursos
 

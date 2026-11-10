@@ -30,13 +30,13 @@ import shivaOrdersIaasCpoolMemory from '@site/docs/console/images/shiva_orders_i
 
 ## Concepto
 
-El seguimiento del despliegue de nuevos recursos se realiza en el menú __'Pedidos'__ accesible en la barra verde a la izquierda de la pantalla.
+El seguimiento del despliegue de nuevos recursos se realiza en el menú __'Marketplace'__ > __'Pedidos'__ accesible en la barra verde a la izquierda de la pantalla.
 
 Permite visualizar los recursos Cloud pedidos, en proceso de despliegue y los posibles errores dentro de un [Tenant](iam/concepts.md#tenant) de su [Organización](iam/concepts.md#organizaciones).
 
 <img src={shivaOrdersList} />
 
-*__Nota : En este momento, aún no es posible la vista global a nivel de una organización de todos los recursos desplegados en los distintos tenants.__ Este tema se tratará posteriormente con la implementación de un portal dedicado al solicitante (en el sentido de firmante) y a la gestión de su organización.*
+*__Nota: la vista global, a nivel de una organización, de todos los recursos desplegados en los distintos tenants no está disponible.__*
 
 El despliegue de los recursos o su eliminación se realizan en cada uno de los productos en los menús __'IaaS'__ y __'Red'__ a la izquierda de la pantalla en la barra verde.
 
@@ -52,7 +52,7 @@ __Nota__ : __No es posible iniciar varios pedidos del mismo tipo de recurso simu
 
 ## Solicitar una nueva zona de disponibilidad
 
-Es posible agregar una nueva zona de disponibilidad accediendo al menú "__Pedido__". Esta opción le permite ampliar sus recursos y mejorar la disponibilidad y la resiliencia de sus aplicaciones con solo unos pocos clics:
+Es posible añadir una nueva zona de disponibilidad accediendo al menú "__Marketplace__ > __Pedidos__". Esta opción le permite extender sus recursos y mejorar la disponibilidad y la resiliencia de sus aplicaciones en solo unos clics :
 
 <img src={shivaOrderAz_01} />
 
@@ -92,12 +92,12 @@ La lógica de asignación de almacenamiento en modo bloque en los clústeres de 
 - Para __Bare Metal__ : en forma de __volúmenes__
 - Para __Open IaaS__ : en forma de __Storage Repository (SR)__
 
-Cada datastore hereda una __clase de rendimiento__ definida en IOPS/TiB (de 500 a 15000 IOPS/TiB pour le FLASH, ou sans garantie pour le MASS STORAGE). La limitación de IOPS se aplica __a nivel del datastore__ (y no por VM), lo que significa que todas las máquinas virtuales que comparten el mismo datastore comparten la cuota de IOPS asignada.
+Cada datastore hereda una __clase de rendimiento__ definida en IOPS/TB (de 500 a 15000 IOPS/TB para el FLASH, o sin garantía para el MASS STORAGE). La limitación de IOPS se aplica __a nivel del datastore__ (y no por VM), lo que significa que todas las máquinas virtuales que comparten el mismo datastore comparten la cuota de IOPS asignada.
 
 __Puntos clave a tener en cuenta__ :
 
 - __Tamaño mínimo__ : 500 GiB por LUN
-- __Rendimiento__ : Proporcional al volumen asignado, __dentro del límite de un techo físico absoluto por LUN__ (ex: 2 To en classe Standard = 3000 IOPS, mais une LUN de 10 To plafonnera à 30 000 IOPS maximum). Este techo varía según la clase (10 000 IOPS / 512 Mo/s pour la classe Essentiel, et 30 000 IOPS / 1024 Mo/s pour les classes supérieures).
+- __Rendimiento__ : Proporcional al volumen asignado, __dentro del límite de un techo físico absoluto por LUN__ (p. ej.: 2 TB en clase Standard = 3000 IOPS, pero una LUN de 10 TB tendrá un techo de 30 000 IOPS como máximo). Este techo varía según la clase (10 000 IOPS / 512 MB/s para la clase Essentiel, y 30 000 IOPS / 1024 MB/s para las clases superiores).
 - __Organización__ : Los datastores del mismo tipo se agrupan automáticamente en clústeres de datastores
 - __Disponibilidad__ : 99,99 % medido mensualmente, incluidos los períodos de mantenimiento
 - __Espacio necesario__ : Prever siempre un 10 % de espacio libre para las instantáneas de copia de seguridad y el equivalente a la suma de la RAM de las VM para los archivos .VSWP
@@ -126,7 +126,7 @@ A continuación, obtendrá un resumen de las opciones seleccionadas antes de val
 
 ### Desplegar un nuevo clúster de almacenamiento
 
-En el menú "__pedido__", proceda a solicitar un __nuevo clúster de almacenamiento__ para su entorno seleccionando las opciones que se ajusten a sus necesidades de capacidad, rendimiento y redundancia. Seleccione la ubicación:
+En el menú "__Marketplace__ > __Pedidos__", proceda a la solicitud de un __nuevo clúster de almacenamiento__ para su entorno seleccionando las opciones que corresponden a sus necesidades en términos de capacidad, rendimiento y redundancia. Seleccione la ubicación :
 
 <img src={shivaOrderClusto_01} />
 
@@ -179,7 +179,7 @@ __Flexibilidad de las redes__ :
 - Una red puede ser __terminada en una zona de hosting__ para sus equipos físicos
 - __Límite__ : Máximo de 20 redes por solicitud. Puede realizar varias solicitudes consecutivas para ampliar este número según sus necesidades
 
-La solicitud de una nueva red y las decisiones de compartición entre sus tenants se realizan en el menú __'Red'__ de la barra verde a la izquierda de la pantalla. Las redes se crearán primero, y luego se generará una solicitud separada para propagarlas. Puede seguir el progreso de las solicitudes en curso accediendo a la pestaña "Solicitud" en el menú, o haciendo clic en las etiquetas de información que lo redirigen a las solicitudes activas o en proceso.
+La solicitud de una nueva red y las decisiones de compartición entre sus tenants, se realizan en el menú __'Red'__ de la barra verde a la izquierda de la pantalla. Las redes serán primero creadas, luego un pedido distinto será generado para propagarlas. Puede seguir el avance de los pedidos en curso accediendo al menú "Marketplace > Pedidos", o haciendo clic en las etiquetas de información que le redirigen a los pedidos activos o en curso de procesamiento.
 
 <img src={shivaOrdersNet_002} />
 
@@ -224,7 +224,7 @@ La adición de hipervisores a un clúster de cálculo se realiza en el menú __'
 En el siguiente ejemplo, añadiremos capacidad de cálculo a un clúster de hipervisores que utiliza la tecnología VMware.
 
 Vaya al submenú __'Infrastructure'__ y luego a __'VMWare'__. Seleccione entonces la stack vmware, la zona de disponibilidad y el clúster de cálculo.
-En este ejemplo, se trata del __'clu001-ucs12'__. Haga clic en el botón __'Ajouter un host'__ que se encuentra en la tabla con la lista de hosts, en la parte superior derecha.
+En este ejemplo, se trata del __'clu001-ucs12'__. Haga clic en el botón __'Añadir un host'__ que se encuentra en la tabla con la lista de hosts, en la parte superior derecha.
 
 __nota__ :
 

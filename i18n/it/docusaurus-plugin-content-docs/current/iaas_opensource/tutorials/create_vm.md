@@ -2,7 +2,7 @@
 title: Creare una macchina virtuale
 ---
 
-Questo tutorial ti guida attraverso i diversi metodi di creazione di una macchina virtuale nel tuo ambiente OpenIaaS.
+Questo tutorial vi guida attraverso i diversi metodi di creazione di una macchina virtuale nel vostro ambiente OpenIaaS.
 
 ## Introduzione
 
@@ -21,9 +21,9 @@ La Console Cloud Temple propone **tre metodi** per creare una macchina virtuale 
 
 ## Accesso alla creazione
 
-Dal menu **OpenIaaS** > **Macchine Virtuali**, fai clic sul pulsante **Nuova macchina virtuale**.
+Dal menu **OpenIaaS** > **Macchine Virtuali**, fate clic sul pulsante **Nuova macchina virtuale**.
 
-Si apre una finestra che mostra i tre metodi di distribuzione disponibili. Seleziona il metodo desiderato per continuare.
+Si apre una finestra che mostra i tre metodi di distribuzione disponibili. Selezionate il metodo desiderato per continuare.
 
 ---
 
@@ -33,11 +33,11 @@ Questo metodo consente di creare rapidamente una macchina virtuale a partire da 
 
 ### Fase 1: Selezione del Pool e del Modello
 
-Seleziona innanzitutto il **Pool** (zone de disponibilité) in cui desideri distribuire la tua macchina virtuale, quindi scegli il **Modello** da utilizzare come base.
+Selezionate innanzitutto il **Pool** (zone de disponibilité) in cui desiderate distribuire la vostra macchina virtuale, quindi scegliete il **Modello** da utilizzare come base.
 
 ### Passo 2: Informazioni generali
 
-Configura i parametri di base della tua macchina virtuale:
+Configurate i parametri di base della vostra macchina virtuale:
 
 - **Nome** : Nome univoco della macchina virtuale (caratteri alfanumerici, trattini, underscore, punti e spazi consentiti)
 - **CPU** : Numero di core virtuali (minimo 1)
@@ -45,55 +45,55 @@ Configura i parametri di base della tua macchina virtuale:
 
 ### Fase 3 : Cloud Init (opzionale)
 
-Cloud Init consente di automatizzare la configurazione iniziale della tua macchina virtuale al primo avvio.
+Cloud Init consente di automatizzare la configurazione iniziale della vostra macchina virtuale al primo avvio.
 
-Puoi configurare:
+Potete configurare:
 
 - **Cloud Config** : Configurazione generale (hostname, utenti, pacchetti, ecc.)
 - **Network Config** : Configurazione di rete in formato Netplan v2
 - **Destroy After Boot** : Opzione per eliminare la configurazione Cloud Init dopo il primo avvio
 
 :::info
-Questo passaggio è completamente opzionale. Se non hai bisogno di Cloud Init, lascia i campi predefiniti e passa al passaggio successivo.
+Questo passaggio è completamente opzionale. Se non avete bisogno di Cloud Init, lasciate i campi predefiniti e passate al passaggio successivo.
 :::
 
 ### Fase 4 : Configurazione dei dischi
 
-Gestisci i dischi virtuali della tua macchina virtuale. I dischi del modello vengono aggiunti automaticamente e non possono essere eliminati.
+Gestite i dischi virtuali della vostra macchina virtuale. I dischi del modello vengono aggiunti automaticamente e non possono essere eliminati.
 
-Per ogni disco, configura :
+Per ogni disco, configurate :
 
 - **Nome** : Nome univoco del disco
 - **Capacità** : Dimensione del disco con selezione dell'unità (MB, GB, TB)
 - **Block Storage** : Archiviazione di destinazione
 
-È possibile aggiungere fino a 24 dischi virtuali in totale. Fai clic su **Aggiungi un disco** per creare un nuovo disco.
+È possibile aggiungere fino a 24 dischi virtuali in totale. Fate clic su **Aggiungi un disco** per creare un nuovo disco.
 
 :::warning
-Se configuri Cloud Init, è obbligatorio almeno un disco per memorizzare la configurazione.
+Se configurate Cloud Init, è obbligatorio almeno un disco per memorizzare la configurazione.
 :::
 
 ### Passo 5: Configurazione degli adattatori di rete
 
-Configura le interfacce di rete della tua macchina virtuale (massimo 7 adattatori).
+Configurate le interfacce di rete della vostra macchina virtuale (massimo 7 adattatori).
 
 Per ogni adattatore di rete :
 
-- **Rete** : Seleziona la rete virtuale (con indicazione VPC o Private Backbone)
+- **Rete** : Selezionate la rete virtuale (con indicazione VPC o Private Backbone)
 - **Indirizzo MAC** : Opzionale, generato automaticamente se non specificato
 
 :::info[VPC]
-La configurazione delle reti VPC è disponibile solo dalla scheda Rete della macchina virtuale una volta terminata l'operazione. La configurazione da questo modulo sarà disponibile a breve.
+La configurazione delle reti VPC è disponibile solo dalla scheda Rete della macchina virtuale una volta terminata l'operazione.
 :::
 
-Fai clic su **Aggiungi adattatore di rete** per creare una nuova interfaccia.
+Fate clic su **Aggiungi adattatore di rete** per creare una nuova interfaccia.
 
 ### Passaggio 6 : Alta disponibilità
 
-Configura il livello di alta disponibilità della tua macchina virtuale.
+Configurate il livello di alta disponibilità della vostra macchina virtuale.
 
 :::tip
-Per ulteriori informazioni sulla configurazione dell'alta disponibilità e sulle diverse modalità disponibili, consulta la guida dedicata: [Gestione dell'alta disponibilità di una macchina virtuale](./high_availability/manage_vm)
+Per ulteriori informazioni sulla configurazione dell'alta disponibilità e sulle diverse modalità disponibili, consultate la guida dedicata: [Gestione dell'alta disponibilità di una macchina virtuale](./high_availability/manage_vm)
 :::
 
 ### Fase 7: Riepilogo e convalida
@@ -123,19 +123,19 @@ Il formato XVA è il formato di esportazione/importazione nativo di XCP-ng e Xen
 
 ### Passo 1: Nome della macchina virtuale
 
-Definisci il nome della tua macchina virtuale.
+Definite il nome della vostra macchina virtuale.
 
 Il nome deve rispettare le stesse regole previste per la distribuzione da un modello (caratteri alfanumerici, trattini, underscore, punti e spazi).
 
 ### Fase 2: Caricamento del file XVA
 
-Carica il tuo file XVA dal tuo computer.
+Caricate il vostro file XVA dal vostro computer.
 
 :::info
 Il file deve avere l'estensione `.xva`. I nomi dei file devono contenere solo caratteri alfanumerici, trattini, underscore e punti (senza spazi).
 :::
 
-Trascina e rilascia il file nell'area prevista o fai clic per selezionare il file dal tuo esploratore.
+Trascinate e rilasciate il file nell'area prevista o fate clic per selezionare il file dal vostro esploratore.
 
 ### Fase 3: Selezione dello storage
 
@@ -168,7 +168,7 @@ Il Marketplace Cloud Temple offre immagini di macchine virtuali certificate e pr
 
 ### Selezione di un'immagine del Marketplace
 
-Esplora il catalogo delle immagini disponibili per OpenIaaS.
+Esplorate il catalogo delle immagini disponibili per OpenIaaS.
 
 Vengono visualizzate solo le immagini compatibili con la piattaforma OpenIaaS.
 
@@ -179,10 +179,10 @@ La configurazione dal Marketplace segue un processo simile alla distribuzione da
 - Le caratteristiche di sistema (OS, CPU, RAM) sono predefinite dall'immagine del Marketplace
 - È possibile personalizzare il nome della VM
 - Cloud Init è disponibile per la configurazione iniziale
-- La mappatura di rete consente di associare le interfacce di rete dell'immagine alle tue reti
+- La mappatura di rete consente di associare le interfacce di rete dell'immagine alle vostre reti
 
 :::tip
-Per una guida dettagliata alla distribuzione sul Marketplace, consulta il tutorial dedicato: [Distribuire un'immagine su OpenIaaS](../../marketplace/tutorials/deploy_openiaas)
+Per una guida dettagliata alla distribuzione sul Marketplace, consultate il tutorial dedicato: [Distribuire un'immagine su OpenIaaS](../../marketplace/tutorials/deploy_openiaas)
 :::
 
 ---
@@ -191,7 +191,7 @@ Per una guida dettagliata alla distribuzione sul Marketplace, consulta il tutori
 
 ### Scelta del metodo di distribuzione
 
-- **Modello** : Ideale per distribuzioni standard e ripetitive all'interno della tua organizzazione
+- **Modello** : Ideale per distribuzioni standard e ripetitive all'interno della vostra organizzazione
 - **XVA** : Consigliato per migrare VM esistenti o utilizzare immagini personalizzate
 - **Marketplace** : Perfetto per iniziare rapidamente con immagini certificate e mantenute
 
@@ -202,14 +202,14 @@ Per una guida dettagliata alla distribuzione sul Marketplace, consulta il tutori
 
 ### Alta disponibilità
 
-- Abilita la modalità **Restart** per le applicazioni critiche
-- Utilizza **Best-Effort** per gli ambienti meno critici
+- Abilitate la modalità **Restart** per le applicazioni critiche
+- Utilizzate **Best-Effort** per gli ambienti meno critici
 
 ### Cloud Init
 
-- Utilizza Cloud Init per standardizzare la configurazione delle tue VM
-- Documenta le configurazioni Cloud Init per facilitarne il riutilizzo
-- Testa le configurazioni su VM di test prima del deployment in produzione
+- Utilizzate Cloud Init per standardizzare la configurazione delle vostre VM
+- Documentate le configurazioni Cloud Init per facilitarne il riutilizzo
+- Testate le configurazioni su VM di test prima del deployment in produzione
 
 ### Sicurezza
 

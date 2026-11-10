@@ -1,11 +1,34 @@
 ---
-title: Panoramica
+title: Panoramica di LLM as a Service (LLMaaS)
 sidebar_position: 1
 ---
 
-# LLM as a Service (LLMaaS)
+# Panoramica di LLM as a Service (LLMaaS)
 
 LLMaaS fornisce accesso ai modelli di IA ospitati da Cloud Temple tramite un'API: assistenti conversazionali, programmazione e agenti, analisi delle immagini, ricerca semantica, reranking, traduzione e utilizzi audio/immagine.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./llmaas/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./llmaas/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./category/tutoriels" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./llmaas/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>
 
 ## Catalogo, novità e disponibilità
 
@@ -25,7 +48,7 @@ Per iniziare, seguite la [guida di avvio rapido](./quickstart.md). Per scegliere
 | Elaborazione asincrona di batch di richieste | [Batch](./batch.md) |
 | Cambio di modello e gestione dei vecchi identificatori | [Ciclo di vita e migrazione](./concepts.md#migrazione-verso-un-altro-modello) |
 
-Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutane gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
+Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutatene gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
 
 ## Accesso all'API
 
@@ -37,7 +60,7 @@ Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con
 
 ## Tipi di contenuto
 
-Le richieste di generazione del testo utilizzano JSON con l'header `Content-Type: application/json`. Lo streaming restituisce eventi SSE e la trascrizione di file audio utilizza `multipart/form-data`. Consulta la [documentazione API](./api.md) per il formato di ogni endpoint.
+Le richieste di generazione del testo utilizzano JSON con l'header `Content-Type: application/json`. Lo streaming restituisce eventi SSE e la trascrizione di file audio utilizza `multipart/form-data`. Consultate la [documentazione API](./api.md) per il formato di ogni endpoint.
 
 ## Metadati delle risposte
 
@@ -46,7 +69,7 @@ A seconda dell'endpoint, il corpo JSON della risposta può contenere i seguenti 
 - `id` : Identificatore della risposta.
 - `backend` : Informazioni sul motore e sull'istanza che ha elaborato la richiesta (`engine_type`, `machine_name`).
 
-Questi campi sono presenti nel corpo JSON, non negli header HTTP. Consulta il [riferimento API](./api.md) per il formato e i campi documentati di ciascun endpoint.
+Questi campi sono presenti nel corpo JSON, non negli header HTTP. Consultate il [riferimento API](./api.md) per il formato e i campi documentati di ciascun endpoint.
 
 ## Esempi
 
@@ -102,7 +125,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro     | Tipo    | Descrizione                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Il modello da utilizzare (vedi [catalogo dei modelli](./models.md)) |
+| `model`       | string  | Il modello da utilizzare (vedete [catalogo dei modelli](./models.md)) |
 | `messages`    | array   | Elenco dei messaggi della conversazione                         |
 | `max_tokens`  | integer | Numero massimo di token da generare                            |
 | `temperature` | float   | Controlla la creatività (0.0-2.0)                              |
@@ -120,10 +143,10 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoint disponibili
 
 - `/chat/completions` : Generazione di risposte conversazionali
-- `/chat/completions/batch` : Elaborazione asincrona di più conversazioni ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Elaborazione asincrona di più conversazioni ([guida Batch](./batch.md))
 - `/completions` : Completamento di testo semplice
 - `/embeddings` : Vettorizzazione per la ricerca semantica e RAG
-- `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatible Cohere SDK)
+- `/rerank` e `/v2/rerank` : Riordinamento dei risultati (compatibile con l'SDK Cohere)
 - `/audio/transcriptions` : Trascrizione audio batch (Whisper)
 - `/audio/speech` : Sintesi vocale (TTS)
 - `/images/generations` : Generazione di immagini

@@ -44,15 +44,13 @@ Confrontare la rilevanza del ranking sul proprio corpus, le lingue supportate, l
 
 ## Tariffazione
 
-Un'unità di ricerca (`search_unit`) corrisponde a un documento sottoposto a reranking per una richiesta.
+Il reranking è fatturato per milione di **token di reranking**.
 
-Tutti i documenti nell'array `documents` vengono conteggiati. Il parametro `top_n` limita solo il numero di risultati restituiti: non riduce il numero di documenti elaborati né il costo della richiesta. Lo stesso documento sottoposto in più richieste viene conteggiato ad ogni elaborazione.
+Tutti i documenti nell'array `documents` vengono elaborati. Il parametro `top_n` limita solo il numero di risultati restituiti: non riduce né il volume elaborato né il costo della richiesta. Lo stesso documento sottoposto in più richieste viene elaborato, e fatturato, ad ogni richiesta.
 
 Per conoscere i prezzi pubblici vigenti e calcolare la propria stima, consultare il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 **Esempio:** 1 000 richieste contenenti ciascuna 100 documenti rappresentano 100 000 documenti elaborati, anche se ogni richiesta restituisce solo i primi 5 risultati (`top_n: 5`).
-
-I conteggi di token eventualmente restituiti dal motore non costituiscono l'unità di fatturazione del reranking.
 
 ## Endpoints
 
@@ -138,9 +136,7 @@ Estratto illustrativo del formato Jina/vLLM descritto dal contratto della piatta
 - `index`: Posizione originale nell'array `documents` inviato
 - `relevance_score`: Punteggio grezzo del modello (logit), non normalizzato e non assimilabile a una probabilità. Un punteggio più alto indica un documento meglio classificato per questa richiesta; non è garantita alcuna gamma universale da 0 a 1.
 - `document`: Testo e eventuali dati multimodali del documento, quando il motore li restituisce.
-- `usage.prompt_tokens` e `usage.total_tokens`: Conteggi di token del motore. Non costituiscono l’unità di fatturazione del reranking.
-
-Il numero di documenti fatturati non dipende dalla presenza di un campo `search_units` nella risposta: tutti i documenti sottoposti vengono conteggiati, secondo la [tariffazione](#tariffazione).
+- `usage.prompt_tokens` e `usage.total_tokens`: Conteggi di token del motore.
 
 ## Esempi di Implementazione
 
@@ -355,9 +351,9 @@ top_docs = rerank_documents(query, candidates, top_n=5)
 
 ### Soglia di Pertinenza
 
-Inizia utilizzando il ranking relativo e `top_n` per selezionare i documenti. Non esiste una soglia universale, come 0,3, applicabile a tutti i modelli e corpus.
+Iniziate utilizzando il ranking relativo e `top_n` per selezionare i documenti. Non esiste una soglia universale, come 0,3, applicabile a tutti i modelli e corpus.
 
-Se la tua applicazione deve scartare i documenti poco pertinenti, calibra una soglia su un insieme rappresentativo di query e documenti la cui pertinenza è stata valutata. Misura i documenti pertinenti conservati e quelli eliminati erroneamente. Rivaluta questa soglia in caso di cambiamento del modello o del corpus; non confrontare direttamente i punteggi di modelli diversi.
+Se la vostra applicazione deve scartare i documenti poco pertinenti, calibrate una soglia su un insieme rappresentativo di query e documenti la cui pertinenza è stata valutata. Misurate i documenti pertinenti conservati e quelli eliminati erroneamente. Rivalutate questa soglia in caso di cambiamento del modello o del corpus; non confrontate direttamente i punteggi di modelli diversi.
 
 ## Risorse
 

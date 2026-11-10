@@ -10,12 +10,12 @@ Die verwalteten Datenbanken von Cloud Temple entlasten Sie von der operativen Ve
 <div class="card-grid">
   <div class="card">
     <h3>Verwaltete MariaDB</h3>
-    <p>MariaDB-Engine auf Kubernetes mit automatischen Sicherungen und multi-AZ High Availability.</p>
+    <p>MariaDB-Engine auf Kubernetes: Modelle StandAlone oder MultiAZ, Speicher verteilt auf drei Verfügbarkeitszonen, physische und logische Sicherungen.</p>
     <a href="./managed_mariadb" class="card-link">Verwaltete MariaDB entdecken →</a>
   </div>
   <div class="card">
     <h3>Verwaltete PostgreSQL</h3>
-    <p>PostgreSQL-Engine auf Kubernetes: StandAlone, Distributed oder Enterprise.</p>
+    <p>PostgreSQL-Engine auf Kubernetes: Modelle StandAlone, Replica oder Unternehmen.</p>
     <a href="./managed_postgresql" class="card-link">Verwaltete PostgreSQL entdecken →</a>
   </div>
 </div>

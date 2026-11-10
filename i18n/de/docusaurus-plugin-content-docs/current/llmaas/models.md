@@ -3,7 +3,7 @@ title: Katalog der KI-Modelle
 sidebar_position: 2
 ---
 
-# Katalog der LLM-as-a-Service-Modelle
+# Katalog der KI-Modelle von LLMaaS
 
 ## Den aktuellen Katalog einsehen
 

@@ -125,8 +125,8 @@ En la pestaña __'Información general'__, encuentra información detallada rela
 
 Desde esta vista, puede realizar las siguientes acciones :
 
-- Modificar el sistema operativo (la machine virtuelle devant être éteinte),
-- Actualizar la versión del hardware (la machine virtuelle devant être éteinte),
+- Modificar el sistema operativo (la máquina virtual debe estar apagada),
+- Actualizar la versión del hardware (la máquina virtual debe estar apagada),
 - Modificar la RAM o el CPU.
 
 Una pestaña __'Avanzado'__ permite consultar información más específica como los datos de "VMware tools", la versión de hardware, el gestor, etc...
@@ -399,12 +399,12 @@ Las reglas de anti-afinidad son cruciales para aplicaciones que requieren alta d
 como en entornos de producción donde la tolerancia a fallos es una prioridad.
 Por ejemplo, no desea que sus dos Active Directory estén en el mismo hipervisor.
 
-Al crear una regla, define el tipo de regla (affinité / anti-affinité), el nombre de la regla,
-su estado de activación (__'Statut'__) y las máquinas afectadas de su cluster de hipervisores.
+Al crear una regla, define el tipo de regla (afinidad / anti-afinidad), el nombre de la regla,
+su estado de activación (__'Estado'__) y las máquinas afectadas de su cluster de hipervisores.
 
 <img src={shivaCpool_006} />
 
-*Nota: las reglas afinidad/anti-afinidad ofrecidas en la consola son reglas relativas a las máquinas virtuales entre sí (pas de règles entre hyperviseurs et machines virtuelles).*
+*Nota: las reglas de afinidad/anti-afinidad ofrecidas en la consola son reglas relativas a las máquinas virtuales entre sí (no hay reglas entre hipervisores y máquinas virtuales).*
 
 ## Copia de seguridad
 

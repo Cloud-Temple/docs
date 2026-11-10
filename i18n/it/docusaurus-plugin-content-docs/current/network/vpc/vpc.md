@@ -1,9 +1,9 @@
 ---
-title: Panoramica
+title: Panoramica di VPC
 slug: /network/vpc
 ---
 
-# VPC
+# Panoramica di VPC
 
 Il VPC (Virtual Private Cloud) di Cloud Temple è un servizio di rete gestito qualificato **SecNumCloud** che consente di creare ambienti privati, isolati e sicuri in modo completamente automatizzato. Progettato per un'esperienza cloud-native, semplifica la gestione dei flussi, dell'accesso a Internet e degli indirizzi IP, garantendo al contempo la sovranità dei vostri dati.
 
@@ -12,17 +12,22 @@ Il servizio consente di distribuire e gestire le vostre reti private senza preoc
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scoprite l'architettura, i componenti (Private Networks, Gateway) e i vantaggi del VPC.</p>
-    <a href="./vpc/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./vpc/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Creare il vostro primo VPC e configurare le vostre reti private in pochi minuti.</p>
-    <a href="./vpc/quickstart" class="card-link">Avvia il Quickstart &rarr;</a>
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./vpc/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorial</h3>
-    <p>Guide passo passo per casi d'uso avanzati (Peering, VPN, ecc.).</p>
-    <a href="./vpc/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./vpc/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./vpc/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>

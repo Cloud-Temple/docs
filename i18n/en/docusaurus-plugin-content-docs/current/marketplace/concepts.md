@@ -2,24 +2,70 @@
 title: Concepts
 ---
 
-The **Marketplace Cloud Temple** is a centralized platform that facilitates access and deployment of ready-to-use cloud solutions in a sovereign and secure environment.
+<a id="definition-and-positioning"></a>
 
----
+## Introduction
 
-## Definition and Positioning
+The **Marketplace Cloud Temple** is a centralized platform that facilitates access and deployment of ready-to-use cloud solutions: virtual machine images to deploy in your Cloud Temple environments, managed services, and SaaS solutions from partners.
 
-The Cloud Temple Marketplace positions itself as a digital transformation driver for companies seeking reliable services, hosted in Europe, with simple and fast integration.
+The Cloud Temple Marketplace positions itself as a digital transformation driver for companies seeking reliable services with simple and fast integration.
 
-It enables:
+It enables you to:
 
-- **Centralize** access to validated partner solutions
+- **Centralize** access to partner solutions selected by Cloud Temple
 - **Simplify** the deployment of cloud environments
 - **Accelerate** the implementation of digital projects
-- **Ensure** the compliance and security of deployments
+- **Deploy** in your Cloud Temple environments, which carry their own qualifications; the security of the deployed machines remains your responsibility
 
----
+It is intended for IT and DevOps teams building their Cloud Temple environments, including in regulated sectors, as well as business departments looking for SaaS solutions from partner publishers.
 
-## Types of available solutions
+## Benefits
+
+| Benefit | Description |
+|---|---|
+| Centralized access | Images, managed services and partner SaaS solutions gathered in a single catalog, available from the Cloud Temple Console. |
+| Fast deployment | Virtual machine images are deployed directly in your environments, in a few minutes for most of them. |
+| Partner solutions | Access to partner publishers' solutions and direct contact with them. |
+| Console integration | The Marketplace is used from the usual management interface, with no additional tool. |
+
+## Features
+
+| Feature | Description |
+|---|---|
+| Virtual machine images | Preconfigured images to deploy on IaaS OpenSource or IaaS VMware, depending on the compatible targets of each image: see the [getting started guide](./quickstart.md). |
+| Managed services | Services operated for you, presented in the catalog. |
+| Partner SaaS solutions | Solutions from partner publishers, available from the catalog. |
+| Contact | Direct contact with the publisher of a solution from its page. |
+| Public catalog | The up-to-date list of solutions is in the [Marketplace catalog on the Cloud Temple website](https://www.cloud-temple.com/marketplace/). |
+
+<a id="integration-with-the-cloud-temple-ecosystem"></a>
+
+## Architecture
+
+### Cloud Temple Console
+
+The Marketplace is natively integrated into the Cloud Temple console, providing:
+
+- **Unified access** from the standard management interface
+- **Direct deployment** of virtual machine images on your existing infrastructures
+- **Centralized management** of the virtual machines deployed this way
+
+### Compatibility with services
+
+Depending on the compatible targets of each image, Marketplace virtual machine images are deployed in the following environments:
+
+- **Open Source IaaS** : Deployment on OpenIaaS infrastructure
+- **VMware IaaS** : Integration with the vSphere environment
+
+## Regions and availability zones
+
+Virtual machine images are deployed in the region and availability zones of your Cloud Temple environment (FR1 region). For managed services and SaaS solutions, the location is specific to each offering and is shown on its page.
+
+<a id="types-of-available-solutions"></a>
+
+## Technical specifications
+
+The catalog brings together virtual machine images, managed services and SaaS solutions from partner publishers. It grows continuously: the solutions described here are only examples, and the up-to-date list is in the [Marketplace catalog on the Cloud Temple website](https://www.cloud-temple.com/marketplace/).
 
 ### Virtual Machine Images
 
@@ -27,9 +73,9 @@ Virtual machine images currently form the core of the Marketplace product. These
 
 **Features:**
 
-- Validated and secure images
-- Compatible with OpenIaaS and VMware environments
-- Deployment in under 10 minutes
+- Images checked and validated by Cloud Temple before publication
+- Deployment on OpenIaaS or VMware, depending on the compatible targets of each image
+- Deployment in a few minutes in general, depending on the image and the environment
 - Native integration with the Cloud Temple console
 
 ### Partner Solutions
@@ -40,42 +86,35 @@ The Marketplace also provides access to solutions developed by our publisher par
 
 - Browsing the catalog from the console
 - Direct contact with the partner
-- Deployment on the Cloud Temple infrastructure
+- Depending on the offering, deployment in your Cloud Temple environments or access to the SaaS service operated by the publisher
 
----
+### Limits
 
-## Integration with the Cloud Temple ecosystem
-
-### Cloud Temple Console
-
-The Marketplace is natively integrated into the Cloud Temple console, providing:
-
-- **Unified access** from the standard management interface
-- **Direct deployment** on existing infrastructures
-- **Centralized management** of resources and solutions
-
-### Compatibility with services
-
-Marketplace solutions are designed to integrate seamlessly with:
-
-- **Open Source IaaS** : Deployment on OpenIaaS infrastructure
-- **VMware IaaS** : Integration with the vSphere environment
-
----
+- The catalog evolves continuously: the solutions described on this page are examples.
+- Updating partner solutions is the responsibility of their publishers, as are response times to contact requests.
 
 ## Security and compliance
 
-### Sovereign Hosting
+### Hosting and qualifications
 
-All solutions deployed via the Marketplace benefit from:
+Hosting and qualifications depend on the type of solution:
 
-- **Hosting in France** exclusively
-- **SecNumCloud qualification** for the infrastructure
+- **Virtual machine images**: they are deployed in your Cloud Temple environments and fall under their qualifications.
+- **Managed services and SaaS solutions**: their hosting and certifications are specific to each offering. Check the information on its page in the [Marketplace catalog on the website](https://www.cloud-temple.com/marketplace/) and, for any further detail, contact the publisher.
 
 ### Solution Validation
 
-The solutions offered in the Marketplace undergo a rigorous selection process ensuring:
+Cloud Temple selects the solutions offered in the Marketplace. Before it is published, a virtual machine image is checked (files and metadata) and then validated by Cloud Temple. This validation does not replace securing the deployed machines, which remains your responsibility. For a partner solution, the publisher remains responsible for its content and its updates.
 
-- **Compatibility** with the Cloud Temple infrastructure
-- **Security** of images and applications
-- **Reliability** of publisher partners
+## Responsibilities
+
+Support for the Marketplace itself (catalog, image deployment) is part of Cloud Temple Console support. Each offering then has its own support conditions: those of the service for a Cloud Temple offering, those of the publisher for a partner solution, which also handles its updates and response times. Virtual machines deployed from the Marketplace are resources of your IaaS environment: see the [IaaS responsibility matrix (RACI)](../contractual/iaas/raci.md).
+
+## Reversibility
+
+- **Virtual machine images**: the deployed machines are resources of your IaaS environment; their reversibility follows that of the offering concerned, IaaS OpenSource or IaaS VMware.
+- **Partner solutions**: the exit conditions are those of the publisher, as specified by it.
+
+## Pricing
+
+The Marketplace has no cost of its own. You pay for the infrastructure on which you deploy an image and, depending on the offering chosen, the license or service, provided by Cloud Temple or by a partner, under its pricing conditions. The details of each offering are in the [Marketplace catalog on the Cloud Temple website](https://www.cloud-temple.com/marketplace/).

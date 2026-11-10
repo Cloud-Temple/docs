@@ -1,10 +1,10 @@
 ---
-title: Tutoriales
+title: Tutoriales de Terraform Cloud Temple
 ---
 
-# Terraform Cloud Temple Tutorials
+# Tutoriales de Terraform Cloud Temple
 
-This page gathers practical tutorials for using the Terraform Cloud Temple provider with various services.
+Esta página reúne tutoriales prácticos para utilizar el proveedor Terraform Cloud Temple con diferentes servicios.
 
 ## Índice
 
@@ -111,14 +111,14 @@ data "cloudtemple_backup_sla_policy" "daily" {
   name = "sla001-daily-par7s"
 }
 
-# Deployment from the Marketplace
+# Despliegue desde la Marketplace
 resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
   name = "ubuntu-marketplace-01"
   
-  # Marketplace Source
+  # Fuente Marketplace
   marketplace_item_id = data.cloudtemple_marketplace_item.ubuntu_2404.id
   
-  # Configuration
+  # Configuración
   memory               = 8 * 1024 * 1024 * 1024  # 8 GB
   cpu                  = 4
   num_cores_per_socket = 2
@@ -139,11 +139,11 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- `marketplace_item_id`: References a ready-to-use image
-- `datastore_id`: Specific datastore required for Marketplace deployment
-- The image already includes a pre-configured operating system
+- `marketplace_item_id`: Hace referencia a una imagen lista para usar
+- `datastore_id`: Datastore específico requerido para el despliegue Marketplace
+- La imagen ya incluye un sistema operativo configurado
 
 ### Crear una VM desde Content Library
 
@@ -154,7 +154,7 @@ resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
 ```hcl
 # Recuperación de la Biblioteca de Contenidos
 data "cloudtemple_compute_content_library" "public" {
-  name = "PÚBLICO"
+  name = "PUBLIC"
 }
 
 # Recuperación de un elemento específico
@@ -183,11 +183,11 @@ data "cloudtemple_compute_network" "vlan" {
   name = "VLAN_201"
 }
 
-# Deployment from Content Library
+# Despliegue desde Content Library
 resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
   name = "centos-from-cl-01"
   
-  # Source Content Library
+  # Fuente Content Library
   content_library_id      = data.cloudtemple_compute_content_library.public.id
   content_library_item_id = data.cloudtemple_compute_content_library_item.centos.id
   
@@ -196,12 +196,12 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
   datastore_cluster_id = data.cloudtemple_compute_datastore_cluster.sdrs.id
   datastore_id         = data.cloudtemple_compute_datastore.ds.id
   
-  # OS Disk Configuration
+  # Configuración del disco del SO
   os_disk {
     capacity = 50 * 1024 * 1024 * 1024  # 50 GB
   }
   
-  # OS Network Adapter Configuration
+  # Configuración del adaptador de red del SO
   os_network_adapter {
     network_id = data.cloudtemple_compute_network.vlan.id
   }
@@ -212,10 +212,10 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- The `os_disk` and `os_network_adapter` blocks configure the template's resources
-- These blocks can only be used at creation (see dedicated section)
+- Los bloques `os_disk` y `os_network_adapter` configuran los recursos del template
+- Estos bloques solo pueden utilizarse durante la creación (ver la sección dedicada)
 
 ### Configurar Cloud-Init VMware
 
@@ -325,7 +325,7 @@ Cloud-Init solo se ejecuta en el primer arranque de la VM.
 **Código**:
 
 ```hcl
-# Reference to an existing VM
+# Referencia a una VM existente
 data "cloudtemple_compute_virtual_machine" "existing_vm" {
   name = "my-existing-vm"
 }
@@ -372,34 +372,34 @@ data "cloudtemple_compute_network" "production_vlan" {
   name = "PROD-VLAN-100"
 }
 
-# Reference to the VM
+# Referencia a la VM
 data "cloudtemple_compute_virtual_machine" "vm" {
   name = "my-vm"
 }
 
-# Creating a network adapter
+# Creación de un adaptador de red
 resource "cloudtemple_compute_network_adapter" "eth1" {
   name = "Network adapter 2"
   
-  # Target VM
+  # VM de destino
   virtual_machine_id = data.cloudtemple_compute_virtual_machine.vm.id
   
-  # Network
+  # Red
   network_id = data.cloudtemple_compute_network.production_vlan.id
   
-  # Adapter type
+  # Tipo de adaptador
   type = "VMXNET3"
   
-  # Connect automatically on power on
+  # Conexión automática al arrancar
   connect_on_power_on = true
   
-  # MAC address (optional, automatically generated if omitted)
+  # Dirección MAC (opcional, se genera automáticamente si se omite)
   # mac_address = "00:50:56:xx:xx:xx"
 }
 ```
 
-:::info[Supported network adapter types]
-  The compatible adapter types that can be used depend on the OS running on the virtual machine as well as the version of VMware.
+:::info[Tipos de adaptadores de red compatibles]
+  Los tipos de adaptadores compatibles que pueden utilizarse dependen del SO utilizado en la máquina virtual, así como de la versión de VMware.
 :::
 
 ---
@@ -411,24 +411,24 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 **Código**:
 
 ```hcl
-# Reference to the VM
+# Referencia a la VM
 data "cloudtemple_compute_virtual_machine" "vm" {
   name = "my-vm"
 }
 
-# Creation of a SCSI controller
+# Creación de un controlador SCSI
 resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
   name = "SCSI controller 1"
   
-  # Target VM
+  # VM de destino
   virtual_machine_id = data.cloudtemple_compute_virtual_machine.vm.id
   
-  # Controller type
+  # Tipo de controlador
   type = "SCSI"
 }
 ```
 
-**Controller types**:
+**Tipos de controladores**:
 
 - `USB2`
 - `USB3`
@@ -472,7 +472,7 @@ data "cloudtemple_compute_iaas_opensource_host" "host" {
 
 # Recuperación del repositorio de almacenamiento
 data "cloudtemple_compute_iaas_opensource_storage_repository" "sr" {
-  name = "sr001-almacenamiento-local"
+  name = "sr001-local-storage"
 }
 
 # Recuperación de la red
@@ -557,23 +557,23 @@ data "cloudtemple_marketplace_item" "ubuntu_2404" {
 }
 
 data "cloudtemple_compute_iaas_opensource_storage_repository" "sr" {
-  name = "sr001-storage-compartido"
+  name = "sr001-shared-storage"
 }
 
 data "cloudtemple_compute_iaas_opensource_network" "network" {
-  name = "RED-PROD"
+  name = "PROD-NETWORK"
 }
 
 data "cloudtemple_backup_iaas_opensource_policy" "nobackup" {
-  name = "sin_copia_de_seguridad"
+  name = "nobackup"
 }
 
-# Deployment from Marketplace
+# Despliegue desde Marketplace
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "marketplace_vm" {
   name        = "ubuntu-marketplace-01"
   power_state = "on"
   
-  # Marketplace Source
+  # Fuente Marketplace
   marketplace_item_id   = data.cloudtemple_marketplace_item.ubuntu_2404.id
   storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   
@@ -634,21 +634,21 @@ hours = 1
   }
 }
 
-# Association to a VM
+# Asociación a una VM
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
   name = "replicated-vm-01"
   
-  # ... standard configuration ...
+  # ... configuración estándar ...
   
-  # Assignment of the replication policy
+  # Asociación de la política de replicación
   replication_policy_id = cloudtemple_compute_iaas_opensource_replication_policy.policy_hourly.id
 }
 ```
 
-**Explanations**:
+**Explicaciones**:
 
-- `interval`: Replication interval. Can be specified in `minutes` or `hours`.
-- `storage_repository_id`: Storage Repository to which the VM's disks will be replicated. Must be located in a different AZ than the original VM.
+- `interval`: Intervalo de replicación. Puede expresarse en `minutes` o `hours`.
+- `storage_repository_id`: Storage Repository al que se replicarán los discos de la VM. Debe estar en una AZ diferente de la VM de origen.
 
 ### Configurar la Copia de Seguridad
 
@@ -666,13 +666,13 @@ data "cloudtemple_backup_iaas_opensource_policy" "weekly" {
   name = "weekly-backup"
 }
 
-# VM with multiple backup policies
+# VM con varias políticas de backup
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "backup_vm" {
   name = "important-vm-01"
   
-  # ... standard configuration ...
+  # ... configuración estándar ...
   
-  # Multiple policies can be applied
+  # Pueden aplicarse varias políticas
   backup_sla_policies = [
 data.cloudtemple_backup_iaas_opensource_policy.daily.id,
 data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
@@ -680,8 +680,8 @@ data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
 }
 ```
 
-:::info[Mandatory backup]
-In a SecNumCloud environment, at least one backup policy must be defined in order to start the VM.
+:::info[Backup obligatorio]
+En un entorno SecNumCloud, debe definirse al menos una política de backup para poder iniciar la VM.
 :::
 
 ### Configurar la Alta Disponibilidad
@@ -762,15 +762,15 @@ Cree `cloud-init/network-config.yml`:
 version: 2
 ethernets:
   ens160:
-dhcp4: false
-addresses:
-  - 0.0.0.0/24
-routes:
-  - to: default
-    via: 0.0.0.0
-nameservers:
-  addresses:
-    - 0.0.0.0
+    dhcp4: false
+    addresses:
+      - 0.0.0.0/24
+    routes:
+      - to: default
+        via: 0.0.0.0
+    nameservers:
+      addresses:
+        - 0.0.0.0
 ```
 
 :::important[A tener en cuenta]
@@ -835,7 +835,7 @@ Los bloques `os_disk` y `os_network_adapter` son bloques especiales que se puede
 - Clonación de una VM existente
 
 :::info[info]
-  Sirven para hacer referencia a los discos virtuales y adaptadores de red desplegados por la plantilla, con el fin de poder modificar sus parámetros posteriormente sin tener que importarlos manualmente. En ningún caso crean una nueva recurso.
+  Sirven para hacer referencia a los discos virtuales y adaptadores de red desplegados por la plantilla, con el fin de poder modificar sus parámetros posteriormente sin tener que importarlos manualmente. En ningún caso crean un nuevo recurso.
 :::
 
 **Características importantes**:
@@ -944,15 +944,15 @@ attached        = true
 ```
 
 :::info[A tener en cuenta]
-  Puedes combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante las recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
+  Puede combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante los recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
 :::
 
 ---
 
 **Buenas prácticas**:
 
-1. Usa `os_disk` y `os_network_adapter` para la configuración inicial del template
-2. Usa los recursos dedicados para añadir recursos adicionales
+1. Use `os_disk` y `os_network_adapter` para la configuración inicial del template
+2. Use los recursos dedicados para añadir recursos adicionales
 
 ## Almacenamiento objeto
 
@@ -1030,7 +1030,7 @@ resource "cloudtemple_object_storage_storage_account" "app_account" {
   name = "application-storage-account"
 }
 
-# Outputs to use the credentials
+# Outputs para utilizar las credenciales
 output "s3_access_key" {
   value     = cloudtemple_object_storage_storage_account.app_account.access_key_id
 }
@@ -1045,8 +1045,8 @@ output "s3_endpoint" {
 }
 ```
 
-:::warning[Sensitive information]
-Credentials are displayed only once. Store them securely (e.g., HashiCorp Vault, AWS Secrets Manager).
+:::warning[Información sensible]
+Las credenciales se muestran una sola vez. Almacénelas de forma segura (p. ej.: HashiCorp Vault, AWS Secrets Manager).
 :::
 ---
 
@@ -1057,7 +1057,7 @@ Credentials are displayed only once. Store them securely (e.g., HashiCorp Vault,
 **Código**:
 
 ```hcl
-# Retrieval of available roles
+# Recuperación de los roles disponibles
 data "cloudtemple_object_storage_role" "read_only" {
   name = "read_only"
 }
@@ -1085,14 +1085,14 @@ resource "cloudtemple_object_storage_bucket" "shared_bucket" {
   access_type = "private"
 }
 
-# ACL for development team (read-only)
+# ACL para el equipo dev (solo lectura)
 resource "cloudtemple_object_storage_acl_entry" "dev_acl" {
   bucket          = cloudtemple_object_storage_bucket.shared_bucket.name
   storage_account = data.cloudtemple_object_storage_storage_account.dev_account.name
   role            = data.cloudtemple_object_storage_role.read_only.name
 }
 
-# ACL for ops team (maintainer)
+# ACL para el equipo ops (maintainer)
 resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
   bucket          = cloudtemple_object_storage_bucket.shared_bucket.name
   storage_account = data.cloudtemple_object_storage_storage_account.ops_account.name
@@ -1100,12 +1100,12 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
 }
 ```
 
-**Available roles**:
+**Roles disponibles**:
 
-- `read_write`: Read and write
-- `write_only`: Write only
-- `read_only`: Read only
-- `maintainer`: Full access
+- `read_write`: Lectura y escritura
+- `write_only`: Solo escritura
+- `read_only`: Solo lectura
+- `maintainer`: Acceso total
 
 ### Configurar ACL directamente en el bucket
 
@@ -1156,7 +1156,7 @@ role            = data.cloudtemple_object_storage_role.maintainer.name
 
 ### Usar los datasources
 
-**Objetivo**: Consultar las metadatos de los buckets y listar los archivos.
+**Objetivo**: Consultar los metadatos de los buckets y listar los archivos.
 
 **Código**:
 

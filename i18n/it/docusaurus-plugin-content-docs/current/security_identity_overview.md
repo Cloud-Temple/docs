@@ -1,21 +1,21 @@
 ---
-title: Security & Identity
+title: Sicurezza e identità
 displayed_sidebar: docSidebar
 ---
 
-# Security & Identity
+# Sicurezza e identità
 
-Gestisci identità, diritti di accesso e la sicurezza della tua infrastruttura Cloud Temple da un pannello centralizzato. Applica il principio del minimo privilegio e monitora attività sospette in tempo reale.
+Gestite le identità e i diritti di accesso alla vostra infrastruttura Cloud Temple applicando il principio del minimo privilegio. Seguite le buone pratiche e gli avvisi di sicurezza pubblicati sui nostri servizi, e sfruttate i log di attività per individuare azioni sensibili o sospette.
 
 <div class="card-grid">
   <div class="card">
     <h3>IAM</h3>
-    <p>Identity & Access Management: gestisci utenti, ruoli e permessi. Integrazione SSO (Azure AD, Okta, ADFS, JumpCloud…).</p>
-    <a href="./console/iam" class="card-link">Scopri IAM →</a>
+    <p>Identity & Access Management: gestite utenti, ruoli e permessi. Integrazione SSO (Azure AD, Okta, ADFS, JumpCloud…).</p>
+    <a href="./console/iam" class="card-link">Scoprite IAM →</a>
   </div>
   <div class="card">
     <h3>Sicurezza</h3>
-    <p>Raccomandazioni di sicurezza, avvisi e criteri di conformità per rafforzare la postura di sicurezza del tuo tenant.</p>
-    <a href="./console/security/security_recommendations" class="card-link">Scopri Sicurezza →</a>
+    <p>Buone pratiche di sicurezza e avvisi di sicurezza pubblicati sui nostri servizi.</p>
+    <a href="./console/security/security_recommendations" class="card-link">Scoprite Sicurezza →</a>
   </div>
 </div>

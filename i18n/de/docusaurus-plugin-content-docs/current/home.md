@@ -1,4 +1,6 @@
 ---
+title: Startseite
+hide_title: true
 tags:
   - home
   - accueil
@@ -15,10 +17,6 @@ hide_table_of_contents: true
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
       <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">Gaia-X</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">CISPE</a>
     </div>
   </div>
 </div>
@@ -59,9 +57,9 @@ hide_table_of_contents: true
 ## Beliebte Seiten
 
 <div class="popular-links-grid">
-  <a class="popular-link" href="./console/console_quickstart">
-    <div class="popular-link-title">Schnellstart-Konsole <span>→</span></div>
-    <div class="popular-link-desc">Schnelleinstieg in die Cloud Temple Konsole</div>
+  <a class="popular-link" href="./console/onboarding">
+    <div class="popular-link-title">Onboarding <span>→</span></div>
+    <div class="popular-link-desc">Ihre ersten Schritte auf der Plattform, von der Registrierung bis zur ersten Bereitstellung</div>
   </a>
   <a class="popular-link" href="./managed_kubernetes/quickstart">
     <div class="popular-link-title">Verwaltetes Kubernetes <span>→</span></div>

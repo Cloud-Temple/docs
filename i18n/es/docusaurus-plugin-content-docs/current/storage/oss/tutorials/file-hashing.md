@@ -1,12 +1,12 @@
 ---
-title: Add the File HASH (Checksum)
+title: Añadir el HASH de un archivo (Checksum)
 ---
 
-The Cloud Temple Object Storage service supports file integrity verification through metadata (checksums). Some clients, such as `mc`, can automatically calculate and attach this hash, while for others, it must be specified manually.
+El servicio de Almacenamiento de objetos de Cloud Temple admite la verificación de la integridad de los archivos mediante los metadatos (checksums). Algunos clientes, como `mc`, pueden calcular y adjuntar este hash automáticamente, mientras que para otros es necesario especificarlo manualmente.
 
 ### 1. Cálculo automático del MD5 con `mc`
 
-El cliente MinIO (`mc`) puede calcular en tiempo real un hash MD5 y adjuntarlo al objeto durante la carga. El hash luego es visible en el campo `ETag` de las metadatos del objeto.
+El cliente MinIO (`mc`) puede calcular en tiempo real un hash MD5 y adjuntarlo al objeto durante la carga. El hash luego es visible en el campo `ETag` de los metadatos del objeto.
 
 ```bash
 
@@ -19,7 +19,7 @@ MD5 (test.txt) = 8b34b2754802a46e3475998dfcf76f83
 ❯ mc cp --md5 test.txt cloudtemple-fr1/demo-app/
 ...test.txt: 18 B / 18 B [================] 100.00% 111 B/s 0s
 
-# Verification of object metadata
+# Verificación de los metadatos del objeto
 ❯ mc stat cloudtemple-fr1/demo-app/test.txt
 Name      : test.txt
 Date      : 2024-06-08 10:21:31 CEST
@@ -31,27 +31,22 @@ Metadata  :
     Content-Type: text/plain
 ```
 
-The `ETag` matches the MD5 hash of the local file.
+El `ETag` corresponde efectivamente al hash MD5 del archivo local.
 
-### 2. Manual addition of a SHA-256 hash
+### 2. Adición manual de un hash SHA-256
 
-You can also manually add a hash (for example, SHA-256) as an S3 attribute during upload.
+También puede añadir manualmente un hash (por ejemplo, SHA-256) como atributo S3 durante la carga.
 
 ```bash
-```
-
 # Cálculo local del SHA-256
-
 ❯ shasum -a 256 test.txt
 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682  test.txt
 
 # Upload del archivo pasando el hash como atributo
-
 ❯ mc cp test.txt cloudtemple-fr1/demo-app/ --attr "checksum-sha256=$(shasum -a 256 test.txt | cut -f1 -d' ')"
 ...test.txt: 18 B / 18 B [================] 100.00% 141 B/s 0s
 
 # Verificación de metadatos
-
 ❯ mc stat cloudtemple-fr1/demo-app/test.txt
 Name      : test.txt
 Date      : 2024-06-08 10:41:17 CEST
@@ -62,8 +57,8 @@ Encryption: SSE-S3
 Metadata  :
     X-Amz-Meta-Checksum-Sha256: 2c5165a6a9af06b197b63b924d7ebaa0448bc6aebf8d2e8e3f58ff0597f12682
     Content-Type              : text/plain
-
 ```
+
 El hash SHA-256 ahora está presente en los metadatos personalizados del objeto.
 
 ### 3. Resolver los errores `XAmzContentSHA256Mismatch` con AWS CLI o Terraform
@@ -116,15 +111,15 @@ Esta solución es ideal si utiliza con frecuencia la CLI de AWS.
 
 #### Solución 3: Reversión de versión (No recomendado)
 
-Como último recurso, puedes volver a una versión anterior de las herramientas.
+Como último recurso, puede volver a una versión anterior de las herramientas.
 
-Para **AWS CLI**, regresa a la versión 2.22.35:
+Para **AWS CLI**, vuelva a la versión 2.22.35:
 
 ```bash
 pip install awscli==2.22.35
 ```
 
-Para **Terraform**, regresa a la versión 1.11.1.
+Para **Terraform**, vuelva a la versión 1.11.1.
 
 #### Verificación
 
@@ -132,12 +127,8 @@ Para confirmar que su solución funciona, ejecute un comando simple:
 
 ```bash
 aws s3 ls
-```
-
-# or
-
+# o
 terraform plan
-
 ```
 
-Si les commandes s'executan sin error de checksum, el problema está resuelto.
+Si los comandos se ejecutan sin error de checksum, el problema está resuelto.

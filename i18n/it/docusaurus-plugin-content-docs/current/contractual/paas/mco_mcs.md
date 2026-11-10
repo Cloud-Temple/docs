@@ -22,7 +22,7 @@ Questa politica dettaglia le responsabilità e le raccomandazioni relative al Ma
 - Gestione completa dell'infrastruttura sottostante, inclusi i nodi master, gli aggiornamenti delle versioni OpenShift e la resilienza dei servizi critici distribuiti da **Cloud Temple**.
 - Aggiornamenti minori/patch automatici senza interruzione per i carichi di lavoro ospitati, salvo diversa comunicazione.
 - Limitazione dei diritti e delle funzionalità ai vincoli SecNumCloud.
-- Comunicazione degli aggiornamenti in arrivo e degli aggiornamenti con modifiche incompatibili (breaking changes) per i prossimi tre mesi tramite la [**Roadmap Cloud Temple**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Comunicazione degli aggiornamenti in arrivo e degli aggiornamenti con modifiche incompatibili (breaking changes) per i prossimi tre mesi tramite la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 
 **Responsabilità dell'utente :**
 
@@ -34,7 +34,7 @@ Questa politica dettaglia le responsabilità e le raccomandazioni relative al Ma
 
 - Pianificare i deployment applicativi al di fuori delle finestre di manutenzione per evitare conflitti con gli aggiornamenti automatici del cluster.
 - Seguire le comunicazioni di **Cloud Temple** relative agli aggiornamenti maggiori per pianificare le eventuali modifiche necessarie.
-- Seguire gli aggiornamenti in arrivo tramite la [**Roadmap prodotto**](https://github.com/orgs/Cloud-Temple/projects/2)
+- Seguire gli aggiornamenti in arrivo tramite la [**Roadmap**](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22PaaS+OpenShift%22)
 - Iscriversi alle notifiche [**di incidenti**](../../console/status.md#gestione-delle-notifiche)
 
 ---
@@ -203,7 +203,7 @@ Registrazione automatica degli eventi critici del cluster.
 **Procedura "Ripresa dopo un disastro"**
 
 - In caso di perdita completa dell'accesso a un cluster, il **Cliente** deve dichiarare un incidente al supporto **Cloud Temple** tramite il modulo di supporto della console.
-Vedi la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico)
+Vedete la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico)
 
 ---
 
@@ -212,7 +212,7 @@ Vedi la [**procedura di richiesta di supporto tecnico**](../../console/console_q
 1. **Pianificare le risorse** : Garantire una capacità di cluster sufficiente per i carichi di lavoro di picco.
 2. **Convalidare le configurazioni** : Testare le applicazioni in ambienti di staging prima del rilascio in produzione.
 3. **Monitorare regolarmente** : Utilizzare gli strumenti integrati per monitorare l'utilizzo delle risorse e rilevare i problemi il prima possibile.
-4. **Restare aggiornati** : Seguire la roadmap e le guide per evitare funzionalità obsolete.
+4. **Restare aggiornati** : Seguire la Roadmap e le guide per evitare funzionalità obsolete.
 5. **Contattare il supporto** : Per i problemi non risolti, contattare il supporto tramite la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico) o via email all'indirizzo [**contact**](mailto:contact@cloud-temple.com).
 
 Per consultare i dettagli sulle responsabilità, si prega di leggere la nostra [**matrice di responsabilità**](../../contractual/paas/raci.md).

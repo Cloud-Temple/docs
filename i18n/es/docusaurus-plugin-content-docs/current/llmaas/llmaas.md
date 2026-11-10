@@ -1,11 +1,34 @@
 ---
-title: Visión general
+title: Visión general de LLM como Servicio (LLMaaS)
 sidebar_position: 1
 ---
 
-# LLM como Servicio (LLMaaS)
+# Visión general de LLM como Servicio (LLMaaS)
 
 LLMaaS proporciona acceso a los modelos de IA alojados por Cloud Temple a través de una API: asistentes conversacionales, programación y agentes, análisis de imágenes, búsqueda semántica, reranking, traducción y usos de audio/imagen.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="./llmaas/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./llmaas/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./category/tutoriels" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./llmaas/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
+</div>
 
 ## Catálogo, novedades y disponibilidad
 
@@ -37,7 +60,7 @@ Todas las solicitudes a la API LLMaaS deben incluir un encabezado `Authorization
 
 ## Tipos de contenido
 
-Las solicitudes de generación de texto utilizan JSON con la cabecera `Content-Type: application/json`. El streaming devuelve eventos SSE y la transcripción de archivos de audio utiliza `multipart/form-data`. Consulte la [documentation API](./api.md) para el formato de cada endpoint.
+Las solicitudes de generación de texto utilizan JSON con la cabecera `Content-Type: application/json`. El streaming devuelve eventos SSE y la transcripción de archivos de audio utiliza `multipart/form-data`. Consulte la [documentación de la API](./api.md) para el formato de cada endpoint.
 
 ## Metadatos de las respuestas
 
@@ -120,10 +143,10 @@ https://api.ai.cloud-temple.com/v1/
 ## Endpoints disponibles
 
 - `/chat/completions` : Generación de respuestas conversacionales
-- `/chat/completions/batch` : Procesamiento asíncrono de múltiples conversaciones ([guide Batch](./batch.md))
+- `/chat/completions/batch` : Procesamiento asíncrono de múltiples conversaciones ([guía de Batch](./batch.md))
 - `/completions` : Completado de texto simple
 - `/embeddings` : Vectorización para búsqueda semántica y RAG
-- `/rerank` y `/v2/rerank` : Reordenación de resultados (compatible Cohere SDK)
+- `/rerank` y `/v2/rerank` : Reordenación de resultados (compatible con el SDK de Cohere)
 - `/audio/transcriptions` : Transcripción de audio en lote (Whisper)
 - `/audio/speech` : Síntesis de voz (TTS)
 - `/images/generations` : Generación de imágenes

@@ -1,21 +1,8 @@
 ---
-title: Panoramica
+title: Panoramica di PostgreSQL Gestito
 ---
 
-# PostgreSQL Gestito <span class="title-preview-badge">Preview</span>
-
-<div class="card-grid">
-  <div class="card">
-    <h3>Concetti</h3>
-    <p>Scopri le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Esplora i concetti →</a>
-  </div>
-  <div class="card">
-    <h3>Guida introduttiva</h3>
-    <p>Inizia rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Avvia il Quickstart →</a>
-  </div>
-</div>
+# Panoramica di PostgreSQL Gestito <span class="title-preview-badge">Preview</span>
 
 ---
 
@@ -24,6 +11,29 @@ title: Panoramica
 **PostgreSQL Gestito (on Kubernetes) by Cloud Temple** è una soluzione gestita per il motore di database PostgreSQL, ospitata su Kubernetes e basata sull'operatore **CloudNative-PG (CNPG)**. Si integra con le offerte di motori di database gestiti su macchine virtuali (nommées ici **PostgreSQL Managé (on IaaS)**).
 
 Questo prodotto è adatto per i clienti che dispongono di carichi di lavoro Kubernetes che richiedono database PostgreSQL, o per i clienti che desiderano consolidare numerosi motori di database PostgreSQL sullo stesso cluster Kubernetes. È particolarmente indicato per i database che non richiedono un tuning di sistema ultra-specifico. Per i database di dimensioni molto elevate che necessitano di configurazioni del sistema operativo particolari, è preferibile optare per il prodotto **PostgreSQL Managé (on IaaS)**.
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>
 
 ### Benefici Chiave
 

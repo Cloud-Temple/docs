@@ -12,19 +12,19 @@ Di seguito si ricordano i diversi ruoli del RACI :
 
 | Ruolo         | Descrizione                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
-| (R) Esegue   | __R__ealizza il processo                                                              |
-| (A) Approva  | __A__pprova la realizzazione del processo                                              |
-| (C) Consulta | __C__onsultato durante il processo                                                     |
-| (I) Informato| __I__nformato sui risultati del processo (tramite strumenti, portale o messaggistica) |
+| (R) Realizza   | __R__ealizza il processo |
+| (A) Approva    | __A__pprova la realizzazione del processo |
+| (C) Consultato | __C__onsultato durante il processo |
+| (I) Informato  | __I__nformato sui risultati del processo (tramite strumenti, portale o messaggistica) |
 
-## Definizione delle tue esigenze
+## Definizione delle vostre esigenze
 
 | Attività                                                                                       | Ruolo Cliente | Ruolo Cloud Temple |
 |------------------------------------------------------------------------------------------------|---------------|--------------------|
-| Definire l'architettura globale della tua piattaforma Cloud Temple                              | **RA**        | **CI**             |
+| Definire l'architettura globale della vostra piattaforma Cloud Temple                           | **RA**        | **CI**             |
 | Definire il numero di tenant e il numero di zone di disponibilità per ogni tenant               | **RA**        | **CI**             |
 | Definire la strategia globale di disaster recovery o continuità operativa                      | **RA**        | **CI**             |
-| Dimensionare correttamente la tua piattaforma Cloud Temple (calcolo, archiviazione, rete, backup,...) | **RA**        | **CI**             |
+| Dimensionare correttamente la vostra piattaforma Cloud Temple (calcolo, archiviazione, rete, backup,...) | **RA**        | **CI**             |
 | Sottoscrivere i servizi con le informazioni necessarie                                           | **RA**        | **I**              |
 
 ## Implementazione iniziale dei vostri tenant Cloud Temple

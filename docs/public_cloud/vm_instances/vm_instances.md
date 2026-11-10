@@ -1,8 +1,8 @@
 ---
-title: Vue d'ensemble
+title: Vue d'ensemble de VM Instances
 ---
 
-# VM Instances
+# Vue d'ensemble de VM Instances
 
 Le service **VM Instances** de Cloud Temple est qualifié **SecNumCloud**. Il permet le déploiement rapide de machines virtuelles sur une infrastructure mutualisée et performante, en combinant la souplesse du cloud public avec les garanties de sécurité d'un cloud souverain.
 
@@ -13,22 +13,22 @@ Elle s'adapte à tous les besoins grâce à ses différentes classes de service 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Découvrez l'architecture, les classes de service et les fonctionnalités du service VM Instances.</p>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
     <a href="./vm_instances/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Quickstart</h3>
-    <p>Déployez votre première machine virtuelle en quelques minutes depuis la Marketplace Cloud Temple.</p>
-    <a href="./vm_instances/quickstart" class="card-link">Lancer le Quickstart &rarr;</a>
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./vm_instances/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriels</h3>
-    <p>Guides pratiques : créer une VM, gérer les disques, prendre des snapshots.</p>
-    <a href="./vm_instances/tutorials" class="card-link">Voir les tutoriels &rarr;</a>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./vm_instances/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
   <div class="card">
-    <h3>FAQ</h3>
-    <p>Réponses aux questions fréquentes sur les familles, les flavors et la résilience.</p>
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
     <a href="./vm_instances/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>

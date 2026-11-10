@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Erste Schritte
 ---
 import shivaVmHome from '@site/docs/iaas_vmware/images/shiva_vm_home.png'
 import shivaVmHomeDesc from '@site/docs/iaas_vmware/images/shiva_vm_home_desc.png'
@@ -68,8 +68,8 @@ Für jede virtuelle Maschine haben Sie Zugriff auf die folgenden Informationen:
 
 - ihr Name,
 - die zugewiesenen Tags,
-- ihr Status (éteinte, allumée, en traitement, host déconnecté ou invalid),
-- ihr Manager (en environnement VMware, le Vcenter associé),
+- ihr Status (ausgeschaltet, eingeschaltet, in Bearbeitung, Host getrennt oder ungültig),
+- ihr Manager (in einer VMware-Umgebung der zugehörige vCenter),
 - ihr Betriebssystem,
 - die Anzahl der virtuellen CPUs (vCPU),
 - die Menge des virtuellen Arbeitsspeichers (vRAM).
@@ -325,7 +325,7 @@ __Verbrauchter Speicher (Cluster) :__ Diese Ansicht zeigt den Speicher, der akti
 
 <img src={iaasVmwareClusterWorstCaseAllocationMemory} />
 
-__Worst-Case-Zuweisung (Cluster) :__ Dieses Diagramm veranschaulicht den Speicherbedarf, falls alle virtuellen Maschinen des Clusters gleichzeitig den ihnen zugewiesenen Gesamtspeicher verbrauchen würden (le scénario de consommation maximale). Das Ergebnis berücksichtigt auch den für den Clusterbetrieb erforderlichen Speicher sowie verschiedene VMware-spezifische Parameter (le calcul n'est pas simplement égal à la somme de la RAM de toutes les machines virtuelles). Dies ermöglicht die Vorhersage kritischer Ressourcenbedarfe und verhindert ein Aufbrauchen des Speichers.
+__Worst-Case-Zuweisung (Cluster) :__ Dieses Diagramm veranschaulicht den Speicherbedarf, falls alle virtuellen Maschinen des Clusters gleichzeitig den ihnen zugewiesenen Gesamtspeicher verbrauchen würden (das Szenario des maximalen Verbrauchs). Das Ergebnis berücksichtigt auch den für den Clusterbetrieb erforderlichen Speicher sowie verschiedene VMware-spezifische Parameter (die Berechnung entspricht nicht einfach der Summe des RAM aller virtuellen Maschinen). Dies ermöglicht die Vorhersage kritischer Ressourcenbedarfe und verhindert ein Aufbrauchen des Speichers.
 
 <img src={iaasVmwareEsxMemory} />
 
@@ -338,7 +338,7 @@ Für jeden Hypervisor im Reiter __'Hosts'__ werden folgende Informationen angeze
 - Die __CPU__- und __Speicher__auslastung,
 - Die Anzahl der zugewiesenen virtuellen Maschinen,
 - Die Verfügbarkeit eines neuen Builds für das Hypervisor-Betriebssystem, falls vorhanden,
-- Der Status des Hypervisors (connecté en production, en maintenance, éteint, ...),
+- Der Status des Hypervisors (in Produktion verbunden, in Wartung, ausgeschaltet, ...),
 - Ein Aktionsmenü.
 
 <img src={shivaCpool_005} />
@@ -356,11 +356,11 @@ Mehrere Aktionen sind über den Reiter __'Hosts'__ möglich :
 - einen Hypervisor in den __Wartungsmodus__ zu versetzen oder diesen zu verlassen,
 - diesen Hypervisor gegebenenfalls zu __aktualisieren__ ; dazu __muss er sich zwingend im Wartungsmodus befinden__. Es gibt zwei Arten von Updates :
 
-1. VMware-Builds (les nouvelles versions de l'hyperviseur):
+1. VMware-Builds (die neuen Versionen des Hypervisors):
 
 <img src={shivaCpool_008Build} />
 
-1. Das Aktualisieren der Firmware Ihrer Compute-Blade (bios et firmware cartes filles):
+1. Das Aktualisieren der Firmware Ihrer Compute-Blade (BIOS und Firmware der Tochterkarten):
 
 <img src={shivaCpool_008Firm} />
 
@@ -393,7 +393,7 @@ Sie werden zur Leistungsverbesserung eingesetzt, indem häufig kommunizierende v
 - __Anti-Affinitätsregeln__: Im Gegensatz dazu stellen diese Regeln sicher, dass bestimmte virtuelle Maschinen nicht auf demselben physischen Host ausgeführt werden. Sie sind wichtig für Verfügbarkeit und Resilienz, beispielsweise um zu verhindern, dass kritische Maschinen bei einem einzelnen Serverausfall alle betroffen sind. Anti-Affinitätsregeln sind entscheidend für Anwendungen, die eine hohe Verfügbarkeit erfordern, wie in Produktionsumgebungen, in denen Ausfalltoleranz Priorität hat.
 Beispielsweise möchten Sie nicht, dass sich Ihre beiden Active Directory-Instanzen auf demselben Hypervisor befinden.
 
-Bei der Erstellung einer Regel definieren Sie den Regeltyp (affinité / anti-affinité), den Namen der Regel, ihren Aktivierungszustand (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
+Bei der Erstellung einer Regel definieren Sie den Regeltyp (Affinität / Anti-Affinität), den Namen der Regel, ihren Aktivierungszustand (__'Status'__) und die betroffenen Maschinen Ihres Hypervisor-Clusters.
 
 <img src={shivaCpool_006} />
 

@@ -19,29 +19,29 @@ Questa guida vi permetterà di distribuire in meno di 5 minuti le vostre prime i
 
 Questa guida mostra passo dopo passo come distribuire una macchina virtuale da un modello nella Console.
 
-Nel portale Console, vai alla scheda "Cloud di fiducia", quindi a "Cataloghi". Prima di poter distribuire un modello, questo deve essere caricato nel tuo catalogo privato, nella scheda "Il mio catalogo".
+Nel portale Console, andate alla scheda "Cloud di fiducia", quindi a "Cataloghi". Prima di poter distribuire un modello, questo deve essere caricato nel vostro catalogo privato, nella scheda "Il mio catalogo".
 
-A tal fine, hai due possibilità: importare il tuo modello direttamente nel tuo catalogo privato oppure importare un modello dal catalogo pubblico di Cloud Temple.
+A tal fine, avete due possibilità: importare il vostro modello direttamente nel vostro catalogo privato oppure importare un modello dal catalogo pubblico di Cloud Temple.
 
 ### Importare un modello personale nel catalogo privato
 
-Nella scheda "Il mio catalogo", fai clic su "Pubblica file".
+Nella scheda "Il mio catalogo", fate clic su "Pubblica file".
 
 <img src={shivaCatalogsCharger} />
 
-Quindi, segui i passaggi di pubblicazione del modello, inserendone il nome e una descrizione, e selezionando la posizione all'interno di una libreria.
+Quindi, seguite i passaggi di pubblicazione del modello, inserendone il nome e una descrizione, e selezionando la posizione all'interno di una libreria.
 
-Il modello dovrebbe quindi essere visualizzato nel tuo catalogo privato.
+Il modello dovrebbe quindi essere visualizzato nel vostro catalogo privato.
 
 ### Importare un modello dal catalogo pubblico
 
-Nella scheda "Catalogo pubblico", fai clic sul pulsante "Aggiungi al mio catalogo" del modello di tua scelta per importarlo nel tuo catalogo privato. Dovrebbe successivamente apparire nel tuo catalogo privato.
+Nella scheda "Catalogo pubblico", fate clic sul pulsante "Aggiungi al mio catalogo" del modello di vostra scelta per importarlo nel vostro catalogo privato. Dovrebbe successivamente apparire nel vostro catalogo privato.
 <img src={shivaCatalogsAjout} />
 
 ### Distribuire il Template
 
-Una volta importato il Template nel tuo catalogo privato, puoi distribuirlo facendo clic su "Distribuisci".
+Una volta importato il Template nel vostro catalogo privato, potete distribuirlo facendo clic su "Distribuisci".
 
 <img src={shivaCatalogsDeployer} />
 
-Segui quindi le diverse fasi di distribuzione della risorsa, selezionandone la posizione fisica (datacenter, cluster di calcolo, datastore) e altri parametri di configurazione opzionali.
+Seguite quindi le diverse fasi di distribuzione della risorsa, selezionandone la posizione fisica (datacenter, cluster di calcolo, datastore) e altri parametri di configurazione opzionali.

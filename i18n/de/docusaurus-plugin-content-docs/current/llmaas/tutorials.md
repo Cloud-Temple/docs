@@ -1,9 +1,9 @@
 ---
-title: Anleitungen
+title: LLMaaS-Integrationen & Frameworks
 sidebar_position: 6
 ---
 
-# LLMaaS-Anleitungen
+# LLMaaS-Integrationen & Frameworks
 
 :::info[Modellauswahl vor der Ausführung der Beispiele]
 Die verwendeten Identifikatoren veranschaulichen die Integrationen. Prüfen Sie deren Verfügbarkeit mit `GET /v1/models`, ihre Fähigkeiten und ihren [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle). Passen Sie die Konfiguration an Ihren Verwendungszweck an; ein alter Name kann auf einen Nachfolger umgeleitet werden.

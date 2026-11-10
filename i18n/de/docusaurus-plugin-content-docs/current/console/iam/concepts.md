@@ -319,7 +319,7 @@ Hinweis: *Das Entfernen einer zugelassenen IP-Adresse erfolgt über eine Support
 
 Es können die innerhalb eines Tenants verbrauchten Cloud-Ressourcen eingesehen werden, was eine detaillierte Übersicht über die Nutzung der bereitgestellten Dienste bietet. Diese Funktion ermöglicht es Benutzern, den Ressourcenverbrauch in Echtzeit zu verfolgen, die am stärksten ausgelasteten Dienste zu identifizieren und die Nutzung bedarfsgerecht zu optimieren.
 
-Klicken Sie im Konsolenmenü auf "Verbrauchsbericht" und wählen Sie den gewünschten Zeitraum aus. Sie können so den Verbrauch der Cloud-Ressourcen im festgelegten Zeitraum detailliert einsehen, was Ihnen die Analyse der Dienstnutzung und die daraus folgende Optimierung Ihrer Verwaltung ermöglicht:
+Im Menü **Kostenmanager** öffnen Sie den Tab "Verbrauchsbericht" und wählen Sie den gewünschten Zeitraum aus. So können Sie den Verbrauch der Cloud-Ressourcen im definierten Zeitraum im Detail visualisieren, was Ihnen ermöglicht, die Nutzung der Dienste zu analysieren und Ihre Verwaltung entsprechend zu optimieren:
 
 <img src={shivaTenantRessources_01} />
 
