@@ -6,18 +6,27 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* ── Couleurs de la charte Cloud Temple (site cloud-temple.com) ──
+     Vert-bleu foncé #338370 pour les liens : contraste 4,55:1 sur blanc (AA). */
+  --ifm-color-primary: #338370;
+  --ifm-color-primary-dark: #2e7665;
+  --ifm-color-primary-darker: #2b6f5f;
+  --ifm-color-primary-darkest: #245c4e;
+  --ifm-color-primary-light: #38907b;
+  --ifm-color-primary-lighter: #3b9781;
+  --ifm-color-primary-lightest: #42aa92;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* ── Typographie Nunito (proche Cloud Temple Console) ── */
-  --ifm-font-family-base: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  /* Montserrat partout, comme le site cloud-temple.com. */
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  /* Angles droits partout, comme le site. */
+  --ifm-global-radius: 0;
+  --ifm-card-border-radius: 0;
+  --ifm-code-border-radius: 0;
+  --ifm-alert-border-radius: 0;
   --ifm-font-size-base: 15px;
   --ifm-line-height-base: 1.65;
   --ifm-font-weight-normal: 400;
@@ -43,13 +52,16 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  /* Vert-bleu de la charte (#41a890) : contraste 5,3:1 sur le fond anthracite (AA). */
+  --ifm-color-primary: #41a890;
+  --ifm-color-primary-dark: #3a9782;
+  --ifm-color-primary-darker: #378f7a;
+  --ifm-color-primary-darkest: #2d7665;
+  --ifm-color-primary-light: #48b89e;
+  --ifm-color-primary-lighter: #50bba3;
+  --ifm-color-primary-lightest: #6ac5b0;
+  --ifm-background-color: #242428;
+  --ifm-background-surface-color: #2f2f33;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -525,7 +537,7 @@ h3 { font-size: 1.15rem; }
 .book-card-spine {
   width: 6px;
   flex-shrink: 0;
-  background: var(--book-color, #2e8555);
+  background: var(--book-color, #338370);
   transition: width 0.18s ease;
 }
 
@@ -543,7 +555,7 @@ h3 { font-size: 1.15rem; }
 }
 
 .book-card-icon {
-  color: var(--book-color, #2e8555);
+  color: var(--book-color, #338370);
   margin-bottom: 2px;
 }
 
@@ -570,13 +582,13 @@ h3 { font-size: 1.15rem; }
 .book-card-cta {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--book-color, #2e8555);
+  color: var(--book-color, #338370);
   margin-top: 6px;
   display: inline-block;
 }
 
 /* Couleurs par catégorie */
-.book-card--green  { --book-color: #2e8555; }
+.book-card--green  { --book-color: #338370; }
 .book-card--blue   { --book-color: #0e6ba8; }
 .book-card--violet { --book-color: #7c3aed; }
 .book-card--orange { --book-color: #d97706; }
@@ -602,7 +614,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 /* ─── Hero Banner ───────────────────────────────────────────────────────────── */
 
 .hero-banner {
-  background: linear-gradient(135deg, #1a5c38 0%, #2e8555 60%, #3cad6e 100%);
+  background: linear-gradient(135deg, #242428 0%, #2f2f33 45%, #338370 100%);
   border-radius: 12px;
   padding: 48px 40px;
   margin: 0 0 2.5rem 0;
@@ -657,7 +669,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 }
 
 [data-theme='dark'] .hero-banner {
-  background: linear-gradient(135deg, #1a4a2e 0%, #1e6640 60%, #2e8555 100%);
+  background: linear-gradient(135deg, #1c1c1f 0%, #2f2f33 45%, #2d7665 100%);
 }
 
 /* ─── Certification chips ────────────────────────────────────────────────────── */
@@ -698,25 +710,25 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
    lisibles que sur le fond sombre du .hero-banner. Sur une page de contenu au
    fond clair, utiliser .cert-row--doc. */
 .cert-row--doc .cert-chip {
-  border-color: rgba(46, 133, 85, 0.35);
-  background: rgba(46, 133, 85, 0.08);
+  border-color: rgba(51, 131, 112, 0.35);
+  background: rgba(51, 131, 112, 0.08);
   color: var(--ifm-color-primary-darkest);
 }
 
 .cert-row--doc .cert-chip:hover {
-  background: rgba(46, 133, 85, 0.16);
+  background: rgba(51, 131, 112, 0.16);
   border-color: var(--ifm-color-primary-dark);
   color: var(--ifm-color-primary-darkest);
 }
 
 [data-theme='dark'] .cert-row--doc .cert-chip {
-  border-color: rgba(37, 194, 160, 0.45);
-  background: rgba(37, 194, 160, 0.12);
+  border-color: rgba(65, 168, 144, 0.45);
+  background: rgba(65, 168, 144, 0.12);
   color: var(--ifm-color-primary-lighter);
 }
 
 [data-theme='dark'] .cert-row--doc .cert-chip:hover {
-  background: rgba(37, 194, 160, 0.22);
+  background: rgba(65, 168, 144, 0.22);
   border-color: var(--ifm-color-primary-light);
   color: var(--ifm-color-primary-lightest);
 }
@@ -787,7 +799,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 
 .quickstart-card:hover {
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 16px rgba(46, 133, 85, 0.12);
+  box-shadow: 0 4px 16px rgba(51, 131, 112, 0.12);
   transform: translateY(-2px);
   text-decoration: none !important;
 }
@@ -975,14 +987,17 @@ article img:not(.platform-logo) {
 /* ─── Footer propre et compact ─────────────────────────────────────────────── */
 
 footer.footer--dark {
-  background-color: #fafafa !important;
-  border-top: 1px solid #e8e8e8;
+  background-color: #242428 !important;
+  border-top: 1px solid #242428;
+  --ifm-font-color-base: #ffffff;
+  --ifm-footer-link-color: #aaaaaa;
+  --ifm-footer-link-hover-color: #41a890;
   padding: 40px 0 24px 0;
 }
 
 [data-theme='dark'] footer.footer--dark {
-  background-color: #1b1b1d !important;
-  border-top-color: #2e2e32;
+  background-color: #1c1c1f !important;
+  border-top-color: #2f2f33;
 }
 
 footer.footer--dark .footer__links {
@@ -1045,3 +1060,113 @@ footer.footer--dark .footer__copyright a:hover {
   color: var(--ifm-color-primary);
 }
 /* ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Charte du site : barre de navigation ─────────────────────────────────── */
+/* Barre anthracite et logo blanc, comme la barre supérieure de cloud-temple.com. */
+.navbar {
+  --ifm-navbar-background-color: #242428;
+  --ifm-navbar-link-color: #e6e6e6;
+  --ifm-navbar-link-hover-color: #41a890;
+  font-family: 'Montserrat', var(--ifm-font-family-base);
+  font-weight: 500;
+}
+.navbar .navbar__toggle,
+.navbar .DocSearch-Button-Placeholder,
+.navbar .clean-btn { color: #e6e6e6; }
+
+/* ─── Direction artistique du site cloud-temple.com ─────────────────────────
+   Relevé du 2026-11-10 : fond anthracite #242428, blocs #2f2f33 bordés d'un
+   filet vert-bleu, angles droits, Montserrat, tableaux à en-tête vert-bleu,
+   aucun dégradé ni halo. */
+
+h1 { font-weight: 500; }
+h2 { font-weight: 700; }
+h3 { font-weight: 500; }
+
+/* Bandeau d'accueil : aplat, angles droits, sans dégradé ni halo. */
+.hero-banner {
+  background: #242428;
+  border: 1px solid #41a890;
+  border-radius: 0;
+}
+[data-theme='dark'] .hero-banner { background: #2f2f33; }
+.hero-banner::after { display: none; }
+.hero-badge { border-radius: 0; }
+
+/* Cartes : blocs du site (fond #2f2f33 en sombre, filet vert-bleu, angles droits). */
+.card,
+.book-card {
+  border-radius: 0;
+  box-shadow: none;
+}
+.card { border: 1px solid var(--ifm-color-emphasis-300); }
+.card:hover { transform: none; border-color: var(--ifm-color-primary); }
+[data-theme='dark'] .card,
+[data-theme='dark'] .book-card {
+  background: #2f2f33;
+  border-color: #41a890;
+}
+
+/* Tableaux : en-tête vert-bleu, cadre de la même couleur. */
+.markdown table { border-collapse: collapse; }
+.markdown table thead tr,
+.markdown table th {
+  background-color: #338370;
+  color: #ffffff;
+  border-color: #338370;
+}
+.markdown table td { border-color: var(--ifm-color-emphasis-300); }
+[data-theme='dark'] .markdown table tr { background-color: transparent; }
+[data-theme='dark'] .markdown table td { border-color: #3a3a3f; }
+
+/* Pied de page : titres de colonnes blancs, sans majuscules ; liens gris. */
+footer.footer--dark { padding: 55px 0 24px 0; }
+footer.footer--dark .footer__title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  opacity: 1;
+}
+
+/* ─── Fenêtre de recherche (docusaurus-plugin-search-local) ─────────────────
+   Le module prend le fond des résultats dans --ifm-color-primary-contrast-
+   background (bleu marine dans le thème sombre d'Infima) et colore le résultat
+   sélectionné avec la couleur principale : chemin vert-bleu sur fond vert-bleu.
+   Ses classes sont des modules CSS (suffixe haché) : sélecteurs par préfixe,
+   préfixés par html pour passer devant sa feuille, chargée après celle-ci. */
+html [class*='searchModal_'] { background: rgba(20, 20, 23, 0.75); }
+html [class*='searchModalContainer_'] {
+  background: #ffffff;
+  border: 1px solid #338370;
+  border-radius: 0;
+  box-shadow: none;
+}
+html [class*='searchInputContainer_'] {
+  background: #ffffff;
+  border: 1px solid #338370;
+  border-radius: 0;
+  box-shadow: none;
+}
+html [class*='searchResultsSectionHeader_'] { background: transparent; }
+html [class*='searchResult_'] {
+  background: #f4f4f5;
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* Résultat sélectionné : vert-bleu foncé, tout le texte en blanc (contraste 4,55:1). */
+html [class*='searchResult_'][class*='cursor_'] {
+  background-color: #338370 !important;
+  border-color: #338370;
+}
+html [class*='searchResult_'][class*='cursor_'],
+html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
+[data-theme='dark'] [class*='searchModalContainer_'] { background: #242428; border-color: #41a890; }
+[data-theme='dark'] [class*='searchInputContainer_'] { background: #2f2f33; border-color: #41a890; }
+[data-theme='dark'] [class*='searchResult_']:not([class*='cursor_']) {
+  background: #2f2f33;
+  border-color: #3a3a3f;
+  color: #e6e6e6;
+}

@@ -62,7 +62,7 @@ const config: Config = {
   },
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap',
       type: 'text/css',
     },
     {
@@ -114,14 +114,16 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // Le site cloud-temple.com est sombre : la doc s'ouvre en sombre, le mode clair reste disponible.
+    colorMode: { defaultMode: 'dark', respectPrefersColorScheme: false },
     // Replace with your project's social card
     image: 'img/logo.svg',
     navbar: {
       title: '',
       logo: {
         alt: 'Cloud Temple Logo',
-        src: 'img/logo.svg',
-        // Variante pour le mode sombre : même tracé, texte blanc et vert éclairci.
+        // Barre de navigation anthracite dans les deux modes (charte du site) : logo blanc partout.
+        src: 'img/logo-dark.svg',
         srcDark: 'img/logo-dark.svg',
         href: '/home'
       },
