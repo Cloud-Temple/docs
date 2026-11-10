@@ -49,8 +49,8 @@ Per questi motivi, **la federazione delle identità è consigliata**, in partico
 
 Seguite le nostre guide passo passo per integrare il vostro provider di identità :
 
-- [Configurer la fédération avec Azure AD | Documentation Cloud Temple](../../console/iam/tutorials/sso_azuread)
-- [Configurer la fédération avec ADFS | Documentation Cloud Temple](../../console/iam/tutorials/sso_adfs)
+- [Configurare la federazione con Azure AD | Documentazione Cloud Temple](../../console/iam/tutorials/sso_azuread)
+- [Configurare la federazione con ADFS | Documentazione Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
 ### Abilitare l'autenticazione multifactore (MFA)
 
@@ -62,9 +62,9 @@ Per gli account gestiti localmente dalla Console (senza federazione), l'MFA è a
 
 Per ulteriori informazioni:  
 
-- [Qu’est-ce que le MFA et est-il obligatoire ? | Documentation Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#cosè-lmfa-ed-è-obbligatorio)
-- [Tutoriel : Fédération d'identité avec Microsoft EntraID | Documentation Cloud Temple](../../console/iam/tutorials/sso_azuread)
-- [Tutoriel : Fédération d'identité avec Microsoft ADFS | Documentation Cloud Temple](../../console/iam/tutorials/sso_adfs)
+- [Cos'è l'MFA ed è obbligatorio? | Documentazione Cloud Temple](../../console/iam/quickstart?_highlight=*facteur#cosè-lmfa-ed-è-obbligatorio)
+- [Tutorial: Federazione dell'identità con Microsoft EntraID | Documentazione Cloud Temple](../../console/iam/tutorials/sso_azuread)
+- [Tutorial: Federazione dell'identità con Microsoft ADFS | Documentazione Cloud Temple](../../console/iam/tutorials/sso_adfs)
 
 ### Accedere alla Console da dispositivi sicuri
 
@@ -96,11 +96,11 @@ Per una gestione sicura ed efficace :
 - **Garantite un controllo diretto**, aggiungendo un proprietario membro della vostra organizzazione, anche se affidate la gestione del vostro servizio cloud, per poter supervisionare le notifiche e le decisioni importanti.
 - **Limitate il numero di proprietari** a 3 per ridurre la superficie di esposizione e facilitare l'audit delle azioni critiche.
 
-Per ulteriori informazioni sulla gestione dei proprietari del tenant, consultate il [Guide des propriétaires sur un tenant | Documentation Cloud Temple](../../console/iam/concepts#gestione-dei-proprietari-su-un-tenant).
+Per ulteriori informazioni sulla gestione dei proprietari del tenant, consultate il [Guida ai proprietari di un tenant | Documentazione Cloud Temple](../../console/iam/concepts#gestione-dei-proprietari-su-un-tenant).
 
 ### Gestire le autorizzazioni sui vostri servizi cloud
 
-La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni consentite. Consultate la documentazione sulle autorizzazioni ([Permissions disponibles pour les utilisateurs de votre organisation | Documentation Cloud Temple](../../console/iam/concepts#permessi-disponibili-per-gli-utenti-della-vostra-organizzazione)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
+La Console Cloud Temple consente una gestione granulare degli accessi assegnando a ciascun utente uno o più livelli di autorizzazione, che determinano precisamente le azioni consentite. Consultate la documentazione sulle autorizzazioni ([Permessi disponibili per gli utenti della vostra organizzazione | Documentazione Cloud Temple](../../console/iam/concepts#permessi-disponibili-per-gli-utenti-della-vostra-organizzazione)) per comprendere in dettaglio le diverse autorizzazioni e assegnarle in modo appropriato.
 
 Per una gestione efficace e sicura delle autorizzazioni, vi consigliamo di seguire le seguenti best practice:
 
@@ -121,15 +121,15 @@ Pertanto, vi consigliamo di:
 - **Distribuire regolarmente i nuovi build su tutti i vostri hypervisor**, in particolare se correggono vulnerabilità di sicurezza;
 - Distribuire regolarmente sulle vostre macchine virtuali le nuove versioni di vmtools.
 
-**È disponibile una pagina degli avvisi di sicurezza** per informarvi sulle vulnerabilità note e sulle relative raccomandazioni: [Alertes de sécurité | Cloud Temple](https://docs.cloud-temple.com/console/security/security_alarms).
+**È disponibile una pagina degli avvisi di sicurezza** per informarvi sulle vulnerabilità note e sulle relative raccomandazioni: [Avvisi di sicurezza | Cloud Temple](https://docs.cloud-temple.com/console/security/security_alarms).
 
 ### Monitorare l'attività sui servizi cloud
 
 Per garantire un monitoraggio efficace del vostro ambiente cloud e reagire rapidamente in caso di anomalie, è essenziale implementare una strategia di monitoraggio attivo. Vi raccomandiamo in particolare di:
 
 - **Monitorare la disponibilità dei servizi** tramite la [Status page | Cloud Temple](https://status.cloud-temple.com/), per ricevere avvisi in caso di incidenti o interruzioni generali;
-- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (voir [Abonnement aux notifications thématiques | Documentation Cloud Temple](../../console/iam/concepts#sottoscrizione-alle-notifiche-tematiche));
-- **Sfruttare i log di attività Cloud** per identificare le azioni sensibili o sospette sulle vostre risorse (voir section « Journalisation - Suivi des Activités » du [Guide de démarrage | Documentation Cloud Temple](../../iaas_vmware/quickstart)). La raccolta e l’analisi dei log di attività può essere automatizzata tramite le API Console, per integrare gli eventi nei vostri strumenti di monitoraggio o di rilevamento degli incidenti.
+- **Attivare le notifiche tematiche** pertinenti per il vostro utilizzo dalla Console, per ricevere in tempo reale gli avvisi importanti (vedere [Sottoscrizione alle notifiche tematiche | Documentazione Cloud Temple](../../console/iam/concepts#sottoscrizione-alle-notifiche-tematiche));
+- **Sfruttare i log di attività Cloud** per identificare le azioni sensibili o sospette sulle vostre risorse (vedere la sezione « Registro - Monitoraggio delle attività » della [Guida introduttiva | Documentazione Cloud Temple](../console_quickstart.md#registro---monitoraggio-delle-attività)). La raccolta e l’analisi dei log di attività può essere automatizzata tramite le API Console, per integrare gli eventi nei vostri strumenti di monitoraggio o di rilevamento degli incidenti.
 
 ## Proteggere le risorse ospitate
 
@@ -139,7 +139,7 @@ Di seguito sono riportate le best practice essenziali per rafforzare la sicurezz
 
 ### Configurare i backup
 
-Per garantire la sicurezza e la resilienza dei vostri dati, è essenziale definire e applicare correttamente le vostre politiche di backup. L'assegnazione di una politica di backup a ogni macchina virtuale prima del suo avvio è obbligatoria. La documentazione è disponibile nella sezione "Backup" del [Guide de démarrage | Documentation Cloud Temple](../../iaas_vmware/quickstart).
+Per garantire la sicurezza e la resilienza dei vostri dati, è essenziale definire e applicare correttamente le vostre politiche di backup. L'assegnazione di una politica di backup a ogni macchina virtuale prima del suo avvio è obbligatoria. La documentazione è disponibile nella sezione "Backup" della [Guida introduttiva | Documentazione Cloud Temple](../../iaas_vmware/quickstart).
 
 Di seguito sono riportate le raccomandazioni per la gestione delle politiche di backup delle vostre risorse Cloud Temple :
 
@@ -180,7 +180,7 @@ Per guidarvi in queste azioni, fate riferimento a :
 
 - Le guide di indurimento degli editori dei software che utilizzate ;
 - [Guides essentiels et bonnes pratiques de cybersécurité | ANSSI (FR)](https://cyber.gouv.fr/guides-essentiels-et-bonnes-pratiques-de-cybersecurite-par-ou-commencer) ;
-- [Guides sécurité CIS Benchmarks® | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
+- [Guide di sicurezza CIS Benchmarks® | CIS (EN)](https://www.cisecurity.org/cis-benchmarks).
 
 Queste best practice costituiscono la prima linea di difesa per proteggere i vostri sistemi nel cloud.
 
@@ -190,7 +190,7 @@ Per garantire la sicurezza dei vostri container nell'ambito del servizio PaaS Op
 
 - **Origine delle immagini** : Assicuratevi che tutte le immagini provengano da fonti affidabili, come registri interni o il Red Hat Container Catalog, ed evitate l'utilizzo di immagini della community non verificate, come quelle disponibili su Docker Hub pubblico.
 - **Limitazione dei privilegi** : Limitate i privilegi dei container utilizzando le funzionalità di OpenShift, in particolare le *Security Context Constraints* (SCC), al fine di restringere le autorizzazioni allo stretto necessario.
-- **Configurazione delle SCC** : Create SCC personalizzati per ogni applicazione o gruppo di applicazioni. Ciò include la restrizione delle chiamate di sistema consentite (par exemple, via *seccomp profiles*), con configurazioni specifiche come il divieto di *ptrace* o *mount* per ridurre i rischi di escape dei container.
+- **Configurazione delle SCC** : Create SCC personalizzati per ogni applicazione o gruppo di applicazioni. Ciò include la restrizione delle chiamate di sistema consentite (ad esempio, tramite *seccomp profiles*), con configurazioni specifiche come il divieto di *ptrace* o *mount* per ridurre i rischi di escape dei container.
 - **Isolamento dei carichi di lavoro** : Utilizzate i *Namespaces* e le *Network Policies* per isolare le applicazioni e limitare le interazioni non necessarie tra i container.
 - **Logging completo** : Attivate il logging tramite l'operatore OpenShift Logging per catturare gli eventi associati ai container e ai sistemi ospitati, al fine di rilevare e analizzare meglio qualsiasi attività sospetta.
 

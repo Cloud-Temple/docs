@@ -65,7 +65,7 @@ In un altro terminale, connettetevi con il client `psql` :
 psql -h localhost -U postgres
 ```
 
-*(Il vous sera demandé de saisir le mot de passe récupéré à l'étape 2)*
+*(Vi verrà chiesto di inserire la password recuperata al passaggio 2)*
 
 ---
 

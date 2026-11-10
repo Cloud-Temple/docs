@@ -10,7 +10,7 @@ import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.p
 
 # Erste Schritte mit OpenShift
 
-This page guides you through the initial steps to use the **OpenShift** offering from the Cloud Temple console. Follow these instructions to explore the available menus and features.
+Diese Seite führt Sie durch die ersten Schritte zur Nutzung des Produkts **OpenShift** über die Cloud Temple-Konsole. Folgen Sie diesen Anweisungen, um die verfügbaren Menüs und Funktionen kennenzulernen.
 
 ## Voraussetzungen
 
@@ -31,9 +31,9 @@ Diese Seite zeigt an, dass Sie noch keine OpenShift SecNumCloud-Cluster bereitge
 
 Sobald Ihre Bestellung vom Support bearbeitet wurde und Ihr Cluster bereitgestellt ist, können Sie auf das OpenShift-Menü zugreifen.
 
-## Access to the OpenShift Interface
+## Zugriff auf die OpenShift-Oberfläche
 
-Once your first cluster has been deployed, a new menu titled **OpenShift** appears in the Cloud Temple console. This menu contains a main submenu: **Clusters**.
+Sobald Ihr erster Cluster bereitgestellt ist, erscheint in der Cloud Temple-Konsole ein neues Menü mit dem Titel **OpenShift**. Dieses Menü enthält ein Hauptuntermenü: **Clusters**.
 
 <img src={oshiftMenu_001} />
 
@@ -52,26 +52,26 @@ Das Untermenü **Clusters** zeigt Ihnen eine Tabelle mit allen verfügbaren Open
 
 💡 **Um detaillierte Informationen zu einem Cluster anzuzeigen, klicken Sie auf dessen Namen in der Tabelle.**
 
-### 2. Cluster Details
+### 2. Details eines Clusters
 
-When you click on a **cluster name** in the list, a detailed page appears displaying complete cluster information:
+Wenn Sie in der Liste auf den **Namen eines Clusters** klicken, wird eine Detailseite mit den vollständigen Informationen zum Cluster angezeigt:
 
-**Connectivity Information:**
+**Konnektivitätsinformationen:**
 
-- **Access URL**: Web interface of the cluster
-- **API URL**: API endpoint for CLI operations
+- **Zugriffs-URL**: Weboberfläche des Clusters
+- **API-URL**: API-Einstiegspunkt für CLI-Operationen
 
-**General Information:**
+**Allgemeine Informationen:**
 
-- **Status**: Current state of the cluster
-- **Last Updated**: Date of the last modification
-- **Version**: OpenShift version deployed
+- **Status**: Aktueller Zustand des Clusters
+- **Letzte Aktualisierung**: Datum der letzten Änderung
+- **Version**: Bereitgestellte OpenShift-Version
 
-**Cluster Nodes:**
+**Knoten des Clusters:**
 
-A table provides detailed information for each node:
+Eine Tabelle enthält für jeden Knoten die folgenden Informationen:
 
-- **Node Name**
+- **Knotenname**
 - **Type**
 - **AZ** (Availability Zone)
 - **Status**
@@ -80,31 +80,31 @@ A table provides detailed information for each node:
 
 <img src={oshiftClusterDetail_001} />
 
-## Access to the OpenShift Administration Interface
+## Zugriff auf die OpenShift-Administrationsoberfläche
 
-Click on the **Access URL** of the cluster you wish to manage. You will be directed to the cluster administration environment:
+Klicken Sie auf die **Zugriffs-URL** des Clusters, den Sie verwalten möchten. Sie gelangen in die Administrationsumgebung des Clusters:
 
 <img src={oshiftMenu_002} />
 
-After authentication, you can manage your cluster:
+Nach der Authentifizierung können Sie Ihren Cluster verwalten:
 
 <img src={oshiftMenu_003} />
 
-### Resources of your environment
+### Ressourcen Ihrer Umgebung
 
-Here are the connection and configuration details specific to your OpenShift environment.
+Nachfolgend die Verbindungs- und Konfigurationsinformationen, die für Ihre OpenShift-Umgebung spezifisch sind.
 
-#### Connection Details
+#### Verbindungsdetails
 
-To access the various OpenShift components, ensure your tenant is whitelisted in the console (see documentation: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+Um auf die verschiedenen OpenShift-Komponenten zuzugreifen, stellen Sie sicher, dass Ihr Tenant in der Konsole auf der Whitelist eingetragen ist (siehe Dokumentation: [Cloud Temple-Dokumentation](https://docs.cloud-temple.com/)).
 
-- **Tenant Console URL**:
+- **Tenant-Konsolen-URL**:
   [https://**your-tenant-id**.shiva.cloud-temple.com/](https://**your-tenant-id**.shiva.cloud-temple.com/)
 
 - **OpenShift UI**:
   [https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/](https://ui-ocp01-**your-tenant-id**.paas.cloud-temple.com/)
 
-- **External API**:
+- **Externe API**:
   [https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com](https://api-ocp01-**your-tenant-id**.paas.cloud-temple.com)
 
 - **GitOps (ARGOCD)**:
@@ -135,18 +135,18 @@ docker tag <namespace>/temp:latest registry-ocp01-{Ihr-ID}.paas.cloud-temple.com
 docker push registry-ocp01-{Ihr-ID}.paas.cloud-temple.com/<namespace>/temp:latest
 ```
 
-#### Configuration of Routers and Load Balancers
+#### Konfiguration der Router und Load Balancer
 
-The platform offers flexible options for **traffic routing** and **load balancing**:
+Die Plattform bietet flexible Optionen für das **Routing des Datenverkehrs** und den **Lastausgleich**:
 
-- By default, private load balancers are used for routes and ingresses.
+- Standardmäßig werden private Load Balancer für Routes und Ingresses verwendet.
 - Domains:
   - `*.apps-priv-ocp01-{your-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{your-id}.paas.cloud-temple.com`
 
-Ensure your routes or ingresses are configured with the appropriate ingress labels or classes to guarantee correct routing.
+Stellen Sie sicher, dass Ihre Routes oder Ingresses mit den passenden Labels oder Ingress-Klassen konfiguriert sind, um ein korrektes Routing zu gewährleisten.
 
-Example:
+Beispiel:
 
 ```yaml
 metadata:
@@ -154,11 +154,11 @@ metadata:
     ct-router-type: public
 ```
 
-#### IaaS Networking
+#### IaaS-Interconnect
 
-Network configurations play a crucial role in securing communications with OpenShift.
+Die Netzwerkkonfigurationen spielen eine entscheidende Rolle für die Absicherung der Kommunikation mit OpenShift.
 
-- **Interconnection Network**: 100.67.0.0/28  
-- **Private Load Balancer VIP**: 100.67.0.3  
+- **Interconnect-Netzwerk**: 100.67.0.0/28  
+- **VIP des privaten Load Balancers**: 100.67.0.3  
 
-Ensure your firewall has a dedicated interface and permits traffic between the specified networks.
+Stellen Sie sicher, dass Ihre Firewall über eine dedizierte Schnittstelle verfügt und den Datenverkehr zwischen den angegebenen Netzwerken zulässt.

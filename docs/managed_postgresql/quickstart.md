@@ -86,3 +86,4 @@ kubectl get scheduledbackup -n <votre-namespace>
 
 # Voir l'historique des sauvegardes complétées
 kubectl get backup -n <votre-namespace>
+```

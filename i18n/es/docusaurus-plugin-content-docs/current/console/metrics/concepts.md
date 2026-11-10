@@ -80,7 +80,7 @@ En esta pestaña se muestra una parte de las métricas ya presentes en el panel 
 En esta pestaña, se encuentra el número de __AZ__, de __Clusters__, de __ESXs__, la __emisión de carbono__, la __estimación del consumo__, así como 7 gráficos
 que ofrecen una visión muy visual del estado de su entorno VMware. La estimación del consumo en kw/h se calcula sobre la media de las lecturas que cubren el período seleccionado, referida a una hora.
 
-Puede elegir el intervalo de fechas a cubrir, así como el tipo de agrupación de datos (par défaut, les données sont regroupées pour l'ensemble de votre périmètre). Al elegir __Host__ por ejemplo:
+Puede elegir el intervalo de fechas a cubrir, así como el tipo de agrupación de datos (por defecto, los datos se agrupan para el conjunto de su perímetro). Al elegir __Host__ por ejemplo:
 
 <img src={shivaMetric_001} />
 

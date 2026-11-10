@@ -124,6 +124,6 @@ Sie erhalten Folgendes:
 
 <img src={opencostmcp3} alt="KI-Antwort opencost 3"/>
 
-## Conclusion
+## Fazit
 
 OpenCost bietet Ihnen leistungsstarke Tools für eine detaillierte und Echtzeit-Analyse der Kosten Ihres Kubernetes-Clusters. Durch die primäre Nutzung der **Allocations**-Ansicht in Kombination mit einer durchdachten Labeling-Strategie erhalten Sie eine klare Übersicht über Ihre Ausgaben, die sowohl mit Ihren technischen Bereitstellungen als auch mit Ihrer internen Organisation abgestimmt ist. Der Einsatz von LLMs und des OpenCost-MCP-Servers ermöglicht eine noch tiefgehendere Datenauswertung.

@@ -64,12 +64,12 @@ Distribuiremo un'applicazione dimostrativa che visualizza una semplice pagina we
 
     ```bash
     kubectl get deployment -n hello-world
-    # Vous devriez voir votre déploiement avec 2/2 replicas prêts.
+    # Dovreste vedere il vostro deployment con 2/2 repliche pronte.
     NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
     hello-world-deployment   2/2     2            2           102s
 
     kubectl get pods -n hello-world
-    # Vous devriez voir deux pods avec le statut "Running".
+    # Dovreste vedere due pod con lo stato "Running".
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-world-deployment-669dfbd799-294zz   1/1     Running   0          2m21s
     hello-world-deployment-669dfbd799-plcbg   1/1     Running   0          2m21s
@@ -120,7 +120,7 @@ Per esporre il nostro servizio su Internet, utilizzeremo una risorsa **Ingress**
     spec:
       ingressClassName: nginx-external
       rules:
-      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # changez moi
+      - host: "hello-world.external.votre-cluster-id.mk.ms-cloud-temple.com" # da modificare
         http:
           paths:
           - path: /
@@ -168,7 +168,7 @@ RawContent        : HTTP/1.1 200 OK
                     Server: ng...
 ```
 
->⚠[Pour aller plus loin : la sécurité en production]
+>⚠[Per approfondire: la sicurezza in produzione]
 >Questo tutorial vi ha mostrato le basi del deployment. Per un ambiente di produzione, è cruciale applicare ulteriori misure di sicurezza:
 >
 >- **Utilizzate immagini sicure** : Privilegiate immagini provenienti dal vostro registro aziendale sicuro come **Harbor** piuttosto che immagini pubbliche.

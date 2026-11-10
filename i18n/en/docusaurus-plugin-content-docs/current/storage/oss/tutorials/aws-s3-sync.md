@@ -6,7 +6,7 @@ Similar to `mc`, the AWS CLI offers the command `aws s3 sync` for synchronizing 
 
 Please ensure your [AWS client is configured as described in the Getting Started guide](../quickstart) and use the `--endpoint-url` parameter.
 
-### Exemple de base (Translated)
+### Basic example
 
 To synchronize the content of the local directory `./mon-site` to the S3 bucket `demo-app`:
 
@@ -20,8 +20,9 @@ To synchronize the content of the local directory `./mon-site` to the S3 bucket 
 * `--exact-timestamps`: During synchronization, only copies a file if the modification timestamp is different.
 * `--dryrun`: Displays operations that would be executed without actually running them. Highly useful for verifying a command before execution.
 
+```bash
 # Simulation of synchronization with deletion for change verification
->
-> aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
-(dry run) delete: s3://demo-app/old-file.html
-(dry run) upload: mon-site/new-file.css to s3://demo-app/new-file.css
+❯ aws s3 sync ./mon-site/ s3://demo-app/ --endpoint-url https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com --delete --dryrun
+(dryrun) delete: s3://demo-app/old-file.html
+(dryrun) upload: mon-site/new-file.css to s3://demo-app/new-file.css
+```

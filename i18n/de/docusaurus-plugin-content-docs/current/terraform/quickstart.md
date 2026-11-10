@@ -4,7 +4,7 @@ title: Erste Schritte mit dem Terraform-Provider
 
 # Erste Schritte mit dem Terraform-Provider
 
-This guide walks you step by step through deploying your first Cloud Temple infrastructure with Terraform.
+Dieser Leitfaden begleitet Sie Schritt für Schritt bei der Bereitstellung Ihrer ersten Cloud Temple-Infrastruktur mit Terraform.
 
 ## Voraussetzungen
 
@@ -40,13 +40,13 @@ Laden Sie die ausführbare Datei von [terraform.io](https://www.terraform.io/dow
 choco install terraform
 ```
 
-### Installation verification
+### Überprüfung der Installation
 
 ```bash
 terraform version
 ```
 
-You should see output similar to:
+Sie sollten eine Ausgabe ähnlich der folgenden sehen:
 
 ```
 Terraform v1.6.0
@@ -54,12 +54,12 @@ Terraform v1.6.0
 
 ## Schritt 2: API-Schlüssel erhalten
 
-### Generating an API Key in the Console
+### Generieren eines API-Schlüssels in der Konsole
 
-These credentials can be generated in the Cloud Temple Console by following [this procedure](https://docs.cloud-temple.com/console/api#api-keys).
+Diese Anmeldeinformationen können in der Cloud Temple-Konsole gemäß [diesem Verfahren](https://docs.cloud-temple.com/console/api#api-keys) generiert werden.
 
-:::warning[Security]
-    Store these credentials securely. The Secret ID will be displayed only once.
+:::warning[Sicherheit]
+Bewahren Sie diese Anmeldeinformationen sicher auf. Die Secret ID wird nur ein einziges Mal angezeigt.
 :::
 
 ### Konfiguration der Umgebungsvariablen
@@ -113,13 +113,13 @@ provider "cloudtemple" {
 
 ## Schritt 4: Terraform initialisieren
 
-Initialize your Terraform project to download the provider:
+Initialisieren Sie Ihr Terraform-Projekt, um den Provider herunterzuladen:
 
 ```bash
 terraform init
 ```
 
-You should see:
+Sie sollten Folgendes sehen:
 
 ```
 Initializing the backend...
@@ -139,52 +139,52 @@ Terraform has been successfully initialized!
 Erstellen Sie eine Datei `main.tf` mit einer minimalen Konfiguration:
 
 ```hcl
-# Retrieval of existing resources required
+# Abrufen der benötigten vorhandenen Ressourcen
 data "cloudtemple_compute_machine_manager" "vc-vstack-01" {
-  name = "vc-vstack-001-t0001" # Adapt with your vCenter name
+  name = "vc-vstack-001-t0001" # An den Namen Ihres vCenters anpassen
 }
 
 data "cloudtemple_compute_virtual_datacenter" "dc" {
-  name = "DC-EQX6"  # Adapt with your datacenter name
+  name = "DC-EQX6"  # An den Namen Ihres Datacenters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_host_cluster" "cluster" {
-  name = "clu001-ucs01"  # Adapt with your cluster name
+  name = "clu001-ucs01"  # An den Namen Ihres Clusters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_datastore_cluster" "datastore" {
-  name = "sdrs001-LIVE"  # Adapt with your datastore cluster name
+  name = "sdrs001-LIVE"  # An den Namen Ihres Datastore-Clusters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_backup_sla_policy" "daily" {
-  name = "sla001-daily-par7s"  # Backup policy
+  name = "sla001-daily-par7s"  # Backup-Richtlinie
 }
 
-# Creating a virtual machine
+# Erstellen einer virtuellen Maschine
 resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   name = "terraform-vm-01"
   
-  # Hardware configuration
-  memory                 = 4 * 1024 * 1024 * 1024  # 4 GB in bytes
+  # Hardwarekonfiguration
+  memory                 = 4 * 1024 * 1024 * 1024  # 4 GB in Bytes
   cpu                    = 2
   num_cores_per_socket   = 1
   
-  # Flexibility options
+  # Flexibilitätsoptionen
   cpu_hot_add_enabled    = true
   memory_hot_add_enabled = true
   
-  # Location
+  # Standort
   datacenter_id        = data.cloudtemple_compute_virtual_datacenter.dc.id
   host_cluster_id      = data.cloudtemple_compute_host_cluster.cluster.id
   datastore_cluster_id = data.cloudtemple_compute_datastore_cluster.datastore.id
   
-  # Guest operating system
+  # Gastbetriebssystem
   guest_operating_system_moref = "ubuntu64Guest"
   
-  # Backup policy
+  # Backup-Richtlinie
   backup_sla_policies = [
     data.cloudtemple_backup_sla_policy.daily.id
   ]
@@ -197,7 +197,7 @@ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   }
 }
 
-# Output to display the VM ID
+# Output zur Anzeige der VM-ID
 output "vm_id" {
   description = "ID of the created virtual machine"
   value       = cloudtemple_compute_virtual_machine.my_first_vm.id
@@ -209,19 +209,19 @@ output "vm_moref" {
 }
 ```
 
-:::note[Adaptation of names]
-    The names of datacenters, clusters, and datastores must match those available in your Cloud Temple environment. Check the console to identify the available resources.
+:::note[Anpassung der Namen]
+Die Namen der Datacenter, Cluster und Datastores müssen mit denen übereinstimmen, die in Ihrer Cloud Temple-Umgebung verfügbar sind. Prüfen Sie in der Konsole, welche Ressourcen verfügbar sind.
 :::
 
 ## Schritt 6: Änderungen planen
 
-Before applying the changes, visualize what will be created:
+Bevor Sie die Änderungen anwenden, lassen Sie sich anzeigen, was erstellt wird:
 
 ```bash
 terraform plan
 ```
 
-Terraform displays a detailed plan:
+Terraform zeigt einen detaillierten Plan an:
 
 ```
 Terraform will perform the following actions:
@@ -243,7 +243,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 ## Schritt 7: Konfiguration anwenden
 
-Bereiten Sie Ihre Infrastruktur bereit:
+Stellen Sie Ihre Infrastruktur bereit:
 
 ```bash
 terraform apply
@@ -252,11 +252,11 @@ terraform apply
 Terraform fordert Ihre Bestätigung an:
 
 ```
-Möchten Sie diese Aktionen durchführen?
-  Terraform wird die oben beschriebenen Aktionen durchführen.
-  Nur "yes" wird akzeptiert, um die Bestätigung zu geben.
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
 
-  Geben Sie einen Wert ein: 
+  Enter a value: 
 ```
 
 Geben Sie `yes` ein und drücken Sie die Eingabetaste.
@@ -264,46 +264,46 @@ Geben Sie `yes` ein und drücken Sie die Eingabetaste.
 Terraform erstellt die Ressourcen:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt...
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt... [10s vergangen]
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung wird ausgeführt... [20s vergangen]
-cloudtemple_compute_virtual_machine.my_first_vm: Erstellung abgeschlossen nach 25s [id=12345678-1234-1234-1234-123456789abc]
+cloudtemple_compute_virtual_machine.my_first_vm: Creating...
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [10s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Still creating... [20s elapsed]
+cloudtemple_compute_virtual_machine.my_first_vm: Creation complete after 25s [id=12345678-1234-1234-1234-123456789abc]
 
-Anwendung abgeschlossen! Ressourcen: 1 hinzugefügt, 0 geändert, 0 entfernt.
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
-Ausgaben:
+Outputs:
 
 vm_id = "12345678-1234-1234-1234-123456789abc"
 vm_moref = "vm-123"
 ```
 
 :::success[Herzlichen Glückwunsch!]
-    Sie haben soeben Ihre erste virtuelle Maschine Cloud Temple mit Terraform erstellt!
+Sie haben soeben Ihre erste virtuelle Maschine Cloud Temple mit Terraform erstellt!
 :::
 
 ## Schritt 8: Erstellung überprüfen
 
-### In the Cloud Temple console
+### In der Cloud Temple-Konsole
 
-1. Log in to the [Cloud Temple Console](https://shiva.cloud-temple.com)
-2. Navigate to **IaaS VMWare** > **Virtual Machines**
-3. You should see your Virtual Machine `terraform-vm-01`
+1. Melden Sie sich bei der [Cloud Temple-Konsole](https://shiva.cloud-temple.com) an
+2. Navigieren Sie zu **IaaS VMWare** > **Virtuelle Maschinen**
+3. Sie sollten Ihre virtuelle Maschine `terraform-vm-01` sehen
 
-### With Terraform
+### Mit Terraform
 
-Display the current state:
+Zeigen Sie den aktuellen Zustand an:
 
 ```bash
 terraform show
 ```
 
-List the managed resources:
+Listen Sie die verwalteten Ressourcen auf:
 
 ```bash
 terraform state list
 ```
 
-Display the outputs:
+Zeigen Sie die Outputs an:
 
 ```bash
 terraform output
@@ -333,28 +333,28 @@ terraform apply
 Terraform erkennt die Änderung und aktualisiert die VM:
 
 ```
-cloudtemple_compute_virtual_machine.my_first_vm: Zustand wird aktualisiert... [id=xxx]
+cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
 
-Terraform wird die folgenden Aktionen ausführen:
+Terraform will perform the following actions:
 
-  # cloudtemple_compute_virtual_machine.my_first_vm wird in-place aktualisiert
+  # cloudtemple_compute_virtual_machine.my_first_vm will be updated in-place
   ~ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
       ~ memory = 4294967296 -> 8589934592
         # (andere Attribute bleiben unverändert)
     }
 
-Plan: 0 hinzuzufügen, 1 zu ändern, 0 zu entfernen.
+Plan: 0 to add, 1 to change, 0 to destroy.
 ```
 
 ## Schritt 10: Ressourcen zerstören
 
-When you have finished your tests, delete the created resources:
+Wenn Sie Ihre Tests abgeschlossen haben, löschen Sie die erstellten Ressourcen:
 
 ```bash
 terraform destroy
 ```
 
-Terraform displays what will be deleted and asks for confirmation:
+Terraform zeigt an, was gelöscht wird, und fordert eine Bestätigung an:
 
 ```
 cloudtemple_compute_virtual_machine.my_first_vm: Refreshing state... [id=xxx]
@@ -378,7 +378,7 @@ Do you really want to destroy all resources?
   Enter a value:
 ```
 
-Type `yes` to confirm deletion.
+Geben Sie `yes` ein, um das Löschen zu bestätigen.
 
 ## Empfohlene Projektstruktur
 
@@ -398,18 +398,18 @@ terraform-cloudtemple/
 ### Beispiel einer .gitignore-Datei
 
 ```gitignore
-# Terraform Files
+# Terraform-Dateien
 .terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
 .terraform.lock.hcl
 
-# Crash Files
+# Crash-Dateien
 crash.log
 crash.*.log
 
-# Sensitive variable files
+# Dateien mit sensiblen Variablen
 *.auto.tfvars
 override.tf
 override.tf.json
@@ -454,7 +454,7 @@ resource "cloudtemple_compute_virtual_machine" "vm" {
 }
 ```
 
-### 2. Organize with modules
+### 2. Organisieren Sie mit Modulen
 
 ```hcl
 # modules/vm/main.tf
@@ -490,13 +490,13 @@ terraform {
 ### 4. Kommentieren Sie Ihren Code
 
 ```hcl
-# Virtual Machine for the Production Web Server
+# Virtuelle Maschine für den Produktions-Webserver
 
-# CPU and memory sized to handle 1000 req/s
+# CPU und Arbeitsspeicher für 1000 req/s dimensioniert
 resource "cloudtemple_compute_virtual_machine" "web_prod" {
   name = "web-prod-01"
   
-  # Hardware configuration based on internal benchmarks
+  # Hardwarekonfiguration auf Basis interner Benchmarks
   memory = 16 * 1024 * 1024 * 1024  # 16 GB
   cpu    = 8
   # ...
@@ -508,7 +508,7 @@ resource "cloudtemple_compute_virtual_machine" "web_prod" {
 Erstellen Sie nicht erneut, was bereits vorhanden ist. Verwenden Sie Datenquellen, um auf bestehende Ressourcen zu verweisen:
 
 ```hcl
-# Reference an existing network
+# Auf ein vorhandenes Netzwerk verweisen
 data "cloudtemple_compute_network" "prod_network" {
   name = "PROD-VLAN-100"
 }
@@ -519,7 +519,7 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 }
 ```
 
-## Troubleshooting
+## Fehlerbehebung
 
 ### Fehler: "Error: Failed to query available provider packages"
 
@@ -527,19 +527,19 @@ resource "cloudtemple_compute_network_adapter" "nic" {
 
 **Lösung**: Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut mit `terraform init`.
 
-### Error: "Error: failed to login"
+### Fehler: "Error: failed to login"
 
 ```
 Error: failed to login: Unexpected response code: 401
 ```
 
-**Cause**: Invalid or expired credentials.
+**Ursache**: Ungültige oder abgelaufene Anmeldeinformationen.
 
-**Solution**:
+**Lösung**:
 
-1. Check your environment variables
-2. Generate a new API key in the console
-3. Verify the permissions of your API key
+1. Überprüfen Sie Ihre Umgebungsvariablen
+2. Generieren Sie in der Konsole einen neuen API-Schlüssel
+3. Überprüfen Sie die Berechtigungen Ihres API-Schlüssels
 
 ### Fehler: "Error: resource not found"
 

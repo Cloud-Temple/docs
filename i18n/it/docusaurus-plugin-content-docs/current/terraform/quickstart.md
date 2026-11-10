@@ -141,21 +141,21 @@ Create un file `main.tf` con una configurazione minima:
 ```hcl
 # Recupero delle risorse esistenti necessarie
 data "cloudtemple_compute_machine_manager" "vc-vstack-01" {
-  name = "vc-vstack-001-t0001" # Adatta con il nome del tuo vCenter
+  name = "vc-vstack-001-t0001" # Adattate con il nome del vostro vCenter
 }
 
 data "cloudtemple_compute_virtual_datacenter" "dc" {
-  name = "DC-EQX6"  # Adatta con il nome del tuo datacenter
+  name = "DC-EQX6"  # Adattate con il nome del vostro datacenter
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_host_cluster" "cluster" {
-  name = "clu001-ucs01"  # Adatta con il nome del tuo cluster
+  name = "clu001-ucs01"  # Adattate con il nome del vostro cluster
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_datastore_cluster" "datastore" {
-  name = "sdrs001-LIVE"  # Adatta con il nome del tuo datastore cluster
+  name = "sdrs001-LIVE"  # Adattate con il nome del vostro datastore cluster
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
@@ -317,9 +317,9 @@ Modificate il file `main.tf` per aumentare la memoria a 8 GB:
 resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   name = "terraform-vm-01"
   
-  memory = 8 * 1024 * 1024 * 1024  # 8 GB instead of 4 GB
+  memory = 8 * 1024 * 1024 * 1024  # 8 GB invece di 4 GB
   cpu    = 2
-  # ... remaining configuration
+  # ... resto della configurazione
 }
 ```
 
@@ -398,18 +398,18 @@ terraform-cloudtemple/
 ### Esempio di .gitignore
 
 ```gitignore
-# Terraform Files
+# File Terraform
 .terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
 .terraform.lock.hcl
 
-# Crash files
+# File di crash
 crash.log
 crash.*.log
 
-# Sensitive variable files
+# File di variabili sensibili
 *.auto.tfvars
 override.tf
 override.tf.json
@@ -490,13 +490,13 @@ terraform {
 ### 4. Commentate il vostro codice
 
 ```hcl
-# Virtual machine for the production web server
+# Macchina virtuale per il server web di produzione
 
-# CPU and memory sized to handle 1000 req/s
+# CPU e memoria dimensionate per gestire 1000 req/s
 resource "cloudtemple_compute_virtual_machine" "web_prod" {
   name = "web-prod-01"
   
-  # Hardware configuration based on internal benchmarks
+  # Configurazione hardware basata sui benchmark interni
   memory = 16 * 1024 * 1024 * 1024  # 16 GB
   cpu    = 8
   # ...

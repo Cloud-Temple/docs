@@ -75,8 +75,10 @@ resource "cloudtemple_compute_virtual_machine" "empty_vm" {
     created_by  = "terraform"
   }
 }
+```
 
 **Explanations**:
+
 - `guest_operating_system_moref`: Defines the OS type for VMware Tools drivers
 - The VM is created without disk or network (to be added separately)
 - Hot-add options allow adding CPU/RAM on-the-fly
@@ -110,8 +112,6 @@ data "cloudtemple_backup_sla_policy" "daily" {
 }
 
 # Deployment from the Marketplace
-
-```hcl
 resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
   name = "ubuntu-marketplace-01"
   
@@ -184,7 +184,6 @@ data "cloudtemple_compute_network" "vlan" {
 }
 
 # Deployment from Content Library
-```hcl
 resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
   name = "centos-from-cl-01"
   
@@ -332,7 +331,6 @@ data "cloudtemple_compute_virtual_machine" "existing_vm" {
 }
 
 # Creating a Virtual Disk
-```hcl
 resource "cloudtemple_compute_virtual_disk" "data_disk" {
   name = "data-disk-01"
   
@@ -380,7 +378,6 @@ data "cloudtemple_compute_virtual_machine" "vm" {
 }
 
 # Creating a Network Adapter
-```terraform
 resource "cloudtemple_compute_network_adapter" "eth1" {
   name = "Network adapter 2"
   
@@ -418,7 +415,6 @@ data "cloudtemple_compute_virtual_machine" "vm" {
 }
 
 # Creating a SCSI Controller
-```hcl
 resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
   name = "SCSI controller 1"
   
@@ -488,8 +484,6 @@ data "cloudtemple_backup_iaas_opensource_policy" "daily" {
 }
 
 # VM Creation
-
-```hcl
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "openstack_vm" {
   name        = "almalinux-vm-01"
   power_state = "on"
@@ -573,7 +567,6 @@ data "cloudtemple_backup_iaas_opensource_policy" "nobackup" {
 }
 
 # Deployment from Marketplace
-```hcl
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "marketplace_vm" {
   name        = "ubuntu-marketplace-01"
   power_state = "on"
@@ -628,11 +621,8 @@ data "cloudtemple_compute_iaas_opensource_storage_repository" "replication_targe
   name               = "target_storage_repository_name"
   machine_manager_id = "availability_zone_id"
 }
-```
 
 # Creating a replication policy
-
-```hcl
 resource "cloudtemple_compute_iaas_opensource_replication_policy" "policy_hourly" {
   name                  = "replication-policy-6h"
   storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.replication_target.id
@@ -643,8 +633,6 @@ hours = 1
 }
 
 # Association to a VM
-
-```hcl
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
   name = "replicated-vm-01"
   
@@ -677,8 +665,6 @@ data "cloudtemple_backup_iaas_opensource_policy" "weekly" {
 }
 
 # VM with Multiple Backup Policies
-
-```hcl
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "backup_vm" {
   name = "important-vm-01"
   
@@ -718,8 +704,6 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "priority_ha" {
 }
 
 # VM with best-effort
-
-```hcl
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "besteff_ha" {
   name              = "test-vm-01"
   high_availability = "best-effort"
@@ -776,15 +760,15 @@ Create `cloud-init/network-config.yml`:
 version: 2
 ethernets:
   ens160:
-dhcp4: false
-addresses:
-  - 0.0.0.0/24
-routes:
-  - to: default
-    via: 0.0.0.0
-nameservers:
-  addresses:
-    - 0.0.0.0
+    dhcp4: false
+    addresses:
+      - 0.0.0.0/24
+    routes:
+      - to: default
+        via: 0.0.0.0
+    nameservers:
+      addresses:
+        - 0.0.0.0
 ```
 
 :::important[Note]
@@ -845,7 +829,7 @@ The `os_disk` and `os_network_adapter` blocks are special blocks that can be use
 
 - Content Library  
 - Template  
-- Marketplace Cloud Template  
+- Marketplace Cloud Temple  
 - Clone of an existing VM  
 
 :::info[info]
@@ -994,8 +978,6 @@ resource "cloudtemple_object_storage_bucket" "public_bucket" {
 }
 
 # Bucket with Custom Access (IP Whitelist)
-
-```hcl
 resource "cloudtemple_object_storage_bucket" "custom_bucket" {
   name        = "my-custom-bucket"
   access_type = "custom"
@@ -1007,11 +989,8 @@ resource "cloudtemple_object_storage_bucket" "custom_bucket" {
 "203.0.113.42/32"
   ]
 }
-```
 
 # Bucket with versioning enabled
-
-```hcl
 resource "cloudtemple_object_storage_bucket" "versioned_bucket" {
   name        = "my-versioned-bucket"
   access_type = "private"
@@ -1052,8 +1031,6 @@ resource "cloudtemple_object_storage_storage_account" "app_account" {
 }
 
 # Outputs to use the credentials
-
-```hcl
 output "s3_access_key" {
   value = cloudtemple_object_storage_storage_account.app_account.access_key_id
 }
@@ -1108,8 +1085,6 @@ resource "cloudtemple_object_storage_bucket" "shared_bucket" {
 }
 
 # ACL for dev team (read-only)
-
-```hcl
 resource "cloudtemple_object_storage_acl_entry" "dev_acl" {
   bucket          = cloudtemple_object_storage_bucket.shared_bucket.name
   storage_account = data.cloudtemple_object_storage_storage_account.dev_account.name
@@ -1122,8 +1097,10 @@ resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
   storage_account = data.cloudtemple_object_storage_storage_account.ops_account.name
   role            = data.cloudtemple_object_storage_role.maintainer.name
 }
+```
 
 **Available roles**:
+
 - `read_write`: Read and write
 - `write_only`: Write only
 - `read_only`: Read only
@@ -1154,8 +1131,6 @@ data "cloudtemple_object_storage_role" "maintainer" {
 }
 
 # Bucket with Inline ACLs
-
-```hcl
 resource "cloudtemple_object_storage_bucket" "bucket_with_acl" {
   name        = "bucket-with-inline-acl"
   access_type = "private"
@@ -1186,8 +1161,6 @@ role            = data.cloudtemple_object_storage_role.maintainer.name
 
 ```hcl
 # Datasource to list files in a bucket
-
-```hcl
 data "cloudtemple_object_storage_bucket_files" "my_bucket_files" {
   bucket_name = cloudtemple_object_storage_bucket.my_bucket.name
 }
@@ -1214,6 +1187,7 @@ output "account_access_key" {
   value     = data.cloudtemple_object_storage_storage_account.existing_account.access_key_id
   sensitive = true
 }
+```
 
 ### S3 Integration with the AWS Provider
 
@@ -1242,8 +1216,6 @@ role            = data.cloudtemple_object_storage_role.maintainer.name
 }
 
 # AWS Provider Configuration for Cloud Temple S3
-
-```hcl
 provider "aws" {
   alias  = "cloudtemple_s3"
   region = "eu-west-3"
@@ -1262,11 +1234,8 @@ s3 = "https://${cloudtemple_object_storage_bucket.upload_bucket.namespace}.s3.fr
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
 }
-```
 
 # File upload
-
-```hcl
 resource "aws_s3_object" "config_file" {
   provider = aws.cloudtemple_s3
 
@@ -1277,8 +1246,6 @@ resource "aws_s3_object" "config_file" {
 }
 
 # Multiple file upload
-
-```hcl
 resource "aws_s3_object" "static_files" {
   provider = aws.cloudtemple_s3
 
@@ -1291,8 +1258,6 @@ resource "aws_s3_object" "static_files" {
 }
 
 # Uploaded Files Verification
-
-```hcl
 data "cloudtemple_object_storage_bucket_files" "uploaded_files" {
   depends_on  = [aws_s3_object.config_file]
   bucket_name = cloudtemple_object_storage_bucket.upload_bucket.name
@@ -1301,6 +1266,7 @@ data "cloudtemple_object_storage_bucket_files" "uploaded_files" {
 output "uploaded_files_list" {
   value = data.cloudtemple_object_storage_bucket_files.uploaded_files.files
 }
+```
 
 ## Conclusion
 

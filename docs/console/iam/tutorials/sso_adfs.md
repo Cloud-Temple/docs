@@ -34,7 +34,7 @@ L'ADFS doit pouvoir être accessible depuis les réseaux de Cloud Temple et __ex
 
 Les utilisateurs souhaitant se connecter sur le portail doivent avoir leur email, nom et prénom renseignés sur l'Active Directory.
 
-## Etape 2 : Demander la configuration du SSO (Single Sign-On) de votre organisation
+## Étape 1 : Demander la configuration du SSO (Single Sign-On) de votre organisation
 
 Cette partie de la configuration se fait au niveau de l'organisation par l'équipe Cloud temple.
 
@@ -55,7 +55,7 @@ L'équipe support Cloud Temple vous transmettra une URL qui ressemblera à celle
 
 *Vous pouvez coller l'URL dans un navigateur afin de la tester. Si elle fonctionne correctement vous devriez voir s'afficher un XML*
 
-## Etape 3 : Réalisation de la configuration ADFS
+## Étape 2 : Réalisation de la configuration ADFS
 
 ### Configuration de la fédération d'authentification
 
@@ -113,7 +113,7 @@ Sélectionnez le magasin d'attributs et ajoutez les attributs "E-Mail Addresses,
 
 Il vous suffit d'appliquer les changements.
 
-## Etape 3 : Finalisation
+## Étape 3 : Finalisation
 
 vous pouvez désormais tester en vous rendant sur la Console et en cliquant sur le bouton correspondant à l'authentification  ADFS client; dans cet exemple, il s'agit ici de __"ADFS Test"__
 

@@ -34,7 +34,7 @@ ADFS must be accessible from Cloud Temple's networks and __must expose a TLS cer
 
 Users wishing to log in to the portal must have their email, last name, and first name filled in on Active Directory.
 
-## Step 2: Request SSO (Single Sign-On) Configuration for Your Organization
+## Step 1: Request SSO (Single Sign-On) Configuration for Your Organization
 
 This configuration step is performed at the organization level by the Cloud Temple team.
 
@@ -55,7 +55,7 @@ The Cloud Temple support team will send you a URL that will look like this: [htt
 
 *You can paste the URL into a browser to test it. If it works correctly, you should see an XML document displayed.*
 
-## Step 3: ADFS Configuration Implementation
+## Step 2: ADFS Configuration Implementation
 
 ### Authentication Federation Configuration
 

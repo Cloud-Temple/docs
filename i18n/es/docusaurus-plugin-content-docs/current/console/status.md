@@ -12,19 +12,19 @@ import shivaIncident_004 from '@site/docs/console/images/shiva_incident_004.png'
 import shivaIncident_005 from '@site/docs/console/images/shiva_incident_005.png'
 import shivaIncident_006 from '@site/docs/console/images/shiva_incident_006.png'
 
-As with any cloud infrastructure platform, the Temple Cloud platform undergoes regular hardware and software maintenance and updates.
+Como toda plataforma de infraestructura Cloud, la plataforma Cloud Temple es objeto de trabajos y de mantenimiento de hardware y software de forma regular.
 
-## Access to ongoing operations and incidents
+## Acceso a las operaciones e incidentes en curso
 
-The operations tracking icon allows you to view planned operations on the Cloud Temple infrastructure as well as open incidents on the tenant. This icon is accessible in the icon bar in the upper-left corner of the screen and appears as the __'Tools'__ icon.
+El icono de seguimiento de las operaciones permite visualizar las operaciones planificadas en la infraestructura Cloud Temple, así como los incidentes abiertos en el tenant. Este icono está accesible en la barra de iconos, en la parte superior izquierda de la pantalla, y tiene la forma de un icono __'Herramientas'__.
 
 <img src={shivaInterventionMenu01} />
 
-This icon is designed to provide visibility into planned, ongoing, and completed interventions, as well as incidents on the tenant.
+Este icono tiene como objetivo ofrecer visibilidad sobre las intervenciones planificadas, en curso y finalizadas y/o los incidentes en el tenant.
 
-When ongoing interventions and/or incidents exist, a number appears on the icon.
+Cuando hay intervenciones y/o incidentes en curso, aparece un número en el icono.
 
-By clicking on "Quick view," you will see the ongoing interventions. It is also possible to click on __'All interventions'__ or __'All incidents and tenant reports'__ to display more details.
+Al hacer clic en la vista rápida, encontrará las intervenciones en curso. También es posible hacer clic en __'Todas las intervenciones'__ o en __'Todos los incidentes e informes del tenant'__ para mostrar más detalles.
 
 <img src={shivaInterventionMenu03} />
 
@@ -60,7 +60,7 @@ A continuación se muestra un ejemplo de la pestaña que muestra estos informes:
 
 <img src={shivaIncident_003} />
 
-### Incidents en un entorno cliente
+### Incidentes en un entorno cliente
 
 La visibilidad de los incidentes específicos de un entorno cliente requiere el permiso __incident_read__. Estos incidentes se representan mediante un ícono dedicado, acompañado de un indicador rojo que muestra el número de incidentes activos.
 

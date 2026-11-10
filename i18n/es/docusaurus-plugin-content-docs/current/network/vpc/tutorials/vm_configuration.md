@@ -10,9 +10,9 @@ import vpcMacAddressAssociateModale from '@site/docs/network/vpc/images/vpc_mac_
 
 # Configuración de Red de la VM
 
-This tutorial guides you through connecting a virtual machine to a VPC network and assigning it a static (private) IP address, as well as a public IP address if required.
+Este tutorial le guía para conectar una máquina virtual a una red VPC y asignarle una IP estática (privada), así como una IP pública si es necesario.
 
-## Requis previos
+## Requisitos previos
 
 * Tener un VPC y una red privada creados.
 * Tener una VM desplegada (IaaS de código abierto o VMware).
@@ -50,19 +50,19 @@ Este método es útil para reservar una IP antes de crear la VM o para modificar
 4. En el cuadro de diálogo, asocie una de las IPs estáticas a una dirección MAC de una VM.
 <img src={vpcMacAddressAssociateModale} />
 
-## 2. Associating a Public IP (Optional)
+## 2. Asociación de una IP pública (Opcional)
 
-If you want to make your VM accessible from the internet.
+Si desea que su VM sea accesible desde Internet.
 
-1. From the detailed view of your VPC, go to the **Public IPs** tab.  
+1. Desde la vista detallada de su VPC, acceda a la pestaña **IPs públicas**.  
 <img src={vpcDetailIpsPub} />
 
-2. Click the **Associate a public IP** button.
+2. Haga clic en el botón **Asociar una IP pública**.
 
-3. In the modal, select the target private network and static IP, then confirm the association.  
+3. En el cuadro de diálogo, seleccione la red privada y la IP estática de destino y, a continuación, confirme la asociación.  
 <img src={vpcIpPubAssociate} />
 
-4. Once the association is complete, you can use this public IP address to access your VM.
+4. Una vez realizada la asociación, puede utilizar esta dirección IP pública para acceder a su VM.
 
 ## Configuración del SO invitado
 

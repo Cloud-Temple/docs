@@ -2,11 +2,11 @@
 title: Sincronizar un directorio con mc mirror
 ---
 
-La comando `mc mirror` es una herramienta poderosa para sincronizar el contenido de un directorio local con un bucket S3. Puede transferir nuevos o modificados archivos, y opcionalmente eliminar los archivos del bucket que no existan localmente. Es una forma eficiente de mantener copias de seguridad o desplegar un sitio estático.
+El comando `mc mirror` es una herramienta poderosa para sincronizar el contenido de un directorio local con un bucket S3. Puede transferir los archivos nuevos o modificados y, opcionalmente, eliminar los archivos del bucket que ya no existan localmente. Es una forma eficiente de mantener copias de seguridad o desplegar un sitio estático.
 
-No olvide configurar su [cliente MinIO según lo indicado en el guía de inicio](../quickstart.md).
+No olvide configurar su [cliente MinIO según lo indicado en la guía de inicio](../quickstart.md).
 
-### Traducción al español (Español)
+### Ejemplo básico
 
 Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket `demo-app` en su alias `cloudtemple-fr1`:
 
@@ -16,9 +16,10 @@ Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket 
 
 ### Opciones útiles
 
-* `--overwrite`: Reemplaza los archivos existentes en la destino, incluso si son más recientes.
-* `--remove`: Elimina los archivos de la destino que no existen en el directorio fuente. **Utilizar con precaución**, ya que esto puede causar una pérdida de datos irreversible.
+* `--overwrite`: Fuerza el reemplazo de los archivos existentes en el destino, incluso si son más recientes.
+* `--remove`: Elimina los archivos del destino que ya no existen en el directorio fuente. **Utilizar con precaución**, ya que esto puede causar una pérdida de datos irreversible.
 
+```bash
 # Sincronización completa con eliminación de archivos remotos obsoletos
->
-> mc mirror --eliminar ./mon-sitio/ cloudtemple-fr1/demo-app/
+❯ mc mirror --remove ./mon-site/ cloudtemple-fr1/demo-app/
+```

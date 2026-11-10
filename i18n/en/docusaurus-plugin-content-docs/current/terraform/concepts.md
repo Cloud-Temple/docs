@@ -52,7 +52,7 @@ The provider authenticates to the Cloud Temple APIs using:
 These credentials are generated from the Cloud Temple Console and allow the provider to perform operations on your behalf.
 
 :::info[Best practices]
-    Store your credentials in environment variables or a secrets manager, never directly in the code.
+Store your credentials in environment variables or a secrets manager, never directly in the code.
 :::
 
 ## Resources
@@ -141,6 +141,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
   host_cluster_id = data.cloudtemple_compute_host_cluster.cluster.id
   # ...
 }
+```
 
 ### Main Datasources
 
@@ -218,11 +219,11 @@ terraform {
 ```
 
 :::warning
-    The `terraform.tfstate` file contains sensitive information. Never commit it to Git and use a secure backend for storage.
+The `terraform.tfstate` file contains sensitive information. Never commit it to Git and use a secure backend for storage.
 :::
 
 :::info
-    OpenTofu enables state and plan encryption by default ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
+OpenTofu enables state and plan encryption by default ([OpenTofu - State and Plan Encryption](https://opentofu.org/docs/language/state/encryption/))
 :::
 
 ## Terraform Lifecycle
@@ -286,28 +287,20 @@ terraform destroy
 ### 5. Other useful commands
 
 ```bash
-```
-
 # Display current state
-
 terraform show
 
 # List resources
-
 terraform state list
 
 # Verify configuration
-
 terraform validate
 
 # Format files
-
 terraform fmt
 
 # Display outputs
-
 terraform output
-
 ```
 
 ## Dependencies and Execution Order
@@ -337,6 +330,7 @@ resource "cloudtemple_compute_virtual_disk" "data" {
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id
   capacity           = 100 * 1024 * 1024 * 1024
 }
+```
 
 ### Explicit dependencies
 
@@ -424,13 +418,13 @@ module "db_server" {
   memory = 16 * 1024 * 1024 * 1024
   cpu    = 8
 }
+```
 
 ## Best practices
 
 ### File Organization
 
 ```
-
 .
 ├── main.tf              # Main resources
 ├── variables.tf         # Variable declarations
@@ -442,7 +436,6 @@ module "db_server" {
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
-
 ```
 
 ### Secret Management
@@ -459,6 +452,7 @@ provider "cloudtemple" {
   client_id = var.cloudtemple_client_id
   secret_id = var.cloudtemple_secret_id
 }
+```
 
 ### Using tags
 

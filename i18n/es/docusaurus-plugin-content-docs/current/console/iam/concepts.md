@@ -162,7 +162,7 @@ Se admiten los siguientes repositorios externos:
 - Auth0
 - KeyCloak
 
-:::info[Important]
+:::info[Importante]
 Se requiere una dirección de correo electrónico para todas las cuentas procedentes de una federación de identidades. Las cuentas creadas sin dirección de correo electrónico no podrán iniciar sesión y podrían eliminarse automáticamente.
 :::
 

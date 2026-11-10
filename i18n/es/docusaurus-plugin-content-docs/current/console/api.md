@@ -82,11 +82,11 @@ Para crear una clave API, basta con __hacer clic en su perfil__:
 
 <img src={ShivaProfil001} style={{maxWidth: '300px', width: '100%'}} />
 
-En el menú del perfil, hacer clic en __'Jeton d'accès personnel'__
+En el menú del perfil, hacer clic en __'Token de acceso personal'__
 
 <img src={ShivaProfil003} />
 
-Entonces tiene en pantalla el conjunto de las claves API que han sido creadas para este usuario en este tenant. Hacer clic en __'Nouveau access token personnel'__
+Entonces tiene en pantalla el conjunto de las claves API que han sido creadas para este usuario en este tenant. Hacer clic en __'Nuevo token de acceso personal'__
 
 <img src={ShivaProfil002} />
 

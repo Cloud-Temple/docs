@@ -2,7 +2,7 @@
 title: Bereitstellen einer Open-Source-PfSense-Firewall
 tags:
   - internet
-  - anleitungen
+  - tutorials
 ---
 import pfSenseWebui from '@site/docs/network/internet/images/pfsense_webui.png';
 import pfSenseHomePage from '@site/docs/network/internet/images/pfsense_home_page.png';
@@ -16,7 +16,7 @@ import routeServerNeighbor from '@site/docs/network/internet/images/route_server
 import neighborsOverview from '@site/docs/network/internet/images/neighbors_overview.png';
 import pfSenseBgpStatus from '@site/docs/network/internet/images/pfsense_bgp_status.png';
 
-Dieser Leitfaden hilft Ihnen, Ihre __Open-Source-PfSense-Firewall__ im Cloud de Confiance in nur wenigen Minuten bereitzustellen.
+Dieser Leitfaden hilft Ihnen, Ihre __Open-Source-PfSense-Firewall__ in der vertrauenswürdigen Cloud in nur wenigen Minuten bereitzustellen.
 
 ## Voraussetzungen
 
@@ -80,15 +80,15 @@ Sobald beide VMs erfolgreich installiert sind, besteht der zweite Schritt darin,
 ### Konfiguration der Firewall
 In diesem Schritt werden die BGP-Nachbarn der FW konfiguriert.
 
-- Stellen Sie zunächst sicher, dass der BGP-Traffic über TCP-Port 179 in __'Firewall > Regeln'__ zugelassen wird:
+- Stellen Sie zunächst sicher, dass der BGP-Traffic über TCP-Port 179 in __'Firewall > Rules'__ zugelassen wird:
 
 <img src={pfSenseBgpRule} />
 
-- Navigieren Sie zu __'Dienste > FRR BGP'__, um die Konfiguration Ihrer BGP-Sitzung zu starten:
+- Navigieren Sie zu __'services > FRR BGP'__, um die Konfiguration Ihrer BGP-Sitzung zu starten:
 
 <img src={pfSenseFrrPackage} />
 
-- Aktivieren Sie die ersten beiden Kontrollkästchen und geben Sie die Nummer Ihrer lokalen AS sowie die Telefonnummern ein, die Ihnen vom CDS mitgeteilt wurden.
+- Aktivieren Sie die ersten beiden Kontrollkästchen und geben Sie die Nummer Ihrer lokalen AS sowie die Timer-Werte ein, die Ihnen vom CDS mitgeteilt wurden.
 
 <img src={pfSenseGeneralConf} />
 

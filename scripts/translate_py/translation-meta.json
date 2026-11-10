@@ -109,10 +109,10 @@
       "it": "6a09bfb38ae5504a7b40678029edf6caf5b4ce0c2201993da5f78736b9d78f7c"
     },
     "console/iam/tutorials/sso_adfs.md": {
-      "en": "606b1e74af281a97dc6c45adc4a7e5fcf461776e0cdf2ea86945b3ceabe9d7d0",
-      "de": "606b1e74af281a97dc6c45adc4a7e5fcf461776e0cdf2ea86945b3ceabe9d7d0",
-      "es": "606b1e74af281a97dc6c45adc4a7e5fcf461776e0cdf2ea86945b3ceabe9d7d0",
-      "it": "606b1e74af281a97dc6c45adc4a7e5fcf461776e0cdf2ea86945b3ceabe9d7d0"
+      "en": "cecee80bc0454f3970fa400a1d57c2636f259064445466526d1e9ad7812efb59",
+      "de": "cecee80bc0454f3970fa400a1d57c2636f259064445466526d1e9ad7812efb59",
+      "es": "cecee80bc0454f3970fa400a1d57c2636f259064445466526d1e9ad7812efb59",
+      "it": "cecee80bc0454f3970fa400a1d57c2636f259064445466526d1e9ad7812efb59"
     },
     "console/iam/tutorials/sso_azuread.md": {
       "en": "5f7663bd054a82964ede9dfe11dc45e6a2a79624c7b924bafce3f9fd91195fec",
@@ -163,10 +163,10 @@
       "it": "b85da2ec50e685a12facb3d5d4fcb03b71e15e07dc9ef4ce7fcc356412e4c5a3"
     },
     "console/security/security_recommendations.md": {
-      "en": "eefedc5da5e45edcf7efd1d579be3da31dc53391b54290b60c5331c9807c44c1",
-      "de": "eefedc5da5e45edcf7efd1d579be3da31dc53391b54290b60c5331c9807c44c1",
-      "es": "eefedc5da5e45edcf7efd1d579be3da31dc53391b54290b60c5331c9807c44c1",
-      "it": "eefedc5da5e45edcf7efd1d579be3da31dc53391b54290b60c5331c9807c44c1"
+      "en": "537125fc661eb6a6c269b6ee173369f513f6298a892038e44f02f719651b437a",
+      "de": "537125fc661eb6a6c269b6ee173369f513f6298a892038e44f02f719651b437a",
+      "es": "537125fc661eb6a6c269b6ee173369f513f6298a892038e44f02f719651b437a",
+      "it": "537125fc661eb6a6c269b6ee173369f513f6298a892038e44f02f719651b437a"
     },
     "console/status.md": {
       "en": "8b1c1ce62958e9efb902dbbf2fdfe523cbe5c51944105a350c68b763a4d45512",
@@ -631,10 +631,10 @@
       "it": "0cb74fdb4bdd2e5164fc121e675a2feeb64b69e24f27b7645292839067cc364a"
     },
     "managed_postgresql/quickstart.md": {
-      "en": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf",
-      "de": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf",
-      "es": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf",
-      "it": "8deb4fe52d9dd71834fa983412d2bf2d81a88bdf6143313d10b76c055d114cbf"
+      "en": "35f3f3bd94759eca9d9548107fb97d591fc8ad6eaf4bd711e8fd1469066f87c2",
+      "de": "35f3f3bd94759eca9d9548107fb97d591fc8ad6eaf4bd711e8fd1469066f87c2",
+      "es": "35f3f3bd94759eca9d9548107fb97d591fc8ad6eaf4bd711e8fd1469066f87c2",
+      "it": "35f3f3bd94759eca9d9548107fb97d591fc8ad6eaf4bd711e8fd1469066f87c2"
     },
     "managed_postgresql/tutorials.md": {
       "en": "2741f0170e09f40a993a32735b5762abbbc2140f2117713973264daab4db0ce4",
@@ -1009,16 +1009,16 @@
       "it": "3a0bda400fc4903c35d076f540a5c229f6f7a340cf4052de369723a101ec9e34"
     },
     "storage/oss/tutorials/aws-s3-sync.md": {
-      "en": "8cbcf8fde7507d34a871ab5dc7e38a28bcd504b45e34de721fe5fead59697c2c",
-      "de": "8cbcf8fde7507d34a871ab5dc7e38a28bcd504b45e34de721fe5fead59697c2c",
-      "es": "8cbcf8fde7507d34a871ab5dc7e38a28bcd504b45e34de721fe5fead59697c2c",
-      "it": "8cbcf8fde7507d34a871ab5dc7e38a28bcd504b45e34de721fe5fead59697c2c"
+      "en": "b2157b867caa4a878ed9f390fb4cec97ccb25b9f656f835a01645b162a826877",
+      "de": "b2157b867caa4a878ed9f390fb4cec97ccb25b9f656f835a01645b162a826877",
+      "es": "b2157b867caa4a878ed9f390fb4cec97ccb25b9f656f835a01645b162a826877",
+      "it": "b2157b867caa4a878ed9f390fb4cec97ccb25b9f656f835a01645b162a826877"
     },
     "storage/oss/tutorials/bucket-access.md": {
-      "en": "33f13203c56349a9ae8e452d89b5e2a012ac72ed8538d2b08ae7f8fdd9d7a9bf",
-      "de": "33f13203c56349a9ae8e452d89b5e2a012ac72ed8538d2b08ae7f8fdd9d7a9bf",
-      "es": "33f13203c56349a9ae8e452d89b5e2a012ac72ed8538d2b08ae7f8fdd9d7a9bf",
-      "it": "33f13203c56349a9ae8e452d89b5e2a012ac72ed8538d2b08ae7f8fdd9d7a9bf"
+      "en": "1fdfb78cd3a6c47a7ee138bedfa49e1be1b13097ab2e317cd1b5c176d201ef9b",
+      "de": "1fdfb78cd3a6c47a7ee138bedfa49e1be1b13097ab2e317cd1b5c176d201ef9b",
+      "es": "1fdfb78cd3a6c47a7ee138bedfa49e1be1b13097ab2e317cd1b5c176d201ef9b",
+      "it": "1fdfb78cd3a6c47a7ee138bedfa49e1be1b13097ab2e317cd1b5c176d201ef9b"
     },
     "storage/oss/tutorials/cloudberry-explorer.md": {
       "en": "2348b776db3934a391e691c405b5b5f4eabe0b19c854eff8edc9c398bf9abe30",
@@ -1075,10 +1075,10 @@
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
     },
     "terraform/quickstart.md": {
-      "en": "3507e021523367f311f0dfe1e02ff4a0d8a97841993c4cdd9cf3053bc4ffacc2",
-      "de": "3507e021523367f311f0dfe1e02ff4a0d8a97841993c4cdd9cf3053bc4ffacc2",
-      "es": "3507e021523367f311f0dfe1e02ff4a0d8a97841993c4cdd9cf3053bc4ffacc2",
-      "it": "3507e021523367f311f0dfe1e02ff4a0d8a97841993c4cdd9cf3053bc4ffacc2"
+      "en": "88076aa737b9dc37d223c013596c18d04e3b131381ed63c5883c0fbe63b1a587",
+      "de": "88076aa737b9dc37d223c013596c18d04e3b131381ed63c5883c0fbe63b1a587",
+      "es": "88076aa737b9dc37d223c013596c18d04e3b131381ed63c5883c0fbe63b1a587",
+      "it": "88076aa737b9dc37d223c013596c18d04e3b131381ed63c5883c0fbe63b1a587"
     },
     "terraform/terraform.md": {
       "en": "4f2be8020a1fc840629b091cc85bc1ee2bc2b8657d089e3ae7c891b493d3fa5f",
@@ -1087,10 +1087,10 @@
       "it": "4f2be8020a1fc840629b091cc85bc1ee2bc2b8657d089e3ae7c891b493d3fa5f"
     },
     "terraform/tutorials.md": {
-      "en": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0",
-      "de": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0",
-      "es": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0",
-      "it": "1f532fe40db1196a2cc8a965bc05ccb1f311ef575e207f0d6ef3e47cc389bef0"
+      "en": "dbb6bb8511c3b2f19234be30284acb9b3e10642795c8d3a979177a14df4862ad",
+      "de": "dbb6bb8511c3b2f19234be30284acb9b3e10642795c8d3a979177a14df4862ad",
+      "es": "dbb6bb8511c3b2f19234be30284acb9b3e10642795c8d3a979177a14df4862ad",
+      "it": "dbb6bb8511c3b2f19234be30284acb9b3e10642795c8d3a979177a14df4862ad"
     },
     "console/concepts.md": {
       "en": "3b15d9f8edf016de61b099637ab0011996ce6b7d5adc43027c7e5f234245b143",

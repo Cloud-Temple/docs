@@ -63,11 +63,11 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 | Attività                                                                                                    | Cliente | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|---------|--------------|
 | Creare, modificare ed eliminare un **VPC**                                                                     | **RA**  | **I**        |
-| Definire l'architettura di rete del VPC (nombre de sous-réseaux, topologie)                                   | **RA**  |              |
-| Creare, modifier et supprimer des **reti private (Private Networks / VLANs)** nel VPC                 | **RA**  | **I**        |
-| Definire il **piano di indirizzamento IP** (plages CIDR) delle reti private                                        | **RA**  | **I**        |
-| Configurare i **pool DHCP** (plages dynamiques, DNS, gateway)                                             | **RA**  | **C**        |
-| Attivare e configurare il **Gateway Esterno** (accès Internet, NAT, DNAT) *(2)*                          | **RA**  | **C**        |
+| Definire l'architettura di rete del VPC (numero di sottoreti, topologia)                                      | **RA**  |              |
+| Creare, modificare ed eliminare **reti private (Private Networks / VLANs)** nel VPC                     | **RA**  | **I**        |
+| Definire il **piano di indirizzamento IP** (intervalli CIDR) delle reti private                                        | **RA**  | **I**        |
+| Configurare i **pool DHCP** (intervalli dinamici, DNS, gateway)                                             | **RA**  | **C**        |
+| Attivare e configurare il **Gateway Esterno** (accesso Internet, NAT, DNAT) *(2)*                          | **RA**  | **C**        |
 | Gestire le **rotte statiche** all'interno del VPC                                                               | **RA**  |              |
 
 *(2) L'attivazione del Gateway Esterno apre l'accesso a Internet per il VPC. Il cliente è responsabile delle regole di filtraggio e del controllo del traffico associato.*
@@ -88,7 +88,7 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 
 ## Sicurezza di rete
 
-| Attività                                                                                                    | Client | Cloud Temple |
+| Attività                                                                                                    | Cliente | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Garantire l'**isolamento di rete inter-tenant** a livello di piattaforma *(3)*                              |        | **RA**       |
 | Definire e configurare le **politiche di micro-segmentazione** (security groups) *(4)*                     | **RA** |              |
@@ -97,9 +97,9 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 | Eseguire **test di intrusione** sulle risorse ospitate nel VPC *(6)*                          | **RA** | **C**        |
 | Monitorare i **comportamenti anomali** sui flussi di rete del tenant                                     | **RA** |              |
 
-*(3) Cloud Temple garantisce l'isolamento rigoroso tra VPC appartenenti a tenant diversi. Nessun flusso può attraversare questa barriera senza un'azione esplicita del client.*  
-*(4) La micro-segmentazione (security groups) è annunciata (vedete le [prossime evoluzioni](../../network/vpc/concepts.md#prossime-evoluzioni)). Fino alla sua disponibilità, le politiche di filtraggio devono essere implementate dal client tramite un'attrezzatura di sicurezza dedicata.*  
-*(5) Il filtraggio applicativo dei flussi all'interno del VPC è di responsabilità del client. Cloud Temple non effettua ispezione del contenuto dei flussi del tenant.*  
+*(3) Cloud Temple garantisce l'isolamento rigoroso tra VPC appartenenti a tenant diversi. Nessun flusso può attraversare questa barriera senza un'azione esplicita del cliente.*  
+*(4) La micro-segmentazione (security groups) è annunciata (vedete le [prossime evoluzioni](../../network/vpc/concepts.md#prossime-evoluzioni)). Fino alla sua disponibilità, le politiche di filtraggio devono essere implementate dal cliente tramite un'attrezzatura di sicurezza dedicata.*  
+*(5) Il filtraggio applicativo dei flussi all'interno del VPC è di responsabilità del cliente. Cloud Temple non effettua ispezione del contenuto dei flussi del tenant.*  
 *(6) I test di intrusione devono essere oggetto di una dichiarazione preventiva a Cloud Temple, conformemente alle condizioni generali di utilizzo.*
 
 ## Interconnessione con reti esterne
@@ -127,7 +127,7 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 
 ## Monitoraggio e osservabilità di rete
 
-| Attività                                                                                                    | Client | Cloud Temple |
+| Attività                                                                                                    | Cliente | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|--------|--------------|
 | Monitorare il funzionamento dei **componenti core del VPC** (router, gateway)                             | **I**  | **RA**       |
 | Monitorare le **prestazioni del backbone** di rete Cloud Temple                                             | **I**  | **RA**       |
@@ -172,10 +172,10 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 
 | Attività                                                                                                    | Cliente | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|---------|--------------|
-| Gestire l'aspetto commerciale e contrattuale (devis, commandes, facturation)                             | **I**   | **RA**       |
+| Gestire l'aspetto commerciale e contrattuale (preventivi, ordini, fatturazione)                             | **I**   | **RA**       |
 | Gestire il monitoraggio contrattuale della prestazione                                                               | **RA**  | **I**        |
 | Garantire la manutenzione e la disponibilità della documentazione tecnica del servizio VPC                     | **I**   | **RA**       |
-| Documentare l'architettura di rete distribuita nel proprio tenant (schémas, CMDB)                                   | **RA**  |              |
+| Documentare l'architettura di rete distribuita nel proprio tenant (schemi, CMDB)                                   | **RA**  |              |
 
 ---
 

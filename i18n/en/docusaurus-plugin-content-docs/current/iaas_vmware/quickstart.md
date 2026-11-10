@@ -399,7 +399,7 @@ Anti-affinity rules are crucial for applications requiring high availability,
 such as in production environments where fault tolerance is a priority.
 For example, you do not want your two Active Directories on the same hypervisor.
 
-When creating a rule, you define the rule type (affinité / anti-affinité), the rule name,
+When creating a rule, you define the rule type (affinity / anti-affinity), the rule name,
 its activation status (__'Statut'__), and the affected machines in your hypervisor cluster.
 
 <img src={shivaCpool_006} />
