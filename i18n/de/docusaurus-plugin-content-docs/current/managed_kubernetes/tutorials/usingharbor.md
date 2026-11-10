@@ -15,7 +15,7 @@ In diesem Leitfaden ersetzen Sie die folgenden Variablen durch Ihre Werte:
 
 ## Voraussetzungen
 
-- Zugriff auf die Konsole und den Managed Kubernetes-Dienst
+- Ein Managed Kubernetes-Cluster und Zugriff auf seine Harbor-Oberfläche (`<HARBOR_URL>`)
 - Ein bestehendes Harbor-Projekt (oder Berechtigungen zur Erstellung eines neuen)
 - Lokal installierte Tools:
   - Docker oder Podman
