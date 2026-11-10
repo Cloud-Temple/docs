@@ -37,14 +37,6 @@ Hier finden Sie die häufig gestellten Fragen zu den Produkten und Diensten von 
       <div class="book-card-cta">FAQ ansehen →</div>
     </div>
   </a>
-  <a class="book-card book-card--violet" href="./gpu/faq">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-title">GPU</div>
-      <div class="book-card-desc">Rubrik in Vorbereitung.</div>
-      <div class="book-card-cta">FAQ ansehen →</div>
-    </div>
-  </a>
 </div>
 
 ---

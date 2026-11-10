@@ -97,6 +97,26 @@ Les lames de calcul disponibles pour l'offre Bare Metal offrent une gamme de per
 - **(3)** La connectivité physique est mutualisée pour l'accès réseau et l'accès stockage bloc, grâce à une architecture convergée Cisco UCS.
 - **(4)** Les GPU disponibles évoluent en fonction des dernières technologies. Le produit propose des GPU NVIDIA L40S et NVIDIA H100.
 
+### GPU
+
+Deux classes de lames embarquent chacune deux cartes NVIDIA dédiées à votre usage : PERFORMANCE 4 (2 × NVIDIA L40S 48 Go) et PERFORMANCE 5 (2 × NVIDIA H100 80 Go). Elles servent à l'entraînement et à l'inférence de modèles d'IA, à la vision par ordinateur, à la simulation et au calcul scientifique. CUDA, cuDNN et les principaux frameworks d'IA (TensorFlow, PyTorch, etc.) s'utilisent sans adaptation.
+
+| Paramètre               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| Mémoire GPU             | 48 Go        | 80 Go        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Consommation maximale   | 350 W        | 350 W        |
+
+\* Valeurs du constructeur NVIDIA avec parcimonie structurée (sparsity). Sans parcimonie, ces valeurs sont divisées par deux.
+
+La technologie Multi-Instance GPU (MIG) partitionne une carte H100 en 7 instances au plus. Chaque instance dispose de sa propre mémoire et de ses propres unités de calcul, isolées des autres instances. Plusieurs charges de travail partagent ainsi une même carte sans interférer entre elles. Les cartes L40S ne prennent pas en charge le Multi-Instance GPU.
+
+- Le nombre et le modèle des cartes sont fixés par la classe de lame : la configuration GPU d'une lame ne se modifie pas.
+- Les lames Bare Metal équipées de GPU peuvent servir de nœuds workers à Managed Kubernetes : voir [Utiliser un GPU sur Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).
+
 ### Classes de stockage en mode bloc
 
 <a id="caractéristiques"></a>

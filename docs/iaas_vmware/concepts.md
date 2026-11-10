@@ -183,6 +183,24 @@ __Remarques__ :
 
 - __(5)__ Connectivité de la lame PERFORMANCE 5 : nous consulter.
 
+### GPU
+
+Deux classes de lames embarquent chacune deux cartes NVIDIA : PERFORMANCE 4 (2 × NVIDIA L40S 48 Go) et PERFORMANCE 5 (2 × NVIDIA H100 80 Go, proposée avec un engagement de 24 mois). Un cluster d'hyperviseurs se compose de lames d'un même type : les lames GPU forment un cluster distinct.
+
+| Paramètre               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| Mémoire GPU             | 48 Go        | 80 Go        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Consommation maximale   | 350 W        | 350 W        |
+
+\* Valeurs du constructeur NVIDIA avec parcimonie structurée (sparsity). Sans parcimonie, ces valeurs sont divisées par deux.
+
+- Le nombre et le modèle des cartes sont fixés par la classe de lame : la configuration GPU d'une lame ne se modifie pas.
+- Pour utiliser un GPU depuis une machine virtuelle, activez les paramètres avancés `pciPassthru.use64bitMMIO` et `pciPassthru.64bitMMIOSizeGB` (voir le [guide de démarrage](quickstart.md)).
+
 ### Réseau
 
 Le service réseau sur la plateforme IaaS de Cloud Temple repose sur une infrastructure réseau basée sur la technologie VPLS, offrant une segmentation flexible et performante pour répondre aux besoins des clients en matière de connectivité et d’isolation réseau.

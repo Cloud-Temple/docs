@@ -97,6 +97,26 @@ Die für das Bare Metal-Angebot verfügbaren Compute-Blades bieten eine Bandbrei
 - **(3)** Die physische Konnektivität wird dank einer konvergenten Cisco UCS-Architektur gemeinsam für den Netzwerkzugriff und den Zugriff auf den Blockspeicher genutzt.
 - **(4)** Die verfügbaren GPUs entwickeln sich mit den neuesten Technologien weiter. Das Produkt bietet NVIDIA L40S- und NVIDIA H100-GPUs.
 
+### GPU
+
+Zwei Blade-Klassen tragen jeweils zwei NVIDIA-Karten, die Ihnen exklusiv zur Verfügung stehen: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) und PERFORMANCE 5 (2 × NVIDIA H100 80 GB). Sie dienen dem Training und der Inferenz von KI-Modellen, Computer Vision, Simulation und wissenschaftlichem Rechnen. CUDA, cuDNN und die wichtigsten KI-Frameworks (TensorFlow, PyTorch usw.) funktionieren ohne Anpassung.
+
+| Parameter               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| GPU-Speicher            | 48 GB        | 80 GB        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Maximale Leistungsaufnahme | 350 W     | 350 W        |
+
+\* Herstellerangaben von NVIDIA mit strukturierter Sparsity. Ohne Sparsity halbieren sich diese Werte.
+
+Die Technologie Multi-Instance GPU (MIG) partitioniert eine H100-Karte in höchstens 7 Instanzen. Jede Instanz verfügt über eigenen Speicher und eigene Recheneinheiten, die von den anderen Instanzen isoliert sind. So können mehrere Workloads eine Karte gemeinsam nutzen, ohne sich gegenseitig zu beeinträchtigen. L40S-Karten unterstützen Multi-Instance GPU nicht.
+
+- Anzahl und Modell der Karten sind durch die Blade-Klasse festgelegt: Die GPU-Konfiguration eines Blades lässt sich nicht ändern.
+- Bare-Metal-Blades mit GPUs können als Worker-Nodes für Managed Kubernetes dienen: siehe [Eine GPU auf Managed Kubernetes nutzen](../managed_kubernetes/tutorials/usinggpu.md).
+
 ### Klassen des Blockspeichers
 
 <a id="merkmale"></a>

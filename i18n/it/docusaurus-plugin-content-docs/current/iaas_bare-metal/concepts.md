@@ -97,6 +97,26 @@ Le lame di calcolo disponibili per l'offerta Bare Metal offrono una gamma di pre
 - **(3)** La connettività fisica è condivisa tra l'accesso alla rete e l'accesso allo storage a blocchi, grazie a un'architettura convergente Cisco UCS.
 - **(4)** Le GPU disponibili evolvono in funzione delle ultime tecnologie. Il prodotto offre GPU NVIDIA L40S e NVIDIA H100.
 
+### GPU
+
+Due classi di lame integrano ciascuna due schede NVIDIA dedicate al vostro utilizzo: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) e PERFORMANCE 5 (2 × NVIDIA H100 80 GB). Servono per l'addestramento e l'inferenza di modelli di IA, la visione artificiale, la simulazione e il calcolo scientifico. CUDA, cuDNN e i principali framework di IA (TensorFlow, PyTorch, ecc.) si utilizzano senza adattamenti.
+
+| Parametro               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| Memoria GPU             | 48 GB        | 80 GB        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Consumo massimo         | 350 W        | 350 W        |
+
+\* Valori del costruttore NVIDIA con sparsità strutturata (sparsity). Senza sparsità, questi valori si dimezzano.
+
+La tecnologia Multi-Instance GPU (MIG) partiziona una scheda H100 in un massimo di 7 istanze. Ogni istanza dispone di una propria memoria e di proprie unità di calcolo, isolate dalle altre istanze. Più carichi di lavoro condividono così una stessa scheda senza interferire tra loro. Le schede L40S non supportano Multi-Instance GPU.
+
+- Il numero e il modello delle schede sono fissati dalla classe di lama: la configurazione GPU di una lama non si può modificare.
+- Le lame Bare Metal dotate di GPU possono fungere da nodi worker per Managed Kubernetes: vedere [Utilizzare una GPU su Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).
+
 ### Classi di storage in modalità blocco
 
 <a id="caratteristiche"></a>

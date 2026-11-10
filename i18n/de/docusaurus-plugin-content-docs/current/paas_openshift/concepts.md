@@ -174,6 +174,21 @@ Die Red Hat OpenShift-Produkte von Cloud Temple sind im Pay-as-you-go-Modell ode
 
 7. *Die Knoten werden gleichmäßig auf die 3 Verfügbarkeitszonen verteilt (1 Knoten pro Zone). Es ist nicht möglich, einen Cluster ungleichmäßig zu gestalten, indem einer einzelnen Zone eine größere Anzahl von Knoten zugewiesen wird.*
 
+### GPU
+
+GPU-Worker-Nodes werden in Gruppen von 3 Workern bestellt, einer pro Verfügbarkeitszone. Jeder Worker trägt zwei NVIDIA-Karten: L40S 48 GB oder H100 80 GB mit einer Bindung von 24 Monaten. Die GPUs werden den Pods über die Kubernetes-API bereitgestellt; CUDA, cuDNN und die wichtigsten KI-Frameworks (TensorFlow, PyTorch usw.) funktionieren ohne Anpassung.
+
+| Parameter               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| GPU-Speicher            | 48 GB        | 80 GB        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Maximale Leistungsaufnahme | 350 W     | 350 W        |
+
+\* Herstellerangaben von NVIDIA mit strukturierter Sparsity. Ohne Sparsity halbieren sich diese Werte.
+
 ### Rechte und Berechtigungen
 
 Hier sind die wichtigsten implementierten Berechtigungen:

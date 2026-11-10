@@ -37,14 +37,6 @@ Find below the frequently asked questions regarding Cloud Temple products and se
       <div class="book-card-cta">View the FAQ →</div>
     </div>
   </a>
-  <a class="book-card book-card--violet" href="./gpu/faq">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-title">GPU</div>
-      <div class="book-card-desc">Section being written.</div>
-      <div class="book-card-cta">View the FAQ →</div>
-    </div>
-  </a>
 </div>
 
 ---
