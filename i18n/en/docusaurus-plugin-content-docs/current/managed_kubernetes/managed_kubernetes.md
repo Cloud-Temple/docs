@@ -7,6 +7,10 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
 
 # Managed Kubernetes overview
 
+**Managed Kubernetes** by Cloud Temple is a container orchestration solution based on open source standards (CNCF). It is designed to provide a high level of security, resilience, and automation and it is available on SecNumCloud-qualified services. Each cluster is deployed in a Cloud-Temple IaaS environment fully dedicated to the client.
+
+To best meet your teams' needs, we offer two versions of this product: **Managed Core Kubernetes** (a minimal base) and **Managed Kubernetes** (a complete "out-of-the-box" platform).
+
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
@@ -29,10 +33,6 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
     <a href="./managed_kubernetes/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
-
-**Managed Kubernetes** by Cloud Temple is a container orchestration solution based on open source standards (CNCF). It is designed to provide a high level of security, resilience, and automation and it is available on SecNumCloud-qualified services. Each cluster is deployed in a Cloud-Temple IaaS environment fully dedicated to the client.
-
-To best meet your teams' needs, we offer two versions of this product: **Managed Core Kubernetes** (a minimal base) and **Managed Kubernetes** (a complete "out-of-the-box" platform).
 
 ---
 

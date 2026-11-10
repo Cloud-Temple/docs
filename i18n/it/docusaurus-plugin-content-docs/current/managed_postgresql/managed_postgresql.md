@@ -4,6 +4,14 @@ title: Panoramica di PostgreSQL Gestito
 
 # Panoramica di PostgreSQL Gestito <span class="title-preview-badge">Preview</span>
 
+---
+
+### Panoramica
+
+**PostgreSQL Gestito (on Kubernetes) by Cloud Temple** è una soluzione gestita per il motore di database PostgreSQL, ospitata su Kubernetes e basata sull'operatore **CloudNative-PG (CNPG)**. Si integra con le offerte di motori di database gestiti su macchine virtuali (nommées ici **PostgreSQL Managé (on IaaS)**).
+
+Questo prodotto è adatto per i clienti che dispongono di carichi di lavoro Kubernetes che richiedono database PostgreSQL, o per i clienti che desiderano consolidare numerosi motori di database PostgreSQL sullo stesso cluster Kubernetes. È particolarmente indicato per i database che non richiedono un tuning di sistema ultra-specifico. Per i database di dimensioni molto elevate che necessitano di configurazioni del sistema operativo particolari, è preferibile optare per il prodotto **PostgreSQL Managé (on IaaS)**.
+
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
@@ -26,14 +34,6 @@ title: Panoramica di PostgreSQL Gestito
     <a href="./managed_postgresql/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>
-
----
-
-### Panoramica
-
-**PostgreSQL Gestito (on Kubernetes) by Cloud Temple** è una soluzione gestita per il motore di database PostgreSQL, ospitata su Kubernetes e basata sull'operatore **CloudNative-PG (CNPG)**. Si integra con le offerte di motori di database gestiti su macchine virtuali (nommées ici **PostgreSQL Managé (on IaaS)**).
-
-Questo prodotto è adatto per i clienti che dispongono di carichi di lavoro Kubernetes che richiedono database PostgreSQL, o per i clienti che desiderano consolidare numerosi motori di database PostgreSQL sullo stesso cluster Kubernetes. È particolarmente indicato per i database che non richiedono un tuning di sistema ultra-specifico. Per i database di dimensioni molto elevate che necessitano di configurazioni del sistema operativo particolari, è preferibile optare per il prodotto **PostgreSQL Managé (on IaaS)**.
 
 ### Benefici Chiave
 

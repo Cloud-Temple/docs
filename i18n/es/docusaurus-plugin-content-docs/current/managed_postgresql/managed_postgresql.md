@@ -4,6 +4,14 @@ title: Visión general de PostgreSQL gestionado
 
 # Visión general de PostgreSQL gestionado <span class="title-preview-badge">Preview</span>
 
+---
+
+### Descripción general
+
+**PostgreSQL Managé (on Kubernetes) by Cloud Temple** es una solución gestionada de motor de base de datos PostgreSQL, alojada en Kubernetes y basada en el operador **CloudNative-PG (CNPG)**. Se complementa con las ofertas de motores de base de datos gestionados en máquinas virtuales (denominados aquí **PostgreSQL Managé (on IaaS)**).
+
+Este producto está diseñado para clientes que cuentan con cargas de trabajo en Kubernetes que requieren bases de datos PostgreSQL, o para aquellos que desean consolidar múltiples motores de bases de datos PostgreSQL en un mismo clúster de Kubernetes. Es especialmente adecuado para bases de datos que no requieren un ajuste de sistema ultraespecífico. Para bases de datos de muy gran tamaño que requieran configuraciones específicas del sistema operativo, es preferible optar por el producto **PostgreSQL Managé (on IaaS)**.
+
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
@@ -26,14 +34,6 @@ title: Visión general de PostgreSQL gestionado
     <a href="./managed_postgresql/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>
-
----
-
-### Descripción general
-
-**PostgreSQL Managé (on Kubernetes) by Cloud Temple** es una solución gestionada de motor de base de datos PostgreSQL, alojada en Kubernetes y basada en el operador **CloudNative-PG (CNPG)**. Se complementa con las ofertas de motores de base de datos gestionados en máquinas virtuales (denominados aquí **PostgreSQL Managé (on IaaS)**).
-
-Este producto está diseñado para clientes que cuentan con cargas de trabajo en Kubernetes que requieren bases de datos PostgreSQL, o para aquellos que desean consolidar múltiples motores de bases de datos PostgreSQL en un mismo clúster de Kubernetes. Es especialmente adecuado para bases de datos que no requieren un ajuste de sistema ultraespecífico. Para bases de datos de muy gran tamaño que requieran configuraciones específicas del sistema operativo, es preferible optar por el producto **PostgreSQL Managé (on IaaS)**.
 
 ### Beneficios Clave
 

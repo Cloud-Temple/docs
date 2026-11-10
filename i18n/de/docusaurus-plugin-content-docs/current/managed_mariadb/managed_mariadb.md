@@ -4,6 +4,20 @@ title: Übersicht über Managed MariaDB
 
 # Übersicht über Managed MariaDB <span class="title-preview-badge">Preview</span>
 
+---
+
+### Übersicht
+
+**MariaDB Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für die MariaDB-Datenbank-Engine, die auf Kubernetes betrieben wird. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (nommées ici **MariaDB Managé (on IaaS)**)
+
+Dieses Produkt eignet sich für Kunden, die Kubernetes-Workloads mit MariaDB/MySQL-Datenbanken betreiben, oder für Kunden, die mehrere MariaDB-Datenbank-Engines auf einem einzigen Kubernetes-Cluster zusammenfassen (mutualisation) möchten. Es ist besonders gut für kleine und mittlere Datenbanken geeignet, die kein spezifisches Tuning oder spezielle Funktionen erfordern. Für große Datenbanken oder solche, die ein spezielles Tuning benötigen, ist es ratsamer, das Produkt **MariaDB Managé (on IaaS)** zu wählen, das durch unsere DBA-Expertenteams mehr Anpassungsmöglichkeiten bietet.
+
+Die MariaDB-Engines können in der Version 11.4 LTS oder 11.8 LTS gewählt werden.
+
+Alle Backups nutzen den Cloud-Temple S3-Speicher (qualifié SNC) mit at-rest-Verschlüsselung.
+
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
@@ -26,20 +40,6 @@ title: Übersicht über Managed MariaDB
     <a href="./managed_mariadb/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>
-
----
-
-### Übersicht
-
-**MariaDB Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für die MariaDB-Datenbank-Engine, die auf Kubernetes betrieben wird. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (nommées ici **MariaDB Managé (on IaaS)**)
-
-Dieses Produkt eignet sich für Kunden, die Kubernetes-Workloads mit MariaDB/MySQL-Datenbanken betreiben, oder für Kunden, die mehrere MariaDB-Datenbank-Engines auf einem einzigen Kubernetes-Cluster zusammenfassen (mutualisation) möchten. Es ist besonders gut für kleine und mittlere Datenbanken geeignet, die kein spezifisches Tuning oder spezielle Funktionen erfordern. Für große Datenbanken oder solche, die ein spezielles Tuning benötigen, ist es ratsamer, das Produkt **MariaDB Managé (on IaaS)** zu wählen, das durch unsere DBA-Expertenteams mehr Anpassungsmöglichkeiten bietet.
-
-Die MariaDB-Engines können in der Version 11.4 LTS oder 11.8 LTS gewählt werden.
-
-Alle Backups nutzen den Cloud-Temple S3-Speicher (qualifié SNC) mit at-rest-Verschlüsselung.
-
-![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
 ### Kernvorteile
 

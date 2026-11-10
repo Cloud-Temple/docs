@@ -4,6 +4,14 @@ title: Übersicht über Managed PostgreSQL
 
 # Übersicht über Managed PostgreSQL <span class="title-preview-badge">Vorschau</span>
 
+---
+
+### Übersicht
+
+**PostgreSQL Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für PostgreSQL-Datenbank-Engines, die auf Kubernetes gehostet und auf dem Operator **CloudNative-PG (CNPG)** basiert. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (hier bezeichnet als **PostgreSQL Managé (on IaaS)**).
+
+Dieses Produkt eignet sich für Kunden, die Kubernetes-Workloads betreiben, die PostgreSQL-Datenbanken erfordern, oder für Kunden, die zahlreiche PostgreSQL-Datenbank-Engines auf einem einzigen Kubernetes-Cluster konsolidieren möchten. Es ist besonders gut für Datenbanken geeignet, die kein hochspezifisches System-Tuning erfordern. Für sehr große Datenbanken, die spezielle Betriebssystem-Konfigurationen erfordern, ist es ratsam, das Produkt **PostgreSQL Managé (on IaaS)** zu wählen.
+
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
@@ -26,14 +34,6 @@ title: Übersicht über Managed PostgreSQL
     <a href="./managed_postgresql/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>
-
----
-
-### Übersicht
-
-**PostgreSQL Managé (on Kubernetes) by Cloud Temple** ist eine verwaltete Lösung für PostgreSQL-Datenbank-Engines, die auf Kubernetes gehostet und auf dem Operator **CloudNative-PG (CNPG)** basiert. Sie ergänzt die Angebote für verwaltete Datenbank-Engines auf virtuellen Maschinen (hier bezeichnet als **PostgreSQL Managé (on IaaS)**).
-
-Dieses Produkt eignet sich für Kunden, die Kubernetes-Workloads betreiben, die PostgreSQL-Datenbanken erfordern, oder für Kunden, die zahlreiche PostgreSQL-Datenbank-Engines auf einem einzigen Kubernetes-Cluster konsolidieren möchten. Es ist besonders gut für Datenbanken geeignet, die kein hochspezifisches System-Tuning erfordern. Für sehr große Datenbanken, die spezielle Betriebssystem-Konfigurationen erfordern, ist es ratsam, das Produkt **PostgreSQL Managé (on IaaS)** zu wählen.
 
 ### Kernvorteile
 

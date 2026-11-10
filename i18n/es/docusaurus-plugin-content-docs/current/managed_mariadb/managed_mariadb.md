@@ -4,6 +4,20 @@ title: Visión general de MariaDB gestionado
 
 # Visión general de MariaDB gestionado <span class="title-preview-badge">Preview</span>
 
+---
+
+### Vista general
+
+**MariaDB Administrado (on Kubernetes) by Cloud Temple** es una solución administrada de motor de base de datos MariaDB, alojada en Kubernetes. Se complementa con las ofertas de motores de base de datos administrados en máquinas virtuales (nommées ici **MariaDB Managé (on IaaS)**)
+
+Este producto está diseñado para clientes que disponen de cargas de trabajo en Kubernetes con bases de datos MariaDB/MySQL, o para clientes que desean compartir múltiples motores de bases de datos MariaDB en un mismo clúster de Kubernetes (mutualisation). Es especialmente adecuado para bases de datos de pequeña y mediana escala que no requieran ajuste fino (tuning) ni funciones específicas. Para bases de datos de gran escala o que requieran un ajuste fino particular, es preferible optar por el producto **MariaDB Administrado (on IaaS)** que permite mayores adaptaciones por parte de nuestros equipos de expertos DBA.
+
+Los motores MariaDB pueden seleccionarse en la versión 11.4 LTS o 11.8 LTS.
+
+Todas las copias de seguridad utilizan el almacenamiento S3 de Cloud-Temple (qualifié SNC) con cifrado en reposo.
+
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
@@ -26,20 +40,6 @@ title: Visión general de MariaDB gestionado
     <a href="./managed_mariadb/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>
-
----
-
-### Vista general
-
-**MariaDB Administrado (on Kubernetes) by Cloud Temple** es una solución administrada de motor de base de datos MariaDB, alojada en Kubernetes. Se complementa con las ofertas de motores de base de datos administrados en máquinas virtuales (nommées ici **MariaDB Managé (on IaaS)**)
-
-Este producto está diseñado para clientes que disponen de cargas de trabajo en Kubernetes con bases de datos MariaDB/MySQL, o para clientes que desean compartir múltiples motores de bases de datos MariaDB en un mismo clúster de Kubernetes (mutualisation). Es especialmente adecuado para bases de datos de pequeña y mediana escala que no requieran ajuste fino (tuning) ni funciones específicas. Para bases de datos de gran escala o que requieran un ajuste fino particular, es preferible optar por el producto **MariaDB Administrado (on IaaS)** que permite mayores adaptaciones por parte de nuestros equipos de expertos DBA.
-
-Los motores MariaDB pueden seleccionarse en la versión 11.4 LTS o 11.8 LTS.
-
-Todas las copias de seguridad utilizan el almacenamiento S3 de Cloud-Temple (qualifié SNC) con cifrado en reposo.
-
-![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
 ### Beneficios Clave
 

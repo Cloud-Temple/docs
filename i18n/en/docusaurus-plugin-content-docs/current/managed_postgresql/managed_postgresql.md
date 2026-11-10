@@ -4,6 +4,14 @@ title: Managed PostgreSQL overview
 
 # Managed PostgreSQL overview <span class="title-preview-badge">Preview</span>
 
+---
+
+### Overview
+
+**Managed PostgreSQL (on Kubernetes) by Cloud Temple** is a managed PostgreSQL database engine solution, hosted on Kubernetes and based on the **CloudNative-PG (CNPG)** operator. It complements the managed database engine offerings on virtual machines (referred to here as **Managed PostgreSQL (on IaaS)**).
+
+This product is suited for clients with Kubernetes workloads requiring PostgreSQL databases, or for clients who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster. It is particularly well-suited for databases that do not require highly specific system tuning. For very large-scale databases requiring specific OS-level tuning, it is preferable to opt for the **Managed PostgreSQL (on IaaS)** product.
+
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
@@ -26,14 +34,6 @@ title: Managed PostgreSQL overview
     <a href="./managed_postgresql/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
-
----
-
-### Overview
-
-**Managed PostgreSQL (on Kubernetes) by Cloud Temple** is a managed PostgreSQL database engine solution, hosted on Kubernetes and based on the **CloudNative-PG (CNPG)** operator. It complements the managed database engine offerings on virtual machines (referred to here as **Managed PostgreSQL (on IaaS)**).
-
-This product is suited for clients with Kubernetes workloads requiring PostgreSQL databases, or for clients who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster. It is particularly well-suited for databases that do not require highly specific system tuning. For very large-scale databases requiring specific OS-level tuning, it is preferable to opt for the **Managed PostgreSQL (on IaaS)** product.
 
 ### Key Benefits
 

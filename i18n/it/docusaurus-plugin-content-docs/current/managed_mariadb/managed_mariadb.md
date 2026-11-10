@@ -4,6 +4,20 @@ title: Panoramica di MariaDB Gestito
 
 # Panoramica di MariaDB Gestito <span class="title-preview-badge">Anteprima</span>
 
+---
+
+### Panoramica
+
+**MariaDB Managé (on Kubernetes) by Cloud Temple** è una soluzione gestita per il motore di database MariaDB, ospitata su Kubernetes. Si affianca alle offerte di motori di database gestiti su macchine virtuali (nommées ici **MariaDB Managé (on IaaS)**)
+
+Questo prodotto è adatto per i clienti che dispongono di carichi di lavoro Kubernetes con database MariaDB/MySQL, o per i clienti che desiderano condividere numerosi motori di database MariaDB sullo stesso cluster Kubernetes (mutualisation). È particolarmente indicato per database di piccole e medie dimensioni che non richiedono tuning o funzionalità specifiche. Per database di grandi dimensioni o che necessitano di un tuning particolare, è preferibile optare per il prodotto **MariaDB Managé (on IaaS)**, che consente maggiori adattamenti da parte dei nostri team di esperti DBA.
+
+I motori MariaDB possono essere scelti nella versione 11.4 LTS o 11.8 LTS.
+
+Tutti i backup utilizzano lo storage S3 Cloud-Temple (qualifié SNC) con crittografia at-rest.
+
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
@@ -26,20 +40,6 @@ title: Panoramica di MariaDB Gestito
     <a href="./managed_mariadb/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>
-
----
-
-### Panoramica
-
-**MariaDB Managé (on Kubernetes) by Cloud Temple** è una soluzione gestita per il motore di database MariaDB, ospitata su Kubernetes. Si affianca alle offerte di motori di database gestiti su macchine virtuali (nommées ici **MariaDB Managé (on IaaS)**)
-
-Questo prodotto è adatto per i clienti che dispongono di carichi di lavoro Kubernetes con database MariaDB/MySQL, o per i clienti che desiderano condividere numerosi motori di database MariaDB sullo stesso cluster Kubernetes (mutualisation). È particolarmente indicato per database di piccole e medie dimensioni che non richiedono tuning o funzionalità specifiche. Per database di grandi dimensioni o che necessitano di un tuning particolare, è preferibile optare per il prodotto **MariaDB Managé (on IaaS)**, che consente maggiori adattamenti da parte dei nostri team di esperti DBA.
-
-I motori MariaDB possono essere scelti nella versione 11.4 LTS o 11.8 LTS.
-
-Tutti i backup utilizzano lo storage S3 Cloud-Temple (qualifié SNC) con crittografia at-rest.
-
-![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
 ### Benefici Chiave
 

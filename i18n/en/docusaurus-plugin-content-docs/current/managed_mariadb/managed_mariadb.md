@@ -4,6 +4,20 @@ title: Managed MariaDB overview
 
 # Managed MariaDB overview <span class="title-preview-badge">Preview</span>
 
+---
+
+### Overview
+
+**MariaDB Managed (on Kubernetes) by Cloud Temple** is a managed MariaDB database engine solution, hosted on Kubernetes. It complements the managed database engine offerings on virtual machines (referred to here as **MariaDB Managed (on IaaS)**)
+
+This product is suited for clients who have Kubernetes workloads with MariaDB/MySQL databases, or for clients who wish to consolidate many MariaDB database engines on a single Kubernetes cluster (consolidation). It is particularly well-suited for small and medium-sized databases that do not require tuning or specific features. For large-scale databases or those requiring specific tuning, it is preferable to opt for the **MariaDB Managed (on IaaS)** product, which allows for more customizations by our expert DBA teams.
+
+MariaDB engines can be selected in version 11.4 LTS or 11.8 LTS.
+
+All backups use Cloud-Temple S3 storage (SNC-certified) with at-rest encryption.
+
+![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
@@ -26,20 +40,6 @@ title: Managed MariaDB overview
     <a href="./managed_mariadb/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
-
----
-
-### Overview
-
-**MariaDB Managed (on Kubernetes) by Cloud Temple** is a managed MariaDB database engine solution, hosted on Kubernetes. It complements the managed database engine offerings on virtual machines (referred to here as **MariaDB Managed (on IaaS)**)
-
-This product is suited for clients who have Kubernetes workloads with MariaDB/MySQL databases, or for clients who wish to consolidate many MariaDB database engines on a single Kubernetes cluster (consolidation). It is particularly well-suited for small and medium-sized databases that do not require tuning or specific features. For large-scale databases or those requiring specific tuning, it is preferable to opt for the **MariaDB Managed (on IaaS)** product, which allows for more customizations by our expert DBA teams.
-
-MariaDB engines can be selected in version 11.4 LTS or 11.8 LTS.
-
-All backups use Cloud-Temple S3 storage (SNC-certified) with at-rest encryption.
-
-![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
 ### Key Benefits
 

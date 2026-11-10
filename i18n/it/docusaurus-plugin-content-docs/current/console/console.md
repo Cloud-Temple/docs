@@ -42,55 +42,14 @@ Le vostre risorse sono organizzate in **tenant**, ambienti isolati all'interno d
 
 ## Cosa potete fare
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Predisporre i vostri ambienti</h3>
-    <p>Creare la vostra organizzazione e i vostri tenant, poi attivare i vostri prodotti.</p>
-    <a href="./console/onboarding" class="card-link">Guida introduttiva &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Gestire gli accessi</h3>
-    <p>Utenti, permessi per tenant e federazione delle identità.</p>
-    <a href="./console/iam" class="card-link">Modulo IAM &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Seguire i costi</h3>
-    <p>Consumi per prodotto, per servizio e per tenant.</p>
-    <a href="./console/billing/concepts" class="card-link">Gestore dei costi &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Monitorare le risorse</h3>
-    <p>Metriche in formato Prometheus, consultabili nella Console o nei vostri strumenti.</p>
-    <a href="./console/metrics/concepts" class="card-link">Metriche &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Seguire operazioni e incidenti</h3>
-    <p>Interventi pianificati sulla piattaforma e incidenti in corso.</p>
-    <a href="./console/status" class="card-link">Operazioni pianificate &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Contattare il supporto</h3>
-    <p>Consulenza, assistenza sul vostro account, incidenti o servizi professionali: tutte le vostre richieste al supporto.</p>
-    <a href="./console/console_quickstart#accesso-al-supporto-tecnico" class="card-link">Supporto tecnico &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Ordinare risorse</h3>
-    <p>Zone di disponibilità, cluster, storage e reti, con il monitoraggio degli ordini.</p>
-    <a href="./console/orders" class="card-link">Distribuire risorse &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Automatizzare</h3>
-    <p>Tutte le funzioni della Console tramite l'API, e la vostra infrastruttura as code con Terraform.</p>
-    <a href="./console/api" class="card-link">Documentazione API &rarr;</a>
-  </div>
-</div>
+- **[Predisporre i vostri ambienti](./console/onboarding)**: Creare la vostra organizzazione e i vostri tenant, poi attivare i vostri prodotti.
+- **[Gestire gli accessi](./console/iam)**: Utenti, permessi per tenant e federazione delle identità.
+- **[Seguire i costi](./console/billing/concepts)**: Consumi per prodotto, per servizio e per tenant.
+- **[Monitorare le risorse](./console/metrics/concepts)**: Metriche in formato Prometheus, consultabili nella Console o nei vostri strumenti.
+- **[Seguire operazioni e incidenti](./console/status)**: Interventi pianificati sulla piattaforma e incidenti in corso.
+- **[Contattare il supporto](./console/console_quickstart#accesso-al-supporto-tecnico)**: Consulenza, assistenza sul vostro account, incidenti o servizi professionali: tutte le vostre richieste al supporto.
+- **[Ordinare risorse](./console/orders)**: Zone di disponibilità, cluster, storage e reti, con il monitoraggio degli ordini.
+- **[Automatizzare](./console/api)**: Tutte le funzioni della Console tramite l'API, e la vostra infrastruttura as code con Terraform.
 
 ## Da dove iniziare
 
