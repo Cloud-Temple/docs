@@ -111,7 +111,7 @@ resource "cloudtemple_compute_virtual_machine" "example" {
   # id, moref, machine_manager_id, etc.
 }
 
-# Reference to an attribute
+# Referencia a un atributo
 output "vm_id" {
   value = cloudtemple_compute_virtual_machine.example.id
 }
@@ -317,14 +317,14 @@ data "cloudtemple_compute_virtual_datacenter" "dc" {
   name = "DC-EQX6"
 }
 
-# Then the VM is created (implicit dependency via datacenter_id)
+# Luego se crea la VM (dependencia implícita mediante datacenter_id)
 resource "cloudtemple_compute_virtual_machine" "web" {
   name          = "web-server"
   datacenter_id = data.cloudtemple_compute_virtual_datacenter.dc.id
   # ...
 }
 
-# Finally, the disk is attached (dependency via virtual_machine_id)
+# Por último, se adjunta el disco (dependencia mediante virtual_machine_id)
 resource "cloudtemple_compute_virtual_disk" "data" {
   name               = "data-disk"
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id
@@ -441,7 +441,7 @@ module "db_server" {
 ### Gestión de secretos
 
 ```hcl
-# ❌ To avoid
+# ❌ A evitar
 provider "cloudtemple" {
   client_id = "12345678-1234-1234-1234-123456789abc"
   secret_id = "secret-en-clair"

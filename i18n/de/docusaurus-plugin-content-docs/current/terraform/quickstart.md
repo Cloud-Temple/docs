@@ -139,52 +139,52 @@ Terraform has been successfully initialized!
 Erstellen Sie eine Datei `main.tf` mit einer minimalen Konfiguration:
 
 ```hcl
-# Retrieval of existing resources required
+# Abrufen der benötigten vorhandenen Ressourcen
 data "cloudtemple_compute_machine_manager" "vc-vstack-01" {
-  name = "vc-vstack-001-t0001" # Adapt with your vCenter name
+  name = "vc-vstack-001-t0001" # An den Namen Ihres vCenters anpassen
 }
 
 data "cloudtemple_compute_virtual_datacenter" "dc" {
-  name = "DC-EQX6"  # Adapt with your datacenter name
+  name = "DC-EQX6"  # An den Namen Ihres Datacenters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_host_cluster" "cluster" {
-  name = "clu001-ucs01"  # Adapt with your cluster name
+  name = "clu001-ucs01"  # An den Namen Ihres Clusters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_compute_datastore_cluster" "datastore" {
-  name = "sdrs001-LIVE"  # Adapt with your datastore cluster name
+  name = "sdrs001-LIVE"  # An den Namen Ihres Datastore-Clusters anpassen
   machine_manager_id = data.cloudtemple_compute_machine_manager.vc-vstack-01.id
 }
 
 data "cloudtemple_backup_sla_policy" "daily" {
-  name = "sla001-daily-par7s"  # Backup policy
+  name = "sla001-daily-par7s"  # Backup-Richtlinie
 }
 
-# Creating a virtual machine
+# Erstellen einer virtuellen Maschine
 resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   name = "terraform-vm-01"
   
-  # Hardware configuration
-  memory                 = 4 * 1024 * 1024 * 1024  # 4 GB in bytes
+  # Hardwarekonfiguration
+  memory                 = 4 * 1024 * 1024 * 1024  # 4 GB in Bytes
   cpu                    = 2
   num_cores_per_socket   = 1
   
-  # Flexibility options
+  # Flexibilitätsoptionen
   cpu_hot_add_enabled    = true
   memory_hot_add_enabled = true
   
-  # Location
+  # Standort
   datacenter_id        = data.cloudtemple_compute_virtual_datacenter.dc.id
   host_cluster_id      = data.cloudtemple_compute_host_cluster.cluster.id
   datastore_cluster_id = data.cloudtemple_compute_datastore_cluster.datastore.id
   
-  # Guest operating system
+  # Gastbetriebssystem
   guest_operating_system_moref = "ubuntu64Guest"
   
-  # Backup policy
+  # Backup-Richtlinie
   backup_sla_policies = [
     data.cloudtemple_backup_sla_policy.daily.id
   ]
@@ -197,7 +197,7 @@ resource "cloudtemple_compute_virtual_machine" "my_first_vm" {
   }
 }
 
-# Output to display the VM ID
+# Output zur Anzeige der VM-ID
 output "vm_id" {
   description = "ID of the created virtual machine"
   value       = cloudtemple_compute_virtual_machine.my_first_vm.id
@@ -398,18 +398,18 @@ terraform-cloudtemple/
 ### Beispiel einer .gitignore-Datei
 
 ```gitignore
-# Terraform Files
+# Terraform-Dateien
 .terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
 .terraform.lock.hcl
 
-# Crash Files
+# Crash-Dateien
 crash.log
 crash.*.log
 
-# Sensitive variable files
+# Dateien mit sensiblen Variablen
 *.auto.tfvars
 override.tf
 override.tf.json
@@ -490,13 +490,13 @@ terraform {
 ### 4. Kommentieren Sie Ihren Code
 
 ```hcl
-# Virtual Machine for the Production Web Server
+# Virtuelle Maschine für den Produktions-Webserver
 
-# CPU and memory sized to handle 1000 req/s
+# CPU und Arbeitsspeicher für 1000 req/s dimensioniert
 resource "cloudtemple_compute_virtual_machine" "web_prod" {
   name = "web-prod-01"
   
-  # Hardware configuration based on internal benchmarks
+  # Hardwarekonfiguration auf Basis interner Benchmarks
   memory = 16 * 1024 * 1024 * 1024  # 16 GB
   cpu    = 8
   # ...
@@ -508,7 +508,7 @@ resource "cloudtemple_compute_virtual_machine" "web_prod" {
 Erstellen Sie nicht erneut, was bereits vorhanden ist. Verwenden Sie Datenquellen, um auf bestehende Ressourcen zu verweisen:
 
 ```hcl
-# Reference an existing network
+# Auf ein vorhandenes Netzwerk verweisen
 data "cloudtemple_compute_network" "prod_network" {
   name = "PROD-VLAN-100"
 }

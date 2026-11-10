@@ -111,14 +111,14 @@ data "cloudtemple_backup_sla_policy" "daily" {
   name = "sla001-daily-par7s"
 }
 
-# Deployment from the Marketplace
+# Despliegue desde la Marketplace
 resource "cloudtemple_compute_virtual_machine" "marketplace_vm" {
   name = "ubuntu-marketplace-01"
   
-  # Marketplace Source
+  # Fuente Marketplace
   marketplace_item_id = data.cloudtemple_marketplace_item.ubuntu_2404.id
   
-  # Configuration
+  # Configuración
   memory               = 8 * 1024 * 1024 * 1024  # 8 GB
   cpu                  = 4
   num_cores_per_socket = 2
@@ -183,11 +183,11 @@ data "cloudtemple_compute_network" "vlan" {
   name = "VLAN_201"
 }
 
-# Deployment from Content Library
+# Despliegue desde Content Library
 resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
   name = "centos-from-cl-01"
   
-  # Source Content Library
+  # Fuente Content Library
   content_library_id      = data.cloudtemple_compute_content_library.public.id
   content_library_item_id = data.cloudtemple_compute_content_library_item.centos.id
   
@@ -196,12 +196,12 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
   datastore_cluster_id = data.cloudtemple_compute_datastore_cluster.sdrs.id
   datastore_id         = data.cloudtemple_compute_datastore.ds.id
   
-  # OS Disk Configuration
+  # Configuración del disco del SO
   os_disk {
     capacity = 50 * 1024 * 1024 * 1024  # 50 GB
   }
   
-  # OS Network Adapter Configuration
+  # Configuración del adaptador de red del SO
   os_network_adapter {
     network_id = data.cloudtemple_compute_network.vlan.id
   }
@@ -325,7 +325,7 @@ Cloud-Init solo se ejecuta en el primer arranque de la VM.
 **Código**:
 
 ```hcl
-# Reference to an existing VM
+# Referencia a una VM existente
 data "cloudtemple_compute_virtual_machine" "existing_vm" {
   name = "my-existing-vm"
 }
@@ -372,28 +372,28 @@ data "cloudtemple_compute_network" "production_vlan" {
   name = "PROD-VLAN-100"
 }
 
-# Reference to the VM
+# Referencia a la VM
 data "cloudtemple_compute_virtual_machine" "vm" {
   name = "my-vm"
 }
 
-# Creating a network adapter
+# Creación de un adaptador de red
 resource "cloudtemple_compute_network_adapter" "eth1" {
   name = "Network adapter 2"
   
-  # Target VM
+  # VM de destino
   virtual_machine_id = data.cloudtemple_compute_virtual_machine.vm.id
   
-  # Network
+  # Red
   network_id = data.cloudtemple_compute_network.production_vlan.id
   
-  # Adapter type
+  # Tipo de adaptador
   type = "VMXNET3"
   
-  # Connect automatically on power on
+  # Conexión automática al arrancar
   connect_on_power_on = true
   
-  # MAC address (optional, automatically generated if omitted)
+  # Dirección MAC (opcional, se genera automáticamente si se omite)
   # mac_address = "00:50:56:xx:xx:xx"
 }
 ```
@@ -411,19 +411,19 @@ resource "cloudtemple_compute_network_adapter" "eth1" {
 **Código**:
 
 ```hcl
-# Reference to the VM
+# Referencia a la VM
 data "cloudtemple_compute_virtual_machine" "vm" {
   name = "my-vm"
 }
 
-# Creation of a SCSI controller
+# Creación de un controlador SCSI
 resource "cloudtemple_compute_virtual_controller" "scsi_controller" {
   name = "SCSI controller 1"
   
-  # Target VM
+  # VM de destino
   virtual_machine_id = data.cloudtemple_compute_virtual_machine.vm.id
   
-  # Controller type
+  # Tipo de controlador
   type = "SCSI"
 }
 ```
@@ -568,12 +568,12 @@ data "cloudtemple_backup_iaas_opensource_policy" "nobackup" {
   name = "nobackup"
 }
 
-# Deployment from Marketplace
+# Despliegue desde Marketplace
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "marketplace_vm" {
   name        = "ubuntu-marketplace-01"
   power_state = "on"
   
-  # Marketplace Source
+  # Fuente Marketplace
   marketplace_item_id   = data.cloudtemple_marketplace_item.ubuntu_2404.id
   storage_repository_id = data.cloudtemple_compute_iaas_opensource_storage_repository.sr.id
   
@@ -634,13 +634,13 @@ hours = 1
   }
 }
 
-# Association to a VM
+# Asociación a una VM
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "replicated_vm" {
   name = "replicated-vm-01"
   
-  # ... standard configuration ...
+  # ... configuración estándar ...
   
-  # Assignment of the replication policy
+  # Asociación de la política de replicación
   replication_policy_id = cloudtemple_compute_iaas_opensource_replication_policy.policy_hourly.id
 }
 ```
@@ -666,13 +666,13 @@ data "cloudtemple_backup_iaas_opensource_policy" "weekly" {
   name = "weekly-backup"
 }
 
-# VM with multiple backup policies
+# VM con varias políticas de backup
 resource "cloudtemple_compute_iaas_opensource_virtual_machine" "backup_vm" {
   name = "important-vm-01"
   
-  # ... standard configuration ...
+  # ... configuración estándar ...
   
-  # Multiple policies can be applied
+  # Pueden aplicarse varias políticas
   backup_sla_policies = [
 data.cloudtemple_backup_iaas_opensource_policy.daily.id,
 data.cloudtemple_backup_iaas_opensource_policy.weekly.id,
@@ -1030,7 +1030,7 @@ resource "cloudtemple_object_storage_storage_account" "app_account" {
   name = "application-storage-account"
 }
 
-# Outputs to use the credentials
+# Outputs para utilizar las credenciales
 output "s3_access_key" {
   value     = cloudtemple_object_storage_storage_account.app_account.access_key_id
 }
@@ -1057,7 +1057,7 @@ Las credenciales se muestran una sola vez. Almacénelas de forma segura (p. ej.:
 **Código**:
 
 ```hcl
-# Retrieval of available roles
+# Recuperación de los roles disponibles
 data "cloudtemple_object_storage_role" "read_only" {
   name = "read_only"
 }
@@ -1085,14 +1085,14 @@ resource "cloudtemple_object_storage_bucket" "shared_bucket" {
   access_type = "private"
 }
 
-# ACL for development team (read-only)
+# ACL para el equipo dev (solo lectura)
 resource "cloudtemple_object_storage_acl_entry" "dev_acl" {
   bucket          = cloudtemple_object_storage_bucket.shared_bucket.name
   storage_account = data.cloudtemple_object_storage_storage_account.dev_account.name
   role            = data.cloudtemple_object_storage_role.read_only.name
 }
 
-# ACL for ops team (maintainer)
+# ACL para el equipo ops (maintainer)
 resource "cloudtemple_object_storage_acl_entry" "ops_acl" {
   bucket          = cloudtemple_object_storage_bucket.shared_bucket.name
   storage_account = data.cloudtemple_object_storage_storage_account.ops_account.name

@@ -111,7 +111,7 @@ resource "cloudtemple_compute_virtual_machine" "example" {
   # id, moref, machine_manager_id, ecc.
 }
 
-# Reference to an attribute
+# Riferimento a un attributo
 output "vm_id" {
   value = cloudtemple_compute_virtual_machine.example.id
 }
@@ -324,7 +324,7 @@ resource "cloudtemple_compute_virtual_machine" "web" {
   # ...
 }
 
-# Finally the disk is attached (dependency via virtual_machine_id)
+# Infine il disco viene collegato (dipendenza tramite virtual_machine_id)
 resource "cloudtemple_compute_virtual_disk" "data" {
   name               = "data-disk"
   virtual_machine_id = cloudtemple_compute_virtual_machine.web.id

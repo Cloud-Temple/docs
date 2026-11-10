@@ -138,6 +138,6 @@ Um eine tägliche Sicherung zu automatisieren, fügen Sie einen cron-Eintrag hin
 ```bash
 
 
-# Daily backup at 2 AM
+# Tägliche Sicherung um 2 Uhr morgens
 0 2 * * * rclone sync /data/backup cloudtemple-s3:bucket-name/ --log-file=/var/log/rclone-backup.log --log-level INFO
 ```
