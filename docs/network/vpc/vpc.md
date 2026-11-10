@@ -12,17 +12,22 @@ Le service permet de déployer et gérer vos réseaux privés sans vous soucier 
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Découvrez l'architecture, les composants (Private Networks, Gateway) et les bénéfices du VPC.</p>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
     <a href="./vpc/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
-    <p>Créez votre premier VPC et configurez vos réseaux privés en quelques minutes.</p>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
     <a href="./vpc/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriels</h3>
-    <p>Guides pas à pas, comme la configuration réseau d'une machine virtuelle.</p>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./vpc/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./vpc/faq" class="card-link">Consulter la FAQ &rarr;</a>
   </div>
 </div>

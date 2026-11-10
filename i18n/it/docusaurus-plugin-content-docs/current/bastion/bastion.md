@@ -21,9 +21,14 @@ Grazie al suo approccio orientato alla sicurezza e alle funzionalità avanzate c
     <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
     <a href="./bastion/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorial</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./bastion/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./bastion/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>

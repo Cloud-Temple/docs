@@ -13,22 +13,22 @@ It adapts to all needs through its various service classes — from cost-effecti
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the architecture, service classes, and features of the VM Instances service.</p>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
     <a href="./vm_instances/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Getting started</h3>
-    <p>Deploy your first virtual machine in just a few minutes from the Cloud Temple Marketplace.</p>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
     <a href="./vm_instances/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Practical guides: create a VM, manage disks, take snapshots.</p>
-    <a href="./vm_instances/tutorials" class="card-link">View tutorials &rarr;</a>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./vm_instances/tutorials" class="card-link">Discover tutorials &rarr;</a>
   </div>
   <div class="card">
-    <h3>FAQ</h3>
-    <p>Answers to frequently asked questions about families, flavors, and resilience.</p>
-    <a href="./vm_instances/faq" class="card-link">Consult the FAQ &rarr;</a>
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./vm_instances/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>

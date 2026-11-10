@@ -7,6 +7,29 @@ sidebar_position: 1
 
 LLMaaS provides access to AI models hosted by Cloud Temple via an API: conversational assistants, coding and agents, image analysis, semantic search, reranking, translation, and audio/image use cases.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./llmaas/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./llmaas/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./category/tutoriels" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./llmaas/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
+
 ## Catalog, Updates, and Availability
 
 - **[Model Catalog and Lifecycle](https://llmaas.status.cloud-temple.app/lifecycle)** : models, context, LTS statuses, end-of-support dates, and recommended migrations.

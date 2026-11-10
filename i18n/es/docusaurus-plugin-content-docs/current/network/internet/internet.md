@@ -17,9 +17,14 @@ Cloud Temple pone a disposición de sus clientes bloques de __direcciones IP pú
     <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./internet/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./internet/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./internet/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>

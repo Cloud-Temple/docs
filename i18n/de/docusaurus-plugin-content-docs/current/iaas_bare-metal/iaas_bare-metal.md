@@ -15,7 +15,7 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple Konsole, die 
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
     <a href="./iaas_bare-metal/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
@@ -23,10 +23,15 @@ Der direkte Zugriff auf Ihre Server erfolgt über die Cloud Temple Konsole, die 
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
     <a href="./iaas_bare-metal/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste mit detaillierten Anleitungen konfigurieren und nutzen.</p>
-    <a href="./iaas_bare-metal/tutorials" class="card-link">Anleitungen entdecken &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <a href="./iaas_bare-metal/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./iaas_bare-metal/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>
 

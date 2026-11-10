@@ -8,7 +8,7 @@ Cloud Temple offre un servizio di Reti Private progettato per soddisfare i bisog
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi fondamentali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
     <a href="./private_network/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
@@ -20,5 +20,10 @@ Cloud Temple offre un servizio di Reti Private progettato per soddisfare i bisog
     <h3>Tutorial</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./private_network/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./private_network/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>

@@ -23,6 +23,11 @@ Con recursos escalables y gestión automatizada, disfrute de una infraestructura
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./iaas_opensource/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
 </div>
 
 ## Plataformas de compra

@@ -7,13 +7,23 @@ title: Managed PostgreSQL overview
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts →</a>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Getting started</h3>
-    <p>Get up and running quickly by following clear and straightforward instructions.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide →</a>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>
 

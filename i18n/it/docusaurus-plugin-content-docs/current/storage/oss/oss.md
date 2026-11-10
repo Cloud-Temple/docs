@@ -11,6 +11,29 @@ Il servizio di archiviazione oggetti (Object Storage Service - OSS) di Cloud Tem
 
 Basato su un'API compatibile con S3, il nostro servizio OSS è ideale per una vasta gamma di scenari d'uso, che vanno dalla backup e archiviazione alla gestione di contenuti statici per applicazioni web, fino all'archiviazione di dati per analisi Big Data e applicazioni cloud-native.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./oss/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./oss/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./oss/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./oss/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>
+
 ## Qualifica SecNumCloud
 
 Come tutti i servizi di Cloud Temple, il servizio di archiviazione oggetti è completamente conforme ai requisiti della **qualifica SecNumCloud** rilasciata dall'ANSSI. Ciò garantisce:

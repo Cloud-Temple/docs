@@ -6,6 +6,29 @@ import { ConsoleMap } from '@site/src/components/ConsoleMap';
 
 La Console Cloud Temple est l'interface de gestion de votre plateforme cloud. Vous y créez vos environnements, gérez les accès de vos équipes, activez vos produits, commandez des ressources et suivez votre consommation. Tout ce que vous faites dans la Console est aussi accessible par son [API](./api.md), et le [provider Terraform](../terraform/terraform.md) vous permet de piloter votre plateforme *as code*.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./console/concepts" class="card-link">Explorer les concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./console/onboarding" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./console/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./console/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
+</div>
+
 ## Où se situe la Console
 
 <ConsoleMap />
