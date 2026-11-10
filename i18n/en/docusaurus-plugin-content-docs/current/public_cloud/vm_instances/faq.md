@@ -183,7 +183,7 @@ Yes, a migration can be studied through **Veeam Bare Metal Recovery**. This proc
 
 For a VM restored from a client environment, support covers the VM infrastructure. The proper functioning of the guest OS, applications, and required agents is not guaranteed if they are not installed or configured correctly. Guest OS support is then limited.
 
-A second method, through **VHD/VMDK** disk import, is in development and targeted for **Q4 2026**. It will allow creating a VM from an existing image, but is not yet available.
+Importing **VHD/VMDK** disks is not available. Follow the product's progress on the [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22VM+Instances%22).
 
 ## Is the system disk included for free?
 
@@ -195,8 +195,7 @@ Yes, Stormshield and FortiVM virtual appliances are compatible with the **Enterp
 
 ## Is automatic VM replication between availability zones included?
 
-No. VM replication is not included by default in VM Instances. Its
-study is planned for the second half of 2026.
+No. VM replication is not included by default in VM Instances.
 
 Choosing an availability zone at deployment therefore does not constitute
 automatic replication of the VM.

@@ -31,7 +31,7 @@ El **Almacenamiento de objetos** es un servicio de almacenamiento distribuido, e
 | Funcionalidad            | Descripción                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatible con S3    | Acceso mediante la API S3, compatible al 97 % con AWS S3.                   |
-| Tipo de bucket           | Un único tipo hoy: «Performance». La clase «Archivado» es una próxima evolución. |
+| Tipo de bucket           | Un único tipo: «Performance». |
 | Replicación en 3 zonas   | Redundancia automática en tres zonas de disponibilidad.                     |
 | Erasure Coding           | Protección EC 12+4.                                                         |
 | Cifrado en reposo        | Cifrado del lado del servidor, activado a nivel del *namespace*.            |
@@ -121,11 +121,7 @@ Puede recuperar sus datos en cualquier momento, de forma autónoma, con las herr
 
 ## Próximas evoluciones
 
-Las siguientes evoluciones están anunciadas; todavía no están disponibles. Siga su avance en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
-
-- **Object Lock (WORM)**: buckets inmutables cuyos objetos no pueden modificarse ni eliminarse, ni siquiera desde una cuenta de administrador, antes de que expire el periodo definido.
-- **Modos de cifrado adicionales**: SSE-C (cifrado del lado del servidor con claves proporcionadas por el cliente) y CSE (cifrado del lado del cliente).
-- **Clase de almacenamiento Archivado**: buckets de archivado, de tipo S3 Glacier, para los datos conservados durante mucho tiempo y consultados rara vez.
+Siga la evolución del producto en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 ## Precios
 

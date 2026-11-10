@@ -98,7 +98,7 @@ El cliente es responsable de la creación y configuración de su VPC, así como 
 | Supervisar los **comportamientos anómalos** en los flujos de red del inquilino                                     | **RA**  |              |
 
 *(3) Cloud Temple garantiza el aislamiento estricto entre VPC pertenecientes a inquilinos diferentes. Ningún flujo puede atravesar esta barrera sin una acción explícita del cliente.*  
-*(4) La microsegmentación (security groups) está anunciada (consulte las [próximas evoluciones](../../network/vpc/concepts.md#próximas-evoluciones)). Hasta su disponibilidad, las políticas de filtrado deberán implementarse por parte del cliente mediante un equipo de seguridad dedicado.*  
+*(4) El VPC integra políticas de flujo (filtrado norte-sur y este-oeste, consulte los [conceptos](../../network/vpc/concepts.md)), pero no microsegmentación mediante grupos de seguridad (security groups): el cliente la implementa mediante un equipo de seguridad dedicado.*  
 *(5) El filtrado de flujos a nivel de aplicación dentro del VPC es responsabilidad del cliente. Cloud Temple no realiza inspección de contenido de los flujos del inquilino.*  
 *(6) Las pruebas de intrusión deben declararse previamente a Cloud Temple, de conformidad con las condiciones generales de uso.*
 
@@ -107,8 +107,6 @@ El cliente es responsable de la creación y configuración de su VPC, así como 
 | Actividad                                                                                                    | Cliente | Cloud Temple |
 |-------------------------------------------------------------------------------------------------------------|---------|--------------|
 | Definir la estrategia de **interconexión** con entornos on-premise u otras nubes                             | **RA**  | **C**        |
-| Suscribir y configurar un acceso **VPN de sitio a sitio** *(próximamente)*                             | **RA**  | **C**        |
-| Suscribir y configurar un acceso **Cloud Connect** (enlace dedicado) *(próximamente)*                  | **RA**  | **C**        |
 | Gestionar las **BGP / rutas** asociadas a las interconexiones del operador                                   | **RA**  | **CI**       |
 | Garantizar la **seguridad del tráfico** que transita por las interconexiones                                 | **RA**  |              |
 
@@ -131,7 +129,6 @@ El cliente es responsable de la creación y configuración de su VPC, así como 
 |-------------------------------------------------------------------------------------------------------------|---------|--------------|
 | Supervisar el funcionamiento de los **componentes centrales del VPC** (routeur, gateway)                             | **I**  | **RA**       |
 | Garantizar el seguimiento del **rendimiento del backbone** de red Cloud Temple                                      | **I**  | **RA**       |
-| Recopilar y analizar los **registros de flujo de red** (flow logs) del VPC *(disponible S1 2026)*                | **RA** | **I**        |
 | Implementar la **supervisión de flujos** de aplicaciones en el VPC                                        | **RA** |              |
 | Monitorear la **latencia y el ancho de banda** de los flujos dentro del VPC                                       | **RA** | **I**        |
 

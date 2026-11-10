@@ -31,7 +31,7 @@ L'**Archiviazione oggetti** è un servizio di archiviazione distribuito, scalabi
 | Funzionalità             | Descrizione                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | API compatibile S3       | Accesso tramite l'API S3, compatibile al 97% con AWS S3.                    |
-| Tipo di bucket           | Un solo tipo oggi: «Performance». La classe «Archivio» è una prossima evoluzione. |
+| Tipo di bucket           | Un solo tipo: «Performance». |
 | Replica su 3 zone        | Ridondanza automatica su tre zone di disponibilità.                         |
 | Erasure Coding           | Protezione EC 12+4.                                                         |
 | Cifratura a riposo       | Cifratura lato server, attivata a livello del *namespace*.                  |
@@ -121,11 +121,7 @@ Potete recuperare i vostri dati in qualsiasi momento, in modo autonomo, con gli 
 
 ## Prossime evoluzioni
 
-Le seguenti evoluzioni sono annunciate; non sono ancora disponibili. Seguite il loro avanzamento sulla [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
-
-- **Object Lock (WORM)**: bucket immutabili, i cui oggetti non possono essere né modificati né eliminati, nemmeno da un account amministratore, prima della scadenza del periodo definito.
-- **Modalità di crittografia aggiuntive**: SSE-C (crittografia lato server con chiavi fornite dal cliente) e CSE (crittografia lato client).
-- **Classe di storage «Archivio»**: bucket di archiviazione, di tipo S3 Glacier, per i dati conservati a lungo e consultati raramente.
+Seguite l'evoluzione del prodotto sulla [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22Object+Storage%22).
 
 ## Prezzi
 

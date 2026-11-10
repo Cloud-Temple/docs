@@ -67,7 +67,7 @@ Tutte le azioni possibili sulle reti si trovano nel menu __*Azioni*__ di ciascun
 - La rimozione di una propagazione all'interno di un tenant.
 - La modifica di una propagazione all'interno di un tenant.
 
-> La rimozione di una rete non è ancora disponibile.
+> La rimozione di una rete non è disponibile.
 
 <img src={shivaNetwork_005} />
 <img src={shivaNetwork_006} />

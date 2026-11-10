@@ -82,7 +82,7 @@ Para cada adaptador de red:
 - **Dirección MAC** : Opcional, se genera automáticamente si no se especifica
 
 :::info[VPC]
-La configuración de las redes VPC solo está disponible desde la pestaña Red de la máquina virtual una vez finalizada la operación. La configuración desde este formulario estará disponible próximamente.
+La configuración de las redes VPC solo está disponible desde la pestaña Red de la máquina virtual una vez finalizada la operación.
 :::
 
 Haga clic en **Agregar adaptador de red** para crear una nueva interfaz.

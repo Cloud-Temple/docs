@@ -36,7 +36,7 @@ Permite visualizar los recursos Cloud pedidos, en proceso de despliegue y los po
 
 <img src={shivaOrdersList} />
 
-*__Nota : En este momento, aún no es posible la vista global a nivel de una organización de todos los recursos desplegados en los distintos tenants.__ Este tema se tratará posteriormente con la implementación de un portal dedicado al solicitante (en el sentido de firmante) y a la gestión de su organización.*
+*__Nota: la vista global, a nivel de una organización, de todos los recursos desplegados en los distintos tenants no está disponible.__*
 
 El despliegue de los recursos o su eliminación se realizan en cada uno de los productos en los menús __'IaaS'__ y __'Red'__ a la izquierda de la pantalla en la barra verde.
 

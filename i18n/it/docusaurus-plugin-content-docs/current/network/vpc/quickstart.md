@@ -21,7 +21,7 @@ Questa guida vi accompagna nella creazione del vostro primo Virtual Private Clou
 
 ## Prerequisiti
 
-Attualmente, l'attivazione del servizio VPC richiede di aver sottoscritto un prodotto **IaaS Open Source**. (Questa condizione sarà rimossa in un secondo momento).
+Un VPC in modalità dedicata richiede di aver sottoscritto l'offerta **IaaS Open Source**; la modalità condivisa si basa sull'offerta VM Instances (vedete le modalità di distribuzione nei [concetti](./concepts.md)).
 
 ## Passo 1: Accedere alla Console
 

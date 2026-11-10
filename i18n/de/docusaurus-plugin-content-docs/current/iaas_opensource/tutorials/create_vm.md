@@ -83,7 +83,7 @@ Für jeden Netzwerkadapter:
 - **MAC-Adresse** : Optional, wird automatisch generiert, wenn nicht angegeben
 
 :::info[VPC]
-Die Konfiguration von VPC-Netzwerken ist erst nach Abschluss des Vorgangs über den Reiter „Netzwerk“ der virtuellen Maschine verfügbar. Die Konfiguration über dieses Formular wird in Kürze bereitgestellt.
+Die Konfiguration von VPC-Netzwerken ist erst nach Abschluss des Vorgangs über den Reiter „Netzwerk“ der virtuellen Maschine verfügbar.
 :::
 
 Klicken Sie auf **Netzwerkadapter hinzufügen**, um eine neue Schnittstelle zu erstellen.

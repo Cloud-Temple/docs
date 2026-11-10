@@ -130,12 +130,7 @@ Die Konfiguration des VPC kann nach Ende des Dienstes 30 Tage lang in einen S3-S
 
 ## Kommende Entwicklungen
 
-Die folgenden Entwicklungen sind angekündigt; sie sind noch nicht verfügbar. Verfolgen Sie ihren Fortschritt auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3AVPC).
-
-- **Site-to-Site-VPN**: sichere Konnektivität zu Ihren On-Premises-Netzwerken.
-- **Cloud Connect**: sichere Konnektivität zu Azure und AWS.
-- **DNS-Dienst**: Namensauflösung innerhalb des VPC und Konfiguration eines externen DNS.
-- **Mikrosegmentierung**: Gruppen von Netzwerkrichtlinien für erweiterte Sicherheit.
+Verfolgen Sie die Entwicklung des Produkts auf der [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3AVPC).
 
 ## Preise
 

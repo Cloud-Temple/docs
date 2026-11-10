@@ -183,7 +183,7 @@ Sí, una migración puede ser estudiada mediante restauración **Veeam en modo B
 
 Para una VM restaurada desde un entorno de cliente, el soporte se refiere a la infraestructura VM. El buen funcionamiento del SO invitado, de las aplicaciones y de los agentes necesarios no está garantizado si estos no están instalados o configurados correctamente. El soporte del SO invitado es entonces limitado.
 
-Un segundo método, mediante importación de discos **VHD/VMDK**, está en desarrollo y dirigido al **cuarto trimestre de 2026**. Permitirá crear una VM a partir de una imagen existente, pero aún no está disponible.
+La importación de discos **VHD/VMDK** no está disponible. Siga la evolución del producto en la [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2/views/1?filterQuery=secondary-product%3A%22VM+Instances%22).
 
 ## ¿El disco de sistema está incluido gratuitamente?
 
@@ -195,8 +195,7 @@ Sí, las appliances virtuales Stormshield y FortiVM son compatibles con la **fam
 
 ## ¿La replicación automática de una VM entre zonas de disponibilidad está incluida?
 
-No. La replicación de VM no está incluida por defecto en Instancias VM. Su
-estudio está previsto para el segundo semestre de 2026.
+No. La replicación de VM no está incluida por defecto en Instancias VM.
 
 La elección de una zona de disponibilidad durante el despliegue no constituye, por tanto, una
 replicación automática de la VM.

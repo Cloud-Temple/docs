@@ -83,7 +83,7 @@ Per ogni adattatore di rete :
 - **Indirizzo MAC** : Opzionale, generato automaticamente se non specificato
 
 :::info[VPC]
-La configurazione delle reti VPC è disponibile solo dalla scheda Rete della macchina virtuale una volta terminata l'operazione. La configurazione da questo modulo sarà disponibile a breve.
+La configurazione delle reti VPC è disponibile solo dalla scheda Rete della macchina virtuale una volta terminata l'operazione.
 :::
 
 Fate clic su **Aggiungi adattatore di rete** per creare una nuova interfaccia.

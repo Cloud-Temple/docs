@@ -36,7 +36,7 @@ Dies ermöglicht die Anzeige der bestellten Cloud-Ressourcen, die sich in der Be
 
 <img src={shivaOrdersList} />
 
-*__Hinweis: Derzeit ist die globale Ansicht aller innerhalb der verschiedenen Tenants bereitgestellten Ressourcen auf Organisationsebene noch nicht möglich.__ Dieses Thema wird später durch die Implementierung eines Portals für den Auftraggeber (im Sinne des Unterzeichners) und die Steuerung seiner Organisation behandelt.*
+*__Hinweis: Eine globale Ansicht aller in den verschiedenen Tenants bereitgestellten Ressourcen auf Organisationsebene ist nicht verfügbar.__*
 
 Die Bereitstellung von Ressourcen oder deren Löschung erfolgt in jedem Produkt über die Menüs __'IaaS'__ und __'Netzwerk'__ links auf dem Bildschirm im grünen Banner.
 
