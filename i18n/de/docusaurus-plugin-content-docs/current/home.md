@@ -13,72 +13,93 @@ hide_table_of_contents: true
   <div class="hero-content">
     <h1 class="hero-title">Cloud Temple Dokumentation</h1>
     <p class="hero-subtitle">Alles, was Sie für den Betrieb der souveränen Cloud-Dienste von Cloud Temple benötigen.</p>
-    <div class="cert-row">
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
-      <a class="cert-chip" href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
-    </div>
+    <p class="hero-compliance">
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">SecNumCloud 3.2</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">PAMS 1.1</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISO 27001</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">HDS</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">Gaia-X Level 3</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">ISAE 3402</a>
+      <a href="https://www.cloud-temple.com/demarches-conformite/" target="_blank" rel="noopener noreferrer">C5</a>
+    </p>
   </div>
 </div>
 
 ## Erste Schritte
 
-<div class="quickstart-grid">
-  <a href="./console" class="quickstart-card">
-    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
-    <div>
-      <div class="quickstart-title">Konsole erkunden</div>
-      <div class="quickstart-desc">Verwalten Sie Ihre Ressourcen, Bestellungen und Zugriffe über die zentrale Cloud Temple-Konsole.</div>
-    </div>
-  </a>
-  <a href="./storage/oss/quickstart" class="quickstart-card">
-    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span>
-    <div>
-      <div class="quickstart-title">S3-Objektspeicher</div>
-      <div class="quickstart-desc">Richten Sie Ihren ersten S3-kompatiblen Bucket in wenigen Minuten ein.</div>
-    </div>
-  </a>
-  <a href="./iaas_vmware/quickstart" class="quickstart-card">
-    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></span>
-    <div>
-      <div class="quickstart-title">VMs bereitstellen</div>
-      <div class="quickstart-desc">Erstellen Sie Ihre ersten virtuellen Maschinen auf der Cloud Temple IaaS-Infrastruktur.</div>
-    </div>
-  </a>
-  <a href="./llmaas/quickstart" class="quickstart-card">
-    <span class="quickstart-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
-    <div>
-      <div class="quickstart-title">LLMaaS — Souveräne KI</div>
-      <div class="quickstart-desc">Greifen Sie in einer SecNumCloud-Umgebung auf Large Language Models zu.</div>
-    </div>
-  </a>
+<p class="home-lead">Ihre ersten Schritte auf der Plattform, eins nach dem anderen.</p>
+
+<div class="card-grid">
+  <div class="card">
+    <h3><span class="step-number">1</span>Auf die Konsole zugreifen</h3>
+    <p>Ihr Konto, Ihre Tenants, die Zwei-Faktor-Authentifizierung und die zugelassenen IP-Adressen.</p>
+    <a href="./console/onboarding" class="card-link">Onboarding öffnen &rarr;</a>
+  </div>
+  <div class="card">
+    <h3><span class="step-number">2</span>Zugriffe vergeben</h3>
+    <p>Benutzer, Berechtigungen pro Tenant und Identitätsföderation.</p>
+    <a href="./console/iam" class="card-link">Identitäten und Zugriffe verwalten &rarr;</a>
+  </div>
+  <div class="card">
+    <h3><span class="step-number">3</span>Eine Maschine bereitstellen</h3>
+    <p>Wählen Sie ein Compute-Angebot und erstellen Sie Ihre erste virtuelle Maschine.</p>
+    <a href="./compute_overview" class="card-link">Die Compute-Angebote ansehen &rarr;</a>
+  </div>
+  <div class="card">
+    <h3><span class="step-number">4</span>Automatisieren</h3>
+    <p>Die API der Konsole und der Terraform-Provider.</p>
+    <a href="./category/developer-tools" class="card-link">Die Entwicklertools ansehen &rarr;</a>
+  </div>
 </div>
 
-## Beliebte Seiten
+## Produkte
 
-<div class="popular-links-grid">
-  <a class="popular-link" href="./console/onboarding">
-    <div class="popular-link-title">Onboarding <span>→</span></div>
-    <div class="popular-link-desc">Ihre ersten Schritte auf der Plattform, von der Registrierung bis zur ersten Bereitstellung</div>
-  </a>
-  <a class="popular-link" href="./managed_kubernetes/quickstart">
-    <div class="popular-link-title">Verwaltetes Kubernetes <span>→</span></div>
-    <div class="popular-link-desc">Stellen Sie Ihren ersten Kubernetes-Cluster bereit</div>
-  </a>
-  <a class="popular-link" href="./llmaas/api">
-    <div class="popular-link-title">LLMaaS-API-Dokumentation <span>→</span></div>
-    <div class="popular-link-desc">Vollständige Referenz der OpenAI-kompatiblen API</div>
-  </a>
-  <a class="popular-link" href="./bastion/quickstart">
-    <div class="popular-link-title">Bastion — Sichere Zugänge <span>→</span></div>
-    <div class="popular-link-desc">Sichere SSH-Verbindung zu Ihren Ressourcen</div>
-  </a>
-  <a class="popular-link" href="./iaas_vmware/concepts">
-    <div class="popular-link-title">IaaS VMware-Architektur <span>→</span></div>
-    <div class="popular-link-desc">Verstehen Sie die virtualisierte Cloud Temple-Infrastruktur</div>
-  </a>
-  <a class="popular-link" href="./console/iam">
-    <div class="popular-link-title">IAM & Zugriffsverwaltung <span>→</span></div>
-    <div class="popular-link-desc">Identitäten, Rollen und Berechtigungen in Ihrem Tenant</div>
-  </a>
+<p class="home-lead">Finden Sie die Dokumentation jedes Produkts, nach Familien geordnet.</p>
+
+<div class="family-grid">
+  <a class="family-tile" href="./compute_overview"><span class="family-name">Compute</span><span class="family-desc">VM Instances, IaaS OpenSource, IaaS VMware</span></a>
+  <a class="family-tile" href="./iaas_bare-metal"><span class="family-name">Bare Metal</span><span class="family-desc">Dedizierte physische Server</span></a>
+  <a class="family-tile" href="./storage/oss"><span class="family-name">Speicher</span><span class="family-desc">Objektspeicher, Blockspeicher</span></a>
+  <a class="family-tile" href="./network/network_overview"><span class="family-name">Netzwerk</span><span class="family-desc">VPC, Private Backbone, Internet, Anti-DDoS</span></a>
+  <a class="family-tile" href="./paas_openshift"><span class="family-name">Container</span><span class="family-desc">PaaS OpenShift</span></a>
+  <a class="family-tile" href="./ai_overview"><span class="family-name">KI</span><span class="family-desc">LLMaaS</span></a>
+  <a class="family-tile" href="./bastion"><span class="family-name">Sicherheit</span><span class="family-desc">Bastion</span></a>
+  <a class="family-tile" href="./console/metrics"><span class="family-name">Monitoring</span><span class="family-desc">Observability</span></a>
+  <a class="family-tile" href="./housing"><span class="family-name">Colocation</span><span class="family-desc">Unterbringung Ihrer Geräte</span></a>
+  <a class="family-tile" href="./marketplace"><span class="family-name">Marketplace</span><span class="family-desc">Katalog bereitstellbarer Lösungen</span></a>
+</div>
+
+## Managed-Produkte
+
+<p class="home-lead">Dienste, die die Teams von Cloud Temple für Sie betreiben.</p>
+
+<div class="family-grid">
+  <a class="family-tile" href="./managed_kubernetes"><span class="family-name">Container</span><span class="family-desc">Managed Kubernetes</span></a>
+  <a class="family-tile" href="./databases_overview"><span class="family-name">Datenbanken</span><span class="family-desc">Verwaltetes MariaDB und PostgreSQL</span></a>
+  <a class="family-tile" href="./sovereign_soc"><span class="family-name">Sicherheit</span><span class="family-desc">Sovereign SOC</span></a>
+  <a class="family-tile" href="./aiops"><span class="family-name">KI</span><span class="family-desc">AIOps</span></a>
+</div>
+
+## Ressourcen
+
+<div class="resources-grid">
+  <div class="resources-block">
+    <p class="resources-title">Bewerten und Verträge abschließen</p>
+    <ul>
+      <li><a href="./shared-responsibility">Geteilte Verantwortung (RACI)</a></li>
+      <li><a href="https://www.cloud-temple.com/contracts" target="_blank" rel="noopener noreferrer">Vertragsdokumente</a></li>
+      <li><a href="./additional_content/concepts_regional">Regionen und Verfügbarkeitszonen</a></li>
+      <li><a href="https://www.cloud-temple.com/nos-tarifs-publics/" target="_blank" rel="noopener noreferrer">Öffentliche Preise</a></li>
+    </ul>
+  </div>
+  <div class="resources-block">
+    <p class="resources-title">Täglicher Betrieb</p>
+    <ul>
+      <li><a href="./changelog_produits">Produktneuheiten</a></li>
+      <li><a href="./console/security/security_alarms">Sicherheitswarnungen</a></li>
+      <li><a href="https://status.cloud-temple.com/" target="_blank" rel="noopener noreferrer">Statusseite</a></li>
+      <li><a href="https://github.com/orgs/Cloud-Temple/projects/2" target="_blank" rel="noopener noreferrer">Roadmap</a></li>
+      <li><a href="./console/console_quickstart#zugriff-auf-den-technischen-support">Support kontaktieren</a></li>
+    </ul>
+  </div>
 </div>
