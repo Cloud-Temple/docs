@@ -5,6 +5,20 @@ displayed_sidebar: docSidebar
 
 # Cronologia della documentazione
 
+### 10 Novembre 2026 : Nuova presentazione e documentazione armonizzata
+
+- **Presentazione**: La documentazione adotta l'identità visiva del sito cloud-temple.com: colori, carattere Montserrat, modalità scura predefinita, una pagina iniziale ridisegnata e una ricerca tradotta nelle cinque lingue.
+- **Navigazione**: Ogni prodotto presenta le stesse sezioni (Panoramica, Concetti, Guida introduttiva, Tutorial, Domande frequenti) e la sua panoramica rimanda a ciascuna di esse. I prodotti gestiti sono raggruppati per famiglie, come gli altri prodotti.
+- **Pagine Concetti**: La maggior parte delle pagine Concetti dei prodotti segue ora un modello comune ed è allineata alle pagine prodotto del sito cloud-temple.com.
+- **Nuova documentazione**: [Anti-DDoS](./network/anti_ddos/anti_ddos.md), [Sovereign SOC](./sovereign_soc/sovereign_soc.md) e [AIOps](./aiops/aiops.md). Un riquadro segnala i servizi gestiti che non si ordinano dalla Console.
+- **GPU**: Le GPU sono documentate all'interno delle offerte che le includono: IaaS VMware, IaaS OpenSource e Bare Metal. PaaS OpenShift offre un worker GPU H100.
+- **Console**: Un percorso di avvio unico, l'[Onboarding](./console/onboarding.md), etichette allineate alla Console 5.1 e schermate della nuova interfaccia.
+- **Pagine comuni**: Nuova pagina [Storage a blocchi](./storage/block/block_storage.md); la pagina [Regioni e zone di disponibilità](./additional_content/concepts_regional.md) è riorganizzata e descrive le zone di disponibilità.
+- **API**: La [guida dell'API](./console/api.md) corregge l'autenticazione: la chiave API (Personal Access Token) si scambia con un token JWT, da utilizzare poi come token Bearer; sono precisati i prerequisiti di rete e la risoluzione dei problemi.
+- **VM Instances**: Le [domande frequenti](./public_cloud/vm_instances/faq.md) spiegano le quote (vCPU, RAM, storage), le operazioni rifiutate quando vengono raggiunte, come richiederne l'aumento e la differenza tra quote e fatturazione.
+- **Evoluzione dei prodotti**: Seguitela sulla [Roadmap](https://github.com/orgs/Cloud-Temple/projects/2), filtrata per prodotto; non è più annunciata nelle pagine.
+- **Traduzioni**: Le versioni inglese, tedesca, spagnola e italiana sono risincronizzate con la fonte francese.
+
 ### 30 Ottobre 2026 : Console v5.1.0
 
 - **Console** : Le [note di rilascio dei prodotti](./changelog_produits.md) presentano le versioni 4.53.2 e 5.1.0: nuovo tema « System » che segue la modalità chiara o scura del sistema operativo, report dei consumi integrato nel Gestore dei costi con filtri per prodotto, SKU e tenant, e menu « Orders » spostato sotto il Marketplace.
