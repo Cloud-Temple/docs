@@ -54,7 +54,7 @@ hide_table_of_contents: true
 
 ## Productos
 
-<p class="home-lead">Para cada producto, encuentre su visión general, sus conceptos, su guía de inicio, sus tutoriales y sus preguntas frecuentes.</p>
+<p class="home-lead">Encuentre la documentación de cada producto, organizada por familias.</p>
 
 <div class="family-grid">
   <a class="family-tile" href="./compute_overview"><span class="family-name">Cómputo</span><span class="family-desc">VM Instances, IaaS OpenSource, IaaS VMware</span></a>

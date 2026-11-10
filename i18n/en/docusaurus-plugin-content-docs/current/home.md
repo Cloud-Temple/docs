@@ -54,7 +54,7 @@ hide_table_of_contents: true
 
 ## Products
 
-<p class="home-lead">For each product, find its overview, concepts, getting started guide, tutorials and FAQ.</p>
+<p class="home-lead">Find each product's documentation, organized by family.</p>
 
 <div class="family-grid">
   <a class="family-tile" href="./compute_overview"><span class="family-name">Compute</span><span class="family-desc">VM Instances, IaaS OpenSource, IaaS VMware</span></a>
