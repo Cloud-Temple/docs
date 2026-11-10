@@ -34,7 +34,7 @@ brew install hashicorp/tap/terraform
 
 ### Windows
 
-Descargue el ejecutable desde [terraform.io](https://www.terraform.io/downloads) o utiliza Chocolatey:
+Descargue el ejecutable desde [terraform.io](https://www.terraform.io/downloads) o utilice Chocolatey:
 
 ```powershell
 choco install terraform
@@ -46,7 +46,7 @@ choco install terraform
 terraform version
 ```
 
-Deberías ver una salida similar a:
+Debería ver una salida similar a:
 
 ```
 Terraform v1.6.0
@@ -64,7 +64,7 @@ Estas credenciales se pueden generar desde la Consola Cloud Temple siguiendo [es
 
 ### Configuración de las variables de entorno
 
-Exporte tus credenciales como variables de entorno:
+Exporte sus credenciales como variables de entorno:
 
 **Linux/macOS:**
 
@@ -382,7 +382,7 @@ Escriba `yes` para confirmar la eliminación.
 
 ## Estructura de proyecto recomendada
 
-Para proyectos más complejos, organiza tus archivos de la siguiente manera:
+Para proyectos más complejos, organice sus archivos de la siguiente manera:
 
 ```
 terraform-cloudtemple/
@@ -556,7 +556,7 @@ Error: failed to find datastore named "ds002-t0001-r-stw1-data13-th3s"
 
 ## Próximos pasos
 
-Ahora que dominas los conceptos básicos, explora los tutoriales avanzados:
+Ahora que domina los conceptos básicos, explore los tutoriales avanzados:
 
 - [Tutoriales IaaS VMware](tutorials.md#iaas-vmware) : Despliegue avanzado de máquinas virtuales, gestión de discos, configuración de red
 - [Tutoriales IaaS Open Source](tutorials.md) : Máquinas virtuales XCP-ng, replicación, alta disponibilidad

@@ -4,7 +4,7 @@ título: Sincronizar un directorio con AWS CLI
 
 Al igual que `mc`, la herramienta AWS CLI ofrece la comando `aws s3 sync` para sincronizar directorios. Esta comando compara el contenido del directorio fuente y el bucket de destino para transferir solo los archivos nuevos o modificados.
 
-No olvides configurar tu [cliente AWS según lo indicado en el guía de inicio](../quickstart.md) y utilizar el parámetro `--endpoint-url`.
+No olvide configurar su [cliente AWS según lo indicado en el guía de inicio](../quickstart.md) y utilizar el parámetro `--endpoint-url`.
 
 ### Exemple de traduction en español
 

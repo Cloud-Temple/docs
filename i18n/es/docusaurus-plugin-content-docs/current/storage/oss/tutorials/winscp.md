@@ -14,6 +14,6 @@ En la ventana de conexión, seleccione el protocolo `Amazon S3`. Luego, ingrese 
 
 ### 2. Gestión de archivos
 
-Una vez conectado, puedes interactuar con tus buckets y archivos como lo harías con un sitio FTP o SCP clásico.
+Una vez conectado, puede interactuar con sus buckets y archivos como lo haría con un sitio FTP o SCP clásico.
 
 <img src={S3Winscp_002} />

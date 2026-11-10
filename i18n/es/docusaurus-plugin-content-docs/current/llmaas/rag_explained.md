@@ -38,7 +38,7 @@ En términos simples, un vector es una lista de números que representa un punto
 Este vector no es aleatorio. Representa la "posición" del texto en un espacio semántico multidimensional. Textos con un significado similar tendrán vectores que apuntan en direcciones similares.
 
 :::tip[Analogía Geográfica]
-Imagina un mapa geográfico. "París" y "Francia" estarían muy cerca, al igual que "Roma" e "Italia". "París" estaría más lejos de "Roma" que de "Francia", pero más cerca que de "Tokio". El embedding hace lo mismo, pero con miles de "dimensiones" en lugar de dos, para capturar matices de significado complejos.
+Imagine un mapa geográfico. "París" y "Francia" estarían muy cerca, al igual que "Roma" e "Italia". "París" estaría más lejos de "Roma" que de "Francia", pero más cerca que de "Tokio". El embedding hace lo mismo, pero con miles de "dimensiones" en lugar de dos, para capturar matices de significado complejos.
 :::
 
 En nuestro script, el endpoint `/v1/embeddings` y el modelo `granite-embedding:278m` son responsables de esta traducción.

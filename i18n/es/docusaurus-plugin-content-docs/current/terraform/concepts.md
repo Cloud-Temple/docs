@@ -206,7 +206,7 @@ El estado de Terraform es un archivo que mantiene la correspondencia entre su co
 
 ### Backend remoto
 
-Para un trabajo en equipo, almacena el estado en un backend remoto:
+Para un trabajo en equipo, almacene el estado en un backend remoto:
 
 ```hcl
 terraform {
@@ -219,7 +219,7 @@ terraform {
 ```
 
 :::warning
-    El archivo `terraform.tfstate` contiene información sensible. Nunca lo commits en Git y utiliza un backend seguro para su almacenamiento.
+    El archivo `terraform.tfstate` contiene información sensible. Nunca lo incluya en un commit de Git y utilice un backend seguro para su almacenamiento.
 :::
 
 :::info
@@ -281,7 +281,7 @@ terraform destroy
 ```
 
 :::danger[Atención]
-  Este comando elimina definitivamente todos los recursos. Úsalo con precaución.
+  Este comando elimina definitivamente todos los recursos. Úselo con precaución.
 :::
 
 ### 5. Otras órdenes útiles

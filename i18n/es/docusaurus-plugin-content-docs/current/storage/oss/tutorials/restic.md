@@ -4,7 +4,7 @@ title: Backup con Restic en Storage Objet (S3)
 
 ## Introducción
 
-Restic es una herramienta de copia de seguridad rápida, segura y eficiente, compatible con múltiples backends, incluidos servicios tipo S3. Este tutorial te guiará paso a paso para configurar una copia de seguridad hacia un almacenamiento de objetos compatible con S3 (como AWS S3, MinIO, Wasabi, etc.).
+Restic es una herramienta de copia de seguridad rápida, segura y eficiente, compatible con múltiples backends, incluidos servicios tipo S3. Este tutorial le guiará paso a paso para configurar una copia de seguridad hacia un almacenamiento de objetos compatible con S3 (como AWS S3, MinIO, Wasabi, etc.).
 
 ## Requis
 

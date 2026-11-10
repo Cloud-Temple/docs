@@ -944,15 +944,15 @@ attached        = true
 ```
 
 :::info[A tener en cuenta]
-  Puedes combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante las recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
+  Puede combinar ambas aproximaciones haciendo referencia a los discos y/o adaptadores de red de una VM y añadir otros mediante las recursos `cloudtemple_compute_iaas_vmware/opensource_virtual_disk` y `cloudtemple_compute_iaas_vmware/opensource_network_adapter`
 :::
 
 ---
 
 **Buenas prácticas**:
 
-1. Usa `os_disk` y `os_network_adapter` para la configuración inicial del template
-2. Usa los recursos dedicados para añadir recursos adicionales
+1. Use `os_disk` y `os_network_adapter` para la configuración inicial del template
+2. Use los recursos dedicados para añadir recursos adicionales
 
 ## Almacenamiento objeto
 

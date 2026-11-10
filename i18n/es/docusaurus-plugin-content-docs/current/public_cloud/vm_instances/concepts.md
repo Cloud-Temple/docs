@@ -4,7 +4,7 @@ title: Conceptos
 
 ## Presentación
 
-El servicio **VM Instances** es un producto de computación compartida que permite desplegar máquinas virtuales bajo demanda, sin gestionar la infraestructura subyacente. Ofrece varias clases de servicio, desde el desarrollo con coste controlado hasta la producción crítica, y se integra de forma nativa con las redes de Cloud Temple. Puedes empezar con una sola VM y hacer evolucionar tu uso sin mínimo.
+El servicio **VM Instances** es un producto de computación compartida que permite desplegar máquinas virtuales bajo demanda, sin gestionar la infraestructura subyacente. Ofrece varias clases de servicio, desde el desarrollo con coste controlado hasta la producción crítica, y se integra de forma nativa con las redes de Cloud Temple. Puede empezar con una sola VM y hacer evolucionar su uso sin mínimo.
 
 ### Destinatarios y casos de uso
 
@@ -21,7 +21,7 @@ El servicio **VM Instances** es un producto de computación compartida que permi
 | Simplicidad de gestión | La infraestructura está totalmente gestionada; las VM se despliegan desde el Marketplace en pocos minutos. |
 | Soberanía              | Datos alojados en Francia, en un servicio cualificado SecNumCloud.                                  |
 | Integración completa   | Compatible con el VPC y el Private Backbone, gestionable mediante API y Terraform.                  |
-| Escalabilidad          | Sin mínimo: empiezas con una sola VM.                                                               |
+| Escalabilidad          | Sin mínimo: empieza con una sola VM.                                                                |
 
 ## Funcionalidades
 
@@ -57,15 +57,15 @@ El servicio es completamente gestionable mediante:
 
 ## Arquitectura
 
-Las VM Instances se ejecutan en una infraestructura compartida, con un aislamiento lógico estricto entre los clientes. Todos los volúmenes son **volúmenes Flash persistentes montados en red** (*network-attached*): no existe almacenamiento local efímero, y tus datos se conservan independientemente del estado de la máquina virtual.
+Las VM Instances se ejecutan en una infraestructura compartida, con un aislamiento lógico estricto entre los clientes. Todos los volúmenes son **volúmenes Flash persistentes montados en red** (*network-attached*): no existe almacenamiento local efímero, y sus datos se conservan independientemente del estado de la máquina virtual.
 
-Cada VM se conecta al **VPC** o al **Private Backbone** a través de sus tarjetas de red, y puede desplegarse desde el Marketplace en la zona de disponibilidad que elijas.
+Cada VM se conecta al **VPC** o al **Private Backbone** a través de sus tarjetas de red, y puede desplegarse desde el Marketplace en la zona de disponibilidad que elija.
 
 ## Regiones y zonas de disponibilidad
 
-El servicio VM Instances está desplegado en la región **FR1**. Al crear una máquina virtual, puedes elegir la **zona de disponibilidad (AZ)** en la que se alojará. Esta elección no requiere la activación de zonas de disponibilidad de la oferta IaaS.
+El servicio VM Instances está desplegado en la región **FR1**. Al crear una máquina virtual, puede elegir la **zona de disponibilidad (AZ)** en la que se alojará. Esta elección no requiere la activación de zonas de disponibilidad de la oferta IaaS.
 
-Para más información sobre las zonas de disponibilidad y las regiones de Cloud Temple, consulta:
+Para más información sobre las zonas de disponibilidad y las regiones de Cloud Temple, consulte:
 
 - [Conceptos de zonas de disponibilidad](../../additional_content/concepts_regional.md#zonas-de-disponibilidad)
 - [Conceptos de regiones](../../additional_content/concepts_regional.md)
@@ -129,12 +129,12 @@ Es posible crear un flavor personalizado seleccionando libremente:
 Esta flexibilidad permite ajustar con precisión el dimensionamiento a las necesidades de la aplicación, optimizando al mismo tiempo los costes.
 
 :::note
-Las especificaciones de los flavors pueden evolucionar. Consulta la consola Cloud Temple para obtener la lista actualizada.
+Las especificaciones de los flavors pueden evolucionar. Consulte la consola Cloud Temple para obtener la lista actualizada.
 :::
 
 ### Almacenamiento
 
-Todos los volúmenes del servicio VM Instances son **volúmenes Flash persistentes montados en red** (*network-attached*). No existe almacenamiento local efímero: tus datos se conservan independientemente del estado de la máquina virtual.
+Todos los volúmenes del servicio VM Instances son **volúmenes Flash persistentes montados en red** (*network-attached*). No existe almacenamiento local efímero: sus datos se conservan independientemente del estado de la máquina virtual.
 
 #### Disco del sistema
 
@@ -175,12 +175,12 @@ Cada instancia VM puede disponer de **1 a 7 tarjetas de red**. Cada tarjeta de r
 
 Esta interfaz puede conectarse a dos tipos de redes de Cloud Temple:
 
-- **Red privada de backbone**: red privada compartida con aislamiento lógico estricto entre inquilinos. Ideal para interconectar tus recursos de Cloud Temple en un entorno controlado. [Más información](../../network/private_network/private_network.md)
-- **VPC (Virtual Private Cloud)**: red privada totalmente gestionada que permite una segmentación avanzada y una configuración de red fina de tus entornos. [Más información](../../network/vpc/vpc.md)
+- **Red privada de backbone**: red privada compartida con aislamiento lógico estricto entre inquilinos. Ideal para interconectar sus recursos de Cloud Temple en un entorno controlado. [Más información](../../network/private_network/private_network.md)
+- **VPC (Virtual Private Cloud)**: red privada totalmente gestionada que permite una segmentación avanzada y una configuración de red fina de sus entornos. [Más información](../../network/vpc/vpc.md)
 
 #### IP flotante (Floating IP)
 
-En una red **VPC**, es posible asociar una **IP flotante** a una instancia VM. Una IP flotante es una dirección IP pública que puedes asociar o desasociar libremente de una instancia, independientemente de su ciclo de vida.
+En una red **VPC**, es posible asociar una **IP flotante** a una instancia VM. Una IP flotante es una dirección IP pública que puede asociar o desasociar libremente de una instancia, independientemente de su ciclo de vida.
 
 #### Appliances virtuales
 
@@ -197,7 +197,7 @@ Las appliances virtuales **Stormshield** y **FortiVM** son compatibles con la **
 VM Instances está certificado HDS e ISO 27001, y cualificado SecNumCloud.
 
 - **Aislamiento**: entorno compartido con aislamiento lógico estricto entre los clientes.
-- **Cifrado**: el cifrado en reposo de la infraestructura de almacenamiento subyacente lo garantiza el servicio. El cifrado de los datos a nivel de aplicación (sistema de archivos, base de datos) queda a tu cargo.
+- **Cifrado**: el cifrado en reposo de la infraestructura de almacenamiento subyacente lo garantiza el servicio. El cifrado de los datos a nivel de aplicación (sistema de archivos, base de datos) queda a cargo de usted.
 - **Residencia de los datos**: datos alojados en Francia.
 
 <a id="protection-des-données"></a>

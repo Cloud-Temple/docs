@@ -5,22 +5,22 @@ title: Visión general de IaaS OpenSource
 La **oferta IaaS OpenSource de Cloud Temple**: una alianza única entre rendimiento, seguridad y transparencia.
 
 Este producto garantiza un control total de sus entornos críticos, asegurando al mismo tiempo seguridad, continuidad y cumplimiento normativo.
-Con recursos escalables y gestión automatizada, disfruta de una infraestructura potente y adaptada a tus necesidades. Adopta el poder del Open Source con la fiabilidad y el soporte de Cloud Temple.
+Con recursos escalables y gestión automatizada, disfrute de una infraestructura potente y adaptada a sus necesidades. Adopte el poder del Open Source con la fiabilidad y el soporte de Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubre las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./iaas_opensource/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Guía de inicio</h3>
-    <p>Comienza rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./iaas_opensource/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>
-    <p>Aprende paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
 </div>

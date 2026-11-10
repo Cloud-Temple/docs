@@ -109,13 +109,13 @@ spec:
   storageClassName: topolvm-ssd
 ```
 
-Aplica el manifiesto de tu elección con el siguiente comando :
+Aplique el manifiesto de su elección con el siguiente comando :
 
 ```bash
 kubectl apply -f mon-pvc.yaml
 ```
 
-Puedes verificar el estado de tu PVC :
+Puede verificar el estado de su PVC :
 
 ```bash
 kubectl get pvc

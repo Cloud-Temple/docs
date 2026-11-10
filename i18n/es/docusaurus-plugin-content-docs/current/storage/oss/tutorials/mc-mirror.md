@@ -4,11 +4,11 @@ title: Sincronizar un directorio con mc mirror
 
 La comando `mc mirror` es una herramienta poderosa para sincronizar el contenido de un directorio local con un bucket S3. Puede transferir nuevos o modificados archivos, y opcionalmente eliminar los archivos del bucket que no existan localmente. Es una forma eficiente de mantener copias de seguridad o desplegar un sitio estático.
 
-No olvides configurar tu [cliente MinIO según lo indicado en el guía de inicio](../quickstart.md).
+No olvide configurar su [cliente MinIO según lo indicado en el guía de inicio](../quickstart.md).
 
 ### Traducción al español (Español)
 
-Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket `demo-app` en tu alias `cloudtemple-fr1`:
+Para sincronizar el contenido del directorio local `./mon-site` hacia el bucket `demo-app` en su alias `cloudtemple-fr1`:
 
 ```bash
 ❯ mc mirror ./mon-site/ cloudtemple-fr1/demo-app/
