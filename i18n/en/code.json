@@ -421,5 +421,29 @@
   "consoleMap.note": {
     "message": "Your application traffic does not go through the Console",
     "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Search",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Search the documentation",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Enter a search query to show results.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "No documents were found.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "See all results",
+    "description": "Fenêtre de recherche"
   }
 }

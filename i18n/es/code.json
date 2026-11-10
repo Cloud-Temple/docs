@@ -421,5 +421,29 @@
   "consoleMap.note": {
     "message": "El tráfico de sus aplicaciones no pasa por la Console",
     "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Buscar",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Buscar",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Buscar en la documentación",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Introduzca una búsqueda para mostrar los resultados.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "No se ha encontrado ningún documento.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "Ver todos los resultados",
+    "description": "Fenêtre de recherche"
   }
 }

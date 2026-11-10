@@ -8,11 +8,11 @@
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.Market Place": {
-    "message": "Market Place",
+    "message": "Beschaffungsplattformen",
     "description": "The title of the footer links column with title=Market Place in the footer"
   },
   "link.item.label.Status page": {
-    "message": "StatusPage",
+    "message": "Statusseite",
     "description": "The label of footer link with label=Status page linking to https://status.cloud-temple.com/"
   },
   "link.item.label.Documentation history": {
@@ -62,5 +62,17 @@
   "copyright": {
     "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"/contracts\">Verträge</a> |\n        <a href=\"/privacy\">Datenschutzrichtlinie</a>\n        <br />\n        Copyright © 2026 Cloud Temple.\n      </div>\n    ",
     "description": "The footer copyright"
+  },
+  "link.title.Contractual": {
+    "message": "Verträge",
+    "description": "The title of the footer link column with title=Contractual in the footer"
+  },
+  "link.item.label.Contractual Documents": {
+    "message": "Vertragsdokumente",
+    "description": "The label of the footer link with label=Contractual Documents in the footer"
+  },
+  "link.item.label.Shared Responsibility Model": {
+    "message": "Modell der geteilten Verantwortung",
+    "description": "The label of the footer link with label=Shared Responsibility Model in the footer"
   }
 }

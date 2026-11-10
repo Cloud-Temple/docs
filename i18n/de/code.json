@@ -421,5 +421,29 @@
   "consoleMap.note": {
     "message": "Der Datenverkehr Ihrer Anwendungen läuft nicht über die Console",
     "description": "Libellé du schéma « Où se situe la Console »"
+  },
+  "theme.SearchBar.label": {
+    "message": "Suchen",
+    "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Suchen",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Dokumentation durchsuchen",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Geben Sie einen Suchbegriff ein, um Ergebnisse anzuzeigen.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "Keine Dokumente gefunden.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "Alle Ergebnisse anzeigen",
+    "description": "Fenêtre de recherche"
   }
 }

@@ -6,18 +6,27 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* ── Couleurs de la charte Cloud Temple (site cloud-temple.com) ──
+     Vert-bleu foncé #338370 pour les liens : contraste 4,55:1 sur blanc (AA). */
+  --ifm-color-primary: #338370;
+  --ifm-color-primary-dark: #2e7665;
+  --ifm-color-primary-darker: #2b6f5f;
+  --ifm-color-primary-darkest: #245c4e;
+  --ifm-color-primary-light: #38907b;
+  --ifm-color-primary-lighter: #3b9781;
+  --ifm-color-primary-lightest: #42aa92;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* ── Typographie Nunito (proche Cloud Temple Console) ── */
-  --ifm-font-family-base: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  /* Montserrat partout, comme le site cloud-temple.com. */
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  /* Angles droits partout, comme le site. */
+  --ifm-global-radius: 0;
+  --ifm-card-border-radius: 0;
+  --ifm-code-border-radius: 0;
+  --ifm-alert-border-radius: 0;
   --ifm-font-size-base: 15px;
   --ifm-line-height-base: 1.65;
   --ifm-font-weight-normal: 400;
@@ -41,15 +50,19 @@
   --ifm-container-width-xl: 1800px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+/* Mode sombre. Sélecteur html[data-theme='dark'] : même spécificité que celui
+   d'Infima, chargé avant ; sans le « html », ses fonds #1b1b1d / #242526 gagnent. */
+html[data-theme='dark'] {
+  /* Vert-bleu de la charte (#41a890) : contraste 5,3:1 sur le fond anthracite (AA). */
+  --ifm-color-primary: #41a890;
+  --ifm-color-primary-dark: #3a9782;
+  --ifm-color-primary-darker: #378f7a;
+  --ifm-color-primary-darkest: #2d7665;
+  --ifm-color-primary-light: #48b89e;
+  --ifm-color-primary-lighter: #50bba3;
+  --ifm-color-primary-lightest: #6ac5b0;
+  --ifm-background-color: #242428;
+  --ifm-background-surface-color: #2f2f33;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -272,24 +285,13 @@ h3 { font-size: 1.15rem; }
   margin-bottom: 5px;
 }
 
-/* Conteneur pour les cartes en grille — 4 colonnes par défaut */
+/* Conteneur pour les cartes en grille : autant de colonnes que la largeur le
+   permet, cartes de 200 px au moins (4 colonnes sur un écran courant). */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin: 20px 0;
-}
-
-@media (max-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Style des cartes */
@@ -510,27 +512,16 @@ h3 { font-size: 1.15rem; }
   text-decoration: none !important;
   color: inherit !important;
   background: var(--ifm-background-surface-color);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.18s ease;
   cursor: pointer;
   min-height: 148px;
-}
-
-.book-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-  text-decoration: none !important;
 }
 
 /* Tranche du livre */
 .book-card-spine {
   width: 6px;
   flex-shrink: 0;
-  background: var(--book-color, #2e8555);
-  transition: width 0.18s ease;
-}
-
-.book-card:hover .book-card-spine {
-  width: 9px;
+  background: var(--book-color, #338370);
 }
 
 /* Corps */
@@ -543,7 +534,7 @@ h3 { font-size: 1.15rem; }
 }
 
 .book-card-icon {
-  color: var(--book-color, #2e8555);
+  color: var(--book-color, #338370);
   margin-bottom: 2px;
 }
 
@@ -570,23 +561,19 @@ h3 { font-size: 1.15rem; }
 .book-card-cta {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--book-color, #2e8555);
+  color: var(--book-color, #338370);
   margin-top: 6px;
   display: inline-block;
 }
 
 /* Couleurs par catégorie */
-.book-card--green  { --book-color: #2e8555; }
+.book-card--green  { --book-color: #338370; }
 .book-card--blue   { --book-color: #0e6ba8; }
 .book-card--violet { --book-color: #7c3aed; }
 .book-card--orange { --book-color: #d97706; }
 
 [data-theme='dark'] .book-card {
   border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .book-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
 }
 
 /* Masque le titre H1 auto-généré par Docusaurus sur les pages avec hero banner */
@@ -602,7 +589,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 /* ─── Hero Banner ───────────────────────────────────────────────────────────── */
 
 .hero-banner {
-  background: linear-gradient(135deg, #1a5c38 0%, #2e8555 60%, #3cad6e 100%);
+  background: linear-gradient(135deg, #242428 0%, #2f2f33 45%, #338370 100%);
   border-radius: 12px;
   padding: 48px 40px;
   margin: 0 0 2.5rem 0;
@@ -657,7 +644,7 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
 }
 
 [data-theme='dark'] .hero-banner {
-  background: linear-gradient(135deg, #1a4a2e 0%, #1e6640 60%, #2e8555 100%);
+  background: linear-gradient(135deg, #1c1c1f 0%, #2f2f33 45%, #2d7665 100%);
 }
 
 /* ─── Certification chips ────────────────────────────────────────────────────── */
@@ -698,25 +685,25 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
    lisibles que sur le fond sombre du .hero-banner. Sur une page de contenu au
    fond clair, utiliser .cert-row--doc. */
 .cert-row--doc .cert-chip {
-  border-color: rgba(46, 133, 85, 0.35);
-  background: rgba(46, 133, 85, 0.08);
+  border-color: rgba(51, 131, 112, 0.35);
+  background: rgba(51, 131, 112, 0.08);
   color: var(--ifm-color-primary-darkest);
 }
 
 .cert-row--doc .cert-chip:hover {
-  background: rgba(46, 133, 85, 0.16);
+  background: rgba(51, 131, 112, 0.16);
   border-color: var(--ifm-color-primary-dark);
   color: var(--ifm-color-primary-darkest);
 }
 
 [data-theme='dark'] .cert-row--doc .cert-chip {
-  border-color: rgba(37, 194, 160, 0.45);
-  background: rgba(37, 194, 160, 0.12);
+  border-color: rgba(65, 168, 144, 0.45);
+  background: rgba(65, 168, 144, 0.12);
   color: var(--ifm-color-primary-lighter);
 }
 
 [data-theme='dark'] .cert-row--doc .cert-chip:hover {
-  background: rgba(37, 194, 160, 0.22);
+  background: rgba(65, 168, 144, 0.22);
   border-color: var(--ifm-color-primary-light);
   color: var(--ifm-color-primary-lightest);
 }
@@ -781,16 +768,10 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   border-radius: 10px;
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  transition: border-color 0.2s ease;
   background: var(--ifm-background-surface-color);
 }
 
-.quickstart-card:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 16px rgba(46, 133, 85, 0.12);
-  transform: translateY(-2px);
-  text-decoration: none !important;
-}
 
 .quickstart-icon {
   font-size: 1.8rem;
@@ -975,14 +956,17 @@ article img:not(.platform-logo) {
 /* ─── Footer propre et compact ─────────────────────────────────────────────── */
 
 footer.footer--dark {
-  background-color: #fafafa !important;
-  border-top: 1px solid #e8e8e8;
+  background-color: #242428 !important;
+  border-top: 1px solid #242428;
+  --ifm-font-color-base: #ffffff;
+  --ifm-footer-link-color: #aaaaaa;
+  --ifm-footer-link-hover-color: #41a890;
   padding: 40px 0 24px 0;
 }
 
 [data-theme='dark'] footer.footer--dark {
-  background-color: #1b1b1d !important;
-  border-top-color: #2e2e32;
+  background-color: #1c1c1f !important;
+  border-top-color: #2f2f33;
 }
 
 footer.footer--dark .footer__links {
@@ -1045,3 +1029,380 @@ footer.footer--dark .footer__copyright a:hover {
   color: var(--ifm-color-primary);
 }
 /* ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Charte du site : barre de navigation ─────────────────────────────────── */
+/* Barre anthracite et logo blanc, comme la barre supérieure de cloud-temple.com. */
+.navbar {
+  --ifm-navbar-background-color: #242428;
+  --ifm-navbar-link-color: #e6e6e6;
+  --ifm-navbar-link-hover-color: #41a890;
+  font-family: 'Montserrat', var(--ifm-font-family-base);
+  font-weight: 500;
+}
+/* Menu mobile (tiroir) : il hérite du fond anthracite de la barre, mais ses liens
+   suivent le thème. Fond de surface du thème (blanc en clair), bandeau du logo gardé anthracite
+   (logo blanc). */
+.navbar-sidebar { background-color: var(--ifm-background-surface-color); }
+.navbar-sidebar__brand { background-color: #242428; }
+.navbar .navbar__toggle,
+.navbar .clean-btn { color: #e6e6e6; }
+/* Bouton « Retour au menu principal » : couleur du texte du thème, pas le gris clair
+   des boutons de la barre (illisible sur le fond clair du tiroir). */
+.navbar .navbar-sidebar__back { color: var(--ifm-font-color-base); }
+/* Bascule de thème : au survol, Docusaurus pose un fond gris clair en mode clair,
+   sous une icône claire (contraste 1,06:1). Fond clair translucide, comme sur fond sombre. */
+.navbar [class*='toggleButton_']:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ─── Direction artistique du site cloud-temple.com ─────────────────────────
+   Relevé du 2026-11-10 : fond anthracite #242428, blocs #2f2f33 bordés d'un
+   filet vert-bleu, angles droits, Montserrat, tableaux à en-tête vert-bleu,
+   aucun dégradé ni halo. Exception voulue : en-têtes de tableaux neutres ici, le
+   vert-bleu étant réservé à ce qui est cliquable. */
+
+h1 { font-weight: 500; }
+h2 { font-weight: 700; }
+h3 { font-weight: 500; }
+
+/* Bandeau d'accueil : aplat, angles droits, sans dégradé ni halo. */
+.hero-banner {
+  background: #242428;
+  border: 1px solid #41a890;
+  border-radius: 0;
+}
+[data-theme='dark'] .hero-banner { background: #2f2f33; }
+/* Trame de points, comme sur les bandeaux du site : un bloc sur la droite du bandeau
+   (pas de second bloc en bas à gauche, qui passerait sous les badges de conformité). */
+.hero-banner { overflow: hidden; }
+.hero-banner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  left: auto;
+  width: 120px;
+  height: 205px;
+  transform: translateY(-50%);
+  border-radius: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.32) 1.6px, transparent 2px) 0 0 / 17px 17px;
+}
+@media (max-width: 996px) {
+  .hero-banner::after { width: 68px; right: 14px; }
+}
+.hero-badge { border-radius: 0; }
+
+/* Cartes : blocs du site (fond #2f2f33 en sombre, filet vert-bleu, angles droits). */
+.card,
+.book-card {
+  border-radius: 0;
+  box-shadow: none;
+}
+.card { border: 1px solid var(--ifm-color-emphasis-300); }
+.card:hover { transform: none; border-color: var(--ifm-color-primary); }
+[data-theme='dark'] .card,
+[data-theme='dark'] .book-card {
+  background: #2f2f33;
+  border-color: #41a890;
+}
+
+/* Tableaux : en-tête neutre (le vert-bleu est réservé à ce qui est cliquable). */
+.markdown table { border-collapse: collapse; }
+.markdown table thead tr,
+.markdown table th {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-emphasis-300);
+}
+[data-theme='dark'] .markdown table thead tr,
+[data-theme='dark'] .markdown table th {
+  background-color: #2f2f33;
+  border-color: #3a3a3f;
+}
+.markdown table td { border-color: var(--ifm-color-emphasis-300); }
+[data-theme='dark'] .markdown table tr { background-color: transparent; }
+[data-theme='dark'] .markdown table td { border-color: #3a3a3f; }
+
+/* Pied de page : titres de colonnes blancs, sans majuscules ; liens gris. */
+footer.footer--dark { padding: 55px 0 24px 0; }
+footer.footer--dark .footer__title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  opacity: 1;
+}
+
+/* ─── Fenêtre de recherche (docusaurus-plugin-search-local) ─────────────────
+   Le module prend le fond des résultats dans --ifm-color-primary-contrast-
+   background (bleu marine dans le thème sombre d'Infima) et colore le résultat
+   sélectionné avec la couleur principale : chemin vert-bleu sur fond vert-bleu.
+   Ses classes sont des modules CSS (suffixe haché) : sélecteurs par préfixe,
+   préfixés par html pour passer devant sa feuille, chargée après celle-ci. */
+html [class*='searchModal_'] { background: rgba(20, 20, 23, 0.75); }
+html [class*='searchModalContainer_'] {
+  background: #ffffff;
+  border: 1px solid #338370;
+  border-radius: 0;
+  box-shadow: none;
+}
+html [class*='searchInputContainer_'] {
+  background: #ffffff;
+  border: 1px solid #338370;
+  border-radius: 0;
+  box-shadow: none;
+}
+html [class*='searchResultsSectionHeader_'] { background: transparent; }
+html [class*='searchResult_'] {
+  background: #f4f4f5;
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* Résultat sélectionné : vert-bleu foncé, tout le texte en blanc (contraste 4,55:1). */
+html [class*='searchResult_'][class*='cursor_'] {
+  background-color: #338370 !important;
+  border-color: #338370;
+}
+html [class*='searchResult_'][class*='cursor_'],
+html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
+[data-theme='dark'] [class*='searchModalContainer_'] { background: #242428; border-color: #41a890; }
+[data-theme='dark'] [class*='searchInputContainer_'] { background: #2f2f33; border-color: #41a890; }
+[data-theme='dark'] [class*='searchResult_']:not([class*='cursor_']) {
+  background: #2f2f33;
+  border-color: #3a3a3f;
+  color: #e6e6e6;
+}
+
+/* Bouton de recherche de la barre : la barre est anthracite dans les deux modes,
+   le bouton aussi. Sans cela, en clair, il garde un fond clair avec un texte gris
+   très clair, illisible. Texte #aaa sur #2f2f33 : contraste 5,8:1. */
+.navbar .DocSearch-Button {
+  background: #2f2f33;
+  border: 1px solid #3a3a3f;
+  border-radius: 0;
+  color: #aaaaaa;
+}
+.navbar .DocSearch-Button:hover,
+.navbar .DocSearch-Button:focus {
+  border-color: #41a890;
+  box-shadow: none;
+}
+.navbar .DocSearch-Button:focus-visible { outline: 2px solid #41a890; outline-offset: 2px; }
+.navbar .DocSearch-Button .DocSearch-Search-Icon { color: #e6e6e6; }
+.navbar .DocSearch-Button-Placeholder { color: #aaaaaa; }
+.navbar .DocSearch-Button-Key {
+  background: #242428;
+  border: 1px solid #3a3a3f;
+  border-radius: 0;
+  box-shadow: none;
+  color: #aaaaaa;
+}
+
+/* ─── Angles droits partout, comme le site ──────────────────────────────────
+   Le thème Infima code certains arrondis en dur (menu, listes déroulantes,
+   fil d'Ariane, pagination…) et les composants maison avaient les leurs
+   (cartes de l'accueil, badges de conformité). Un seul vocabulaire : l'angle
+   droit. Les vrais cercles (50 %) ne sont pas concernés. */
+:root {
+  --ifm-breadcrumb-border-radius: 0;
+  --ifm-pagination-nav-border-radius: 0;
+  --ifm-badge-border-radius: 0;
+  --ifm-button-border-radius: 0;
+  --ifm-pills-border-radius: 0;
+  --ifm-tabs-border-radius: 0;
+}
+.menu__link,
+.menu__caret,
+.menu__list-item-collapsible,
+.dropdown__menu,
+.dropdown__link,
+.clean-btn,
+.breadcrumbs__link,
+.pagination-nav__link,
+.table-of-contents__link,
+.theme-admonition,
+.alert,
+.tabs__item,
+.theme-code-block,
+.prism-code,
+.badge,
+.button,
+details,
+.cert-chip,
+.quickstart-card,
+.popular-links-grid,
+[class*='categoryLink_'],
+[class*='tag_'] {
+  border-radius: 0 !important;
+}
+
+/* ─── Un seul modèle de carte, une seule couleur d'action ───────────────────
+   Le vert-bleu signale ce qui est cliquable. Une carte = toute la carte est
+   cliquable, titre dans la couleur du texte, action en vert-bleu, texte aligné
+   à gauche. */
+.card { text-align: left; min-height: 0; position: relative; }
+.card h3 {
+  color: var(--ifm-font-color-base);
+  text-align: left;
+  justify-content: flex-start;
+  height: auto;
+  margin-bottom: 8px;
+}
+.card p {
+  text-align: left;
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+.card-link {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-align: left;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.card-link:hover { color: var(--ifm-color-primary); text-decoration: underline; }
+/* Ancien bouton plein dans une carte : même apparence que .card-link. */
+.card .button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 0 0;
+  background: none;
+  border: 0;
+  color: var(--ifm-color-primary);
+  font-size: inherit;
+  font-weight: 600;
+  text-align: left;
+  white-space: normal;
+}
+.card .button:hover { background: none; color: var(--ifm-color-primary); text-decoration: underline; }
+/* Lien étiré : la carte entière devient cliquable, sans changer le HTML des pages
+   (chaque carte ne contient qu'un lien). */
+.card .card-link::after,
+.card .button::after { content: ''; position: absolute; inset: 0; }
+/* Survol : le même pour toutes les cartes, un filet vert-bleu, ni ombre ni décalage. */
+.card:hover,
+.book-card:hover,
+.quickstart-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: none;
+  transform: none;
+}
+/* Pages populaires : titre dans la couleur du texte, flèche vert-bleu. */
+.popular-link-title { color: var(--ifm-font-color-base); }
+.popular-link-title span { color: var(--ifm-color-primary); opacity: 1; }
+/* Premiers pas : même signal d'action, une flèche vert-bleu après le titre. */
+.quickstart-title::after { content: ' →'; color: var(--ifm-color-primary); }
+/* FAQ générale : une seule couleur de liseré, celle de la charte. */
+.book-card--green,
+.book-card--blue,
+.book-card--violet,
+.book-card--orange { --book-color: var(--ifm-color-primary); }
+
+/* Étiquettes de bas de page (home, accueil, onboarding…) : sans utilité pour le lecteur. */
+.theme-doc-footer-tags-row { display: none; }
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+/* Titre du bandeau : taille qui suit la largeur, jamais coupé au milieu d'un mot. */
+.hero-title { font-size: clamp(1.5rem, 6vw, 2.2rem); overflow-wrap: normal; word-break: normal; hyphens: manual; }
+/* Trame de points masquée sur petit écran : elle passerait sous les badges. */
+@media (max-width: 996px) {
+  .hero-banner::after { display: none; }
+}
+
+/* ─── Pied de page lisible, comme celui du site ─────────────────────────────
+   Liens gris clair (#aaa, contraste 6,7:1 sur #242428) en taille normale,
+   titres de colonnes blancs, ligne du bas nette. */
+footer.footer--dark { padding: 55px 0 28px 0; }
+footer.footer--dark .footer__link-item {
+  color: #aaaaaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+footer.footer--dark a.footer__link-item:hover { color: #41a890; }
+footer.footer--dark .footer__item { margin-bottom: 10px; }
+footer.footer--dark .footer__title { margin-bottom: 18px; }
+footer.footer--dark .footer__bottom { border-top-color: #3a3a3f; padding-top: 22px; }
+footer.footer--dark .footer__logo { max-width: 170px; margin-bottom: 14px; }
+footer.footer--dark .footer__copyright,
+footer.footer--dark .footer__copyright a { color: #aaaaaa; font-size: 0.85rem; }
+footer.footer--dark .footer__copyright a:hover { color: #41a890; }
+
+/* ─── Vert-bleu : liens dans le texte, soulignés ; navigation en neutre ─────
+   Un lien dans un paragraphe ne doit pas se repérer à sa seule couleur
+   (accessibilité) : il est souligné. Les éléments de navigation (pagination,
+   « Éditer cette page ») restent neutres et prennent le vert-bleu au survol. */
+.markdown a:not(.card-link):not(.button):not(.quickstart-card):not(.popular-link):not(.book-card):not(.hash-link) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.pagination-nav__label { color: var(--ifm-font-color-base); }
+.pagination-nav__sublabel { color: var(--ifm-color-emphasis-600); }
+.pagination-nav__link:hover { border-color: var(--ifm-color-primary); }
+.pagination-nav__link:hover .pagination-nav__label { color: var(--ifm-color-primary); }
+.theme-edit-this-page { color: var(--ifm-color-emphasis-600); }
+.theme-edit-this-page:hover { color: var(--ifm-color-primary); }
+
+/* ─── Encadrés : info et astuce aux couleurs de la charte ───────────────────
+   Avertissement et danger gardent leurs couleurs d'alerte, qui portent un sens. */
+.alert--info,
+.alert--success {
+  --ifm-alert-background-color: rgba(51, 131, 112, 0.08);
+  --ifm-alert-background-color-highlight: rgba(51, 131, 112, 0.15);
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
+  --ifm-alert-border-color: #338370;
+}
+[data-theme='dark'] .alert--info,
+[data-theme='dark'] .alert--success {
+  --ifm-alert-background-color: rgba(65, 168, 144, 0.10);
+  --ifm-alert-border-color: #41a890;
+}
+
+/* ─── Blocs de code en sombre : fond anthracite au lieu du violet Dracula ── */
+[data-theme='dark'] .prism-code,
+[data-theme='dark'] pre { background-color: #2f2f33 !important; }
+[data-theme='dark'] .theme-code-block { box-shadow: none; border: 1px solid #3a3a3f; }
+
+/* ─── Menu latéral : graisse 500 pour les familles, comme le menu du site ───
+   La graisse 600 paraissait lourde en Montserrat, plus large que Nunito. */
+[class*='sidebar-cat-'] > .menu__list-item-collapsible > .menu__link { font-weight: 500; }
+
+/* ─── Bandeau d'accueil compact (modèle « bandeau + démarrage rapide ») ─────
+   Pleine largeur, collé à la barre de navigation et au menu, sans cadre :
+   titre, sous-titre et conformités. Les actions de démarrage sont les cartes
+   « Premiers pas » juste en dessous. Décor : trame de points en haut à droite,
+   masquée sur mobile. */
+.hero-banner {
+  position: relative;
+  margin: calc(-1 * var(--ifm-spacing-horizontal)) calc(-1 * var(--ifm-spacing-horizontal)) 2.5rem;
+  padding: 36px 200px 32px var(--ifm-spacing-horizontal);
+  background: #242428;
+  border: 0;
+  overflow: hidden;
+}
+[data-theme='dark'] .hero-banner { background: #242428; border-bottom: 1px solid #2f2f33; }
+.hero-content { max-width: 720px; position: relative; z-index: 1; }
+.hero-title { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; margin: 0 0 8px 0; }
+.hero-subtitle { color: rgba(255, 255, 255, 0.82); font-size: 1.02rem; line-height: 1.55; margin: 0 0 16px 0; }
+/* Conformités : texte discret séparé par des points vert-bleu. */
+.cert-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0; }
+.cert-chip {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.62) !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none !important;
+}
+.cert-chip:hover { color: #ffffff !important; }
+.cert-chip + .cert-chip::before { content: '·'; color: #41a890; margin: 0 10px; font-weight: 700; }
+.hero-banner::after { top: 24px; right: 40px; bottom: auto; transform: none; width: 85px; height: 120px; }
+@media (max-width: 996px) {
+  .hero-banner { padding: 28px var(--ifm-spacing-horizontal) 24px; }
+  .hero-banner::after { display: none; }
+}
