@@ -96,6 +96,21 @@ The compute blades available for the IaaS OpenSource offering provide a range of
 - __(5)__ High availability on a cluster is available only from 2 nodes.
 
 
+### GPU
+
+The PERFORMANCE 4 blade class carries two NVIDIA L40S cards with 48 GB. The number and model of cards are set by the blade class: the GPU configuration of a blade cannot be changed.
+
+| Parameter               | NVIDIA L40S  |
+|-------------------------|--------------|
+| GPU memory              | 48 GB        |
+| FP32                    | 91.6 TFlops  |
+| TF32 (Tensor Core) *    | 366 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   |
+| FP8 (Tensor Core) *     | 1,466 TFlops |
+| Maximum power consumption | 350 W      |
+
+\* NVIDIA manufacturer values with structured sparsity. Without sparsity, these values are halved.
+
 ### Block storage classes
 
 <a id="characteristics"></a>

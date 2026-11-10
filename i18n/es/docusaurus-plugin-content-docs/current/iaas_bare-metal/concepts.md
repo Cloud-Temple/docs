@@ -97,6 +97,26 @@ Los blades de cálculo disponibles para la oferta Bare Metal ofrecen una gama de
 - **(3)** La conectividad física se comparte entre el acceso a la red y el acceso al almacenamiento en bloque, gracias a una arquitectura convergente Cisco UCS.
 - **(4)** Las GPU disponibles evolucionan en función de las últimas tecnologías. El producto ofrece GPU NVIDIA L40S y NVIDIA H100.
 
+### GPU
+
+Dos clases de blades incorporan cada una dos tarjetas NVIDIA dedicadas a su uso: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) y PERFORMANCE 5 (2 × NVIDIA H100 80 GB). Sirven para el entrenamiento y la inferencia de modelos de IA, la visión por computador, la simulación y el cálculo científico. CUDA, cuDNN y los principales frameworks de IA (TensorFlow, PyTorch, etc.) se utilizan sin adaptación.
+
+| Parámetro               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| Memoria GPU             | 48 GB        | 80 GB        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Consumo máximo          | 350 W        | 350 W        |
+
+\* Valores del fabricante NVIDIA con dispersión estructurada (sparsity). Sin dispersión, estos valores se dividen por dos.
+
+La tecnología Multi-Instance GPU (MIG) particiona una tarjeta H100 en un máximo de 7 instancias. Cada instancia dispone de su propia memoria y de sus propias unidades de cálculo, aisladas de las demás instancias. De este modo, varias cargas de trabajo comparten una misma tarjeta sin interferir entre sí.
+
+- El número y el modelo de las tarjetas los fija la clase de blade: la configuración GPU de un blade no se puede modificar.
+- Los blades Bare Metal equipados con GPU pueden servir de nodos worker para Managed Kubernetes: consulte [Utilizar una GPU en Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).
+
 ### Clases de almacenamiento en modo bloque
 
 <a id="características"></a>

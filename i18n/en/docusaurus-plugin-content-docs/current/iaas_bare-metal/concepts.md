@@ -97,6 +97,26 @@ The compute blades available for the Bare Metal offering provide a range of perf
 - **(3)** Physical connectivity is shared between network access and block storage access, thanks to a converged Cisco UCS architecture.
 - **(4)** Available GPUs evolve with the latest technologies. The product offers NVIDIA L40S and NVIDIA H100 GPUs.
 
+### GPU
+
+Two blade classes each carry two NVIDIA cards dedicated to your use: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) and PERFORMANCE 5 (2 × NVIDIA H100 80 GB). They are used for training and inference of AI models, computer vision, simulation and scientific computing. CUDA, cuDNN and the main AI frameworks (TensorFlow, PyTorch, etc.) work without adaptation.
+
+| Parameter               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| GPU memory              | 48 GB        | 80 GB        |
+| FP32                    | 91.6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1,513 TFlops |
+| FP8 (Tensor Core) *     | 1,466 TFlops | 3,026 TFlops |
+| Maximum power consumption | 350 W      | 350 W        |
+
+\* NVIDIA manufacturer values with structured sparsity. Without sparsity, these values are halved.
+
+Multi-Instance GPU (MIG) technology partitions an H100 card into up to 7 instances. Each instance has its own memory and its own compute units, isolated from the other instances. Several workloads can thus share the same card without interfering with one another.
+
+- The number and model of cards are set by the blade class: the GPU configuration of a blade cannot be changed.
+- Bare Metal blades equipped with GPUs can serve as worker nodes for Managed Kubernetes: see [Using a GPU on Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).
+
 ### Block storage classes
 
 <a id="characteristics"></a>

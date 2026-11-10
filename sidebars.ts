@@ -205,18 +205,6 @@ const sidebars: SidebarsConfig = {
             page('llmaas', 'faq', 'llmaas/faq'),
           ],
         },
-        {
-          type: 'category',
-          label: 'GPU',
-          link: { type: 'doc', id: 'gpu/gpu' },
-          items: [
-            page('gpu', 'overview', 'gpu/gpu'),
-            page('gpu', 'concepts', 'gpu/concepts'),
-            page('gpu', 'quickstart', 'gpu/quickstart'),
-            page('gpu', 'tutorials', 'gpu/tutorials'),
-            page('gpu', 'faq', 'gpu/faq'),
-          ],
-        },
       ],
     },
     {

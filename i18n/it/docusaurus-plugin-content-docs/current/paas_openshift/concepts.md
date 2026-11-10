@@ -174,6 +174,21 @@ I prodotti Red Hat OpenShift di Cloud Temple sono disponibili con pagamento a co
 
 7. *I nodi vengono distribuiti in modo bilanciato tra le 3 zone di disponibilità (1 nodo per zona). Non è possibile sbilanciare un cluster assegnando un numero maggiore di nodi a una singola zona.*
 
+### GPU
+
+I worker node GPU si ordinano in gruppi di 3 worker, uno per zona di disponibilità. Ogni worker integra due schede NVIDIA: L40S 48 GB, oppure H100 80 GB con un impegno di 24 mesi. Le GPU sono esposte ai pod tramite l'API Kubernetes; CUDA, cuDNN e i principali framework di IA (TensorFlow, PyTorch, ecc.) si utilizzano senza adattamenti.
+
+| Parametro               | NVIDIA L40S  | NVIDIA H100  |
+|-------------------------|--------------|--------------|
+| Memoria GPU             | 48 GB        | 80 GB        |
+| FP32                    | 91,6 TFlops  | 51 TFlops    |
+| TF32 (Tensor Core) *    | 366 TFlops   | 756 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   | 1 513 TFlops |
+| FP8 (Tensor Core) *     | 1 466 TFlops | 3 026 TFlops |
+| Consumo massimo         | 350 W        | 350 W        |
+
+\* Valori del costruttore NVIDIA con sparsità strutturata (sparsity). Senza sparsità, questi valori si dimezzano.
+
 ### Diritti e Permessi
 
 Di seguito sono elencati i principali permessi implementati:

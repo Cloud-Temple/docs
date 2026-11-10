@@ -96,6 +96,21 @@ Les lames de calcul disponibles pour l'offre IaaS OpenSource offrent une gamme d
 - __(5)__ La haute disponibilité sur un cluster est disponible uniquement à partir de 2 nœuds.
 
 
+### GPU
+
+La classe de lames PERFORMANCE 4 embarque deux cartes NVIDIA L40S de 48 Go. Le nombre et le modèle des cartes sont fixés par la classe de lame : la configuration GPU d'une lame ne se modifie pas.
+
+| Paramètre               | NVIDIA L40S  |
+|-------------------------|--------------|
+| Mémoire GPU             | 48 Go        |
+| FP32                    | 91,6 TFlops  |
+| TF32 (Tensor Core) *    | 366 TFlops   |
+| FP16 (Tensor Core) *    | 733 TFlops   |
+| FP8 (Tensor Core) *     | 1 466 TFlops |
+| Consommation maximale   | 350 W        |
+
+\* Valeurs du constructeur NVIDIA avec parcimonie structurée (sparsity). Sans parcimonie, ces valeurs sont divisées par deux.
+
 ### Classes de stockage en mode bloc
 
 <a id="caractéristiques"></a>

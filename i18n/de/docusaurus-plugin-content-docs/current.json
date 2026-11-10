@@ -47,10 +47,6 @@
     "message": "Tutorials",
     "description": "The label for category 'Tutoriels' in sidebar 'docSidebar'"
   },
-  "sidebar.docSidebar.category.GPU": {
-    "message": "GPU",
-    "description": "The label for category 'GPU' in sidebar 'docSidebar'"
-  },
   "sidebar.docSidebar.category.Bare Metal": {
     "message": "Bare Metal",
     "description": "The label for category 'Bare Metal' in sidebar 'docSidebar'"
@@ -314,26 +310,6 @@
   "sidebar.docSidebar.doc.llmaas_faq": {
     "message": "Häufig gestellte Fragen",
     "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc llmaas/faq"
-  },
-  "sidebar.docSidebar.doc.gpu_overview": {
-    "message": "Übersicht",
-    "description": "The label for the doc item 'Vue d'ensemble' in sidebar 'docSidebar', linking to the doc gpu/gpu"
-  },
-  "sidebar.docSidebar.doc.gpu_concepts": {
-    "message": "Konzepte",
-    "description": "The label for the doc item 'Concepts' in sidebar 'docSidebar', linking to the doc gpu/concepts"
-  },
-  "sidebar.docSidebar.doc.gpu_quickstart": {
-    "message": "Erste Schritte",
-    "description": "The label for the doc item 'Guide de démarrage' in sidebar 'docSidebar', linking to the doc gpu/quickstart"
-  },
-  "sidebar.docSidebar.doc.gpu_tutorials": {
-    "message": "Tutorials",
-    "description": "The label for the doc item 'Tutoriels' in sidebar 'docSidebar', linking to the doc gpu/tutorials"
-  },
-  "sidebar.docSidebar.doc.gpu_faq": {
-    "message": "Häufig gestellte Fragen",
-    "description": "The label for the doc item 'Questions fréquentes' in sidebar 'docSidebar', linking to the doc gpu/faq"
   },
   "sidebar.docSidebar.category.AIOps": {
     "message": "AIOps",

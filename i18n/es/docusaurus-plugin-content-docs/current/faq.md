@@ -37,14 +37,6 @@ A continuación, encontrará las preguntas frecuentes sobre los productos y serv
       <div class="book-card-cta">Consultar la FAQ →</div>
     </div>
   </a>
-  <a class="book-card book-card--violet" href="./gpu/faq">
-    <div class="book-card-spine"></div>
-    <div class="book-card-body">
-      <div class="book-card-title">GPU</div>
-      <div class="book-card-desc">Sección en preparación.</div>
-      <div class="book-card-cta">Consultar la FAQ →</div>
-    </div>
-  </a>
 </div>
 
 ---
