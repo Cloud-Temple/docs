@@ -351,9 +351,9 @@ top_docs = rerank_documents(query, candidates, top_n=5)
 
 ### Soglia di Pertinenza
 
-Inizia utilizzando il ranking relativo e `top_n` per selezionare i documenti. Non esiste una soglia universale, come 0,3, applicabile a tutti i modelli e corpus.
+Iniziate utilizzando il ranking relativo e `top_n` per selezionare i documenti. Non esiste una soglia universale, come 0,3, applicabile a tutti i modelli e corpus.
 
-Se la tua applicazione deve scartare i documenti poco pertinenti, calibra una soglia su un insieme rappresentativo di query e documenti la cui pertinenza è stata valutata. Misura i documenti pertinenti conservati e quelli eliminati erroneamente. Rivaluta questa soglia in caso di cambiamento del modello o del corpus; non confrontare direttamente i punteggi di modelli diversi.
+Se la vostra applicazione deve scartare i documenti poco pertinenti, calibrate una soglia su un insieme rappresentativo di query e documenti la cui pertinenza è stata valutata. Misurate i documenti pertinenti conservati e quelli eliminati erroneamente. Rivalutate questa soglia in caso di cambiamento del modello o del corpus; non confrontate direttamente i punteggi di modelli diversi.
 
 ## Risorse
 

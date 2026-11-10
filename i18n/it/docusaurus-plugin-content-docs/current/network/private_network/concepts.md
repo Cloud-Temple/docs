@@ -24,7 +24,7 @@ o __'Distributed Virtual Port Group'__, è un concetto specifico di VMware. Un d
 raggruppa diversi porte virtuali (vPorts) in un ambiente di rete virtuale distribuito per facilitarne l'utilizzo.
 
 Localizzata all'interno di un __[Tenant](../../console/iam/concepts.md#tenant)__, può essere estesa tra le zone di disponibilità
-consentendoti così di costruire architetture "attivo/attivo" con quorum.
+consentendovi così di costruire architetture "attivo/attivo" con quorum.
 
 La larghezza di banda massima utilizzabile dipende principalmente dal modello di lama utilizzato (10Gbps convergenti o 25 Gbps convergenti) e dalle capacità delle macchine virtuali.
 
@@ -54,8 +54,8 @@ __*Nota:*__ *Non è possibile selezionare l'ID del VLAN 802.1q.*
 
 ## Condivisione di rete tra tenant
 
-Di default, __le reti sono disponibili solo all'interno di un tenant__. Puoi scegliere di __condividere una rete tra più tenant__ per motivi tecnici o di connettività.
-È così possibile condividere una rete tra i tuoi __[Tenant](../../console/iam/concepts.md#tenant)__ all'interno della stessa organizzazione.
+Di default, __le reti sono disponibili solo all'interno di un tenant__. Potete scegliere di __condividere una rete tra più tenant__ per motivi tecnici o di connettività.
+È così possibile condividere una rete tra i vostri __[Tenant](../../console/iam/concepts.md#tenant)__ all'interno della stessa organizzazione.
 
 ## Connessione privata esterna
 
@@ -81,9 +81,9 @@ La creazione di una connessione esterna viene realizzata tramite una richiesta d
 Cloud Temple offre la possibilità di beneficiare di una fibra dedicata tra due infrastrutture di hosting dedicate (rack).
 
 Questo servizio è tipicamente utilizzato quando si desidera ospitare due infrastrutture non cloud (ad esempio due IBM AS/400), in due rack distinti su due datacenter fisici diversi.
-Potresti voler collegare direttamente questi due rack in modo privato senza passare per l'infrastruttura backbone di Cloud Temple e utilizzare esclusivamente il backbone di trasmissione ottica.
+Potreste voler collegare direttamente questi due rack in modo privato senza passare per l'infrastruttura backbone di Cloud Temple e utilizzare esclusivamente il backbone di trasmissione ottica.
 
-In questo contesto, possiamo fornire una connettività in fibra ottica tra i tuoi due rack. La consegna avviene sempre su due percorsi ottici diversificati.
+In questo contesto, possiamo fornire una connettività in fibra ottica tra i vostri due rack. La consegna avviene sempre su due percorsi ottici diversificati.
 
 Ecco i diversi tipi di consegna disponibili:
 
@@ -94,14 +94,14 @@ Ecco i diversi tipi di consegna disponibili:
 
 La creazione di una connettività dedicata viene realizzata tramite una richiesta di servizio che indica:
 
-    Il nome della tua Organizzazione
+    Il nome della vostra Organizzazione
     Il nome di un contatto con la sua email e numero di telefono per completare la configurazione
     Il nome del tenants
     Gli identificativi dei due rack dedicati
     La larghezza di banda desiderata
-    La rete del tuo tenants che dovrà ospitare questa connettività
+    La rete del vostro tenants che dovrà ospitare questa connettività
 
-Sarai contattato dal supporto per affinare la tua richiesta.
+Sarete contattati dal supporto per affinare la vostra richiesta.
 
 | Riferimento                                                                                | Unità     | SKU                              | Impegno |
 |------------------------------------------------------------------------------------------|-----------|----------------------------------|---------|

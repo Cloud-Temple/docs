@@ -20,7 +20,7 @@ import ssoAdfs_012 from '@site/docs/console/iam/tutorials/images/sso_adfs_012.pn
 
 Ecco un esempio di configurazione del repository di autenticazione di un'organizzazione Cloud Temple con __Microsoft ADFS__.
 
-La configurazione del tuo repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console.  
+La configurazione del vostro repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console.  
 Questo permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.  
 Se gli utenti sono già autenticati sul loro account Microsoft, l'autenticazione ai servizi della Console avverrà in modo trasparente.
 
@@ -61,7 +61,7 @@ The Cloud Temple support team will send you a URL that will look like this: [htt
 
 #### Aggiunta di un'affidabilità di parte fidata
 
-Sul tuo server ADFS, vai su __"Aggiungi un'affidabilità di parte fidata"__.
+Sul vostro server ADFS, andate su __"Aggiungi un'affidabilità di parte fidata"__.
 
 <img src={ssoAdfs_001} />
 

@@ -109,7 +109,7 @@ kubectl create secret docker-registry harbor-pull-secret \
 
 >ℹ️Il parametro --docker-email non è più richiesto nelle versioni recenti di kubectl (e può essere ignorato).
 
-### 2) Riferire il segreto ai tuoi workload
+### 2) Riferire il segreto ai vostri workload
 
 - Tramite ServiceAccount:
 

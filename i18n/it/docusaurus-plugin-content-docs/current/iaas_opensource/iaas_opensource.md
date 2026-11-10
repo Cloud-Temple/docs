@@ -11,24 +11,24 @@ Grazie a risorse scalabili e a una gestione automatizzata, beneficerete di un'in
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite le basi e i principi essenziali per comprendere e gestire la nostra infrastruttura.</p>
-    <a href="./iaas_opensource/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="./iaas_opensource/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
+    <a href="./iaas_opensource/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./iaas_opensource/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="./iaas_opensource/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
   </div>
 </div>
 
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Sei un operatore del settore pubblico? Il prodotto <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
+  <p>Siete un operatore del settore pubblico? Il prodotto <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
 
   <div class="platform-card">
     <img src="img/marketplace/LogoNuagePublic.png" alt="Logo Nuage Public" class="platform-logo" />
@@ -46,6 +46,6 @@ Grazie a risorse scalabili e a una gestione automatizzata, beneficerete di un'in
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Scopri di più &rarr;
+    Scoprite di più &rarr;
   </a>
 </div>

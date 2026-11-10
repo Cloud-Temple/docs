@@ -42,18 +42,18 @@ Per ulteriori informazioni sul funzionamento del toolkit NVIDIA, è possibile co
 
 ## Distribuzione e Verifica
 
-1. **Distribuisci il pod** utilizzando il comando `kubectl apply` :
+1. **Distribuite il pod** utilizzando il comando `kubectl apply` :
 
     ```shell
     kubectl apply -f nvidia-smi.yaml
     ```
 
-2. **Verifica i log del pod** per visualizzare l'output del comando `nvidia-smi` :
+2. **Verificate i log del pod** per visualizzare l'output del comando `nvidia-smi` :
 
     ```shell
     kubectl logs nvidia-cuda-check
     ```
 
-Se tutto è configurato correttamente, dovresti vedere un output simile al seguente, che mostra i dettagli della tua scheda GPU :
+Se tutto è configurato correttamente, dovreste vedere un output simile al seguente, che mostra i dettagli della vostra scheda GPU :
 
 <img src={nvidiasmi} alt="nvidia-smi command result"/>

@@ -25,7 +25,7 @@ Per iniziare, seguite la [guida di avvio rapido](./quickstart.md). Per scegliere
 | Elaborazione asincrona di batch di richieste | [Batch](./batch.md) |
 | Cambio di modello e gestione dei vecchi identificatori | [Ciclo di vita e migrazione](./concepts.md#migrazione-verso-un-altro-modello) |
 
-Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutane gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
+Le ottimizzazioni di inferenza, tra cui la previsione di più token (*MTP*) annunciata nel changelog, vengono eseguite lato servizio. Valutatene gli effetti sulle vostre richieste in base alle metriche di monitoraggio.
 
 ## Accesso all'API
 
@@ -37,7 +37,7 @@ Tutte le richieste all'API LLMaaS devono includere un header `Authorization` con
 
 ## Tipi di contenuto
 
-Le richieste di generazione del testo utilizzano JSON con l'header `Content-Type: application/json`. Lo streaming restituisce eventi SSE e la trascrizione di file audio utilizza `multipart/form-data`. Consulta la [documentazione API](./api.md) per il formato di ogni endpoint.
+Le richieste di generazione del testo utilizzano JSON con l'header `Content-Type: application/json`. Lo streaming restituisce eventi SSE e la trascrizione di file audio utilizza `multipart/form-data`. Consultate la [documentazione API](./api.md) per il formato di ogni endpoint.
 
 ## Metadati delle risposte
 
@@ -46,7 +46,7 @@ A seconda dell'endpoint, il corpo JSON della risposta può contenere i seguenti 
 - `id` : Identificatore della risposta.
 - `backend` : Informazioni sul motore e sull'istanza che ha elaborato la richiesta (`engine_type`, `machine_name`).
 
-Questi campi sono presenti nel corpo JSON, non negli header HTTP. Consulta il [riferimento API](./api.md) per il formato e i campi documentati di ciascun endpoint.
+Questi campi sono presenti nel corpo JSON, non negli header HTTP. Consultate il [riferimento API](./api.md) per il formato e i campi documentati di ciascun endpoint.
 
 ## Esempi
 
@@ -102,7 +102,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro     | Tipo    | Descrizione                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Il modello da utilizzare (vedi [catalogo dei modelli](./models.md)) |
+| `model`       | string  | Il modello da utilizzare (vedete [catalogo dei modelli](./models.md)) |
 | `messages`    | array   | Elenco dei messaggi della conversazione                         |
 | `max_tokens`  | integer | Numero massimo di token da generare                            |
 | `temperature` | float   | Controlla la creatività (0.0-2.0)                              |

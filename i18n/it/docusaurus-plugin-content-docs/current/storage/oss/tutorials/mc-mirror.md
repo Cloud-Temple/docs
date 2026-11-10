@@ -8,7 +8,7 @@ Non dimenticate di configurare il vostro [client MinIO come indicato nel manuale
 
 ### Traduzione in italiano (Markdown)
 
-Per sincronizzare il contenuto del percorso locale `./mon-sito` con il bucket `demo-app` sul tuo alias `cloudtemple-fr1`:
+Per sincronizzare il contenuto del percorso locale `./mon-sito` con il bucket `demo-app` sul vostro alias `cloudtemple-fr1`:
 
 ```bash
 ❯ mc mirror ./mon-sito/ cloudtemple-fr1/demo-app/

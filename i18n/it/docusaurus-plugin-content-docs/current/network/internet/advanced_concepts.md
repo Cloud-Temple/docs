@@ -8,7 +8,7 @@ Questa pagina presenta le funzionalità avanzate di routing BGP disponibili sull
 
 ## Comunità BGP
 
-Cloud Temple offre una varietà di comunità BGP che consentono di controllare la selezione del percorso utilizzato dal tuo traffico.
+Cloud Temple offre una varietà di comunità BGP che consentono di controllare la selezione del percorso utilizzato dal vostro traffico.
 
 ### Cos'è una comunità BGP?
 
@@ -16,7 +16,7 @@ Le comunità BGP sono attributi opzionali che possono essere associati alle rott
 
 ### Azioni sulla Preferenza Locale
 
-Le seguenti comunità BGP consentono di modificare la **preferenza locale** dei tuoi prefissi, influenzando così la selezione del percorso verso la macchina che annuncia il prefisso all'interno dell'AS33930.
+Le seguenti comunità BGP consentono di modificare la **preferenza locale** dei vostri prefissi, influenzando così la selezione del percorso verso la macchina che annuncia il prefisso all'interno dell'AS33930.
 
 È possibile modificare la preferenza locale di un prefisso all'interno del backbone Internet Cloud Temple nell'AS 33930 utilizzando le seguenti comunità :
 
@@ -28,11 +28,11 @@ Le seguenti comunità BGP consentono di modificare la **preferenza locale** dei 
 | 33930:40200 | Priorità alta | 200 |
 | 33930:40250 | Priorità massima  | 250 |
 
-**Nota :** Più alto è il valore della preferenza locale, più il percorso è preferito nelle decisioni di routing BGP. Per impostazione predefinita, senza una comunità specifica, i tuoi prefissi utilizzano la preferenza locale standard di 100.
+**Nota :** Più alto è il valore della preferenza locale, più il percorso è preferito nelle decisioni di routing BGP. Per impostazione predefinita, senza una comunità specifica, i vostri prefissi utilizzano la preferenza locale standard di 100.
 
 ## Configurazione
 
-Per applicare una comunità BGP alle tue route:
+Per applicare una comunità BGP alle vostre route:
 
 1. Definire una policy che contrassegna il prefisso con la comunità
 2. Applicare questa policy alla sessione BGP con i server di route Cloud Temple

@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## Compatibilità OpenAI
 
-L'API LLMaaS è compatibile con OpenAI per le chiamate documentate in questo riferimento. Configura l'URL di base `https://api.ai.cloud-temple.com/v1` e la tua chiave LLMaaS nel client, quindi verifica le capacità del modello e i parametri dell'endpoint utilizzato.
+L'API LLMaaS è compatibile con OpenAI per le chiamate documentate in questo riferimento. Configurate l'URL di base `https://api.ai.cloud-temple.com/v1` e la vostra chiave LLMaaS nel client, quindi verificate le capacità del modello e i parametri dell'endpoint utilizzato.
 
 La compatibilità non copre tutte le funzionalità di OpenAI. Le differenze documentate includono in particolare:
 
@@ -25,7 +25,7 @@ https://api.ai.cloud-temple.com/v1
 
 ## Autenticazione
 
-Tutte le richieste richiedono un header `Authorization` con il tuo token API:
+Tutte le richieste richiedono un header `Authorization` con il vostro token API:
 
 ```
 Authorization: Bearer VOTRE_TOKEN_API
@@ -35,17 +35,17 @@ Authorization: Bearer VOTRE_TOKEN_API
 
 ### Il Principio dei Livelli (Tier) : Livello di Accesso, Budget e Capacità
 
-Il nostro sistema di livelli è progettato come **pacchetti di servizio completi** che definiscono tre aspetti chiave del tuo utilizzo:
+Il nostro sistema di livelli è progettato come **pacchetti di servizio completi** che definiscono tre aspetti chiave del vostro utilizzo:
 
 1.  **Un Livello di Accesso (Credito di Acquisto)** : Per i Livelli 1 a 4, si tratta di un importo da pagare in anticipo (upfront) per attivare il servizio e sbloccare le capacità tecniche e di budget del livello scelto.
-2.  **Un Limite di Budget Mensile** : È il tetto del tuo consumo mensile, garantendoti un controllo totale sui costi.
-3.  **Una Capacità Tecnica** : Sono i limiti di throughput (token al giorno e all'ora) che garantiscono una performance stabile e prevedibile per il tuo volume di chiamate.
+2.  **Un Limite di Budget Mensile** : È il tetto del vostro consumo mensile, garantendovi un controllo totale sui costi.
+3.  **Una Capacità Tecnica** : Sono i limiti di throughput (token al giorno e all'ora) che garantiscono una performance stabile e prevedibile per il vostro volume di chiamate.
 
-La scelta di un livello è quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. Il tuo consumo all'interno di questo pacchetto viene poi fatturato secondo le tariffe vigenti.
+La scelta di un livello è quindi un equilibrio tra l'investimento iniziale, il budget mensile previsto e la capacità tecnica richiesta. Il vostro consumo all'interno di questo pacchetto viene poi fatturato secondo le tariffe vigenti.
 
 ### Capacità tecniche dei livelli
 
-La tabella seguente presenta esclusivamente i throughput tecnici. Gli importi del credito di accesso e i tetti di budget rientrano nelle condizioni commerciali del livello scelto; consulta il catalogo ufficiale e le condizioni della tua sottoscrizione.
+La tabella seguente presenta esclusivamente i throughput tecnici. Gli importi del credito di accesso e i tetti di budget rientrano nelle condizioni commerciali del livello scelto; consultate il catalogo ufficiale e le condizioni della vostra sottoscrizione.
 
 | Livello | Token Output/Ora | Token Output/Giorno | Descrizione |
 | ------------------------- | ------------------- | ------------------ | -------------------- |
@@ -55,7 +55,7 @@ La tabella seguente presenta esclusivamente i throughput tecnici. Gli importi de
 | **Livello 4** | 600 000 | 14 400 000 | Impresa |
 | **Fatturazione Mensile** | Priorità elevata | Priorità elevata | Contatto commerciale |
 
-Per conoscere i prezzi pubblici vigenti e stabilire la tua stima, consulta il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+Per conoscere i prezzi pubblici vigenti e stabilire la vostra stima, consultate il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 
 **Nota** : I limiti di throughput sono calcolati sulla base dei token di output. La tariffazione varia a seconda dell'uso:
@@ -70,7 +70,7 @@ Per conoscere i prezzi pubblici vigenti e stabilire la tua stima, consulta il [c
 | **Batch asincrono (output)** |
 | **Trascrizione Audio** |
 
-Per conoscere i prezzi pubblici vigenti e stabilire la tua stima, consulta il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
+Per conoscere i prezzi pubblici vigenti e stabilire la vostra stima, consultate il [catalogo tariffario ufficiale Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/).
 
 
 La trascrizione audio viene conteggiata al minuto; ogni minuto iniziato è dovuto.
@@ -126,7 +126,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parametro           | Tipo          | Obbligatorio | Descrizione                                                                                                                  |
 | ------------------- | ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `model`             | string        | ✅          | ID del modello (vedi [catalogo](./models))                                                                                    |
+| `model`             | string        | ✅          | ID del modello (vedete [catalogo](./models))                                                                                    |
 | `messages`          | array         | ✅          | Conversazione (role: system/user/assistant)                                                                                   |
 | `stream`            | boolean       | ❌          | Abilita lo streaming (default: false)                                                                                          |
 | `temperature`       | float         | ❌          | Creatività 0.0-2.0 (default: 0.7)                                                                                             |
@@ -202,7 +202,7 @@ Se il modello decide di chiamare uno strumento, la risposta avrà un `finish_rea
 }
 ```
 
-Dopo aver ricevuto una risposta `tool_calls`, devi eseguire lo strumento dal tuo lato, quindi inviare nuovamente il risultato al modello utilizzando un messaggio con il `role: "tool"`.
+Dopo aver ricevuto una risposta `tool_calls`, dovete eseguire lo strumento dal vostro lato, quindi inviare nuovamente il risultato al modello utilizzando un messaggio con il `role: "tool"`.
 
 ```json
 {
@@ -262,7 +262,7 @@ data: [DONE]
 
 ### Richieste Multimodali (Visione)
 
-Per analizzare immagini, puoi inviare una richiesta in cui il campo `content` di un messaggio utente è un array (array) contenente sia testo che immagini.
+Per analizzare immagini, potete inviare una richiesta in cui il campo `content` di un messaggio utente è un array (array) contenente sia testo che immagini.
 
 Il formato per un'immagine è un oggetto con `type: "image_url"` e un campo `image_url` contenente l'URL dell'immagine nel formato `data URI` (base64).
 
@@ -271,7 +271,7 @@ Sebbene il formato standard e raccomandato sia `{"type": "image_url", "image_url
 :::
 
 :::tip[OCR e Analisi di Documenti]
-Per attività specifiche di analisi di documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Vedi la [documentazione dedicata](./ocr).
+Per attività specifiche di analisi di documenti (PDF, scansioni, tabelle), raccomandiamo l'uso del modello specializzato **DeepSeek-OCR**. Vedete la [documentazione dedicata](./ocr).
 :::
 
 #### Esempio di Richiesta Vision
@@ -407,7 +407,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/embeddings" \
 
 | Paramètre | Type                       | Obligatoire | Description                                           |
 | --------- | -------------------------- | ----------- | ----------------------------------------------------- |
-| `model`   | string                     | ✅          | ID del modello di embedding (vedi [catalogo](./models)) |
+| `model`   | string                     | ✅          | ID del modello di embedding (vedete [catalogo](./models)) |
 | `input`   | string or array of strings | ✅          | Il testo o la lista di testi da vettorizzare.          |
 
 #### Risposta
@@ -465,7 +465,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/rerank" \
 
 | Paramètre   | Type    | Obligatoire | Description                                                                 |
 | ----------- | ------- | ----------- | --------------------------------------------------------------------------- |
-| `model`     | string  | ✅          | ID del modello di reranking (vedi [catalogo](./models#modelli-di-reranking)) |
+| `model`     | string  | ✅          | ID del modello di reranking (vedete [catalogo](./models#modelli-di-reranking)) |
 | `query`     | string  | ✅          | La query di ricerca                                                     |
 | `documents` | array   | ✅          | Lista dei documenti da riordinare                                            |
 | `top_n`     | integer | ❌          | Numero di risultati da restituire (default: tutti)                             |

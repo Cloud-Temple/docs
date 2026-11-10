@@ -20,7 +20,7 @@ Prenderemo come **esempio** un cluster **"ctodev"**, il cui range assegnato è *
 
 ## Piano di indirizzamento IP
 
-Il tuo cluster Kubernetes gestito dispone di un VLAN multi-zona con un range di indirizzi IPv4 in /22.
+Il vostro cluster Kubernetes gestito dispone di un VLAN multi-zona con un range di indirizzi IPv4 in /22.
 
 Il range del nostro **esempio** 10.20.0.0/22 è suddiviso logicamente in sotto-range.
 
@@ -143,7 +143,7 @@ Ad esempio, un servizio denominato `api-backend` nel namespace `production` sar�
 La zona DNS pubblica utilizzata per i cluster Kubernetes Managed è `.mk.ms-cloud-temple.com`
 
 L'ingress *"nginx-external"* (mappato sull'IP pubblico n. 2) è accessibile su `"*.external.<il vostro identificativo di cluster>.mk.ms-cloud-temple.com"`.
-Se pubblichi un'applicazione con questa ingress-class, potrai accedervi direttamente tramite questo nome di dominio. Vedi il tutorial: [Distribuire la vostra prima applicazione](./firstdeploy)
+Se pubblicate un'applicazione con questa ingress-class, potrete accedervi direttamente tramite questo nome di dominio. Vedete il tutorial: [Distribuire la vostra prima applicazione](./firstdeploy)
 
 ## Hubble: l'osservabilità di rete a portata di mano
 
@@ -164,7 +164,7 @@ Per accedervi, è necessario essere connessi alla rete interna del cluster (ad e
 
 `http://hubble.internal.<vostro-identificativo-cluster>.mk.ms-cloud-temple.com`
 
-Affinché questo URL sia risolvibile dalla tua postazione di lavoro, dovrai probabilmente aggiungere una voce nel file `hosts` o nel DNS interno. È possibile ottenere l'indirizzo IP interno dell'Ingress Hubble con il seguente comando:
+Affinché questo URL sia risolvibile dalla vostra postazione di lavoro, dovrete probabilmente aggiungere una voce nel file `hosts` o nel DNS interno. È possibile ottenere l'indirizzo IP interno dell'Ingress Hubble con il seguente comando:
 
 ```bash
 kubectl get ingress hubble-ui -n kube-system
@@ -211,6 +211,6 @@ Questa configurazione garantisce che il traffico verso l'API e i servizi interni
     <p>Seguite la nostra guida dettagliata per imparare a esporre un'applicazione utilizzando un Ingress.</p>
   </div>
   <div class="card__footer">
-    <a href="./firstdeploy" class="button button--primary button--block">Vedi il tutorial →</a>
+    <a href="./firstdeploy" class="button button--primary button--block">Vedete il tutorial →</a>
   </div>
 </div>

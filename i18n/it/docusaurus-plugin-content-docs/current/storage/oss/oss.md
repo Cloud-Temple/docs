@@ -15,9 +15,9 @@ Basato su un'API compatibile con S3, il nostro servizio OSS è ideale per una va
 
 Come tutti i servizi di Cloud Temple, il servizio di archiviazione oggetti è completamente conforme ai requisiti della **qualifica SecNumCloud** rilasciata dall'ANSSI. Ciò garantisce:
 
-- **Sovranità dei dati**: I tuoi dati sono archiviati esclusivamente in Francia.
-- **Massima sicurezza**: Meccanismi di crittografia robusti proteggono i tuoi dati in stato di riposo e in transito.
-- **Alta disponibilità**: Un'architettura ridondante assicura la durabilità e la disponibilità dei tuoi dati.
+- **Sovranità dei dati**: I vostri dati sono archiviati esclusivamente in Francia.
+- **Massima sicurezza**: Meccanismi di crittografia robusti proteggono i vostri dati in stato di riposo e in transito.
+- **Alta disponibilità**: Un'architettura ridondante assicura la durabilità e la disponibilità dei vostri dati.
 
 ## Principali casi d'uso
 

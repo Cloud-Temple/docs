@@ -9,11 +9,11 @@ import grafanaDatasourceAlerting from '@site/docs/console/metrics/images/grafana
 import grafanaDatasourceWorking from '@site/docs/console/metrics/images/grafana_datasource_working.png'
 import grafanaDashboards_001 from '@site/docs/console/metrics/images/grafana_dashboards_001.png'
 
-Questa guida aggiunge la Console come origine dati Prometheus nella tua istanza Grafana. Potrai poi consultarvi le metriche delle tue risorse Cloud Temple e creare le tue dashboard.
+Questa guida aggiunge la Console come origine dati Prometheus nella vostra istanza Grafana. Potrete poi consultarvi le metriche delle vostre risorse Cloud Temple e creare le vostre dashboard.
 
 :::info
 
-Cloud Temple non fornisce un'istanza Grafana gestita: utilizzi la tua istanza, nel cloud o on-premise. Le dashboard integrate nella Console, invece, non richiedono alcuna configurazione (vedi [Concetti](concepts.md)).
+Cloud Temple non fornisce un'istanza Grafana gestita: utilizzate la vostra istanza, nel cloud o on-premise. Le dashboard integrate nella Console, invece, non richiedono alcuna configurazione (vedi [Concetti](concepts.md)).
 
 :::
 
@@ -47,12 +47,12 @@ Nella sezione "__Alerting__", configurare la proprietà __HTTP Method__ su __GET
 
 ## Risultato
 
-Per confermare che la configurazione sia corretta e funzionante, clicca sul pulsante "__Save & test__".
+Per confermare che la configurazione sia corretta e funzionante, cliccate sul pulsante "__Save & test__".
 
-Dovresti visualizzare un banner che ti informa che la configurazione è stata completata con successo.
+Dovreste visualizzare un banner che vi informa che la configurazione è stata completata con successo.
 
 <img src={grafanaDatasourceWorking} />
 
-Troverai una serie completa di esempi di configurazione per Grafana qui: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
+Troverete una serie completa di esempi di configurazione per Grafana qui: [https://github.com/Cloud-Temple/console-grafana-iaas](https://github.com/Cloud-Temple/console-grafana-iaas)
 
 <img src={grafanaDashboards_001} />

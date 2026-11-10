@@ -8,15 +8,15 @@ No. Le dashboard integrate nella Console, l'endpoint API Prometheus (PromQL), i 
 
 ## Cloud Temple fornisce un'istanza Grafana gestita?
 
-No. Cloud Temple fornisce l'origine dati (il proxy Prometheus della Console) e [modelli di dashboard open source](https://github.com/Cloud-Temple/console-grafana-iaas), ma non Grafana come servizio. Colleghi lo strumento compatibile con PromQL che preferisci, ad esempio la tua istanza Grafana, nel cloud o on-premise.
+No. Cloud Temple fornisce l'origine dati (il proxy Prometheus della Console) e [modelli di dashboard open source](https://github.com/Cloud-Temple/console-grafana-iaas), ma non Grafana come servizio. Collegate lo strumento compatibile con PromQL che preferite, ad esempio la vostra istanza Grafana, nel cloud o on-premise.
 
 ## Come è protetto l'accesso alle mie metriche?
 
-Con un token di accesso personale (PAT). Il tuo strumento si autentica in Basic Auth con l'identificativo e il secret di un token creato dal tuo profilo nella Console. Secondo il principio del privilegio minimo, questo token deve avere solo l'autorizzazione `metrics_read`.
+Con un token di accesso personale (PAT). Il vostro strumento si autentica in Basic Auth con l'identificativo e il secret di un token creato dal vostro profilo nella Console. Secondo il principio del privilegio minimo, questo token deve avere solo l'autorizzazione `metrics_read`.
 
 ## Posso creare avvisi sulle metriche Cloud Temple?
 
-Sì, nel tuo strumento: ad esempio regole di avviso Grafana sulla saturazione della memoria, sulla CPU o sugli IOPS, a partire dall'origine dati Prometheus. Per gli avvisi, imposta il metodo HTTP dell'origine dati su GET (vedi la [guida introduttiva](quickstart.md)).
+Sì, nel vostro strumento: ad esempio regole di avviso Grafana sulla saturazione della memoria, sulla CPU o sugli IOPS, a partire dall'origine dati Prometheus. Per gli avvisi, impostate il metodo HTTP dell'origine dati su GET (vedete la [guida introduttiva](quickstart.md)).
 
 ## Posso monitorare l'impronta di carbonio della mia infrastruttura?
 

@@ -9,11 +9,11 @@ import opencostmcp3 from '@site/docs/managed_kubernetes/tutorials/images/opencos
 
 ## Obiettivi
 
-Questo tutorial presenta **OpenCost**, lo strumento di monitoraggio e ottimizzazione dei costi integrato nel tuo cluster **Managed Kubernetes**. Al termine di questa guida, sarai in grado di :
+Questo tutorial presenta **OpenCost**, lo strumento di monitoraggio e ottimizzazione dei costi integrato nel vostro cluster **Managed Kubernetes**. Al termine di questa guida, sarete in grado di :
 
 - **Accedere** all'interfaccia di OpenCost.
 - **Comprendere** la struttura dell'interfaccia e le viste disponibili.
-- **Analizzare** la ripartizione dei costi delle tue applicazioni e della tua infrastruttura.
+- **Analizzare** la ripartizione dei costi delle vostre applicazioni e della vostra infrastruttura.
 
 ## Cos'è OpenCost ?
 
@@ -34,9 +34,9 @@ L'interfaccia di OpenCost è esposta su un URL sicuro, specifico per il vostro c
 
 ## Esplorare l'allocazione dei costi (Allocations)
 
-La vista principale e più dettagliata di OpenCost è la dashboard **Allocations**. È qui che puoi visualizzare il consumo delle risorse in tempo reale.
+La vista principale e più dettagliata di OpenCost è la dashboard **Allocations**. È qui che potete visualizzare il consumo delle risorse in tempo reale.
 
-Questa vista ti consente di scomporre i costi per concetti nativi di Kubernetes. Il menu a tendina "Aggregate by" è lo strumento principale per la tua analisi, ti permette di raggruppare i costi per:
+Questa vista vi consente di scomporre i costi per concetti nativi di Kubernetes. Il menu a tendina "Aggregate by" è lo strumento principale per la vostra analisi, vi permette di raggruppare i costi per:
 
 - **Namespace** : Per avere una vista per ambiente o per team.
 - **Deployment**, **StatefulSet**, ecc. : Per analizzare il costo di un'applicazione specifica.
@@ -109,7 +109,7 @@ Dopo la configurazione, è possibile utilizzare gli strumenti LLM per eseguire q
 #### Esempio
 
 "usa il MCP "opencost-bestie", e dimmi quale percentuale dei costi del cluster non è allocata alle risorse"
-Otterrai questo:
+Otterrete questo:
 <img src={opencostmcp} alt="réponse IA opencost"/>
 
 #### Esempio 2

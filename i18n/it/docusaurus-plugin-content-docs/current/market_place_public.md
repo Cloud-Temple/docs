@@ -10,7 +10,7 @@ tags:
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
-  <p>Sei un operatore del settore pubblico? Il prodotto <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
+  <p>Siete un operatore del settore pubblico? Il prodotto <strong>IaaS Cloud Temple</strong> è accessibile tramite:</p>
 
   <div class="platform-card">
     <img src="img/marketplace/LogoNuagePublic.png" alt="Logo Nuage Public" class="platform-logo" />
@@ -28,6 +28,6 @@ tags:
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
-    Scopri di più &rarr;
+    Scoprite di più &rarr;
   </a>
 </div>

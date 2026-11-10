@@ -122,14 +122,14 @@ Il servizio è disponibile nella regione FR1. L'inferenza avviene in Francia, ne
 
 ### Catalogo dei Modelli
 
-*Consulta il [catalogo e il ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) e la [guida alla scelta](./models.md).*
+*Consultate il [catalogo e il ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) e la [guida alla scelta](./models.md).*
 
 ### Gestione dei Token
 
 <a id="tipi-di-token"></a>
 
 #### Unità di fatturazione
-- **Token di input**: il tuo prompt e il suo contesto
+- **Token di input**: il vostro prompt e il suo contesto
 - **Token di output**: la risposta generata dal modello
 - **Token di ragionamento**: solo per i modelli «ragionatori» o «ibridi» quando il ragionamento è attivo, e solo sui token legati a questa attività
 - **Token di reranking**: il [riordinamento dei documenti](./rerank.md)
@@ -185,7 +185,7 @@ Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della
 <a id="audit-e-tracciabilità"></a>
 
 #### Riservatezza dei Dati
-- **Nessuna conservazione**: i tuoi dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione. Unica eccezione: i risultati di un'[elaborazione in batch](./batch.md) restano consultabili per un periodo limitato dopo il completamento (24 ore per impostazione predefinita), poi vengono eliminati automaticamente; vedi le [condizioni di conservazione](./batch.md#limiti-e-conservazione)
+- **Nessuna conservazione**: i vostri dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione. Unica eccezione: i risultati di un'[elaborazione in batch](./batch.md) restano consultabili per un periodo limitato dopo il completamento (24 ore per impostazione predefinita), poi vengono eliminati automaticamente; vedi le [condizioni di conservazione](./batch.md#limiti-e-conservazione)
 
 ### Controlli di Sicurezza
 
@@ -197,21 +197,21 @@ import SecurityControls from '@site/docs/llmaas/images/llmaas_security_002.png';
 
 La piattaforma LLMaaS non applica alcun filtraggio automatico del contenuto dei prompt contro le iniezioni o i tentativi di elusione delle istruzioni (*jailbreak*).
 
-I controlli del contenuto devono essere implementati nella tua applicazione in base al tuo caso d'uso. Puoi chiamare esplicitamente un [modello di sicurezza del catalogo](./models.md#sicurezza-e-guardrail) per valutare gli input o le risposte. Questi modelli non vengono eseguiti automaticamente sulle richieste indirizzate ad altri modelli.
+I controlli del contenuto devono essere implementati nella vostra applicazione in base al vostro caso d'uso. Potete chiamare esplicitamente un [modello di sicurezza del catalogo](./models.md#sicurezza-e-guardrail) per valutare gli input o le risposte. Questi modelli non vengono eseguiti automaticamente sulle richieste indirizzate ad altri modelli.
 
-Definisci i criteri di filtraggio e il trattamento dei risultati con i tuoi team aziendali, quindi testali sui tuoi dati, in particolare per misurare i falsi positivi. La [condivisione delle responsabilità](../contractual/llmaas/raci.md) specifica i ruoli del cliente e di Cloud Temple.
+Definite i criteri di filtraggio e il trattamento dei risultati con i vostri team aziendali, quindi testateli sui vostri dati, in particolare per misurare i falsi positivi. La [condivisione delle responsabilità](../contractual/llmaas/raci.md) specifica i ruoli del cliente e di Cloud Temple.
 
 <a id="-ciclo-di-vita-dei-modelli"></a>
 
 ## Versioni e ciclo di vita
 
-Il **[ciclo di vita dei modelli](https://llmaas.status.cloud-temple.app/lifecycle)** pubblica gli stati, le scadenze e le migrazioni consigliate. Consultalo prima di scegliere un modello e durante l'esecuzione della tua applicazione.
+Il **[ciclo di vita dei modelli](https://llmaas.status.cloud-temple.app/lifecycle)** pubblica gli stati, le scadenze e le migrazioni consigliate. Consultatelo prima di scegliere un modello e durante l'esecuzione della vostra applicazione.
 
 ### Leggere il ciclo di vita
 
 - **DMP** : data di messa in produzione.
 - **DSP** : data di uscita dalla produzione (fine del supporto) annunciata per il modello.
-- **LTS (Long Term Support)** : modello che beneficia di un supporto esteso; verifica la data pubblicata per il modello interessato.
+- **LTS (Long Term Support)** : modello che beneficia di un supporto esteso; verificate la data pubblicata per il modello interessato.
 - **Production** : modello indicato in produzione nel catalogo.
 - **Deprecated** : modello deprecato per il quale deve essere preparata una migrazione. Questo stato non significa necessariamente che le chiamate API siano già interrotte.
 - **Planned** : modello annunciato, la cui disponibilità deve essere verificata prima dell'uso.
@@ -224,11 +224,11 @@ Alcuni vecchi identificatori sono reindirizzati a un modello successore. Una ric
 
 ### Migrazione verso un altro modello
 
-1. Individua il modello interessato, la scadenza e il successore consigliato nel [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle).
-2. Verifica l'identificatore del successore con `GET /v1/models` e le sue capacità: visione, chiamate di strumenti, ragionamento e contesto in base al tuo utilizzo.
-3. Testa il successore su un campione rappresentativo delle tue richieste: qualità, formati di output, strumenti, latenza e consumo.
-4. Aggiorna il parametro `model` nella configurazione della tua applicazione dopo la convalida, quindi monitora i risultati.
-5. Per gli embedding, prevedi di ricalcolare i vettori e ricostruire l'indice se il modello cambia.
+1. Individuate il modello interessato, la scadenza e il successore consigliato nel [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle).
+2. Verificate l'identificatore del successore con `GET /v1/models` e le sue capacità: visione, chiamate di strumenti, ragionamento e contesto in base al vostro utilizzo.
+3. Testate il successore su un campione rappresentativo delle vostre richieste: qualità, formati di output, strumenti, latenza e consumo.
+4. Aggiornate il parametro `model` nella configurazione della vostra applicazione dopo la convalida, quindi monitorate i risultati.
+5. Per gli embedding, prevedete di ricalcolare i vettori e ricostruire l'indice se il modello cambia.
 
 ### Modelli deprecati
 
@@ -265,9 +265,9 @@ Per trarre il massimo vantaggio dall'API LLMaaS, è essenziale adottare strategi
 
 Il controllo dei costi si basa su un utilizzo intelligente dei token e dei modelli.
 
-1.  **Scelta del Modello** : Confronta più modelli su esempi rappresentativi del tuo utilizzo. Tieni quello che soddisfa i tuoi requisiti di qualità e latenza, quindi misura il suo consumo di token. Consulta il [catalogo del ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) per identificare i modelli disponibili e i loro successori. La fatturazione dipende dal tariffario applicabile e dai volumi consumati; la sola dimensione del modello non determina il costo fatturato.
+1.  **Scelta del Modello** : Confrontate più modelli su esempi rappresentativi del vostro utilizzo. Tenete quello che soddisfa i vostri requisiti di qualità e latenza, quindi misurate il suo consumo di token. Consultate il [catalogo del ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) per identificare i modelli disponibili e i loro successori. La fatturazione dipende dal tariffario applicabile e dai volumi consumati; la sola dimensione del modello non determina il costo fatturato.
 
-2.  **Gestione del Contesto** : La cronologia della conversazione (`messages`) viene inviata ad ogni chiamata, consumando token di input. Per conversazioni lunghe, valuta strategie di riepilogo o di finestraggio per conservare solo le informazioni pertinenti.
+2.  **Gestione del Contesto** : La cronologia della conversazione (`messages`) viene inviata ad ogni chiamata, consumando token di input. Per conversazioni lunghe, valutate strategie di riepilogo o di finestraggio per conservare solo le informazioni pertinenti.
     ```python
     # Per una conversazione lunga, possiamo riassumere i primi scambi.
     messages = [
@@ -278,7 +278,7 @@ Il controllo dei costi si basa su un utilizzo intelligente dei token e dei model
     ]
     ```
 
-3.  **Limitazione dei Token di Output** : Usa sempre il parametro `max_tokens` per evitare risposte eccessivamente lunghe e costose. Fissa un limite ragionabile in base a ciò che ti aspetti.
+3.  **Limitazione dei Token di Output** : Usate sempre il parametro `max_tokens` per evitare risposte eccessivamente lunghe e costose. Fissate un limite ragionabile in base a ciò che vi aspettate.
     ```python
     # Richiedere un riassunto di massimo 100 parole.
     response = client.chat.completions.create(
@@ -290,9 +290,9 @@ Il controllo dei costi si basa su un utilizzo intelligente dei token e dei model
 
 ### Performance
 
-La reattività della tua applicazione dipende dal modo in cui gestisci le chiamate all'API.
+La reattività della vostra applicazione dipende dal modo in cui gestite le chiamate all'API.
 
-1.  **Richieste Asincrone** : Per elaborare più richieste senza attendere la fine di ciascuna, usa chiamate asincrone. Questo è particolarmente utile per le applicazioni backend che elaborano un grande volume di richieste simultanee.
+1.  **Richieste Asincrone** : Per elaborare più richieste senza attendere la fine di ciascuna, usate chiamate asincrone. Questo è particolarmente utile per le applicazioni backend che elaborano un grande volume di richieste simultanee.
     ```python
     import asyncio
     from openai import AsyncOpenAI
@@ -326,9 +326,9 @@ La reattività della tua applicazione dipende dal modo in cui gestisci le chiama
 
 ### Sicurezza
 
-La sicurezza della tua applicazione è fondamentale, soprattutto quando si elaborano input utente.
+La sicurezza della vostra applicazione è fondamentale, soprattutto quando si elaborano input utente.
 
-1.  **Validazione e Sanitizzazione degli Input**: Non fidarti mai degli input utente. Prima di inviarli all'API, puliscili per rimuovere eventuali codice potenzialmente dannoso o istruzioni di "prompt injection". Limita anche la loro dimensione per prevenire abusi.
+1.  **Validazione e Sanitizzazione degli Input**: Non fidatevi mai degli input utente. Prima di inviarli all'API, puliteli per rimuovere eventuali codice potenzialmente dannoso o istruzioni di "prompt injection". Limitate anche la loro dimensione per prevenire abusi.
     ```python
     def sanitize_input(user_input: str) -> str:
         # Esempio semplice: rimuovere i marcatori di codice e limitare la lunghezza.
@@ -337,7 +337,7 @@ La sicurezza della tua applicazione è fondamentale, soprattutto quando si elabo
         return cleaned[:2000]  # Limita la dimensione a 2000 caratteri
     ```
 
-2.  **Gestione Robusta degli Errori**: Avvolgi sempre le tue chiamate API in blocchi `try...except` per gestire errori di rete, errori dell'API (es. 429 Rate Limit, 500 Internal Server Error) e fornire un'esperienza utente degradata ma funzionale.
+2.  **Gestione Robusta degli Errori**: Avvolgete sempre le vostre chiamate API in blocchi `try...except` per gestire errori di rete, errori dell'API (es. 429 Rate Limit, 500 Internal Server Error) e fornire un'esperienza utente degradata ma funzionale.
     ```python
     from openai import APIError, APITimeoutError
 

@@ -4,7 +4,7 @@ title: Deploy a Virtual Machine (VM) with KubeVirt
 
 ## Obiettivi
 
-Questo tutorial ha lo scopo di fornire passaggi chiari per distribuire e configurare macchine virtuali (VM) in **KubeVirt** sul tuo cluster OpenShift.
+Questo tutorial ha lo scopo di fornire passaggi chiari per distribuire e configurare macchine virtuali (VM) in **KubeVirt** sul vostro cluster OpenShift.
 
 Verranno trattati due scenari:
 
@@ -35,15 +35,15 @@ Verranno trattati due scenari:
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati che:
+Prima di iniziare, assicuratevi che:
 
 1. KubeVirt sia correttamente installato su OpenShift.  
-2. Disponga di un accesso amministrativo al progetto OpenShift in cui verrà distribuita la VM.  
-3. Disponga delle chiavi SSH per accedere alla macchina virtuale Fedora.  
-4. Abbia installato e configurato gli strumenti seguenti:  
+2. Disponiate di un accesso amministrativo al progetto OpenShift in cui verrà distribuita la VM.  
+3. Disponiate delle chiavi SSH per accedere alla macchina virtuale Fedora.  
+4. Abbiate installato e configurato gli strumenti seguenti:  
    - **OpenShift CLI (`oc`)**  
    - **qemu-img** (per la conversione dei dischi nel formato `qcow2`)  
-5. Abbia accesso al blob Azure in cui verrà archiviata l'immagine di Windows Server.
+5. Abbiate accesso al blob Azure in cui verrà archiviata l'immagine di Windows Server.
 
 ## Demo Plan
 
@@ -56,7 +56,7 @@ Prima di iniziare, assicurati che:
 
 ## File necessarie
 
-Ti serviranno i seguenti file per il deployment:
+Vi serviranno i seguenti file per il deployment:
 
 1. **ssh-port-forward.yaml** : Manifesto per configurare l'accesso SSH alla VM Fedora.  
 2. **nginx-expose.yaml** : Manifesto per esporre NGINX in OpenShift.  
@@ -211,4 +211,4 @@ Ti serviranno i seguenti file per il deployment:
 
 ## Conclusione
 
-Questo guida ti ha permesso di distribuire macchine virtuali Fedora e Windows Server su KubeVirt con OpenShift. Hai imparato a configurare i collegamenti di rete (SSH/RDP) e a esporre servizi web. Questi passaggi possono essere ripetuti per diversi scenari in cui sono necessarie macchine virtuali in un ambiente PaaS OpenShift **Cloud Temple**. 🚀
+Questo guida vi ha permesso di distribuire macchine virtuali Fedora e Windows Server su KubeVirt con OpenShift. Avete imparato a configurare i collegamenti di rete (SSH/RDP) e a esporre servizi web. Questi passaggi possono essere ripetuti per diversi scenari in cui sono necessarie macchine virtuali in un ambiente PaaS OpenShift **Cloud Temple**. 🚀

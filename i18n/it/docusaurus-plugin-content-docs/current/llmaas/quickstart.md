@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Guida introduttiva a LLMaaS
 
-Questa guida ti consente di effettuare la tua prima richiesta all'API LLMaaS in meno di 5 minuti.
+Questa guida vi consente di effettuare la vostra prima richiesta all'API LLMaaS in meno di 5 minuti.
 
 ## Prerequisiti
 
@@ -14,10 +14,10 @@ Questa guida ti consente di effettuare la tua prima richiesta all'API LLMaaS in 
 
 ## Passo 1: Generare una chiave API
 
-1. Accedi alla Console Cloud Temple
-2. Apri **LLMaaS** > **Chiavi API**
-3. Clicca su **Crea una chiave API**
-4. Copia e salva la chiave (verrà visualizzata una sola volta)
+1. Accedete alla Console Cloud Temple
+2. Aprite **LLMaaS** > **Chiavi API**
+3. Cliccate su **Crea una chiave API**
+4. Copiate e salvate la chiave (verrà visualizzata una sola volta)
 
 ## Passo 2: Testare la connessione
 
@@ -32,7 +32,7 @@ Dovreste ricevere un elenco JSON dei modelli disponibili.
 
 ## Passo 3: Prima richiesta
 
-Effettua la tua prima generazione di testo con un modello veloce:
+Effettuate la vostra prima generazione di testo con un modello veloce:
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
@@ -110,7 +110,7 @@ Le impostazioni di ragionamento dipendono dal modello. Non date per scontato che
 
 ## Parametri consigliati
 
-Per iniziare, utilizza questi parametri:
+Per iniziare, utilizzate questi parametri:
 
 ```json
 {
@@ -145,7 +145,7 @@ Questi parametri impostano la temperatura a 0,7, limitano l'output a 200 token, 
 
 ## Monitoraggio dell'utilizzo
 
-Nella Console Cloud Temple, puoi:
+Nella Console Cloud Temple, potete:
 - Visualizzare le richieste in tempo reale
 - Consultare il consumo di token
 - Configurare avvisi sui costi
@@ -163,23 +163,23 @@ Questa sezione fornisce esempi di script Python semplici e autonomi per illustra
 
 ### 1. Esempio Semplice di Tool Calling
 
-Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, database, ecc.).
+Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che avete definito nel vostro codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, database, ecc.).
 
 Il flusso è il seguente:
 1.  L'utente pone una domanda che richiede uno strumento (es.: "che tempo fa?").
-2.  Invii la domanda e l'elenco degli strumenti disponibili all'API.
+2.  Inviate la domanda e l'elenco degli strumenti disponibili all'API.
 3.  Il modello, invece di rispondere direttamente, restituisce una richiesta `tool_calls` che chiede di eseguire una funzione specifica con determinati argomenti.
-4.  Il tuo codice esegue la funzione richiesta.
-5.  Restituisci il risultato della funzione al modello.
+4.  Il vostro codice esegue la funzione richiesta.
+5.  Restituite il risultato della funzione al modello.
 6.  Il modello utilizza questo risultato per formulare una risposta finale all'utente.
 
 **Struttura dei file**
 
-Per questo esempio, crea una directory `simple_tool_calling` con i seguenti file:
+Per questo esempio, create una directory `simple_tool_calling` con i seguenti file:
 
 -   `test_tool_calling.py`: Lo script principale.
 -   `requirements.txt`: Le dipendenze Python.
--   `.env`: Il file di configurazione da compilare con la tua chiave API.
+-   `.env`: Il file di configurazione da compilare con la vostra chiave API.
 
 **`requirements.txt`**
 ```txt
@@ -409,14 +409,14 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Dalla directory padre, apri la directory creata e quindi installa le dipendenze:**
+1.  **Dalla directory padre, aprite la directory creata e quindi installate le dipendenze:**
     ```bash
     cd simple_tool_calling
     python -m pip install -r requirements.txt
     ```
-2.  **Configura la tua chiave API:**
-    Nel file `.env` mostrato sopra, sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS. Verifica anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
-3.  **Da questa stessa directory, esegui lo script:**
+2.  **Configurate la vostra chiave API:**
+    Nel file `.env` mostrato sopra, sostituite `"votre_cle_api_ici"` con la vostra chiave API LLMaaS. Verificate anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
+3.  **Da questa stessa directory, eseguite lo script:**
     ```bash
     python test_tool_calling.py
     ```
@@ -427,12 +427,12 @@ I modelli multimodali possono analizzare sia testo che immagini. Questo esempio 
 
 **Struttura dei file**
 
-Crea una directory `simple_vision` con i seguenti file :
+Create una directory `simple_vision` con i seguenti file :
 
 -   `test_vision.py`: Lo script principale.
 -   `requirements.txt`: Le dipendenze (inclusa `Pillow` per generare l'immagine).
--   `.env`: Il file di configurazione da compilare con la tua chiave API.
--   `image_example.png`: L'immagine da analizzare (lo script la genererà per te se manca).
+-   `.env`: Il file di configurazione da compilare con la vostra chiave API.
+-   `image_example.png`: L'immagine da analizzare (lo script la genererà per voi se manca).
 
 **`requirements.txt`**
 ```txt
@@ -594,14 +594,14 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Dalla directory padre, apri la directory creata e installa le dipendenze :**
+1.  **Dalla directory padre, aprite la directory creata e installate le dipendenze :**
     ```bash
     cd simple_vision
     python -m pip install -r requirements.txt
     ```
-2.  **Configura la tua chiave API :**
-    Nel file `.env` mostrato sopra, sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS. Verifica anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
-3.  **Da questa stessa directory, esegui lo script :**
+2.  **Configurate la vostra chiave API :**
+    Nel file `.env` mostrato sopra, sostituite `"votre_cle_api_ici"` con la vostra chiave API LLMaaS. Verificate anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
+3.  **Da questa stessa directory, eseguite lo script :**
     ```bash
     python test_vision.py
     ```
@@ -616,7 +616,7 @@ Una volta completato con successo il primo test:
 1. **Esplorate i modelli** : Testate diversi modelli in base alle vostre esigenze
 2. **Ottimizzate i prompt** : Migliorate la qualità delle risposte
 3. **Integrate nella vostra applicazione** : Consultate la [documentazione API](./api)
-4. **Casi d'uso avanzati** : Vedi i [tutorial](./tutorials)
+4. **Casi d'uso avanzati** : Vedete i [tutorial](./tutorials)
 
 ## Supporto
 

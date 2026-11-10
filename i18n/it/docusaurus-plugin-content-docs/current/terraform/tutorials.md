@@ -225,7 +225,7 @@ resource "cloudtemple_compute_virtual_machine" "content_library_vm" {
 
 **File Cloud-Init**:
 
-Crea `cloud-init/user-data.yml`:
+Create `cloud-init/user-data.yml`:
 
 ```yaml
 #cloud-config
@@ -250,7 +250,7 @@ runcmd:
   - systemctl start nginx
 ```
 
-Crea `cloud-init/network-config.yml`:
+Create `cloud-init/network-config.yml`:
 
 ```yaml
 version: 2
@@ -716,7 +716,7 @@ resource "cloudtemple_compute_iaas_opensource_virtual_machine" "besteff_ha" {
 
 **Modalità HA disponibili**:
 
-Consulta la documentazione sulla [Alta Disponibilità](https://docs.cloud-temple.com/iaas_opensource/concepts#alta-disponibilit%C3%A0) nell'infrastruttura OpenSource
+Consultate la documentazione sulla [Alta Disponibilità](https://docs.cloud-temple.com/iaas_opensource/concepts#alta-disponibilit%C3%A0) nell'infrastruttura OpenSource
 
 | Modalità | Descrizione | Utilizzo |
 |--------|-------------|----------|
@@ -732,7 +732,7 @@ Consulta la documentazione sulla [Alta Disponibilità](https://docs.cloud-temple
 
 **File Cloud-Init**:
 
-Crea `cloud-init/cloud-config.yml`:
+Create `cloud-init/cloud-config.yml`:
 
 ```yaml
 #cloud-config
@@ -757,7 +757,7 @@ runcmd:
   - usermod -aG docker cloudadmin
 ```
 
-Crea `cloud-init/network-config.yml`:
+Create `cloud-init/network-config.yml`:
 
 ```yaml
 version: 2
@@ -775,7 +775,7 @@ nameservers:
 ```
 
 :::important[Da notare]
-  Adatta la configurazione Cloud-Init alle tue esigenze e alla versione di Cloud-Init installata sulla tua macchina. Il formato e la sintassi possono variare in base alle versioni.
+  Adattate la configurazione Cloud-Init alle vostre esigenze e alla versione di Cloud-Init installata sulla vostra macchina. Il formato e la sintassi possono variare in base alle versioni.
 :::
 
 **Codice Terraform**:
@@ -952,8 +952,8 @@ attached        = true
 
 **Pratiche consigliate** :
 
-1. Utilizza `os_disk` e `os_network_adapter` per la configurazione iniziale del template
-2. Utilizza le risorse dedicate per aggiungere risorse aggiuntive
+1. Utilizzate `os_disk` e `os_network_adapter` per la configurazione iniziale del template
+2. Utilizzate le risorse dedicate per aggiungere risorse aggiuntive
 
 ## Archiviazione oggetti
 
@@ -1274,10 +1274,10 @@ output "uploaded_files_list" {
 
 Questa documentazione copre i principali casi d'uso del provider Terraform Cloud Temple. Per approfondire:
 
-- Consulta la [documentazione ufficiale del provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
-- Esplora gli [esempi su GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
-- Utilizza la [Console Cloud Temple](https://shiva.cloud-temple.com) per identificare le risorse disponibili
+- Consultate la [documentazione ufficiale del provider](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs)
+- Esplorate gli [esempi su GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
+- Utilizzate la [Console Cloud Temple](https://shiva.cloud-temple.com) per identificare le risorse disponibili
 
 :::info[Serve aiuto?]
-Per qualsiasi domanda o problema, consulta la [sezione Issues su GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues) o contatta il supporto Cloud Temple.
+Per qualsiasi domanda o problema, consultate la [sezione Issues su GitHub](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/issues) o contattate il supporto Cloud Temple.
 :::

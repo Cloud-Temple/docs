@@ -18,7 +18,7 @@ import S3Delete from '@site/docs/storage/oss/images/S3_delete.png'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altamente sicuro e certificato SecNumCloud, basato sul protocollo Amazon S3. Ti consente di archiviare tutti i tipi di dati, inclusi quelli più sensibili, in conformità con i più elevati standard di sicurezza. Puoi gestire il tuo archivio direttamente dalla console Cloud Temple e integrare numerose librerie esistenti o client CLI per un utilizzo programmatico.
+Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altamente sicuro e certificato SecNumCloud, basato sul protocollo Amazon S3. Vi consente di archiviare tutti i tipi di dati, inclusi quelli più sensibili, in conformità con i più elevati standard di sicurezza. Potete gestire il vostro archivio direttamente dalla console Cloud Temple e integrare numerose librerie esistenti o client CLI per un utilizzo programmatico.
 
 ## Prima di iniziare
 
@@ -28,7 +28,7 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     Per eseguire le azioni descritte di seguito, è necessario disporre di:
 
     *   Un account Cloud Temple collegato alla console
-    *   Il ruolo 'Owner' oppure le autorizzazioni IAM che ti consentono di eseguire azioni sul tenant dell'organizzazione interessata.
+    *   Il ruolo 'Owner' oppure le autorizzazioni IAM che vi consentono di eseguire azioni sul tenant dell'organizzazione interessata.
 
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
@@ -36,13 +36,13 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     ❯ mc alias set cloudtemple-fr1 https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com VOTRE_CLE_ACCES VOTRE_CLE_SECRETE
     Added `cloudtemple-fr1` successfully.
     ```
-    - Sostituisci `VOTRE_NAMESPACE` con il tuo namespace. Questo parametro è disponibile nella console Cloud Temple, nel dettaglio di un bucket.
-    - Sostituisci `VOTRE_CLE_ACCES` e `VOTRE_CLE_SECRETE` con le chiavi del tuo account di archiviazione.
+    - Sostituite `VOTRE_NAMESPACE` con il vostro namespace. Questo parametro è disponibile nella console Cloud Temple, nel dettaglio di un bucket.
+    - Sostituite `VOTRE_CLE_ACCES` e `VOTRE_CLE_SECRETE` con le chiavi del vostro account di archiviazione.
 
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">
 
-    Il client AWS viene configurato tramite il comando `aws configure`. Dovrai inserire le tue chiavi di accesso e la regione predefinita.
+    Il client AWS viene configurato tramite il comando `aws configure`. Dovrete inserire le vostre chiavi di accesso e la regione predefinita.
     ```bash
     ❯ aws configure
     AWS Access Key ID [None]: VOTRE_CLE_ACCES
@@ -50,11 +50,11 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     Default region name [None]: fr1
     Default output format [None]: json
     ```
-    A differenza di `mc`, il client AWS non salva l'endpoint. Dovrai specificarlo per ogni comando tramite l'opzione `--endpoint-url`.
+    A differenza di `mc`, il client AWS non salva l'endpoint. Dovrete specificarlo per ogni comando tramite l'opzione `--endpoint-url`.
 
-    L'endpoint del tuo servizio è: `https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com`
+    L'endpoint del vostro servizio è: `https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com`
 
-    **Suggerimento:** Per evitare di digitare l'endpoint ogni volta, puoi impostarlo nel file di configurazione AWS (`~/.aws/config`) creando un profilo dedicato:
+    **Suggerimento:** Per evitare di digitare l'endpoint ogni volta, potete impostarlo nel file di configurazione AWS (`~/.aws/config`) creando un profilo dedicato:
     ```ini
     [profile cloudtemple]
     region = fr1
@@ -64,18 +64,18 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     s3api =
       endpoint_url = https://VOTRE_NAMESPACE.s3.fr1.cloud-temple.com
     ```
-    Potrai quindi utilizzare questo profilo con l'opzione `--profile cloudtemple` in ogni comando.
+    Potrete quindi utilizzare questo profilo con l'opzione `--profile cloudtemple` in ogni comando.
 
   </TabItem>
 </Tabs>
 
-## Elenco di tutti i bucket S3 del tuo tenant
+## Elenco di tutti i bucket S3 del vostro tenant
 
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    Puoi accedere all'insieme di tutti i tuoi bucket tramite il menu '__Archiviazione oggetti__' della console Cloud Temple:
+    Potete accedere all'insieme di tutti i vostri bucket tramite il menu '__Archiviazione oggetti__' della console Cloud Temple:
     <img src={S3ListBucket} />
-    Puoi visualizzare tutti i conti creati sul tuo tenant e autorizzati ad accedere al servizio S3 tramite la scheda '__Account di archiviazione__'.
+    Potete visualizzare tutti i conti creati sul vostro tenant e autorizzati ad accedere al servizio S3 tramite la scheda '__Account di archiviazione__'.
     <img src={S3Accounts} />
   </TabItem>
   <TabItem value="MC CLI" label="MC CLI">
@@ -100,9 +100,9 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
 
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    Quando fai clic sul nome di un bucket, hai accesso per primo alla scheda '__File__' per visualizzarne il contenuto:
+    Quando fate clic sul nome di un bucket, avete accesso per primo alla scheda '__File__' per visualizzarne il contenuto:
     <img src={S3Files} />
-    Nella scheda '__Impostazioni__' puoi visualizzare i dettagli delle informazioni del tuo bucket S3:
+    Nella scheda '__Impostazioni__' potete visualizzare i dettagli delle informazioni del vostro bucket S3:
     <img src={S3Params} />
 
     **Nota importante**: il concetto di '__Protezione dalla cancellazione__' si riferisce alla durata di protezione dei dati, e non a una cancellazione programmata. I dati rimangono accessibili per l'intera durata configurata. Per attivare la cancellazione automatica dei dati al termine del periodo di conservazione, è necessario definire una politica di ciclo di vita (lifecycle).
@@ -131,7 +131,7 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     }
     ```
 
-    Se utilizzi AWS CLI:
+    Se utilizzate AWS CLI:
 
     ```bash
     aws --endpoint-url https://<ecs-endpoint> \
@@ -219,9 +219,9 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
 
 <Tabs>
   <TabItem value="Console Cloud Temple" label="Console Cloud Temple" default>
-    La creazione di un account di archiviazione sul tuo tenant avviene premendo il pulsante '__Nuovo account di archiviazione__' in alto a destra, nell'opzione '__Account di archiviazione__':
+    La creazione di un account di archiviazione sul vostro tenant avviene premendo il pulsante '__Nuovo account di archiviazione__' in alto a destra, nell'opzione '__Account di archiviazione__':
     <img src={S3CreateAccount} />
-    La piattaforma ti fornisce quindi la chiave di accesso e la chiave segreta del tuo bucket:
+    La piattaforma vi fornisce quindi la chiave di accesso e la chiave segreta del vostro bucket:
     <img src={S3StorageKeys} />
     __ATTENZIONE:__ Le chiavi segreta e di accesso vengono visualizzate una sola volta. Dopo questa prima visualizzazione, non sarà più possibile consultare nuovamente la chiave segreta. È quindi fondamentale annotare immediatamente queste informazioni; in caso contrario, sarà necessario generare una nuova coppia di chiavi.
     La rigenerazione avviene nelle opzioni della chiave selezionando l'opzione "Reimposta chiave di accesso".
@@ -242,9 +242,9 @@ Il Storage oggetti Cloud Temple è un servizio di archiviazione oggetti altament
     La creazione di un nuovo bucket avviene facendo clic sul pulsante '__Nuovo bucket__' in alto a destra dello schermo:
     <img src={S3Create} />
     Viene quindi visualizzata una finestra in cui è necessario compilare i seguenti campi:
-    1. La **regione** di creazione del tuo bucket,
+    1. La **regione** di creazione del vostro bucket,
     2. Il **tipo** di bucket, preselezionato: «Performance Object Storage S3 API», l'unico tipo disponibile oggi,
-    3. Il **nome** del tuo bucket (deve essere univoco).
+    3. Il **nome** del vostro bucket (deve essere univoco).
     <img src={S3CreatePopup_001} />
   </TabItem>
   <TabItem value="AWS CLI" label="AWS CLI">

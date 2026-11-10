@@ -5,7 +5,7 @@ import marketplaceContactAccess from '@site/docs/marketplace/images/marketplaceC
 import marketplaceContactConfirm from '@site/docs/marketplace/images/marketplaceContactConfirm.png'
 import marketplaceContactEmail from '@site/docs/marketplace/images/marketplaceContactEmail.png'
 
-Questo tutorial ti guida per entrare in contatto con un partner editore tramite la Marketplace Cloud Temple.
+Questo tutorial vi guida per entrare in contatto con un partner editore tramite la Marketplace Cloud Temple.
 
 ## Contesto di utilizzo
 
@@ -19,19 +19,19 @@ Utilizzare questa funzionalità quando:
 
 ### 1. Accesso al modulo
 
-Dalla pagina di dettaglio di una soluzione partner, fai clic su **Contatta il partner** :
+Dalla pagina di dettaglio di una soluzione partner, fate clic su **Contatta il partner** :
 <img src={marketplaceContactAccess} />
 
 ### 2. Invio della richiesta
 
-Conferma e invia la richiesta di contatto:
+Confermate e inviate la richiesta di contatto:
 <img src={marketplaceContactConfirm} />
 
-Riceverai una conferma via email dell'invio della richiesta.
+Riceverete una conferma via email dell'invio della richiesta.
 
 ### 3. Messa in contatto
 
-Il partner riceverà automaticamente un'email con le tue informazioni :
+Il partner riceverà automaticamente un'email con le vostre informazioni :
 
 **Esempio di email inviata al partner :**
 <img src={marketplaceContactEmail} />

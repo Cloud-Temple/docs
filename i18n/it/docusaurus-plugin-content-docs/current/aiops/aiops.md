@@ -11,7 +11,7 @@ AIOps è un servizio gestito. Si sottoscrive tramite gli esperti di Cloud Temple
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scopri le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./aiops/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./aiops/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
 </div>

@@ -11,7 +11,7 @@ La protezione è inclusa nell'accesso Internet, senza alcuna configurazione da p
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scopri le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
-    <a href="./anti_ddos/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <p>Scoprite le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
+    <a href="./anti_ddos/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
 </div>

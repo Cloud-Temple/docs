@@ -1,11 +1,11 @@
-# Il RAG: Interrogare i tuoi Dati con un LLM
+# Il RAG: Interrogare i vostri Dati con un LLM
 
 Questo documento spiega i concetti fondamentali dietro la tecnica di **Retrieval-Augmented Generation (RAG)**.
 
 :::tip[Codice di Esempio Disponibile]
 I concetti trattati qui vengono illustrati in un dimostratore completo e funzionante disponibile sul nostro GitHub. Costituisce una buona base di partenza per comprendere il funzionamento pratico di un pipeline RAG.
 
-➡️ **[Accedi al codice del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
+➡️ **[Accedete al codice del Simple RAG Demo](https://github.com/Cloud-Temple/product-llmaas-how-to/tree/main/simple_rag_demo)**
 :::
 
 ## Il problema: i LLM non hanno una memoria a lungo termine
@@ -38,7 +38,7 @@ In termini semplici, un vettore è una lista di numeri che rappresenta un punto 
 Questo vettore non è casuale. Rappresenta la "posizione" del testo in uno spazio semantico multidimensionale. Testi con significati simili avranno vettori che puntano in direzioni simili.
 
 :::tip[Analogia geografica]
-Immagina una mappa geografica. "Parigi" e "Francia" sarebbero molto vicine, così come "Roma" e "Italia". "Parigi" sarebbe più lontana da "Roma" rispetto a "Francia", ma più vicina rispetto a "Tokyo". L'embedding fa la stessa cosa, ma con migliaia di "dimensioni" invece di due, per catturare sfumature di significato complesse.
+Immaginate una mappa geografica. "Parigi" e "Francia" sarebbero molto vicine, così come "Roma" e "Italia". "Parigi" sarebbe più lontana da "Roma" rispetto a "Francia", ma più vicina rispetto a "Tokyo". L'embedding fa la stessa cosa, ma con migliaia di "dimensioni" invece di due, per catturare sfumature di significato complesse.
 :::
 
 Nel nostro script, l'endpoint `/v1/embeddings` e il modello `granite-embedding:278m` sono responsabili di questa traduzione.
@@ -107,6 +107,6 @@ Il calcolo della similarità cosinus darà :
 
 ## Conclusione
 
-La tabella visualizzata dallo script `simple-rag-demo` ti permette di visualizzare queste due metriche. Noterai che, anche se i classifiche possono talvolta differire leggermente, la **similarità coseno è generalmente la metrica di scelta** per le applicazioni di ricerca semantica basate su testo.
+La tabella visualizzata dallo script `simple-rag-demo` vi permette di visualizzare queste due metriche. Noterete che, anche se i classifiche possono talvolta differire leggermente, la **similarità coseno è generalmente la metrica di scelta** per le applicazioni di ricerca semantica basate su testo.
 
 La maggiore sfida, come mostra l'esempio, rimane la **qualità del modello di embedding**. Un buon modello produrrà vettori che catturano fedelmente il significato, rendendo il calcolo della prossimità, qualunque sia il metodo, molto più affidabile.

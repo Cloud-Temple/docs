@@ -4,9 +4,9 @@ title: Concetti della Console
 
 ## Presentazione
 
-La **Console Cloud Temple** è il punto di accesso ai prodotti Cloud Temple che integra: calcolo, storage, rete, sicurezza, IA e altri. Alcuni servizi gestiti (Kubernetes gestito, database gestiti, AIOps) si sottoscrivono tramite i team di Cloud Temple e non si gestiscono dalla Console. Qui ordini e gestisci le tue risorse in self-service, gestisci identità e accessi, segui le operazioni e apri le richieste di supporto.
+La **Console Cloud Temple** è il punto di accesso ai prodotti Cloud Temple che integra: calcolo, storage, rete, sicurezza, IA e altri. Alcuni servizi gestiti (Kubernetes gestito, database gestiti, AIOps) si sottoscrivono tramite i team di Cloud Temple e non si gestiscono dalla Console. Qui ordinate e gestite le vostre risorse in self-service, gestite identità e accessi, seguite le operazioni e aprite le richieste di supporto.
 
-È progettata *API-first*: l'interfaccia web si basa sull'API pubblica, che puoi utilizzare direttamente, con il provider Terraform o con il server MCP.
+È progettata *API-first*: l'interfaccia web si basa sull'API pubblica, che potete utilizzare direttamente, con il provider Terraform o con il server MCP.
 
 Si rivolge ai team IT che amministrano la propria piattaforma, ai team DevOps che la automatizzano, ai team di sicurezza e conformità che controllano accessi e tracciabilità e ai team di produzione che seguono le operazioni.
 
@@ -17,8 +17,8 @@ Il modello su cui si basa la Console (organizzazione, tenant, utenti e autorizza
 | Vantaggio | Descrizione |
 |---|---|
 | Punto di accesso unico | Le risorse dei prodotti integrati nella Console in un unico portale, con un solo set di credenziali. |
-| Self-service | Crei, configuri ed elimini le tue risorse in qualsiasi momento, senza intervento di Cloud Temple. |
-| Automazione | La piattaforma si gestisce tramite API o con Terraform, con configurazioni versionabili e integrabili nelle tue pipeline CI/CD. |
+| Self-service | Create, configurate ed eliminate le vostre risorse in qualsiasi momento, senza intervento di Cloud Temple. |
+| Automazione | La piattaforma si gestisce tramite API o con Terraform, con configurazioni versionabili e integrabili nelle vostre pipeline CI/CD. |
 | Sicurezza e tracciabilità | Accessi filtrati per indirizzo IP, doppio fattore, autorizzazioni per tenant e registrazione delle azioni. |
 
 ## Funzionalità
@@ -29,7 +29,7 @@ Il modello su cui si basa la Console (organizzazione, tenant, utenti e autorizza
 | Gestione di identità e accessi | Organizzazione, tenant, utenti e autorizzazioni: vedi il modulo [IAM](./iam/concepts.md). |
 | API REST | API documentata in formato OpenAPI 3.0, consultabile dalla Console: vedi l'[API della Console](./api.md). |
 | Provider Terraform | Provider `Cloud-Temple/cloudtemple`, pubblicato sul Terraform Registry: vedi il [provider Terraform](../terraform/terraform.md). |
-| Server MCP | Collegamento di un client di IA compatibile MCP (*Model Context Protocol*) al tuo tenant, per interrogare il tuo ambiente. |
+| Server MCP | Collegamento di un client di IA compatibile MCP (*Model Context Protocol*) al vostro tenant, per interrogare il vostro ambiente. |
 | Monitoraggio delle operazioni | [Operazioni pianificate e incidenti](./status.md), registro delle attività. |
 | Supporto | Creazione e monitoraggio delle richieste di supporto dalla Console. |
 
@@ -71,7 +71,7 @@ Tutto ciò che fate nella Console è possibile anche tramite la sua [API](./api.
 
 ## Regioni e zone di disponibilità
 
-La Console e l'API sono ospitate in Francia. Gestiscono le risorse dei tuoi tenant, distribuite nelle regioni e nelle zone di disponibilità proprie di ogni prodotto.
+La Console e l'API sono ospitate in Francia. Gestiscono le risorse dei vostri tenant, distribuite nelle regioni e nelle zone di disponibilità proprie di ogni prodotto.
 
 ## Specifiche tecniche
 
@@ -113,12 +113,12 @@ La Console è certificata HDS e ISO 27001, e inclusa nei servizi qualificati Sec
 
 ## Reversibilità
 
-La Console e l'API non memorizzano i tuoi dati applicativi: conservano i metadati di configurazione e i log.
+La Console e l'API non memorizzano i vostri dati applicativi: conservano i metadati di configurazione e i log.
 
-- **Configurazioni Terraform**: i tuoi file di configurazione e il tuo file di stato (*state*) ti appartengono.
+- **Configurazioni Terraform**: i vostri file di configurazione e il vostro file di stato (*state*) vi appartengono.
 - **Log delle attività**: esportabili tramite l'API della Console.
 
 ## Prezzi
 
-La Console, l'API, il server MCP e il provider Terraform sono inclusi senza costi aggiuntivi in ogni sottoscrizione Cloud Temple. Le risorse che ordini sono fatturate secondo il prezzo di ciascun prodotto. Vedi la pagina del prodotto sul sito Cloud Temple:
+La Console, l'API, il server MCP e il provider Terraform sono inclusi senza costi aggiuntivi in ogni sottoscrizione Cloud Temple. Le risorse che ordinate sono fatturate secondo il prezzo di ciascun prodotto. Vedi la pagina del prodotto sul sito Cloud Temple:
 [Console – API – Provider Terraform](https://www.cloud-temple.com/produits/console-api-provider-terraform/).

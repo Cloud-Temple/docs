@@ -10,7 +10,7 @@ import shivaHsmKms_002 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_k
 import shivaHsmKms_003 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_003.png'
 import shivaHsmKms_004 from '@site/docs/iaas_vmware/tutorials/images/shiva_hsm_kms_004.png'
 
-Questo tutorial ti aiuta a crittografare una macchina virtuale IaaS VMWare dalla console.
+Questo tutorial vi aiuta a crittografare una macchina virtuale IaaS VMWare dalla console.
 
 ### Prerequisiti
 
