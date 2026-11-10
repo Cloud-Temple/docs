@@ -50,8 +50,9 @@
   --ifm-container-width-xl: 1800px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+/* Mode sombre. Sélecteur html[data-theme='dark'] : même spécificité que celui
+   d'Infima, chargé avant ; sans le « html », ses fonds #1b1b1d / #242526 gagnent. */
+html[data-theme='dark'] {
   /* Vert-bleu de la charte (#41a890) : contraste 5,3:1 sur le fond anthracite (AA). */
   --ifm-color-primary: #41a890;
   --ifm-color-primary-dark: #3a9782;
@@ -284,24 +285,13 @@ h3 { font-size: 1.15rem; }
   margin-bottom: 5px;
 }
 
-/* Conteneur pour les cartes en grille — 4 colonnes par défaut */
+/* Conteneur pour les cartes en grille : autant de colonnes que la largeur le
+   permet, cartes de 200 px au moins (4 colonnes sur un écran courant). */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin: 20px 0;
-}
-
-@media (max-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Style des cartes */
@@ -1125,13 +1115,18 @@ h3 { font-weight: 500; }
   border-color: #41a890;
 }
 
-/* Tableaux : en-tête vert-bleu, cadre de la même couleur. */
+/* Tableaux : en-tête neutre (le vert-bleu est réservé à ce qui est cliquable). */
 .markdown table { border-collapse: collapse; }
 .markdown table thead tr,
 .markdown table th {
-  background-color: #338370;
-  color: #ffffff;
-  border-color: #338370;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-emphasis-300);
+}
+[data-theme='dark'] .markdown table thead tr,
+[data-theme='dark'] .markdown table th {
+  background-color: #2f2f33;
+  border-color: #3a3a3f;
 }
 .markdown table td { border-color: var(--ifm-color-emphasis-300); }
 [data-theme='dark'] .markdown table tr { background-color: transparent; }
@@ -1203,6 +1198,7 @@ html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
   border-color: #41a890;
   box-shadow: none;
 }
+.navbar .DocSearch-Button:focus-visible { outline: 2px solid #41a890; outline-offset: 2px; }
 .navbar .DocSearch-Button .DocSearch-Search-Icon { color: #e6e6e6; }
 .navbar .DocSearch-Button-Placeholder { color: #aaaaaa; }
 .navbar .DocSearch-Button-Key {
@@ -1269,8 +1265,6 @@ details,
   -webkit-line-clamp: unset;
   overflow: visible;
 }
-/* Grille : autant de colonnes que la largeur le permet, cartes de 200 px au moins. */
-.card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .card-link {
   color: var(--ifm-color-primary);
   font-weight: 600;
@@ -1278,10 +1272,34 @@ details,
   margin-top: auto;
   padding-top: 12px;
 }
-.card-link:hover { color: var(--ifm-color-primary-darker); text-decoration: none; }
-/* Lien étiré : la carte entière devient cliquable, sans changer le HTML des pages. */
-.card .card-link::after { content: ''; position: absolute; inset: 0; }
-.card:hover { border-color: var(--ifm-color-primary); }
+.card-link:hover { color: var(--ifm-color-primary); text-decoration: underline; }
+/* Ancien bouton plein dans une carte : même apparence que .card-link. */
+.card .button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 0 0;
+  background: none;
+  border: 0;
+  color: var(--ifm-color-primary);
+  font-size: inherit;
+  font-weight: 600;
+  text-align: left;
+  white-space: normal;
+}
+.card .button:hover { background: none; color: var(--ifm-color-primary); text-decoration: underline; }
+/* Lien étiré : la carte entière devient cliquable, sans changer le HTML des pages
+   (chaque carte ne contient qu'un lien). */
+.card .card-link::after,
+.card .button::after { content: ''; position: absolute; inset: 0; }
+/* Survol : le même pour toutes les cartes, un filet vert-bleu, ni ombre ni décalage. */
+.card:hover,
+.book-card:hover,
+[data-theme='dark'] .book-card:hover,
+.quickstart-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: none;
+  transform: none;
+}
 /* Pages populaires : titre dans la couleur du texte, flèche vert-bleu. */
 .popular-link-title { color: var(--ifm-font-color-base); }
 .popular-link-title span { color: var(--ifm-color-primary); opacity: 1; }
@@ -1305,7 +1323,7 @@ details,
 }
 
 /* ─── Pied de page lisible, comme celui du site ─────────────────────────────
-   Liens gris clair (#aaa, contraste 7,8:1 sur #242428) en taille normale,
+   Liens gris clair (#aaa, contraste 6,7:1 sur #242428) en taille normale,
    titres de colonnes blancs, ligne du bas nette. */
 footer.footer--dark { padding: 55px 0 28px 0; }
 footer.footer--dark .footer__link-item {
@@ -1326,7 +1344,7 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
    Un lien dans un paragraphe ne doit pas se repérer à sa seule couleur
    (accessibilité) : il est souligné. Les éléments de navigation (pagination,
    « Éditer cette page ») restent neutres et prennent le vert-bleu au survol. */
-.markdown a:not(.card-link):not(.quickstart-card):not(.popular-link):not(.book-card):not(.hash-link) {
+.markdown a:not(.card-link):not(.button):not(.quickstart-card):not(.popular-link):not(.book-card):not(.hash-link) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -1362,51 +1380,24 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
    La graisse 600 paraissait lourde en Montserrat, plus large que Nunito. */
 [class*='sidebar-cat-'] > .menu__list-item-collapsible > .menu__link { font-weight: 500; }
 
-/* ─── Bandeau d'accueil : un vrai en-tête de page, comme sur le site ────────
-   Pleine largeur (collé à la barre de navigation et au menu), sans cadre ;
-   accroche vert-bleu soulignée, grand titre, deux boutons aux angles droits,
-   conformités en ligne discrète, trames de points dans les marges. */
+/* ─── Bandeau d'accueil compact (modèle « bandeau + démarrage rapide ») ─────
+   Pleine largeur, collé à la barre de navigation et au menu, sans cadre :
+   titre, sous-titre et conformités. Les actions de démarrage sont les cartes
+   « Premiers pas » juste en dessous. Décor : trame de points en haut à droite,
+   masquée sur mobile. */
 .hero-banner {
-  margin: calc(-1 * var(--ifm-spacing-horizontal)) calc(-1 * var(--ifm-spacing-horizontal)) 2.75rem;
-  padding: 64px 64px 52px;
+  position: relative;
+  margin: calc(-1 * var(--ifm-spacing-horizontal)) calc(-1 * var(--ifm-spacing-horizontal)) 2.5rem;
+  padding: 36px 200px 32px var(--ifm-spacing-horizontal);
   background: #242428;
   border: 0;
   overflow: hidden;
 }
 [data-theme='dark'] .hero-banner { background: #242428; border-bottom: 1px solid #2f2f33; }
-.hero-content { max-width: 720px; }
-.hero-eyebrow {
-  color: #41a890;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin: 0 0 18px 0;
-}
-.hero-eyebrow::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 2px;
-  margin-top: 12px;
-  background: #41a890;
-}
-.hero-title { font-size: clamp(1.7rem, 4vw, 2.8rem); font-weight: 700; margin: 0 0 14px 0; }
-.hero-subtitle { color: rgba(255, 255, 255, 0.82); font-size: 1.12rem; line-height: 1.6; margin: 0; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 34px; }
-.hero-button {
-  display: inline-block;
-  padding: 12px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  color: #ffffff !important;
-  font-weight: 500;
-  text-decoration: none !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-.hero-button:hover { background: #ffffff; color: #242428 !important; }
-.hero-button--primary { background: #338370; border-color: #338370; }
-.hero-button--primary:hover { background: #41a890; border-color: #41a890; color: #ffffff !important; }
-/* Conformités : texte discret séparé par des points vert-bleu, plus de pastilles. */
+.hero-content { max-width: 720px; position: relative; z-index: 1; }
+.hero-title { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; margin: 0 0 8px 0; }
+.hero-subtitle { color: rgba(255, 255, 255, 0.82); font-size: 1.02rem; line-height: 1.55; margin: 0 0 16px 0; }
+/* Conformités : texte discret séparé par des points vert-bleu. */
 .cert-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0; }
 .cert-chip {
   background: none !important;
@@ -1420,26 +1411,8 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
 }
 .cert-chip:hover { color: #ffffff !important; }
 .cert-chip + .cert-chip::before { content: '·'; color: #41a890; margin: 0 10px; font-weight: 700; }
-/* Trames de points : en haut à droite, et dans la marge gauche en bas (hors du texte). */
-.hero-banner::after { top: 40px; right: 40px; transform: none; width: 120px; height: 205px; }
-.hero-banner::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 22px;
-  width: 36px;
-  height: 120px;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.32) 1.6px, transparent 2px) 0 0 / 17px 17px;
-}
+.hero-banner::after { top: 24px; right: 40px; bottom: auto; transform: none; width: 85px; height: 120px; }
 @media (max-width: 996px) {
-  .hero-banner { padding: 40px 24px 36px; }
-  .hero-banner::before { display: none; }
-}
-/* Texte du bandeau aligné sur le bord du contenu de la page (même retrait que
-   « Premiers pas ») ; la trame du bas à gauche n'a donc plus de marge où se loger. */
-.hero-banner { padding-left: var(--ifm-spacing-horizontal); padding-right: 200px; }
-.hero-banner::before { display: none; }
-@media (max-width: 996px) {
-  .hero-banner { padding-right: var(--ifm-spacing-horizontal); }
+  .hero-banner { padding: 28px var(--ifm-spacing-horizontal) 24px; }
+  .hero-banner::after { display: none; }
 }

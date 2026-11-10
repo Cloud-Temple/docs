@@ -1,12 +1,13 @@
 // Copie de SearchBar de docusaurus-plugin-search-local : le module affiche « Search » en dur
 // (valeur par défaut de SearchButton, jamais traduite). Seule différence : le libellé du bouton,
-// traduit par la clé theme.SearchBar.label (i18n/<langue>/code.json).
+// traduit par la clé theme.SearchBar.label (i18n/<langue>/code.json), et la fenêtre de
+// recherche, elle aussi copiée (./SearchModal.jsx) pour traduire ses textes.
 import { Component, useEffect, useState } from "react";
 import { useLocation } from "@docusaurus/router";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { SearchButton } from "docusaurus-plugin-search-local/lib/client/theme/SearchBar/SearchButton";
-import SearchModal from "docusaurus-plugin-search-local/lib/client/theme/SearchModal";
+import SearchModal from "./SearchModal";
 import ErrorBoundary from "docusaurus-plugin-search-local/lib/client/theme/ErrorBoundary";
 import { translate } from "@docusaurus/Translate";
 import Mark from "mark.js";

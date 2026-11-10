@@ -425,5 +425,25 @@
   "theme.SearchBar.label": {
     "message": "Cerca",
     "description": "Libellé du bouton de recherche de la barre de navigation"
+  },
+  "theme.SearchModal.inputLabel": {
+    "message": "Cerca",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Cerca nella documentazione",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.emptyQuery": {
+    "message": "Inserite una ricerca per visualizzare i risultati.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.noResults": {
+    "message": "Nessun documento trovato.",
+    "description": "Fenêtre de recherche"
+  },
+  "theme.SearchModal.seeAll": {
+    "message": "Tutti i risultati",
+    "description": "Fenêtre de recherche"
   }
 }
