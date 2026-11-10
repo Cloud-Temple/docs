@@ -112,7 +112,7 @@ Two blade classes each carry two NVIDIA cards dedicated to your use: PERFORMANCE
 
 \* NVIDIA manufacturer values with structured sparsity. Without sparsity, these values are halved.
 
-Multi-Instance GPU (MIG) technology partitions an H100 card into up to 7 instances. Each instance has its own memory and its own compute units, isolated from the other instances. Several workloads can thus share the same card without interfering with one another.
+Multi-Instance GPU (MIG) technology partitions an H100 card into up to 7 instances. Each instance has its own memory and its own compute units, isolated from the other instances. Several workloads can thus share the same card without interfering with one another. L40S cards do not support Multi-Instance GPU.
 
 - The number and model of cards are set by the blade class: the GPU configuration of a blade cannot be changed.
 - Bare Metal blades equipped with GPUs can serve as worker nodes for Managed Kubernetes: see [Using a GPU on Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).

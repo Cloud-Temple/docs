@@ -112,7 +112,7 @@ Deux classes de lames embarquent chacune deux cartes NVIDIA dédiées à votre u
 
 \* Valeurs du constructeur NVIDIA avec parcimonie structurée (sparsity). Sans parcimonie, ces valeurs sont divisées par deux.
 
-La technologie Multi-Instance GPU (MIG) partitionne une carte H100 en 7 instances au plus. Chaque instance dispose de sa propre mémoire et de ses propres unités de calcul, isolées des autres instances. Plusieurs charges de travail partagent ainsi une même carte sans interférer entre elles.
+La technologie Multi-Instance GPU (MIG) partitionne une carte H100 en 7 instances au plus. Chaque instance dispose de sa propre mémoire et de ses propres unités de calcul, isolées des autres instances. Plusieurs charges de travail partagent ainsi une même carte sans interférer entre elles. Les cartes L40S ne prennent pas en charge le Multi-Instance GPU.
 
 - Le nombre et le modèle des cartes sont fixés par la classe de lame : la configuration GPU d'une lame ne se modifie pas.
 - Les lames Bare Metal équipées de GPU peuvent servir de nœuds workers à Managed Kubernetes : voir [Utiliser un GPU sur Managed Kubernetes](../managed_kubernetes/tutorials/usinggpu.md).

@@ -185,7 +185,7 @@ __Osservazioni__ :
 
 ### GPU
 
-Due classi di blade integrano ciascuna due schede NVIDIA: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) e PERFORMANCE 5 (2 × NVIDIA H100 80 GB, proposta con un impegno di 24 mesi). Un cluster di hypervisor è composto da blade dello stesso tipo: i blade GPU formano un cluster separato.
+Due classi di lame integrano ciascuna due schede NVIDIA: PERFORMANCE 4 (2 × NVIDIA L40S 48 GB) e PERFORMANCE 5 (2 × NVIDIA H100 80 GB, proposta con un impegno di 24 mesi). Un cluster di hypervisor è composto da lame dello stesso tipo: le lame GPU formano un cluster separato.
 
 | Parametro               | NVIDIA L40S  | NVIDIA H100  |
 |-------------------------|--------------|--------------|
@@ -198,7 +198,7 @@ Due classi di blade integrano ciascuna due schede NVIDIA: PERFORMANCE 4 (2 × NV
 
 \* Valori del costruttore NVIDIA con sparsità strutturata (sparsity). Senza sparsità, questi valori si dimezzano.
 
-- Il numero e il modello delle schede sono fissati dalla classe di blade: la configurazione GPU di un blade non si può modificare.
+- Il numero e il modello delle schede sono fissati dalla classe di lama: la configurazione GPU di una lama non si può modificare.
 - Per utilizzare una GPU da una macchina virtuale, attivate i parametri avanzati `pciPassthru.use64bitMMIO` e `pciPassthru.64bitMMIOSizeGB` (vedere la [guida introduttiva](quickstart.md)).
 
 ### Rete
