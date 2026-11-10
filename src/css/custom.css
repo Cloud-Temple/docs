@@ -1071,7 +1071,6 @@ footer.footer--dark .footer__copyright a:hover {
   font-weight: 500;
 }
 .navbar .navbar__toggle,
-.navbar .DocSearch-Button-Placeholder,
 .navbar .clean-btn { color: #e6e6e6; }
 
 /* ─── Direction artistique du site cloud-temple.com ─────────────────────────
@@ -1169,4 +1168,28 @@ html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
   background: #2f2f33;
   border-color: #3a3a3f;
   color: #e6e6e6;
+}
+
+/* Bouton de recherche de la barre : la barre est anthracite dans les deux modes,
+   le bouton aussi. Sans cela, en clair, il garde un fond clair avec un texte gris
+   très clair, illisible. Texte #aaa sur #2f2f33 : contraste 5,8:1. */
+.navbar .DocSearch-Button {
+  background: #2f2f33;
+  border: 1px solid #3a3a3f;
+  border-radius: 0;
+  color: #aaaaaa;
+}
+.navbar .DocSearch-Button:hover,
+.navbar .DocSearch-Button:focus {
+  border-color: #41a890;
+  box-shadow: none;
+}
+.navbar .DocSearch-Button .DocSearch-Search-Icon { color: #e6e6e6; }
+.navbar .DocSearch-Button-Placeholder { color: #aaaaaa; }
+.navbar .DocSearch-Button-Key {
+  background: #242428;
+  border: 1px solid #3a3a3f;
+  border-radius: 0;
+  box-shadow: none;
+  color: #aaaaaa;
 }
