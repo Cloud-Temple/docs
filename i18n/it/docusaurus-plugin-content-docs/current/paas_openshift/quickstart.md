@@ -10,14 +10,14 @@ import oshiftOrder_001 from '@site/docs/paas_openshift/images/oshift_order_001.p
 
 # Guida introduttiva a OpenShift
 
-Questa pagina ti guida attraverso i passaggi iniziali per utilizzare l'offerta **OpenShift** dalla console Cloud Temple. Segui queste istruzioni per esplorare i menu e le funzionalità disponibili.
+Questa pagina vi guida attraverso i passaggi iniziali per utilizzare l'offerta **OpenShift** dalla console Cloud Temple. Seguite queste istruzioni per esplorare i menu e le funzionalità disponibili.
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati dei seguenti punti:
+Prima di iniziare, assicuratevi dei seguenti punti:
 
-1. **Sottoscrizione attivata**: La tua organizzazione deve aver sottoscritto l'offerta OpenShift.
-2. **Permessi utente**: Il tuo account utente deve disporre dei diritti necessari per accedere e gestire le risorse OpenShift.
+1. **Sottoscrizione attivata**: La vostra organizzazione deve aver sottoscritto l'offerta OpenShift.
+2. **Permessi utente**: Il vostro account utente deve disporre dei diritti necessari per accedere e gestire le risorse OpenShift.
 
 ## Primo accesso e comando
 
@@ -25,11 +25,11 @@ Al primo accesso all'offerta OpenShift, dopo l'attivazione della sottoscrizione 
 
 <img src={oshiftOrder_001} />
 
-Questo schermo indica che al momento non hai ancora nessun cluster OpenShift SecNumCloud distribuito.
+Questo schermo indica che al momento non avete ancora nessun cluster OpenShift SecNumCloud distribuito.
 
-**Per ordinare il tuo primo cluster OpenShift SecNumCloud, ti preghiamo di contattare il supporto Cloud Temple.**
+**Per ordinare il vostro primo cluster OpenShift SecNumCloud, vi preghiamo di contattare il supporto Cloud Temple.**
 
-Una volta che il tuo ordine sarà elaborato dal supporto e il tuo cluster sarà distribuito, potrai accedere al menu OpenShift.
+Una volta che il vostro ordine sarà elaborato dal supporto e il vostro cluster sarà distribuito, potrete accedere al menu OpenShift.
 
 ## Accesso all'interfaccia OpenShift
 
@@ -82,11 +82,11 @@ A table lists each node with the following information:
 
 ## Accesso all'interfaccia di amministrazione OpenShift
 
-Fai clic sull'**URL di accesso** del cluster che desideri gestire. Accederai all'ambiente di amministrazione del cluster:
+Fate clic sull'**URL di accesso** del cluster che desiderate gestire. Accederete all'ambiente di amministrazione del cluster:
 
 <img src={oshiftMenu_002} />
 
-Dopo l'autenticazione, potrai gestire il tuo cluster:
+Dopo l'autenticazione, potrete gestire il vostro cluster:
 
 <img src={oshiftMenu_003} />
 
@@ -96,7 +96,7 @@ Here are the connection and configuration details specific to your OpenShift env
 
 #### Dettagli di connessione
 
-Per accedere ai diversi componenti OpenShift, assicurati che il tuo tenant sia registrato nell'elenco bianco nella console (consulta la documentazione: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
+Per accedere ai diversi componenti OpenShift, assicuratevi che il vostro tenant sia registrato nell'elenco bianco nella console (consultate la documentazione: [Cloud Temple Documentation](https://docs.cloud-temple.com/)).
 
 - **URL Console Tenant** :
   [https://**il-tuo-id-tenant**.shiva.cloud-temple.com/](https://**il-tuo-id-tenant**.shiva.cloud-temple.com/)
@@ -112,7 +112,7 @@ Per accedere ai diversi componenti OpenShift, assicurati che il tuo tenant sia r
 
 #### Connessione al cluster tramite CLI
 
-Per connetterti tramite riga di comando (CLI), utilizza il comando seguente:
+Per connettervi tramite riga di comando (CLI), utilizzate il comando seguente:
 
 ```bash
 oc login https://api-ocp01-{tuo-id}.paas.cloud-temple.com/ --web
@@ -120,14 +120,14 @@ oc login https://api-ocp01-{tuo-id}.paas.cloud-temple.com/ --web
 
 #### Accesso al registro
 
-Per accedere al registro, effettua il login utilizzando i seguenti comandi:
+Per accedere al registro, effettuate il login utilizzando i seguenti comandi:
 
 ```bash
 oc login https://api-ocp01-{your-id}.paas.cloud-temple.com --web
 docker login -u {your-username} -p $(oc whoami -t) registry-ocp01-{your-id}.paas.cloud-temple.com
 ```
 
-Successivamente, verifica la costruzione e il caricamento di un'immagine Docker:
+Successivamente, verificate la costruzione e il caricamento di un'immagine Docker:
 
 ```bash
 docker build -t <namespace>/temp:latest .
@@ -144,7 +144,7 @@ La piattaforma offre opzioni flessibili per il **routing dei flussi** e l’**eq
   - `*.apps-priv-ocp01-{vostro-id}.paas.cloud-temple.com`
   - `*.apps-ocp01-{vostro-id}.paas.cloud-temple.com`
 
-Assicurati che le tue route o ingresses siano configurati con le etichette o le classi di ingress appropriate per garantire un routing corretto.
+Assicuratevi che le vostre route o ingresses siano configurati con le etichette o le classi di ingress appropriate per garantire un routing corretto.
 
 Esempio:
 

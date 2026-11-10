@@ -203,7 +203,7 @@ Registrazione automatica degli eventi critici del cluster.
 **Procedura "Ripresa dopo un disastro"**
 
 - In caso di perdita completa dell'accesso a un cluster, il **Cliente** deve dichiarare un incidente al supporto **Cloud Temple** tramite il modulo di supporto della console.
-Vedi la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico)
+Vedete la [**procedura di richiesta di supporto tecnico**](../../console/console_quickstart.md#accesso-al-supporto-tecnico)
 
 ---
 

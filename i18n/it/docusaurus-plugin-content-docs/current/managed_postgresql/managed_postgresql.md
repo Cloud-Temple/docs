@@ -7,13 +7,13 @@ title: Panoramica di PostgreSQL Gestito
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scopri le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Esplora i concetti →</a>
+    <p>Scoprite le basi e i principi essenziali per padroneggiare la nostra infrastruttura.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Esplorate i concetti →</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
-    <p>Inizia rapidamente seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Apri la guida introduttiva →</a>
+    <p>Iniziate rapidamente seguendo istruzioni chiare e semplici.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Aprite la guida introduttiva →</a>
   </div>
 </div>
 

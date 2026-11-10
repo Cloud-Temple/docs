@@ -146,7 +146,7 @@ In questa scheda sono riportate alcune delle metriche già presenti nel dashboar
 ##### Calcolo
 
 In questa scheda sono riportati il numero di __AZ__, __Clusters__, __Hosts__, nonché 5 grafici
-che offrono una panoramica molto visuale del tuo ambiente OpenIaaS.
+che offrono una panoramica molto visuale del vostro ambiente OpenIaaS.
 
 È possibile scegliere l'intervallo di date da considerare, nonché il tipo di raggruppamento dei dati (per impostazione predefinita, i dati sono raggruppati per l'intero perimetro). Ad esempio, selezionando __Host__:
 
@@ -164,14 +164,14 @@ Allo stesso modo della scheda "Calcolo", sono disponibili diverse informazioni: 
 
 Integrazione della Console con Grafana
 
-La Console di Cloud Temple può essere utilizzata come origine dati per la tua infrastruttura [Grafana](https://grafana.com/).
+La Console di Cloud Temple può essere utilizzata come origine dati per la vostra infrastruttura [Grafana](https://grafana.com/).
 
-La console è compatibile con Prometheus, il che consente di aggiungerla a Grafana come origine dati di tipo Prometheus. Potrai così:
+La console è compatibile con Prometheus, il che consente di aggiungerla a Grafana come origine dati di tipo Prometheus. Potrete così:
 
-- Visualizzare tutte le tue metriche.
-- Creare i tuoi dashboard personalizzati in base alle tue esigenze.
+- Visualizzare tutte le vostre metriche.
+- Creare i vostri dashboard personalizzati in base alle vostre esigenze.
 
-Cloud Temple mette inoltre a disposizione una [raccolta di dashboard](https://github.com/Cloud-Temple/console-grafana-iaas) pronte all'uso, che puoi utilizzare come base o adattare in base ai tuoi casi d'uso.
+Cloud Temple mette inoltre a disposizione una [raccolta di dashboard](https://github.com/Cloud-Temple/console-grafana-iaas) pronte all'uso, che potete utilizzare come base o adattare in base ai vostri casi d'uso.
 
 <img src={grafanaDashboards_003} />
 
@@ -179,15 +179,15 @@ Cloud Temple mette inoltre a disposizione una [raccolta di dashboard](https://gi
 
 <img src={grafanaDashboards_002} />
 
-Per collegare la tua istanza Grafana alla Console, segui la [guida introduttiva](quickstart.md).
+Per collegare la vostra istanza Grafana alla Console, seguite la [guida introduttiva](quickstart.md).
 
 ## Architettura
 
-Un proxy Prometheus integrato nella Console espone le metriche delle tue risorse. Il tuo strumento di visualizzazione (Grafana, ad esempio) interroga questo proxy come origine dati Prometheus, con le tue credenziali della Console.
+Un proxy Prometheus integrato nella Console espone le metriche delle vostre risorse. Il vostro strumento di visualizzazione (Grafana, ad esempio) interroga questo proxy come origine dati Prometheus, con le vostre credenziali della Console.
 
 ## Regioni e zone di disponibilità
 
-Il servizio è integrato nella console Cloud Temple: le metriche coprono le risorse dei tuoi tenant, indipendentemente dalla loro zona di disponibilità.
+Il servizio è integrato nella console Cloud Temple: le metriche coprono le risorse dei vostri tenant, indipendentemente dalla loro zona di disponibilità.
 
 ## Specifiche tecniche
 
@@ -205,10 +205,10 @@ Observability è certificato HDS e ISO 27001. È incluso nei servizi qualificati
 
 | Operazione                        | Mezzo                                              | Costo   |
 |-----------------------------------|----------------------------------------------------|---------|
-| Esportazione delle metriche       | Raccolta Prometheus nei tuoi strumenti, in self-service | Incluso |
+| Esportazione delle metriche       | Raccolta Prometheus nei vostri strumenti, in self-service | Incluso |
 | Esportazione dei log di attività  | API Activity della Console                         | Incluso |
 
 ## Prezzi
 
-Observability è incluso senza costi aggiuntivi in qualsiasi sottoscrizione Cloud Temple. Vedi la pagina del prodotto sul sito Cloud Temple:
+Observability è incluso senza costi aggiuntivi in qualsiasi sottoscrizione Cloud Temple. Vedete la pagina del prodotto sul sito Cloud Temple:
 [Observability](https://www.cloud-temple.com/produits/observability/).

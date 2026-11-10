@@ -48,11 +48,11 @@ Il prodotto Bastion si attiva in self-service dalla vista Organizzazione della c
 
 Per accedere regolarmente a un dispositivo da amministrare, è più opportuno registrarlo: ad ogni connessione verranno richiesti solo il nome utente e la password.
 
-Per farlo, vai alla scheda « Dispositivi » del menu « Bastion », quindi fai clic sul pulsante « Nuovo dispositivo ».
+Per farlo, andate alla scheda « Dispositivi » del menu « Bastion », quindi fate clic sul pulsante « Nuovo dispositivo ».
 
 <img src={creerSession} />
 
-Compila quindi le informazioni necessarie per la creazione del tuo dispositivo :
+Compilate quindi le informazioni necessarie per la creazione del vostro dispositivo :
 
     - Nome del dispositivo ;
     - Descrizione ;
@@ -63,15 +63,15 @@ Compila quindi le informazioni necessarie per la creazione del tuo dispositivo :
 
 <img src={creerSession2} />
 
-Dovrebbe apparire una notifica che conferma la creazione del dispositivo in alto a destra della pagina. Il dispositivo viene quindi aggiunto all'elenco dei tuoi dispositivi.
+Dovrebbe apparire una notifica che conferma la creazione del dispositivo in alto a destra della pagina. Il dispositivo viene quindi aggiunto all'elenco dei vostri dispositivi.
 
-Per creare un nuovo dispositivo, puoi anche passare alla scheda « Appliances » facendo clic sulla barra delle azioni dell'Appliance a cui desideri associare un dispositivo.
+Per creare un nuovo dispositivo, potete anche passare alla scheda « Appliances » facendo clic sulla barra delle azioni dell'Appliance a cui desiderate associare un dispositivo.
 
 <img src={creerSession3} />
 
 ## Connettersi a un dispositivo
 
-Vai alla scheda « Dispositivi » della scheda « Bastione ». Fai clic sulla barra delle azioni del dispositivo che desideri aprire e clicca sul pulsante « Apri ».
+Andate alla scheda « Dispositivi » della scheda « Bastione ». Fate clic sulla barra delle azioni del dispositivo che desiderate aprire e cliccate sul pulsante « Apri ».
 
 <img src={ouvrirSession} />
 
@@ -79,4 +79,4 @@ Ad ogni connessione al dispositivo, è necessario inserire solo le proprie infor
 
 <img src={ouvrirSession2} />
 
-Dopo aver immesso le credenziali, viene visualizzata una notifica che conferma l'avvio della connessione al dispositivo e si apre la console verso la tua macchina virtuale.
+Dopo aver immesso le credenziali, viene visualizzata una notifica che conferma l'avvio della connessione al dispositivo e si apre la console verso la vostra macchina virtuale.

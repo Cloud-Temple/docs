@@ -7,7 +7,7 @@ tags:
 import statusCloudInit from '@site/docs/iaas_vmware/tutorials/images/status_cloud_init.png';
 import cloudInitOutput from '@site/docs/iaas_vmware/tutorials/images/cloud-init-output.png';
 
-Questa guida ti consentirà di distribuire le tue prime istanze sul Cloud di Fiducia in meno di 5 minuti.
+Questa guida vi consentirà di distribuire le vostre prime istanze sul Cloud di Fiducia in meno di 5 minuti.
 
 ## __Prerequisiti__
 
@@ -17,7 +17,7 @@ Questa guida ti consentirà di distribuire le tue prime istanze sul Cloud di Fid
 ## Distribuire una macchina virtuale tramite Terraform
 
 In questa sezione, vedremo come distribuire in pochi minuti una macchina virtuale sul Cloud de Confiance tramite il provider Terraform Cloud Temple.
-Se non hai ancora utilizzato il provider Cloud Temple, segui le istruzioni riportate [al seguente indirizzo](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) per installarlo e autenticarti nel tuo tenant.
+Se non avete ancora utilizzato il provider Cloud Temple, seguite le istruzioni riportate [al seguente indirizzo](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs) per installarlo e autenticarvi nel vostro tenant.
 
 Inizieremo creando un file .tf che descriva l'istanza che si desidera distribuire.
 Lo script seguente consente di distribuire una macchina virtuale da zero.
@@ -69,19 +69,19 @@ I parametri utilizzati in questo script sono i seguenti :
 
 Altri parametri possono essere applicati a una macchina virtuale durante la distribuzione. È possibile trovare l'elenco completo di questi parametri nella pagina seguente della [documentazione Terraform](https://registry.terraform.io/providers/Cloud-Temple/cloudtemple/latest/docs/resources/compute_virtual_machine)
 
-Una volta creato e salvato il file .tf, esegui il comando seguente per verificare il codice :
+Una volta creato e salvato il file .tf, eseguite il comando seguente per verificare il codice :
 
 ```
 terraform validate
 ```
 
-Successivamente, pianifica la distribuzione e verifica che il piano corrisponda a quanto desideri realizzare :
+Successivamente, pianificate la distribuzione e verificate che il piano corrisponda a quanto desiderate realizzare :
 
 ```
 terraform plan
 ```
 
-Infine, distribuisci la macchina virtuale eseguendo il comando seguente :
+Infine, distribuite la macchina virtuale eseguendo il comando seguente :
 
 ```
 terraform apply
@@ -96,11 +96,11 @@ Per ulteriori informazioni, fare riferimento alla [documentazione](https://cloud
 
 Per poter configurare tramite cloud-init una macchina virtuale distribuita tramite il provider Terraform Cloud Temple, l’__OVF__ utilizzato per distribuire quest'ultima deve essere __compatibile__ con __cloud-init__.
 
-Per verificare la compatibilità della tua macchina virtuale con cloud-init, esegui il comando seguente:
+Per verificare la compatibilità della vostra macchina virtuale con cloud-init, eseguite il comando seguente:
 
 `systemctl status cloud-init.service`
 
-Se cloud-init è installato correttamente sulla macchina, dovresti ottenere una risposta simile alla seguente. (Vedi screenshot di seguito)
+Se cloud-init è installato correttamente sulla macchina, dovreste ottenere una risposta simile alla seguente. (Vedete screenshot di seguito)
 
 <img src={statusCloudInit}/>
 
@@ -108,7 +108,7 @@ Se necessario, è possibile trovare immagini compatibili con cloud-init su Inter
 
 ### Distribuzione
 
-Una volta accertato che l’OVF distribuito è effettivamente compatibile con cloud-init, di seguito è riportato un esempio di file Terraform (.tf) che puoi utilizzare per configurare la tua macchina virtuale.
+Una volta accertato che l’OVF distribuito è effettivamente compatibile con cloud-init, di seguito è riportato un esempio di file Terraform (.tf) che potete utilizzare per configurare la vostra macchina virtuale.
 NB : Tutti gli esempi mostrati qui possono essere trovati nella cartella esempi del repository del provider Terraform Cloud Temple qui: [Exemples](https://github.com/Cloud-Temple/terraform-provider-cloudtemple/tree/main/examples)
 
 #### `main.tf`
@@ -192,12 +192,12 @@ Per ulteriori informazioni sul funzionamento di cloud-init, fare riferimento all
 
 ### Esecuzione
 
-Per verificare il corretto avvio di cloud-init, dovresti poter accedere con l'utente configurato nel file user-data.yml o verificare che il nome host sia stato impostato su quello specificato in 'hostname'.
+Per verificare il corretto avvio di cloud-init, dovreste poter accedere con l'utente configurato nel file user-data.yml o verificare che il nome host sia stato impostato su quello specificato in 'hostname'.
 
-In caso di problemi, puoi verificare i log di cloud-init utilizzando il comando seguente:
+In caso di problemi, potete verificare i log di cloud-init utilizzando il comando seguente:
 
 `sudo cat /var/log/cloud-init-output.log`
 
-Dovresti visualizzare diverse informazioni relative all'esecuzione di cloud-init. Nella schermata seguente, si può constatare che la configurazione di rete è andata a buon fine.
+Dovreste visualizzare diverse informazioni relative all'esecuzione di cloud-init. Nella schermata seguente, si può constatare che la configurazione di rete è andata a buon fine.
 
 <img src={cloudInitOutput} />

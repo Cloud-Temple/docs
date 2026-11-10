@@ -7,7 +7,7 @@ title: Guida introduttiva
 Prima di iniziare, assicuratevi di disporre dei seguenti elementi :
 
 - Un **Tenant Cloud Temple** attivo
-- Un'abbonamento al **Support Standard** minimo per un cliente diretto ; il **Support Basic** è destinato ai clienti accompagnati da un partner formato (vedi la [FAQ](./faq))
+- Un'abbonamento al **Support Standard** minimo per un cliente diretto ; il **Support Basic** è destinato ai clienti accompagnati da un partner formato (vedete la [FAQ](./faq))
 - Le autorizzazioni necessarie nella vostra organizzazione Cloud Temple
 
 ## Accesso al servizio VM Instances

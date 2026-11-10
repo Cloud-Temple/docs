@@ -25,7 +25,7 @@ import ssoAad_018 from '@site/docs/console/iam/tutorials/images/sso_aad_018.png'
 
 Ecco un esempio di configurazione del repository di autenticazione di un'organizzazione Cloud Temple con __Microsoft EntraID__ (Azure Active Directory).
 
-La configurazione del tuo repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console. Ciò permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.
+La configurazione del vostro repository Microsoft a livello di organizzazione Cloud Temple semplifica l'autenticazione degli utenti sulla Console. Ciò permette di evitare la moltiplicazione dei fattori di autenticazione e di ridurre la superficie di attacco.
 
 Se gli utenti sono autenticati con il loro account Microsoft, l'autenticazione ai servizi della Console avverrà in modo trasparente.
 
@@ -90,7 +90,7 @@ Follow these steps:
 
 ##### Opzione 1
 
-Vai sulla scheda "Overview" e fai clic sul nome dell'applicazione (il collegamento situato dopo "Managed application").
+Andate sulla scheda "Overview" e fate clic sul nome dell'applicazione (il collegamento situato dopo "Managed application").
 
 <img src={ssoAad_009} />
 

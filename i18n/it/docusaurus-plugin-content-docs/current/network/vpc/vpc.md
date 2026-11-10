@@ -13,16 +13,16 @@ Il servizio consente di distribuire e gestire le vostre reti private senza preoc
   <div class="card">
     <h3>Concetti</h3>
     <p>Scoprite l'architettura, i componenti (Private Networks, Gateway) e i vantaggi del VPC.</p>
-    <a href="./vpc/concepts" class="card-link">Esplora i concetti &rarr;</a>
+    <a href="./vpc/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
     <p>Creare il vostro primo VPC e configurare le vostre reti private in pochi minuti.</p>
-    <a href="./vpc/quickstart" class="card-link">Apri la guida introduttiva &rarr;</a>
+    <a href="./vpc/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
   </div>
     <div class="card">
     <h3>Tutorial</h3>
     <p>Guide passo passo, come la configurazione di rete di una macchina virtuale.</p>
-    <a href="./vpc/tutorials" class="card-link">Scopri i tutorial &rarr;</a>
+    <a href="./vpc/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
   </div>
 </div>

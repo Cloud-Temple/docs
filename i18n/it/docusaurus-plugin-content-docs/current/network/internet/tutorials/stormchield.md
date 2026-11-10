@@ -145,7 +145,7 @@ In **Routing dinamico**, attivate il routing dinamico BIRD e selezionate la vers
 
 ## 6.3 — Scrivere la configurazione BIRD
 
-Nella scheda **BIRD V2**, inserisci la configurazione sostituendo i valori con i tuoi (annotati al passaggio 1). Si dichiara un blocco `protocol bgp` per route server.
+Nella scheda **BIRD V2**, inserite la configurazione sostituendo i valori con i vostri (annotati al passaggio 1). Si dichiara un blocco `protocol bgp` per route server.
 
 ![Configuration BIRD](/img/screenshots/storm-bird-bgp.png)
 
@@ -210,7 +210,7 @@ protocol bgp RS2 {
 }
 ```
 
-Fai clic su **Verifica la configurazione** quindi **Applica**.
+Fate clic su **Verifica la configurazione** quindi **Applica**.
 
 :::info[Perché il multi-hop?]
 I route server sono a più di un hop, mentre una sessione eBGP ha un TTL di 1 per impostazione predefinita: senza `multihop`, i pacchetti non raggiungerebbero mai i server.

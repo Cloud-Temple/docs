@@ -56,15 +56,15 @@ import iaasVmwareEsxMemory from '@site/docs/iaas_vmware/images/iaas_vmware_esx_m
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle tue macchine virtuali è disponibile nella Console nel menu __'IaaS'__ situato nella barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle vostre macchine virtuali è disponibile nella Console nel menu __'IaaS'__ situato nella barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
-Nella sezione __'Macchine virtuali'__, hai accesso all'elenco delle tue macchine virtuali ospitate sul tuo Cloud di fiducia.
+Nella sezione __'Macchine virtuali'__, avete accesso all'elenco delle vostre macchine virtuali ospitate sul vostro Cloud di fiducia.
 
 <img src={shivaVmHome} />
 
-Hai accesso alle seguenti informazioni, per ogni macchina virtuale:
+Avete accesso alle seguenti informazioni, per ogni macchina virtuale:
 
 - il nome,
 - i tag assegnati,
@@ -86,16 +86,16 @@ Le seguenti azioni sono possibili da questa interfaccia :
 
 <img src={shivaVmHomeDesc} />
 
-__Un banner di allerta può essere presente in alto nell'elenco__ : indica che sono state attivate allarmi critici su una o più delle tue macchine virtuali.
+__Un banner di allerta può essere presente in alto nell'elenco__ : indica che sono state attivate allarmi critici su una o più delle vostre macchine virtuali.
 Il pulsante __'Visualizza'__ consente di consultare le macchine virtuali interessate da questa notifica.
 
 <img src={shivaVmHomeAlarme} />
 
-Quando fai clic sulla freccia a discesa verde sulla destra dell'elenco per una macchina virtuale :
+Quando fate clic sulla freccia a discesa verde sulla destra dell'elenco per una macchina virtuale :
 
 <img src={shivaVmActions} />
 
-Accedi a tutte le informazioni relative a essa :
+Accedete a tutte le informazioni relative a essa :
 
 <img src={shivaVmInformations} />
 
@@ -119,11 +119,11 @@ Una vista rapida offre una visualizzazione di __storage__, di __CPU__ e di __RAM
 
 <img src={shivaVmVueRapide} />
 
-Nella scheda __'Informazioni generali'__, trovi informazioni dettagliate relative alla tua macchina virtuale, come il suo SO, la sua posizione fisica (datacenter, datastore, ecc.), la RAM, la CPU, gli indirizzi IP, i log e altro.
+Nella scheda __'Informazioni generali'__, trovate informazioni dettagliate relative alla vostra macchina virtuale, come il suo SO, la sua posizione fisica (datacenter, datastore, ecc.), la RAM, la CPU, gli indirizzi IP, i log e altro.
 
 <img src={shivaVmInfosGenerales} />
 
-Da questa vista, puoi eseguire le seguenti azioni :
+Da questa vista, potete eseguire le seguenti azioni :
 
 - Modificare il sistema operativo (la macchina virtuale deve essere spenta),
 - Aggiornare la versione dell'hardware (la macchina virtuale deve essere spenta),
@@ -135,8 +135,8 @@ Una scheda __'Avanzate'__ consente di consultare informazioni più specifiche co
 
 ### Modifica della RAM o della CPU di una macchina virtuale
 
-Vai alla scheda __'Macchine Virtuali'__, visualizza i dettagli di una macchina virtuale,
-seleziona la scheda __'Informazioni generali'__ e fai clic sul pulsante di modifica della variabile da modificare :
+Andate alla scheda __'Macchine Virtuali'__, visualizzate i dettagli di una macchina virtuale,
+selezionate la scheda __'Informazioni generali'__ e fate clic sul pulsante di modifica della variabile da modificare :
 
 <img src={shivaEditCpuRam} />
 
@@ -168,14 +168,14 @@ La console di una macchina virtuale è accessibile dall'elenco delle macchine vi
 
 <img src={shivaCpool_010} />
 
-Si apre una nuova scheda del browser e viene visualizzata la console della tua macchina, basata su un client __VNC__:
+Si apre una nuova scheda del browser e viene visualizzata la console della vostra macchina, basata su un client __VNC__:
 
 <img src={shivaCpool_011} />
 
 È possibile nel menu __VNC__:
 
 - richiedere l'invio di tasti particolari,
-- forzare una mappatura della tastiera (nel caso in cui non sia stato possibile identificare correttamente la tua tastiera),
+- forzare una mappatura della tastiera (nel caso in cui non sia stato possibile identificare correttamente la vostra tastiera),
 - aprire un campo di testo trasmissibile alla macchina. Questo metodo sostituisce il vecchio sistema degli appunti non funzionante,
 - passare alla modalità a schermo intero.
 
@@ -199,17 +199,17 @@ La digitazione eseguita nella console dipende dal layout della tastiera del brow
 
 __Nota__ :
 
-- Se alcuni caratteri non passano durante la digitazione manuale, puoi provare tramite il clipboard.
+- Se alcuni caratteri non passano durante la digitazione manuale, potete provare tramite il clipboard.
 
 #### Funzionamento degli appunti
 
-Questa funzionalità consente di inviare l'intera stringa di caratteri alla tua macchina virtuale. È importante notare che il tasto "enforce keyboard" influisce sul modo in cui questa stringa di caratteri
-verrà trasmessa alla tua macchina virtuale. Se durante la digitazione nella console riscontri che l'opzione "enforce keyboard" è necessaria, ricordati di attivarla prima di utilizzare gli appunti.  
+Questa funzionalità consente di inviare l'intera stringa di caratteri alla vostra macchina virtuale. È importante notare che il tasto "enforce keyboard" influisce sul modo in cui questa stringa di caratteri
+verrà trasmessa alla vostra macchina virtuale. Se durante la digitazione nella console riscontrate che l'opzione "enforce keyboard" è necessaria, ricordatevi di attivarla prima di utilizzare gli appunti.  
 Questa funzionalità può essere utilizzata per l'invio di una password, di un comando o del contenuto di un file di configurazione, ad esempio:
 
 <img src={shivaCpool_012} />
 
-Al clic sul pulsante "Paste", il contenuto del tuo campo di testo viene inviato alla tua macchina virtuale.
+Al clic sul pulsante "Paste", il contenuto del vostro campo di testo viene inviato alla vostra macchina virtuale.
 
 ### Cataloghi di macchine virtuali Cloud Temple
 
@@ -290,7 +290,7 @@ A gennaio 2024, l'offerta di iperVisore disponibile sull'infrastruttura certific
 
 ### Gestione dei cluster VMware
 
-Per accedere alla gestione dei cluster VMware, fai clic nel sottomenu __'Calcolo'__ del menu __'IaaS'__ :
+Per accedere alla gestione dei cluster VMware, fate clic nel sottomenu __'Calcolo'__ del menu __'IaaS'__ :
 
 Per impostazione predefinita, la prima scheda elenca tutti gli hypervisor (tous cluster confondus):
 
@@ -304,7 +304,7 @@ Per impostazione predefinita, la prima scheda elenca tutti gli hypervisor (tous 
 
 <img src={shivaCpool_003} />
 
-Se fai clic su un cluster, vedi la sintesi della sua composizione :
+Se fate clic su un cluster, vedete la sintesi della sua composizione :
 - Il totale della potenza di calcolo espressa in GHz,
 - Il totale della memoria disponibile e il rapporto di utilizzo,
 - Il totale dello spazio di archiviazione (tous types confondus) nonché la quota di spazio utilizzata,
@@ -332,7 +332,7 @@ __Memoria consumata (ESX) :__ A differenza dei grafici del cluster, questo mostr
 
 <img src={shivaCpool_004} />
 
-Vedrai visualizzati per ogni iperviseur nella scheda __'Hosts'__ :
+Vedrete visualizzati per ogni iperviseur nella scheda __'Hosts'__ :
 
 - L'utilizzo __CPU__ e __Memoria__,
 - Il numero di macchine virtuali assegnate,
@@ -359,32 +359,32 @@ Dalla scheda __'Hosts'__ sono possibili diverse azioni :
 
 <img src={shivaCpool_008Build} />
 
-1. L'aggiornamento del firmware della tua blade di calcolo (bios e firmware delle schede di espansione):
+1. L'aggiornamento del firmware della vostra blade di calcolo (bios e firmware delle schede di espansione):
 
 <img src={shivaCpool_008Firm} />
 
 *__Nota__* :
 
 - *Cloud Temple mette a disposizione i build per gli iperviseur a intervalli regolari.
-È importante aggiornare regolarmente i tuoi iperviseur, in particolare per consentire l'applicazione delle patch di sicurezza.
-Tuttavia, __non aggiorniamo automaticamente i tuoi iperviseur__. Cloud Temple non ha visibilità sugli impegni di disponibilità dei tuoi workload.
-Ti lasciamo quindi la responsabilità di implementare la tua gestione del cambiamento e di applicare i nuovi build nel momento migliore.*
-- *Il processo di aggiornamento è completamente automatizzato. Devi disporre di almeno due iperviseur nel tuo cluster per consentire un aggiornamento senza interruzione del servizio.*
+È importante aggiornare regolarmente i vostri iperviseur, in particolare per consentire l'applicazione delle patch di sicurezza.
+Tuttavia, __non aggiorniamo automaticamente i vostri iperviseur__. Cloud Temple non ha visibilità sugli impegni di disponibilità dei vostri workload.
+Vi lasciamo quindi la responsabilità di implementare la vostra gestione del cambiamento e di applicare i nuovi build nel momento migliore.*
+- *Il processo di aggiornamento è completamente automatizzato. Dovete disporre di almeno due iperviseur nel vostro cluster per consentire un aggiornamento senza interruzione del servizio.*
 
 {/*TODO: Add missing page. */}
 {/* -*È necessario disporre delle autorizzazioni adeguate per eseguire le diverse azioni.**/}
 
-Vedrai anche l'insieme delle regole di affinità/anti-affinità per il tuo cluster di iperviseur nella sezione __'Regole'__.
+Vedrete anche l'insieme delle regole di affinità/anti-affinità per il vostro cluster di iperviseur nella sezione __'Regole'__.
 
-### Gestione dell'affinità delle tue macchine virtuali
+### Gestione dell'affinità delle vostre macchine virtuali
 
-Le __regole di affinità e anti-affinità__ consentono di controllare la posizione delle macchine virtuali sui tuoi hypervisor.
-Possono essere utilizzate per gestire l'utilizzo delle risorse del tuo __'Cpool'__.
+Le __regole di affinità e anti-affinità__ consentono di controllare la posizione delle macchine virtuali sui vostri hypervisor.
+Possono essere utilizzate per gestire l'utilizzo delle risorse del vostro __'Cpool'__.
 Ad esempio, possono aiutare a bilanciare il carico di lavoro tra i server o a isolare i carichi di lavoro ad alto consumo di risorse.
 In un __'Cpool'__ VMware, queste regole sono spesso utilizzate per gestire il comportamento delle macchine virtuali con vMotion.
 vMotion consente di spostare le macchine virtuali da un host all'altro senza interruzione del servizio.
 
-Puoi configurare tramite la gestione delle regole :
+Potete configurare tramite la gestione delle regole :
 
 - __Regole di Affinità__ : Queste regole garantiscono che determinate macchine virtuali vengano eseguite sullo stesso host fisico.
 Vengono utilizzate per migliorare le prestazioni mantenendo le macchine virtuali che comunicano frequentemente
@@ -398,8 +398,8 @@ Le regole di anti-affinità sono cruciali per le applicazioni che richiedono un'
 come negli ambienti di produzione dove la tolleranza ai guasti è una priorità.
 Ad esempio, non si desidera che i propri due Active Directory si trovino sullo stesso hypervisor.
 
-Durante la creazione di una regola, puoi definire il tipo di regola (affinità / anti-affinità), il nome della regola,
-il suo stato di attivazione (__'Stato'__) e le macchine interessate del tuo cluster di hypervisor.
+Durante la creazione di una regola, potete definire il tipo di regola (affinità / anti-affinità), il nome della regola,
+il suo stato di attivazione (__'Stato'__) e le macchine interessate del vostro cluster di hypervisor.
 
 <img src={shivaCpool_006} />
 
@@ -413,7 +413,7 @@ Per aggiungere una nuova politica di backup, è necessario inviare una richiesta
 
 La creazione di una nuova politica di backup viene effettuata tramite __una richiesta di servizio__ indicando:
 
-    Il nome della tua Organizzazione
+    Il nome della vostra Organizzazione
     Il nome di un referente con la sua email e numero di telefono per completare la configurazione
     Il nome del tenant
     Il nome della politica di backup
@@ -425,13 +425,13 @@ La creazione di una nuova politica di backup viene effettuata tramite __una rich
 
 Quando viene assegnata una SLA a una macchina virtuale (VM), tutti i dischi associati a tale VM ereditano automaticamente la stessa SLA. Successivamente, è possibile avviare manualmente l'esecuzione del backup tramite la scheda "Politiche di backup". In assenza di un'avvio manuale, il backup verrà eseguito automaticamente in base al piano configurato dall'SLA.
 
-SecNumCloud rende obbligatoria l'assegnazione di una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, riceverai la seguente notifica:
+SecNumCloud rende obbligatoria l'assegnazione di una politica di backup a una macchina virtuale prima del suo avvio. In caso contrario, riceverete la seguente notifica:
 
 <img src={shivaVmPolitiquesBackupAssignMandatory} />
 
-Fai clic sulla scheda __'Politiche di backup'__ nel menu della tua macchina virtuale. Puoi visualizzare la o le politiche di backup assegnate a tale macchina.
+Fate clic sulla scheda __'Politiche di backup'__ nel menu della vostra macchina virtuale. Potete visualizzare la o le politiche di backup assegnate a tale macchina.
 
-Per assegnare una nuova politica di backup alla macchina virtuale, fai clic sul pulsante __'Aggiungi una politica'__ e seleziona la politica di backup desiderata.
+Per assegnare una nuova politica di backup alla macchina virtuale, fate clic sul pulsante __'Aggiungi una politica'__ e selezionate la politica di backup desiderata.
 
 <img src={shivaVmPolitiquesBackup} />
 
@@ -449,18 +449,18 @@ Fare clic sulla barra delle azioni del disco a cui si desidera assegnare una pol
 
 ### Eseguire una politica di backup
 
-Nel menu __'Politiche di backup'__ della tua macchina virtuale, fai clic sul pulsante __'Esegui'__ nella colonna __'Azioni'__ della politica di backup che desideri eseguire.
+Nel menu __'Politiche di backup'__ della vostra macchina virtuale, fate clic sul pulsante __'Esegui'__ nella colonna __'Azioni'__ della politica di backup che desiderate eseguire.
 
 <img src={shivaVmPolitiquesBackupExecute} />
 
-Per eseguire una politica di backup, puoi anche partire dalla sezione __'Backup'__ nel menu di
-tua macchina virtuale. Fai clic sul pulsante __'Esegui backup'__, quindi seleziona il backup che desideri eseguire dall'elenco a discesa.
+Per eseguire una politica di backup, potete anche partire dalla sezione __'Backup'__ nel menu della
+vostra macchina virtuale. Fate clic sul pulsante __'Esegui backup'__, quindi selezionate il backup che desiderate eseguire dall'elenco a discesa.
 
 <img src={shivaVmPolitiquesBackupExecute2} />
 
 ### Rimuovere una politica di backup
 
-Nel menu __'Politiche di backup'__ della tua macchina virtuale, fai clic sul pulsante __'Rimuovi'__ nella colonna __'Azioni'__ della politica di backup che desideri rimuovere.
+Nel menu __'Politiche di backup'__ della vostra macchina virtuale, fate clic sul pulsante __'Rimuovi'__ nella colonna __'Azioni'__ della politica di backup che desiderate rimuovere.
 
 <img src={shivaVmPolitiquesBackupRetirer} />
 
@@ -488,21 +488,21 @@ Allo stesso modo, non è possibile avviare una macchina virtuale che è associat
 
 ### Ripristinare un backup
 
-La scheda __'Backup'__ nel menu delle tue macchine virtuali ti consente di accedere all'elenco dei backup di ciascuna di esse.
-Per ripristinare un backup, fai clic sul pulsante __'Ripristina'__ sulla riga corrispondente al backup che desideri ripristinare.
+La scheda __'Backup'__ nel menu delle vostre macchine virtuali vi consente di accedere all'elenco dei backup di ciascuna di esse.
+Per ripristinare un backup, fate clic sul pulsante __'Ripristina'__ sulla riga corrispondente al backup che desiderate ripristinare.
 
 <img src={shivaVmBackupRestaurer} />
 
-1. __Modalità produzione__ : La modalità produzione consente il ripristino dopo un incidente sul sito locale dallo storage primario o da un sito di disaster recovery remoto, sostituendo le immagini originali della macchina con le immagini di recupero. Tutte le configurazioni vengono trasferite nell'ambito del ripristino, inclusi nomi e identificatori, e tutti i job di copia dei dati associati alla macchina virtuale continuano a essere eseguiti. Nel contesto di un ripristino in modalità produzione, puoi scegliere di sostituire lo storage nella macchina virtuale con un disco virtuale proveniente da un backup di una macchina virtuale precedente.
+1. __Modalità produzione__ : La modalità produzione consente il ripristino dopo un incidente sul sito locale dallo storage primario o da un sito di disaster recovery remoto, sostituendo le immagini originali della macchina con le immagini di recupero. Tutte le configurazioni vengono trasferite nell'ambito del ripristino, inclusi nomi e identificatori, e tutti i job di copia dei dati associati alla macchina virtuale continuano a essere eseguiti. Nel contesto di un ripristino in modalità produzione, potete scegliere di sostituire lo storage nella macchina virtuale con un disco virtuale proveniente da un backup di una macchina virtuale precedente.
 
-2. __Modalità test__ : La modalità test crea macchine virtuali temporanee per lo sviluppo, il test, la verifica degli snapshot e la verifica del ripristino dopo un incidente in base a un piano ripetibile, senza impattare gli ambienti di produzione. Le macchine di test vengono eseguite per il tempo necessario a effettuare il test e la verifica, per poi essere eliminate. Tramite una rete isolata, puoi creare un ambiente sicuro per testare i tuoi job senza interferire con le macchine virtuali utilizzate per la produzione. Le macchine virtuali create in modalità test dispongono di nomi e identificatori univoci per evitare qualsiasi conflitto nel tuo ambiente di produzione.
+2. __Modalità test__ : La modalità test crea macchine virtuali temporanee per lo sviluppo, il test, la verifica degli snapshot e la verifica del ripristino dopo un incidente in base a un piano ripetibile, senza impattare gli ambienti di produzione. Le macchine di test vengono eseguite per il tempo necessario a effettuare il test e la verifica, per poi essere eliminate. Tramite una rete isolata, potete creare un ambiente sicuro per testare i vostri job senza interferire con le macchine virtuali utilizzate per la produzione. Le macchine virtuali create in modalità test dispongono di nomi e identificatori univoci per evitare qualsiasi conflitto nel vostro ambiente di produzione.
 
-3. __Modalità clone__ : La modalità Clone crea copie delle macchine virtuali per casi d'uso che richiedono copie permanenti o a esecuzione prolungata per l'esplorazione dei dati o la duplicazione di un ambiente di test su una rete isolata. Le macchine virtuali create in modalità clone dispongono di nomi e identificatori univoci per evitare qualsiasi conflitto nel tuo ambiente di produzione. In modalità clone, devi prestare attenzione al consumo delle risorse poiché la modalità clone crea macchine permanenti o a lungo termine.
+3. __Modalità clone__ : La modalità Clone crea copie delle macchine virtuali per casi d'uso che richiedono copie permanenti o a esecuzione prolungata per l'esplorazione dei dati o la duplicazione di un ambiente di test su una rete isolata. Le macchine virtuali create in modalità clone dispongono di nomi e identificatori univoci per evitare qualsiasi conflitto nel vostro ambiente di produzione. In modalità clone, dovete prestare attenzione al consumo delle risorse poiché la modalità clone crea macchine permanenti o a lungo termine.
 
 __Il ripristino è impostato di default in modalità "TEST" per preservare la produzione__ ed è possibile scegliere il nome della vm ripristinata :
 
 <img src={shivaVmBackupTest} />
 
-Nota che se i test sono soddisfacenti, è possibile passare una macchina virtuale dalla modalità test alla modalità produzione :
+Notate che se i test sono soddisfacenti, è possibile passare una macchina virtuale dalla modalità test alla modalità produzione :
 
 <img src={shivaVmBackup_2prod} />

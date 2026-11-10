@@ -5,7 +5,7 @@ slug: /network/private_backbone
 
 # Panoramica di Private Backbone
 
-> **Prendi il controllo totale della tua rete con una connettività di livello 2 estesa, progettata per architetture ibride e configurazioni su misura.**
+> **Prendete il controllo totale della vostra rete con una connettività di livello 2 estesa, progettata per architetture ibride e configurazioni su misura.**
 
 Il **Private Backbone** di Cloud Temple è il nostro prodotto di connettività storico, progettato per gli esperti. Basato su un'infrastruttura di rete di livello 2 (VPLS), consente di creare reti private estese tra le zone di disponibilità di una regione. È la soluzione ideale per le aziende che desiderano costruire architetture cloud ibride complesse e mantenere un controllo totale sulla topologia di rete.
 
@@ -13,17 +13,17 @@ Il **Private Backbone** di Cloud Temple è il nostro prodotto di connettività s
   <div class="card">
     <h3>Concetti</h3>
     <p>Architettura VPLS, reti private regionali, accesso a Internet, indirizzamento pubblico IPv4/IPv6.</p>
-    <a href="./private_backbone/concepts" class="card-link">Esplora i concetti →</a>
+    <a href="./private_backbone/concepts" class="card-link">Esplorate i concetti →</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
-    <p>Crea la tua prima rete privata e configura il tuo accesso a Internet in pochi passaggi.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Inizia →</a>
+    <p>Create la vostra prima rete privata e configurate il vostro accesso a Internet in pochi passaggi.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Iniziate →</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>
-    <p>Configura un FortiGate o pfSense con BGP per gestire la tua connettività esterna.</p>
-    <a href="./private_backbone/tutorials" class="card-link">Visualizza i tutorial →</a>
+    <p>Configurate un FortiGate o pfSense con BGP per gestire la vostra connettività esterna.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Visualizzate i tutorial →</a>
   </div>
 </div>
 
@@ -31,7 +31,7 @@ Il **Private Backbone** di Cloud Temple è il nostro prodotto di connettività s
 
 ## Panoramica del prodotto
 
-Il **Private Backbone** fornisce un insieme completo di servizi di basso livello per interconnettere ed esporre le tue infrastrutture in un cloud sovrano. È composto da due pilastri:
+Il **Private Backbone** fornisce un insieme completo di servizi di basso livello per interconnettere ed esporre le vostre infrastrutture in un cloud sovrano. È composto da due pilastri:
 
 - **Reti Private (VPLS)**: Creazione di reti di livello 2 estese e isolate tra le zone di disponibilità, ideale per architetture ibride complesse.
 - **Accesso a Internet**: Connettività Internet ad alte prestazioni con allocazione di indirizzi IP pubblici (IPv4/IPv6) e protezione Anti-DDoS nativa.

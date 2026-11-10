@@ -22,15 +22,15 @@ import openIaasVmConsoleClipboard from '@site/docs/iaas_opensource/images/open_i
 
 ### Gestione delle macchine virtuali
 
-L'interfaccia di gestione delle tue macchine virtuali è disponibile nella Console nel menu __'OpenIaaS'__ situato nella barra verde a sinistra dello schermo.
+L'interfaccia di gestione delle vostre macchine virtuali è disponibile nella Console nel menu __'OpenIaaS'__ situato nella barra verde a sinistra dello schermo.
 
 ### Elenco delle macchine virtuali
 
-Nella sezione __'Macchine virtuali'__, ha accesso all'elenco delle sue macchine virtuali ospitate sul suo Cloud attendibile.
+Nella sezione __'Macchine virtuali'__, avete accesso all'elenco delle vostre macchine virtuali ospitate sul vostro Cloud attendibile.
 
 <img src={openIaasVirtualMachinesList} />
 
-Ha accesso alle seguenti informazioni, per ogni macchina virtuale:
+Avete accesso alle seguenti informazioni, per ogni macchina virtuale:
 
 - Il suo nome.
 - Il suo stato (spento, acceso).
@@ -94,14 +94,14 @@ La console di una macchina virtuale è accessibile dall'elenco delle macchine vi
 
 <img src={openIaasVmConsoleBtn} />
 
-Si apre una nuova scheda del browser e viene visualizzata la console della tua macchina, basata su un client VNC :
+Si apre una nuova scheda del browser e viene visualizzata la console della vostra macchina, basata su un client VNC :
 
 <img src={openIaasVmConsoleOpen} />
 
 Nel menu VNC è possibile :
 
 - richiedere l'invio di tasti particolari,
-- forzare la mappatura della tastiera (nel caso in cui la tua macchina virtuale non abbia la stessa disposizione della tastiera del tuo browser web),
+- forzare la mappatura della tastiera (nel caso in cui la vostra macchina virtuale non abbia la stessa disposizione della tastiera del vostro browser web),
 - aprire un campo di testo da inviare alla macchina. Questo metodo sostituisce il vecchio sistema di appunti non funzionante,
 - passare alla modalità a schermo intero,
 - modificare le dimensioni della finestra (ridimensionamento).
@@ -124,17 +124,17 @@ Di seguito una sintesi delle possibili situazioni:
 
 __Nota__ :
 
-- Se alcuni caratteri non vengono immessi manualmente, puoi provare tramite gli appunti.
+- Se alcuni caratteri non vengono immessi manualmente, potete provare tramite gli appunti.
 
 #### Funzionamento degli appunti
 
-Questa funzionalità ti permette di inviare una stringa di caratteri completa alla tua macchina virtuale. È importante notare che il tasto "enforce keyboard" influenza il modo in cui questa stringa di caratteri
-verrà trasmessa alla tua macchina virtuale. Se durante la digitazione nella console riscontri che l'opzione "enforce keyboard" è necessaria, ricordati di attivarla prima di utilizzare gli appunti.  
+Questa funzionalità vi permette di inviare una stringa di caratteri completa alla vostra macchina virtuale. È importante notare che il tasto "enforce keyboard" influenza il modo in cui questa stringa di caratteri
+verrà trasmessa alla vostra macchina virtuale. Se durante la digitazione nella console riscontrate che l'opzione "enforce keyboard" è necessaria, ricordatevi di attivarla prima di utilizzare gli appunti.  
 Questa funzionalità può essere utilizzata per l'invio di una password, di un comando o del contenuto di un file di configurazione, ad esempio:
 
 <img src={openIaasVmConsoleClipboard} />
 
-Al clic sul pulsante "Paste", il contenuto del tuo campo di testo viene inviato alla tua macchina virtuale.
+Al clic sul pulsante "Paste", il contenuto del vostro campo di testo viene inviato alla vostra macchina virtuale.
 
 ## Replicazione
 
@@ -150,20 +150,20 @@ Nella sezione __'Replicazione'__, è possibile creare politiche che definiscono 
 
 <img src={openIaasReplicationPoliciesView} />
 
-Per creare una nuova politica, fai clic sul pulsante __'Aggiungi politica'__. Si apre un modulo con i passaggi seguenti:
+Per creare una nuova politica, fate clic sul pulsante __'Aggiungi politica'__. Si apre un modulo con i passaggi seguenti:
 
 #### Passo 1 : Informazioni generali
 
-- __Nome__ : Assegna un nome esplicito alla tua politica
-- __Frequenza__ : Seleziona l'intervallo di replica (1-59 minuti o 1-24 ore)
+- __Nome__ : Assegnate un nome esplicito alla vostra politica
+- __Frequenza__ : Selezionate l'intervallo di replica (1-59 minuti o 1-24 ore)
 
 <img src={openIaasReplicationPolicyForm1} />
 
 #### Fase 2: Selezione dello storage
 
-- __Zona di disponibilità__ : Seleziona la zona di destinazione
-- __Pool__ : Scegli il pool di risorse
-- __Block Storage__ : Seleziona lo storage di destinazione
+- __Zona di disponibilità__ : Selezionate la zona di destinazione
+- __Pool__ : Scegliete il pool di risorse
+- __Block Storage__ : Selezionate lo storage di destinazione
 
 <img src={openIaasReplicationPolicyForm2} />
 
@@ -173,17 +173,17 @@ Verificare i parametri e fare clic su __'Aggiungi'__ per creare la policy.
 
 ### Associazione di una VM alla replica
 
-Per proteggere una macchina virtuale, accedi ai dettagli della tua VM dall'elenco delle macchine virtuali.
+Per proteggere una macchina virtuale, accedete ai dettagli della vostra VM dall'elenco delle macchine virtuali.
 
-Nella vista dettagliata della VM, troverai una sezione __'Replica'__ :
+Nella vista dettagliata della VM, troverete una sezione __'Replica'__ :
 
 <img src={openIaasVmReplicationSection} />
 
 I passaggi per associare una VM alla replica :
 
-1. Clicca su __'Configura una policy'__
-2. Seleziona la policy di replica desiderata dall'elenco a discesa
-3. Conferma la tua scelta
+1. Cliccate su __'Configura una policy'__
+2. Selezionate la policy di replica desiderata dall'elenco a discesa
+3. Confermate la vostra scelta
 
 La replica viene avviata automaticamente dopo la conferma.
 

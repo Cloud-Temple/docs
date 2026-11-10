@@ -14,7 +14,7 @@ import modifierSession from '@site/docs/bastion/images/modifier_session.png'
 import modifierSession2 from '@site/docs/bastion/images/modifier_session2.png'
 import supprimerSession from '@site/docs/bastion/images/supprimer_session.png'
 
-Questi tutorial ti aiutano a distribuire e gestire un Bastion Cloud Temple dalla Console.
+Questi tutorial vi aiutano a distribuire e gestire un Bastion Cloud Temple dalla Console.
 
 ## Prerequisiti
 
@@ -47,18 +47,18 @@ Prima di distribuire un'Appliance, attivare il prodotto Bastion. Si attiva in se
 
 ## Aprire una connessione verso un dispositivo
 
-Nella scheda « Appliance », fai clic sulla barra delle azioni dell'Appliance che desideri aprire. Fai quindi clic sul pulsante « Apri ».
+Nella scheda « Appliance », fate clic sulla barra delle azioni dell'Appliance che desiderate aprire. Fate quindi clic sul pulsante « Apri ».
 
 <img src={ouvrirAppliance} />
 
-Compila quindi le informazioni necessarie per la connessione:
+Compilate quindi le informazioni necessarie per la connessione:
 
     - Scelta del protocollo (SSH o RDP);
     - Indirizzo IP dell'host da amministrare;
     - Credenziali di accesso;
     - Configurazione della tastiera.
 
-Fai quindi clic su « Connetti » per aprire l'Appliance. La console della macchina virtuale da amministrare si aprirà.
+Fate quindi clic su « Connetti » per aprire l'Appliance. La console della macchina virtuale da amministrare si aprirà.
 
 ## Registrare un dispositivo
 
@@ -87,28 +87,28 @@ Per creare una nuova connessione, è possibile anche accedere alla scheda « App
 
 ## Connettersi a un dispositivo
 
-Vai alla scheda « Dispositivi » della scheda « Bastione ». Clicca sulla barra delle azioni del dispositivo che desideri aprire e clicca sul pulsante « Apri ».
+Andate alla scheda « Dispositivi » della scheda « Bastione ». Cliccate sulla barra delle azioni del dispositivo che desiderate aprire e cliccate sul pulsante « Apri ».
 
 <img src={ouvrirSession} />
 
-Ogni volta che ti connetti al dispositivo, devi inserire solo le tue informazioni di autenticazione.
+Ogni volta che vi connettete al dispositivo, dovete inserire solo le vostre informazioni di autenticazione.
 
 <img src={ouvrirSession2} />
 
-Dopo aver inserito le tue credenziali, appare una notifica che conferma l'avvio della sessione e si apre la console verso la tua macchina virtuale.
+Dopo aver inserito le vostre credenziali, appare una notifica che conferma l'avvio della sessione e si apre la console verso la vostra macchina virtuale.
 
 ## Modificare la configurazione del dispositivo
 
-Vai alla scheda « Dispositivi » della sezione « Bastion », fai clic sulla barra delle azioni del dispositivo che desideri modificare e fai clic sul pulsante « Modifica ».
+Andate alla scheda « Dispositivi » della sezione « Bastion », fate clic sulla barra delle azioni del dispositivo che desiderate modificare e fate clic sul pulsante « Modifica ».
 
 <img src={modifierSession} />
 
-Successivamente, puoi modificare il nome del dispositivo, la descrizione, l'Appliance associata, il protocollo (SSH o RDP), l'indirizzo IP dell'host o la lingua della tastiera.
+Successivamente, potete modificare il nome del dispositivo, la descrizione, l'Appliance associata, il protocollo (SSH o RDP), l'indirizzo IP dell'host o la lingua della tastiera.
 
 <img src={modifierSession2} />
 
 ## Eliminare una configurazione del dispositivo
 
-Vai alla scheda « Dispositivi » della sezione « Bastion », clicca sulla barra delle azioni del dispositivo che desideri eliminare e clicca sul pulsante « Elimina ».
+Andate alla scheda « Dispositivi » della sezione « Bastion », cliccate sulla barra delle azioni del dispositivo che desiderate eliminare e cliccate sul pulsante « Elimina ».
 
 <img src={supprimerSession} />

@@ -110,18 +110,18 @@ Configurare sull'interfaccia WAN un IP preso dal prefisso di interconnessione e 
 
 ## 5.1 — Abilitare il routing
 
-Vai in **Routing > General** e spunta **Enable**.
+Andate in **Routing > General** e spuntate **Enable**.
 
 ![Routing General](/img/screenshots/routing-general.png)
 ![Routing BGP](/img/screenshots/routing-bgp.png)
 
-Inserisci quindi le informazioni di connessione verso i route server :
+Inserite quindi le informazioni di connessione verso i route server :
 
 - le IP dei route server ;
 - il numero AS del partner.
 
 :::info[Perché il multi-hop ?]
-Spunta la casella **multi-hop**. I route server sono a più di un hop, mentre una sessione eBGP ha un TTL di 1 per impostazione predefinita : senza multi-hop, i pacchetti non raggiungerebbero mai i server.
+Spuntate la casella **multi-hop**. I route server sono a più di un hop, mentre una sessione eBGP ha un TTL di 1 per impostazione predefinita : senza multi-hop, i pacchetti non raggiungerebbero mai i server.
 :::
 
 ![PEER1](/img/screenshots/peer1.png)

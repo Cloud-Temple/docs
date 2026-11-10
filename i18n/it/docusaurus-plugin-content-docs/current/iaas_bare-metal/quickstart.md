@@ -8,16 +8,16 @@ import shivaBareMetalStoragelist from '@site/docs/iaas_bare-metal/images/shiva_b
 
 # Guida introduttiva a Bare Metal
 
-Questa pagina illustra i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Segui queste istruzioni per scoprire i menu e le funzionalità disponibili.
+Questa pagina illustra i passaggi iniziali per utilizzare l'offerta **Bare Metal** dalla console Cloud Temple. Seguite queste istruzioni per scoprire i menu e le funzionalità disponibili.
 
 ---
 
 ## Prerequisiti
 
-Prima di iniziare, verifica i seguenti punti:
+Prima di iniziare, verificate i seguenti punti:
 
-1. **Sottoscrizione attiva** : La tua organizzazione deve aver sottoscritto l'offerta Bare Metal.
-2. **Permessi utente** : Il tuo account utente deve disporre dei permessi necessari per accedere e gestire le risorse Bare Metal.
+1. **Sottoscrizione attiva** : La vostra organizzazione deve aver sottoscritto l'offerta Bare Metal.
+2. **Permessi utente** : Il vostro account utente deve disporre dei permessi necessari per accedere e gestire le risorse Bare Metal.
 
 ---
 
@@ -54,7 +54,7 @@ Il sottomenu **Bare Metal** visualizza una tabella che elenca tutte le istanze B
 
 ### 2. Sottomenu **Volumes**
 
-Il sottomenu **Volumes** visualizza una tabella che elenca tutti i volumi di archiviazione associati alla tua sottoscrizione Bare Metal. Per ogni volume, sono disponibili le seguenti informazioni:
+Il sottomenu **Volumes** visualizza una tabella che elenca tutti i volumi di archiviazione associati alla vostra sottoscrizione Bare Metal. Per ogni volume, sono disponibili le seguenti informazioni:
 
 - **Nome del volume**
 - **Capacità**
@@ -75,6 +75,6 @@ Si consiglia di installare l'OS sul volume **BFS** e di archiviare i dati su un 
 
 #### Funzionalità principali
 
-- **Gestione dei volumi** : Da questa dashboard, puoi mappare i volumi alle tue istanze Bare Metal.
+- **Gestione dei volumi** : Da questa dashboard, potete mappare i volumi alle vostre istanze Bare Metal.
 
 ---

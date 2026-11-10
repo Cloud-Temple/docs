@@ -4,13 +4,13 @@ title: Gestione dello storage
 
 ## Obiettivi
 
-In questo tutorial, scoprirai come gestire lo storage persistente nel tuo cluster **Managed Kubernetes**. Kubernetes utilizza il concetto di `StorageClass` per definire i diversi tipi di storage disponibili.
+In questo tutorial, scoprirete come gestire lo storage persistente nel vostro cluster **Managed Kubernetes**. Kubernetes utilizza il concetto di `StorageClass` per definire i diversi tipi di storage disponibili.
 
-Al termine di questa guida, sarai in grado di:
+Al termine di questa guida, sarete in grado di:
 
 - Comprendere le diverse `StorageClass` offerte.
 - Creare un `PersistentVolumeClaim` (PVC) per richiedere dello storage.
-- Montare questo storage nei tuoi Pod.
+- Montare questo storage nei vostri Pod.
 
 ## Le StorageClasses disponibili
 
@@ -109,7 +109,7 @@ spec:
   storageClassName: topolvm-ssd
 ```
 
-Applica il manifesto di tua scelta con il seguente comando:
+Applicate il manifesto di vostra scelta con il seguente comando:
 
 ```bash
 kubectl apply -f mon-pvc.yaml
@@ -149,13 +149,13 @@ spec:
       claimName: pvc-ceph-block
 ```
 
-Applica il manifesto:
+Applicate il manifesto:
 
 ```bash
 kubectl apply -f pod.yaml
 ```
 
-Verifica che il Pod sia in esecuzione:
+Verificate che il Pod sia in esecuzione:
 
 ```bash
 kubectl get pods

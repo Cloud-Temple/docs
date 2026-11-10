@@ -28,7 +28,7 @@ Tramite invito, da __'Amministrazione > Utenti'__, pulsante __'Nuovo utente'__. 
 
 *__Nota__: Per aggiungere un utente, dovete disporre del diritto __'iam_write'__.*
 
-Vedere [Invitare i vostri collaboratori](../onboarding.md#tappa-4-invitare-i-vostri-collaboratori) e il [riferimento](concepts.md#creazione-di-un-account-utente-nella-tua-organizzazione).
+Vedere [Invitare i vostri collaboratori](../onboarding.md#tappa-4-invitare-i-vostri-collaboratori) e il [riferimento](concepts.md#creazione-di-un-account-utente-nella-vostra-organizzazione).
 
 <a id="affectation-des-permissions-à-un-utilisateur"></a>
 
@@ -46,7 +46,7 @@ Per aggiungere un'autorizzazione, dovete disporre dell'autorizzazione __'iam_wri
 
 ## Quali sono le autorizzazioni disponibili per gli account utente della console?
 
-Vedere l'elenco delle [autorizzazioni disponibili](concepts.md#permessi-disponibili-per-gli-utenti-della-tua-organizzazione) e la loro definizione.
+Vedere l'elenco delle [autorizzazioni disponibili](concepts.md#permessi-disponibili-per-gli-utenti-della-vostra-organizzazione) e la loro definizione.
 
 ## Come verificare gli accessi/le autorizzazioni degli utenti?
 

@@ -26,7 +26,7 @@ Questa pagina descrive ciò che è comune a tutte le offerte. La pagina Concetti
 | **FLASH - Ultra** | 15.000 | 30.000 IOPS | 1.024 MB/s | 1 GiB | Carichi ultra-intensivi |
 | **MASS STORAGE** | Non garantito | Non garantito | Non garantito | 1 TiB | Backup e archiviazione |
 
-Le unità di fatturazione indicate sono quelle delle offerte IaaS VMware, IaaS OpenSource e Bare Metal. VM Instances fattura i suoi volumi al GB: vedi la sua pagina.
+Le unità di fatturazione indicate sono quelle delle offerte IaaS VMware, IaaS OpenSource e Bare Metal. VM Instances fattura i suoi volumi al GB: vedete la sua pagina.
 
 ### Regole di prestazione
 

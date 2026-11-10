@@ -243,7 +243,7 @@ Particolarità dello storage a blocchi in IaaS VMware:
 
 - I limiti di prestazione (IOPS e larghezza di banda) si applicano a livello del Datastore.
 - La dimensione minima di una LUN di storage è di 500 GiB.
-- La tecnologia IBM SVC fornisce il livello di prestazioni richiesto grazie alla cache di memoria dei suoi controller e alla ripartizione degli IOPS di un server su più SAN. Permette anche di replicare le vostre LUN tra zone di disponibilità (vedi la sezione «Replicazione dello storage in modalità a blocchi») e facilita gli interventi sugli array di storage.
+- La tecnologia IBM SVC fornisce il livello di prestazioni richiesto grazie alla cache di memoria dei suoi controller e alla ripartizione degli IOPS di un server su più SAN. Permette anche di replicare le vostre LUN tra zone di disponibilità (vedete la sezione «Replicazione dello storage in modalità a blocchi») e facilita gli interventi sugli array di storage.
 
 #### Utilizzo nell'ambito dell'offerta di calcolo VMware
 

@@ -6,12 +6,12 @@ tags:
   - onboarding
 ---
 
-Questo tutorial ti guida nella configurazione della federazione dell'identità con Microsoft Intune per la tua organizzazione Cloud Temple.
+Questo tutorial vi guida nella configurazione della federazione dell'identità con Microsoft Intune per la vostra organizzazione Cloud Temple.
 
 ## Prerequisiti
 
 - Accesso amministratore a Microsoft Intune
-- Diritti di proprietario sulla tua organizzazione Cloud Temple
+- Diritti di proprietario sulla vostra organizzazione Cloud Temple
 - Accesso alla console Cloud Temple
 
 ## Configuration
@@ -20,9 +20,9 @@ La configurazione della federazione delle identità con Microsoft Intune segue u
 
 ### Fase 1: Configurazione lato Microsoft Intune
 
-1. Accedi al portale Microsoft Intune
-2. Vai alle impostazioni di autenticazione
-3. Configura una nuova applicazione per Cloud Temple
+1. Accedete al portale Microsoft Intune
+2. Andate alle impostazioni di autenticazione
+3. Configurate una nuova applicazione per Cloud Temple
 
 ### Passo 2: Richiesta di configurazione
 

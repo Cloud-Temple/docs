@@ -31,18 +31,18 @@ Il modulo **Aggiungi un disco** si apre con i seguenti campi:
 
 ## Passo 3 — Configurare e aggiungere il disco
 
-Inserisci i parametri :
+Inserite i parametri :
 
-1. **Nome** : inserisci un nome descrittivo, es : `data-postgresql`
+1. **Nome** : inserite un nome descrittivo, es : `data-postgresql`
 2. **Tipo di archiviazione** :
-   - Scegli **Standard** per dati generali (log, file, backup)
-   - Scegli **Enterprise** per database o carichi di lavoro I/O intensivi
+   - Scegliete **Standard** per dati generali (log, file, backup)
+   - Scegliete **Enterprise** per database o carichi di lavoro I/O intensivi
 
-Clicca su **Aggiungi**. Il disco viene collegato alla VM in tempo reale, senza necessità di riavvio.
+Cliccate su **Aggiungi**. Il disco viene collegato alla VM in tempo reale, senza necessità di riavvio.
 
 ## Passo 4 — Partizionare e montare il disco (nella VM)
 
-Dopo l'aggiunta dalla console, connettiti alla tua VM e inizializza il disco:
+Dopo l'aggiunta dalla console, connettetevi alla vostra VM e inizializzate il disco:
 
 ```bash
 # Lister les disques disponibles
@@ -69,7 +69,7 @@ echo '/dev/vdb1 /data ext4 defaults 0 2' | sudo tee -a /etc/fstab
 ```
 
 :::caution
-Adatta il nome del dispositivo (`/dev/vdb`, `/dev/vdc`, ecc.) in base al risultato del comando `lsblk`. Il primo disco aggiuntivo è generalmente `/dev/vdb`.
+Adattate il nome del dispositivo (`/dev/vdb`, `/dev/vdc`, ecc.) in base al risultato del comando `lsblk`. Il primo disco aggiuntivo è generalmente `/dev/vdb`.
 :::
 
 ## Approfondimenti

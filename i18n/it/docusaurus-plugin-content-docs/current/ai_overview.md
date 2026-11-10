@@ -11,6 +11,6 @@ I servizi di intelligenza artificiale di Cloud Temple consentono di utilizzare m
   <div class="card">
     <h3>LLMaaS</h3>
     <p>Modelli di IA accessibili tramite API: assistenti conversazionali, programmazione e agenti, analisi di immagini, ricerca semantica e traduzione.</p>
-    <a href="./llmaas" class="card-link">Scopri LLMaaS →</a>
+    <a href="./llmaas" class="card-link">Scoprite LLMaaS →</a>
   </div>
 </div>

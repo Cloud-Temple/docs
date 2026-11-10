@@ -26,7 +26,7 @@ Una volta distribuita l'immagine, questa diventa una macchina virtuale che è po
 
 ### Fase 1: Distribuire l'immagine di base
 
-Segui la guida [Distribuire un'immagine su VMware](./deploy_vmware.md) per iniziare.
+Seguite la guida [Distribuire un'immagine su VMware](./deploy_vmware.md) per iniziare.
 
 ---
 
@@ -38,9 +38,9 @@ Una volta distribuita la macchina virtuale, configuratela in base alle vostre es
 
 ### Fase 3: Creare un modello dalla macchina virtuale
 
-1. Dall'elenco delle tue macchine virtuali, seleziona la macchina virtuale configurata.
-2. Seleziona **"Esporta"** dalla barra delle azioni.
-3. Segui i passaggi della Console per esportare il modello.
+1. Dall'elenco delle vostre macchine virtuali, selezionate la macchina virtuale configurata.
+2. Selezionate **"Esporta"** dalla barra delle azioni.
+3. Seguite i passaggi della Console per esportare il modello.
 
 <img src={marketplaceVMwareExportTemplateButton} />
 <img src={marketplaceVMwareExportTemplate} />
@@ -54,7 +54,7 @@ Una volta distribuita la macchina virtuale, configuratela in base alle vostre es
 Per distribuire dalla pagina **Macchine Virtuali** :
 
 1. Fare clic su **"Crea una macchina virtuale"**.
-2. Seleziona **"Distribuisci da un modello"**.
-3. Seleziona il nuovo modello dall'elenco.
+2. Selezionate **"Distribuisci da un modello"**.
+3. Selezionate il nuovo modello dall'elenco.
 
 <img src={marketplaceVMwareDeployFromTemplate} />

@@ -5,25 +5,25 @@ title: Copiare e sincronizzare con Rclone
 [Rclone](https://rclone.org/) è uno strumento da riga di comando open source che consente di copiare e sincronizzare file verso numerosi servizi di archiviazione cloud, inclusi i sistemi compatibili con S3. È particolarmente adatto per backup, migrazioni di dati e sincronizzazione di directory.
 
 :::caution[Versione richiesta]
-Assicurati di utilizzare una **versione recente di Rclone** per garantire la compatibilità con l'archiviazione oggetti Cloud Temple. Puoi verificare la tua versione con `rclone version`.
+Assicuratevi di utilizzare una **versione recente di Rclone** per garantire la compatibilità con l'archiviazione oggetti Cloud Temple. Potete verificare la vostra versione con `rclone version`.
 :::
 
 ## Prerequisiti
 
 - Un account di archiviazione S3 Cloud Temple con le chiavi di accesso (Access Key e Secret Key).
-- L'endpoint S3 del tuo account (disponibile nella [console Cloud Temple](../../../console/console.md)).
+- L'endpoint S3 del vostro account (disponibile nella [console Cloud Temple](../../../console/console.md)).
 
 ## Installazione di Rclone
 
-Su Linux/macOS, installa Rclone con lo script ufficiale:
+Su Linux/macOS, installate Rclone con lo script ufficiale:
 
 ```bash
 curl https://rclone.org/install.sh | sudo bash
 ```
 
-Su altri sistemi, consulta la [documentazione ufficiale di installazione](https://rclone.org/install/).
+Su altri sistemi, consultate la [documentazione ufficiale di installazione](https://rclone.org/install/).
 
-Verifica l'installazione:
+Verificate l'installazione:
 
 ```bash
 rclone version
@@ -31,7 +31,7 @@ rclone version
 
 ## Configurazione
 
-Crea il file di configurazione Rclone per il tuo storage S3 Cloud Temple:
+Create il file di configurazione Rclone per il vostro storage S3 Cloud Temple:
 
 ```bash
 mkdir -p ~/.config/rclone
@@ -46,10 +46,10 @@ EOF
 ```
 
 :::tip
-Sostituisci `LA_TUA_ACCESS_KEY`, `IL_TUO_SECRET_KEY` e `IL_TUO_COMPTE` con i tuoi dati effettivi, disponibili nella console Cloud Temple nella sezione **Storage Oggetti > Account di archiviazione**.
+Sostituite `LA_TUA_ACCESS_KEY`, `IL_TUO_SECRET_KEY` e `IL_TUO_COMPTE` con i vostri dati effettivi, disponibili nella console Cloud Temple nella sezione **Storage Oggetti > Account di archiviazione**.
 :::
 
-Puoi verificare la tua configurazione:
+Potete verificare la vostra configurazione:
 
 ```bash
 cat ~/.config/rclone/rclone.conf
@@ -75,7 +75,7 @@ Il comando `rclone copy` copia i file sorgente nella destinazione **senza elimin
 
 ### Test in modalità simulazione (dry-run)
 
-Prima di qualsiasi operazione, esegui un test con `--dry-run` per vedere cosa verrà fatto senza apportare modifiche:
+Prima di qualsiasi operazione, eseguite un test con `--dry-run` per vedere cosa verrà fatto senza apportare modifiche:
 
 ```bash
 rclone copy /data/backup cloudtemple-s3:nom-du-bucket/ --dry-run --verbose
@@ -92,7 +92,7 @@ rclone copy /data/backup cloudtemple-s3:nome-del-bucket/ --verbose
 Il comando `rclone sync` rende la destinazione **identica** alla sorgente. I file presenti nella destinazione ma assenti nella sorgente verranno **eliminati**.
 
 :::danger[Attenzione]
-`rclone sync` **elimina** i file dalla destinazione che non esistono più nella sorgente. Testa sempre con `--dry-run` prima di eseguire il comando.
+`rclone sync` **elimina** i file dalla destinazione che non esistono più nella sorgente. Testate sempre con `--dry-run` prima di eseguire il comando.
 :::
 
 ### Test in modalità simulazione
@@ -133,7 +133,7 @@ rclone sync /data/backup cloudtemple-s3:nome-del-bucket/ \
 
 ## Automazione con cron
 
-Per automatizzare un backup giornaliero, aggiungi un'entrata cron:
+Per automatizzare un backup giornaliero, aggiungete un'entrata cron:
 
 ```bash
 

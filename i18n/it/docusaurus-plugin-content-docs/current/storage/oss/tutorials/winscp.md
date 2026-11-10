@@ -4,7 +4,7 @@ title: Utilizzare WinSCP
 import S3Winscp_001 from '@site/docs/storage/oss/images/S3_winscp_001.png'
 import S3Winscp_002 from '@site/docs/storage/oss/images/S3_winscp_002.png'
 
-È possibile utilizzare [Winscp (versione 6.3 o superiore)](https://winscp.net/eng/download.php) per connettersi al tuo storage oggetti.
+È possibile utilizzare [Winscp (versione 6.3 o superiore)](https://winscp.net/eng/download.php) per connettersi al vostro storage oggetti.
 
 ### 1. Configurazione della connessione
 
@@ -14,6 +14,6 @@ Nella finestra di connessione, selezionate il protocollo `Amazon S3`. Inserite q
 
 ### 2. Gestione dei file
 
-Dopo esserti connesso, puoi interagire con i tuoi bucket e i tuoi file come faresti per un sito FTP o SCP classico.
+Dopo esservi connessi, potete interagire con i vostri bucket e i vostri file come fareste per un sito FTP o SCP classico.
 
 <img src={S3Winscp_002} />

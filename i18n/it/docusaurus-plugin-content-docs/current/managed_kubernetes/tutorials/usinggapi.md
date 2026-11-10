@@ -16,7 +16,7 @@ Nel vostro cluster Managed Kubernetes Cloud Temple, **Cilium** è utilizzato com
 
 ## Obiettivi
 
-Questo tutorial ti guiderà a:
+Questo tutorial vi guiderà a:
 
 - Comprendere le risorse di base di Gateway API (GatewayClass, Gateway, HTTPRoute).
 - Distribuire un'applicazione di test.
@@ -67,7 +67,7 @@ cilium    io.cilium/gateway    True       2d
 
 Distribuiremo un'applicazione semplice che restituisce informazioni sul pod (echo-server).
 
-Crea un file `apps.yaml` :
+Create un file `apps.yaml` :
 
 ```yaml
 apiVersion: apps/v1
@@ -106,7 +106,7 @@ spec:
     targetPort: 80
 ```
 
-Applica la configurazione :
+Applicate la configurazione :
 
 ```bash
 kubectl apply -f apps.yaml
@@ -152,7 +152,7 @@ Attendere che il campo `PROGRAMMED` sia `True` e che `ADDRESS` mostri un IP.
 
 Ora che abbiamo un "gateway" (Gateway), dobbiamo instradare il traffico verso il nostro servizio.
 
-Crea un file `httproute.yaml` :
+Create un file `httproute.yaml` :
 
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1
@@ -172,7 +172,7 @@ spec:
       port: 80
 ```
 
-Applica la configurazione :
+Applicate la configurazione :
 
 ```bash
 kubectl apply -f httproute.yaml
@@ -180,19 +180,19 @@ kubectl apply -f httproute.yaml
 
 ## Passo 5: Testare l'accesso
 
-Recupera l'indirizzo IP del tuo Gateway:
+Recuperate l'indirizzo IP del vostro Gateway:
 
 ```bash
 kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}'
 ```
 
-Invia una richiesta a questo IP per testare:
+Inviate una richiesta a questo IP per testare:
 
 ```bash
 curl http://10.200.205.2
 ```
 
-Dovresti ricevere una risposta JSON dall'applicazione `echo-server` che indica i dettagli del pod che ha risposto.
+Dovreste ricevere una risposta JSON dall'applicazione `echo-server` che indica i dettagli del pod che ha risposto.
 
 ## Funzionalità avanzate (Esempio: Canary Release)
 

@@ -98,7 +98,7 @@ Il cliente è responsabile della creazione e della configurazione del proprio VP
 | Monitorare i **comportamenti anomali** sui flussi di rete del tenant                                     | **RA** |              |
 
 *(3) Cloud Temple garantisce l'isolamento rigoroso tra VPC appartenenti a tenant diversi. Nessun flusso può attraversare questa barriera senza un'azione esplicita del client.*  
-*(4) La micro-segmentazione (security groups) è annunciata (vedi le [prossime evoluzioni](../../network/vpc/concepts.md#prossime-evoluzioni)). Fino alla sua disponibilità, le politiche di filtraggio devono essere implementate dal client tramite un'attrezzatura di sicurezza dedicata.*  
+*(4) La micro-segmentazione (security groups) è annunciata (vedete le [prossime evoluzioni](../../network/vpc/concepts.md#prossime-evoluzioni)). Fino alla sua disponibilità, le politiche di filtraggio devono essere implementate dal client tramite un'attrezzatura di sicurezza dedicata.*  
 *(5) Il filtraggio applicativo dei flussi all'interno del VPC è di responsabilità del client. Cloud Temple non effettua ispezione del contenuto dei flussi del tenant.*  
 *(6) I test di intrusione devono essere oggetto di una dichiarazione preventiva a Cloud Temple, conformemente alle condizioni generali di utilizzo.*
 
