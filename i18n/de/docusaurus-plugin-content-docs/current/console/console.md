@@ -6,6 +6,29 @@ import { ConsoleMap } from '@site/src/components/ConsoleMap';
 
 Die Cloud Temple Console ist die Verwaltungsoberfläche Ihrer Cloud-Plattform. Dort erstellen Sie Ihre Umgebungen, verwalten die Zugänge Ihrer Teams, aktivieren Ihre Produkte, bestellen Ressourcen und verfolgen Ihren Verbrauch. Alles, was Sie in der Console tun, ist auch über ihre [API](./api.md) verfügbar, und mit dem [Terraform-Provider](../terraform/terraform.md) steuern Sie Ihre Plattform *as code*.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Konzepte</h3>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="./console/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Erste Schritte</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./console/onboarding" class="card-link">Erste Schritte öffnen &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <a href="./console/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./console/faq" class="card-link">Zu den FAQ &rarr;</a>
+  </div>
+</div>
+
 ## Wo die Console steht
 
 <ConsoleMap />
@@ -19,55 +42,14 @@ Ihre Ressourcen sind in **Tenants** organisiert, voneinander abgeschotteten Umge
 
 ## Was Sie dort tun
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Umgebungen einrichten</h3>
-    <p>Organisation und Tenants anlegen, dann Ihre Produkte aktivieren.</p>
-    <a href="./console/onboarding" class="card-link">Erste Schritte &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Zugänge verwalten</h3>
-    <p>Nutzer, Berechtigungen pro Tenant und Identitätsföderation.</p>
-    <a href="./console/iam" class="card-link">IAM-Modul &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Kosten verfolgen</h3>
-    <p>Verbrauch nach Produkt, Dienst und Tenant.</p>
-    <a href="./console/billing/concepts" class="card-link">Kostenmanager &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Ressourcen überwachen</h3>
-    <p>Metriken im Prometheus-Format, in der Console oder in Ihren eigenen Werkzeugen.</p>
-    <a href="./console/metrics/concepts" class="card-link">Metriken &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Vorgänge und Incidents verfolgen</h3>
-    <p>Geplante Eingriffe auf der Plattform und laufende Incidents.</p>
-    <a href="./console/status" class="card-link">Geplante Vorgänge &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Support kontaktieren</h3>
-    <p>Beratung, Unterstützung zu Ihrem Konto, Incidents oder Professional Services: alle Ihre Anfragen an den Support.</p>
-    <a href="./console/console_quickstart#zugriff-auf-den-technischen-support" class="card-link">Technischer Support &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Ressourcen bestellen</h3>
-    <p>Verfügbarkeitszonen, Cluster, Speicher und Netzwerke, mit Verfolgung der Bestellungen.</p>
-    <a href="./console/orders" class="card-link">Ressourcen bereitstellen &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Automatisieren</h3>
-    <p>Alle Funktionen der Console über die API, und Ihre Infrastruktur as code mit Terraform.</p>
-    <a href="./console/api" class="card-link">API-Dokumentation &rarr;</a>
-  </div>
-</div>
+- **[Umgebungen einrichten](./console/onboarding)**: Organisation und Tenants anlegen, dann Ihre Produkte aktivieren.
+- **[Zugänge verwalten](./console/iam)**: Nutzer, Berechtigungen pro Tenant und Identitätsföderation.
+- **[Kosten verfolgen](./console/billing/concepts)**: Verbrauch nach Produkt, Dienst und Tenant.
+- **[Ressourcen überwachen](./console/metrics/concepts)**: Metriken im Prometheus-Format, in der Console oder in Ihren eigenen Werkzeugen.
+- **[Vorgänge und Incidents verfolgen](./console/status)**: Geplante Eingriffe auf der Plattform und laufende Incidents.
+- **[Support kontaktieren](./console/console_quickstart#zugriff-auf-den-technischen-support)**: Beratung, Unterstützung zu Ihrem Konto, Incidents oder Professional Services: alle Ihre Anfragen an den Support.
+- **[Ressourcen bestellen](./console/orders)**: Verfügbarkeitszonen, Cluster, Speicher und Netzwerke, mit Verfolgung der Bestellungen.
+- **[Automatisieren](./console/api)**: Alle Funktionen der Console über die API, und Ihre Infrastruktur as code mit Terraform.
 
 ## Wo Sie anfangen
 

@@ -13,22 +13,22 @@ Er passt sich dank verschiedener Serviceklassen – von der kosteneffizienten En
 <div class="card-grid">
   <div class="card">
     <h3>Konzepte</h3>
-    <p>Entdecken Sie die Architektur, die Serviceklassen und die Funktionen des VM-Instances-Dienstes.</p>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
     <a href="./vm_instances/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
     <h3>Erste Schritte</h3>
-    <p>Stellen Sie Ihre erste virtuelle Maschine in wenigen Minuten über den Cloud-Temple-Marktplatz bereit.</p>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
     <a href="./vm_instances/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Praktische Anleitungen: Erstellen einer VM, Verwalten von Festplatten, Erstellen von Snapshots.</p>
-    <a href="./vm_instances/tutorials" class="card-link">Tutorials ansehen &rarr;</a>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <a href="./vm_instances/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
   <div class="card">
-    <h3>FAQ</h3>
-    <p>Antworten auf häufig gestellte Fragen zu Familien, Flavors und Resilienz.</p>
-    <a href="./vm_instances/faq" class="card-link">FAQ einsehen &rarr;</a>
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./vm_instances/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>

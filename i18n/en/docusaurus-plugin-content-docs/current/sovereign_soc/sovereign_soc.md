@@ -19,9 +19,14 @@ You thus receive qualified incident tickets and remediation follow-up, without h
     <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
     <a href="./sovereign_soc/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
     <a href="./sovereign_soc/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./sovereign_soc/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>

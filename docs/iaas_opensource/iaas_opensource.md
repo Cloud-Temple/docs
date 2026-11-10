@@ -23,6 +23,11 @@ Avec des ressources évolutives et une gestion automatisée, vous bénéficiez d
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./iaas_opensource/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
 </div>
 
 ## Plateformes d'achat

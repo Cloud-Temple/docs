@@ -4,19 +4,6 @@ title: Managed MariaDB overview
 
 # Managed MariaDB overview <span class="title-preview-badge">Preview</span>
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to master our infrastructure.</p>
-    <a href="./managed_mariadb/concepts" class="card-link">Explore concepts →</a>
-  </div>
-  <div class="card">
-    <h3>Getting started</h3>
-    <p>Get up and running quickly by following clear and straightforward instructions.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Open the getting started guide →</a>
-  </div>
-</div>
-
 ---
 
 ### Overview
@@ -30,6 +17,29 @@ MariaDB engines can be selected in version 11.4 LTS or 11.8 LTS.
 All backups use Cloud-Temple S3 storage (SNC-certified) with at-rest encryption.
 
 ![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./managed_mariadb/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_mariadb/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./managed_mariadb/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_mariadb/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
 
 ### Key Benefits
 

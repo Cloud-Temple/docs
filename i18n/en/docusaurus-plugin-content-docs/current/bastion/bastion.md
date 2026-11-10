@@ -21,9 +21,14 @@ With its security-first approach and advanced features such as Infrastructure as
     <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
     <a href="./bastion/quickstart" class="card-link">Open the getting started guide &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
     <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
     <a href="./bastion/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./bastion/faq" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>

@@ -7,6 +7,29 @@ sidebar_position: 1
 
 LLMaaS bietet Zugriff auf von Cloud Temple gehostete KI-Modelle über eine API: Konversationsassistenten, Programmierung und Agenten, Bildanalyse, semantische Suche, Reranking, Übersetzung sowie Audio- und Bildanwendungen.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Konzepte</h3>
+    <p>Erkunden Sie die Grundlagen und wesentlichen Prinzipien, um unsere Infrastruktur zu verstehen und zu beherrschen.</p>
+    <a href="./llmaas/concepts" class="card-link">Konzepte erkunden &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Erste Schritte</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
+    <a href="./llmaas/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <a href="./category/tutoriels" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./llmaas/faq" class="card-link">Zu den FAQ &rarr;</a>
+  </div>
+</div>
+
 ## Katalog, Neuigkeiten und Verfügbarkeit
 
 - **[Katalog und Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)** : Modelle, Kontext, LTS-Status, Supportende und empfohlene Migrationen.

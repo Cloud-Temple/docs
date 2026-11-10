@@ -7,7 +7,7 @@ L’offerta Red Hat OpenShift di Cloud Temple combina la potenza di una piattafo
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare il nostro PaaS OpenShift.</p>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
     <a href="./paas_openshift/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
@@ -19,5 +19,10 @@ L’offerta Red Hat OpenShift di Cloud Temple combina la potenza di una piattafo
     <h3>Tutorial</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./paas_openshift/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./paas_openshift/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>

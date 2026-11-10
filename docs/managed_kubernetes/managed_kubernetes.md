@@ -7,27 +7,32 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
 
 # Vue d'ensemble de Managed Kubernetes
 
+**Managed Kubernetes** by Cloud Temple est une solution d’orchestration de conteneurs basée sur des standards open source (CNCF). Elle est conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation, et elle est disponible sur des services qualifiés SecNumCloud. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
+
+Afin de répondre au mieux aux besoins de vos équipes, nous proposons deux déclinaisons de ce produit : **Managed Core Kubernetes** (un socle minimaliste) et **Managed Kubernetes** (une plateforme complète "prête à l'emploi").
+
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Découvrez les bases et principes essentiels pour maîtriser notre infrastructure.</p>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
     <a href="./managed_kubernetes/concepts" class="card-link">Explorer les concepts &rarr;</a>
   </div>
   <div class="card">
     <h3>Guide de démarrage</h3>
-    <p>Commencez rapidement en suivant des instructions claires et simples.</p>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
     <a href="./managed_kubernetes/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriels</h3>
     <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
     <a href="./managed_kubernetes/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
 </div>
-
-**Managed Kubernetes** by Cloud Temple est une solution d’orchestration de conteneurs basée sur des standards open source (CNCF). Elle est conçue pour offrir un haut niveau de sécurité, de résilience et d’automatisation, et elle est disponible sur des services qualifiés SecNumCloud. Chaque cluster est déployé dans un environnement IaaS Cloud-Temple entièrement dédié au client.
-
-Afin de répondre au mieux aux besoins de vos équipes, nous proposons deux déclinaisons de ce produit : **Managed Core Kubernetes** (un socle minimaliste) et **Managed Kubernetes** (une plateforme complète "prête à l'emploi").
 
 ---
 

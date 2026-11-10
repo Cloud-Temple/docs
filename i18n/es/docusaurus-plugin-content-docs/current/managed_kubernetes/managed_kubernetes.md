@@ -7,27 +7,32 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
 
 # Visión general de Managed Kubernetes
 
+**Managed Kubernetes** de Cloud Temple es una solución de orquestación de contenedores basada en estándares de código abierto (CNCF). Está diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización, y está disponible en servicios cualificados SecNumCloud. Cada clúster se despliega en un entorno IaaS Cloud-Temple completamente dedicado al cliente.
+
+Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos dos variantes de este producto: **Managed Core Kubernetes** (una base minimalista) y **Managed Kubernetes** (una plataforma completa "lista para usar").
+
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra los fundamentos y principios esenciales para dominar nuestra infraestructura.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./managed_kubernetes/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Guía de inicio</h3>
-    <p>Comience rápidamente siguiendo instrucciones claras y sencillas.</p>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./managed_kubernetes/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./managed_kubernetes/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
 </div>
-
-**Managed Kubernetes** de Cloud Temple es una solución de orquestación de contenedores basada en estándares de código abierto (CNCF). Está diseñada para ofrecer un alto nivel de seguridad, resiliencia y automatización, y está disponible en servicios cualificados SecNumCloud. Cada clúster se despliega en un entorno IaaS Cloud-Temple completamente dedicado al cliente.
-
-Para responder de la mejor manera a las necesidades de sus equipos, ofrecemos dos variantes de este producto: **Managed Core Kubernetes** (una base minimalista) y **Managed Kubernetes** (una plataforma completa "lista para usar").
 
 ---
 

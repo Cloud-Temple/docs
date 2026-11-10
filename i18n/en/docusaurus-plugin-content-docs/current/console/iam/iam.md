@@ -10,17 +10,17 @@ It enables the administration of local accounts while supporting hybrid configur
 <div class="card-grid">
   <div class="card">
     <h3>Concepts</h3>
-    <p>Discover the fundamentals and essential principles to understand and manage our infrastructure.</p>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
     <a href="./iam/concepts" class="card-link">Explore concepts &rarr;</a>
   </div>
   <div class="card">
-    <h3>Frequently asked questions</h3>
-    <p>Common answers about accounts, permissions and access to the Console.</p>
-    <a href="./iam/quickstart" class="card-link">Read the FAQ &rarr;</a>
-  </div>
-    <div class="card">
     <h3>Tutorials</h3>
-    <p>Learn step by step how to configure and use our services with detailed guides.</p>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
     <a href="./iam/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./iam/quickstart" class="card-link">Read the FAQ &rarr;</a>
   </div>
 </div>

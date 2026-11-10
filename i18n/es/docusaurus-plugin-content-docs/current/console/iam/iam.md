@@ -14,13 +14,13 @@ Permite administrar cuentas locales al tiempo que admite la hibridación con con
     <a href="./iam/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
-    <h3>Preguntas frecuentes</h3>
-    <p>Las respuestas habituales sobre las cuentas, los permisos y el acceso a la consola.</p>
-    <a href="./iam/quickstart" class="card-link">Leer las FAQ &rarr;</a>
-  </div>
-    <div class="card">
     <h3>Tutoriales</h3>
     <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
     <a href="./iam/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./iam/quickstart" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>

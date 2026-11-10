@@ -11,6 +11,29 @@ Cloud Temple's Object Storage Service (OSS) is a highly scalable, durable, and s
 
 Built on a S3-compatible API, our OSS service is ideal for a wide range of use cases—from backup and archiving to hosting static content for web applications, as well as storing data for Big Data analytics and cloud-native applications.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./oss/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./oss/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./oss/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./oss/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
+
 ## SecNumCloud Certification
 
 Like all Cloud Temple services, the object storage service fully complies with the requirements of the **SecNumCloud certification** issued by ANSSI. This ensures:

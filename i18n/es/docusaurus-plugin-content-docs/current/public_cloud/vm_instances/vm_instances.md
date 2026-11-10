@@ -13,22 +13,22 @@ Se adapta a todas las necesidades gracias a sus diferentes clases de servicio: d
 <div class="card-grid">
   <div class="card">
     <h3>Conceptos</h3>
-    <p>Descubra la arquitectura, las clases de servicio y las funcionalidades del servicio VM Instances.</p>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
     <a href="./vm_instances/concepts" class="card-link">Explorar los conceptos &rarr;</a>
   </div>
   <div class="card">
     <h3>Guía de inicio</h3>
-    <p>Despliegue su primera máquina virtual en pocos minutos desde la Marketplace Cloud Temple.</p>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
     <a href="./vm_instances/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutoriales</h3>
-    <p>Guías prácticas: crear una VM, gestionar discos, realizar instantáneas.</p>
-    <a href="./vm_instances/tutorials" class="card-link">Ver los tutoriales &rarr;</a>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./vm_instances/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
   </div>
   <div class="card">
-    <h3>FAQ</h3>
-    <p>Respuestas a preguntas frecuentes sobre familias, flavors y resiliencia.</p>
-    <a href="./vm_instances/faq" class="card-link">Consultar la FAQ &rarr;</a>
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./vm_instances/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
   </div>
 </div>

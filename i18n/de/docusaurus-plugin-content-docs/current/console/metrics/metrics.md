@@ -19,9 +19,14 @@ Der Dienst ist ohne Aufpreis in jedem Cloud-Temple-Abonnement enthalten. Cloud T
     <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
     <a href="./metrics/quickstart" class="card-link">Erste Schritte öffnen &rarr;</a>
   </div>
-    <div class="card">
+  <div class="card">
     <h3>Tutorials</h3>
     <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
     <a href="./metrics/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Häufig gestellte Fragen</h3>
+    <p>Finden Sie Antworten auf die häufigsten Fragen zu diesem Produkt.</p>
+    <a href="./metrics/faq" class="card-link">Zu den FAQ &rarr;</a>
   </div>
 </div>

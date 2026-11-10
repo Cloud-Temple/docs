@@ -4,19 +4,6 @@ title: Vue d'ensemble de MariaDB Managé
 
 # Vue d'ensemble de MariaDB Managé <span class="title-preview-badge">Preview</span>
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Découvrez les bases et principes essentiels pour maîtriser notre infrastructure.</p>
-    <a href="./managed_mariadb/concepts" class="card-link">Explorer les concepts →</a>
-  </div>
-  <div class="card">
-    <h3>Guide de démarrage</h3>
-    <p>Commencez rapidement en suivant des instructions claires et simples.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Ouvrir le guide de démarrage →</a>
-  </div>
-</div>
-
 ---
 
 ### Aperçu
@@ -30,6 +17,29 @@ Les moteurs MariaDB peuvent être choisis en version 11.4 LTS ou 11.8 LTS.
 Toutes les sauvegardes utilisent le stockage S3 Cloud-Temple (qualifié SNC) avec chiffrement at-rest.
 
 ![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./managed_mariadb/concepts" class="card-link">Explorer les concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./managed_mariadb/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./managed_mariadb/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./managed_mariadb/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
+</div>
 
 ### Bénéfices Clés
 

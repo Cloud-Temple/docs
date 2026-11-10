@@ -12,18 +12,23 @@ Il **Private Backbone** di Cloud Temple è il nostro prodotto di connettività s
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Architettura VPLS, reti private regionali, accesso a Internet, indirizzamento pubblico IPv4/IPv6.</p>
-    <a href="./private_backbone/concepts" class="card-link">Esplorate i concetti →</a>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./private_backbone/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
     <h3>Guida introduttiva</h3>
-    <p>Create la vostra prima rete privata e configurate il vostro accesso a Internet in pochi passaggi.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Iniziate →</a>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorial</h3>
-    <p>Configurate un FortiGate o pfSense con BGP per gestire la vostra connettività esterna.</p>
-    <a href="./private_backbone/tutorials" class="card-link">Visualizzate i tutorial →</a>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./private_backbone/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>
 

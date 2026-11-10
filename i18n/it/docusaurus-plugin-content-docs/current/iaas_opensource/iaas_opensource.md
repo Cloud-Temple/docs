@@ -10,7 +10,7 @@ Grazie a risorse scalabili e a una gestione automatizzata, beneficerete di un'in
 <div class="card-grid">
   <div class="card">
     <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e gestire la nostra infrastruttura.</p>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
     <a href="./iaas_opensource/concepts" class="card-link">Esplorate i concetti &rarr;</a>
   </div>
   <div class="card">
@@ -22,6 +22,11 @@ Grazie a risorse scalabili e a una gestione automatizzata, beneficerete di un'in
     <h3>Tutorial</h3>
     <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./iaas_opensource/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
   </div>
 </div>
 

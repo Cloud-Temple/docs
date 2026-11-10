@@ -6,6 +6,29 @@ import { ConsoleMap } from '@site/src/components/ConsoleMap';
 
 The Cloud Temple Console is the management interface of your cloud platform. You use it to create your environments, manage your teams' access, activate your products, order resources and track your consumption. Everything you do in the Console is also available through its [API](./api.md), and the [Terraform provider](../terraform/terraform.md) lets you manage your platform *as code*.
 
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./console/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./console/onboarding" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./console/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./console/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
+
 ## Where the Console sits
 
 <ConsoleMap />
@@ -19,55 +42,14 @@ Your resources are organised in **tenants**, isolated environments within your o
 
 ## What you do there
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Set up your environments</h3>
-    <p>Create your organisation and your tenants, then activate your products.</p>
-    <a href="./console/onboarding" class="card-link">Getting started &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Manage access</h3>
-    <p>Users, per-tenant permissions and identity federation.</p>
-    <a href="./console/iam" class="card-link">IAM module &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Track your costs</h3>
-    <p>Consumption by product, by service and by tenant.</p>
-    <a href="./console/billing/concepts" class="card-link">Cost Manager &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Monitor your resources</h3>
-    <p>Metrics in Prometheus format, available in the Console or in your own tooling.</p>
-    <a href="./console/metrics/concepts" class="card-link">Metrics &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Follow operations and incidents</h3>
-    <p>Scheduled interventions on the platform and ongoing incidents.</p>
-    <a href="./console/status" class="card-link">Scheduled operations &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Contact support</h3>
-    <p>Advice, account assistance, incidents or professional services: all your requests to support.</p>
-    <a href="./console/console_quickstart#access-to-technical-support" class="card-link">Technical support &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Order resources</h3>
-    <p>Availability zones, clusters, storage and networks, with order tracking.</p>
-    <a href="./console/orders" class="card-link">Deploying resources &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h3>Automate</h3>
-    <p>Every Console function through the API, and your infrastructure as code with Terraform.</p>
-    <a href="./console/api" class="card-link">API documentation &rarr;</a>
-  </div>
-</div>
+- **[Set up your environments](./console/onboarding)**: Create your organisation and your tenants, then activate your products.
+- **[Manage access](./console/iam)**: Users, per-tenant permissions and identity federation.
+- **[Track your costs](./console/billing/concepts)**: Consumption by product, by service and by tenant.
+- **[Monitor your resources](./console/metrics/concepts)**: Metrics in Prometheus format, available in the Console or in your own tooling.
+- **[Follow operations and incidents](./console/status)**: Scheduled interventions on the platform and ongoing incidents.
+- **[Contact support](./console/console_quickstart#access-to-technical-support)**: Advice, account assistance, incidents or professional services: all your requests to support.
+- **[Order resources](./console/orders)**: Availability zones, clusters, storage and networks, with order tracking.
+- **[Automate](./console/api)**: Every Console function through the API, and your infrastructure as code with Terraform.
 
 ## Where to start
 
