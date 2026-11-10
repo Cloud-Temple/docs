@@ -15,7 +15,7 @@ En esta guía, reemplace las siguientes variables por sus valores:
 
 ## Prerrequisitos
 
-- Acceso a la Consola y al servicio Managed Kubernetes
+- Un clúster Managed Kubernetes y acceso a su interfaz Harbor (`<HARBOR_URL>`)
 - Un proyecto Harbor existente (o permisos para crear uno)
 - Herramientas instaladas localmente:
   - Docker o Podman
