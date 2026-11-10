@@ -615,19 +615,6 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   max-width: 600px;
 }
 
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
 .hero-title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -641,226 +628,6 @@ article:has(.hero-banner) .theme-doc-breadcrumbs {
   color: rgba(255, 255, 255, 0.88);
   margin: 0;
   line-height: 1.6;
-}
-
-[data-theme='dark'] .hero-banner {
-  background: linear-gradient(135deg, #1c1c1f 0%, #2f2f33 45%, #2d7665 100%);
-}
-
-/* ─── Certification chips ────────────────────────────────────────────────────── */
-
-.cert-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 24px;
-}
-
-.cert-chip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.09);
-  color: rgba(255, 255, 255, 0.75);
-  white-space: nowrap;
-  text-decoration: none !important;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-.cert-chip:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: rgba(255, 255, 255, 0.98);
-  text-decoration: none !important;
-}
-
-/* Variante page documentaire : les chips ci-dessus sont blanches et ne sont
-   lisibles que sur le fond sombre du .hero-banner. Sur une page de contenu au
-   fond clair, utiliser .cert-row--doc. */
-.cert-row--doc .cert-chip {
-  border-color: rgba(51, 131, 112, 0.35);
-  background: rgba(51, 131, 112, 0.08);
-  color: var(--ifm-color-primary-darkest);
-}
-
-.cert-row--doc .cert-chip:hover {
-  background: rgba(51, 131, 112, 0.16);
-  border-color: var(--ifm-color-primary-dark);
-  color: var(--ifm-color-primary-darkest);
-}
-
-[data-theme='dark'] .cert-row--doc .cert-chip {
-  border-color: rgba(65, 168, 144, 0.45);
-  background: rgba(65, 168, 144, 0.12);
-  color: var(--ifm-color-primary-lighter);
-}
-
-[data-theme='dark'] .cert-row--doc .cert-chip:hover {
-  background: rgba(65, 168, 144, 0.22);
-  border-color: var(--ifm-color-primary-light);
-  color: var(--ifm-color-primary-lightest);
-}
-
-/* Lien "Toutes nos certifications" — chip outline tiretée, aligné à droite */
-.cert-row-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
-  border-radius: 10px;
-  border: 1px dashed rgba(255, 255, 255, 0.28);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.55);
-  white-space: nowrap;
-  text-decoration: none !important;
-  margin-left: auto;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-}
-
-.cert-row-link:hover {
-  color: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.06);
-  text-decoration: none !important;
-}
-
-.cert-row-link svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.15s ease;
-}
-
-.cert-row-link:hover svg {
-  opacity: 1;
-}
-
-/* ─── Quickstart Cards ──────────────────────────────────────────────────────── */
-
-.quickstart-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin: 1.5rem 0 2.5rem 0;
-}
-
-@media (max-width: 768px) {
-  .quickstart-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.quickstart-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 10px;
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: border-color 0.2s ease;
-  background: var(--ifm-background-surface-color);
-}
-
-
-.quickstart-icon {
-  font-size: 1.8rem;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
-  width: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.quickstart-icon svg {
-  width: 22px;
-  height: 22px;
-  color: var(--ifm-color-primary);
-  flex-shrink: 0;
-}
-
-.quickstart-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ifm-font-color-base);
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.quickstart-desc {
-  font-size: 0.875rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.5;
-}
-
-/* ─── Popular Links ─────────────────────────────────────────────────────────── */
-
-.popular-links-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin: 1.5rem 0 2rem 0;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-@media (max-width: 900px) {
-  .popular-links-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .popular-links-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.popular-link {
-  display: block;
-  padding: 18px 20px;
-  text-decoration: none !important;
-  border-right: 1px solid var(--ifm-color-emphasis-200);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  transition: background 0.15s ease;
-  color: inherit !important;
-}
-
-.popular-link:hover {
-  background: var(--ifm-color-emphasis-100);
-  text-decoration: none !important;
-}
-
-.popular-link-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ifm-color-primary);
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-
-.popular-link-title span {
-  font-weight: 400;
-  opacity: 0.7;
-}
-
-.popular-link-desc {
-  font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.4;
 }
 
 /* ─── Icônes sidebar style Console Cloud Temple ─────────────────────────────
@@ -1083,7 +850,6 @@ h3 { font-weight: 500; }
 @media (max-width: 996px) {
   .hero-banner::after { width: 68px; right: 14px; }
 }
-.hero-badge { border-radius: 0; }
 
 /* Cartes : blocs du site (fond #2f2f33 en sombre, filet vert-bleu, angles droits). */
 .card,
@@ -1223,9 +989,6 @@ html [class*='searchResult_'][class*='cursor_'] * { color: #ffffff !important; }
 .badge,
 .button,
 details,
-.cert-chip,
-.quickstart-card,
-.popular-links-grid,
 [class*='categoryLink_'],
 [class*='tag_'] {
   border-radius: 0 !important;
@@ -1277,17 +1040,11 @@ details,
 .card .button::after { content: ''; position: absolute; inset: 0; }
 /* Survol : le même pour toutes les cartes, un filet vert-bleu, ni ombre ni décalage. */
 .card:hover,
-.book-card:hover,
-.quickstart-card:hover {
+.book-card:hover {
   border-color: var(--ifm-color-primary);
   box-shadow: none;
   transform: none;
 }
-/* Pages populaires : titre dans la couleur du texte, flèche vert-bleu. */
-.popular-link-title { color: var(--ifm-font-color-base); }
-.popular-link-title span { color: var(--ifm-color-primary); opacity: 1; }
-/* Premiers pas : même signal d'action, une flèche vert-bleu après le titre. */
-.quickstart-title::after { content: ' →'; color: var(--ifm-color-primary); }
 /* FAQ générale : une seule couleur de liseré, celle de la charte. */
 .book-card--green,
 .book-card--blue,
@@ -1327,7 +1084,7 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
    Un lien dans un paragraphe ne doit pas se repérer à sa seule couleur
    (accessibilité) : il est souligné. Les éléments de navigation (pagination,
    « Éditer cette page ») restent neutres et prennent le vert-bleu au survol. */
-.markdown a:not(.card-link):not(.button):not(.quickstart-card):not(.popular-link):not(.book-card):not(.hash-link) {
+.markdown a:not(.card-link):not(.button):not(.family-tile):not(.book-card):not(.hash-link) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -1367,8 +1124,8 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
    Rectangle aux angles arrondis (12 px, choix assumé : seul élément arrondi de
    la page), séparé de la barre de navigation par une marge, comme les blocs du
    site : anthracite en clair, #2f2f33 bordé d'un filet gris en sombre, comme les cartes (où
-   l'anthracite se confondrait avec le fond). Titre, sous-titre et conformités ;
-   les actions de démarrage sont les cartes « Premiers pas » juste en dessous.
+   l'anthracite se confondrait avec le fond). Titre et sous-titre seulement : les
+   badges de conformité et le parcours « Démarrer » suivent dans la page.
    Décor : trame de points en haut à droite, masquée sur mobile. */
 .hero-banner {
   position: relative;
@@ -1383,22 +1140,61 @@ footer.footer--dark .footer__copyright a:hover { color: #41a890; }
 .hero-content { max-width: 720px; position: relative; z-index: 1; }
 .hero-title { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; margin: 0 0 8px 0; }
 .hero-subtitle { color: rgba(255, 255, 255, 0.82); font-size: 1.02rem; line-height: 1.55; margin: 0 0 16px 0; }
-/* Conformités : texte discret séparé par des points vert-bleu. */
-.cert-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0; }
-.cert-chip {
-  background: none !important;
-  border: 0 !important;
-  padding: 0 !important;
-  color: rgba(255, 255, 255, 0.62) !important;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-decoration: none !important;
-}
-.cert-chip:hover { color: #ffffff !important; }
-.cert-chip + .cert-chip::before { content: '·'; color: #41a890; margin: 0 10px; font-weight: 700; }
 .hero-banner::after { top: 24px; right: 40px; bottom: auto; transform: none; width: 85px; height: 120px; }
 @media (max-width: 996px) {
   .hero-banner { padding: 28px 24px 24px; }
   .hero-banner::after { display: none; }
 }
+
+/* ─── Accueil : conformité, démarrage, produits, ressources ─────────────────
+   Conformité : une ligne de texte gris, discrète, en bas du bandeau ; chaque
+   nom renvoie vers la page conformité du site. */
+.home-lead { color: var(--ifm-color-emphasis-700); margin: -0.25rem 0 1rem; }
+.hero-compliance { display: flex; flex-wrap: wrap; align-items: center; margin: 16px 0 0; }
+.hero-compliance a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+}
+.hero-compliance a:hover { color: #ffffff !important; text-decoration: underline !important; }
+.hero-compliance a + a::before { content: '·'; display: inline-block; margin: 0 8px; color: rgba(255, 255, 255, 0.35); }
+/* Démarrer : numéro d'étape devant le titre de la carte. */
+.step-number {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--ifm-color-primary);
+}
+/* Produits : tuiles par famille, toute la tuile est le lien. */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+.family-tile {
+  display: block;
+  padding: 14px 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base) !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease;
+}
+[data-theme='dark'] .family-tile { background: #2f2f33; border-color: #3a3a3f; }
+.family-tile:hover { border-color: var(--ifm-color-primary); }
+.family-name { display: block; font-weight: 600; }
+.family-desc { display: block; margin-top: 4px; color: var(--ifm-color-emphasis-700); font-size: 0.85rem; }
+/* Ressources : deux listes de liens. */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+.resources-block {
+  padding: 16px 18px 6px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+[data-theme='dark'] .resources-block { background: #2f2f33; border-color: #3a3a3f; }
+.resources-title { margin: 0 0 6px; font-weight: 600; }
