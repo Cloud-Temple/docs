@@ -540,7 +540,7 @@ os          = "almalinux"
 
 **Spiegazioni** :
 
-- `high_availability` : Opzioni disponibili: `disabled`, `restart`, `best-effort` (vedi [documentazione](https://docs.cloud-temple.com/iaas_opensource/concepts#alta-disponibilita) sull'Alta Disponibilità)
+- `high_availability` : Opzioni disponibili: `disabled`, `restart`, `best-effort` (vedete [documentazione](https://docs.cloud-temple.com/iaas_opensource/concepts#alta-disponibilita) sull'Alta Disponibilità)
 - `boot_firmware` : `bios` o `uefi`
 - `secure_boot` : Disponibile solo con UEFI
 

@@ -23,7 +23,7 @@ Si rivolge ai team che integrano l'IA generativa nelle proprie applicazioni, anc
 |---|---|
 | Riservatezza | I prompt e le risposte non vengono né sfruttati né conservati dopo l'elaborazione, ad eccezione dei risultati di un'elaborazione in batch, eliminati dopo un periodo limitato. |
 | Sovranità | Inferenza in Francia, su un'infrastruttura qualificata SecNumCloud e certificata HDS. |
-| Compatibilità OpenAI | Per le chiamate supportate, un'applicazione esistente cambia URL di base e chiave API; alcune funzionalità differiscono (elaborazione in batch, completions, embedding, trascrizione audio): vedi la sezione «Compatibilità OpenAI» della [documentazione dell'API](./api.md). |
+| Compatibilità OpenAI | Per le chiamate supportate, un'applicazione esistente cambia URL di base e chiave API; alcune funzionalità differiscono (elaborazione in batch, completions, embedding, trascrizione audio): vedete la sezione «Compatibilità OpenAI» della [documentazione dell'API](./api.md). |
 | Catalogo gestito | Cloud Temple aggiunge, aggiorna e ritira i modelli, e ne pubblica il ciclo di vita. |
 | Fatturazione a consumo | Vengono fatturati solo i volumi consumati, per unità di fatturazione (token, minuti audio). |
 | Ecosistema | I framework più diffusi (LangChain, Haystack, Semantic Kernel…) funzionano con l'API. |
@@ -32,12 +32,12 @@ Si rivolge ai team che integrano l'IA generativa nelle proprie applicazioni, anc
 
 | Funzionalità | Descrizione |
 |---|---|
-| Catalogo di modelli | Modelli di dialogo, ragionamento, programmazione, visione, embedding, reranking, sicurezza, traduzione, trascrizione audio e generazione di immagini. Vedi la [guida alla scelta](./models.md). |
+| Catalogo di modelli | Modelli di dialogo, ragionamento, programmazione, visione, embedding, reranking, sicurezza, traduzione, trascrizione audio e generazione di immagini. Vedete la [guida alla scelta](./models.md). |
 | API compatibile con OpenAI | Un unico punto di accesso, `https://api.ai.cloud-temple.com/v1`, con streaming delle risposte e chiamate di funzioni (*function calling*). |
 | Ricerca documentale (RAG) | Embedding e [riordinamento dei documenti](./rerank.md) per costruire pipeline RAG. |
 | Analisi di documenti visivi | Modelli di visione e [riconoscimento dei documenti](./ocr.md). |
 | Trascrizione audio | Trascrizione in batch o in tempo reale. |
-| Elaborazione in batch | Invio asincrono di lotti di richieste: vedi l'[elaborazione in batch](./batch.md). |
+| Elaborazione in batch | Invio asincrono di lotti di richieste: vedete l'[elaborazione in batch](./batch.md). |
 | Modelli di sicurezza | Modelli da chiamare come pre-filtro o post-filtro per rilevare contenuti problematici e tentativi di elusione; non vengono applicati automaticamente. |
 
 <a id="️-architettura-tecnica"></a>
@@ -63,7 +63,7 @@ import ArchitectureLLMaaS from '@site/docs/llmaas/images/llmaas_architecture_001
 <a id="2-servizio-di-autenticazione"></a>
 
 #### Servizio di Autenticazione
-- **Chiavi API** : Creazione, rotazione e revoca sotto la responsabilità del cliente. Vedi la [condivisione delle responsabilità (RACI)](../contractual/llmaas/raci.md).
+- **Chiavi API** : Creazione, rotazione e revoca sotto la responsabilità del cliente. Vedete la [condivisione delle responsabilità (RACI)](../contractual/llmaas/raci.md).
 - **Controllo degli accessi** : Permessi granulari per modello
 - **Audit trails** : Tracciabilità completa degli accessi
 
@@ -185,7 +185,7 @@ Il servizio LLMaaS è calcolato su un'infrastruttura tecnica che beneficia della
 <a id="audit-e-tracciabilità"></a>
 
 #### Riservatezza dei Dati
-- **Nessuna conservazione**: i vostri dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione. Unica eccezione: i risultati di un'[elaborazione in batch](./batch.md) restano consultabili per un periodo limitato dopo il completamento (24 ore per impostazione predefinita), poi vengono eliminati automaticamente; vedi le [condizioni di conservazione](./batch.md#limiti-e-conservazione)
+- **Nessuna conservazione**: i vostri dati restano strettamente riservati e non vengono né sfruttati né conservati dopo l'elaborazione. Unica eccezione: i risultati di un'[elaborazione in batch](./batch.md) restano consultabili per un periodo limitato dopo il completamento (24 ore per impostazione predefinita), poi vengono eliminati automaticamente; vedete le [condizioni di conservazione](./batch.md#limiti-e-conservazione)
 
 ### Controlli di Sicurezza
 
@@ -240,7 +240,7 @@ La ripartizione delle responsabilità tra il cliente e Cloud Temple è dettaglia
 
 ## Reversibilità
 
-- **Nessun dato da recuperare**: il servizio non conserva né i prompt né le risposte dopo l'elaborazione. Solo i risultati di un'elaborazione in batch devono essere recuperati prima della loro eliminazione: vedi le [condizioni di conservazione](./batch.md#limiti-e-conservazione).
+- **Nessun dato da recuperare**: il servizio non conserva né i prompt né le risposte dopo l'elaborazione. Solo i risultati di un'elaborazione in batch devono essere recuperati prima della loro eliminazione: vedete le [condizioni di conservazione](./batch.md#limiti-e-conservazione).
 - **Portabilità delle applicazioni**: l'API segue il formato OpenAI per le chiamate supportate. Un'applicazione che si limita a queste chiamate può essere riconfigurata verso un altro fornitore compatibile cambiando l'URL di base e la chiave API, dopo aver verificato il modello e i parametri. L'elaborazione in batch utilizza un contratto specifico di Cloud Temple.
 - **Embedding**: i vettori dipendono dal modello di embedding; un cambio di modello richiede di ricalcolarli.
 

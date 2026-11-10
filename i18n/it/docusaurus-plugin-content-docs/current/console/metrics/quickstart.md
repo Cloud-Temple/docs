@@ -13,7 +13,7 @@ Questa guida aggiunge la Console come origine dati Prometheus nella vostra istan
 
 :::info
 
-Cloud Temple non fornisce un'istanza Grafana gestita: utilizzate la vostra istanza, nel cloud o on-premise. Le dashboard integrate nella Console, invece, non richiedono alcuna configurazione (vedi [Concetti](concepts.md)).
+Cloud Temple non fornisce un'istanza Grafana gestita: utilizzate la vostra istanza, nel cloud o on-premise. Le dashboard integrate nella Console, invece, non richiedono alcuna configurazione (vedete [Concetti](concepts.md)).
 
 :::
 

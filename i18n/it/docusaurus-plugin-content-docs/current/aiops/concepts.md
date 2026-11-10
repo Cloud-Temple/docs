@@ -89,4 +89,4 @@ Per conoscere le modalità di esportazione e di cancellazione dei vostri dati, c
 
 ## Prezzi
 
-AIOps si sottoscrive previo studio con gli esperti di Cloud Temple: [contattateci](https://www.cloud-temple.com/contactez-nous/). Vedi anche la [pagina AIOps del sito Cloud Temple](https://www.cloud-temple.com/produits/ai-ops/).
+AIOps si sottoscrive previo studio con gli esperti di Cloud Temple: [contattateci](https://www.cloud-temple.com/contactez-nous/). Vedete anche la [pagina AIOps del sito Cloud Temple](https://www.cloud-temple.com/produits/ai-ops/).

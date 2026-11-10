@@ -26,9 +26,9 @@ Il modello su cui si basa la Console (organizzazione, tenant, utenti e autorizza
 | Funzionalità | Descrizione |
 |---|---|
 | Console web | Dashboard, inventario delle risorse, ordini in self-service, accesso ai prodotti sottoscritti integrati nella Console. |
-| Gestione di identità e accessi | Organizzazione, tenant, utenti e autorizzazioni: vedi il modulo [IAM](./iam/concepts.md). |
-| API REST | API documentata in formato OpenAPI 3.0, consultabile dalla Console: vedi l'[API della Console](./api.md). |
-| Provider Terraform | Provider `Cloud-Temple/cloudtemple`, pubblicato sul Terraform Registry: vedi il [provider Terraform](../terraform/terraform.md). |
+| Gestione di identità e accessi | Organizzazione, tenant, utenti e autorizzazioni: vedete il modulo [IAM](./iam/concepts.md). |
+| API REST | API documentata in formato OpenAPI 3.0, consultabile dalla Console: vedete l'[API della Console](./api.md). |
+| Provider Terraform | Provider `Cloud-Temple/cloudtemple`, pubblicato sul Terraform Registry: vedete il [provider Terraform](../terraform/terraform.md). |
 | Server MCP | Collegamento di un client di IA compatibile MCP (*Model Context Protocol*) al vostro tenant, per interrogare il vostro ambiente. |
 | Monitoraggio delle operazioni | [Operazioni pianificate e incidenti](./status.md), registro delle attività. |
 | Supporto | Creazione e monitoraggio delle richieste di supporto dalla Console. |
@@ -90,7 +90,7 @@ Il server MCP si basa sull'API pubblica e ne applica gli stessi controlli: auten
 
 ### Limiti
 
-- I limiti di frequenza dell'API sono definiti per prodotto; oltre tali limiti, l'API risponde con un errore HTTP 429: vedi l'[API della Console](./api.md).
+- I limiti di frequenza dell'API sono definiti per prodotto; oltre tali limiti, l'API risponde con un errore HTTP 429: vedete l'[API della Console](./api.md).
 
 ## Sicurezza e conformità
 
@@ -120,5 +120,5 @@ La Console e l'API non memorizzano i vostri dati applicativi: conservano i metad
 
 ## Prezzi
 
-La Console, l'API, il server MCP e il provider Terraform sono inclusi senza costi aggiuntivi in ogni sottoscrizione Cloud Temple. Le risorse che ordinate sono fatturate secondo il prezzo di ciascun prodotto. Vedi la pagina del prodotto sul sito Cloud Temple:
+La Console, l'API, il server MCP e il provider Terraform sono inclusi senza costi aggiuntivi in ogni sottoscrizione Cloud Temple. Le risorse che ordinate sono fatturate secondo il prezzo di ciascun prodotto. Vedete la pagina del prodotto sul sito Cloud Temple:
 [Console – API – Provider Terraform](https://www.cloud-temple.com/produits/console-api-provider-terraform/).
