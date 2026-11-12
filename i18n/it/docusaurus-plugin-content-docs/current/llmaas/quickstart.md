@@ -1,38 +1,38 @@
 ---
-title: Guida introduttiva
+title: Guida di Avvio
 sidebar_position: 3
 ---
 
-# Guida all'Avvio Rapido
+# Guida Rapida di Avvio
 
 Questa guida ti consente di effettuare la tua prima richiesta all'API LLMaaS in meno di 5 minuti.
 
 ## Prerequisiti
 
 - Accesso alla Console Cloud Temple
-- Account con permessi LLMaaS abilitati
+- Account con permessi LLMaaS attivati
 
 ## Passo 1: Generare una chiave API
 
 1. Accedi alla Console Cloud Temple
 2. Apri **LLMaaS** > **Chiavi API**
 3. Clicca su **Crea una chiave API**
-4. Copia e salva la chiave (verrà visualizzata una sola volta)
+4. Copia e salva la chiave (verrà visualizzata solo una volta)
 
 ## Passo 2: Testare la connessione
 
-Verificare che la chiave funzioni elencando i modelli disponibili:
+Verifica che la tua chiave funzioni elencando i modelli disponibili:
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer VOTRE_CLE_API"
 ```
 
-Dovreste ricevere un elenco JSON dei modelli disponibili.
+Dovresti ricevere un elenco JSON dei modelli disponibili.
 
 ## Passo 3: Prima richiesta
 
-Effettua la tua prima generazione di testo con un modello veloce:
+Effettua la tua prima generazione di testo con un modello rapido:
 
 ```bash
 curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
@@ -51,9 +51,9 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
   }'
 ```
 
-## Passo 4 : Testare con Python
+## Passo 4: Testare con Python
 
-Installare la libreria requests e testare con codice Python:
+Installa la libreria requests e testa con codice Python:
 
 ```bash
 pip install requests
@@ -63,17 +63,17 @@ pip install requests
 import requests
 import json
 
-# Configurazione
+# Configuration
 API_KEY = "VOTRE_CLE_API"
 BASE_URL = "https://api.ai.cloud-temple.com/v1"
 
-# Intestazioni
+# Headers
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {API_KEY}"
 }
 
-# Richiesta
+# Requête
 payload = {
     "model": "gpt-oss:120b",
     "messages": [
@@ -102,11 +102,11 @@ else:
 
 ## Scelta del modello
 
-Gli esempi utilizzano `gpt-oss:120b`. Prima dell'esecuzione, verificate che questo identificatore sia presente in `/v1/models` e consultatene il [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle).
+Gli esempi utilizzano `gpt-oss:120b`. Prima dell'esecuzione, verifica che questo identificativo sia presente in `/v1/models` e consulta il suo [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle).
 
-Per la vostra applicazione, scegliete in base alle capacità necessarie, alla qualità sui vostri dati e all'orizzonte di supporto. La [guida del catalogo](./models.md) dettagli questi criteri. Gli esempi di visione richiedono un modello multimodale e quelli di chiamata di strumenti un modello che supporti il *tool calling*.
+Per la tua applicazione, scegli in base alle capacità necessarie, alla qualità sui tuoi dati e all'orizzonte di supporto. La [guida del catalogo](./models.md) dettaglia questi criteri. Gli esempi di visione richiedono un modello multimodale e quelli di tool calling un modello che supporti il *tool calling*.
 
-Le impostazioni di ragionamento dipendono dal modello. Non date per scontato che un'istruzione testuale attivi o disattivi questa modalità per tutti i modelli della stessa famiglia.
+Le impostazioni di ragionamento dipendono dal modello. Non dare per scontato che un'istruzione testuale attivi o disattivi questa modalità per tutti i modelli della stessa famiglia.
 
 ## Parametri consigliati
 
@@ -121,7 +121,7 @@ Per iniziare, utilizza questi parametri:
 }
 ```
 
-Questi parametri impostano la temperatura a 0,7, limitano l'output a 200 token, mantengono `top_p` a 1 e disabilitano lo streaming per ricevere la risposta completa.
+Questi parametri impostano la temperatura a 0,7, limitano l'output a 200 token, mantengono `top_p` a 1 e disattivano lo streaming per ricevere la risposta completa.
 
 ## Gestione degli errori comuni
 
@@ -129,29 +129,29 @@ Questi parametri impostano la temperatura a 0,7, limitano l'output a 200 token, 
 ```json
 {"error": {"message": "Invalid API key", "type": "invalid_request_error"}}
 ```
-**Soluzione** : Verificate la vostra chiave API nella Console Cloud Temple.
+**Soluzione**: Verifica la tua chiave API nella Console Cloud Temple.
 
 ### Errore 400 - Modello non trovato
 ```json
 {"error": {"message": "Model not found", "type": "invalid_request_error"}}
 ```
-**Soluzione** : Utilizzare `/v1/models` per elencare i modelli disponibili.
+**Soluzione**: Utilizza `/v1/models` per elencare i modelli disponibili.
 
-### Errore 429 - Limite di velocità
+### Errore 429 - Limite di frequenza
 ```json
 {"error": {"message": "Rate limit exceeded", "type": "rate_limit_error"}}
 ```
-**Soluzione** : Attendere alcuni secondi e riprovare.
+**Soluzione**: Attendi qualche secondo e riprova.
 
 ## Monitoraggio dell'utilizzo
 
 Nella Console Cloud Temple, puoi:
-- Visualizzare le richieste in tempo reale
-- Consultare il consumo di token
-- Configurare avvisi sui costi
+- Visualizzare le tue richieste in tempo reale
+- Consultare il tuo consumo di token
+- Configurare alert di costo
 - Analizzare le prestazioni per modello
 
-## Approfondimenti: Esempi di Tool Calling e Vision
+## Andare oltre: Esempi di Tool Calling e Vision
 
 Questa sezione fornisce esempi di script Python semplici e autonomi per illustrare funzionalità specifiche dell'API LLMaaS. Ogni esempio è progettato per essere eseguito direttamente, con istruzioni chiare per la configurazione e l'utilizzo.
 
@@ -163,14 +163,14 @@ Questa sezione fornisce esempi di script Python semplici e autonomi per illustra
 
 ### 1. Esempio Semplice di Tool Calling
 
-Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per connettere i LLM a strumenti esterni (API, bases de données, etc.).
+Il "Tool Calling" (o chiamata di funzione) consente a un modello linguistico di richiedere l'esecuzione di una funzione che hai definito nel tuo codice. È una funzionalità potente per collegare i LLM a strumenti esterni (API, database, ecc.).
 
 Il flusso è il seguente:
-1.  L'utente pone una domanda che richiede uno strumento (ex: "quel temps fait-il ?").
-2.  Invii la domanda e l'elenco degli strumenti disponibili all'API.
+1.  L'utente pone una domanda che richiede uno strumento (es: "che tempo fa?").
+2.  Invi la domanda e l'elenco degli strumenti disponibili all'API.
 3.  Il modello, invece di rispondere direttamente, restituisce una richiesta `tool_calls` che chiede di eseguire una funzione specifica con determinati argomenti.
 4.  Il tuo codice esegue la funzione richiesta.
-5.  Restituisci il risultato della funzione al modello.
+5.  Rinvii il risultato della funzione al modello.
 6.  Il modello utilizza questo risultato per formulare una risposta finale all'utente.
 
 **Struttura dei file**
@@ -189,14 +189,14 @@ python-dotenv
 
 **`.env`**
 ```env
-# URL base dell'API LLMaaS
+# URL de base de l'API LLMaaS
 API_URL="https://api.ai.cloud-temple.com/v1"
 
-# La tua chiave API LLMaaS
+# Votre clé API LLMaaS
 API_KEY="votre_cle_api_ici"
 
-# Opzionale: Modello predefinito da utilizzare per il test
-# Assicurati che questo modello sia compatibile con il "tool calling"
+# Optionnel: Modèle par défaut à utiliser pour le test
+# Assurez-vous que ce modèle est compatible avec le "tool calling"
 DEFAULT_MODEL="gpt-oss:120b"
 ```
 
@@ -216,16 +216,16 @@ import json
 import httpx
 from dotenv import load_dotenv
 
-# --- Configurazione ---
-# Carica le variabili d'ambiente da un file .env
+# --- Configuration ---
+# Charger les variables d'environnement depuis un fichier .env
 load_dotenv()
 
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
-# Utilizzare un modello noto per gestire correttamente il tool calling
+# Utiliser un modèle connu pour bien gérer le tool calling
 MODEL = os.getenv("DEFAULT_MODEL", "gpt-oss:120b")
 
-# --- Definizione dello strumento ---
+# --- Définition de l'outil ---
 
 def calculator(expression: str) -> str:
     """Calcule une opération entre deux nombres, par exemple : 15 + 20."""
@@ -254,7 +254,7 @@ def calculator(expression: str) -> str:
     except (ValueError, OverflowError, ZeroDivisionError) as e:
         return f"Erreur de calcul: {e}"
 
-# Descrizione dello strumento nel formato previsto dall'API
+# Description de l'outil au format attendu par l'API
 TOOLS_AVAILABLE = [
     {
         "type": "function",
@@ -275,12 +275,12 @@ TOOLS_AVAILABLE = [
     }
 ]
 
-# Mappatura tra il nome dello strumento e la funzione Python da chiamare
+# Mapping entre le nom de l'outil et la fonction Python à appeler
 TOOL_FUNCTIONS_MAP = {
     "calculator": calculator
 }
 
-# --- Logica principale ---
+# --- Logique principale ---
 
 def run_chat_with_tool_calling():
     """
@@ -294,11 +294,11 @@ def run_chat_with_tool_calling():
     print(f"🤖 Modèle utilisé : {MODEL}")
     print("-" * 30)
 
-    # 1. Prima chiamata all'API con la domanda dell'utente
+    # 1. Premier appel à l'API avec la question de l'utilisateur
     # ---------------------------------------------------------
     print("➡️ Étape 1: Envoi de la requête initiale au LLM...")
 
-    # La cronologia dei messaggi inizia con la domanda dell'utente
+    # L'historique des messages commence avec la question de l'utilisateur
     messages = [
         {"role": "user", "content": "Bonjour, peux-tu calculer 15 + 20 ?"}
     ]
@@ -329,11 +329,11 @@ def run_chat_with_tool_calling():
         print(f"❌ Erreur API (Request) lors de l'étape 1: {e}")
         return
 
-    # Il messaggio dell'assistente contiene la richiesta di chiamata dello strumento
+    # Le message de l'assistant contient la demande d'appel d'outil
     assistant_message = response_data["choices"][0]["message"]
     messages.append(assistant_message)
 
-    # 2. Verifica ed esecuzione della chiamata dello strumento
+    # 2. Vérification et exécution de l'appel d'outil
     # ------------------------------------------------
     print("\n✅ Le LLM a demandé d'utiliser un outil.")
 
@@ -353,7 +353,7 @@ def run_chat_with_tool_calling():
     if function_name in TOOL_FUNCTIONS_MAP:
         function_to_call = TOOL_FUNCTIONS_MAP[function_name]
         try:
-            # Gli argomenti sono una stringa JSON, è necessario analizzarli
+            # Les arguments sont une chaîne JSON, il faut les parser
             function_args = json.loads(function_args_str)
             tool_result = function_to_call(**function_args)
             print(f"   - Résultat de l'outil : {tool_result}")
@@ -364,11 +364,11 @@ def run_chat_with_tool_calling():
         print(f"❌ Outil inconnu : {function_name}")
         tool_result = f"Erreur: Outil '{function_name}' non trouvé."
 
-    # 3. Seconda chiamata all'API con il risultato dello strumento
+    # 3. Second appel à l'API avec le résultat de l'outil
     # ----------------------------------------------------
     print("\n➡️ Étape 2: Envoi du résultat de l'outil au LLM...")
 
-    # Si aggiunge il risultato dello strumento alla cronologia dei messaggi
+    # On ajoute le résultat de l'outil à l'historique des messages
     messages.append(
         {
             "role": "tool",
@@ -377,7 +377,7 @@ def run_chat_with_tool_calling():
         }
     )
 
-    # Si effettua una nuova chiamata SENZA gli strumenti questa volta per ottenere la risposta finale
+    # On refait un appel SANS les outils cette fois-ci pour obtenir la réponse finale
     payload_final = {
         "model": MODEL,
         "messages": messages,
@@ -409,14 +409,14 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Dalla directory padre, apri la directory creata e quindi installa le dipendenze:**
+1.  **Dal directory parent, apri la directory creata e installa le dipendenze:**
     ```bash
     cd simple_tool_calling
     python -m pip install -r requirements.txt
     ```
 2.  **Configura la tua chiave API:**
-    Nel file `.env` mostrato sopra, sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS. Verifica anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
-3.  **Da questa stessa directory, esegui lo script:**
+    Nel file `.env` presentato sopra, sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS. Verifica anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
+3.  **Dalla stessa directory, esegui lo script:**
     ```bash
     python test_tool_calling.py
     ```
@@ -427,12 +427,12 @@ I modelli multimodali possono analizzare sia testo che immagini. Questo esempio 
 
 **Struttura dei file**
 
-Crea una directory `simple_vision` con i seguenti file :
+Creare una directory `simple_vision` con i seguenti file :
 
 -   `test_vision.py`: Lo script principale.
--   `requirements.txt`: Le dipendenze (inclusa `Pillow` per generare l'immagine).
--   `.env`: Il file di configurazione da compilare con la tua chiave API.
--   `image_example.png`: L'immagine da analizzare (lo script la genererà per te se manca).
+-   `requirements.txt`: Le dipendenze (incluso `Pillow` per generare l'immagine).
+-   `.env`: Il file di configurazione da completare con la propria chiave API.
+-   `image_example.png`: L'immagine da analizzare (lo script la genererà automaticamente se assente).
 
 **`requirements.txt`**
 ```txt
@@ -469,17 +469,17 @@ import base64
 import httpx
 from dotenv import load_dotenv
 
-# --- Configurazione ---
-# Carica le variabili d'ambiente da un file .env
+# --- Configuration ---
+# Charger les variables d'environnement depuis un fichier .env
 load_dotenv()
 
 API_URL = os.getenv("API_URL", "https://api.ai.cloud-temple.com/v1")
 API_KEY = os.getenv("API_KEY")
-# Utilizzare un modello di visione.
+# Utiliser un modèle de vision.
 MODEL = os.getenv("DEFAULT_MODEL", "granite3.2-vision:2b")
 IMAGE_PATH = "image_example.png" # L'image doit être dans le même répertoire
 
-# --- Funzioni ---
+# --- Fonctions ---
 
 def encode_image_to_base64(image_path: str) -> str:
     """
@@ -504,7 +504,7 @@ def generate_example_image():
         from PIL import Image, ImageDraw
         if not os.path.exists(IMAGE_PATH):
             print(f"🖼️  L'image '{IMAGE_PATH}' n'existe pas, génération en cours...")
-            # Crea un'immagine semplice: un quadrato rosso su sfondo bianco
+            # Crée une image simple : un carré rouge sur fond blanc
             img = Image.new('RGB', (200, 200), color = 'white')
             draw = ImageDraw.Draw(img)
             draw.rectangle([50, 50, 150, 150], fill='red', outline='black')
@@ -518,7 +518,7 @@ def generate_example_image():
         print(f"❌ Erreur lors de la génération de l'image: {e}")
 
 
-# --- Logica principale ---
+# --- Logique principale ---
 
 def run_vision_test():
     """
@@ -528,10 +528,10 @@ def run_vision_test():
         print("❌ Erreur: La variable d'environnement API_KEY n'est pas définie.")
         return
 
-    # Genera l'immagine di esempio se necessario
+    # Générer l'image d'exemple si nécessaire
     generate_example_image()
 
-    # Codifica l'immagine in base64
+    # Encoder l'image en base64
     base64_image = encode_image_to_base64(IMAGE_PATH)
     if not base64_image:
         return
@@ -540,7 +540,7 @@ def run_vision_test():
     print(f"🖼️ Image envoyée : {IMAGE_PATH}")
     print("-" * 30)
 
-    # Costruzione del payload in formato multimodale
+    # Construction du payload au format multimodal
     payload = {
         "model": MODEL,
         "messages": [
@@ -594,33 +594,32 @@ if __name__ == "__main__":
 
 **Utilizzo**
 
-1.  **Dalla directory padre, apri la directory creata e installa le dipendenze :**
+1.  **Dal directory parent, aprire la directory creata e installare le dipendenze :**
     ```bash
     cd simple_vision
     python -m pip install -r requirements.txt
     ```
-2.  **Configura la tua chiave API :**
-    Nel file `.env` mostrato sopra, sostituisci `"votre_cle_api_ici"` con la tua chiave API LLMaaS. Verifica anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
-3.  **Da questa stessa directory, esegui lo script :**
+2.  **Configurare la propria chiave API :**
+    Nel file `.env` presentato sopra, sostituire `"votre_cle_api_ici"` con la propria chiave API LLMaaS. Verificare anche che `DEFAULT_MODEL` indichi un modello disponibile con le capacità richieste.
+3.  **Dalla stessa directory, eseguire lo script :**
     ```bash
     python test_vision.py
     ```
     Lo script genererà automaticamente un'immagine `image_example.png` se non esiste.
 
 ---
+## Prossimi passi
 
-## Prossimi passaggi
+Una volta completato con successo il primo test :
 
-Una volta completato con successo il primo test:
-
-1. **Esplorate i modelli** : Testate diversi modelli in base alle vostre esigenze
-2. **Ottimizzate i prompt** : Migliorate la qualità delle risposte
-3. **Integrate nella vostra applicazione** : Consultate la [documentation API](./api)
-4. **Casi d'uso avanzati** : Vedi i [tutoriels](./tutorials)
+1. **Esplora i modelli** : Testa diversi modelli in base alle tue esigenze
+2. **Ottimizza i prompt** : Migliora la qualità delle risposte
+3. **Integra nella tua applicazione** : Consulta la [documentazione API](./api)
+4. **Casi d'uso avanzati** : Vedi i [tutorial](./tutorials)
 
 ## Supporto
 
 In caso di problemi :
-- Consultare la [documentation API complète](./api)
-- Verificare lo stato del servizio nella Console
-- Contattare il supporto tramite la Console Cloud Temple
+- Consulta la [documentazione API completa](./api)
+- Verifica lo stato del servizio nella Console
+- Contatta il supporto tramite la Console Cloud Temple

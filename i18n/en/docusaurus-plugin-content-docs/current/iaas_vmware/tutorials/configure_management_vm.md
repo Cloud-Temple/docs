@@ -1,5 +1,5 @@
 ---
-title: Configuration of a management virtual machine
+title: Configuring a Management Virtual Machine
 tags:
   - iaas
   - vmware
@@ -19,20 +19,20 @@ This tutorial guides you through the configuration of a virtual machine dedicate
 
 A management virtual machine is essential for securely administering your Cloud Temple infrastructure. It serves as a centralized entry point for managing your resources.
 
-## Step 1: Management VM Deployment
+## Step 1: Deploying the Management VM
 
 ### Template Selection
 
 1. Navigate to the **Virtual Machines** section in the console
 2. Click on **Create a virtual machine**
 3. Select a template suitable for management (Windows Server or Linux)
-4. Configure the resources according to your needs
+4. Configure resources according to your needs
 
 ### Network Configuration
 
 1. Assign the VM to the appropriate management network
 2. Configure a static IP address
-3. Ensure that the VM can access the resources to be administered
+3. Ensure the VM can access the resources to be administered
 
 ## Step 2: Security Configuration
 
@@ -59,30 +59,30 @@ A management virtual machine is essential for securely administering your Cloud 
 
 ### Monitoring Tools
 
-1. Configure the monitoring agents
-2. Install the backup tools
+1. Configure monitoring agents
+2. Install backup tools
 3. Configure centralized logging
 
-## Step 4: Access Configuration
+## Step 4: Configuring Access
 
 ### Network Access
 
 1. Configure firewall rules to allow management connections
 2. Configure VPNs if necessary for remote access
-3. Test connectivity to the resources to be managed
+3. Test connectivity to the resources to be administered
 
 ### User Access
 
 1. Create user accounts for administrators
-2. Configure the appropriate permissions
-3. Document the access procedures
+2. Configure appropriate permissions
+3. Document access procedures
 
 ## Best Practices
 
-- **Isolation** : Place the management VM in a dedicated network
-- **Backup** : Configure regular backups
-- **Monitoring** : Monitor activity and performance
-- **Documentation** : Keep configuration documentation up to date
+- **Isolation**: Place the management VM in a dedicated network
+- **Backup**: Configure regular backups
+- **Monitoring**: Monitor activity and performance
+- **Documentation**: Maintain up-to-date documentation of configurations
 
 ## Maintenance
 
@@ -90,21 +90,21 @@ A management virtual machine is essential for securely administering your Cloud 
 
 1. Schedule maintenance windows
 2. Apply security updates
-3. Test features after each update
+3. Test functionality after each update
 
 ### Monitoring
 
 1. Monitor security logs
-2. Monitor access and activities
+2. Review access and activities
 3. Perform regular security audits
 
 ## Troubleshooting
 
 ### Common Issues
 
-- **Network connectivity** : Check firewall rules and network configuration
-- **Performance** : Monitor resource usage and adjust if necessary
-- **Access** : Check permissions and authentication
+- **Network connectivity**: Check firewall rules and network configuration
+- **Performance**: Monitor resource usage and adjust if necessary
+- **Access**: Verify permissions and authentication
 
 ## Support
 

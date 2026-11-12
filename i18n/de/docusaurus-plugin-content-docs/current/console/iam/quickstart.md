@@ -1,5 +1,5 @@
 ---
-title: Schnellstartanleitung
+title: Schnellstart-Anleitung
 ---
 import shivaTenant from '@site/docs/console/iam/images/shiva_tenant.png'
 import shivaOnboard_003 from '@site/docs/console/iam/images/shiva_onboard_003.png'
@@ -11,154 +11,154 @@ import shivaProfil_007 from '@site/docs/console/iam/images/shiva_profil_007.png'
 import shivaOrgAccess from '@site/docs/console/images/shiva_org_access.png'
 import shivaIpAccessManagement_02 from '@site/docs/console/iam/images/shiva_ip_access_management_02.png'
 
-## Mandant
+## Tenant
 
-### Creation of a tenant
+### Erstellung eines Tenants
 
-Die Erstellung eines Mandanten erfolgt __im Self-Service__ über die Konsole, ohne vorherige Serviceanfrage. Unter __'Administration > Tenants'__ öffnet die Schaltfläche __'Neuer Mandant'__ ein zweiteiliges Formular: die Identität des Mandanten (Name und Beschreibung) und die darin zu aktivierenden Produkte.
+Die Erstellung eines Tenants erfolgt __selbstbedient__ über die Konsole, ohne vorherige Serviceanfrage. Über __'Administration > Tenants'__ öffnet der Button __'Neuer Tenant'__ ein zweigeteiltes Formular: die Identität des Tenants (Name und Beschreibung) und die Produkte, die darin aktiviert werden sollen.
 
-Das genaue Verfahren ist im [Konsolen-Quickstart](../console_quickstart.md) beschrieben.
+Das detaillierte Verfahren ist im [Quickstart Console](../console_quickstart.md) beschrieben.
 
-### Selection of a tenant
+### Auswahl eines Tenants
 
-The selection of a tenant is performed from the main page of the Console:
+Die Auswahl des Tenants erfolgt von der Hauptseite der Konsole:
 
 <img src={shivaTenant} />
 
-*__Note:__ The resources of a tenant are exclusive to that tenant and cannot be mixed with those of other tenants.*
+*__Hinweis:__ Die Ressourcen eines Tenants sind ihm ausschließlich zugeordnet und können nicht mit anderen Tenants gemischt werden.*
 
-## Access Accounts for the Console
+## Konten für den Konsolenzugriff
 
-Access accounts for the Console are created by the sponsor's master account upon invitation (regardless of the authentication repository).
+Die Konten für den Konsolenzugriff werden vom Master-Konto des Auftraggebers per Einladung erstellt (unabhängig vom Authentifizierungsverzeichnis).
+Die Anmeldeinformationen sind für Ihre [Organisation](concepts.md#organisationen) global.
 
-Credentials are global to your [Organization](concepts.md#organisationen).
-
-*__Note:__ Identity federation is managed at the organization level*
+*__Hinweis:__ Die Identitätsföderation wird auf Organisationsebene verwaltet*
 
 ### Erstellung eines Benutzerkontos in Ihrer Organisation
 
-Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt über eine Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organisationen) einzuladen, navigieren Sie im linken Menüband (grüner Balken) zu __'Administration'__ und dann zum Untermenü __'Benutzer'__.
+Die Erstellung eines Benutzerkontos in Ihrer Organisation erfolgt per Einladung. Um einen Benutzer in einer [Organisation](concepts.md#organisationen) einzuladen, gehen Sie im Menü __'Administration'__ links auf Ihrem Bildschirm in der grünen Leiste auf das Untermenü __'Benutzer'__.
 
-Klicken Sie auf die Schaltfläche __'Neuer Benutzer'__ auf der Benutzerseite.
+Klicken Sie auf der Benutzereite auf den Button __'Neuer Benutzer'__.
 
 <img src={shivaOnboard_003} />
 
-Geben Sie anschließend die E-Mail-Adresse des Benutzers ein.
+Geben Sie anschließend die E-Mail-Adresse des Benutzers an.
 
 <img src={shivaOnboard_004} />
 
-Der Benutzer erhält dann eine E-Mail zur Bestätigung.
+Der Benutzer erhält dann eine Bestätigungs-E-Mail.
 
 <img src={shivaOnboard_001} />
 
-Nach Abschluss der Überprüfung kann sich der Benutzer auf der Konsole anmelden.
+Sobald die Bestätigung abgeschlossen ist, kann sich der Benutzer in der Konsole anmelden.
 
-### Assignment of Permissions to a User
+### Zuweisung von Berechtigungen an einen Benutzer
 
-User rights management is performed from the user page.
+Die Verwaltung der Benutzerrechte erfolgt von der Benutzereite.
 
 <img src={shivaOnboard_003} />
 
-By default, a user has no rights. Therefore, the administrator who sent the invitation must assign the necessary rights for the user's activities. Simply click on the user's __'Actions'__ menu and select the __'Edit'__ option.
+Standardmäßig verfügt ein Benutzer über keine Rechte. Es ist daher erforderlich, dass der Administrator, der die Einladung ausgesprochen hat, ihm die für seine Tätigkeit erforderlichen Rechte zuweist. Es genügt, auf das Menü __'Aktionen'__ des Benutzers zu klicken und die Option __'Bearbeiten'__ auszuwählen.
 
-The rights activation menu then appears:
+Das Menü zur Aktivierung der Rechte wird dann angezeigt:
 
 <img src={shivaOnboard_005} />
 
-Permission configuration must be done for each [Tenant](concepts.md#tenant) within the [Organization](concepts.md#organisationen).
+Die Konfiguration der Berechtigungen ist für jeden [Tenant](concepts.md#tenant) der
+[Organisation](concepts.md#organisationen) durchzuführen.
 
-The list of permissions and their definitions is available [here](#berechtigungen).
+Die Liste der Berechtigungen und deren Definition ist [hier](#berechtigungen) verfügbar.
 
-### Change the language of a user
+### Sprache eines Benutzers ändern
 
-Changing a user's language is done in their __'Profile'__, located in the top right corner of the screen, under __'User Settings'__.
+Die Sprachänderung eines Benutzers erfolgt in seinem __'Profil'__ oben rechts auf dem Bildschirm, in den __'Benutzereinstellungen'__.
 
 <img src={shivaProfil_006} />
 
-The configuration is set individually for each tenant [Tenant](concepts.md#tenant).
+Die Konfiguration erfolgt für jeden Tenant [Tenant](concepts.md#tenant).
 
-### Thematic Notifications Subscription
+### Abonnement für thematische Benachrichtigungen
 
-Managing subscriptions allows you to receive emails related to activated themes, which are automatically sent when corresponding events occur.
+Die Verwaltung der Abonnements ermöglicht es, E-Mails zu den aktivierten Themen zu erhalten, die automatisch bei Eintreten entsprechender Ereignisse gesendet werden.
 
-This feature is accessible in the user profile, under the "My Subscriptions" tab:
+Sie ist im Benutzerprofil im Reiter "Meine Abonnements" verfügbar:
 
 <img src={shivaProfil_007} />
 
-For example, in the event of an incident, specific email notifications related to this theme will be generated.
+Zum Beispiel werden bei einem Vorfall spezifische E-Mail-Benachrichtigungen zu diesem Thema generiert.
 
-The list of available themes may evolve and gradually expand to adapt to changing operational needs and environment requirements.
+Die Liste der verfügbaren Themen kann sich weiterentwickeln und schrittweise erweitert werden, um sich an die Bedürfnisse und Veränderungen in unserer Betriebsumgebung anzupassen.
 
 ## Berechtigungen
 
-### Welche Berechtigungen sind für Benutzerkonten in der Konsole verfügbar?
+### Welche Berechtigungen sind für Benutzerkonten der Konsole verfügbar?
 
-Hier finden Sie die Liste der verfügbaren [Berechtigungen](#berechtigungen).
+Hier ist die Liste der [verfügbaren Berechtigungen](#berechtigungen).
 
-### How to add a permission?
+### Wie füge ich eine Berechtigung hinzu?
 
-The [procedure for assigning permissions is available here](#berechtigungen)
+Das [Verfahren zur Zuweisung von Berechtigungen ist hier verfügbar](#berechtigungen)
 
-### Why can't I add a permission?
+### Warum kann ich keine Berechtigung hinzufügen?
 
-To add a permission, you need to have the __'iam_write'__ permission as well as the __permission you want to add__.
+Um eine Berechtigung hinzuzufügen, müssen Sie die Berechtigung __'iam_write'__ sowie die __Berechtigung, die Sie hinzufügen möchten__, besitzen.
 
-### How to add a user?
+### Wie füge ich einen Benutzer hinzu?
 
-*__Note__ : To add a user, you must have the __'iam_write'__ permission.*
+*__Hinweis__ : Um einen Benutzer hinzuzufügen, müssen Sie das Recht __'iam_write'__ besitzen.*
 
-### How to audit user access/permissions?
+### Wie auditieren ich die Zugriffe/Berechtigungen der Benutzer?
 
-Go to the users page and click the __'Export CSV'__ button:
+Gehen Sie auf die Benutzereite und klicken Sie auf den Button __'CSV exportieren'__ :
 
-### How to delete a user?
+### Wie lösche ich einen Benutzer?
 
-In the __'Administration'__ menu on the green bar on the left side of the screen, under the sub-menu __'User'__, click the __'Action'__ icon of the target user and select __'Delete'__.
+Im Menü __'Administration'__ in der grünen Leiste links auf dem Bildschirm, im Untermenü __'Benutzer'__, klicken Sie auf das Symbol __'Aktion'__ des Zielbenutzers und wählen Sie __'Löschen'__.
 
-*__Note__*:
+*__Hinweis__ :*
 
-- *To add a user, you must have the __'iam_write'__ permission.*
-- *If this is a federated user, __make sure the user has also been deleted from the identity repository__.*
+- *Um einen Benutzer hinzuzufügen, müssen Sie das Recht __'iam_write'__ besitzen.*
+- *Handelt es sich um einen föderierten Benutzer, __stellen Sie sicher, dass der Benutzer auch aus dem Identitätsverzeichnis gelöscht wurde__.*
 
-### How to reset your password?
+### Wie setze ich mein Passwort zurück?
 
-You can reset your password from the Console login page by clicking on __'Forgot password?'__.
+Es ist möglich, das Passwort von der Anmeldeseite der Konsole zurückzusetzen, indem Sie auf __'Passwort vergessen?'__ klicken.
 
-### Warum sind einige Benutzer grau?
+### Warum sind einige Benutzer ausgegraut?
 
-Graue Benutzer sind solche, deren Konto noch nicht bestätigt wurde. Beim Erstellen des Kontos erhalten die Benutzer eine Bestätigungs-E-Mail.
+Die ausgegrauten Benutzer sind diejenigen, die ihr Konto nicht bestätigt haben. Bei der Kontenerstellung hat der Benutzer eine Bestätigungs-E-Mail erhalten.
 
 <img src={shivaOnboard_001} />
 
-Sobald die Bestätigung abgeschlossen ist, kann sich der Benutzer in die Konsole einloggen.
+Sobald die Bestätigung abgeschlossen ist, kann sich der Benutzer in der Konsole anmelden.
 
-Das Konto bleibt grau, solange die Bestätigung nicht abgeschlossen ist.
+Das Konto bleibt ausgegraut, bis die Bestätigung abgeschlossen ist.
 
 ### Was ist ein Personal Access Token (PAT)?
 
-Die Erstellung eines API-Schlüssels, auch als __Personal Access Token (PAT)__ bezeichnet,
-ist eine sichere Methode, um sich an die Console-APIs anzumelden, ohne eine grafische Benutzeroberfläche verwenden zu müssen.
+Die Generierung eines API-Schlüssels, auch __Personal Access Token (PAT)__ genannt,
+ist eine sichere Methode, sich ohne grafische Benutzeroberfläche mit den API der Konsole zu verbinden.
 
-### What is MFA and is it mandatory?
+### Was ist MFA und ist es obligatorisch?
 
-MFA (multi-factor authentication) is a concept of user identity verification in two steps, also known as __two-factor authentication__.
+MFA (Multi-Faktor-Authentifizierung) ist ein Konzept zur Identitätsprüfung eines Benutzers in zwei Schritten, auch __Zwei-Faktor-Authentifizierung__ genannt.
 
-The user must provide two distinct proofs of identity. In the case of the Console, two-factor authentication is mandatory and requires entering a one-time code after the user has entered their account password.
+Der Benutzer muss zwei verschiedene Identitätsnachweise erbringen. Im Fall der Konsole ist die Zwei-Faktor-Authentifizierung obligatorisch und erfordert die Eingabe eines Einmal-Codes, nachdem der Benutzer das Passwort seines Kontos eingegeben hat.
 
-## Access Management and Authentication
+## Zugriffsverwaltung und Authentifizierung
 
-### Zugriffsberechtigung auf die Konsole: Genehmigte IP-Adressen
+### Zugriffsgenehmigung auf die Konsole : autorisierte IPs
 
-Der Zugriff auf die Cloud-Verwaltungskonsole ist streng auf vorab genehmigte IP-Adressen beschränkt, in Übereinstimmung mit den Anforderungen der SecNumCloud-Zertifizierung. Diese Einschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem nur Benutzer aus festgelegten IP-Bereichen Zugriff erhalten, wodurch das Risiko von unbefugtem Zugriff minimiert und die Cloud-Infrastruktur gemäß den höchsten Sicherheitsstandards geschützt wird.
+Der Zugriff auf die Cloud-Verwaltungskonsole ist streng auf zuvor autorisierte IP-Adressen beschränkt, im Einklang mit den Anforderungen der SecNumCloud-Zertifizierung. Diese Beschränkung gewährleistet ein erhöhtes Sicherheitsniveau, indem der Zugriff nur Benutzern aus angegebenen IP-Bereichen ermöglicht wird, wodurch das Risiko unbefugter Zugriffe minimiert und die Cloud-Infrastruktur nach den höchsten Sicherheitsstandards geschützt wird.
 
-Die Liste gehört zur __Organisation__: eine aus einem beliebigen Mandanten hinzugefügte Adresse erlaubt den Zugriff auf die Konsole für die gesamte Organisation. Sie kann über den Tab __'Administration > Zugriff'__ eingesehen und ergänzt werden.
+Die Liste gehört zur __Organisation__ : eine von einem beliebigen Tenant hinzugefügte Adresse autorisiert den Zugriff auf die Konsole für die gesamte Organisation. Sie wird im Reiter __'Administration > Zugriff'__ eingesehen und ergänzt.
 
 <img src={shivaOrgAccess} />
 
-Dazu muss der Benutzer die Berechtigung `console_public_access_read` besitzen, um die genehmigten IPs einzusehen, und die Berechtigung `console_public_access_write`, um eine öffentliche IP-Adresse der Liste hinzuzufügen.
+Dazu muss der Benutzer über das Recht `console_public_access_read` zur Einsicht der autorisierten IPs und über das Recht `console_public_access_write` zum Hinzufügen einer öffentlichen IP-Adresse zur Liste verfügen.
 
-Anschließend kann eine neue IP-Adresse hinzugefügt werden:
+Es ist dann möglich, eine neue IP hinzuzufügen:
 
 <img src={shivaIpAccessManagement_02} />
 
-Hinweis: *Die Entfernung einer genehmigten IP-Adresse erfolgt über eine Support-Anfrage in der Cloud-Temple-Konsole.*
+Hinweis: *Die Löschung einer autorisierten IP erfolgt über eine Supportanfrage in der Cloud Temple-Konsole.*

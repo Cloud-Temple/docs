@@ -5,48 +5,48 @@ sidebar_position: 1
 
 # LLM as a Service (LLMaaS)
 
-LLMaaS bietet Zugriff auf von Cloud Temple gehostete KI-Modelle über eine API: Konversationsassistenten, Programmierung und Agenten, Bildanalyse, semantische Suche, Reranking, Übersetzung sowie Audio- und Bildanwendungen.
+LLMaaS bietet Zugriff auf von Cloud Temple gehostete KI-Modelle über eine API: Konversationsassistenten, Programmierung und Agenten, Bildanalyse, semantische Suche, Reranking, Übersetzung und Audio-/Bildanwendungen.
 
 ## Katalog, Neuigkeiten und Verfügbarkeit
 
-- **[Katalog und Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)** : Modelle, Kontext, LTS-Status, Supportende und empfohlene Migrationen.
-- **[Neuigkeiten zu LLMaaS](https://llmaas.status.cloud-temple.app/changelog)** : Neue Modelle, Service-Updates und Umleitungsankündigungen.
-- **[Service-Status](https://llmaas.status.cloud-temple.app/)** und **[Verlauf](https://llmaas.status.cloud-temple.app/history)** : Verfügbarkeit und beobachtete Leistung.
+- **[Katalog und Lebenszyklus der Modelle](https://llmaas.status.cloud-temple.app/lifecycle)**: Modelle, Kontext, LTS-Status, Support-Enden und empfohlene Migrationen.
+- **[LLMaaS-Neuigkeiten](https://llmaas.status.cloud-temple.app/changelog)**: Modellzusätze, Serviceentwicklungen und Umleitungsmeldungen.
+- **[Servicezustand](https://llmaas.status.cloud-temple.app/)** und **[Historie](https://llmaas.status.cloud-temple.app/history)**: beobachtete Verfügbarkeit und Leistung.
 
-Um zu beginnen, folgen Sie der [Schnellstartanleitung](./quickstart.md). Um ein Modell auszuwählen, konsultieren Sie den [Katalogleitfaden](./models.md).
+Zum Einstieg folgen Sie dem [Schnellstartguide](./quickstart.md). Um ein Modell auszuwählen, konsultieren Sie den [Katalogguide](./models.md).
 
 ## Funktionen
 
-| Verwendung | Leitfaden |
+| Verwendung | Guide |
 |-------|-------|
-| Textgenerierung, Streaming, Tool-Aufrufe und Vision | [API LLMaaS](./api.md) |
-| Generativ erweiterte Suche | [Comprendre le RAG](./rag_explained.md) |
-| Dokumenten-Ranking nach Relevanz | [Reranking](./rerank.md) |
+| Textgenerierung, Streaming, Tool-Aufrufe und Vision | [LLMaaS-API](./api.md) |
+| Retrieval-Augmented Generation | [RAG verstehen](./rag_explained.md) |
+| Relevanzbasierte Dokumentenklassifizierung | [Reranking](./rerank.md) |
 | Asynchrone Batch-Verarbeitung von Anfragen | [Batch](./batch.md) |
-| Modellwechsel und Verwaltung veralteter IDs | [Cycle de vie et migration](./concepts.md#migration-zu-einem-anderen-modell) |
+| Modellwechsel und Verwaltung alter Bezeichner | [Lebenszyklus und Migration](./concepts.md#migration-zu-einem-anderen-modell) |
 
-Inferenzoptimierungen, einschließlich der im Changelog angekündigten Mehrfach-Token-Vorhersage (*MTP*), werden serverseitig durchgeführt. Bewerten Sie deren Auswirkungen auf Ihre eigenen Anfragen anhand der Monitoring-Metriken.
+Die Inferenzoptimierungen, einschließlich der im Changelog angekündigten Multi-Token-Prediction (*MTP*), werden auf der Service-Seite durchgeführt. Bewerten Sie deren Auswirkungen auf Ihre eigenen Anfragen anhand der Überwachungsdaten.
 
-## Zugriff auf die API
+## API-Zugriff
 
-Die API ist über die Cloud Temple-Konsole zugänglich. Sie können Ihre API-Schlüssel verwalten, Ihre Nutzung überwachen und Drittanbieter in den Kontoeinstellungen konfigurieren. Die Konsole ermöglicht es Ihnen außerdem, die Nutzung Ihrer Modelle zu visualisieren.
+Die API ist über die Cloud Temple Console zugänglich. Sie können Ihre API-Keys verwalten, Ihren Verbrauch überwachen und Ihre Tiers in den Kontoeinstellungen konfigurieren. Die Console ermöglicht es außerdem, die Nutzung Ihrer Modelle zu visualisieren.
 
 ## Authentifizierung
 
-Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Schlüssel im Bearer-Token-Format enthalten. Wenn Sie die Client-SDKs verwenden, wird der Schlüssel automatisch in jede Anfrage aufgenommen. Wenn Sie direkt mit der API integrieren, müssen Sie diesen Header selbst senden.
+Alle Anfragen an die LLMaaS-API müssen einen `Authorization`-Header mit Ihrem API-Key im Bearer-Token-Format enthalten. Wenn Sie Client-SDKs verwenden, wird der Schlüssel automatisch in jeder Anfrage enthalten sein. Wenn Sie direkt mit der API integrieren, müssen Sie diesen Header selbst senden.
 
 ## Inhaltstypen
 
-Textgenerierungsanfragen verwenden JSON mit dem Header `Content-Type: application/json`. Das Streaming gibt SSE-Ereignisse zurück und die Transkription von Audiodateien verwendet `multipart/form-data`. Siehe die [documentation API](./api.md) für das Format jedes Endpunkts.
+Textgenerierungsanfragen verwenden JSON mit dem Header `Content-Type: application/json`. Das Streaming liefert SSE-Ereignisse und die Transkription von Audio-Dateien verwendet `multipart/form-data`. Konsultieren Sie die [API-Dokumentation](./api.md) für das Format jedes Endpoints.
 
-## Antwortmetadaten
+## Antwort-Metadaten
 
-Je nach Endpoint kann der JSON-Body der Antwort die folgenden Felder enthalten:
+Je nach Endpoint kann der JSON-Antwortkörper die folgenden Felder enthalten:
 
-- `id` : Antwortkennung.
-- `backend` : Informationen zur Engine und zur Instanz, die die Anfrage verarbeitet hat (`engine_type`, `machine_name`).
+- `id`: Antwortkennung.
+- `backend`: Informationen zu Engine und Instanz, die die Anfrage verarbeitet haben (`engine_type`, `machine_name`).
 
-Diese Felder befinden sich im JSON-Body, nicht in den HTTP-Headern. Siehe die [API-Referenz](./api.md) für das Format und die dokumentierten Felder jedes Endpoints.
+Diese Felder befinden sich im JSON-Antwortkörper, nicht in den HTTP-Headern. Konsultieren Sie die [API-Referenz](./api.md) für das Format und die dokumentierten Felder jedes Endpoints.
 
 ## Beispiele
 
@@ -59,7 +59,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "model": "gpt-oss:120b",
     "messages": [
       {
-        "role": "user", 
+        "role": "user",
         "content": "Salut ! Peux-tu te présenter en français ?"
       }
     ],
@@ -102,13 +102,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Typ     | Beschreibung                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | Das zu verwendende Modell (siehe [catalogue des modèles](./models.md)) |
-| `messages`    | array   | Liste der Nachrichten im Gespräch                         |
-| `max_tokens`  | integer | Maximale Anzahl der zu generierenden Tokens                            |
-| `temperature` | float   | Steuert die Kreativität (0.0-2.0)                              |
-| `top_p`       | float   | Steuert die Vielfalt der Antworten                            |
-| `stream`      | boolean | Aktiviert das Streaming der Antwort                             |
-| `user`        | string  | Eindeutige Kennung des Endbenutzers                     |
+| `model`       | string  | Das zu verwendende Modell (siehe [Modellkatalog](./models.md)) |
+| `messages`    | array   | Liste der Konversationsnachrichten                             |
+| `max_tokens`  | integer | Maximale Anzahl zu generierender Tokens                        |
+| `temperature` | float   | Steuert die Kreativität (0.0–2.0)                              |
+| `top_p`       | float   | Steuert die Vielfalt der Antworten                             |
+| `stream`      | boolean | Aktiviert das Streaming der Antwort                            |
+| `user`        | string  | Eindeutige Kennung des Endnutzers                              |
 
 ## Basis-URL
 
@@ -117,23 +117,23 @@ Die Basis-URL für alle API-Anfragen lautet:
 https://api.ai.cloud-temple.com/v1/
 ```
 
-## Verfügbare Endpunkte
+## Verfügbare Endpoints
 
-- `/chat/completions` : Generierung konversationeller Antworten
-- `/chat/completions/batch` : Asynchrone Verarbeitung mehrerer Konversationen ([guide Batch](./batch.md))
-- `/completions` : Einfache Textvervollständigung
-- `/embeddings` : Vektorisierung für semantische Suche und RAG
-- `/rerank` und `/v2/rerank` : Reranking von Ergebnissen (compatible Cohere SDK)
-- `/audio/transcriptions` : Batch-Audiotranskription (Whisper)
-- `/audio/speech` : Sprachsynthese (TTS)
-- `/images/generations` : Bildgenerierung
-- `/models` : Liste der verfügbaren Modelle
+- `/chat/completions`: Generierung konversationeller Antworten
+- `/chat/completions/batch`: Asynchrone Verarbeitung mehrerer Konversationen ([Batch-Guide](./batch.md))
+- `/completions`: Einfache Textergänzung
+- `/embeddings`: Vektorisierung für semantische Suche und RAG
+- `/rerank` und `/v2/rerank`: Neusortierung von Ergebnissen (kompatibel mit Cohere SDK)
+- `/audio/transcriptions`: Audio-Transkription per Batch (Whisper)
+- `/audio/speech`: Sprachsynthese (TTS)
+- `/images/generations`: Bildgenerierung
+- `/models`: Liste der verfügbaren Modelle
 
-### Beispiel: Liste der Modelle
+### Beispiel: Modellliste
 
 ```bash
 curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-Die Antwort enthält die von der API bereitgestellten Identifikatoren. Siehe auch den [cycle de vie](https://llmaas.status.cloud-temple.app/lifecycle), um Deprekationen und Weiterleitungen zu überprüfen. Die in den Beispielen verwendeten Modelle dienen nur der Veranschaulichung; prüfen Sie ihre Verfügbarkeit vor der Ausführung.
+Die Antwort liefert die von der API bereitgestellten Bezeichner. Konsultieren Sie auch den [Lebenszyklus](https://llmaas.status.cloud-temple.app/lifecycle), um Deprecations und Umleitungen zu überprüfen. Die in den Beispielen verwendeten Modelle sind illustrativ; prüfen Sie deren Verfügbarkeit vor der Ausführung.

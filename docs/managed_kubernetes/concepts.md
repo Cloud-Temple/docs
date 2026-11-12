@@ -5,6 +5,9 @@ import cillium from '@site/docs/managed_kubernetes/images/cillium.png'
 import grafana from '@site/docs/managed_kubernetes/images/grafana.png'
 import archi_overview from '@site/docs/managed_kubernetes/images/archi_overview.png'
 import archi_overview_1az from '@site/docs/managed_kubernetes/images/archi_overview_1az.png'
+import arch_hld from '@site/docs/managed_kubernetes/images/archmk-prod.png'
+import arch_lld from '@site/docs/managed_kubernetes/images/archmck-prod-LLD-FR.png'
+import cni_vs_node from '@site/docs/managed_kubernetes/tutorials/images/cni-vs-node.png'
 
 ## Nos offres Managed Kubernetes
 
@@ -45,9 +48,14 @@ Cloud Temple propose deux offres distinctes pour répondre à vos besoins en mat
 
 L'installation standardisée inclus un ensemble de composants, majoritairement OpenSource et validés par le CNCF:
 
-- **CNI Cillium**, avec interface d'observabilité (**Hubble**) : Cillium est une solution de mise en réseau pour les containers Kubernetes (*Container Network Interface*). Il gère la sécurité, le load balancing, le service mesh, l'observabilité, le chiffrement,  etc... C'est un composant réseau fondamental que l'on retrouve dans la plupart des déclinaisons de Kubernetes (OpenShift, AKS, GKE, EKS,...). Dans **Managed Kubernetes**, nous avons inclus l'interface graphique **Hubble** pour une visualisation des flux Cillium.
+- **CNI Cilium**, avec interface d'observabilité (**Hubble**) : Cilium est une solution de mise en réseau pour les containers Kubernetes (*Container Network Interface*). Il gère la sécurité, le load balancing, le service mesh, l'observabilité, le chiffrement, etc... C'est un composant réseau fondamental que l'on retrouve dans la plupart des déclinaisons de Kubernetes (OpenShift, AKS, GKE, EKS,...). Dans **Managed Kubernetes**, nous avons inclus l'interface graphique **Hubble** pour une visualisation des flux Cilium.
+  - **Gateway API** : les CRDs Gateway API (≥ v1.6.1) sont installées avant Cilium et sont requises par Cilium ≥ 1.20 pour l'API Gateway.
 
   <img src={cillium} />
+
+  Le schéma ci-dessous illustre la distinction entre le réseau porté par le CNI (trafic pod ↔ pod) et le réseau des nœuds, ainsi que la manière dont Cilium encapsule le trafic entre nœuds :
+
+  <img src={cni_vs_node} alt="Réseau CNI vs réseau des nœuds" />
 - **MetalLB** et **nginx** : Pour l'exposition des applications Web, 3 *ingress-class* **nginx** sont intégrées de base:
 
   - *nginx-external-secured* : exposition sur une IP publique, filtrée sur le firewall pour n'autoriser que des IP connues (utilisé pour les interfaces graphiques des différents produits, et l'API Kubernetes)
@@ -66,6 +74,7 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 
   - **Prometheus**, pour la collecte des métriques
   - **Grafana**, avec de nombreux dashboards
+  - **Alloy** : agent de collecte de logs et de métriques (il remplace Promtail).
   - **Loki** : les journaux de la plateforme sont exportés vers le stockage S3 Cloud-Temple (et intégrés dans Grafana).
   - **Pyroscope** : (optionnel) plateforme de profilage en continu, interrogeable via LLM.
 
@@ -84,14 +93,80 @@ L'installation standardisée inclus un ensemble de composants, majoritairement O
 - **Authentification SSO** avec un Identity Provider Externe OIDC (Microsoft Entra, FranceConnect, Okta, AWS IAM, Google, Salesforce, ...) (optionnel)
 - **Keda** permet l'autoscaling des pods via des métriques avancés, comme par exemple un nombre de connexions http. (optionnel)
 
+## Versions de référence (au 11/2026)
+
+- **Kubernetes** : v1.36.6
+- **Talos** : v1.13.12
+
+Ces versions sont **une base**, celle du socle de référence à cette date : elles évoluent à chaque release du socle (correctifs de sécurité, montées de version). Les versions exactes déployées sur un cluster donné figurent dans le DAT de ce cluster. La politique de support des versions est décrite plus bas (« Politique de versions & cycle de vie »).
+
+## Packages Helm managés (au 11/2026)
+
+Le socle ci-dessous est déployé sur tout cluster Managed Kubernetes. Les versions sont une base, celle du template de référence à cette date ; un cluster en service peut être sur une version antérieure entre deux fenêtres de maintenance.
+
+### Socle de la plateforme (toujours déployé)
+
+| **Composant** | **Version** | **Dépôt** | **Rôle Principal** |
+| --- | --- | --- | --- |
+| **Cilium** | 1.20.4 | https://helm.cilium.io/ | CNI avancée, politiques réseau et observabilité (Hubble), API Gateway |
+| **Gateway API** | v1.6.1 | https://gateway-api.sigs.k8s.io/ | CRDs Gateway API, installées avant Cilium (Cilium ≥ 1.20 exige ≥ v1.6.1) |
+| **MetalLB** | 0.16.1 | https://metallb.github.io/metallb | LoadBalancer BGP (BFD) exposant deux plages, interne et externe, en TCP/UDP |
+| **Rook-Ceph** | 1.20.1 | https://charts.rook.io/release | Stockage distribué haute disponibilité (bloc RBD + CephFS) |
+| **TopoLVM** | 17.3.0 | https://github.com/topolvm/topolvm | Stockage LVM local au nœud pour charges de travail basse latence |
+| **Metrics Server** | 3.13.1 | https://github.com/kubernetes-sigs/metrics-server | API de métriques ressources (`kubectl top`, HPA) |
+| **kubelet-cert-approver** | v0.12.0 | https://github.com/alex1989hu/kubelet-serving-cert-approver | Approbation automatique des certificats kubelet |
+
+### Services de la plateforme managée
+
+| **Composant** | **Version** | **Dépôt** | **Rôle Principal** |
+| --- | --- | --- | --- |
+| **Cert-Manager** | v1.21.3 | https://charts.jetstack.io | Gestion automatisée des certificats TLS (ZeroSSL intégré) |
+| **NGINX Ingress** | 2.8.0 | https://helm.nginx.com/stable | Contrôleurs Ingress : interne, externe et externe-sécurisé (avec filtrage IP) |
+| **Kyverno** | 3.9.2 | https://kyverno.github.io/kyverno/ | Application des politiques de sécurité |
+| **Capsule** | 0.13.11 | https://projectcapsule.github.io/charts/ | Multi-tenancy et isolation des namespaces avec politiques de sécurité |
+| **ArgoCD** | 10.11.6 | https://argoproj.github.io/argo-helm | GitOps / déploiement continu |
+| **Prometheus Stack** | 87.21.0 | https://prometheus-community.github.io/helm-charts | Supervision & alerting |
+| **Alloy** | 1.11.0 | https://grafana.github.io/helm-charts | Agent de collecte logs/métriques (remplace Promtail) |
+| **Loki** | 18.7.0 | https://grafana.github.io/helm-charts | Centralisation des logs (logs stockés sur S3 Cloud Temple) |
+| **Pyroscope** | 2.1.0 | https://grafana.github.io/helm-charts | Profilage continu & analyse de performance (flamegraphs dans Grafana) |
+| **Harbor** | 1.19.4 | https://helm.goharbor.io | Registre d'images (images stockées sur S3 Cloud Temple) |
+| **Kasten K10** | 9.0.9 | https://charts.kasten.io/ | Sauvegarde & restauration (sauvegardes exportées sur S3 Cloud Temple) |
+| **OpenCost** | 2.5.28 | https://opencost.github.io/opencost-helm-chart/ | Observabilité et suivi des coûts |
+| **KEDA** | 2.21.0 | https://kedacore.github.io/charts | Autoscaling événementiel (Beta) |
+
+**Empreinte de la stack sur le cluster Ceph : environ 180 Gi**, identique en production et en recette.
+
+Trois `StorageClass` sont fournies :
+
+| StorageClass | Backend | Mode d'accès | Usage typique |
+| --- | --- | --- | --- |
+| `ceph-block` | Ceph RBD (bloc distribué) | ReadWriteOnce | Bases de données, charges mono-pod |
+| `ceph-filesystem` | CephFS (système de fichiers distribué) | ReadWriteMany | Volumes partagés entre pods |
+| `topolvm-ssd` | TopoLVM (LVM local au nœud) | ReadWriteOnce | Stockage local basse latence, non répliqué, sauvegardé par Kasten **en mode blueprint** uniquement (voir Sauvegarde) |
+
+**Quotas** — valeurs standard d'un cluster livré, **ajustables par cluster** à la commande comme en cours de vie :
+
+| Portée | RBD (bloc) | CephFS |
+| --- | --- | --- |
+| Plafond du pool, tous tenants confondus | 300 Gi | 125 Gi |
+| Plafond du tenant par défaut, appliqué par Capsule | 115 Gi | 100 Gi |
+
+La capacité Ceph elle-même dépend du dimensionnement retenu : avec le gabarit par défaut (3 nœuds Ceph à 500 Go), un cluster dispose de 1500 Go bruts, soit 500 Go utiles après réplication ×3.
+
 ## SLA & Information sur le support
 
 - **Disponibilité garantie (production 3 AZ)** : 99.95 %
 - **Support** : N1/N2/N3 inclus pour le périmètre socle (infrastructure et opérateurs standards).
-- **Engagement de temps de rétablissement (ETR)** : selon contrat cadre Cloud Temple.
+- **Grille de support** : les délais de prise en charge et de rétablissement dépendent de la sévérité de l’incident, conformément à la grille P1 à P4 ci-dessous.
+- **Engagement RPO / RTO** : sur un cluster 3 AZ, RPO ≤ 24 h et RTO ≤ 4 h. En mono-AZ, les sauvegardes existent mais ne sont pas couvertes par un engagement RTO.
 - **Maintenance (MCO)** : patching régulier Talos / Kubernetes / opérateurs standards par MSP, sans interruption de service (rolling upgrade).
 
-Les délais de prise en charge et de rétablissement dépendent de la sévérité de l’incident, conformément à la grille de support (P1 à P4).
+| Niveau | Définition | Prise en charge | Rétablissement cible |
+| --- | --- | --- | --- |
+| **P1** | Production indisponible | Immédiate (7/24) | ≤ 4 h |
+| **P2** | Dégradation majeure | ≤ 1 h (7/24) | ≤ 8 h |
+| **P3** | Dégradation mineure | ≤ 4 h (heures ouvrées) | ≤ 2 j ouvrés |
+| **P4** | Question / amélioration | ≤ 1 j ouvré | À planifier |
 
 ## Politique de versions & cycle de vie
 
@@ -111,20 +186,30 @@ Les délais de prise en charge et de rétablissement dépendent de la sévérit�
 
 <img src={archi_overview} />
 
+#### Schémas d'architecture
+
+- **Vue HLD (High Level Design)** :
+
+<img src={arch_hld} alt="Schéma d'architecture HLD" />
+
+- **Vue LLD (Low Level Design)** :
+
+<img src={arch_lld} alt="Schéma d'architecture LLD" />
+
 Pour un déploiement "de production" (multi-zonal), les machines suivantes sont utilisées:
 
 | **AZ** | **Machine**   | **vCores** | **RAM** | **Stockage local**              |
 | ------------ | ------------------- | ---------------- | ------------- | ------------------------------------- |
 | AZ07         | Git Runner          | 4                | 8 Go          | OS: 256 Go                            |
-| AZ05         | Control Plane 1     | 8                | 12 Go         | OS: 64 Go                             |
-| AZ06         | Control Plane 2     | 8                | 12 Go         | OS: 64 Go                             |
-| AZ07         | Control Plane 3     | 8                | 12 Go         | OS: 64 Go                             |
-| AZ05         | Storage Node 1 (**) | 12               | 24 Go         | OS: 64 Go + Ceph 500 Go minimum (***) |
-| AZ06         | Storage Node 2 (**) | 12               | 24 Go         | OS: 64 Go + Ceph 500 Go minimum (***) |
-| AZ07         | Storage Node 3 (**) | 12               | 24 Go         | OS: 64 Go + Ceph 500 Go minimum (***) |
-| AZ05         | Worker Node 1 (*)   | 12               | 24 Go         | OS: 64 Go                             |
-| AZ06         | Worker Node 2 (*)   | 12               | 24 Go         | OS: 64 Go                             |
-| AZ07         | Worker Node 3 (*)   | 12               | 24 Go         | OS: 64 Go                             |
+| AZ05         | Control Plane 1     | 8                | 12 Go         | OS: 128 Go                            |
+| AZ06         | Control Plane 2     | 8                | 12 Go         | OS: 128 Go                            |
+| AZ07         | Control Plane 3     | 8                | 12 Go         | OS: 128 Go                            |
+| AZ05         | Storage Node 1 (**) | 12               | 24 Go         | OS: 128 Go + Ceph 500 Go minimum (***) |
+| AZ06         | Storage Node 2 (**) | 12               | 24 Go         | OS: 128 Go + Ceph 500 Go minimum (***) |
+| AZ07         | Storage Node 3 (**) | 12               | 24 Go         | OS: 128 Go + Ceph 500 Go minimum (***) |
+| AZ05         | Worker Node 1 (*)   | 12               | 24 Go         | OS: 128 Go                            |
+| AZ06         | Worker Node 2 (*)   | 12               | 24 Go         | OS: 128 Go                            |
+| AZ07         | Worker Node 3 (*)   | 12               | 24 Go         | OS: 128 Go                            |
 
 (*) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (1 par AZ), et nous conseillons d'augmenter leur nombre par lot de 3 pour conserver une distribution multi zonale cohérente. La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 100. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
@@ -132,7 +217,7 @@ Pour un déploiement "de production" (multi-zonal), les machines suivantes sont 
 
 (***) : Chaque noeud de stockage est livré avec un minimum de 500 Go d'espace disque, pour un stockage utile Ceph distribué de 500 Go (les données sont répliquées sur chaque AZ, donc x3). L'espace libre disponible pour le client est d'environ 350 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins. Des quotas sont appliqués sur Ceph, avec une répartition Block/File.
 
-### Dev/test (mono ou dual zone)
+### Dev/test (mono zone)
 
 <img src={archi_overview_1az} />
 
@@ -141,12 +226,12 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 | **AZ** | **Machine** | **vCores** | **RAM** | **Stockage local**             |
 | ------------ | ----------------- | ---------------- | ------------- | ------------------------------------ |
 | AZ0n         | Git Runner        | 4                | 8 Go          | OS: 256 Go                           |
-| AZ0n         | Control Plane     | 8                | 12 Go         | OS: 64 Go                            |
-| AZ0n         | Worker Node 1 (*) | 12               | 24 Go         | OS: 64 Go + Ceph 300 Go minimum (**) |
-| AZ0n         | Worker Node 2 (*) | 12               | 24 Go         | OS: 64 Go + Ceph 300 Go minimum (**) |
-| AZ0n         | Worker Node 3 (*) | 12               | 24 Go         | OS: 64 Go + Ceph 300 Go minimum (**) |
+| AZ0n         | Control Plane     | 8                | 12 Go         | OS: 128 Go                           |
+| AZ0n         | Worker Node 1 (*) | 12               | 24 Go         | OS: 128 Go + Ceph 300 Go minimum (**) |
+| AZ0n         | Worker Node 2 (*) | 12               | 24 Go         | OS: 128 Go + Ceph 300 Go minimum (**) |
+| AZ0n         | Worker Node 3 (*) | 12               | 24 Go         | OS: 128 Go + Ceph 300 Go minimum (**) |
 
-(*) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (du fait de la réplication du stockage). La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 250. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
+(*) : La taille et le nombre des Worker Nodes peut être adaptée en fonction du besoin en capacité de calcul du client. Le nombre minimal de Worker nodes est de 3 (du fait de la réplication du stockage). La taille des Worker Node peut être adaptée, avec un minimum de 12 cores et 24 Go de RAM ; la limite supérieure par Worker node est fixée par la taille des hyperviseurs utilisés (donc potentiellement 112 cores/1536 Go de RAM avec des lames Performance 3). La quantité de Worker Nodes est limitée à 100. Le CNCF conseille d'avoir des worker nodes de taille identique. La limite du nombre de pods par Worker Node est de 110.
 
 (**) : 3 Worker nodes sont utilisés comme Storage nodes et sont livrés avec un minimum de 300 Go d'espace disque, pour un stockage utile distribué de 300 Go (les données sont répliquées trois fois). L'espace libre disponible pour le client est d'environ 150 Go. Cette taille initiale peut être augmentée au moment de la construction, ou plus tard, en fonction des besoins.
 
@@ -221,6 +306,27 @@ Pour une version "dev/test", les machines suivantes sont déployées:
 | Tester les procédures de reprise après sinistre pour les applications      | RA*              | CI*                    |
 
 *peut passer à "CI | RA" en fonction du contrat d'infogérance
+
+#### Sauvegarde de l'infrastructure (périmètre managé)
+
+- **Sauvegarde du cluster via Kasten K10** (partie Disaster Recovery et Infrastructure), avec tests de reprise après sinistre.
+- **Périmètre socle** : namespaces & PVC (Ceph RBD), objets CRD critiques infra, observabilité, opérateurs standards.
+- **etcd (état du cluster)** : snapshot quotidien pris par Cloud Temple hors Kasten, avec la configuration des nœuds Talos ; il sert à reconstruire le plan de contrôle. Les snapshots sont conservés 2 jours sur la VM de management, elle-même sauvegardée au niveau IaaS par une politique quotidienne avec 35 jours de rétention.
+- **Fréquence** : quotidienne (rétention 7 j) et hebdomadaire (rétention 4 sem).
+- **Engagements** : RPO ≤ 24 h, RTO ≤ 4 h (reconstruction automatisée du cluster et restauration des composants via Kasten).
+- **Cible** : S3 Cloud Temple (FR), chiffrement côté serveur.
+
+#### Sauvegarde des charges de travail client (basée sur les labels)
+
+Le service fournit un mécanisme flexible pour sauvegarder les charges de travail client en utilisant des labels.
+
+- **Mécanisme** : inscrire des ressources (namespaces, PVCs, etc.) dans une politique de sauvegarde via des labels spécifiques.
+- **Politiques disponibles** : 24 politiques horaires, couvrant chaque heure de la journée (00 à 23 UTC).
+- **Format du label** : `kasten-dailyHH-r7d: "true"` (où `HH` est l'heure au format 24 h, par ex. `00`, `14`, `23`).
+- **Fréquence** : quotidienne à l'heure spécifiée (UTC). **Rétention** : 7 jours sur S3.
+- **Exemple** : pour sauvegarder un namespace tous les jours à 14 h 00 UTC, ajouter le label `kasten-daily14-r7d: "true"` au namespace.
+- **Volumes TopoLVM** : `topolvm-ssd` ne gère pas les snapshots ; sans précaution, un namespace sauvegardé contenant un volume TopoLVM voit **toute** sa sauvegarde échouer, volumes Ceph compris. Ces volumes se sauvegardent avec Kasten **en mode blueprint** (Kanister) : Kasten exécute une sauvegarde applicative (dump de base, export des données) envoyée sur S3, et la restauration rejoue l'opération inverse. Le blueprint est propre à chaque application et est mis en place **sur étude**, à la demande du client.
+- **Périmètre applicatif** : RPO et RTO définis par le client.
 
 ### Support et résolution des problèmes
 

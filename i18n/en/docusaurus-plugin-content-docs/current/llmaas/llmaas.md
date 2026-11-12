@@ -7,25 +7,25 @@ sidebar_position: 1
 
 LLMaaS provides access to AI models hosted by Cloud Temple via an API: conversational assistants, coding and agents, image analysis, semantic search, reranking, translation, and audio/image use cases.
 
-## Catalog, Updates, and Availability
+## Catalog, new features, and availability
 
-- **[Model Catalog and Lifecycle](https://llmaas.status.cloud-temple.app/lifecycle)** : models, context, LTS statuses, end-of-support dates, and recommended migrations.
-- **[LLMaaS Updates](https://llmaas.status.cloud-temple.app/changelog)** : model additions, service updates, and redirection announcements.
-- **[Service Status](https://llmaas.status.cloud-temple.app/)** and **[History](https://llmaas.status.cloud-temple.app/history)** : observed availability and performance.
+- **[Model catalog and lifecycle](https://llmaas.status.cloud-temple.app/lifecycle)**: models, context, LTS statuses, end of support, and recommended migrations.
+- **[LLMaaS changelog](https://llmaas.status.cloud-temple.app/changelog)**: model additions, service updates, and redirect announcements.
+- **[Service status](https://llmaas.status.cloud-temple.app/)** and **[history](https://llmaas.status.cloud-temple.app/history)**: observed availability and performance.
 
-To get started, follow the [quickstart guide](./quickstart.md). To choose a model, refer to the [catalog guide](./models.md).
+To get started, follow the [quickstart guide](./quickstart.md). To choose a model, see the [catalog guide](./models.md).
 
 ## Features
 
-| Usage | Guide |
+| Use case | Guide |
 |-------|-------|
-| Text generation, streaming, tool calls, and vision | [API LLMaaS](./api.md) |
-| Retrieval-Augmented Generation | [Understanding RAG](./rag_explained.md) |
+| Text generation, streaming, tool calls, and vision | [LLMaaS API](./api.md) |
+| Retrieval-augmented generation | [Understanding RAG](./rag_explained.md) |
 | Document relevance ranking | [Reranking](./rerank.md) |
-| Asynchronous batch request processing | [Batch](./batch.md) |
-| Model switching and legacy ID management | [Lifecycle and migration](./concepts.md#migration-to-another-model) |
+| Asynchronous batch processing of requests | [Batch](./batch.md) |
+| Model switching and legacy identifier management | [Lifecycle and migration](./concepts.md#migration-to-another-model) |
 
-Inference optimizations, including the multi-token prediction (*MTP*) announced in the changelog, are handled on the service side. Evaluate their impact on your own requests using monitoring metrics.
+Inference optimizations, including multi-token prediction (*MTP*) announced in the changelog, are performed on the service side. Evaluate their effects on your own requests using monitoring metrics.
 
 ## API Access
 
@@ -33,20 +33,20 @@ The API is accessible via the Cloud Temple Console. You can manage your API keys
 
 ## Authentication
 
-All requests to the LLMaaS API must include an `Authorization` header with your API key in Bearer token format. If you are using the client SDKs, the key will be automatically included in each request. If you integrate directly with the API, you must send this header yourself.
+All requests to the LLMaaS API must include an `Authorization` header with your API key in Bearer token format. If you use client SDKs, the key will be automatically included in each request. If you integrate directly with the API, you must send this header yourself.
 
 ## Content Types
 
-Text generation requests use JSON with the header `Content-Type: application/json`. Streaming returns SSE events and audio file transcription uses `multipart/form-data`. Refer to the [API documentation](./api.md) for the format of each endpoint.
+Text generation requests use JSON with the `Content-Type: application/json` header. Streaming returns SSE events, and audio file transcription uses `multipart/form-data`. See the [API documentation](./api.md) for the format of each endpoint.
 
 ## Response Metadata
 
 Depending on the endpoint, the JSON response body may contain the following fields:
 
-- `id` : Response identifier.
-- `backend` : Information about the engine and instance that processed the request (`engine_type`, `machine_name`).
+- `id`: Response identifier.
+- `backend`: Information about the engine and instance that processed the request (`engine_type`, `machine_name`).
 
-These fields are read from the JSON body, not from the HTTP headers. Consult the [API reference](./api.md) for the format and documented fields of each endpoint.
+These fields are read from the JSON body, not from HTTP headers. See the [API reference](./api.md) for the format and documented fields of each endpoint.
 
 ## Examples
 
@@ -59,7 +59,7 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
     "model": "gpt-oss:120b",
     "messages": [
       {
-        "role": "user", 
+        "role": "user",
         "content": "Salut ! Peux-tu te présenter en français ?"
       }
     ],
@@ -102,13 +102,13 @@ curl -X POST "https://api.ai.cloud-temple.com/v1/chat/completions" \
 
 | Parameter     | Type    | Description                                                   |
 | ------------- | ------- | ------------------------------------------------------------- |
-| `model`       | string  | The model to use (see [catalogue des modèles](./models.md)) |
+| `model`       | string  | The model to use (see [model catalog](./models.md)) |
 | `messages`    | array   | List of conversation messages                         |
 | `max_tokens`  | integer | Maximum number of tokens to generate                            |
 | `temperature` | float   | Controls creativity (0.0-2.0)                              |
 | `top_p`       | float   | Controls response diversity                            |
 | `stream`      | boolean | Enables response streaming                             |
-| `user`        | string  | Unique identifier for the end user                     |
+| `user`        | string  | Unique identifier of the end user                     |
 
 ## Base URL
 
@@ -119,15 +119,15 @@ https://api.ai.cloud-temple.com/v1/
 
 ## Available Endpoints
 
-- `/chat/completions` : Generation of conversational responses
-- `/chat/completions/batch` : Asynchronous processing of multiple conversations ([guide Batch](./batch.md))
-- `/completions` : Simple text completion
-- `/embeddings` : Vectorization for semantic search and RAG
-- `/rerank` and `/v2/rerank` : Result reranking (compatible Cohere SDK)
-- `/audio/transcriptions` : Batch audio transcription (Whisper)
-- `/audio/speech` : Speech synthesis (TTS)
-- `/images/generations` : Image generation
-- `/models` : List of available models
+- `/chat/completions`: Conversational response generation
+- `/chat/completions/batch`: Asynchronous processing of multiple conversations ([Batch guide](./batch.md))
+- `/completions`: Simple text completion
+- `/embeddings`: Vectorization for semantic search and RAG
+- `/rerank` and `/v2/rerank`: Result reordering (Cohere SDK compatible)
+- `/audio/transcriptions`: Batch audio transcription (Whisper)
+- `/audio/speech`: Speech synthesis (TTS)
+- `/images/generations`: Image generation
+- `/models`: List of available models
 
 ### Example: List of Models
 
@@ -136,4 +136,4 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-The response provides the identifiers exposed by the API. Also consult the [lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) to check for deprecations and redirects. The models used in the examples are for illustrative purposes; verify their availability before execution.
+The response provides the identifiers exposed by the API. Also see the [lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) to check for deprecations and redirects. The models used in the examples are illustrative; verify their availability before running.

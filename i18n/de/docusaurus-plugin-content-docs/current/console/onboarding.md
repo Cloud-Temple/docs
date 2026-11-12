@@ -39,17 +39,17 @@ Diese Seite beschreibt diese Einrichtung von Anfang bis Ende.
   <div class="card">
     <h3>Ihre Organisation erstellen</h3>
     <p>Das Online-Anmeldeformular und was dahinter abläuft.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Starten &rarr;</a>
+    <a href="#pfad-1-erstellen-sie-ihre-organisation" class="card-link">Starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung hinzufügen</h3>
     <p>Ein neuer Tenant über die Konsole, in wenigen Minuten und eigenständig.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">So geht's &rarr;</a>
+    <a href="#pfad-2-eine-umgebung-hinzufügen" class="card-link">So geht's &rarr;</a>
   </div>
   <div class="card">
     <h3>Eine Umgebung weiterentwickeln</h3>
     <p>Ein Produkt aktivieren, einen Zugriff eröffnen, die Verwaltung an Dritte delegieren.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Entdecken &rarr;</a>
+    <a href="#pfad-3-eine-umgebung-weiterentwickeln" class="card-link">Entdecken &rarr;</a>
   </div>
 </div>
 

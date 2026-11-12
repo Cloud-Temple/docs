@@ -39,17 +39,17 @@ Questa pagina descrive questa configurazione, dall'inizio alla fine.
   <div class="card">
     <h3>Creare la vostra organizzazione</h3>
     <p>Il modulo di registrazione online e ciò che viene attivato in background.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Inizia &rarr;</a>
+    <a href="#percorso-1-creare-la-vostra-organizzazione" class="card-link">Inizia &rarr;</a>
   </div>
   <div class="card">
     <h3>Aggiungere un ambiente</h3>
     <p>Un nuovo tenant dalla Console, in pochi minuti e in autonomia.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">Scopri come &rarr;</a>
+    <a href="#percorso-2-aggiungere-un-ambiente" class="card-link">Scopri come &rarr;</a>
   </div>
   <div class="card">
     <h3>Fare evolvere un ambiente</h3>
     <p>Attivare un prodotto, aprire un accesso, delegare la gestione a un terzo.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Esplora &rarr;</a>
+    <a href="#percorso-3-fare-evolvere-un-ambiente" class="card-link">Esplora &rarr;</a>
   </div>
 </div>
 

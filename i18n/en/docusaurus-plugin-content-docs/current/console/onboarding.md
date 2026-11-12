@@ -39,17 +39,17 @@ This page describes this setup, end to end.
   <div class="card">
     <h3>Create your organization</h3>
     <p>The online registration form, and what gets triggered behind the scenes.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Get started &rarr;</a>
+    <a href="#path-1-create-your-organization" class="card-link">Get started &rarr;</a>
   </div>
   <div class="card">
     <h3>Add an environment</h3>
     <p>A new tenant from the Console, in a few minutes and autonomously.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">See how &rarr;</a>
+    <a href="#path-2-adding-an-environment" class="card-link">See how &rarr;</a>
   </div>
   <div class="card">
     <h3>Evolve an environment</h3>
     <p>Enable a product, open an access, delegate management to a third party.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Explore &rarr;</a>
+    <a href="#path-3-evolving-an-environment" class="card-link">Explore &rarr;</a>
   </div>
 </div>
 

@@ -11,7 +11,7 @@ Este tutorial le guía en la configuración de una máquina virtual dedicada a l
 
 ## Prerrequisitos
 
-- Acceso a la consola de Cloud Temple
+- Acceso a la consola Cloud Temple
 - Permisos de gestión de máquinas virtuales
 - Plantilla de VM disponible en el catálogo
 
@@ -19,7 +19,7 @@ Este tutorial le guía en la configuración de una máquina virtual dedicada a l
 
 Una máquina virtual de gestión es esencial para administrar su infraestructura Cloud Temple de manera segura. Sirve como punto de entrada centralizado para la gestión de sus recursos.
 
-## Paso 1: Despliegue de la VM de gestión
+## Paso 1 : Despliegue de la VM de gestión
 
 ### Selección de la plantilla
 
@@ -30,7 +30,7 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 
 ### Configuración de red
 
-1. Asigne la VM a la red de gestión adecuada
+1. Asigne la VM a la red de gestión apropiada
 2. Configure una dirección IP estática
 3. Asegúrese de que la VM pueda acceder a los recursos a administrar
 
@@ -40,53 +40,53 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 
 1. Aplique las últimas actualizaciones de seguridad
 2. Configure un cortafuegos local
-3. Desactive los servicios innecesarios
-4. Configure cuentas de usuario con privilegios adecuados
+3. Desactive los servicios no necesarios
+4. Configure cuentas de usuario con privilegios apropiados
 
 ### Autenticación
 
 1. Configure la autenticación fuerte (MFA si es posible)
 2. Integre la VM en su directorio corporativo si es necesario
-3. Configure políticas de contraseñas robustas
+3. Configure políticas de contraseña robustas
 
 ## Paso 3 : Instalación de las herramientas de gestión
 
-### Herramientas de VMware
+### Herramientas VMware
 
 1. Instale VMware Tools para una integración óptima
-2. Configure las herramientas de monitoreo
+2. Configure las herramientas de supervisión
 3. Instale los clientes de administración necesarios
 
 ### Herramientas de monitoreo
 
-1. Configure los agentes de monitoreo
+1. Configure los agentes de supervisión
 2. Instale las herramientas de copia de seguridad
-3. Configure el registro centralizado
+3. Configure la registración centralizada
 
-## Paso 4 : Configuración de accesos
+## Paso 4 : Configuración de los accesos
 
-### Acceso a la red
+### Acceso de red
 
-1. Configure las reglas del firewall para permitir las conexiones de gestión
+1. Configure las reglas del cortafuegos para permitir las conexiones de gestión
 2. Configure los VPN si es necesario para el acceso remoto
 3. Pruebe la conectividad hacia los recursos a administrar
 
 ### Acceso de usuario
 
 1. Cree las cuentas de usuario para los administradores
-2. Configure los permisos adecuados
+2. Configure los permisos apropiados
 3. Documente los procedimientos de acceso
 
 ## Buenas prácticas
 
 - **Aislamiento** : Coloque la VM de gestión en una red dedicada
-- **Copia de seguridad** : Configure copias de seguridad regulares
-- **Monitorización** : Supervise la actividad y el rendimiento
+- **Copia de seguridad** : Configure copias de seguridad periódicas
+- **Supervisión** : Monitoree la actividad y el rendimiento
 - **Documentación** : Mantenga una documentación actualizada de las configuraciones
 
 ## Mantenimiento
 
-### Actualizaciones regulares
+### Actualizaciones periódicas
 
 1. Planifique ventanas de mantenimiento
 2. Aplique las actualizaciones de seguridad
@@ -94,7 +94,7 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 
 ### Supervisión
 
-1. Supervise los registros de seguridad
+1. Monitoree los registros de seguridad
 2. Controle los accesos y las actividades
 3. Realice auditorías de seguridad periódicas
 
@@ -102,10 +102,10 @@ Una máquina virtual de gestión es esencial para administrar su infraestructura
 
 ### Problemas comunes
 
-- **Conectividad de red** : Verifique las reglas del firewall y la configuración de red
-- **Rendimiento** : Monitoree el uso de los recursos y ajústelos si es necesario
+- **Conectividad de red** : Verifique las reglas del cortafuegos y la configuración de red
+- **Rendimiento** : Monitoree el uso de los recursos y ajuste si es necesario
 - **Acceso** : Verifique los permisos y la autenticación
 
 ## Soporte
 
-Para cualquier asistencia con la configuración de su VM de gestión, contacte al soporte de Cloud Temple a través de la consola.
+Para cualquier asistencia con la configuración de su VM de gestión, contacte al soporte Cloud Temple a través de la consola.

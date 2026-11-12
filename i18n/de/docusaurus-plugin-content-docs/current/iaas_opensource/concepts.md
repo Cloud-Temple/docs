@@ -178,7 +178,7 @@ Die Backups werden an den [SecNumCloud-zertifizierten Objektspeicher](../storage
 Der Dienst verwendet einen **inkrementellen** Backup-Modus. Dieser Modus zielt auf ein **Backup Repository** (den entfernten S3-Speicher) und exportiert nach dem ersten niemals ein vollständiges Backup: nur die **modifizierten Datenblöcke** werden in jedem Zyklus übertragen.
 
 :::info[Inkrementelles Backup vs. Replikation]
-Das **inkrementelle Backup** zielt auf ein entferntes S3-Repository und ist für den **langfristigen Schutz** optimiert. Es sollte nicht mit der **Replikation** (Hot Disaster Recovery) verwechselt werden, die ein lokales Storage Repository als Ziel hat — dieser Modus wird durch die Funktion [réplication de machines virtuelles](#réplication-de-machines-virtuelles) abgedeckt.
+Das **inkrementelle Backup** zielt auf ein entferntes S3-Repository und ist für den **langfristigen Schutz** optimiert. Es sollte nicht mit der **Replikation** (Hot Disaster Recovery) verwechselt werden, die ein lokales Storage Repository als Ziel hat — dieser Modus wird durch die Funktion [réplication de machines virtuelles](#replikation-virtueller-maschinen) abgedeckt.
 :::
 
 #### Technischer Lebenszyklus einer inkrementellen Sicherung

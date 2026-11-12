@@ -1,11 +1,11 @@
 ---
-title: Überblick
+title: Übersicht
 ---
 
-Das **IaaS-OpenSource-Angebot von Cloud Temple**: eine einzigartige Verbindung aus Leistung, Sicherheit und Transparenz.
+Das **IaaS-OpenSource-Angebot von Cloud Temple**: ein einzigartiger Zusammenschluss aus Leistung, Sicherheit und Transparenz.
 
-Dieses Produkt gewährleistet eine vollständige Kontrolle Ihrer kritischen Umgebungen und garantiert gleichzeitig Sicherheit, Kontinuität und regulatorische Konformität.
-Mit skalierbaren Ressourcen und automatisiertem Management profitieren Sie von einer leistungsstarken und an Ihre Anforderungen angepassten Infrastruktur. Nutzen Sie die Leistungsfähigkeit von Open Source mit der Zuverlässigkeit und dem Support von Cloud Temple.
+Dieses Produkt gewährleistet eine vollständige Kontrolle Ihrer kritischen Umgebungen und stellt gleichzeitig Sicherheit, Kontinuität und regulatorische Konformität sicher.
+Mit skalierbaren Ressourcen und automatisierter Verwaltung profitieren Sie von einer leistungsstarken Infrastruktur, die auf Ihre Bedürfnisse zugeschnitten ist. Nutzen Sie die Stärke von Open Source mit der Zuverlässigkeit und dem Support von Cloud Temple.
 
 <div class="card-grid">
   <div class="card">
@@ -14,13 +14,13 @@ Mit skalierbaren Ressourcen und automatisiertem Management profitieren Sie von e
     <a href="./iaas_opensource/concepts" class="card-link">Konzepte erkunden &rarr;</a>
   </div>
   <div class="card">
-    <h3>Schnellstart</h3>
-    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klaren und einfachen Anweisungen folgen.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Schnellstart starten &rarr;</a>
+    <h3>Quickstart</h3>
+    <p>Starten Sie schnell mit unseren Ressourcen, indem Sie klare und einfache Anweisungen befolgen.</p>
+    <a href="./iaas_opensource/quickstart" class="card-link">Quickstart starten &rarr;</a>
   </div>
   <div class="card">
     <h3>Tutorials</h3>
-    <p>Lernen Sie Schritt für Schritt die Konfiguration und Nutzung unserer Dienste mit detaillierten Anleitungen.</p>
+    <p>Lernen Sie Schritt für Schritt, wie Sie unsere Dienste konfigurieren und nutzen, mit detaillierten Anleitungen.</p>
     <a href="./iaas_opensource/tutorials" class="card-link">Tutorials entdecken &rarr;</a>
   </div>
 </div>
@@ -28,21 +28,21 @@ Mit skalierbaren Ressourcen und automatisiertem Management profitieren Sie von e
 ## Einkaufsplattformen
 
 <div class="purchase-platforms">
-  <p>Sind Sie ein Akteur im öffentlichen Sektor? Das Produkt <strong>IaaS Cloud Temple</strong> ist verfügbar über:</p>
+  <p>Sind Sie ein Akteur im öffentlichen Sektor? Das Produkt <strong>IaaS Cloud Temple</strong> ist verfügbar über :</p>
 
   <div class="platform-card">
-    <img src="img/marketplace/LogoNuagePublic.png" alt="Nuage-Public-Logo" class="platform-logo" />
-    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Der Nuage-Public-Markt der UGAP</a></p>
+    <img src="img/marketplace/LogoNuagePublic.png" alt="Logo Nuage Public" class="platform-logo" />
+    <p><a href="https://www.nuagepublic.fr" target="_blank" rel="noopener noreferrer"> Der Markt Nuage Public der UGAP</a></p>
   </div>
 
   <div class="platform-card">
-    <img src="img/marketplace/caih_logo.png" alt="CAIH-Logo" class="platform-logo" />
-    <p><a href="https://www.caih-sante.org/marche/cloud-conseil-accompagnement-et-infrastructures-hebergees-pour-les-donnees-sante-hds" target="_blank" rel="noopener noreferrer"> Der CAIH-Markt für den medizinischen Sektor</a></p>
+    <img src="img/marketplace/caih_logo.png" alt="Logo CAIH" class="platform-logo" />
+    <p><a href="https://www.caih-sante.org/marche/cloud-conseil-accompagnement-et-infrastructures-hebergees-pour-les-donnees-sante-hds" target="_blank" rel="noopener noreferrer"> Der Markt CAIH für den medizinischen Sektor</a></p>
   </div>
 
   <div class="platform-card">
-    <img src="img/marketplace/canut-logo_rgb.png" alt="CANUT-Logo" class="platform-logo" />
-    <p><a href="https://canut.org/marche/cloud-et-hebergement" target="_blank" rel="noopener noreferrer"> Die CANUT-Rahmenvereinbarung „Cloud und Hosting“</a></p>
+    <img src="img/marketplace/canut-logo_rgb.png" alt="Logo CANUT" class="platform-logo" />
+    <p><a href="https://canut.org/marche/cloud-et-hebergement" target="_blank" rel="noopener noreferrer"> Der Rahmenvertrag „Cloud und Hosting" der CANUT</a></p>
   </div>
 
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">

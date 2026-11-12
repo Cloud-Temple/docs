@@ -39,17 +39,17 @@ Esta página describe esta implementación, de principio a fin.
   <div class="card">
     <h3>Crear su organización</h3>
     <p>El formulario de registro en línea, y lo que se desencadena detrás.</p>
-    <a href="#parcours-1-créer-votre-organisation" class="card-link">Comenzar &rarr;</a>
+    <a href="#recorrido-1-crear-su-organización" class="card-link">Comenzar &rarr;</a>
   </div>
   <div class="card">
     <h3>Agregar un entorno</h3>
     <p>Un nuevo tenant desde la Consola, en pocos minutos y de forma autónoma.</p>
-    <a href="#parcours-2-ajouter-un-environnement" class="card-link">Ver cómo &rarr;</a>
+    <a href="#recorrido-2-agregar-un-entorno" class="card-link">Ver cómo &rarr;</a>
   </div>
   <div class="card">
     <h3>Evolucionar un entorno</h3>
     <p>Activar un producto, abrir un acceso, delegar la gestión a un tercero.</p>
-    <a href="#parcours-3-faire-évoluer-un-environnement" class="card-link">Explorar &rarr;</a>
+    <a href="#recorrido-3-evolucionar-un-entorno" class="card-link">Explorar &rarr;</a>
   </div>
 </div>
 
