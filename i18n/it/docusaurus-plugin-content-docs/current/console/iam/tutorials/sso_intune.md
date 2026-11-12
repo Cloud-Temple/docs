@@ -1,12 +1,12 @@
 ---
-title: Esempio di federazione dell'identità con Microsoft Intune
+title: Esempio di federazione di identità con Microsoft Intune
 tags:
   - iam
   - tutorials
   - onboarding
 ---
 
-Questo tutorial vi guida nella configurazione della federazione dell'identità con Microsoft Intune per la vostra organizzazione Cloud Temple.
+Questo tutorial vi guida nella configurazione della federazione di identità con Microsoft Intune per la vostra organizzazione Cloud Temple.
 
 ## Prerequisiti
 
@@ -14,29 +14,29 @@ Questo tutorial vi guida nella configurazione della federazione dell'identità c
 - Diritti di proprietario sulla vostra organizzazione Cloud Temple
 - Accesso alla console Cloud Temple
 
-## Configuration
+## Configurazione
 
-La configurazione della federazione delle identità con Microsoft Intune segue un processo simile a quello di EntraID, con specifiche legate alla gestione dei dispositivi mobili.
+La configurazione della federazione di identità con Microsoft Intune segue un processo simile a quello di EntraID, con specificità legate alla gestione dei dispositivi mobili.
 
-### Fase 1: Configurazione lato Microsoft Intune
+### Passo 1: Configurazione lato Microsoft Intune
 
-1. Accedete al portale Microsoft Intune
-2. Andate alle impostazioni di autenticazione
+1. Accedete al vostro portale Microsoft Intune
+2. Navigate alle impostazioni di autenticazione
 3. Configurate una nuova applicazione per Cloud Temple
 
 ### Passo 2: Richiesta di configurazione
 
-Per configurare la federazione con Microsoft Intune, si prega di creare una richiesta di supporto nella console Cloud Temple specificando:
+Per configurare la federazione con Microsoft Intune, create una richiesta di supporto nella console Cloud Temple specificando:
 
 - Il nome della vostra Organizzazione
-- Il nome di un contatto con la relativa email e numero di telefono
+- Il nome di un contatto con il suo indirizzo email e numero di telefono
 - Le informazioni di configurazione Intune
 - Le impostazioni di autenticazione desiderate
 
-### Fase 3: Test e validazione
+### Passo 3: Test e validazione
 
-Una volta completata la configurazione, testate l'autenticazione con i vostri utenti Intune per verificare che la federazione funzioni correttamente.
+Una volta completata la configurazione, testate l'autenticazione con i vostri utenti Intune per assicurarvi che la federazione funzioni correttamente.
 
 ## Supporto
 
-Per qualsiasi assistenza con la configurazione di Microsoft Intune, contattare il supporto Cloud Temple tramite la console.
+Per qualsiasi assistenza con la configurazione di Microsoft Intune, contattate il supporto Cloud Temple tramite la console.
