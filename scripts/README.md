@@ -6,7 +6,7 @@ Ce dossier contient les scripts d'automatisation pour la génération et la main
 
 ### Ancien générateur LLMaaS (désactivé)
 
-`generate_models_doc/generate_models_doc.py` et les commandes `generate:models` / `generate:docs` s'arrêtent avec un message explicatif sans modifier les fichiers. Le catalogue statique alimenté par `memory-bank/models_config.yaml` a été remplacé par un guide pointant vers le [cycle de vie publié](https://llmaas.status.cloud-temple.app/lifecycle).
+`generate_models_doc/generate_models_doc.py` et les commandes `generate:models` / `generate:docs` s'arrêtent avec un message explicatif sans modifier les fichiers. Le catalogue statique alimenté par l'ancien fichier `memory-bank/models_config.yaml` (retiré du dépôt) a été remplacé par un guide pointant vers le [cycle de vie publié](https://llmaas.status.cloud-temple.app/lifecycle).
 
 Les sources et le processus de maintenance sont décrits dans le [README principal](../README.md#llmaas-documentation-maintenance). Ne pas relancer une génération à partir de la copie historique de la Memory Bank.
 
