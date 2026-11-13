@@ -1,5 +1,5 @@
 ---
-title: Beispiel für Identitätsföderation mit Microsoft Intune
+title: Beispiel für die Identitätsföderation mit Microsoft Intune
 tags:
   - iam
   - tutorials
@@ -11,12 +11,12 @@ Dieses Tutorial führt Sie durch die Konfiguration der Identitätsföderation mi
 ## Voraussetzungen
 
 - Administratorzugriff auf Microsoft Intune
-- Eigentumsrechte auf Ihre Cloud Temple-Organisation
+- Eigentümerrechte für Ihre Cloud Temple-Organisation
 - Zugriff auf die Cloud Temple-Konsole
 
 ## Konfiguration
 
-Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ähnlichen Prozess wie bei EntraID, mit spezifischen Aspekten im Zusammenhang mit der Mobilgeräteverwaltung.
+Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ähnlichen Prozess wie bei EntraID, mit spezifischen Aspekten im Hinblick auf die Verwaltung mobiler Geräte.
 
 ### Schritt 1: Konfiguration auf der Microsoft Intune-Seite
 
@@ -26,7 +26,7 @@ Die Konfiguration der Identitätsföderation mit Microsoft Intune folgt einem ä
 
 ### Schritt 2: Konfigurationsanfrage
 
-Um die Föderation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte eine Supportanfrage in der Cloud Temple-Konsole und geben Sie Folgendes an:
+Um die Föderation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte einen Supportantrag in der Cloud Temple-Konsole und geben Sie Folgendes an:
 
 - Der Name Ihrer Organisation
 - Der Name eines Kontakts mit E-Mail-Adresse und Telefonnummer
@@ -35,8 +35,8 @@ Um die Föderation mit Microsoft Intune zu konfigurieren, erstellen Sie bitte ei
 
 ### Schritt 3: Test und Validierung
 
-Sobald die Konfiguration abgeschlossen ist, testen Sie die Authentifizierung mit Ihren Intune-Nutzern, um sicherzustellen, dass die Föderation korrekt funktioniert.
+Sobald die Konfiguration abgeschlossen ist, testen Sie die Authentifizierung mit Ihren Intune-Benutzern, um sicherzustellen, dass die Föderation ordnungsgemäß funktioniert.
 
 ## Support
 
-Für Unterstützung bei der Konfiguration von Microsoft Intune wenden Sie sich an den Cloud Temple-Support über die Konsole.
+Für Unterstützung bei der Konfiguration von Microsoft Intune wenden Sie sich bitte an den Cloud Temple Support über die Konsole.

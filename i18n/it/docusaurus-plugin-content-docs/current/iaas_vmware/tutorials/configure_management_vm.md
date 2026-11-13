@@ -1,5 +1,5 @@
 ---
-title: Configurazione di una macchina virtuale di management
+title: Configurazione di una macchina virtuale di gestione
 tags:
   - iaas
   - vmware
@@ -7,105 +7,105 @@ tags:
   - management
 ---
 
-Questo tutorial vi guida nella configurazione di una macchina virtuale dedicata al management della vostra infrastruttura Cloud Temple.
+Questo tutorial vi guida nella configurazione di una macchina virtuale dedicata alla gestione della vostra infrastruttura Cloud Temple.
 
 ## Prerequisiti
 
 - Accesso alla console Cloud Temple
-- Permessi di gestione delle macchine virtuali
-- Template di VM disponibile nel catalogo
+- Autorizzazioni per la gestione delle macchine virtuali
+- Template VM disponibile nel catalogo
 
 ## Panoramica
 
-Una macchina virtuale di management è essenziale per amministrare la vostra infrastruttura Cloud Temple in modo sicuro. Funziona come punto di ingresso centralizzato per la gestione delle vostre risorse.
+Una macchina virtuale di gestione è essenziale per amministrare in modo sicuro la vostra infrastruttura Cloud Temple. Funge da punto di accesso centralizzato per la gestione delle vostre risorse.
 
-## Fase 1 : Dispiegamento della VM di management
+## Fase 1 : Distribuzione della VM di gestione
 
 ### Selezione del template
 
 1. Accedete alla sezione **Macchine Virtuali** nella console
-2. Cliccate su **Creare una macchina virtuale**
-3. Selezionate un template adatto al management (Windows Server o Linux)
-4. Configurate le risorse secondo le vostre esigenze
+2. Fate clic su **Crea una macchina virtuale**
+3. Selezionate un template adatto alla gestione (Windows Server ou Linux)
+4. Configurate le risorse in base alle vostre esigenze
 
 ### Configurazione di rete
 
-1. Assegnate la VM alla rete di management appropriata
-2. Configurate un indirizzo IP statico
-3. Assicuratevi che la VM possa accedere alle risorse da amministrare
+1. Assegnare la VM alla rete di gestione appropriata
+2. Configurare un indirizzo IP statico
+3. Assicurarsi che la VM possa accedere alle risorse da amministrare
 
-## Fase 2 : Configurazione della sicurezza
+## Fase 2: Configurazione di sicurezza
 
-### Indurimento del sistema
+### Hardening del sistema
 
 1. Applicate gli ultimi aggiornamenti di sicurezza
 2. Configurate un firewall locale
-3. Disattivate i servizi non necessari
-4. Configurate degli account utente con privilegi appropriati
+3. Disabilitate i servizi non necessari
+4. Configurate account utente con privilegi appropriati
 
 ### Autenticazione
 
 1. Configurate l'autenticazione forte (MFA se possibile)
-2. Integrate la VM nel vostro annuario aziendale se necessario
-3. Configurate delle politiche di password robuste
+2. Integrate la VM nel vostro directory aziendale se necessario
+3. Configurate politiche di password robuste
 
-## Fase 3 : Installazione degli strumenti di management
+## Fase 3 : Installazione degli strumenti di gestione
 
 ### Strumenti VMware
 
-1. Installate VMware Tools per un'integrazione ottimale
-2. Configurate gli strumenti di monitoring
-3. Installate i client di amministrazione necessari
+1. Installare VMware Tools per un'integrazione ottimale
+2. Configurare gli strumenti di monitoraggio
+3. Installare i client di amministrazione necessari
 
-### Strumenti di sorveglianza
+### Strumenti di monitoraggio
 
-1. Configurate gli agenti di monitoring
+1. Configurate gli agenti di monitoraggio
 2. Installate gli strumenti di backup
-3. Configurate la registrazione centralizzata
+3. Configurate il logging centralizzato
 
 ## Fase 4 : Configurazione degli accessi
 
 ### Accesso di rete
 
-1. Configurate le regole del firewall per autorizzare le connessioni di management
-2. Configurate i VPN se necessario per l'accesso remoto
-3. Testate la connettività verso le risorse da amministrare
+1. Configurare le regole del firewall per consentire le connessioni di gestione
+2. Configurare le VPN se necessario per l'accesso remoto
+3. Verificare la connettività verso le risorse da amministrare
 
 ### Accesso utente
 
-1. Create gli account utente per gli amministratori
-2. Configurate i permessi appropriati
-3. Documentate le procedure di accesso
+1. Creare gli account utente per gli amministratori
+2. Configurare le autorizzazioni appropriate
+3. Documentare le procedure di accesso
 
 ## Buone pratiche
 
-- **Isolamento** : Posizionate la VM di management in una rete dedicata
-- **Backup** : Configurate dei backup regolari
-- **Monitoring** : Sorvegliate l'attività e le prestazioni
-- **Documentazione** : Mantenete una documentazione aggiornata delle configurazioni
+- **Isolamento** : Posizionare la VM di gestione in una rete dedicata
+- **Backup** : Configurare backup regolari
+- **Monitoraggio** : Monitorare l'attività e le prestazioni
+- **Documentazione** : Mantenere aggiornata la documentazione delle configurazioni
 
 ## Manutenzione
 
 ### Aggiornamenti regolari
 
-1. Pianificate delle finestre di manutenzione
+1. Pianificate le finestre di manutenzione
 2. Applicate gli aggiornamenti di sicurezza
 3. Testate le funzionalità dopo ogni aggiornamento
 
-### Sorveglianza
+### Monitoraggio
 
-1. Sorvegliate i log di sicurezza
-2. Controllate gli accessi e le attività
-3. Effettuate degli audit di sicurezza regolari
+1. Monitorare i log di sicurezza
+2. Controllare gli accessi e le attività
+3. Eseguire audit di sicurezza regolari
 
 ## Risoluzione dei problemi
 
 ### Problemi comuni
 
-- **Connettività di rete** : Verificate le regole del firewall e la configurazione di rete
-- **Prestazioni** : Sorvegliate l'utilizzo delle risorse e regolate se necessario
-- **Accesso** : Verificate i permessi e l'autenticazione
+- **Connettività di rete** : Verificare le regole del firewall e la configurazione di rete
+- **Prestazioni** : Monitorare l'utilizzo delle risorse e regolare se necessario
+- **Accesso** : Verificare le autorizzazioni e l'autenticazione
 
 ## Supporto
 
-Per qualsiasi assistenza con la configurazione della vostra VM di management, contattate il supporto Cloud Temple tramite la console.
+Per qualsiasi assistenza relativa alla configurazione della vostra VM di gestione, contattate il supporto Cloud Temple tramite la console.
