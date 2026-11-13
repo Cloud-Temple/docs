@@ -6,10 +6,10 @@
 | --- | --- |
 | `page.title` | Roadmap de producto |
 | `page.eyebrow` | CLOUD TEMPLE · PRODUCTOS |
-| `page.heading` | Construyamos lo que viene. |
-| `page.description` | Descubre las evoluciones de nuestros productos y sigue su avance. |
+| `page.heading` | Construyamos lo que sigue. |
+| `page.description` | Descubra las evoluciones de nuestros productos y siga su avance. |
 | `preview.label` | VISTA PREVIA LOCAL |
-| `preview.notice` | Identificadores provisionales · Plazos estimados. |
+| `preview.notice` | Identificadores provisionales · Fechas estimadas. |
 | `filters.aria` | Filtros de la roadmap |
 | `filters.title` | Filtros |
 | `filters.reset` | Restablecer |
@@ -18,7 +18,7 @@
 | `filters.noQuarter` | Sin trimestre previsto |
 | `filters.products` | Productos |
 | `filters.all` | Todos |
-| `filters.hint` | Selecciona uno o varios productos. |
+| `filters.hint` | Seleccione uno o varios productos. |
 | `filters.remove` | Quitar el filtro |
 | `board.aria` | Tablero Kanban |
 | `board.scroll` | Desplazamiento horizontal de los cinco estados |
@@ -29,9 +29,9 @@
 | `board.collapse` | Plegar |
 | `board.expand` | Desplegar |
 | `board.open` | Ver el detalle |
-| `board.emptyTitle` | No se encontró ninguna funcionalidad |
-| `board.emptyDescription` | Prueba con otros productos, otro trimestre o una búsqueda más amplia. |
-| `board.footnote` | Haz clic en una tarjeta para consultar su descripción e información. |
+| `board.emptyTitle` | No se encontraron funcionalidades |
+| `board.emptyDescription` | Pruebe con otros productos, otro trimestre o una búsqueda más amplia. |
+| `board.footnote` | Haga clic en una tarjeta para consultar su descripción e información. |
 | `detail.heading` | Detalle de la funcionalidad |
 | `detail.close` | Cerrar el detalle |
 | `detail.productSection` | Información del producto |
@@ -40,12 +40,12 @@
 | `detail.category` | Categoría principal |
 | `detail.product` | Producto |
 | `detail.quarter` | Trimestre previsto |
-| `detail.owner` | Responsable |
+| `detail.owner` | Equipo responsable |
 | `detail.priority` | Prioridad |
 | `detail.type` | Tipo |
 | `detail.tags` | Etiquetas |
 | `detail.none` | Ninguno |
-| `detail.unknown` | Sin especificar |
+| `detail.unknown` | No especificado |
 | `detail.schedule` | Calendario y seguimiento |
 | `detail.startDate` | Fecha de inicio |
 | `detail.releaseDate` | Fecha de lanzamiento |
@@ -53,11 +53,11 @@
 | `detail.votes` | Votos |
 | `detail.created` | Creado el |
 | `detail.updated` | Actualizado el |
-| `detail.footnote` | Las fechas de lanzamiento son estimativas. Los Internal ID de esta vista previa son provisionales. |
+| `detail.footnote` | Las fechas de lanzamiento son estimadas. Los Internal ID de esta vista previa son provisionales. |
 | `status.acknowledged.title` | Reconocida |
-| `status.acknowledged.description` | Alineada con nuestra visión y nuestra estrategia. |
+| `status.acknowledged.description` | Alineado con nuestra visión y nuestra estrategia. |
 | `status.prioritized.title` | Priorizada |
-| `status.prioritized.description` | Planificada en los próximos doce meses. |
+| `status.prioritized.description` | Planificado en los próximos doce meses. |
 | `status.in_progress.title` | En curso |
 | `status.in_progress.description` | En proceso de realización. |
 | `status.partial.title` | Despliegue parcial |
@@ -74,5 +74,5 @@
 | `category.AI & Machine Learning` | IA y aprendizaje automático |
 | `category.Marketplace` | Marketplace |
 | `remote.loading` | Cargando la roadmap… |
-| `remote.error` | La roadmap está momentáneamente no disponible. Por favor, inténtalo de nuevo. |
+| `remote.error` | La roadmap no está disponible temporalmente. Por favor, intente de nuevo. |
 | `remote.retry` | Reintentar |

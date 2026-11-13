@@ -1,18 +1,16 @@
 # Roadmap prodotto
 
-I tempi di consegna sono previsionali. Gli identificatori di questa panoramica sono provvisori.
+I termini sono previsionali. Gli identificatori di questa panoramica sono provvisori.
 
 ## RM-001
 
 ```json
 {
   "product": "IaaS VMware",
+  "owner": "csp",
   "category": "Compute",
   "status": "acknowledged",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2026-06-24T00:00:00+00:00",
   "createdAt": "2026-06-24T12:08:14Z",
   "updatedAt": "2026-06-24T12:08:27Z"
@@ -28,14 +26,12 @@ Consentire l'uso di licenze BYOL su IaaS VMware.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Compute",
   "status": "acknowledged",
   "quarter": "2027 - Q1",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "Benjitul"
   ],
   "createdAt": "2026-10-20T07:56:09Z",
   "updatedAt": "2026-10-20T08:02:16Z"
@@ -51,14 +47,12 @@ Integrare i backup IBM Storage Defender Data Protect nella console Cloud Temple.
 ```json
 {
   "product": "IaaS VMware",
+  "owner": "csp",
   "category": "Compute",
   "status": "prioritized",
   "quarter": "2026 - Q4",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "Respoun"
   ],
   "createdAt": "2026-10-20T07:53:06Z",
   "updatedAt": "2026-10-20T07:59:16Z"
@@ -74,12 +68,10 @@ Migrare i backup IaaS VMware verso IBM Storage Defender Data Protect.
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "prioritized",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "mathieuchereau"
-  ],
   "createdAt": "2025-07-09T12:14:49Z",
   "updatedAt": "2026-01-29T14:47:00Z"
 }
@@ -94,12 +86,10 @@ Consentire il ripristino di file a granularità fine su IaaS OpenSource.
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "in_progress",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-09-08T00:00:00+00:00",
   "createdAt": "2025-09-03T12:29:47Z",
   "updatedAt": "2026-01-29T14:47:06Z"
@@ -115,12 +105,10 @@ Aggiungere il supporto WORM ai backup IaaS OpenSource.
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "in_progress",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "mathieuchereau"
-  ],
   "createdAt": "2025-07-09T12:16:06Z",
   "updatedAt": "2026-01-29T14:47:00Z"
 }
@@ -135,12 +123,10 @@ Consentire la condivisione di immagini ISO a livello di tenant su IaaS OpenSourc
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "partial",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-07-01T00:00:00+00:00",
   "createdAt": "2025-07-09T12:18:10Z",
   "updatedAt": "2026-06-24T12:06:15Z"
@@ -149,19 +135,17 @@ Consentire la condivisione di immagini ISO a livello di tenant su IaaS OpenSourc
 
 ### Supporto QCOW2 per IaaS OpenSource
 
-Aggiungere il supporto QCOW2 su IaaS OpenSource. Il perimetro descritto menziona i volumi superiori a 2 To.
+Aggiungere il supporto QCOW2 su IaaS OpenSource. Il perimetro descritto menziona i volumi di oltre 2 To.
 
 ## RM-008
 
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "partial",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-09-26T00:00:00+00:00",
   "createdAt": "2025-07-09T12:17:13Z",
   "updatedAt": "2026-06-24T12:06:08Z"
@@ -177,12 +161,10 @@ Supportare gli aggiornamenti progressivi dei cluster IaaS OpenSource.
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "done",
   "quarter": "2025 - Q2",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-03-01T00:00:00+00:00",
   "createdAt": "2025-07-09T09:09:23Z",
   "updatedAt": "2026-01-30T08:46:44Z"
@@ -198,12 +180,10 @@ Aggiungere la replicazione su IaaS OpenSource.
 ```json
 {
   "product": "IaaS OpenSource",
+  "owner": "csp",
   "category": "Compute",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-06-15T00:00:00+00:00",
   "createdAt": "2025-07-09T09:07:52Z",
   "updatedAt": "2026-01-30T08:46:48Z"
@@ -219,14 +199,12 @@ Supportare l'alta disponibilità su due nodi.
 ```json
 {
   "product": "VM Instances",
+  "owner": "csp",
   "category": "Compute",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "aelttil"
   ],
   "startDate": "2026-02-02T00:00:00+00:00",
   "createdAt": "2025-07-09T09:02:07Z",
@@ -243,11 +221,9 @@ Lanciare il prodotto VM Instances.
 ```json
 {
   "product": "SIEM",
+  "owner": "mssp",
   "category": "Security & IAM",
   "status": "acknowledged",
-  "assignees": [
-    "giuliano-ippoliti"
-  ],
   "createdAt": "2025-07-16T12:35:54Z",
   "updatedAt": "2026-04-29T13:06:45Z"
 }
@@ -262,14 +238,12 @@ Offrire un SIEM come servizio.
 ```json
 {
   "product": "Managed IAM",
+  "owner": "msp",
   "category": "Security & IAM",
   "status": "acknowledged",
   "quarter": "2027 - Q1",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "createdAt": "2026-07-02T10:07:31Z",
@@ -286,14 +260,12 @@ Offrire un deployment gestito di Ferriskey su Managed Kubernetes o Managed Core 
 ```json
 {
   "product": "Managed WAF",
+  "owner": "msp",
   "category": "Security & IAM",
   "status": "acknowledged",
   "quarter": "2026 - Q4",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "createdAt": "2026-07-27T09:52:02Z",
@@ -310,12 +282,10 @@ Offrire un WAF gestito basato su BunkerWeb, deployato su Managed Kubernetes.
 ```json
 {
   "product": "IAM",
+  "owner": "csp",
   "category": "Security & IAM",
   "status": "prioritized",
   "quarter": "2027 - Q1",
-  "assignees": [
-    "KChapron"
-  ],
   "createdAt": "2026-03-25T14:24:08Z",
   "updatedAt": "2026-08-20T09:57:03Z"
 }
@@ -330,12 +300,10 @@ Lanciare la versione 3 del prodotto IAM.
 ```json
 {
   "product": "Managed KMS",
+  "owner": "csp",
   "category": "Security & IAM",
   "status": "prioritized",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "Yann-kaw"
-  ],
   "createdAt": "2026-08-20T09:56:35Z",
   "updatedAt": "2026-08-20T09:56:35Z"
 }
@@ -350,12 +318,10 @@ Lanciare il prodotto Managed KMS.
 ```json
 {
   "product": "SIEM",
+  "owner": "mssp",
   "category": "Security & IAM",
   "status": "in_progress",
   "quarter": "2027 - Q2",
-  "assignees": [
-    "giuliano-ippoliti"
-  ],
   "startDate": "2025-01-01T00:00:00+00:00",
   "createdAt": "2026-04-29T13:18:03Z",
   "updatedAt": "2026-04-29T13:18:29Z"
@@ -371,11 +337,9 @@ Lanciare il prodotto Managed SIEM.
 ```json
 {
   "product": "SOC",
+  "owner": "mssp",
   "category": "Security & IAM",
   "status": "in_progress",
-  "assignees": [
-    "giuliano-ippoliti"
-  ],
   "startDate": "2025-01-01T00:00:00+00:00",
   "createdAt": "2026-04-29T13:08:57Z",
   "updatedAt": "2026-05-11T09:39:51Z"
@@ -391,12 +355,10 @@ Lanciare un SOC sovrano.
 ```json
 {
   "product": "HSM",
+  "owner": "csp",
   "category": "Security & IAM",
   "status": "partial",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-02-01T00:00:00+00:00",
   "createdAt": "2025-07-10T07:19:05Z",
   "updatedAt": "2026-01-29T14:47:04Z"
@@ -412,12 +374,10 @@ Aggiungere il supporto della crittografia HSM su IaaS VMware.
 ```json
 {
   "product": "Object Storage",
+  "owner": "csp",
   "category": "Storage",
   "status": "done",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-11-26T00:00:00+00:00",
   "createdAt": "2025-07-08T16:03:46Z",
   "updatedAt": "2026-09-09T12:06:34Z"
@@ -433,14 +393,12 @@ Supporto degli stili di URL per Object Storage.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "done",
   "quarter": "2025 - Q3",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "aelttil"
   ],
   "startDate": "2025-06-01T00:00:00+00:00",
   "createdAt": "2025-07-09T08:43:00Z",
@@ -457,12 +415,10 @@ Lancio di VPC as a Service.
 ```json
 {
   "product": "LLMaaS",
+  "owner": "csp",
   "category": "AI & Machine Learning",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-01-01T00:00:00+00:00",
   "createdAt": "2025-07-09T08:44:39Z",
   "updatedAt": "2026-01-29T15:57:00Z"
@@ -478,14 +434,12 @@ Lancio di LLM as a Service.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "prioritized",
   "quarter": "2026 - Q4",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "fdebonneval"
   ],
   "createdAt": "2025-07-09T08:46:30Z",
   "updatedAt": "2026-01-29T14:46:58Z"
@@ -501,13 +455,10 @@ Lancio del load balancer as a Service di livello 4.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "prioritized",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "aelttil",
-    "Benjitul"
-  ],
   "createdAt": "2025-07-09T08:52:04Z",
   "updatedAt": "2026-02-06T09:15:11Z"
 }
@@ -522,13 +473,10 @@ Integrazione di un assistente IA nella console Cloud Temple.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2026 - Q2",
-  "assignees": [
-    "alex-lata",
-    "KChapron"
-  ],
   "startDate": "2025-07-01T00:00:00+00:00",
   "createdAt": "2025-07-09T08:58:37Z",
   "updatedAt": "2026-08-20T09:46:10Z"
@@ -544,12 +492,10 @@ Creazione di un server MCP per la console Cloud Temple.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-09-21T00:00:00+00:00",
   "createdAt": "2025-07-09T09:10:52Z",
   "updatedAt": "2026-02-06T09:08:50Z"
@@ -565,12 +511,10 @@ Integrazione delle metriche IaaS nella console Cloud Temple.
 ```json
 {
   "product": "Marketplace Core",
+  "owner": "csp",
   "category": "Marketplace",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "Benjitul"
-  ],
   "startDate": "2025-06-01T00:00:00+00:00",
   "createdAt": "2025-07-09T09:13:45Z",
   "updatedAt": "2026-01-30T08:46:38Z"
@@ -586,13 +530,10 @@ Lancio della Marketplace.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
-  ],
   "startDate": "2025-02-01T00:00:00+00:00",
   "createdAt": "2025-07-09T09:43:44Z",
   "updatedAt": "2026-01-29T14:47:03Z"
@@ -608,12 +549,10 @@ Lancio di Managed Kubernetes.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "partial",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2025-01-01T00:00:00+00:00",
   "createdAt": "2025-07-09T09:48:57Z",
   "updatedAt": "2026-01-29T14:47:04Z"
@@ -622,19 +561,17 @@ Lancio di Managed Kubernetes.
 
 ### Lancio di AIOps as a Service
 
-Offrire AIOps as a Service per le richieste di modifica delle VM, il ciclo di vita delle VM e gli snapshot.
+Offrire AIOps as a Service per le richieste di modifica delle VM, il ciclo di vita delle VM e i snapshot.
 
 ## RM-030
 
 ```json
 {
   "product": "Marketplace Core",
+  "owner": "csp",
   "category": "Marketplace",
   "status": "done",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "Benjitul"
-  ],
   "startDate": "2025-10-01T00:00:00+00:00",
   "createdAt": "2025-07-09T10:18:04Z",
   "updatedAt": "2026-01-29T14:46:59Z"
@@ -650,14 +587,12 @@ Lancio del portale pubblico della Marketplace.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2025 - Q4",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "startDate": "2025-09-01T00:00:00+00:00",
   "createdAt": "2025-07-09T10:35:10Z",
@@ -674,12 +609,10 @@ Registro di container interno per Managed Kubernetes.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-07-02T00:00:00+00:00",
   "createdAt": "2025-07-09T12:10:08Z",
   "updatedAt": "2026-02-06T09:06:02Z"
@@ -695,12 +628,10 @@ Riprogettazione della dashboard della console Cloud Temple.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "in_progress",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "ctori07"
-  ],
   "startDate": "2025-07-01T00:00:00+00:00",
   "createdAt": "2025-07-09T12:21:48Z",
   "updatedAt": "2026-06-24T12:13:05Z"
@@ -716,12 +647,10 @@ Integrazione delle metriche PaaS OpenShift nella console Cloud Temple.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "ctori07"
-  ],
   "startDate": "2025-07-15T00:00:00+00:00",
   "createdAt": "2025-07-09T12:23:36Z",
   "updatedAt": "2026-02-06T09:10:34Z"
@@ -737,14 +666,12 @@ Migliorare la visualizzazione e l'amministrazione delle risorse dei cluster PaaS
 ```json
 {
   "product": "PaaS OpenShift",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2025 - Q3",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "ctori07"
   ],
   "type": "Task",
   "startDate": "2025-07-06T00:00:00+00:00",
@@ -762,12 +689,10 @@ Aggiornamento di OpenShift alla versione 4.18.
 ```json
 {
   "product": "Internet",
+  "owner": "csp",
   "category": "Networking",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-01-01T00:00:00+00:00",
   "createdAt": "2025-07-09T12:32:34Z",
   "updatedAt": "2026-01-30T08:46:41Z"
@@ -783,14 +708,12 @@ Supporto di IPv6.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "prioritized",
   "quarter": "2026 - Q4",
   "tags": [
     "SNC"
-  ],
-  "assignees": [
-    "fdebonneval"
   ],
   "createdAt": "2025-07-09T12:35:45Z",
   "updatedAt": "2026-01-29T14:47:02Z"
@@ -806,12 +729,10 @@ Lancio del load balancer as a Service di livello 7.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "prioritized",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "fdebonneval"
-  ],
   "createdAt": "2025-07-09T13:01:46Z",
   "updatedAt": "2026-01-29T14:47:04Z"
 }
@@ -826,12 +747,10 @@ Lancio del load balancer as a Service di livello 4.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "prioritized",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "fdebonneval"
-  ],
   "createdAt": "2025-07-09T13:02:20Z",
   "updatedAt": "2026-01-29T14:47:04Z"
 }
@@ -846,19 +765,17 @@ Lancio del load balancer as a Service di livello 7.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "partial",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2025-10-01T00:00:00+00:00",
   "createdAt": "2025-07-10T13:44:14Z",
   "updatedAt": "2026-01-29T14:47:05Z"
 }
 ```
 
-### Supporto degli incidenti tramite AIOps
+### Gestione degli incidenti tramite AIOps
 
 Gestire gli incidenti di capacità CPU e RAM con AIOps.
 
@@ -867,12 +784,10 @@ Gestire gli incidenti di capacità CPU e RAM con AIOps.
 ```json
 {
   "product": "Terraform Provider",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-07-01T00:00:00+00:00",
   "createdAt": "2025-07-17T08:19:18Z",
   "updatedAt": "2026-01-30T08:46:33Z"
@@ -888,12 +803,10 @@ Supporto S3 nel provider Terraform.
 ```json
 {
   "product": "Internet",
+  "owner": "csp",
   "category": "Networking",
   "status": "done",
   "quarter": "2025 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2025-07-01T00:00:00+00:00",
   "createdAt": "2025-08-20T12:21:01Z",
   "updatedAt": "2026-02-04T13:17:42Z"
@@ -902,19 +815,17 @@ Supporto S3 nel provider Terraform.
 
 ### Supporto dei record DNS PTR
 
-Permettere la personalizzazione dei record PTR lato client.
+Consentire la personalizzazione dei record PTR lato client.
 
 ## RM-043
 
 ```json
 {
   "product": "Terraform Provider",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "KChapron"
-  ],
   "startDate": "2025-10-01T00:00:00+00:00",
   "createdAt": "2025-10-01T12:26:41Z",
   "updatedAt": "2026-01-29T15:48:18Z"
@@ -930,12 +841,10 @@ Supporto della Marketplace nel provider Terraform.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "partial",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2025-10-01T00:00:00+00:00",
   "createdAt": "2025-10-01T12:51:43Z",
   "updatedAt": "2026-01-29T14:47:06Z"
@@ -951,12 +860,10 @@ Supporto delle richieste di servizio tramite AIOps.
 ```json
 {
   "product": "Update Manager",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "in_progress",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2025-06-02T00:00:00+00:00",
   "createdAt": "2025-10-01T12:55:19Z",
   "updatedAt": "2026-01-29T14:47:07Z"
@@ -972,15 +879,12 @@ Lancio di Update Manager as a Service.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "prioritized",
   "quarter": "2027 - Q2",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2025-10-28T00:00:00+00:00",
@@ -998,15 +902,12 @@ Aggiungere un cluster firewall e IPv4 pubbliche dedicate ai flussi di Managed Ku
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "partial",
   "quarter": "2027 - Q2",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2025-10-29T00:00:00+00:00",
@@ -1015,24 +916,21 @@ Aggiungere un cluster firewall e IPv4 pubbliche dedicate ai flussi di Managed Ku
 }
 ```
 
-### Registro centralizzato dei container per Managed Kubernetes
+### Registro di container centralizzato per Managed Kubernetes
 
-Centralizzare le immagini dei container utilizzate dai cluster Managed Kubernetes per controllare meglio le immagini deployate.
+Centralizzare le immagini di container utilizzate dai cluster Managed Kubernetes per controllare meglio le immagini distribuite.
 
 ## RM-048
 
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Task",
   "startDate": "2025-10-29T00:00:00+00:00",
@@ -1050,12 +948,10 @@ Sostituire Promtail con Alloy per la raccolta dei log dei cluster Managed Kubern
 ```json
 {
   "product": "IaaS VMware",
+  "owner": "csp",
   "category": "Storage",
   "status": "done",
   "quarter": "2025 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "type": "Feature",
   "startDate": "2025-09-24T00:00:00+00:00",
   "createdAt": "2025-10-29T13:58:08Z",
@@ -1063,24 +959,21 @@ Sostituire Promtail con Alloy per la raccolta dei log dei cluster Managed Kubern
 }
 ```
 
-### Supporto Metro Mirror tra le AZ DATA4 e TH3S per IaaS VMware
+### Supporto di Metro Mirror tra gli AZ DATA4 e TH3S per IaaS VMware
 
-Supporto Metro Mirror tra le AZ DATA4 e TH3S per IaaS VMware.
+Supporto di Metro Mirror tra gli AZ DATA4 e TH3S per IaaS VMware.
 
 ## RM-050
 
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q1",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Task",
   "startDate": "2025-12-15T00:00:00+00:00",
@@ -1098,14 +991,12 @@ Migrazione da Loki-Distributed a Grafana-Loki.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2025 - Q4",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2025-12-15T00:00:00+00:00",
@@ -1123,14 +1014,12 @@ Sostituire KubeCost con OpenCost.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2025 - Q4",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2025-12-01T00:00:00+00:00",
@@ -1148,15 +1037,12 @@ Aggiornare Cilium CNI da 1.7.x a 1.8.4 e attivare Gateway API.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Task",
   "startDate": "2025-11-12T00:00:00+00:00",
@@ -1174,14 +1060,12 @@ Sostituire ingress-nginx con F5 nginx ingress OSS.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q1",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2026-01-05T00:00:00+00:00",
@@ -1199,12 +1083,10 @@ Aggiungere il supporto dei GPU NVIDIA e dei server Bare Metal Cloud Temple con m
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2026-01-02T00:00:00+00:00",
   "createdAt": "2026-01-07T13:42:15Z",
   "updatedAt": "2026-03-18T14:01:53Z"
@@ -1220,15 +1102,12 @@ Supporto al trattamento dei ticket tramite AIOps.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Task",
   "startDate": "2026-01-15T00:00:00+00:00",
@@ -1246,12 +1125,10 @@ Aggiornamento maggiore di Talos e Kubernetes. Le versioni esatte devono essere c
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "in_progress",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2026-01-02T00:00:00+00:00",
   "createdAt": "2026-01-07T13:46:31Z",
   "updatedAt": "2026-01-29T14:46:55Z"
@@ -1267,33 +1144,29 @@ Aggiunta di guardrail per i casi d'uso AIOps.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "partial",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2026-01-02T00:00:00+00:00",
   "createdAt": "2026-01-07T13:56:44Z",
   "updatedAt": "2026-01-07T13:57:28Z"
 }
 ```
 
-### Supporto della supervisione da AIOps
+### Supporto del monitoraggio da AIOps
 
-Supporto della supervisione da AIOps.
+Supporto del monitoraggio da AIOps.
 
 ## RM-059
 
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2026 - Q2",
-  "assignees": [
-    "aelttil"
-  ],
   "type": "Feature",
   "createdAt": "2026-01-20T10:44:03Z",
   "updatedAt": "2026-05-27T12:22:39Z"
@@ -1309,12 +1182,10 @@ Lancio di Cost Manager.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "in_progress",
   "quarter": "2026 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2026-01-01T00:00:00+00:00",
   "createdAt": "2026-01-21T13:05:34Z",
   "updatedAt": "2026-01-29T15:04:19Z"
@@ -1330,12 +1201,10 @@ Firewall per VPC.
 ```json
 {
   "product": "VPC",
+  "owner": "csp",
   "category": "Networking",
   "status": "in_progress",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2026-01-01T00:00:00+00:00",
   "createdAt": "2026-01-21T13:05:50Z",
   "updatedAt": "2026-01-29T15:04:25Z"
@@ -1351,12 +1220,10 @@ Microsegmentazione per VPC.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "in_progress",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "startDate": "2026-01-01T00:00:00+00:00",
   "createdAt": "2026-01-21T13:54:20Z",
   "updatedAt": "2026-01-21T13:55:05Z"
@@ -1372,12 +1239,10 @@ Pulizia dei dischi di sistema per gli incidenti AIOps.
 ```json
 {
   "product": "AIOps",
+  "owner": "msp",
   "category": "Management & Governance",
   "status": "in_progress",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "julienmorot-ct"
-  ],
   "createdAt": "2026-01-21T13:55:19Z",
   "updatedAt": "2026-01-21T13:55:25Z"
 }
@@ -1392,12 +1257,10 @@ Supporto dei snapshot per le richieste di servizio AIOps.
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "prioritized",
   "quarter": "2027 - Q1",
-  "assignees": [
-    "KChapron"
-  ],
   "createdAt": "2026-02-04T14:02:55Z",
   "updatedAt": "2026-02-06T09:18:53Z"
 }
@@ -1412,12 +1275,10 @@ Supporto di Cluster API nelle API della console.
 ```json
 {
   "product": "Observability",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "prioritized",
   "quarter": "2027 - Q1",
-  "assignees": [
-    "aelttil"
-  ],
   "createdAt": "2026-02-06T09:20:31Z",
   "updatedAt": "2026-02-06T09:20:58Z"
 }
@@ -1432,12 +1293,10 @@ Supporto di Grafana in Observability.
 ```json
 {
   "product": "Observability",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2026 - Q3",
-  "assignees": [
-    "aelttil"
-  ],
   "createdAt": "2026-02-06T09:21:21Z",
   "updatedAt": "2026-08-20T15:05:28Z"
 }
@@ -1452,11 +1311,9 @@ Lancio di Observability.
 ```json
 {
   "product": "Marketplace Core",
+  "owner": "csp",
   "category": "Marketplace",
   "status": "in_progress",
-  "assignees": [
-    "Benjitul"
-  ],
   "startDate": "2026-02-18T00:00:00+00:00",
   "createdAt": "2026-02-18T13:12:20Z",
   "updatedAt": "2026-10-21T12:24:00Z"
@@ -1472,12 +1329,10 @@ Immagini Consul, Docker, RTMS, pfSense/OPNsense e Bastion nella Marketplace.
 ```json
 {
   "product": "PaaS OpenShift",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "partial",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "aelttil"
-  ],
   "startDate": "2026-02-16T00:00:00+00:00",
   "createdAt": "2026-02-18T13:27:50Z",
   "updatedAt": "2026-02-18T13:28:23Z"
@@ -1493,14 +1348,12 @@ Elenco degli operatori disponibili in PaaS OpenShift.
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q1",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2026-02-25T00:00:00+00:00",
@@ -1518,14 +1371,12 @@ Integrare KEDA in Managed Kubernetes per l'autoscaling dei workloads a partire d
 ```json
 {
   "product": "Managed Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "enhancement"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Feature",
   "startDate": "2026-02-01T00:00:00+00:00",
@@ -1534,7 +1385,7 @@ Integrare KEDA in Managed Kubernetes per l'autoscaling dei workloads a partire d
 }
 ```
 
-### Strumenti di supervisione e LLM per il profiling delle applicazioni
+### Strumenti di monitoraggio e LLM per il profiling delle applicazioni
 
 Integrare Pyroscope in Grafana e utilizzare un LLM per il profiling delle applicazioni.
 
@@ -1543,12 +1394,10 @@ Integrare Pyroscope in Grafana e utilizzare un LLM per il profiling delle applic
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "done",
   "quarter": "2026 - Q1",
-  "assignees": [
-    "KChapron"
-  ],
   "type": "Feature",
   "startDate": "2026-02-02T00:00:00+00:00",
   "createdAt": "2026-03-04T13:17:53Z",
@@ -1556,41 +1405,37 @@ Integrare Pyroscope in Grafana e utilizzare un LLM per il profiling delle applic
 }
 ```
 
-### Vista Organizzazione nella console Cloud Temple
+### Vista Organization nella console Cloud Temple
 
-Vista Organizzazione nella console Cloud Temple.
+Vista Organization nella console Cloud Temple.
 
 ## RM-072
 
 ```json
 {
   "product": "Object Storage",
+  "owner": "csp",
   "category": "Storage",
   "status": "partial",
   "quarter": "2026 - Q4",
-  "assignees": [
-    "aelttil"
-  ],
   "createdAt": "2026-06-24T12:09:41Z",
   "updatedAt": "2026-06-24T12:10:07Z"
 }
 ```
 
-### Classe di archiviazione Glacier per Object Storage
+### Classe di storage Glacier per Object Storage
 
-Classe di archiviazione Glacier per Object Storage.
+Classe di storage Glacier per Object Storage.
 
 ## RM-073
 
 ```json
 {
   "product": "Cloud Console",
+  "owner": "csp",
   "category": "Management & Governance",
   "status": "partial",
   "quarter": "2026 - Q3",
-  "assignees": [
-    "Benjitul"
-  ],
   "startDate": "2026-06-17T00:00:00+00:00",
   "createdAt": "2026-06-24T12:18:30Z",
   "updatedAt": "2026-06-24T12:18:45Z"
@@ -1606,15 +1451,12 @@ Supporto H&E per Housing nella console Cloud Temple.
 ```json
 {
   "product": "Managed Core Kubernetes",
+  "owner": "msp",
   "category": "Containers & Orchestration",
   "status": "done",
   "quarter": "2026 - Q3",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "joshdvd",
-    "StephaneLeleu"
   ],
   "type": "Task",
   "startDate": "2026-07-01T00:00:00+00:00",
@@ -1632,14 +1474,12 @@ Aggiornamento maggiore di Talos e Kubernetes. Le versioni esatte devono essere c
 ```json
 {
   "product": "Managed MariaDB",
+  "owner": "msp",
   "category": "Data, Big Data, Analytics",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Task",
   "createdAt": "2026-07-02T10:12:26Z",
@@ -1656,14 +1496,12 @@ Proporre un'offerta MariaDB gestita su Managed Kubernetes o Managed Core Kuberne
 ```json
 {
   "product": "Managed PostgreSQL",
+  "owner": "msp",
   "category": "Data, Big Data, Analytics",
   "status": "done",
   "quarter": "2026 - Q2",
   "tags": [
     "Upgrade/Update"
-  ],
-  "assignees": [
-    "StephaneLeleu"
   ],
   "type": "Task",
   "createdAt": "2026-07-02T10:15:02Z",
@@ -1680,12 +1518,10 @@ Proporre PostgreSQL gestito su Managed Kubernetes o Managed Core Kubernetes, con
 ```json
 {
   "product": "Managed File System",
+  "owner": "msp",
   "category": "Storage",
   "status": "acknowledged",
   "quarter": "2027 - Q2",
-  "assignees": [
-    "Yann-kaw"
-  ],
   "createdAt": "2026-08-20T08:30:23Z",
   "updatedAt": "2026-08-20T08:32:11Z"
 }
@@ -1700,12 +1536,10 @@ Lancio di Managed File System.
 ```json
 {
   "product": "Managed Kafka",
+  "owner": "msp",
   "category": "Data, Big Data, Analytics",
   "status": "acknowledged",
   "quarter": "2027 - Q1",
-  "assignees": [
-    "Yann-kaw"
-  ],
   "createdAt": "2026-08-20T08:39:44Z",
   "updatedAt": "2026-08-20T08:39:44Z"
 }
@@ -1720,12 +1554,12 @@ Lancio di Managed Kafka.
 ```json
 {
   "product": "Object Storage",
+  "owner": "csp",
   "category": "Storage",
   "status": "in_progress",
   "tags": [
     "SNC"
   ],
-  "assignees": [],
   "type": "Feature",
   "createdAt": "2026-09-09T12:11:53Z",
   "updatedAt": "2026-09-09T12:11:53Z"
