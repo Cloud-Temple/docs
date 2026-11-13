@@ -74,7 +74,9 @@ class InventoryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             objects = sp.inventory(write_build(Path(tmp), {
                 'assets/js/main.1a2b.js': b'js', 'img/logo.png': b'png', 'sitemap.xml': b'<x/>',
-                '.DS_Store': b'junk'}))
+                'version.json': b'{}', '.DS_Store': b'junk'}))
+        self.assertEqual(objects['version.json'].cache_control, sp.CACHE_HTML)
+        self.assertEqual(objects['sitemap.xml'].cache_control, sp.CACHE_DEFAULT)
         self.assertEqual(objects['home'].content_type, 'text/html; charset=utf-8')
         self.assertEqual(objects['home'].cache_control, sp.CACHE_HTML)
         self.assertEqual(objects['assets/js/main.1a2b.js'].cache_control, sp.CACHE_IMMUTABLE)

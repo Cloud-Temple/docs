@@ -85,8 +85,8 @@ jobs:
       - name: Contrôle de types
         run: yarn typecheck
 
-      - name: Tests de la roadmap
-        run: node --test plugins/roadmap/*.test.mjs
+      - name: Tests de la roadmap et de la version du site
+        run: node --test plugins/roadmap/*.test.mjs src/components/SiteVersion/*.test.mjs
 
       # Échoue si une traduction est périmée (translation-meta.json) : lancer le
       # script de traduction officiel avant de fusionner.
@@ -95,9 +95,13 @@ jobs:
           BASE_URL: /
           SITE_URL: ${{ steps.target.outputs.site_url }}
           ROADMAP_DATA_URL: /roadmap-data/
-          APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
           NO_UPDATE_NOTIFIER: "1"
         run: yarn build
+
+      # Version affichée dans le footer : dérivée du commit, jamais de l'heure du
+      # build, pour qu'une relance ne modifie aucun fichier sur S3.
+      - name: Fichier de version
+        run: python3 scripts/deploy/write_version.py --environment "${{ steps.target.outputs.environment }}" --ref "$GITHUB_REF_NAME" --output build/version.json
 
       - name: Export des données de roadmap
         run: node plugins/roadmap/export.mjs "$PWD/roadmap-export"

@@ -97,7 +97,8 @@ def content_type(path: Path) -> str:
 
 
 def cache_control(key: str, ctype: str) -> str:
-    if ctype.startswith('text/html'):
+    # version.json est lu par le footer : il doit refléter le dernier déploiement.
+    if ctype.startswith('text/html') or key.rsplit('/', 1)[-1] == 'version.json':
         return CACHE_HTML
     # Docusaurus place sous assets/ uniquement des fichiers dont le nom contient
     # une empreinte de contenu : ils peuvent être mis en cache indéfiniment.

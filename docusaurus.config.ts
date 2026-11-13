@@ -230,8 +230,6 @@ const config: Config = {
         <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
         <br />
         Copyright © 2026 Cloud Temple.
-        <br />
-        <span style="font-size: 0.8em; color: var(--ifm-footer-link-color);">Version: ${process.env.APP_VERSION || 'dev'}</span>
       </div>
     `,
     },
