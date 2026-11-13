@@ -1,0 +1,15 @@
+product: Managed IAM
+features:
+  - id: RM-013
+    category: Security & IAM
+    status: acknowledged
+    quarter: 2027 - Q1
+    tags:
+      - Upgrade/Update
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    createdAt: '2026-07-02T10:07:31Z'
+    updatedAt: '2026-07-02T10:26:23Z'
+    title: Lancement de Managed IAM sur Managed Kubernetes
+    description: Proposer un déploiement managé de Ferriskey sur Managed Kubernetes ou Managed Core Kubernetes.

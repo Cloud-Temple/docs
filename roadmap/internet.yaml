@@ -1,0 +1,24 @@
+product: Internet
+features:
+  - id: RM-036
+    category: Networking
+    status: done
+    quarter: 2025 - Q3
+    assignees:
+      - aelttil
+    startDate: '2025-01-01T00:00:00+00:00'
+    createdAt: '2025-07-09T12:32:34Z'
+    updatedAt: '2026-01-30T08:46:41Z'
+    title: Support d’IPv6
+    description: Support d’IPv6.
+  - id: RM-042
+    category: Networking
+    status: done
+    quarter: 2025 - Q3
+    assignees:
+      - aelttil
+    startDate: '2025-07-01T00:00:00+00:00'
+    createdAt: '2025-08-20T12:21:01Z'
+    updatedAt: '2026-02-04T13:17:42Z'
+    title: Support des enregistrements DNS PTR
+    description: Permettre la personnalisation des enregistrements PTR côté client.
