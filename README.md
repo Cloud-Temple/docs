@@ -5,7 +5,7 @@ Here, you’ll find guides and resources to help you better understand and utili
 
 A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __DEV__ version of this documentation is available [here](https://cloud-temple.github.io/docs/home).
+A __STAGING__ version of this documentation is available [here](https://docs-ng.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
 
 This project is continuously updated with new guides and improvements.
 
@@ -17,7 +17,7 @@ We value your contributions! Whether it’s improving an existing guide or creat
 
  1. Fork this repository: Clone your fork to your local environment.
  2. Make your changes: Update or create guides.
- 3. Submit a Pull Request (PR): Propose your changes to the develop branch.
+ 3. Submit a Pull Request (PR): Propose your changes to the `staging` branch.
 
 Our team will review your contribution, provide feedback if needed, and integrate approved changes.
 
