@@ -28,6 +28,20 @@ test('remote loading uses anonymous uncached requests and verifies the published
   }
 });
 
+test('a relative data URL resolves against the page origin and keeps the HTTPS requirement', async () => {
+  const calls = [];
+  const request = async (url) => {
+    calls.push(url);
+    return Response.json(calls.length === 1 ? fixture() : payload);
+  };
+  const page = 'https://docs-ng.example.com/en/roadmap';
+  assert.deepEqual(await loadRemoteRoadmap('/roadmap-data/', 'fr', ['page.title'], signal, request, page), payload);
+  assert.deepEqual(calls, ['https://docs-ng.example.com/roadmap-data/manifest.json',
+    `https://docs-ng.example.com/roadmap-data/releases/${release}/fr.json`]);
+  await assert.rejects(loadRemoteRoadmap('/roadmap-data/', 'fr', [], signal, request, 'http://docs-ng.example.com/roadmap'), /HTTPS/);
+  await assert.rejects(loadRemoteRoadmap('/roadmap-data/', 'fr', [], signal, request, undefined), TypeError);
+});
+
 test('remote loading rejects corrupted data and does not fall back to bundled cards', async () => {
   let calls = 0;
   const request = async () => Response.json(++calls === 1 ? fixture() : {...payload, items: []});

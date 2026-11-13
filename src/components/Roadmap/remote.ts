@@ -43,8 +43,10 @@ async function responseText(url: string, signal: AbortSignal, request: typeof fe
   return content;
 }
 
-export async function loadRemoteRoadmap(baseUrl: string, locale: string, requiredLabels: readonly string[], signal: AbortSignal, request: typeof fetch = fetch): Promise<RoadmapData> {
-  const base = new URL(baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`);
+export async function loadRemoteRoadmap(baseUrl: string, locale: string, requiredLabels: readonly string[], signal: AbortSignal, request: typeof fetch = fetch,
+  pageUrl: string | undefined = globalThis.location?.href): Promise<RoadmapData> {
+  // A relative data URL (e.g. /roadmap-data/) follows whichever origin serves the page.
+  const base = new URL(baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`, pageUrl);
   if (base.protocol !== 'https:') throw new Error('Roadmap requires HTTPS');
   const manifest: unknown = JSON.parse(await responseText(new URL('manifest.json', base).href, signal, request));
   if (!object(manifest) || manifest.schemaVersion !== 1 || !text(manifest.release) ||
