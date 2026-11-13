@@ -227,7 +227,8 @@ const config: Config = {
       ],
       copyright: `
       <div style="text-align: center;">
-        <a href="${process.env.BASE_URL ?? "/docs/"}privacy">Privacy Policy</a>
+        <a href="https://www.cloud-temple.com/contracts" target="_blank" rel="noopener noreferrer">Contracts</a> |
+        <a href="https://www.cloud-temple.com/politique-de-confidentialite/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <br />
         Copyright © 2026 Cloud Temple.
       </div>
