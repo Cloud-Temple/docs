@@ -103,7 +103,7 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Cloud-Temple/docs/edit/dev/',
+            'https://github.com/Cloud-Temple/docs/edit/staging/',
         },
         theme: {
           customCss: './src/css/custom.css',

@@ -56,7 +56,6 @@ export function RoadmapDetails({item, onClose}: Props): ReactElement {
             <div><dt>{label('detail.category')}</dt><dd>{labels[`category.${item.category}`] ?? item.category}</dd></div>
             <div><dt>{label('detail.product')}</dt><dd>{item.product}</dd></div>
             <div><dt>{label('detail.quarter')}</dt><dd>{item.quarter ?? label('filters.noQuarter')}</dd></div>
-            <div><dt>{label('detail.owner')}</dt><dd>{item.assignees.length ? item.assignees.join(', ') : label('detail.unknown')}</dd></div>
             <div><dt>{label('detail.priority')}</dt><dd>{item.priority ?? label('detail.unknown')}</dd></div>
             <div><dt>{label('detail.type')}</dt><dd>{item.type ?? label('detail.unknown')}</dd></div>
             <div><dt>{label('detail.tags')}</dt><dd className={styles.tags}>{item.tags?.length ? item.tags.map(tag => <span key={tag} className={tag === 'SNC' ? styles.snc : styles.upgrade}>{tag}</span>) : label('detail.none')}</dd></div>

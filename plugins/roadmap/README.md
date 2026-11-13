@@ -38,12 +38,7 @@ features:
 `product` s’applique à toutes les fonctionnalités du fichier. Chaque entrée
 possède un Internal ID unique et stable, un titre et une description en français.
 Déplacer une fonctionnalité ou réordonner la liste ne doit pas changer son ID.
-Les `RM-*` actuels sont des identifiants provisoires de démonstration, pas des
-références ITSM. Les données actuelles sont les 79 items de la vue publique GitHub Project #2,
-importés le 28 octobre 2026 dans 27 fichiers produit. Les 19 identifiants déjà
-présents dans l’aperçu ont été conservés ; les 60 autres ont été attribués
-indépendamment des numéros d’issue. La provenance détaillée et les contrôles
-de complétude sont conservés dans le dépôt privé Products.
+Les identifiants `RM-*` actuels sont provisoires.
 
 Champs requis par fonctionnalité : `id`, `title`, `description`, `category`,
 `status`. Statuts possibles : `acknowledged`, `prioritized`, `in_progress`,
@@ -52,6 +47,7 @@ Champs requis par fonctionnalité : `id`, `title`, `description`, `category`,
 Champs facultatifs : `quarter` (`YYYY - Q1` à `YYYY - Q4`), `tags`, `assignees`,
 `priority`, `type`, `startDate`, `releaseDate`, `changelog`, `votes`, `createdAt`,
 `updatedAt`, et `points` (liste de textes courts affichés sous la description).
+`assignees` sert au suivi interne : il n’est pas affiché sur le site public.
 Les dates utilisent ISO 8601 ; les votes sont des entiers positifs ou nuls.
 Omettre les valeurs inconnues. Ne pas inventer de date ni de claim produit.
 Les textes restent simples, sans HTML ni JSX. Les descriptions peuvent utiliser
@@ -103,38 +99,37 @@ Roadmap conservent la destination GitHub Project d’origine. La nouvelle page
 reste accessible par URL directe, est exclue du sitemap et porte une directive
 `noindex, nofollow`. Cela ne constitue pas une restriction d’accès.
 
-Avec `BASE_URL=/` (déploiement du domaine personnalisé), son URL française est
-`https://docs.cloud-temple.com/roadmap`. L’aperçu actuel utilise `/docs/` et donc
-`http://127.0.0.1:3012/docs/roadmap`. Les autres langues conservent leur préfixe.
-Les YAML et les traductions sont validés localement à la génération. À chaque
-ouverture, la page charge les cartes et les libellés de la langue courante depuis
-`https://docs-staging.eegng2ef02.s3.fr1.cloud-temple.com/roadmap-data/`.
-La variable de build `ROADMAP_DATA_URL` permet de changer cette base publique.
+Avec `BASE_URL=/`, son URL française est `/roadmap` ; les autres langues
+conservent leur préfixe (`/en/roadmap`…). Les YAML et les traductions sont
+validés à la génération. À chaque ouverture, la page charge les cartes et les
+libellés de la langue courante depuis la base définie par la variable de build
+`ROADMAP_DATA_URL`. La CI utilise `/roadmap-data/` : les données sont servies
+par le même site que les pages, quelle que soit l’adresse utilisée. Une URL
+relative est résolue sur l’adresse de la page ; HTTPS reste obligatoire.
 Le navigateur n’envoie aucune clé et ne remplace pas une erreur S3 par des cartes
 embarquées potentiellement périmées. Il affiche un état de chargement, puis un
 message et un bouton Réessayer en cas d’erreur, avec un délai maximal de 15 s.
 Les réponses, IDs, statuts, champs, libellés et empreintes SHA-256 sont contrôlés.
 
-## Préparer une publication S3
+## Publication des données
 
 ```bash
-node plugins/roadmap/export.mjs /private/tmp/roadmap-s3-publication
+node plugins/roadmap/export.mjs "$PWD/roadmap-export"
 ```
 
 L’export valide les données et les traductions avec le même plugin que le build.
 Il produit les 27 YAML originaux, un JSON de données par langue (79 cartes et
 les libellés), puis un `manifest.json` avec chemins et empreintes SHA-256.
-Les fichiers sont regroupés sous `releases/<empreinte>/`. Publier ces objets
-avant le manifeste, sous le préfixe réservé `roadmap-data/`. Les identifiants
-S3 n’entrent ni dans cet export ni dans le code navigateur.
-Cette préparation locale ne publie rien. Le frontend consomme le manifeste et
+Les fichiers sont regroupés sous `releases/<empreinte>/`. La CI publie ensuite
+l’export sous le préfixe `roadmap-data/` avec `scripts/deploy/roadmap_publish.py` :
+fichiers de version d’abord, manifeste en dernier. Les identifiants S3 n’entrent
+ni dans cet export ni dans le code navigateur. Le frontend consomme le manifeste et
 le JSON localisé ; il ne parcourt pas les YAML du bucket. Modifier uniquement un
 YAML distant ne met donc pas les cartes à jour : régénérer l’intermédiaire,
 traduire officiellement et exporter/publier une nouvelle version complète.
 Cette publication de données ne nécessite aucun nouveau build du frontend.
 Le manifeste est demandé avec `cache: no-store`, les objets de version ont des
 chemins immuables, et leurs empreintes empêchent de mélanger deux publications.
-Le script de publication MinIO et son compte rendu sont suivis dans Products.
 
 Les textes de l’interface restent dans `docs/roadmap/interface.md` et suivent
 également le script officiel (`--path roadmap/interface.md`). Pour une nouvelle

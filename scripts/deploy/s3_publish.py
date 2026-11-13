@@ -262,7 +262,7 @@ def s3_client(endpoint: str):
     from botocore.config import Config
     if not (os.environ.get('AWS_ACCESS_KEY_ID') and os.environ.get('AWS_SECRET_ACCESS_KEY')):
         raise SystemExit('AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY doivent être fournis par l\'environnement.')
-    # L'endpoint Dell ECS refuse les checksums CRC32C ajoutés par défaut par les SDK
+    # L'endpoint S3 refuse les checksums CRC32C ajoutés par défaut par les SDK
     # récents : on ne les envoie que lorsque l'opération les exige.
     config = Config(signature_version='s3v4', s3={'addressing_style': 'path'},
                     request_checksum_calculation='when_required',
