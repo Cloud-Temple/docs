@@ -1,0 +1,13 @@
+product: HSM
+features:
+  - id: RM-019
+    category: Security & IAM
+    status: partial
+    quarter: 2025 - Q4
+    assignees:
+      - aelttil
+    startDate: '2025-02-01T00:00:00+00:00'
+    createdAt: '2025-07-10T07:19:05Z'
+    updatedAt: '2026-01-29T14:47:04Z'
+    title: Support du chiffrement HSM pour IaaS VMware
+    description: Ajouter le support du chiffrement HSM sur IaaS VMware.

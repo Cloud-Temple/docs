@@ -1,0 +1,13 @@
+product: Update Manager
+features:
+  - id: RM-045
+    category: Management & Governance
+    status: in_progress
+    quarter: 2025 - Q4
+    assignees:
+      - julienmorot-ct
+    startDate: '2025-06-02T00:00:00+00:00'
+    createdAt: '2025-10-01T12:55:19Z'
+    updatedAt: '2026-01-29T14:47:07Z'
+    title: Lancement d’Update Manager as a Service
+    description: Lancement d’Update Manager as a Service.

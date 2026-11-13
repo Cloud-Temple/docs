@@ -1,0 +1,17 @@
+product: Managed PostgreSQL
+features:
+  - id: RM-076
+    category: Data, Big Data, Analytics
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - Upgrade/Update
+    assignees:
+      - StephaneLeleu
+    type: Task
+    createdAt: '2026-07-02T10:15:02Z'
+    updatedAt: '2026-08-20T08:22:03Z'
+    title: Lancement de Managed PostgreSQL sur Managed Kubernetes
+    description: >-
+      Proposer PostgreSQL managé sur Managed Kubernetes ou Managed Core Kubernetes, avec CloudNative
+      PG.

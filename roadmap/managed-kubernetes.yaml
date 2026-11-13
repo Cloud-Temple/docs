@@ -1,0 +1,197 @@
+product: Managed Kubernetes
+features:
+  - id: RM-028
+    category: Containers & Orchestration
+    status: done
+    quarter: 2025 - Q3
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    startDate: '2025-02-01T00:00:00+00:00'
+    createdAt: '2025-07-09T09:43:44Z'
+    updatedAt: '2026-01-29T14:47:03Z'
+    title: Lancement de Managed Kubernetes
+    description: Lancement de Managed Kubernetes.
+  - id: RM-031
+    category: Containers & Orchestration
+    status: done
+    quarter: 2025 - Q4
+    tags:
+      - enhancement
+    assignees:
+      - StephaneLeleu
+    startDate: '2025-09-01T00:00:00+00:00'
+    createdAt: '2025-07-09T10:35:10Z'
+    updatedAt: '2026-01-29T14:47:00Z'
+    title: Registre de conteneurs interne pour Managed Kubernetes
+    description: Registre de conteneurs interne pour Managed Kubernetes.
+  - id: RM-046
+    category: Containers & Orchestration
+    status: prioritized
+    quarter: 2027 - Q2
+    tags:
+      - enhancement
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Feature
+    startDate: '2025-10-28T00:00:00+00:00'
+    createdAt: '2025-10-29T09:18:00Z'
+    updatedAt: '2026-01-29T14:46:14Z'
+    title: Pare-feu dédié pour Managed Kubernetes
+    description: >-
+      Ajouter un cluster pare-feu et des IPv4 publiques dédiés aux flux de Managed Kubernetes. Cette
+      fonctionnalité dépend de VPC avec dNAT, pare-feu et BGP.
+  - id: RM-047
+    category: Containers & Orchestration
+    status: partial
+    quarter: 2027 - Q2
+    tags:
+      - enhancement
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Feature
+    startDate: '2025-10-29T00:00:00+00:00'
+    createdAt: '2025-10-29T09:32:35Z'
+    updatedAt: '2026-10-09T13:24:52Z'
+    title: Registre de conteneurs centralisé pour Managed Kubernetes
+    description: >-
+      Centraliser les images de conteneurs utilisées par les clusters Managed Kubernetes afin de
+      mieux contrôler les images déployées.
+  - id: RM-048
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - enhancement
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Task
+    startDate: '2025-10-29T00:00:00+00:00'
+    createdAt: '2025-10-29T09:37:08Z'
+    updatedAt: '2026-01-29T14:46:52Z'
+    title: Migration de Promtail vers Alloy dans Managed Kubernetes
+    description: Remplacer Promtail par Alloy pour la collecte des logs des clusters Managed Kubernetes.
+  - id: RM-050
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q1
+    tags:
+      - enhancement
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Task
+    startDate: '2025-12-15T00:00:00+00:00'
+    createdAt: '2025-12-18T08:06:32Z'
+    updatedAt: '2026-01-29T14:46:55Z'
+    title: Migration de Loki-Distributed vers Grafana-Loki
+    description: Migration de Loki-Distributed vers Grafana-Loki.
+  - id: RM-051
+    category: Containers & Orchestration
+    status: done
+    quarter: 2025 - Q4
+    tags:
+      - enhancement
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    startDate: '2025-12-15T00:00:00+00:00'
+    createdAt: '2025-12-18T08:15:09Z'
+    updatedAt: '2026-01-29T14:47:07Z'
+    title: Transition de KubeCost vers OpenCost
+    description: Remplacer KubeCost par OpenCost.
+  - id: RM-052
+    category: Containers & Orchestration
+    status: done
+    quarter: 2025 - Q4
+    tags:
+      - Upgrade/Update
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    startDate: '2025-12-01T00:00:00+00:00'
+    createdAt: '2025-12-18T08:20:03Z'
+    updatedAt: '2026-01-29T14:47:08Z'
+    title: Mise à jour de Cilium CNI vers 1.8.4 et activation de Gateway API
+    description: Mettre à jour Cilium CNI de 1.7.x vers 1.8.4 et activer Gateway API.
+  - id: RM-053
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - enhancement
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Task
+    startDate: '2025-11-12T00:00:00+00:00'
+    createdAt: '2025-12-18T08:35:43Z'
+    updatedAt: '2026-04-01T15:26:38Z'
+    title: Migration d’ingress-nginx vers F5 nginx ingress OSS
+    description: Remplacer ingress-nginx par F5 nginx ingress OSS.
+  - id: RM-054
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q1
+    tags:
+      - enhancement
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    startDate: '2026-01-05T00:00:00+00:00'
+    createdAt: '2026-01-05T14:31:12Z'
+    updatedAt: '2026-01-29T14:46:55Z'
+    title: Support des serveurs Bare Metal et des GPU dans Managed Kubernetes
+    description: >-
+      Ajouter le support des GPU NVIDIA et des serveurs Bare Metal Cloud Temple avec multipath à
+      Managed Kubernetes.
+  - id: RM-056
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - Upgrade/Update
+    assignees:
+      - joshdvd
+      - StephaneLeleu
+    type: Task
+    startDate: '2026-01-15T00:00:00+00:00'
+    createdAt: '2026-01-07T13:44:46Z'
+    updatedAt: '2026-07-02T06:59:34Z'
+    title: Mise à jour majeure de Talos et Kubernetes — versions à confirmer
+    description: >-
+      Mise à jour majeure de Talos et Kubernetes. Les versions exactes doivent être confirmées : le
+      titre et le corps de la source divergent.
+  - id: RM-069
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q1
+    tags:
+      - enhancement
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    startDate: '2026-02-25T00:00:00+00:00'
+    createdAt: '2026-02-25T09:05:09Z'
+    updatedAt: '2026-07-02T06:58:43Z'
+    title: Ajout de KEDA dans Managed Kubernetes
+    description: >-
+      Intégrer KEDA à Managed Kubernetes pour l’autoscaling des workloads à partir de métriques et
+      d’événements.
+  - id: RM-070
+    category: Containers & Orchestration
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - enhancement
+    assignees:
+      - StephaneLeleu
+    type: Feature
+    startDate: '2026-02-01T00:00:00+00:00'
+    createdAt: '2026-02-25T09:17:39Z'
+    updatedAt: '2026-07-02T06:59:43Z'
+    title: Outils de supervision et LLM pour le profilage des applications
+    description: Intégrer Pyroscope dans Grafana et utiliser un LLM pour le profilage des applications.

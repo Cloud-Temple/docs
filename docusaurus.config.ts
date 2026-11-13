@@ -26,6 +26,9 @@ const config: Config = {
   // Default baseUrl for GitHub Pages deployment (/docs/ = repo name)
   // Override with BASE_URL=/ environment variable for custom domain deployments
   baseUrl: process.env.BASE_URL ?? "/docs/",
+  customFields: {
+    roadmapDataUrl: process.env.ROADMAP_DATA_URL ?? 'https://docs-staging.eegng2ef02.s3.fr1.cloud-temple.com/roadmap-data/',
+  },
 
   // GitHub repository config (used for "Edit this page" links)
   organizationName: 'Cloud-Temple',
@@ -75,6 +78,7 @@ const config: Config = {
   ],
 
   plugins: [
+    './plugins/roadmap/index.mjs',
     [
       require.resolve('docusaurus-plugin-search-local'),
       {
@@ -91,6 +95,8 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          // Read by the roadmap plugin; not individual documentation routes.
+          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}', '**/_*/**', '**/*.test.*', '**/__tests__/**', 'roadmap/**'],
           routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
           remarkPlugins: [remarkMath],
@@ -104,6 +110,7 @@ const config: Config = {
         },
         blog: false, // Optional: disable the blog plugin
         sitemap: {
+          ignorePatterns: ['**/roadmap', '**/roadmap/'],
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,

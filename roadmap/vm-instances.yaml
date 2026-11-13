@@ -1,0 +1,15 @@
+product: VM Instances
+features:
+  - id: RM-011
+    category: Compute
+    status: done
+    quarter: 2026 - Q2
+    tags:
+      - SNC
+    assignees:
+      - aelttil
+    startDate: '2026-02-02T00:00:00+00:00'
+    createdAt: '2025-07-09T09:02:07Z'
+    updatedAt: '2026-08-13T14:26:43Z'
+    title: Lancement de VM Instances
+    description: Lancer le produit VM Instances.
