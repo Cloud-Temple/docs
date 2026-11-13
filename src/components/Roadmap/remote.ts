@@ -1,7 +1,14 @@
-import type {RoadmapData, RoadmapItem} from './data';
+import type {Owner, RoadmapData, RoadmapItem} from './data';
 
 const statuses = new Set(['acknowledged', 'prioritized', 'in_progress', 'partial', 'done']);
 const maxResponseLength = 2_000_000;
+// Module sans dépendance (testé directement par Node) : liste locale des équipes,
+// dont l'égalité avec Owner (data.ts) est vérifiée par le contrôle de types.
+const ownerIds = ['csp', 'msp', 'mssp'] as const satisfies readonly Owner[];
+type MissingOwner = Exclude<Owner, typeof ownerIds[number]>;
+const ownersComplete: [MissingOwner] extends [never] ? true : never = true;
+void ownersComplete;
+const owners: ReadonlySet<string> = new Set(ownerIds);
 type JsonObject = Record<string, unknown>;
 function object(value: unknown): value is JsonObject {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -12,7 +19,9 @@ function item(value: unknown): value is RoadmapItem {
   if (!object(value) || !text(value.id) || !/^RM-\d+$/.test(value.id) ||
       !['title', 'description', 'category', 'product'].every(key => text(value[key])) ||
       typeof value.status !== 'string' || !statuses.has(value.status) ||
-      !strings(value.points) || !strings(value.assignees)) return false;
+      !strings(value.points)) return false;
+  // Facultatif : une release antérieure à l'introduction des équipes reste lisible.
+  if (value.owner !== undefined && !(typeof value.owner === 'string' && owners.has(value.owner))) return false;
   if (value.tags !== undefined && !strings(value.tags)) return false;
   if (value.quarter !== undefined && (typeof value.quarter !== 'string' || !/^\d{4} - Q[1-4]$/.test(value.quarter))) return false;
   for (const key of ['priority', 'type', 'changelog']) if (value[key] !== undefined && typeof value[key] !== 'string') return false;

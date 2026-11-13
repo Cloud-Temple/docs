@@ -23,19 +23,19 @@ roadmap/
 
 ```yaml
 product: IaaS VMware
+owner: csp
 features:
   - id: RM-003
     category: Compute
     status: prioritized
     quarter: 2026 - Q4
     tags: [SNC]
-    assignees: [Respoun]
     title: Migration des sauvegardes IaaS VMware
     description: >-
       Migrer les sauvegardes IaaS VMware vers IBM Storage Defender Data Protect.
 ```
 
-`product` s’applique à toutes les fonctionnalités du fichier. Chaque entrée
+`product` et `owner` s’appliquent à toutes les fonctionnalités du fichier. `owner` désigne l’équipe responsable : `csp` (Cloud Service Provider), `msp` (Managed Service Provider) ou `mssp` (Managed Security Service Provider). Une fonctionnalité peut porter son propre `owner` si elle relève d’une autre équipe. Aucun nom de personne : le champ `assignees` est refusé. Chaque entrée
 possède un Internal ID unique et stable, un titre et une description en français.
 Déplacer une fonctionnalité ou réordonner la liste ne doit pas changer son ID.
 Les identifiants `RM-*` actuels sont provisoires.
@@ -44,10 +44,9 @@ Champs requis par fonctionnalité : `id`, `title`, `description`, `category`,
 `status`. Statuts possibles : `acknowledged`, `prioritized`, `in_progress`,
 `partial`, `done`.
 
-Champs facultatifs : `quarter` (`YYYY - Q1` à `YYYY - Q4`), `tags`, `assignees`,
+Champs facultatifs : `quarter` (`YYYY - Q1` à `YYYY - Q4`), `tags`, `owner`,
 `priority`, `type`, `startDate`, `releaseDate`, `changelog`, `votes`, `createdAt`,
 `updatedAt`, et `points` (liste de textes courts affichés sous la description).
-`assignees` sert au suivi interne : il n’est pas affiché sur le site public.
 Les dates utilisent ISO 8601 ; les votes sont des entiers positifs ou nuls.
 Omettre les valeurs inconnues. Ne pas inventer de date ni de claim produit.
 Les textes restent simples, sans HTML ni JSX. Les descriptions peuvent utiliser

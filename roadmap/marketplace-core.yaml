@@ -1,11 +1,10 @@
 product: Marketplace Core
+owner: csp
 features:
   - id: RM-027
     category: Marketplace
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - Benjitul
     startDate: '2025-06-01T00:00:00+00:00'
     createdAt: '2025-07-09T09:13:45Z'
     updatedAt: '2026-01-30T08:46:38Z'
@@ -15,8 +14,6 @@ features:
     category: Marketplace
     status: done
     quarter: 2025 - Q4
-    assignees:
-      - Benjitul
     startDate: '2025-10-01T00:00:00+00:00'
     createdAt: '2025-07-09T10:18:04Z'
     updatedAt: '2026-01-29T14:46:59Z'
@@ -25,8 +22,6 @@ features:
   - id: RM-067
     category: Marketplace
     status: in_progress
-    assignees:
-      - Benjitul
     startDate: '2026-02-18T00:00:00+00:00'
     createdAt: '2026-02-18T13:12:20Z'
     updatedAt: '2026-10-21T12:24:00Z'

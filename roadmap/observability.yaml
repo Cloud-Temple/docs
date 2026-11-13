@@ -1,11 +1,10 @@
 product: Observability
+owner: csp
 features:
   - id: RM-065
     category: Management & Governance
     status: prioritized
     quarter: 2027 - Q1
-    assignees:
-      - aelttil
     createdAt: '2026-02-06T09:20:31Z'
     updatedAt: '2026-02-06T09:20:58Z'
     title: Support de Grafana dans Observability
@@ -14,8 +13,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2026 - Q3
-    assignees:
-      - aelttil
     createdAt: '2026-02-06T09:21:21Z'
     updatedAt: '2026-08-20T15:05:28Z'
     title: Lancement d’Observability

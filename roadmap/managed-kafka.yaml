@@ -1,11 +1,10 @@
 product: Managed Kafka
+owner: msp
 features:
   - id: RM-078
     category: Data, Big Data, Analytics
     status: acknowledged
     quarter: 2027 - Q1
-    assignees:
-      - Yann-kaw
     createdAt: '2026-08-20T08:39:44Z'
     updatedAt: '2026-08-20T08:39:44Z'
     title: Lancement de Managed Kafka

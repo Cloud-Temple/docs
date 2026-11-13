@@ -1,10 +1,9 @@
 product: SIEM
+owner: mssp
 features:
   - id: RM-012
     category: Security & IAM
     status: acknowledged
-    assignees:
-      - giuliano-ippoliti
     createdAt: '2025-07-16T12:35:54Z'
     updatedAt: '2026-04-29T13:06:45Z'
     title: Lancement de SIEM as a Service
@@ -13,8 +12,6 @@ features:
     category: Security & IAM
     status: in_progress
     quarter: 2027 - Q2
-    assignees:
-      - giuliano-ippoliti
     startDate: '2025-01-01T00:00:00+00:00'
     createdAt: '2026-04-29T13:18:03Z'
     updatedAt: '2026-04-29T13:18:29Z'

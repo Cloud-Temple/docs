@@ -1,4 +1,5 @@
 product: Cloud Console
+owner: csp
 features:
   - id: RM-002
     category: Compute
@@ -6,8 +7,6 @@ features:
     quarter: 2027 - Q1
     tags:
       - SNC
-    assignees:
-      - Benjitul
     createdAt: '2026-10-20T07:56:09Z'
     updatedAt: '2026-10-20T08:02:16Z'
     title: Intégration des sauvegardes IBM Storage Defender Data Protect à la console
@@ -16,9 +15,6 @@ features:
     category: Management & Governance
     status: prioritized
     quarter: 2026 - Q4
-    assignees:
-      - aelttil
-      - Benjitul
     createdAt: '2025-07-09T08:52:04Z'
     updatedAt: '2026-02-06T09:15:11Z'
     title: Intégration d’un assistant IA à la console Cloud Temple
@@ -27,9 +23,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2026 - Q2
-    assignees:
-      - alex-lata
-      - KChapron
     startDate: '2025-07-01T00:00:00+00:00'
     createdAt: '2025-07-09T08:58:37Z'
     updatedAt: '2026-08-20T09:46:10Z'
@@ -39,8 +32,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - aelttil
     startDate: '2025-09-21T00:00:00+00:00'
     createdAt: '2025-07-09T09:10:52Z'
     updatedAt: '2026-02-06T09:08:50Z'
@@ -50,8 +41,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - aelttil
     startDate: '2025-07-02T00:00:00+00:00'
     createdAt: '2025-07-09T12:10:08Z'
     updatedAt: '2026-02-06T09:06:02Z'
@@ -61,8 +50,6 @@ features:
     category: Management & Governance
     status: in_progress
     quarter: 2025 - Q4
-    assignees:
-      - ctori07
     startDate: '2025-07-01T00:00:00+00:00'
     createdAt: '2025-07-09T12:21:48Z'
     updatedAt: '2026-06-24T12:13:05Z'
@@ -72,8 +59,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2025 - Q4
-    assignees:
-      - ctori07
     startDate: '2025-07-15T00:00:00+00:00'
     createdAt: '2025-07-09T12:23:36Z'
     updatedAt: '2026-02-06T09:10:34Z'
@@ -85,8 +70,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2026 - Q2
-    assignees:
-      - aelttil
     type: Feature
     createdAt: '2026-01-20T10:44:03Z'
     updatedAt: '2026-05-27T12:22:39Z'
@@ -96,8 +79,6 @@ features:
     category: Management & Governance
     status: prioritized
     quarter: 2027 - Q1
-    assignees:
-      - KChapron
     createdAt: '2026-02-04T14:02:55Z'
     updatedAt: '2026-02-06T09:18:53Z'
     title: Support de Cluster API dans les API de la console
@@ -106,8 +87,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2026 - Q1
-    assignees:
-      - KChapron
     type: Feature
     startDate: '2026-02-02T00:00:00+00:00'
     createdAt: '2026-03-04T13:17:53Z'
@@ -118,8 +97,6 @@ features:
     category: Management & Governance
     status: partial
     quarter: 2026 - Q3
-    assignees:
-      - Benjitul
     startDate: '2026-06-17T00:00:00+00:00'
     createdAt: '2026-06-24T12:18:30Z'
     updatedAt: '2026-06-24T12:18:45Z'

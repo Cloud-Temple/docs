@@ -6,28 +6,28 @@
 | --- | --- |
 | `page.title` | Produkt-Roadmap |
 | `page.eyebrow` | CLOUD TEMPLE · PRODUKTE |
-| `page.heading` | Gemeinsam die nächste Stufe. |
+| `page.heading` | Lassen Sie uns die nächste Etappe gestalten. |
 | `page.description` | Entdecken Sie die Weiterentwicklungen unserer Produkte und verfolgen Sie deren Fortschritt. |
 | `preview.label` | LOKALE VORSCHAU |
 | `preview.notice` | Vorläufige Kennungen · Voraussichtliche Zeitpläne. |
-| `filters.aria` | Roadmap-Filter |
+| `filters.aria` | Filter der Roadmap |
 | `filters.title` | Filter |
 | `filters.reset` | Zurücksetzen |
 | `filters.quarter` | Veröffentlichungsquartal |
 | `filters.allQuarters` | Alle Quartale |
-| `filters.noQuarter` | Kein geplantes Quartal |
+| `filters.noQuarter` | Ohne vorgesehenes Quartal |
 | `filters.products` | Produkte |
 | `filters.all` | Alle |
 | `filters.hint` | Wählen Sie ein oder mehrere Produkte aus. |
 | `filters.remove` | Filter entfernen |
-| `board.aria` | Kanban-Board |
+| `board.aria` | Kanban-Brett |
 | `board.scroll` | Horizontales Scrollen der fünf Status |
 | `board.search` | Funktion suchen |
 | `board.placeholder` | Funktion, Tag oder Internal ID suchen… |
 | `board.one` | Funktion |
 | `board.many` | Funktionen |
 | `board.collapse` | Einklappen |
-| `board.expand` | Aufklappen |
+| `board.expand` | Ausklappen |
 | `board.open` | Details anzeigen |
 | `board.emptyTitle` | Keine Funktion gefunden |
 | `board.emptyDescription` | Versuchen Sie andere Produkte, ein anderes Quartal oder eine breitere Suche. |
@@ -40,22 +40,22 @@
 | `detail.category` | Hauptkategorie |
 | `detail.product` | Produkt |
 | `detail.quarter` | Geplantes Quartal |
-| `detail.owner` | Verantwortliche Person |
+| `detail.owner` | Zuständiges Team |
 | `detail.priority` | Priorität |
 | `detail.type` | Typ |
 | `detail.tags` | Tags |
 | `detail.none` | Keine |
 | `detail.unknown` | Nicht angegeben |
-| `detail.schedule` | Zeitplan und Verfolgung |
+| `detail.schedule` | Zeitplan und Fortschritt |
 | `detail.startDate` | Startdatum |
 | `detail.releaseDate` | Veröffentlichungsdatum |
 | `detail.changelog` | Changelog |
 | `detail.votes` | Stimmen |
 | `detail.created` | Erstellt am |
 | `detail.updated` | Aktualisiert am |
-| `detail.footnote` | Die Veröffentlichungsdaten sind voraussichtlich. Die Internal IDs dieser Vorschau sind vorläufig. |
+| `detail.footnote` | Die Veröffentlichungsdaten sind voraussichtlich. Die Internal ID in dieser Vorschau sind vorläufig. |
 | `status.acknowledged.title` | Anerkannt |
-| `status.acknowledged.description` | Im Einklang mit unserer Vision und Strategie. |
+| `status.acknowledged.description` | In Übereinstimmung mit unserer Vision und Strategie. |
 | `status.prioritized.title` | Priorisiert |
 | `status.prioritized.description` | Geplant für die nächsten zwölf Monate. |
 | `status.in_progress.title` | In Arbeit |

@@ -1,11 +1,10 @@
 product: LLMaaS
+owner: csp
 features:
   - id: RM-022
     category: AI & Machine Learning
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - aelttil
     startDate: '2025-01-01T00:00:00+00:00'
     createdAt: '2025-07-09T08:44:39Z'
     updatedAt: '2026-01-29T15:57:00Z'

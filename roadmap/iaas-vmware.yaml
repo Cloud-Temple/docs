@@ -1,11 +1,10 @@
 product: IaaS VMware
+owner: csp
 features:
   - id: RM-001
     category: Compute
     status: acknowledged
     quarter: 2026 - Q4
-    assignees:
-      - aelttil
     startDate: '2026-06-24T00:00:00+00:00'
     createdAt: '2026-06-24T12:08:14Z'
     updatedAt: '2026-06-24T12:08:27Z'
@@ -17,8 +16,6 @@ features:
     quarter: 2026 - Q4
     tags:
       - SNC
-    assignees:
-      - Respoun
     createdAt: '2026-10-20T07:53:06Z'
     updatedAt: '2026-10-20T07:59:16Z'
     title: Migration des sauvegardes IaaS VMware vers IBM Storage Defender Data Protect
@@ -27,8 +24,6 @@ features:
     category: Storage
     status: done
     quarter: 2025 - Q4
-    assignees:
-      - aelttil
     type: Feature
     startDate: '2025-09-24T00:00:00+00:00'
     createdAt: '2025-10-29T13:58:08Z'

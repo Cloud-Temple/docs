@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {loadRemoteRoadmap, validateRemoteData} from '../../src/components/Roadmap/remote.ts';
 
 const payload = {items: [{id: 'RM-001', title: 'Feature', description: 'Description', product: 'IaaS VMware',
-  category: 'Compute', status: 'prioritized', points: [], assignees: []}], labels: {'page.title': 'Roadmap', 'category.Compute': 'Calcul'}};
+  category: 'Compute', status: 'prioritized', points: [], owner: 'msp'}], labels: {'page.title': 'Roadmap', 'category.Compute': 'Calcul'}};
 const baseUrl = 'https://example.com/roadmap-data/';
 const release = 'a'.repeat(64);
 const signal = new AbortController().signal;
@@ -60,4 +60,20 @@ test('remote validation rejects duplicates, missing category labels and invalid 
   assert.throws(() => validateRemoteData({...payload, labels: {'page.title': 'Roadmap'}}, 1, []), /labels/);
   assert.throws(() => validateRemoteData({...payload, items: [{...payload.items[0], status: 'unknown'}]}, 1, []), /payload/);
   assert.throws(() => validateRemoteData({...payload, items: [{...payload.items[0], votes: -1}]}, 1, []), /payload/);
+});
+
+test('remote owner must be a known team, but an older release without owner stays readable', async () => {
+  const request = items => async () => Response.json(items);
+  const withItems = items => ({...payload, items});
+  const base = payload.items[0];
+  const load = async items => {
+    const content = JSON.stringify(withItems(items));
+    let calls = 0;
+    return loadRemoteRoadmap(baseUrl, 'fr', [], signal, async () => Response.json(++calls === 1 ? fixture(content) : withItems(items)));
+  };
+  assert.equal((await load([base])).items[0].owner, 'msp');
+  const {owner, ...withoutOwner} = base;
+  assert.equal((await load([{...withoutOwner, assignees: ['ancien']}])).items[0].owner, undefined);
+  await assert.rejects(load([{...base, owner: 'rnd'}]), /invalid/i);
+  await assert.rejects(load([{...base, owner: 'Jean Dupont'}]), /invalid/i);
 });

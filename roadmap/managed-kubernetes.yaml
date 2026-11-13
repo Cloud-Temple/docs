@@ -1,12 +1,10 @@
 product: Managed Kubernetes
+owner: msp
 features:
   - id: RM-028
     category: Containers & Orchestration
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     startDate: '2025-02-01T00:00:00+00:00'
     createdAt: '2025-07-09T09:43:44Z'
     updatedAt: '2026-01-29T14:47:03Z'
@@ -18,8 +16,6 @@ features:
     quarter: 2025 - Q4
     tags:
       - enhancement
-    assignees:
-      - StephaneLeleu
     startDate: '2025-09-01T00:00:00+00:00'
     createdAt: '2025-07-09T10:35:10Z'
     updatedAt: '2026-01-29T14:47:00Z'
@@ -31,9 +27,6 @@ features:
     quarter: 2027 - Q2
     tags:
       - enhancement
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Feature
     startDate: '2025-10-28T00:00:00+00:00'
     createdAt: '2025-10-29T09:18:00Z'
@@ -48,9 +41,6 @@ features:
     quarter: 2027 - Q2
     tags:
       - enhancement
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Feature
     startDate: '2025-10-29T00:00:00+00:00'
     createdAt: '2025-10-29T09:32:35Z'
@@ -65,9 +55,6 @@ features:
     quarter: 2026 - Q2
     tags:
       - enhancement
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Task
     startDate: '2025-10-29T00:00:00+00:00'
     createdAt: '2025-10-29T09:37:08Z'
@@ -80,9 +67,6 @@ features:
     quarter: 2026 - Q1
     tags:
       - enhancement
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Task
     startDate: '2025-12-15T00:00:00+00:00'
     createdAt: '2025-12-18T08:06:32Z'
@@ -95,8 +79,6 @@ features:
     quarter: 2025 - Q4
     tags:
       - enhancement
-    assignees:
-      - StephaneLeleu
     type: Feature
     startDate: '2025-12-15T00:00:00+00:00'
     createdAt: '2025-12-18T08:15:09Z'
@@ -109,8 +91,6 @@ features:
     quarter: 2025 - Q4
     tags:
       - Upgrade/Update
-    assignees:
-      - StephaneLeleu
     type: Feature
     startDate: '2025-12-01T00:00:00+00:00'
     createdAt: '2025-12-18T08:20:03Z'
@@ -123,9 +103,6 @@ features:
     quarter: 2026 - Q2
     tags:
       - enhancement
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Task
     startDate: '2025-11-12T00:00:00+00:00'
     createdAt: '2025-12-18T08:35:43Z'
@@ -138,8 +115,6 @@ features:
     quarter: 2026 - Q1
     tags:
       - enhancement
-    assignees:
-      - StephaneLeleu
     type: Feature
     startDate: '2026-01-05T00:00:00+00:00'
     createdAt: '2026-01-05T14:31:12Z'
@@ -154,9 +129,6 @@ features:
     quarter: 2026 - Q2
     tags:
       - Upgrade/Update
-    assignees:
-      - joshdvd
-      - StephaneLeleu
     type: Task
     startDate: '2026-01-15T00:00:00+00:00'
     createdAt: '2026-01-07T13:44:46Z'
@@ -171,8 +143,6 @@ features:
     quarter: 2026 - Q1
     tags:
       - enhancement
-    assignees:
-      - StephaneLeleu
     type: Feature
     startDate: '2026-02-25T00:00:00+00:00'
     createdAt: '2026-02-25T09:05:09Z'
@@ -187,8 +157,6 @@ features:
     quarter: 2026 - Q2
     tags:
       - enhancement
-    assignees:
-      - StephaneLeleu
     type: Feature
     startDate: '2026-02-01T00:00:00+00:00'
     createdAt: '2026-02-25T09:17:39Z'

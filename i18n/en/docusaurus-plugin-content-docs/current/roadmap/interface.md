@@ -9,13 +9,13 @@
 | `page.heading` | Let's build what's next. |
 | `page.description` | Discover the evolution of our products and track their progress. |
 | `preview.label` | LOCAL PREVIEW |
-| `preview.notice` | Provisional identifiers · Estimated deadlines. |
+| `preview.notice` | Provisional credentials · Estimated deadlines. |
 | `filters.aria` | Roadmap filters |
 | `filters.title` | Filters |
 | `filters.reset` | Reset |
 | `filters.quarter` | Release quarter |
 | `filters.allQuarters` | All quarters |
-| `filters.noQuarter` | No quarter planned |
+| `filters.noQuarter` | No scheduled quarter |
 | `filters.products` | Products |
 | `filters.all` | All |
 | `filters.hint` | Select one or more products. |
@@ -39,8 +39,8 @@
 | `detail.status` | Status |
 | `detail.category` | Main category |
 | `detail.product` | Product |
-| `detail.quarter` | Planned quarter |
-| `detail.owner` | Owner |
+| `detail.quarter` | Scheduled quarter |
+| `detail.owner` | Responsible team |
 | `detail.priority` | Priority |
 | `detail.type` | Type |
 | `detail.tags` | Tags |
@@ -53,7 +53,7 @@
 | `detail.votes` | Votes |
 | `detail.created` | Created on |
 | `detail.updated` | Updated on |
-| `detail.footnote` | Release dates are estimates. The Internal IDs in this preview are placeholders. |
+| `detail.footnote` | Release dates are estimates. The Internal IDs in this preview are provisional. |
 | `status.acknowledged.title` | Acknowledged |
 | `status.acknowledged.description` | Aligned with our vision and strategy. |
 | `status.prioritized.title` | Prioritized |
