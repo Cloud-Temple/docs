@@ -81,3 +81,32 @@ Utiliser des termes génériques :
 - Les détails techniques complexes vont dans des sous-sections dédiées, pas dans le paragraphe d'intro.
 - Préférer les listes à puces et tableaux markdown aux longs paragraphes pour les informations structurées.
 - Les avertissements (`:::warning`) et notes (`:::info`) doivent être concis : 2 à 5 lignes maximum, sauf exception justifiée.
+
+---
+
+## 6. Ton factuel
+
+- Décrire ce que fait le service, comment il fonctionne et comment l'utiliser.
+- Pas de superlatifs marketing (« révolutionnaire », « inégalé », « le meilleur ») ni de comparaison avec des concurrents.
+- Chaque affirmation technique doit pouvoir être vérifiée : composant, comportement, limite, procédure.
+
+## 7. Chiffres, engagements et prix
+
+- Ne jamais inventer ni extrapoler un chiffre : SLA, disponibilité, RPO/RTO, délais de support, limites, performances, nombre de modèles ou de clients.
+- Un engagement contractuel (SLA, garantie, responsabilité) ne s'écrit qu'à partir d'une source validée par le responsable produit : documents contractuels, matrice RACI, fiche produit.
+- Les prix ne figurent pas dans la documentation : renvoyer vers le [catalogue des tarifs publics](https://www.cloud-temple.com/nos-tarifs-publics/).
+- Pour LLMaaS, les dates de cycle de vie et de migration des modèles font foi sur la [page lifecycle](https://llmaas.status.cloud-temple.app/lifecycle) : ne pas les recopier dans les pages.
+
+## 8. Exemples de code
+
+- Tout exemple publié doit avoir été exécuté et fonctionner : commandes, appels d'API, scripts, réponses montrées.
+- Une réponse abrégée ou fictive est signalée comme telle dans le texte qui la précède.
+- Jamais de vraie clé, de vrai jeton ni de vrai identifiant client dans un exemple : utiliser des valeurs factices explicites (`<VOTRE_CLE_API>`, `your-api-key-here`).
+- Indiquer les versions des dépendances lorsque l'exemple en dépend (SDK, bibliothèques).
+
+## 9. Changelog de la documentation
+
+- `docs/changelog.md` est public : il s'adresse aux lecteurs de la documentation.
+- Une entrée décrit ce qui change pour le lecteur (nouvelle page, procédure corrigée, information ajoutée), pas le travail interne (refactorisation, outillage, traduction, CI).
+- Format : `### [Date] : Titre de la mise à jour`.
+- Le changelog des produits (`docs/changelog_produits.md`) est distinct et suit les versions publiées.

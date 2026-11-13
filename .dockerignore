@@ -13,5 +13,7 @@ LICENSE
 makefile
 README.md
 
-# Cline Memory Bank
-memory-bank/
+# Règles de contribution (inutiles dans l'image)
+contributing/
+AGENTS.md
+CLAUDE.md

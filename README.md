@@ -19,6 +19,8 @@ We value your contributions! Whether it’s improving an existing guide or creat
  2. Make your changes: Update or create guides.
  3. Submit a Pull Request (PR): Propose your changes to the `staging` branch.
 
+Before contributing, read [AGENTS.md](AGENTS.md) (in French): it gathers the writing, translation and contribution rules. Detailed guides are in [`contributing/`](contributing/).
+
 Our team will review your contribution, provide feedback if needed, and integrate approved changes.
 
 ## Guidelines for Contributions
@@ -176,7 +178,7 @@ For each model release, update the model metadata and published lifecycle in the
 
 Keep example model IDs in configuration where practical; validate them against the API and lifecycle when changing a guide. Do not recreate exhaustive model lists in the overview, FAQ or concepts pages.
 
-The former `memory-bank/models_config.yaml` is a historical copy, not a current catalogue. `yarn generate:models` / `yarn generate:docs` and the old Python entry point now exit with an explanatory error, without overwriting the selection guide.
+The former `memory-bank/models_config.yaml` historical copy has been removed from the repository. `yarn generate:models` / `yarn generate:docs` and the old Python entry point now exit with an explanatory error, without overwriting the selection guide.
 
 ## 🌍 Translation System
 

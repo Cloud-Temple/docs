@@ -25,7 +25,7 @@ Les options CLI sont prioritaires sur les variables d'environnement :
 
 - `--token` / `CLOUDTEMPLE_API_KEY`: token Bearer Cloud Temple LLMaaS. Requis pour une traduction réelle ou `--test-api`, non requis pour `--dry-run`.
 - `--url` / `CLOUDTEMPLE_API_URL`: endpoint de l'API. Par défaut : `https://api.ai.cloud-temple.com/v1/chat/completions`.
-- `--model` / `TRANSLATION_MODEL`: modèle LLM à utiliser pour la traduction. Par défaut : `qwen3.6:27b`.
+- `--model` / `TRANSLATION_MODEL`: modèle LLM à utiliser pour la traduction. Par défaut : `qwen3.8:27b` (voir `scripts/translate_py/config.py`).
 - `MODEL_TYPE`: Optionnel. Le type de modèle pour la gestion du tokenizer ('openai' ou 'other'). Par défaut : `other`.
 - `CONCURRENT_TRANSLATIONS`: Optionnel. Nombre de fichiers traités en parallèle. Par défaut : `4`.
 - `MAX_MODEL_CONTEXT_LENGTH`: Optionnel. La longueur maximale du contexte du modèle. Par défaut : `32768`.
@@ -125,7 +125,7 @@ Points opérationnels :
 - `--token` est prioritaire sur `CLOUDTEMPLE_API_KEY`.
 - `--url` est prioritaire sur `CLOUDTEMPLE_API_URL`.
 - `--model` est prioritaire sur `TRANSLATION_MODEL`.
-- Le modèle par défaut est `qwen3.6:27b`.
+- Le modèle par défaut est `qwen3.8:27b`.
 - L'URL par défaut reste `https://api.ai.cloud-temple.com/v1/chat/completions`.
 - `--dry-run` et `--init` sans `--translate-missing` ne nécessitent pas de token API.
 

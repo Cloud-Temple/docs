@@ -179,7 +179,7 @@ Le script accepte la configuration par options CLI, prioritaires sur l'environne
 
 - `--token` : token Bearer Cloud Temple LLMaaS, prioritaire sur `CLOUDTEMPLE_API_KEY`.
 - `--url` : endpoint API, prioritaire sur `CLOUDTEMPLE_API_URL`, défaut `https://api.ai.cloud-temple.com/v1/chat/completions`.
-- `--model` : modèle de traduction, prioritaire sur `TRANSLATION_MODEL`, défaut `qwen3.6:27b`.
+- `--model` : modèle de traduction, prioritaire sur `TRANSLATION_MODEL`, défaut `qwen3.8:27b`.
 
 Le token n'est pas requis pour les commandes qui n'appellent pas l'API, notamment `--dry-run` et `--init` sans `--translate-missing`.
 
@@ -191,8 +191,11 @@ python scripts/translate_py/translate.py --dry-run
 # 2. Traduire les fichiers modifiés
 python scripts/translate_py/translate.py --token "$CLOUDTEMPLE_API_KEY"
 
-# 3. Valider le build multilingue
-npm run build
+# 3. Réaligner les ancres des titres traduits
+python3 scripts/fix_i18n_anchors.py
+
+# 4. Valider le build multilingue
+NO_UPDATE_NOTIFIER=1 BASE_URL=/ yarn build
 ```
 
 ## Processus de Validation
