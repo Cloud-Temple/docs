@@ -38,7 +38,7 @@
 | `detail.category` | Grande catégorie |
 | `detail.product` | Produit |
 | `detail.quarter` | Trimestre prévu |
-| `detail.owner` | Responsable |
+| `detail.owner` | Équipe responsable |
 | `detail.priority` | Priorité |
 | `detail.type` | Type |
 | `detail.tags` | Tags |

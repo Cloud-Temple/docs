@@ -1,4 +1,6 @@
 const statusIds = new Set(['acknowledged', 'prioritized', 'in_progress', 'partial', 'done']);
+// Équipe responsable d'une fonctionnalité. Jamais de nom de personne : la roadmap est publique.
+export const ownerIds = new Set(['csp', 'msp', 'mssp']);
 
 // The authoring contract deliberately uses JSON fences: the official translator
 // preserves them byte for byte, while translating headings, prose and tables.
@@ -15,11 +17,12 @@ export function parseRoadmap(markdown, source = 'roadmap.md') {
     ids.add(id);
     const metadata = JSON.parse(match[1]);
     if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) throw new Error(`${source}: invalid metadata for ${id}`);
-    const allowed = new Set(['product', 'category', 'status', 'quarter', 'tags', 'assignees', 'createdAt', 'updatedAt', 'priority', 'type', 'startDate', 'releaseDate', 'changelog', 'votes']);
+    const allowed = new Set(['product', 'category', 'status', 'quarter', 'tags', 'owner', 'createdAt', 'updatedAt', 'priority', 'type', 'startDate', 'releaseDate', 'changelog', 'votes']);
     for (const key of Object.keys(metadata)) if (!allowed.has(key)) throw new Error(`${source}: unknown field ${key} in ${id}`);
     for (const key of ['product', 'category']) if (typeof metadata[key] !== 'string' || !metadata[key].trim()) throw new Error(`${source}: missing ${key} in ${id}`);
     if (!statusIds.has(metadata.status)) throw new Error(`${source}: invalid status in ${id}`);
-    for (const key of ['tags', 'assignees']) {
+    if (!ownerIds.has(metadata.owner)) throw new Error(`${source}: invalid or missing owner in ${id} (csp, msp ou mssp)`);
+    for (const key of ['tags']) {
       if (metadata[key] !== undefined && (!Array.isArray(metadata[key]) || !metadata[key].every(value => typeof value === 'string'))) throw new Error(`${source}: invalid ${key} in ${id}`);
     }
     for (const key of ['quarter', 'priority', 'type', 'changelog']) if (metadata[key] !== undefined && typeof metadata[key] !== 'string') throw new Error(`${source}: invalid ${key} in ${id}`);
@@ -31,7 +34,7 @@ export function parseRoadmap(markdown, source = 'roadmap.md') {
     // Brief plain Markdown descriptions: paragraphs and optional bullet points.
     const paragraphs = body.split(/\n\s*\n/).filter(block => !block.startsWith('- '));
     const points = body.split('\n').filter(line => line.startsWith('- ')).map(line => line.slice(2));
-    result.push({...metadata, assignees: metadata.assignees ?? [], id, title: match[2].trim(), description: paragraphs.join('\n\n'), points});
+    result.push({...metadata, id, title: match[2].trim(), description: paragraphs.join('\n\n'), points});
   }
   return result;
 }

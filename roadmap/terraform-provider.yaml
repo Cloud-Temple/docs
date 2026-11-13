@@ -1,11 +1,10 @@
 product: Terraform Provider
+owner: csp
 features:
   - id: RM-041
     category: Management & Governance
     status: done
     quarter: 2025 - Q4
-    assignees:
-      - aelttil
     startDate: '2025-07-01T00:00:00+00:00'
     createdAt: '2025-07-17T08:19:18Z'
     updatedAt: '2026-01-30T08:46:33Z'
@@ -15,8 +14,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2025 - Q4
-    assignees:
-      - KChapron
     startDate: '2025-10-01T00:00:00+00:00'
     createdAt: '2025-10-01T12:26:41Z'
     updatedAt: '2026-01-29T15:48:18Z'

@@ -1,11 +1,10 @@
 product: AIOps
+owner: msp
 features:
   - id: RM-029
     category: Management & Governance
     status: partial
     quarter: 2026 - Q4
-    assignees:
-      - julienmorot-ct
     startDate: '2025-01-01T00:00:00+00:00'
     createdAt: '2025-07-09T09:48:57Z'
     updatedAt: '2026-01-29T14:47:04Z'
@@ -17,8 +16,6 @@ features:
     category: Management & Governance
     status: partial
     quarter: 2025 - Q4
-    assignees:
-      - julienmorot-ct
     startDate: '2025-10-01T00:00:00+00:00'
     createdAt: '2025-07-10T13:44:14Z'
     updatedAt: '2026-01-29T14:47:05Z'
@@ -28,8 +25,6 @@ features:
     category: Management & Governance
     status: partial
     quarter: 2025 - Q4
-    assignees:
-      - julienmorot-ct
     startDate: '2025-10-01T00:00:00+00:00'
     createdAt: '2025-10-01T12:51:43Z'
     updatedAt: '2026-01-29T14:47:06Z'
@@ -39,8 +34,6 @@ features:
     category: Management & Governance
     status: done
     quarter: 2026 - Q1
-    assignees:
-      - julienmorot-ct
     startDate: '2026-01-02T00:00:00+00:00'
     createdAt: '2026-01-07T13:42:15Z'
     updatedAt: '2026-03-18T14:01:53Z'
@@ -50,8 +43,6 @@ features:
     category: Management & Governance
     status: in_progress
     quarter: 2026 - Q1
-    assignees:
-      - julienmorot-ct
     startDate: '2026-01-02T00:00:00+00:00'
     createdAt: '2026-01-07T13:46:31Z'
     updatedAt: '2026-01-29T14:46:55Z'
@@ -61,8 +52,6 @@ features:
     category: Management & Governance
     status: partial
     quarter: 2026 - Q1
-    assignees:
-      - julienmorot-ct
     startDate: '2026-01-02T00:00:00+00:00'
     createdAt: '2026-01-07T13:56:44Z'
     updatedAt: '2026-01-07T13:57:28Z'
@@ -72,8 +61,6 @@ features:
     category: Management & Governance
     status: in_progress
     quarter: 2026 - Q1
-    assignees:
-      - julienmorot-ct
     startDate: '2026-01-01T00:00:00+00:00'
     createdAt: '2026-01-21T13:54:20Z'
     updatedAt: '2026-01-21T13:55:05Z'
@@ -83,8 +70,6 @@ features:
     category: Management & Governance
     status: in_progress
     quarter: 2026 - Q1
-    assignees:
-      - julienmorot-ct
     createdAt: '2026-01-21T13:55:19Z'
     updatedAt: '2026-01-21T13:55:25Z'
     title: Support des snapshots pour les demandes de service AIOps

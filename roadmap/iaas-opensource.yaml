@@ -1,11 +1,10 @@
 product: IaaS OpenSource
+owner: csp
 features:
   - id: RM-004
     category: Compute
     status: prioritized
     quarter: 2025 - Q4
-    assignees:
-      - mathieuchereau
     createdAt: '2025-07-09T12:14:49Z'
     updatedAt: '2026-01-29T14:47:00Z'
     title: Restauration de fichiers à granularité fine pour IaaS OpenSource
@@ -14,8 +13,6 @@ features:
     category: Compute
     status: in_progress
     quarter: 2025 - Q4
-    assignees:
-      - aelttil
     startDate: '2025-09-08T00:00:00+00:00'
     createdAt: '2025-09-03T12:29:47Z'
     updatedAt: '2026-01-29T14:47:06Z'
@@ -25,8 +22,6 @@ features:
     category: Compute
     status: in_progress
     quarter: 2025 - Q4
-    assignees:
-      - mathieuchereau
     createdAt: '2025-07-09T12:16:06Z'
     updatedAt: '2026-01-29T14:47:00Z'
     title: Partage des images ISO au niveau du tenant
@@ -35,8 +30,6 @@ features:
     category: Compute
     status: partial
     quarter: 2025 - Q4
-    assignees:
-      - aelttil
     startDate: '2025-07-01T00:00:00+00:00'
     createdAt: '2025-07-09T12:18:10Z'
     updatedAt: '2026-06-24T12:06:15Z'
@@ -48,8 +41,6 @@ features:
     category: Compute
     status: partial
     quarter: 2025 - Q4
-    assignees:
-      - aelttil
     startDate: '2025-09-26T00:00:00+00:00'
     createdAt: '2025-07-09T12:17:13Z'
     updatedAt: '2026-06-24T12:06:08Z'
@@ -59,8 +50,6 @@ features:
     category: Compute
     status: done
     quarter: 2025 - Q2
-    assignees:
-      - aelttil
     startDate: '2025-03-01T00:00:00+00:00'
     createdAt: '2025-07-09T09:09:23Z'
     updatedAt: '2026-01-30T08:46:44Z'
@@ -70,8 +59,6 @@ features:
     category: Compute
     status: done
     quarter: 2025 - Q3
-    assignees:
-      - aelttil
     startDate: '2025-06-15T00:00:00+00:00'
     createdAt: '2025-07-09T09:07:52Z'
     updatedAt: '2026-01-30T08:46:48Z'

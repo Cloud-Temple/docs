@@ -1,4 +1,5 @@
 product: Managed MariaDB
+owner: msp
 features:
   - id: RM-075
     category: Data, Big Data, Analytics
@@ -6,8 +7,6 @@ features:
     quarter: 2026 - Q2
     tags:
       - Upgrade/Update
-    assignees:
-      - StephaneLeleu
     type: Task
     createdAt: '2026-07-02T10:12:26Z'
     updatedAt: '2026-08-20T08:20:39Z'

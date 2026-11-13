@@ -10,11 +10,18 @@ const statusDefinitions = [
   {id: 'done', color: '#39a875'},
 ] as const;
 export type Status = typeof statusDefinitions[number]['id'];
+// Équipes responsables : noms propres, identiques dans toutes les langues.
+export const ownerLabels = {
+  csp: 'Cloud Service Provider (CSP)',
+  msp: 'Managed Service Provider (MSP)',
+  mssp: 'Managed Security Service Provider (MSSP)',
+} as const;
+export type Owner = keyof typeof ownerLabels;
 export interface RoadmapItem {
   readonly id: string;
   readonly description: string;
   readonly points: readonly string[];
-  readonly assignees: readonly string[];
+  readonly owner?: Owner;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   readonly priority?: string;

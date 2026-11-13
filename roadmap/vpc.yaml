@@ -1,4 +1,5 @@
 product: VPC
+owner: csp
 features:
   - id: RM-021
     category: Networking
@@ -6,8 +7,6 @@ features:
     quarter: 2025 - Q3
     tags:
       - SNC
-    assignees:
-      - aelttil
     startDate: '2025-06-01T00:00:00+00:00'
     createdAt: '2025-07-09T08:43:00Z'
     updatedAt: '2026-02-04T13:17:28Z'
@@ -19,8 +18,6 @@ features:
     quarter: 2026 - Q4
     tags:
       - SNC
-    assignees:
-      - fdebonneval
     createdAt: '2025-07-09T08:46:30Z'
     updatedAt: '2026-01-29T14:46:58Z'
     title: Lancement du load balancer as a Service de niveau 4
@@ -31,8 +28,6 @@ features:
     quarter: 2026 - Q4
     tags:
       - SNC
-    assignees:
-      - fdebonneval
     createdAt: '2025-07-09T12:35:45Z'
     updatedAt: '2026-01-29T14:47:02Z'
     title: Lancement du load balancer as a Service de niveau 7
@@ -41,8 +36,6 @@ features:
     category: Networking
     status: prioritized
     quarter: 2026 - Q4
-    assignees:
-      - fdebonneval
     createdAt: '2025-07-09T13:01:46Z'
     updatedAt: '2026-01-29T14:47:04Z'
     title: Lancement du load balancer as a Service de niveau 4
@@ -51,8 +44,6 @@ features:
     category: Networking
     status: prioritized
     quarter: 2026 - Q4
-    assignees:
-      - fdebonneval
     createdAt: '2025-07-09T13:02:20Z'
     updatedAt: '2026-01-29T14:47:04Z'
     title: Lancement du load balancer as a Service de niveau 7
@@ -61,8 +52,6 @@ features:
     category: Networking
     status: in_progress
     quarter: 2026 - Q3
-    assignees:
-      - aelttil
     startDate: '2026-01-01T00:00:00+00:00'
     createdAt: '2026-01-21T13:05:34Z'
     updatedAt: '2026-01-29T15:04:19Z'
@@ -72,8 +61,6 @@ features:
     category: Networking
     status: in_progress
     quarter: 2026 - Q4
-    assignees:
-      - aelttil
     startDate: '2026-01-01T00:00:00+00:00'
     createdAt: '2026-01-21T13:05:50Z'
     updatedAt: '2026-01-29T15:04:25Z'

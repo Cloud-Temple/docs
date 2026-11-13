@@ -37,6 +37,7 @@ test('public export preserves YAML and publishes the same 79 IDs in five verifie
 });
 
 const productYaml = `product: IaaS VMware
+owner: csp
 features:
   - id: RM-001
     category: Compute
@@ -53,7 +54,7 @@ const example = `# Roadmap
 ## RM-001
 
 \`\`\`json
-{"status":"planned","product":"IaaS VMware","category":"Compute"}
+{"status":"planned","product":"IaaS VMware","category":"Compute","owner":"csp"}
 \`\`\`
 
 ### Sauvegardes
@@ -135,6 +136,28 @@ test('product YAML is read and duplicate IDs across products are rejected', asyn
     await rm(path.join(root, 'roadmap/other.yaml'));
     await writeFile(path.join(root, 'roadmap/iaas-vmware.yaml'), productYaml.replace('prioritized', 'invented'));
     await assert.rejects(loadProducts(root), /invalid status/);
+  } finally {
+    await rm(root, {recursive: true, force: true});
+  }
+});
+
+test('each product declares an owner team and person names are refused', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'roadmap-owner-test-'));
+  const write = content => writeFile(path.join(root, 'roadmap/iaas-vmware.yaml'), content);
+  try {
+    await mkdir(path.join(root, 'roadmap'));
+    await write(productYaml);
+    assert.equal((await loadProducts(root))[0].owner, 'csp');
+    await write(productYaml.replace('    status: prioritized\n', '    status: prioritized\n    owner: mssp\n'));
+    assert.equal((await loadProducts(root))[0].owner, 'mssp', 'une fonctionnalité peut relever d\'une autre équipe');
+    await write(productYaml.replace('owner: csp\n', ''));
+    await assert.rejects(loadProducts(root), /missing owner/);
+    await write(productYaml.replace('owner: csp', 'owner: rnd'));
+    await assert.rejects(loadProducts(root), /missing owner/);
+    await write(productYaml.replace('    status: prioritized\n', '    status: prioritized\n    owner: Jean Dupont\n'));
+    await assert.rejects(loadProducts(root), /invalid owner/);
+    await write(productYaml.replace('    status: prioritized\n', '    status: prioritized\n    assignees: [jdupont]\n'));
+    await assert.rejects(loadProducts(root), /assignees is no longer accepted/);
   } finally {
     await rm(root, {recursive: true, force: true});
   }

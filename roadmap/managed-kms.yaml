@@ -1,11 +1,10 @@
 product: Managed KMS
+owner: csp
 features:
   - id: RM-016
     category: Security & IAM
     status: prioritized
     quarter: 2026 - Q4
-    assignees:
-      - Yann-kaw
     createdAt: '2026-08-20T09:56:35Z'
     updatedAt: '2026-08-20T09:56:35Z'
     title: Lancement de Managed KMS
