@@ -24,7 +24,6 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  S3_ENDPOINT: https://eegng2ef02.s3.fr1.cloud-temple.com
   BOTO3_VERSION: "1.44.3"
 
 jobs:
@@ -126,9 +125,18 @@ jobs:
     concurrency:
       group: publish-${{ needs.build.outputs.environment }}
       cancel-in-progress: false
+    # Variables GitHub (non secrètes) : S3_BUCKET par environment, S3_ENDPOINT au
+    # niveau du dépôt. Les clés restent des secrets d'environment.
     env:
-      BUCKET: docs-${{ needs.build.outputs.environment }}
+      BUCKET: ${{ vars.S3_BUCKET }}
+      S3_ENDPOINT: ${{ vars.S3_ENDPOINT }}
     steps:
+      - name: Configuration de l'environment
+        run: |
+          [ -n "$BUCKET" ] || { echo "::error::Variable S3_BUCKET absente de l'environment ${{ needs.build.outputs.environment }}"; exit 1; }
+          case "$S3_ENDPOINT" in https://*) ;; *) echo "::error::Variable S3_ENDPOINT absente ou non HTTPS"; exit 1;; esac
+          echo "Publication vers $BUCKET via $S3_ENDPOINT"
+
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           sparse-checkout: scripts/deploy
@@ -162,7 +170,8 @@ jobs:
       # manifeste de roadmap pointant vers la release construite.
       - name: Vérification publique
         run: |
-          base="https://${BUCKET}.eegng2ef02.s3.fr1.cloud-temple.com"
+          host="${S3_ENDPOINT#https://}"
+          base="https://${BUCKET}.${host%/}"
           for page in home roadmap en/roadmap de/roadmap es/roadmap it/roadmap console/api; do
             headers="$(curl -sS -o /dev/null -D - --fail "$base/$page")" || { echo "::error::$page inaccessible"; exit 1; }
             echo "$headers" | tr -d ' ' | grep -qi '^content-type:text/html' || { echo "::error::$page n'est pas servi en text/html"; exit 1; }
