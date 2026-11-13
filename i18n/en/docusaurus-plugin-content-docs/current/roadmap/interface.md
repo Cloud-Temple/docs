@@ -9,7 +9,7 @@
 | `page.heading` | Let's build what's next. |
 | `page.description` | Discover the evolution of our products and track their progress. |
 | `preview.label` | LOCAL PREVIEW |
-| `preview.notice` | Placeholder credentials · Estimated deadlines. |
+| `preview.notice` | Provisional identifiers · Estimated deadlines. |
 | `filters.aria` | Roadmap filters |
 | `filters.title` | Filters |
 | `filters.reset` | Reset |

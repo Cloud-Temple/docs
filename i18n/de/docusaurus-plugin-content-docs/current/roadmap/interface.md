@@ -9,7 +9,7 @@
 | `page.heading` | Gemeinsam die nächste Stufe. |
 | `page.description` | Entdecken Sie die Weiterentwicklungen unserer Produkte und verfolgen Sie deren Fortschritt. |
 | `preview.label` | LOKALE VORSCHAU |
-| `preview.notice` | Vorläufige Zugangsdaten · Voraussichtliche Zeitpläne. |
+| `preview.notice` | Vorläufige Kennungen · Voraussichtliche Zeitpläne. |
 | `filters.aria` | Roadmap-Filter |
 | `filters.title` | Filter |
 | `filters.reset` | Zurücksetzen |

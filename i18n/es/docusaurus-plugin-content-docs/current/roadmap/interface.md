@@ -9,7 +9,7 @@
 | `page.heading` | Construyamos lo que viene. |
 | `page.description` | Descubre las evoluciones de nuestros productos y sigue su avance. |
 | `preview.label` | VISTA PREVIA LOCAL |
-| `preview.notice` | Credenciales provisionales · Plazos estimados. |
+| `preview.notice` | Identificadores provisionales · Plazos estimados. |
 | `filters.aria` | Filtros de la roadmap |
 | `filters.title` | Filtros |
 | `filters.reset` | Restablecer |

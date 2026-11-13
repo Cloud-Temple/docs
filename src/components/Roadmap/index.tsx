@@ -33,7 +33,7 @@ export default function Roadmap(): ReactElement {
           <div><div className={styles.eyebrow}>{label('page.eyebrow')}</div><h1>{label('page.heading')}</h1><p>{label('page.description')}</p></div>
           <Link className={styles.sourceLink} to="/home">← Documentation Cloud Temple</Link>
         </header>
-        <div className={styles.notice}><span className={styles.preview}>{label('preview.label')}</span> {items.length} {label('board.many')} · {label('preview.notice')}</div>
+        <div className={styles.notice}>{items.length} {label('board.many')} · {label('preview.notice')}</div>
         <div className={styles.workspace}>
           <aside className={styles.sidebar} aria-label={label('filters.aria')}>
             <div className={styles.filterHeading}><h2>{label('filters.title')}</h2><button onClick={reset}>{label('filters.reset')}</button></div>
