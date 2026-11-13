@@ -84,6 +84,14 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(objects['img/logo.png'].content_type, 'image/png')
         self.assertNotIn('.DS_Store', objects)
 
+    def test_hashed_assets_are_recognised_in_every_locale(self):
+        for key in ['assets/js/main.1a2b.js', 'en/assets/js/0059912f.ed8a6019.js', 'de/assets/css/styles.x.css',
+                    'pt-BR/assets/images/a-1234.png']:
+            self.assertTrue(sp.is_hashed_asset(key), key)
+            self.assertEqual(sp.cache_control(key, 'application/javascript'), sp.CACHE_IMMUTABLE, key)
+        for key in ['img/logo.png', 'en/img/logo.png', 'assetsfoo/x.js', 'docs/assets.md', 'en/home']:
+            self.assertFalse(sp.is_hashed_asset(key), key)
+
     def test_refuses_an_incomplete_build_directory(self):
         with tempfile.TemporaryDirectory() as tmp:
             (Path(tmp) / 'home.html').write_text('x')
@@ -221,6 +229,23 @@ class PublishTests(unittest.TestCase):
         for bad in ['/abs/', 'no-slash', '../up/']:
             with self.assertRaises(SystemExit):
                 run(self.client, self.build, prefix=bad)
+
+    def test_hashed_asset_churn_does_not_trip_the_guard(self):
+        # Cas réel du 13 novembre 2026 : un changement de configuration a renommé
+        # 1 265 fichiers JS à empreinte (17 % des objets, seuil à 20 %).
+        for i in range(20):
+            (self.build / f'en/assets/js/chunk{i}.old.js').parent.mkdir(parents=True, exist_ok=True)
+            (self.build / f'en/assets/js/chunk{i}.old.js').write_text(f'old {i}')
+        run(self.client, self.build)
+        for i in range(20):
+            (self.build / f'en/assets/js/chunk{i}.old.js').rename(self.build / f'en/assets/js/chunk{i}.new.js')
+        report = run(self.client, self.build, now=NOW + timedelta(days=1))
+        self.assertEqual(report['newly_removed'], 20)
+        self.assertGreater(report['newly_removed'], 0.2 * report['objects'])
+        self.assertIn('en/assets/js/chunk0.old.js', self.client.objects)  # encore servi pendant le délai
+        report = run(self.client, self.build, now=NOW + timedelta(days=9))
+        self.assertEqual(report['deleted'], 20)
+        self.assertNotIn('en/assets/js/chunk0.old.js', self.client.objects)
 
     def test_dry_run_writes_nothing(self):
         report = run(self.client, self.build, dry_run=True)

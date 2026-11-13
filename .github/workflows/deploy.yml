@@ -5,14 +5,15 @@ name: CI/CD Documentation
 # - staging    : publication différentielle dans le bucket docs-staging.
 # - production : publication dans docs-production, après approbation
 #                (règle de protection de l'environment GitHub « production »).
-# - tags v*    : image Docker versionnée (le commit est déjà publié sur S3).
+# - tags X.Y.Z : image Docker versionnée + latest (le commit est déjà publié sur S3).
 # Le build exécute du code npm tiers : il ne reçoit jamais les clés S3 ni
 # DockerHub, qui ne sont visibles que des jobs de publication.
 
 on:
   push:
     branches: ["**"]
-    tags: ["v*"]
+    # Convention des releases : 3.32.0 (sans « v ») ; v3.32.0 accepté aussi.
+    tags: ["[0-9]+.[0-9]+.[0-9]+", "v[0-9]+.[0-9]+.[0-9]+"]
   pull_request:
     branches: [staging, production]
 

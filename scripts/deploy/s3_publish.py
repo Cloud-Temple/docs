@@ -29,6 +29,7 @@ import json
 import mimetypes
 import os
 from pathlib import Path
+import re
 import sys
 
 MANIFEST_KEY = '_deploy/site-manifest.json'
@@ -90,19 +91,32 @@ class Plan:
     pending: dict[str, dict] = field(default_factory=dict)
     newly_removed: list[str] = field(default_factory=list)
 
+    @property
+    def removed_content(self) -> list[str]:
+        """Objets disparus hors fichiers à empreinte : pages, images, données."""
+        return [key for key in self.newly_removed if not is_hashed_asset(key)]
+
 
 def content_type(path: Path) -> str:
     suffix = path.suffix.lower()
     return CONTENT_TYPES.get(suffix) or mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
 
 
+# Docusaurus place sous assets/ (et <langue>/assets/ pour en, de, es, it…)
+# uniquement des fichiers dont le nom contient une empreinte de contenu.
+HASHED_ASSET = re.compile(r'^(?:[a-z]{2}(?:-[A-Za-z]{2})?/)?assets/')
+
+
+def is_hashed_asset(key: str) -> bool:
+    return bool(HASHED_ASSET.match(key))
+
+
 def cache_control(key: str, ctype: str) -> str:
     # version.json est lu par le footer : il doit refléter le dernier déploiement.
     if ctype.startswith('text/html') or key.rsplit('/', 1)[-1] == 'version.json':
         return CACHE_HTML
-    # Docusaurus place sous assets/ uniquement des fichiers dont le nom contient
-    # une empreinte de contenu : ils peuvent être mis en cache indéfiniment.
-    if key.startswith('assets/'):
+    # Nom à empreinte : le contenu ne change jamais, cache d'un an.
+    if is_hashed_asset(key):
         return CACHE_IMMUTABLE
     return CACHE_DEFAULT
 
@@ -224,9 +238,12 @@ def publish(client, bucket: str, build: Path, *, now: datetime, grace: timedelta
     published_before = len((previous or {}).get('objects', {}))
     # Contrôle au moment où les objets disparaissent du build, pas à l'échéance de
     # suppression : un build partiel serait sinon effacé silencieusement après le délai.
-    if published_before and len(result.newly_removed) > max_delete_ratio * published_before:
-        raise SystemExit(f'{len(result.newly_removed)} objets disparus sur {published_before} publiés : '
-                         f'au-delà du seuil de {max_delete_ratio:.0%}. Vérifiez le dossier de build.')
+    # Les fichiers à empreinte (assets/) sont exclus : chaque changement de code les
+    # renomme en masse, ce qui est normal. Pages, images et données restent comptées.
+    if published_before and len(result.removed_content) > max_delete_ratio * published_before:
+        raise SystemExit(f'{len(result.removed_content)} pages ou fichiers disparus sur {published_before} publiés '
+                         f'(hors fichiers à empreinte) : au-delà du seuil de {max_delete_ratio:.0%}. '
+                         f'Vérifiez le dossier de build.')
     report = {'bucket': bucket, 'prefix': prefix, 'commit': commit, 'dry_run': dry_run, 'first_publication': previous is None,
               'objects': len(desired), 'unchanged': result.unchanged, 'uploads': len(result.uploads),
               'upload_bytes': sum(obj.size for obj in result.uploads), 'newly_removed': len(result.newly_removed),
