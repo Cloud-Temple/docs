@@ -1,234 +1,214 @@
-name: CI/CD Workflow
+name: CI/CD Documentation
+
+# Flux : branche de travail → PR vers staging → PR vers production.
+# - Toute branche et toute PR : contrôles + build (aucun secret exposé).
+# - staging    : publication différentielle dans le bucket docs-staging.
+# - production : publication dans docs-production, après approbation
+#                (règle de protection de l'environment GitHub « production »).
+# - tags v*    : image Docker versionnée (le commit est déjà publié sur S3).
+# Le build exécute du code npm tiers : il ne reçoit jamais les clés S3 ni
+# DockerHub, qui ne sont visibles que des jobs de publication.
 
 on:
   push:
-    branches:
-      - "*"
-  create:
-    tags:
-      - "*"
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+    branches: [staging, production]
+
+permissions:
+  contents: read
 
 concurrency:
   group: docs-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  S3_ENDPOINT: https://eegng2ef02.s3.fr1.cloud-temple.com
+  BOTO3_VERSION: "1.44.3"
+
 jobs:
-  # Garde-fou : bloque tout build/déploiement si une admonition utilise la
-  # syntaxe Docusaurus 2 (`:::type Titre`), non reconnue en MDX v3 et rendue en
-  # texte brut sans erreur de build. Léger (Python, sans dépendances).
-  lint-admonitions:
-    name: Lint admonitions (MDX v3)
+  # Contrôles légers, sans dépendances : bloquent tout le reste.
+  guards:
+    name: Contrôles (admonitions, secrets, scripts de déploiement)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
 
-      - name: Vérifie la syntaxe des admonitions
+      # Syntaxe Docusaurus 2 (`:::type Titre`) rendue en texte brut par MDX v3.
+      - name: Admonitions MDX v3
         run: python3 scripts/check_admonitions.py
 
-  # Garde-fou : bloque tout build/déploiement si un secret entre dans un fichier
-  # suivi par Git. Ce dépôt est PUBLIC — une clé qui y passe est exposée, et le
-  # reste dans l'historique même après suppression. Contrôle ajouté après qu'un
-  # correctif de sécurité (43e454e8) a été silencieusement annulé par un merge
-  # (ef9e0bb8), réexposant une clé d'API : un diff de merge échappe à la revue,
-  # pas à la CI. Léger (Python, sans dépendances).
-  check-secrets:
-    name: Check secrets (dépôt public)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
+      # Dépôt PUBLIC : bloque aussi les marqueurs de conflit commités.
+      - name: Absence de secrets et de marqueurs de conflit
+        run: python3 scripts/check_secrets.py
 
-      - uses: actions/setup-python@v5
+      - name: Tests des scripts de publication S3
+        run: python3 -m unittest discover -s scripts/deploy -p 'test_*.py' -v
+
+  build:
+    name: Build Docusaurus
+    runs-on: ubuntu-latest
+    needs: guards
+    outputs:
+      environment: ${{ steps.target.outputs.environment }}
+      site_url: ${{ steps.target.outputs.site_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Historique complet : dates de mise à jour des pages, et empreintes
+          # stables d'un build à l'autre (sinon tout est renvoyé sur S3).
+          fetch-depth: 0
+
+      - name: Environnement cible
+        id: target
+        run: |
+          if [ "$GITHUB_REF" = "refs/heads/production" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            echo "environment=production" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://docs.cloud-temple.com" >> "$GITHUB_OUTPUT"
+          else
+            echo "environment=staging" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://docs-ng.c-t.tech" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Dépendances
+        run: yarn install --frozen-lockfile
+
+      - name: Contrôle de types
+        run: yarn typecheck
+
+      - name: Tests de la roadmap
+        run: node --test plugins/roadmap/*.test.mjs
+
+      # Échoue si une traduction est périmée (translation-meta.json) : lancer le
+      # script de traduction officiel avant de fusionner.
+      - name: Build Docusaurus (5 langues)
+        env:
+          BASE_URL: /
+          SITE_URL: ${{ steps.target.outputs.site_url }}
+          ROADMAP_DATA_URL: /roadmap-data/
+          APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+          NO_UPDATE_NOTIFIER: "1"
+        run: yarn build
+
+      - name: Export des données de roadmap
+        run: node plugins/roadmap/export.mjs "$PWD/roadmap-export"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site
+          path: |
+            build/
+            roadmap-export/
+          # Images PNG déjà compressées : la recompression coûte du temps pour rien.
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+  publish:
+    name: Publication S3 (${{ needs.build.outputs.environment }})
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/production')
+    environment:
+      name: ${{ needs.build.outputs.environment }}
+      url: ${{ needs.build.outputs.site_url }}
+    # Jamais deux publications simultanées sur un même bucket.
+    concurrency:
+      group: publish-${{ needs.build.outputs.environment }}
+      cancel-in-progress: false
+    env:
+      BUCKET: docs-${{ needs.build.outputs.environment }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          sparse-checkout: scripts/deploy
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
 
-      - name: Vérifie l'absence de secrets suivis par Git
-        run: python3 scripts/check_secrets.py
+      - name: Client S3
+        run: python3 -m pip install --quiet "boto3==${BOTO3_VERSION}"
 
-  # Job for the dev branch (GitHub Pages deployment)
-  deploy-dev:
-    name: Deploy Documentation to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: [lint-admonitions, check-secrets]
-    if: github.ref == 'refs/heads/dev'
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: dev
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          fetch-depth: 0
+          name: site
 
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build Documentation
+      # Ordre : site d'abord (les pages chargent /roadmap-data/), données ensuite.
+      # L'ancienne release de roadmap reste lisible pendant la transition.
+      - name: Site statique (envoi différentiel)
         env:
-          BASE_URL: "/docs/"
-          SITE_URL: "https://cloud-temple.github.io"
-          APP_VERSION: ${{ github.sha }}
-        run: yarn build
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+        run: python3 scripts/deploy/s3_publish.py build --bucket "$BUCKET" --endpoint "$S3_ENDPOINT" --report s3-report.json
 
-      - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: build
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
-
-  # Job for feature branches (building and pushing an unversioned Docker image)
-  build-branch:
-    name: Build and Push Docker Image
-    runs-on: ubuntu-latest
-    needs: [lint-admonitions, check-secrets]
-    if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/dev' && !startsWith(github.ref, 'refs/tags/')
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build Documentation
+      - name: Données de roadmap
         env:
-          BASE_URL: "/"
-          APP_VERSION: ${{ github.sha }}
-        run: yarn build
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+        run: python3 scripts/deploy/roadmap_publish.py roadmap-export --bucket "$BUCKET" --endpoint "$S3_ENDPOINT"
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
-      - name: Extract Branch Name
-        id: extract_branch
+      # Vérification sans clé, comme un visiteur : pages servies en HTML et
+      # manifeste de roadmap pointant vers la release construite.
+      - name: Vérification publique
         run: |
-          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
-          # Un tag Docker n'accepte que [A-Za-z0-9._-], ne peut pas commencer par '.' ou '-'
-          # et fait 128 caracteres au maximum. La convention de branches du depot
-          # (docs/..., fix/..., tech/...) contient des '/' : sans cette normalisation,
-          # buildx echoue avec "invalid reference format".
-          DOCKER_TAG="$(printf '%s' "$BRANCH_NAME" \
-            | sed -e 's/[^A-Za-z0-9._-]/-/g' -e 's/^[.-]/_/' \
-            | cut -c1-128)"
-          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
-          echo "DOCKER_TAG=$DOCKER_TAG" >> "$GITHUB_ENV"
+          base="https://${BUCKET}.eegng2ef02.s3.fr1.cloud-temple.com"
+          for page in home roadmap en/roadmap de/roadmap es/roadmap it/roadmap console/api; do
+            headers="$(curl -sS -o /dev/null -D - --fail "$base/$page")" || { echo "::error::$page inaccessible"; exit 1; }
+            echo "$headers" | tr -d ' ' | grep -qi '^content-type:text/html' || { echo "::error::$page n'est pas servi en text/html"; exit 1; }
+          done
+          expected="$(python3 -c 'import json; print(json.load(open("roadmap-export/manifest.json"))["release"])')"
+          published="$(curl -sS --fail "$base/roadmap-data/manifest.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["release"])')"
+          [ "$expected" = "$published" ] || { echo "::error::release roadmap publiée $published, attendue $expected"; exit 1; }
+          echo "Pages et roadmap vérifiées sur $base (release $published)."
 
-      - name: Log in to DockerHub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          file: ./docker/production/Dockerfile.prebuilt
-          push: true
-          platforms: linux/amd64,linux/arm64/v8
-          tags: cloudtempleinfra/docs:${{ env.DOCKER_TAG }}
-
-  # Job for the main branch (building and pushing an unversioned Docker image)
-  build-main:
-    name: Build and Push Docker Image
+  docker:
+    name: Image Docker
     runs-on: ubuntu-latest
-    needs: [lint-admonitions, check-secrets]
-    if: github.ref == 'refs/heads/main'
+    needs: build
+    # Pas d'image pour les PR : les secrets DockerHub n'y sont pas exposés.
+    if: github.event_name == 'push'
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-node@v7
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          node-version: 22
-          cache: yarn
+          name: site
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Tags de l'image
+        id: tags
+        run: |
+          image=cloudtempleinfra/docs
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            echo "tags=$image:$GITHUB_REF_NAME,$image:latest" >> "$GITHUB_OUTPUT"
+          else
+            # Un tag Docker n'accepte que [A-Za-z0-9._-], 128 caractères au plus,
+            # sans '.' ni '-' en tête ; les branches docs/..., fix/... contiennent des '/'.
+            tag="$(printf '%s' "$GITHUB_REF_NAME" | sed -e 's/[^A-Za-z0-9._-]/-/g' -e 's/^[.-]/_/' | cut -c1-128)"
+            echo "tags=$image:$tag" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Build Documentation
-        env:
-          BASE_URL: "/"
-          APP_VERSION: ${{ github.sha }}
-        run: yarn build
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
-      - name: Log in to DockerHub
-        uses: docker/login-action@v4
+      - uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v7
+      - uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
           context: .
           file: ./docker/production/Dockerfile.prebuilt
           push: true
           platforms: linux/amd64,linux/arm64/v8
-          tags: cloudtempleinfra/docs:main
-
-  # Job for tags (building and pushing a versioned Docker image)
-  build-tag:
-    name: Build and Push Versioned Docker Image
-    runs-on: ubuntu-latest
-    needs: [lint-admonitions, check-secrets]
-    if: startsWith(github.ref, 'refs/tags/')
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build Documentation
-        env:
-          BASE_URL: "/"
-          APP_VERSION: ${{ github.ref_name }}
-        run: yarn build
-
-      - name: Extract Tag Name
-        id: extract_tag
-        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
-      - name: Log in to DockerHub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          file: ./docker/production/Dockerfile.prebuilt
-          push: true
-          platforms: linux/amd64,linux/arm64/v8
-          tags: |
-            cloudtempleinfra/docs:${{ env.TAG }}
-            cloudtempleinfra/docs:latest
+          tags: ${{ steps.tags.outputs.tags }}
