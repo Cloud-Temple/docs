@@ -2,7 +2,8 @@ name: CI/CD Documentation
 
 # Flux : branche de travail → PR vers staging → PR vers production.
 # - Toute branche et toute PR : contrôles + build (aucun secret exposé).
-# - staging    : publication différentielle dans le bucket docs-staging.
+# - staging    : publication différentielle du site dans le bucket docs-staging
+#                (les données roadmap-data/ sont publiées par un dépôt dédié).
 # - production : publication dans docs-production, après approbation
 #                (règle de protection de l'environment GitHub « production »).
 # - tags X.Y.Z : image Docker versionnée + latest (le commit est déjà publié sur S3).
@@ -86,11 +87,9 @@ jobs:
       - name: Contrôle de types
         run: yarn typecheck
 
-      - name: Tests de la roadmap et de la version du site
-        run: node --test plugins/roadmap/*.test.mjs src/components/SiteVersion/*.test.mjs
+      - name: Tests des composants (roadmap, version du site)
+        run: node --test src/components/Roadmap/*.test.mjs src/components/SiteVersion/*.test.mjs
 
-      # Échoue si une traduction est périmée (translation-meta.json) : lancer le
-      # script de traduction officiel avant de fusionner.
       - name: Build Docusaurus (5 langues)
         env:
           BASE_URL: /
@@ -104,15 +103,10 @@ jobs:
       - name: Fichier de version
         run: python3 scripts/deploy/write_version.py --environment "${{ steps.target.outputs.environment }}" --ref "$GITHUB_REF_NAME" --output build/version.json
 
-      - name: Export des données de roadmap
-        run: node plugins/roadmap/export.mjs "$PWD/roadmap-export"
-
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: site
-          path: |
-            build/
-            roadmap-export/
+          path: build/
           # Images PNG déjà compressées : la recompression coûte du temps pour rien.
           compression-level: 0
           retention-days: 7
@@ -157,22 +151,14 @@ jobs:
         with:
           name: site
 
-      # Ordre : site d'abord (les pages chargent /roadmap-data/), données ensuite.
-      # L'ancienne release de roadmap reste lisible pendant la transition.
       - name: Site statique (envoi différentiel)
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
         run: python3 scripts/deploy/s3_publish.py build --bucket "$BUCKET" --endpoint "$S3_ENDPOINT" --report s3-report.json
 
-      - name: Données de roadmap
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-        run: python3 scripts/deploy/roadmap_publish.py roadmap-export --bucket "$BUCKET" --endpoint "$S3_ENDPOINT"
-
       # Vérification sans clé, comme un visiteur : pages servies en HTML et
-      # manifeste de roadmap pointant vers la release construite.
+      # données de roadmap présentes pour la page /roadmap.
       - name: Vérification publique
         run: |
           host="${S3_ENDPOINT#https://}"
@@ -181,10 +167,11 @@ jobs:
             headers="$(curl -sS -o /dev/null -D - --fail "$base/$page")" || { echo "::error::$page inaccessible"; exit 1; }
             echo "$headers" | tr -d ' ' | grep -qi '^content-type:text/html' || { echo "::error::$page n'est pas servi en text/html"; exit 1; }
           done
-          expected="$(python3 -c 'import json; print(json.load(open("roadmap-export/manifest.json"))["release"])')"
-          published="$(curl -sS --fail "$base/roadmap-data/manifest.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["release"])')"
-          [ "$expected" = "$published" ] || { echo "::error::release roadmap publiée $published, attendue $expected"; exit 1; }
-          echo "Pages et roadmap vérifiées sur $base (release $published)."
+          # Les données de roadmap sont publiées par un dépôt dédié : vérifier seulement
+          # que la page /roadmap les trouve.
+          published="$(curl -sS --fail "$base/roadmap-data/manifest.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["release"])')" \
+            || { echo "::error::données de roadmap introuvables sur $base/roadmap-data/"; exit 1; }
+          echo "Pages vérifiées sur $base ; données de roadmap présentes (release $published)."
 
   docker:
     name: Image Docker

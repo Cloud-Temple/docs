@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {loadRemoteRoadmap, validateRemoteData} from '../../src/components/Roadmap/remote.ts';
+import {loadRemoteRoadmap, validateRemoteData} from './remote.ts';
 
 const payload = {items: [{id: 'RM-001', title: 'Feature', description: 'Description', product: 'IaaS VMware',
   category: 'Compute', status: 'prioritized', points: [], owner: 'msp'}], labels: {'page.title': 'Roadmap', 'category.Compute': 'Calcul'}};

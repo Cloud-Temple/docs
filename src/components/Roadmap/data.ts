@@ -1,4 +1,3 @@
-import {usePluginData} from '@docusaurus/useGlobalData';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {createContext, useContext} from 'react';
 
@@ -45,9 +44,61 @@ export interface RoadmapData {
 
 export const RoadmapDataContext = createContext<RoadmapData | null>(null);
 
+// Libellés que les données publiées doivent fournir : clés utilisées par le composant,
+// plus le titre et la description de chaque statut. Contrôlé avant affichage (remote.ts).
+export const requiredLabels: readonly string[] = [
+  'board.aria',
+  'board.emptyDescription',
+  'board.emptyTitle',
+  'board.footnote',
+  'board.many',
+  'board.open',
+  'board.placeholder',
+  'board.scroll',
+  'board.search',
+  'detail.category',
+  'detail.changelog',
+  'detail.close',
+  'detail.created',
+  'detail.footnote',
+  'detail.heading',
+  'detail.id',
+  'detail.none',
+  'detail.owner',
+  'detail.priority',
+  'detail.product',
+  'detail.productSection',
+  'detail.quarter',
+  'detail.releaseDate',
+  'detail.schedule',
+  'detail.startDate',
+  'detail.status',
+  'detail.tags',
+  'detail.type',
+  'detail.unknown',
+  'detail.updated',
+  'detail.votes',
+  'filters.all',
+  'filters.allQuarters',
+  'filters.aria',
+  'filters.hint',
+  'filters.noQuarter',
+  'filters.products',
+  'filters.quarter',
+  'filters.remove',
+  'filters.reset',
+  'filters.title',
+  'page.description',
+  'page.eyebrow',
+  'page.heading',
+  'page.title',
+  'preview.notice',
+  ...statusDefinitions.flatMap(status => [`status.${status.id}.title`, `status.${status.id}.description`]),
+];
+
 export function useRoadmap() {
-  const local = usePluginData('roadmap') as unknown as RoadmapData;
-  const data = useContext(RoadmapDataContext) ?? local;
+  const data = useContext(RoadmapDataContext);
+  if (!data) throw new Error('Roadmap data is not loaded');
   const {i18n: {currentLocale}} = useDocusaurusContext();
   const label = (key: string): string => {
     const value = data.labels[key];

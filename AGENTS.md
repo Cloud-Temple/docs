@@ -26,12 +26,10 @@ Les pages de présentation doivent rester compréhensibles par un décideur, san
 | `docs/` | Pages sources en français, un dossier par service (`docs/<service>/`). |
 | `docs/contractual/` | Documents contractuels, matrices RACI, SLA. |
 | `i18n/<langue>/` | Traductions générées et libellés d'interface. **Ne pas éditer à la main.** |
-| `roadmap/` | Roadmap produit : un fichier YAML par produit (voir `plugins/roadmap/README.md`). |
 | `sidebars.ts` | Navigation latérale, définie explicitement. |
 | `docusaurus.config.ts` | Configuration du site, du footer et des langues. |
 | `src/` | Composants React, pages spéciales, thème. |
 | `static/` | Fichiers servis tels quels (logos, images globales). |
-| `plugins/` | Plugins Docusaurus du dépôt (roadmap). |
 | `scripts/` | Contrôles (`check_*.py`), traduction (`translate_py/`), ancres (`fix_i18n_anchors.py`), publication (`deploy/`). |
 | `contributing/` | Règles détaillées de rédaction, de traduction et de dépannage. |
 | `.github/workflows/` | Intégration et déploiement continus. |
@@ -105,13 +103,15 @@ Résumé de [`contributing/redaction.md`](contributing/redaction.md), qui fait r
   python3 scripts/fix_i18n_anchors.py
   ```
 
-- `scripts/translate_py/translation-meta.json` garde l'empreinte de chaque source traduite. Une traduction périmée bloque le build de la roadmap : relancer le script plutôt que de modifier ce fichier à la main.
+- `scripts/translate_py/translation-meta.json` garde l'empreinte de chaque source traduite : relancer le script plutôt que de modifier ce fichier à la main.
 - Une erreur dans une page traduite se corrige dans la source puis par retraduction.
 - Glossaire, termes à ne pas traduire et options du script : [`contributing/traduction.md`](contributing/traduction.md) et [`contributing/script-traduction.md`](contributing/script-traduction.md).
 
 ## Roadmap
 
-La roadmap publique se modifie uniquement dans les YAML de `roadmap/`. Régénérer ensuite l'intermédiaire de traduction (`yarn generate:roadmap`), puis traduire. `docs/roadmap/roadmap.md` est généré : ne pas l'éditer. Les libellés de l'interface se modifient dans `docs/roadmap/interface.md`, puis se traduisent. Détails : [`plugins/roadmap/README.md`](plugins/roadmap/README.md).
+La page `/roadmap` est un affichage : elle charge à l'ouverture les données publiées dans `roadmap-data/` sur le bucket du site. Les sources de la roadmap, leurs traductions et leur publication sont maintenues dans un dépôt interne, géré par les responsables produit. Ne pas recréer de données de roadmap dans ce dépôt.
+
+Le format des données attendu par la page est vérifié par `src/components/Roadmap/remote.ts`. Une évolution de ce format se fait d'abord ici, en restant compatible avec les données déjà publiées.
 
 ## Commandes
 
@@ -124,7 +124,7 @@ NO_UPDATE_NOTIFIER=1 BASE_URL=/ yarn build          # Build des cinq langues
 yarn typecheck                                      # Contrôle de types
 python3 scripts/check_admonitions.py                # Syntaxe des encadrés
 python3 scripts/check_secrets.py                    # Secrets et marqueurs de conflit
-node --test plugins/roadmap/*.test.mjs src/components/SiteVersion/*.test.mjs
+node --test src/components/Roadmap/*.test.mjs src/components/SiteVersion/*.test.mjs
 python3 -m unittest discover -s scripts/deploy -p 'test_*.py'
 ```
 
@@ -144,7 +144,7 @@ Avant de proposer une modification, au minimum : `check_admonitions.py`, `check_
 - Aucun secret, jeton, mot de passe, nom de machine interne ou adresse IP privée, même dans un exemple ou une capture.
 - Aucune note de travail interne dans le dépôt : audits, journaux de session, états d'avancement.
 - Aucun marqueur de conflit Git (`<<<<<<<`, `=======`, `>>>>>>>`) : vérifier avant chaque commit.
-- Ne jamais éditer à la main : `i18n/`, `docs/roadmap/roadmap.md`, `scripts/translate_py/translation-meta.json`.
+- Ne jamais éditer à la main : `i18n/`, `scripts/translate_py/translation-meta.json`.
 - Ne jamais pousser directement sur `staging` ou `production`.
 - Ne pas modifier les workflows, les scripts de publication ni la configuration de déploiement sans demande explicite.
 - Ne pas copier ni adapter de contenu tiers sans en vérifier la licence et les droits.
@@ -159,4 +159,3 @@ Une mémoire de travail partagée Hivemind existe pour ce dépôt : décisions, 
 - [`README.md`](README.md) : présentation du dépôt.
 - [`scripts/README.md`](scripts/README.md) : scripts du dépôt.
 - [`contributing/`](contributing/) : rédaction, traduction, dépannage.
-- [`plugins/roadmap/README.md`](plugins/roadmap/README.md) : roadmap produit.
