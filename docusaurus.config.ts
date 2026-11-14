@@ -78,7 +78,6 @@ const config: Config = {
   ],
 
   plugins: [
-    './plugins/roadmap/index.mjs',
     [
       require.resolve('docusaurus-plugin-search-local'),
       {
@@ -95,8 +94,8 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // Read by the roadmap plugin; not individual documentation routes.
-          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}', '**/_*/**', '**/*.test.*', '**/__tests__/**', 'roadmap/**'],
+          // Fichiers ignorés par le plugin docs : partiels (_*), tests.
+          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}', '**/_*/**', '**/*.test.*', '**/__tests__/**'],
           routeBasePath: '/', // Serve the docs at the site's root ("/docs/" by default)
           sidebarPath: './sidebars.ts',
           remarkPlugins: [remarkMath],
