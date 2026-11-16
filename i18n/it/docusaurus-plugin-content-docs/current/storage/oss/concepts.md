@@ -67,10 +67,12 @@ L'Archiviazione oggetti è disponibile nella regione FR1. I dati sono distribuit
 | Parametro             | Valore                                |
 |-----------------------|---------------------------------------|
 | Compatibilità         | 97% AWS S3                            |
-| Durabilità            | 99,999999999% (undici 9), annuale     |
+| Durabilità di un oggetto | 99,9999999% (nove 9) all'anno, all'interno di una regione |
 | Erasure Coding        | EC 12+4                               |
 | Prestazioni di rete   | 1 Gbps garantito, fino a 100 Gb/s     |
 | Cifratura             | TLS 1.2 / 1.3 in transito, AES-256 a riposo |
+
+La durabilità riguarda la conservazione di ogni oggetto archiviato. Non copre le modifiche o le eliminazioni che effettuate, né l'uso del servizio in modalità a blocchi, ad esempio tramite FUSE, che non è consentito.
 
 ### Limiti
 

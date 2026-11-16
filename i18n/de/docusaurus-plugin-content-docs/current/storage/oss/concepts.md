@@ -67,10 +67,12 @@ Der Objektspeicher ist in der Region FR1 verfügbar. Die Daten werden über drei
 | Parameter             | Wert                                  |
 |-----------------------|---------------------------------------|
 | Kompatibilität        | 97 % AWS S3                           |
-| Haltbarkeit           | 99,999999999 % (elf Neunen), jährlich |
+| Haltbarkeit eines Objekts | 99,9999999 % (neun Neunen) pro Jahr, innerhalb einer Region |
 | Erasure Coding        | EC 12+4                               |
 | Netzwerkleistung      | 1 Gbps garantiert, bis zu 100 Gb/s    |
 | Verschlüsselung       | TLS 1.2 / 1.3 bei der Übertragung, AES-256 im Ruhezustand |
+
+Die Haltbarkeit bezieht sich auf die Aufbewahrung jedes gespeicherten Objekts. Sie gilt weder für Änderungen oder Löschungen, die Sie selbst vornehmen, noch für eine Nutzung des Dienstes im Blockmodus, zum Beispiel über FUSE, die nicht zulässig ist.
 
 ### Grenzen
 

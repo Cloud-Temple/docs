@@ -67,10 +67,12 @@ El Almacenamiento de objetos está disponible en la región FR1. Los datos se di
 | Parámetro             | Valor                                 |
 |-----------------------|---------------------------------------|
 | Compatibilidad        | 97 % AWS S3                           |
-| Durabilidad           | 99,999999999 % (once nueves), anual   |
+| Durabilidad de un objeto | 99,9999999 % (nueve nueves) por año, dentro de una región |
 | Erasure Coding        | EC 12+4                               |
 | Rendimiento de red    | 1 Gbps garantizado, hasta 100 Gb/s    |
 | Cifrado               | TLS 1.2 / 1.3 en tránsito, AES-256 en reposo |
+
+La durabilidad se refiere a la conservación de cada objeto almacenado. No cubre las modificaciones o eliminaciones que usted realice, ni el uso del servicio en modo bloque, por ejemplo mediante FUSE, que no está permitido.
 
 ### Límites
 
