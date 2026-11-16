@@ -7,6 +7,8 @@ The __PRODUCTION__ documentation is available at [docs.cloud-temple.com](https:/
 
 The __STAGING__ documentation is available at [docs.c-t.tech](https://docs.c-t.tech/home). It is published automatically from the `staging` branch and may include changes not yet in production.
 
+> Access to the staging documentation is restricted.
+
 This project is continuously updated with new guides and improvements.
 
 # Contributing
