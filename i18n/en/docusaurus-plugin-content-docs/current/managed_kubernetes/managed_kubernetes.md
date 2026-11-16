@@ -11,29 +11,6 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
 
 To best meet your teams' needs, we offer two versions of this product: **Managed Core Kubernetes** (a minimal base) and **Managed Kubernetes** (a complete "out-of-the-box" platform).
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
-    <a href="./managed_kubernetes/concepts" class="card-link">Explore concepts &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Getting started</h3>
-    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Open the getting started guide &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="./managed_kubernetes/tutorials" class="card-link">Discover tutorials &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Frequently asked questions</h3>
-    <p>Find answers to the most common questions about this product.</p>
-    <a href="./managed_kubernetes/faq" class="card-link">Read the FAQ &rarr;</a>
-  </div>
-</div>
-
 ---
 
 ## Two approaches for your clusters
@@ -99,3 +76,28 @@ Designed for production and critical applications, this architecture distributes
   - **99.95% SLA**, measured monthly.
 
 <img src={archiOverview} alt="Multi-AZ Architecture" />
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./managed_kubernetes/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./managed_kubernetes/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>

@@ -6,29 +6,6 @@ title: Visión general de IaaS VMware
 
 La **oferta IaaS VMware** está diseñada para satisfacer las necesidades críticas de las empresas en materia de rendimiento, seguridad y continuidad operativa. Con recursos dedicados, una infraestructura certificada **SecNumCloud** y opciones totalmente automatizadas, este servicio garantiza una fiabilidad óptima para sus cargas de trabajo sensibles.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="./iaas_vmware/concepts" class="card-link">Explorar los conceptos &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guía de inicio</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./iaas_vmware/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutoriales</h3>
-    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="./iaas_vmware/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Preguntas frecuentes</h3>
-    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
-    <a href="./iaas_vmware/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
-  </div>
-</div>
-
 ## Plataformas de compra
 
 <div class="purchase-platforms">
@@ -52,4 +29,29 @@ La **oferta IaaS VMware** está diseñada para satisfacer las necesidades críti
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
     Más información &rarr;
   </a>
+</div>
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="./iaas_vmware/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./iaas_vmware/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./iaas_vmware/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./iaas_vmware/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
 </div>

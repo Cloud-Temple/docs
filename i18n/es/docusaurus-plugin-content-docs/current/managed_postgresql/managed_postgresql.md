@@ -12,29 +12,6 @@ title: Visión general de PostgreSQL gestionado
 
 Este producto está diseñado para clientes que cuentan con cargas de trabajo en Kubernetes que requieren bases de datos PostgreSQL, o para aquellos que desean consolidar múltiples motores de bases de datos PostgreSQL en un mismo clúster de Kubernetes. Es especialmente adecuado para bases de datos que no requieren un ajuste de sistema ultraespecífico. Para bases de datos de muy gran tamaño que requieran configuraciones específicas del sistema operativo, es preferible optar por el producto **PostgreSQL Managé (on IaaS)**.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explorar los conceptos &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guía de inicio</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutoriales</h3>
-    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="./managed_postgresql/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Preguntas frecuentes</h3>
-    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
-    <a href="./managed_postgresql/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
-  </div>
-</div>
-
 ### Beneficios Clave
 
 - **Soberanía y Reversibilidad** : La solución se basa exclusivamente en estándares de código abierto (CNPG, Barman) para evitar cualquier dependencia tecnológica y garantizar la portabilidad de sus aplicaciones.
@@ -96,3 +73,28 @@ Las copias de seguridad se gestionan de forma nativa mediante el plugin **Barman
 - **Archivado continuo de WAL** : Cada segmento del registro de transacciones (WAL) se archiva en tiempo real en nuestro almacenamiento S3 certificado SecNumCloud.
 - **Copias de seguridad programadas** : Se realizan copias de seguridad completas (Point-in-Time Recovery) de forma periódica según sus requisitos de retención.
 - **Seguridad** : Todos los datos de copia de seguridad se comprimen y almacenan en nuestra infraestructura S3 segura con cifrado.
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
+</div>

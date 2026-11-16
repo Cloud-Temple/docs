@@ -9,29 +9,6 @@ slug: /network/private_backbone
 
 Le **Backbone Privé** de Cloud Temple est notre produit de connectivité historique, conçue pour les experts. Basée sur une infrastructure réseau de niveau 2 (VPLS), elle permet de créer des réseaux privés étendus entre les zones de disponibilité d'une région. C'est la solution idéale pour les entreprises qui souhaitent construire des architectures cloud hybrides complexes et garder un contrôle total sur leur topologie réseau.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
-    <a href="./private_backbone/concepts" class="card-link">Explorer les concepts &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guide de démarrage</h3>
-    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./private_backbone/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutoriels</h3>
-    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="./private_backbone/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Questions fréquentes</h3>
-    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
-    <a href="./private_backbone/faq" class="card-link">Consulter la FAQ &rarr;</a>
-  </div>
-</div>
-
 ---
 
 ## Présentation du produit
@@ -120,3 +97,28 @@ Les services suivants s'appuient sur le Private Backbone :
 Les circuits dédiés sont livrés sur **deux chemins optiques diversifiés** avec un engagement minimum de **36 mois**.
 
 → **[Tarifs publics sur le site Cloud Temple](https://www.cloud-temple.com/nos-tarifs-publics/)**
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./private_backbone/concepts" class="card-link">Explorer les concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./private_backbone/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./private_backbone/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./private_backbone/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
+</div>

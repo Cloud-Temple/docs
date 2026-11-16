@@ -12,29 +12,6 @@ Con __Bare Metal__, si dispone di hardware esclusivo, non condiviso, che consent
 
 L'accesso diretto ai server avviene tramite la console Cloud Temple, offrendo una gestione semplificata e un'utilizzo immediato. Che si cerchi un'infrastruttura per applicazioni critiche o risorse hardware per progetti specifici, il prodotto Bare Metal garantisce flessibilità, controllo totale e prestazioni senza pari.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./iaas_bare-metal/concepts" class="card-link">Esplorate i concetti &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guida introduttiva</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./iaas_bare-metal/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorial</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./iaas_bare-metal/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Domande frequenti</h3>
-    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
-    <a href="./iaas_bare-metal/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
-  </div>
-</div>
-
 ## Piattaforme di acquisto
 
 <div class="purchase-platforms">
@@ -58,4 +35,29 @@ L'accesso diretto ai server avviene tramite la console Cloud Temple, offrendo un
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
     Scoprite di più &rarr;
   </a>
+</div>
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./iaas_bare-metal/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./iaas_bare-metal/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./iaas_bare-metal/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./iaas_bare-metal/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
 </div>

@@ -7,29 +7,6 @@ La **oferta IaaS OpenSource de Cloud Temple**: una alianza única entre rendimie
 Este producto garantiza un control total de sus entornos críticos, asegurando al mismo tiempo seguridad, continuidad y cumplimiento normativo.
 Con recursos escalables y gestión automatizada, disfrute de una infraestructura potente y adaptada a sus necesidades. Adopte el poder del Open Source con la fiabilidad y el soporte de Cloud Temple.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Conceptos</h3>
-    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
-    <a href="./iaas_opensource/concepts" class="card-link">Explorar los conceptos &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guía de inicio</h3>
-    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
-    <a href="./iaas_opensource/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutoriales</h3>
-    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
-    <a href="./iaas_opensource/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Preguntas frecuentes</h3>
-    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
-    <a href="./iaas_opensource/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
-  </div>
-</div>
-
 ## Plataformas de compra
 
 <div class="purchase-platforms">
@@ -53,4 +30,29 @@ Con recursos escalables y gestión automatizada, disfrute de una infraestructura
   <a href="https://www.cloud-temple.com/cloud-souverain-disponible-via-lugap/" target="_blank" rel="noopener noreferrer" class="learn-more-link">
     Más información &rarr;
   </a>
+</div>
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Conceptos</h3>
+    <p>Descubra las bases y principios esenciales para comprender y dominar nuestra infraestructura.</p>
+    <a href="./iaas_opensource/concepts" class="card-link">Explorar los conceptos &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guía de inicio</h3>
+    <p>Comience rápidamente con nuestros recursos siguiendo instrucciones claras y sencillas.</p>
+    <a href="./iaas_opensource/quickstart" class="card-link">Abrir la guía de inicio &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriales</h3>
+    <p>Aprenda paso a paso a configurar y utilizar nuestros servicios con guías detalladas.</p>
+    <a href="./iaas_opensource/tutorials" class="card-link">Descubrir los tutoriales &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Preguntas frecuentes</h3>
+    <p>Encuentre las respuestas a las preguntas más habituales sobre este producto.</p>
+    <a href="./iaas_opensource/faq" class="card-link">Consultar las preguntas frecuentes &rarr;</a>
+  </div>
 </div>
