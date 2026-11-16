@@ -4,7 +4,7 @@ Ce fichier s'adresse aux assistants de développement et aux personnes qui contr
 
 ## Le projet
 
-- Documentation technique publique de Cloud Temple, publiée sur <https://docs.cloud-temple.com>. Version de recette : <https://docs-ng.c-t.tech>.
+- Documentation technique publique de Cloud Temple, publiée sur <https://docs.cloud-temple.com>. Version de recette : <https://docs-ng.cloud-temple.com>.
 - Site [Docusaurus 3](https://docusaurus.io/) en MDX v3, TypeScript pour les composants.
 - **Le français est la langue source.** L'anglais, l'allemand, l'espagnol et l'italien sont produits par un script de traduction.
 - **Le dépôt est public.** Tout ce qui y entre, y compris l'historique Git, les messages de commit et les descriptions de PR, est visible de tous.
@@ -134,7 +134,7 @@ Avant de proposer une modification, au minimum : `check_admonitions.py`, `check_
 
 - Partir de la branche `staging`, sur une branche nommée selon le sujet : `docs/<sujet>`, `fix/<sujet>`.
 - Ouvrir une Pull Request vers `staging`. Les contrôles « Contrôles » et « Build Docusaurus » doivent passer avant la fusion. La fusion publie automatiquement la recette.
-- La production reçoit `staging` par une Pull Request vers `production`, avec approbation.
+- La branche `main` reçoit `staging` par Pull Request. La publication de production se déclenche uniquement au push d’un tag `X.Y.Z` ou `vX.Y.Z` sur un commit appartenant à `main`, avec les protections de l’environment `production`.
 - Messages de commit au format `type: description`, en français. Types utilisés : `docs`, `fix`, `feat`, `chore`.
 - Les commits et les Pull Requests sont signés par la personne qui contribue. Ne pas y ajouter de mention d'outil d'assistance ni de ligne `Co-Authored-By` désignant un outil.
 - Une Pull Request décrit ce qui change et pourquoi, cite ses sources pour toute information produit, et liste les vérifications faites.
@@ -145,7 +145,7 @@ Avant de proposer une modification, au minimum : `check_admonitions.py`, `check_
 - Aucune note de travail interne dans le dépôt : audits, journaux de session, états d'avancement.
 - Aucun marqueur de conflit Git (`<<<<<<<`, `=======`, `>>>>>>>`) : vérifier avant chaque commit.
 - Ne jamais éditer à la main : `i18n/`, `scripts/translate_py/translation-meta.json`.
-- Ne jamais pousser directement sur `staging` ou `production`.
+- Ne jamais pousser directement sur `staging` ou `main`.
 - Ne pas modifier les workflows, les scripts de publication ni la configuration de déploiement sans demande explicite.
 - Ne pas copier ni adapter de contenu tiers sans en vérifier la licence et les droits.
 - En cas de doute sur une information produit, poser la question au responsable produit plutôt que de supposer.

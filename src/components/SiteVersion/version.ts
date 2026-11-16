@@ -18,14 +18,17 @@ export function parseVersion(data: unknown): SiteVersionInfo | null {
   if (typeof data !== 'object' || data === null) return null;
   const {schemaVersion, version, commit, shortCommit, environment} = data as Record<string, unknown>;
   if (schemaVersion !== 1) return null;
-  if (typeof version !== 'string' || !/^\d{4}\.\d{2}\.\d{2}$/.test(version)) return null;
+  if (typeof version !== 'string' || version !== version.trim()) return null;
+  const isCommitDate = /^\d{4}\.\d{2}\.\d{2}$/.test(version);
+  const isReleaseTag = environment === 'production' && /^v?[0-9]+\.[0-9]+\.[0-9]+$/.test(version);
+  if (!isCommitDate && !isReleaseTag) return null;
   if (typeof commit !== 'string' || !/^[0-9a-f]{40}$/.test(commit)) return null;
   if (typeof shortCommit !== 'string' || !commit.startsWith(shortCommit) || shortCommit.length < 7) return null;
   if (!environments.includes(environment as SiteEnvironment)) return null;
   return {version, commit, shortCommit, environment: environment as SiteEnvironment};
 }
 
-// « 2026.11.13 · bd943aa », suivi de « · staging » hors production pour ne
+// « 3.33.0 · bd943aa » en production ; date et « · staging » en recette pour ne
 // jamais confondre la recette avec le site public.
 export function versionLabel(info: SiteVersionInfo): string {
   return [info.version, info.shortCommit, ...(info.environment === 'production' ? [] : [info.environment])].join(' · ');

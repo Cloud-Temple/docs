@@ -2,7 +2,7 @@
 
 La version est dérivée du commit, jamais de l'heure du build : relancer le build
 d'un même commit produit exactement le même fichier, donc aucun envoi S3 inutile.
-Format : date du commit à l'heure de Paris (AAAA.MM.JJ) + SHA court.
+Format : tag en production, sinon date du commit à l'heure de Paris.
 """
 from __future__ import annotations
 
@@ -28,7 +28,9 @@ def version_info(commit: str, commit_date: str, environment: str, ref: str) -> d
     if date.tzinfo is None:
         raise ValueError('La date du commit doit porter son fuseau horaire')
     local = date.astimezone(PARIS)
-    return {'schemaVersion': 1, 'version': local.strftime('%Y.%m.%d'), 'commit': commit,
+    version = (ref if environment == 'production' and re.fullmatch(r'v?[0-9]+\.[0-9]+\.[0-9]+', ref)
+               else local.strftime('%Y.%m.%d'))
+    return {'schemaVersion': 1, 'version': version, 'commit': commit,
             'shortCommit': commit[:7], 'commitDate': local.isoformat(), 'environment': environment, 'ref': ref}
 
 
