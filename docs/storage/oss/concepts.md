@@ -67,10 +67,12 @@ Le Stockage Objet est disponible dans la région FR1. Les données sont réparti
 | Paramètre             | Valeur                                |
 |-----------------------|---------------------------------------|
 | Compatibilité         | 97 % AWS S3                           |
-| Durabilité            | 99,9999999 % (neuf 9) par an, sur une région |
+| Durabilité d'un objet | 99,9999999 % (neuf 9) par an, sur une région |
 | Erasure Coding        | EC 12+4                               |
 | Performance réseau    | 1 Gbps garanti, jusqu'à 100 Gb/s      |
 | Chiffrement           | TLS 1.2 / 1.3 en transit, AES-256 au repos |
+
+La durabilité porte sur la conservation de chaque objet stocké. Elle ne couvre pas les modifications ou suppressions que vous effectuez, ni un usage du service en mode bloc, par exemple via FUSE, qui n'est pas autorisé.
 
 ### Limites
 
