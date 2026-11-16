@@ -68,13 +68,6 @@ const config: Config = {
       href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap',
       type: 'text/css',
     },
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV',
-      crossorigin: 'anonymous',
-    },
   ],
 
   plugins: [
@@ -105,7 +98,7 @@ const config: Config = {
             'https://github.com/Cloud-Temple/docs/edit/staging/',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [require.resolve('katex/dist/katex.min.css'), './src/css/custom.css'],
         },
         blog: false, // Optional: disable the blog plugin
         sitemap: {

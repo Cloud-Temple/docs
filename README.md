@@ -63,15 +63,15 @@ Open your browser and go to: <http://localhost:3000/docs/>
 
 ### Prerequisites
 
-- __Node.js__ (version 18.0 or higher)
-- __yarn__ package manager
+- __Node.js__ (version 22.19.0 or higher; CI uses Node 22)
+- __Yarn__ 1.22.22 (via Corepack)
 
 ### Installation Steps
 
 1. __Install dependencies__
 
    ```bash
-   yarn install
+   corepack yarn install --frozen-lockfile
    ```
 
 2. __Start the development server__
