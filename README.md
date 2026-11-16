@@ -5,7 +5,7 @@ Here, you’ll find guides and resources to help you better understand and utili
 
 A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __STAGING__ version of this documentation is available [here](https://docs-ng.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
+A __STAGING__ version of this documentation is available [here](https://docs.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
 
 This project is continuously updated with new guides and improvements.
 
@@ -114,47 +114,58 @@ The documentation supports 5 languages: __French (default)__, English, Spanish, 
 
 🎉 Your local environment is ready!
 
-# Build and run locally in production mode
-
-To get started, follow these simple steps:
-
-1. Build the docker image:
+# Build and preview the static site
 
 ```bash
-docker build -t docs:v3 . -f docker/production/Dockerfile
+BASE_URL=/ SITE_URL=https://docs.cloud-temple.com yarn build
+yarn serve --port 8080
 ```
 
-2. Launch the services with Docker Compose:
+The `build/` directory contains the static site for all five languages.
 
-```bash
-docker run -it --rm -p 8080:80 --name docs docs:v3
-```
+## Hosting domains during migration
 
-3. Access the documentation locally (all pages and all langages should work):
+| Environment | Canonical URL | Temporary alias |
+| --- | --- | --- |
+| Staging | https://docs.c-t.tech | https://docs-ng.c-t.tech |
+| Production | https://docs.cloud-temple.com | https://docs-ng.cloud-temple.com |
 
-Open your browser and go to: <http://localhost:8080>
+Each pair must serve the same environment bucket through Thor, with valid TLS
+for both names. The site uses relative asset and roadmap data URLs; aliases do
+not need a separate build. Canonical URLs and the sitemap use the canonical
+host above. Thor configuration is managed separately from this repository.
+After migration, aliases can redirect to the canonical host while preserving
+the path and query string.
 
-> Base url is set to "/" on production build
+## Staging and production releases
 
-## Docker Image Labels
+- A push to `staging` publishes the site to staging S3 and
+  <https://docs.c-t.tech>.
+- Promote reviewed changes through a pull request from `staging` to `main`.
+  A push to `main` runs validation and builds the site without publishing it.
+- Push a release tag such as `3.33.0` (or `v3.33.0`) on the chosen `main`
+  commit to publish production. Creating a tag locally does not trigger CI.
+  The workflow rejects a tag whose commit is not included in `main`.
+- Production uses the GitHub environment `production` and its existing
+  protection rules. Configure its `S3_BUCKET` variable and `S3_ACCESS_KEY_ID`
+  / `S3_SECRET_ACCESS_KEY` secrets, plus the repository `S3_ENDPOINT` variable.
+  Environment deployment rules must allow the release tags.
 
-The production image (`nginx:stable-alpine` stage) embeds the following [OCI standard labels](https://github.com/opencontainers/image-spec/blob/main/annotations.md):
+The workflow builds the tagged commit with the production URL, checks it,
+then publishes the resulting artifact through the existing differential S3
+publisher. Build jobs never receive S3 credentials. Releases share a publication
+lock and an active publication is not cancelled by a new push.
 
-| Label | Value |
-|---|---|
-| `org.opencontainers.image.title` | `Cloud Temple Documentation` |
-| `org.opencontainers.image.description` | `Cloud Temple official documentation site (Docusaurus static build served by nginx)` |
-| `org.opencontainers.image.vendor` | `Cloud Temple` |
-| `org.opencontainers.image.source` | `https://github.com/Cloud-Temple/docs` |
-| `org.opencontainers.image.licenses` | `proprietary` |
+Tags are immutable release references: do not move an existing tag. To roll
+back content, revert the changes through a PR to `main` and publish a new tag.
+The `version.json` file identifies the deployed commit and release tag.
+The footer displays the exact tag in production (for example `3.33.0 · bd943aa`),
+and the commit date, short SHA and `staging` label in staging.
 
-You can inspect the labels of a built image with:
-
-```bash
-docker inspect docs:v3 --format '{{ json .Config.Labels }}' | jq
-```
-
-> **Security note:** Alpine packages in the final stage are upgraded at build time (`apk upgrade --no-cache`) to ensure all OS-level CVEs are patched. Rebuild the image regularly to pick up new security fixes.
+Roadmap data remains maintained and published by its dedicated repository;
+the site publisher preserves `roadmap-data/`. Before the first production
+release, ensure those data are present in the production bucket.
+Production Docker images are no longer built or pushed.
 
 # Scripts for Automation
 

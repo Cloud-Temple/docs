@@ -39,3 +39,19 @@ test('un contenu inattendu est rejeté plutôt qu\'affiché', () => {
   ]) assert.equal(parseVersion({...valid, ...changed}), null, JSON.stringify(changed));
   for (const data of [null, 'texte', 42, []]) assert.equal(parseVersion(data), null);
 });
+
+test('la production affiche exactement le tag publié et conserve le lien du commit', () => {
+  for (const tag of ['3.33.0', 'v3.33.0']) {
+    const info = parseVersion({...valid, version: tag, ref: tag});
+    assert.notEqual(info, null);
+    assert.equal(versionLabel(info), `${tag} · bd943aa`);
+    assert.equal(commitUrl(info), `https://github.com/Cloud-Temple/docs/commit/${sha}`);
+  }
+});
+
+test('les tags ne remplacent pas la date en staging et les versions invalides sont rejetées', () => {
+  assert.equal(parseVersion({...valid, environment: 'staging', version: '3.33.0'}), null);
+  for (const version of ['3.33', '3.33.0-rc.1', 'v3.33.0\n', 'main', '<script>3.33.0</script>']) {
+    assert.equal(parseVersion({...valid, version}), null, version);
+  }
+});

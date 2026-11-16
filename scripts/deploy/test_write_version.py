@@ -25,6 +25,21 @@ class VersionInfoTests(unittest.TestCase):
         second = wv.version_info(SHA, '2026-11-13T09:00:00+00:00', 'production', 'production')
         self.assertEqual(first, second)
 
+    def test_production_version_preserves_the_release_tag(self):
+        for tag in ('3.33.0', 'v3.33.0'):
+            with self.subTest(tag=tag):
+                info = wv.version_info(SHA, '2026-11-13T10:00:00+01:00', 'production', tag)
+                self.assertEqual(info['version'], tag)
+                self.assertEqual(info['ref'], tag)
+                self.assertEqual(info['shortCommit'], 'bd943aa')
+
+    def test_staging_and_untagged_builds_keep_the_commit_date(self):
+        for environment, ref in [('staging', '3.33.0'), ('production', 'main'),
+                                 ('production', '3.33.0-rc.1')]:
+            with self.subTest(environment=environment, ref=ref):
+                info = wv.version_info(SHA, '2026-11-13T10:00:00+01:00', environment, ref)
+                self.assertEqual(info['version'], '2026.11.13')
+
     def test_invalid_inputs_are_refused(self):
         for commit, date, env in [('bd943aa', '2026-11-13T10:00:00+01:00', 'staging'),
                                   ('<script>' + '0' * 32, '2026-11-13T10:00:00+01:00', 'staging'),
