@@ -87,7 +87,7 @@ jobs:
             echo "site_url=https://docs.cloud-temple.com" >> "$GITHUB_OUTPUT"
           else
             echo "environment=staging" >> "$GITHUB_OUTPUT"
-            echo "site_url=https://docs-ng.cloud-temple.com" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://docs.c-t.tech" >> "$GITHUB_OUTPUT"
           fi
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0

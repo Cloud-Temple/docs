@@ -5,7 +5,7 @@ Here, you’ll find guides and resources to help you better understand and utili
 
 A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
 
-A __STAGING__ version of this documentation is available [here](https://docs-ng.cloud-temple.com/home). It is published from the `staging` branch and may include changes not yet in production.
+A __STAGING__ version of this documentation is available [here](https://docs.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
 
 This project is continuously updated with new guides and improvements.
 
@@ -123,10 +123,24 @@ yarn serve --port 8080
 
 The `build/` directory contains the static site for all five languages.
 
+## Hosting domains during migration
+
+| Environment | Canonical URL | Temporary alias |
+| --- | --- | --- |
+| Staging | https://docs.c-t.tech | https://docs-ng.c-t.tech |
+| Production | https://docs.cloud-temple.com | https://docs-ng.cloud-temple.com |
+
+Each pair must serve the same environment bucket through Thor, with valid TLS
+for both names. The site uses relative asset and roadmap data URLs; aliases do
+not need a separate build. Canonical URLs and the sitemap use the canonical
+host above. Thor configuration is managed separately from this repository.
+After migration, aliases can redirect to the canonical host while preserving
+the path and query string.
+
 ## Staging and production releases
 
 - A push to `staging` publishes the site to staging S3 and
-  <https://docs-ng.cloud-temple.com>.
+  <https://docs.c-t.tech>.
 - Promote reviewed changes through a pull request from `staging` to `main`.
   A push to `main` runs validation and builds the site without publishing it.
 - Push a release tag such as `3.33.0` (or `v3.33.0`) on the chosen `main`

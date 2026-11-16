@@ -4,7 +4,7 @@ Ce fichier s'adresse aux assistants de développement et aux personnes qui contr
 
 ## Le projet
 
-- Documentation technique publique de Cloud Temple, publiée sur <https://docs.cloud-temple.com>. Version de recette : <https://docs-ng.cloud-temple.com>.
+- Documentation technique publique de Cloud Temple, publiée sur <https://docs.cloud-temple.com>. Version de recette : <https://docs.c-t.tech>.
 - Site [Docusaurus 3](https://docusaurus.io/) en MDX v3, TypeScript pour les composants.
 - **Le français est la langue source.** L'anglais, l'allemand, l'espagnol et l'italien sont produits par un script de traduction.
 - **Le dépôt est public.** Tout ce qui y entre, y compris l'historique Git, les messages de commit et les descriptions de PR, est visible de tous.
