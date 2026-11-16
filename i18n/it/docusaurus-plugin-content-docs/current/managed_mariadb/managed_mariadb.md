@@ -18,29 +18,6 @@ Tutti i backup utilizzano lo storage S3 Cloud-Temple (qualifié SNC) con crittog
 
 ![Architecture stack](@site/docs/managed_mariadb/images/stack.png)
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./managed_mariadb/concepts" class="card-link">Esplorate i concetti &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guida introduttiva</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_mariadb/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorial</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./managed_mariadb/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Domande frequenti</h3>
-    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
-    <a href="./managed_mariadb/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
-  </div>
-</div>
-
 ### Benefici Chiave
 
 - **Sovranità e Reversibilità** : La soluzione si basa esclusivamente su standard open source per evitare qualsiasi dipendenza tecnologica e garantire la portabilità delle vostre applicazioni.
@@ -85,3 +62,28 @@ In questo modo, le applicazioni possono scegliere di utilizzare connessioni RW o
   - SLA 99,9 % (esclusi i periodi di manutenzione)
 
 ![Architecture MultiAZ](@site/docs/managed_mariadb/images/Distributed.png)
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./managed_mariadb/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./managed_mariadb/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./managed_mariadb/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./managed_mariadb/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>

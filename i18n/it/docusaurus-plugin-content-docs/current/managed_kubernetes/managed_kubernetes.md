@@ -11,29 +11,6 @@ import archiOverview from '@site/docs/managed_kubernetes/images/archi_overview.p
 
 Per rispondere al meglio alle esigenze dei vostri team, proponiamo due varianti di questo prodotto: **Managed Core Kubernetes** (una base minimalista) e **Managed Kubernetes** (una piattaforma completa "pronta all'uso").
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./managed_kubernetes/concepts" class="card-link">Esplorate i concetti &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guida introduttiva</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./managed_kubernetes/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorial</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./managed_kubernetes/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Domande frequenti</h3>
-    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
-    <a href="./managed_kubernetes/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
-  </div>
-</div>
-
 ---
 
 ## Due approcci per i vostri cluster
@@ -99,3 +76,28 @@ Progettata per la produzione e le applicazioni critiche, questa architettura dis
   - **SLA del 99.95%**, misurato mensilmente.
 
 <img src={archiOverview} alt="Architettura Multi-AZ" />
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./managed_kubernetes/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./managed_kubernetes/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./managed_kubernetes/tutorials" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./managed_kubernetes/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>

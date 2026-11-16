@@ -7,29 +7,6 @@ sidebar_position: 1
 
 LLMaaS fornisce accesso ai modelli di IA ospitati da Cloud Temple tramite un'API: assistenti conversazionali, programmazione e agenti, analisi delle immagini, ricerca semantica, reranking, traduzione e utilizzi audio/immagine.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concetti</h3>
-    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
-    <a href="./llmaas/concepts" class="card-link">Esplorate i concetti &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guida introduttiva</h3>
-    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
-    <a href="./llmaas/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorial</h3>
-    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
-    <a href="./category/tutoriels" class="card-link">Scoprite i tutorial &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Domande frequenti</h3>
-    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
-    <a href="./llmaas/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
-  </div>
-</div>
-
 ## Catalogo, novità e disponibilità
 
 - **[Catalogo e ciclo di vita dei modelli](https://llmaas.status.cloud-temple.app/lifecycle)** : modelli, contesto, stati LTS, fine del supporto e migrazioni consigliate.
@@ -160,3 +137,28 @@ curl -X GET "https://api.ai.cloud-temple.com/v1/models" \
 ```
 
 La risposta fornisce gli identificatori esposti dall'API. Consultare inoltre il [ciclo di vita](https://llmaas.status.cloud-temple.app/lifecycle) per verificare le deprecazioni e i reindirizzamenti. I modelli utilizzati negli esempi sono illustrativi; verificare la loro disponibilità prima dell'esecuzione.
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concetti</h3>
+    <p>Scoprite le basi e i principi essenziali per comprendere e padroneggiare la nostra infrastruttura.</p>
+    <a href="./llmaas/concepts" class="card-link">Esplorate i concetti &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guida introduttiva</h3>
+    <p>Iniziate rapidamente con le nostre risorse seguendo istruzioni chiare e semplici.</p>
+    <a href="./llmaas/quickstart" class="card-link">Aprite la guida introduttiva &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorial</h3>
+    <p>Imparate passo dopo passo a configurare e utilizzare i nostri servizi con guide dettagliate.</p>
+    <a href="./category/tutoriels" class="card-link">Scoprite i tutorial &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Domande frequenti</h3>
+    <p>Trovate le risposte alle domande più frequenti su questo prodotto.</p>
+    <a href="./llmaas/faq" class="card-link">Consultate le domande frequenti &rarr;</a>
+  </div>
+</div>
