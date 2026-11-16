@@ -72,7 +72,7 @@ L'Archiviazione oggetti è disponibile nella regione FR1. I dati sono distribuit
 | Prestazioni di rete   | 1 Gbps garantito, fino a 100 Gb/s     |
 | Cifratura             | TLS 1.2 / 1.3 in transito, AES-256 a riposo |
 
-La durabilità riguarda la conservazione di ogni oggetto archiviato. Non copre le modifiche o le eliminazioni che effettuate, né l'uso del servizio in modalità a blocchi, ad esempio tramite FUSE, che non è consentito.
+La durabilità riguarda la conservazione di ogni oggetto archiviato, a condizione che il servizio sia utilizzato secondo le buone pratiche e gli standard vigenti. Non copre le modifiche o le eliminazioni che effettuate, intenzionali o accidentali, né l'uso del servizio in modalità a blocchi, ad esempio tramite FUSE, che non è consentito.
 
 ### Limiti
 

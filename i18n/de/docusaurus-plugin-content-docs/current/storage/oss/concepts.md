@@ -72,7 +72,7 @@ Der Objektspeicher ist in der Region FR1 verfügbar. Die Daten werden über drei
 | Netzwerkleistung      | 1 Gbps garantiert, bis zu 100 Gb/s    |
 | Verschlüsselung       | TLS 1.2 / 1.3 bei der Übertragung, AES-256 im Ruhezustand |
 
-Die Haltbarkeit bezieht sich auf die Aufbewahrung jedes gespeicherten Objekts. Sie gilt weder für Änderungen oder Löschungen, die Sie selbst vornehmen, noch für eine Nutzung des Dienstes im Blockmodus, zum Beispiel über FUSE, die nicht zulässig ist.
+Die Haltbarkeit bezieht sich auf die Aufbewahrung jedes gespeicherten Objekts, sofern der Dienst gemäß den aktuellen bewährten Verfahren und Standards genutzt wird. Sie gilt weder für Änderungen oder Löschungen, die Sie selbst vornehmen, ob absichtlich oder versehentlich, noch für eine Nutzung des Dienstes im Blockmodus, zum Beispiel über FUSE, die nicht zulässig ist.
 
 ### Grenzen
 

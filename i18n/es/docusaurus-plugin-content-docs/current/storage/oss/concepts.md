@@ -72,7 +72,7 @@ El Almacenamiento de objetos está disponible en la región FR1. Los datos se di
 | Rendimiento de red    | 1 Gbps garantizado, hasta 100 Gb/s    |
 | Cifrado               | TLS 1.2 / 1.3 en tránsito, AES-256 en reposo |
 
-La durabilidad se refiere a la conservación de cada objeto almacenado. No cubre las modificaciones o eliminaciones que usted realice, ni el uso del servicio en modo bloque, por ejemplo mediante FUSE, que no está permitido.
+La durabilidad se refiere a la conservación de cada objeto almacenado, siempre que el servicio se utilice conforme a las buenas prácticas y normas vigentes. No cubre las modificaciones o eliminaciones que usted realice, intencionadas o accidentales, ni el uso del servicio en modo bloque, por ejemplo mediante FUSE, que no está permitido.
 
 ### Límites
 

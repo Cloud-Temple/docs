@@ -72,7 +72,7 @@ Object Storage is available in the FR1 region. Data is distributed across three 
 | Network performance   | 1 Gbps guaranteed, up to 100 Gb/s     |
 | Encryption            | TLS 1.2 / 1.3 in transit, AES-256 at rest |
 
-Durability covers the retention of each stored object. It does not cover changes or deletions you make, nor use of the service in block mode, for example through FUSE, which is not permitted.
+Durability covers the retention of each stored object, provided the service is used in line with current best practices and standards. It does not cover changes or deletions you make, whether intentional or accidental, nor use of the service in block mode, for example through FUSE, which is not permitted.
 
 ### Limits
 
