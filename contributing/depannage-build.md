@@ -10,6 +10,20 @@ NO_UPDATE_NOTIFIER=1 BASE_URL=/ yarn build
 
 Le build compile les cinq langues. Il s'arrête à la première langue en erreur et affiche le fichier en cause.
 
+## Mises à jour des dépendances
+
+Utiliser Node.js 22.19 ou plus et Yarn 1.22.22, puis installer avec `corepack yarn install --frozen-lockfile`.
+Le fichier `yarn.lock` doit être commité avec `package.json`.
+
+Les `resolutions` de `package.json` imposent temporairement des versions corrigées de dépendances indirectes :
+
+- `tinypool` : pool de rendu statique de Docusaurus ; la version 2 abandonne Node 18.
+- `serialize-javascript` : sérialisation utilisée par les outils de build.
+- `**/sockjs/uuid` : génération des identifiants du serveur de développement ; la version 11 conserve l’API CommonJS utilisée par SockJS.
+- `katex` : moteur mathématique utilisé par les plugins Markdown. Sa feuille de style et ses polices sont embarquées depuis le même paquet, sans version séparée sur un CDN.
+
+Retirer une résolution lorsque les dépendances parentes utilisent une version corrigée. Après chaque mise à jour, lancer `corepack yarn audit`, le contrôle de types, les tests des composants et le build des cinq langues. Un build réussi ne remplace pas l’audit des dépendances.
+
 ## Erreurs courantes
 
 ### 1. MDX Compilation Failed
