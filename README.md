@@ -3,9 +3,11 @@
 Welcome to the official documentation repository for Cloud Temple.
 Here, you’ll find guides and resources to help you better understand and utilize Cloud Temple’s services and solutions.
 
-A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
+The __PRODUCTION__ documentation is available at [docs.cloud-temple.com](https://docs.cloud-temple.com/home). It is published from a release tag on `main`.
 
-A __STAGING__ version of this documentation is available [here](https://docs.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
+The __STAGING__ documentation is available at [docs.c-t.tech](https://docs.c-t.tech/home). It is published automatically from the `staging` branch and may include changes not yet in production.
+
+> Access to the staging documentation is restricted.
 
 This project is continuously updated with new guides and improvements.
 
@@ -123,19 +125,34 @@ yarn serve --port 8080
 
 The `build/` directory contains the static site for all five languages.
 
-## Hosting domains during migration
+## Hosting domains
 
-| Environment | Canonical URL | Temporary alias |
+| Environment | Documentation URL | Access |
 | --- | --- | --- |
-| Staging | https://docs.c-t.tech | https://docs-ng.c-t.tech |
-| Production | https://docs.cloud-temple.com | https://docs-ng.cloud-temple.com |
+| Staging | https://docs.c-t.tech/home | Restricted |
+| Production | https://docs.cloud-temple.com/home | Public |
 
-Each pair must serve the same environment bucket through Thor, with valid TLS
-for both names. The site uses relative asset and roadmap data URLs; aliases do
-not need a separate build. Canonical URLs and the sitemap use the canonical
-host above. Thor configuration is managed separately from this repository.
-After migration, aliases can redirect to the canonical host while preserving
-the path and query string.
+These are the supported documentation domains. CI builds use the corresponding
+origin for canonical URLs and sitemaps, with `/` as the base path. Assets and
+roadmap data use relative URLs on the same domain.
+
+Domain routing, TLS certificates and access restrictions are managed by the
+team responsible for Thor, separately from this repository. The static site
+and its CI configuration do not enforce which hostnames Thor accepts.
+
+## Search engine indexing
+
+The production `robots.txt` allows crawling and declares the five language
+sitemaps: `/sitemap.xml`, `/en/sitemap.xml`, `/de/sitemap.xml`, `/es/sitemap.xml`
+and `/it/sitemap.xml`, all on `https://docs.cloud-temple.com`. The roadmap remains
+`noindex, nofollow` in all five languages and is excluded from the sitemap.
+Do not disallow the roadmap in `robots.txt`: crawlers need to read its
+`noindex` directive.
+
+The static file is shared by the site's environments. Host-specific rules for
+staging and production belong to the team managing Thor and are not
+configured in this repository. If the public `robots.txt` response differs
+from the file in S3, changing this file alone will not remove that override.
 
 ## Staging and production releases
 
@@ -163,8 +180,8 @@ The footer displays the exact tag in production (for example `3.33.0 · bd943aa`
 and the commit date, short SHA and `staging` label in staging.
 
 Roadmap data remains maintained and published by its dedicated repository;
-the site publisher preserves `roadmap-data/`. Before the first production
-release, ensure those data are present in the production bucket.
+the site publisher preserves `roadmap-data/`. The roadmap data must be present
+in each target bucket before the site is published.
 Production Docker images are no longer built or pushed.
 
 # Scripts for Automation
