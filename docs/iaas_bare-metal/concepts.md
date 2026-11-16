@@ -127,12 +127,16 @@ Le stockage bloc distribué propose cinq classes Flash, de 500 à 15 000 IOPS/To
 
 ### Connectivité réseau
 
-Les serveurs Bare Metal disposent de fonctionnalités réseau avancées.
+Chaque serveur Bare Metal dispose de **deux interfaces réseau physiques**. Leur nombre est fixe : il n'est pas possible d'ajouter des cartes réseau physiques supplémentaires.
 
 #### Modes de configuration
 
-- **Configuration simple (par défaut)** : chaque serveur est équipé de **deux interfaces réseau physiques**. La redondance et la haute disponibilité sont gérées automatiquement par l'infrastructure, sans configuration manuelle.
-- **Configuration avancée** : pour des besoins comme le déploiement d'hyperviseurs, les deux interfaces physiques peuvent être déclinées en **quatre cartes réseau virtuelles**. La gestion du load balancing, du teaming et de la haute disponibilité est alors déléguée à votre système d'exploitation, pour séparer par exemple les trafics de management, de données, de stockage et de réplication.
+Vous choisissez le mode de configuration réseau lors de la commande de la ressource dans la Console Cloud Temple :
+
+- **Configuration simple** : la redondance et la haute disponibilité sont gérées automatiquement par l'infrastructure, sans configuration manuelle dans votre système d'exploitation.
+- **Configuration avancée** : pour des besoins comme le déploiement d'hyperviseurs, les deux interfaces physiques sont déclinées en **quatre cartes réseau virtuelles**. La gestion du teaming et de la haute disponibilité est alors déléguée à votre système d'exploitation, en mode actif/passif.
+
+Le mode de configuration réseau ne peut pas être modifié sur un service existant. Pour utiliser un autre mode, vous devez commander un nouveau serveur avec le mode souhaité, puis y migrer vos charges de travail. Cette migration est réalisée par vos soins ; un accompagnement par les Professional Services peut être étudié.
 
 #### VLAN de niveau 2
 
@@ -143,7 +147,7 @@ Il est possible de configurer des **VLAN de niveau 2** sur les interfaces résea
 
 #### Agrégation des interfaces réseau
 
-Les interfaces réseau peuvent être utilisées de manière indépendante ou combinées (bonding, teaming) pour une meilleure performance et une meilleure redondance.
+Les interfaces réseau peuvent être utilisées de manière indépendante ou combinées (bonding, teaming). Seul le mode **actif/passif** est supporté : il assure la redondance sans augmenter la bande passante disponible. Le **LACP (802.3ad) n'est pas supporté**.
 
 #### Performances réseau
 
@@ -151,6 +155,8 @@ La performance des interfaces réseau dépend de la classe de lame choisie :
 
 - les lames **ECO** offrent une connectivité de 2 x 10 Gbit/s ;
 - les lames **STANDARD** et supérieures disposent d'une connectivité de 2 x 25 Gbit/s.
+
+Les lames GPU **PERFORMANCE 4 (L40S)** et **PERFORMANCE 5 (H100)** disposent ainsi de deux interfaces physiques de 25 Gbit/s chacune. Cette connectivité physique est partagée entre les accès réseau et le stockage bloc.
 
 ### Limites
 
