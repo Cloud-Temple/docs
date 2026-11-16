@@ -3,9 +3,9 @@
 Welcome to the official documentation repository for Cloud Temple.
 Here, you’ll find guides and resources to help you better understand and utilize Cloud Temple’s services and solutions.
 
-A __PROD__ version of this documentation is available [here](https://docs.cloud-temple.com/home). This repository and the website are synchronized to ensure up-to-date content.
+The __PRODUCTION__ documentation is available at [docs.cloud-temple.com](https://docs.cloud-temple.com/home). It is published from a release tag on `main`.
 
-A __STAGING__ version of this documentation is available [here](https://docs.c-t.tech/home). It is published from the `staging` branch and may include changes not yet in production.
+The __STAGING__ documentation is available at [docs.c-t.tech](https://docs.c-t.tech/home). It is published automatically from the `staging` branch and may include changes not yet in production.
 
 This project is continuously updated with new guides and improvements.
 
@@ -136,6 +136,20 @@ not need a separate build. Canonical URLs and the sitemap use the canonical
 host above. Thor configuration is managed separately from this repository.
 After migration, aliases can redirect to the canonical host while preserving
 the path and query string.
+
+## Search engine indexing
+
+The production `robots.txt` allows crawling and declares the five language
+sitemaps: `/sitemap.xml`, `/en/sitemap.xml`, `/de/sitemap.xml`, `/es/sitemap.xml`
+and `/it/sitemap.xml`, all on `https://docs.cloud-temple.com`. The roadmap remains
+`noindex, nofollow` in all five languages and is excluded from the sitemap.
+Do not disallow the roadmap in `robots.txt`: crawlers need to read its
+`noindex` directive.
+
+The static file is shared by the site's hostnames. Host-specific rules for
+staging and temporary aliases belong to the team managing Thor and are not
+configured in this repository. If the public `robots.txt` response differs
+from the file in S3, changing this file alone will not remove that override.
 
 ## Staging and production releases
 
