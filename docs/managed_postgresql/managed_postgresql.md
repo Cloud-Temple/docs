@@ -11,29 +11,6 @@ title: Vue d'ensemble de PostgreSQL Managé
 
 Ce produit est adapté pour les clients qui disposent de charges de travail Kubernetes nécessitant des bases de données PostgreSQL, ou de clients qui souhaitent mutualiser de nombreux moteurs de bases de données PostgreSQL sur un même cluster Kubernetes. Il convient particulièrement bien aux bases de données ne nécessitant pas de tuning système ultra-spécifique. Pour les bases de très grande dimension nécessitant des réglages OS particuliers, il est préférable d'opter pour le produit **PostgreSQL Managé (on IaaS)**.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explorer les concepts &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Guide de démarrage</h3>
-    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutoriels</h3>
-    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
-    <a href="./managed_postgresql/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Questions fréquentes</h3>
-    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
-    <a href="./managed_postgresql/faq" class="card-link">Consulter la FAQ &rarr;</a>
-  </div>
-</div>
-
 ### Bénéfices Clés
 
 - **Souveraineté et Réversibilité** : La solution s'appuie exclusivement sur des standards open source (CNPG, Barman) pour éviter toute dépendance technologique et garantir la portabilité de vos applications.
@@ -95,3 +72,28 @@ Les sauvegardes sont gérées de manière native par le plugin **Barman Cloud** 
 - **WAL Archiving en continu** : Chaque segment du journal des transactions (WAL) est archivé en temps réel vers notre stockage S3 qualifié SecNumCloud.
 - **Sauvegardes planifiées** : Des sauvegardes complètes (Point-in-Time Recovery) sont réalisées de manière périodique selon vos besoins de rétention.
 - **Sécurité** : Toutes les données de sauvegarde sont compressées et stockées sur notre infrastructure S3 sécurisée avec chiffrement.
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Découvrez les bases et principes essentiels pour comprendre et maîtriser notre infrastructure.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Explorer les concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Commencez rapidement avec nos ressources en suivant des instructions claires et simples.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Ouvrir le guide de démarrage &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutoriels</h3>
+    <p>Apprenez étape par étape à configurer et utiliser nos services avec des guides détaillés.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Découvrir les tutoriels &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Questions fréquentes</h3>
+    <p>Retrouvez les réponses aux questions les plus courantes sur ce produit.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Consulter la FAQ &rarr;</a>
+  </div>
+</div>

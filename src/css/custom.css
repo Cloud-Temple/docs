@@ -293,6 +293,21 @@ h3 { font-size: 1.15rem; }
   gap: 16px;
   margin: 20px 0;
 }
+/* Grille de 4 cartes (vues d'ensemble, « Démarrer ») : 4 colonnes, ou 2 × 2,
+   jamais 3 + 1. La largeur de la colonne de contenu (.markdown, réduite par le
+   sommaire de droite) décide, via une requête de conteneur. */
+/* Réservé aux navigateurs qui comprennent les requêtes de conteneur (Safari 15.4–15.6
+   comprend :has() mais pas @container : il garde la grille auto-fit ci-dessus). */
+@supports (container-type: inline-size) {
+  .markdown { container-type: inline-size; }
+  .card-grid:has(> .card:nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @container (max-width: 900px) {
+    .card-grid:has(> .card:nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @container (max-width: 480px) {
+    .card-grid:has(> .card:nth-child(4):last-child) { grid-template-columns: minmax(0, 1fr); }
+  }
+}
 
 /* Style des cartes */
 .card {

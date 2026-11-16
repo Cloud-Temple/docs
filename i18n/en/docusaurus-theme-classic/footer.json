@@ -60,7 +60,7 @@
     "description": "The label of footer link with label=CANUT linking to its Cloud and Hosting market page"
   },
   "copyright": {
-    "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"/contracts\">Contracts</a> |\n        <a href=\"/privacy\">Privacy Policy</a>\n        <br />\n        Copyright © 2026 Cloud Temple.\n      </div>\n    ",
+    "message": "\n      <div style=\"text-align: center;\">\n        <a href=\"https://www.cloud-temple.com/contracts\" target=\"_blank\" rel=\"noopener noreferrer\">Contracts</a> |\n        <a href=\"https://www.cloud-temple.com/politique-de-confidentialite/\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>\n        <br />\n        Copyright © 2026 Cloud Temple.\n      </div>\n    ",
     "description": "The footer copyright"
   },
   "link.title.Contractual": {

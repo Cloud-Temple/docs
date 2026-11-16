@@ -12,29 +12,6 @@ title: Managed PostgreSQL overview
 
 This product is suited for clients with Kubernetes workloads requiring PostgreSQL databases, or for clients who wish to consolidate multiple PostgreSQL database engines on a single Kubernetes cluster. It is particularly well-suited for databases that do not require highly specific system tuning. For very large-scale databases requiring specific OS-level tuning, it is preferable to opt for the **Managed PostgreSQL (on IaaS)** product.
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Concepts</h3>
-    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
-    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Getting started</h3>
-    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
-    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Tutorials</h3>
-    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
-    <a href="./managed_postgresql/tutorials" class="card-link">Discover tutorials &rarr;</a>
-  </div>
-  <div class="card">
-    <h3>Frequently asked questions</h3>
-    <p>Find answers to the most common questions about this product.</p>
-    <a href="./managed_postgresql/faq" class="card-link">Read the FAQ &rarr;</a>
-  </div>
-</div>
-
 ### Key Benefits
 
 - **Sovereignty and Reversibility**: The solution relies exclusively on open-source standards (CNPG, Barman) to avoid any technological dependency and ensure the portability of your applications.
@@ -96,3 +73,28 @@ Backups are natively managed by the **Barman Cloud** plugin integrated into the 
 - **Continuous WAL Archiving** : Each transaction log (WAL) segment is archived in real-time to our SecNumCloud-certified S3 storage.
 - **Scheduled Backups** : Full backups (Point-in-Time Recovery) are performed periodically according to your retention requirements.
 - **Security** : All backup data is compressed and stored on our secure S3 infrastructure with encryption.
+
+---
+
+<div class="card-grid">
+  <div class="card">
+    <h3>Concepts</h3>
+    <p>Discover the fundamentals and core principles to understand and master our infrastructure.</p>
+    <a href="./managed_postgresql/concepts" class="card-link">Explore concepts &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Getting started</h3>
+    <p>Get started quickly with our resources by following clear and straightforward instructions.</p>
+    <a href="./managed_postgresql/quickstart" class="card-link">Open the getting started guide &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Tutorials</h3>
+    <p>Learn step-by-step how to configure and use our services with detailed guides.</p>
+    <a href="./managed_postgresql/tutorials" class="card-link">Discover tutorials &rarr;</a>
+  </div>
+  <div class="card">
+    <h3>Frequently asked questions</h3>
+    <p>Find answers to the most common questions about this product.</p>
+    <a href="./managed_postgresql/faq" class="card-link">Read the FAQ &rarr;</a>
+  </div>
+</div>
