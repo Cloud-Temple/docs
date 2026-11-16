@@ -34,11 +34,11 @@ test('a relative data URL resolves against the page origin and keeps the HTTPS r
     calls.push(url);
     return Response.json(calls.length === 1 ? fixture() : payload);
   };
-  const page = 'https://docs-ng.example.com/en/roadmap';
+  const page = 'https://docs.example.com/en/roadmap';
   assert.deepEqual(await loadRemoteRoadmap('/roadmap-data/', 'fr', ['page.title'], signal, request, page), payload);
-  assert.deepEqual(calls, ['https://docs-ng.example.com/roadmap-data/manifest.json',
-    `https://docs-ng.example.com/roadmap-data/releases/${release}/fr.json`]);
-  await assert.rejects(loadRemoteRoadmap('/roadmap-data/', 'fr', [], signal, request, 'http://docs-ng.example.com/roadmap'), /HTTPS/);
+  assert.deepEqual(calls, ['https://docs.example.com/roadmap-data/manifest.json',
+    `https://docs.example.com/roadmap-data/releases/${release}/fr.json`]);
+  await assert.rejects(loadRemoteRoadmap('/roadmap-data/', 'fr', [], signal, request, 'http://docs.example.com/roadmap'), /HTTPS/);
   await assert.rejects(loadRemoteRoadmap('/roadmap-data/', 'fr', [], signal, request, undefined), TypeError);
 });
 
