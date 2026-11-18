@@ -318,7 +318,7 @@ Es ist möglich, das Detail eines Logs zu öffnen, indem man seine Zeile aufklap
 
 #### __Hinweis zur Konformität__
 
-Da die Konsole auf einer SecNumCloud-qualifizierten Infrastruktur gehostet wird, werden ihre Ereignisse mindestens __6 Monate__ lang aufbewahrt, um die Sicherheits- und Nachverfolgbarkeitsanforderungen zu erfüllen.
+Nach Abschluss des Vorgangs wechselt eine Aktivität 24 bis 30 Stunden nach ihrer Erstellung in die Registerkarte „Archiviert“. Archivierte Aktivitäten werden __558 Tage__ (ca. 18 Monate) aufbewahrt und damit länger als die Mindestdauer von 6 Monaten, die mit der SecNumCloud-Qualifizierung der Konsole verbunden ist. Siehe [Aktivitäten](./concepts.md#aktivitäten).
 
 ## Übersicht der neuesten Updates
 
