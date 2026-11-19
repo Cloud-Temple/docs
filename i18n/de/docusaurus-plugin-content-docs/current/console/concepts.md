@@ -30,7 +30,7 @@ Das Modell, auf dem die Konsole basiert (Organisation, Tenants, Benutzer und Ber
 | REST-API | Im Format OpenAPI 3.0 dokumentierte API, über die Konsole abrufbar: siehe die [API der Konsole](./api.md). |
 | Terraform-Provider | Provider `Cloud-Temple/cloudtemple`, im Terraform Registry veröffentlicht: siehe den [Terraform-Provider](../terraform/terraform.md). |
 | MCP-Server | Anbindung eines MCP-kompatiblen KI-Clients (*Model Context Protocol*) an Ihren Tenant, um Ihre Umgebung abzufragen. |
-| Verfolgung der Vorgänge | [Geplante Eingriffe und Störungen](./status.md), Aktivitätsprotokoll. |
+| Verfolgung der Vorgänge | [Geplante Eingriffe und Störungen](./status.md), [Aktivitätsprotokoll](#aktivitäten). |
 | Support | Erstellung und Verfolgung von Supportanfragen über die Konsole. |
 
 ## Architektur
@@ -69,6 +69,39 @@ Beide Rollen kann dieselbe Person innehaben. Die vollständigen Regeln stehen un
 
 Alles, was Sie in der Console tun, ist auch über ihre [API](./api.md) möglich. Sie authentifiziert sich mit einem **API-Schlüssel** (*Personal Access Token*), der an einen Tenant und an den Nutzer gebunden ist, der ihn erstellt hat. Der [Terraform-Provider](../terraform/terraform.md), mit dem Sie Ihre Plattform *as code* steuern, authentifiziert sich ebenfalls mit API-Zugangsdaten, die in der Console erzeugt werden.
 
+### Aktivitäten
+
+Jeder Vorgang, der über die Konsole oder die API ausgeführt wird, erzeugt eine **Aktivität**: Schreibvorgänge (Erstellung, Änderung, Löschung) ebenso wie Lesevorgänge. Die Gesamtheit der Aktivitäten bildet das Protokoll der Konsole. Sie rufen es im Menü **Logs** mit der Berechtigung `activity_read` auf oder über die [API](./api.md#die-aktivitäten).
+
+Bei einem Schreibvorgang dient die Aktivität außerdem dazu, den Fortschritt des Vorgangs zu verfolgen: Die API gibt ihre ID zurück, sobald die Anfrage angenommen wurde.
+
+#### Kürzlich und Archiviert
+
+Das Protokoll hat zwei Registerkarten:
+
+- **Kürzlich**: laufende und jüngste Aktivitäten;
+- **Archiviert**: der Verlauf. Sobald der Vorgang beendet ist, ob erfolgreich oder fehlgeschlagen, wechselt die Aktivität 24 bis 30 Stunden nach ihrer Erstellung dorthin, bei einem länger dauernden Vorgang innerhalb von 6 Stunden nach seinem Ende.
+
+Archivierte Aktivitäten werden ab ihrer Archivierung **558 Tage** (ca. 18 Monate) aufbewahrt. Diese Fristen werden von Cloud Temple festgelegt, sind für alle Tenants identisch und nicht konfigurierbar.
+
+#### Inhalt einer Aktivität
+
+| Information | Beschreibung |
+|---|---|
+| ID | Eindeutige ID (UUID) der Aktivität. |
+| Tenant | Tenant oder Organisation, auf die sich der Vorgang bezieht. |
+| Initiator | ID des Nutzers, der den Vorgang ausgelöst hat. |
+| Art des Vorgangs | Lesevorgang (`read`) oder Schreibvorgang (`write`). |
+| Modul | Betroffenes Produkt, z. B. `ComputeActivity`, `IAMActivity` oder `BackupActivity`. |
+| Beschreibung und Tags | Bezeichnung des Vorgangs und zugehörige Schlagwörter. |
+| Betroffene Ressourcen | IDs und Typen der Ressourcen, auf die sich der Vorgang bezieht. |
+| Erstellungsdatum | Datum und Uhrzeit der Anfrage. |
+| Status | Ausstehend, laufend (mit Fortschritt), abgeschlossen (mit Ergebnis, z. B. der ID der erstellten Ressource) oder fehlgeschlagen (mit Begründung). Start- und Enddatum werden angezeigt. |
+
+Das vollständige Modell ist in der [API der Konsole](./api.md#die-aktivitäten) beschrieben.
+
+Aktivitäten erfassen die Vorgänge auf der Konsole und ihrer API. Ereignisse der zugrunde liegenden Infrastruktur decken sie nicht ab.
+
 ## Regionen und Verfügbarkeitszonen
 
 Die Konsole und die API werden in Frankreich gehostet. Sie steuern die Ressourcen Ihrer Tenants, die in den Regionen und Verfügbarkeitszonen des jeweiligen Produkts bereitgestellt werden.
@@ -105,7 +138,7 @@ Das Vorgehen ist unter [Anmelden und Zugänge absichern](./onboarding.md#schritt
 
 ### Nachverfolgbarkeit
 
-Die Vorgänge werden protokolliert: Identität des Initiators, Datum, Art des Vorgangs und Status. Da die Konsole auf einer nach SecNumCloud qualifizierten Infrastruktur gehostet wird, werden ihre Ereignisse mindestens 6 Monate aufbewahrt.
+Jeder Vorgang, ob Lese- oder Schreibvorgang, wird als [Aktivität](#aktivitäten) protokolliert: Identität des Initiators, Datum, Art des Vorgangs und Status. Archivierte Aktivitäten werden 558 Tage (ca. 18 Monate) aufbewahrt und damit länger als die Mindestdauer von 6 Monaten, die mit der SecNumCloud-Qualifizierung der Konsole verbunden ist.
 
 ### Zertifizierungen
 

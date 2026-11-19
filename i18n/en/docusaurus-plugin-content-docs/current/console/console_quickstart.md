@@ -318,7 +318,7 @@ It is possible to open the details of a log by expanding its line.
 
 #### __Compliance Note__
 
-As the Console is hosted on SecNumCloud-qualified infrastructure, its events are retained for a minimum of __6 months__, to meet security and traceability requirements.
+Once the operation has finished, an activity moves to the "Archived" tab between 24 and 30 hours after its creation. Archived activities are retained for __558 days__ (approximately 18 months), beyond the 6-month minimum associated with the Console's SecNumCloud qualification. See [Activities](./concepts.md#activities).
 
 ## Viewing the Latest Updates
 

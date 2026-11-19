@@ -318,7 +318,7 @@ Il est possible d'ouvrir le détail d'un log en dépliant sa ligne.
 
 #### __Note de Conformité__
 
-La Console étant hébergée sur une infrastructure qualifiée SecNumCloud, ses événements sont conservés au minimum __6 mois__, pour répondre aux exigences de sécurité et de traçabilité.
+Une fois l'opération terminée, une activité passe dans l'onglet "Archivés" entre 24 et 30 heures après sa création. Les activités archivées sont conservées __558 jours__ (environ 18 mois), au-delà du minimum de 6 mois associé à la qualification SecNumCloud de la Console. Voir [Activités](./concepts.md#activités).
 
 ## Consultation des dernières mises à jour
 

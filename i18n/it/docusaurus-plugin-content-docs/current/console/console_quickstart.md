@@ -318,7 +318,7 @@ La pagina delle attività è destinata a fornire una visibilità completa su tut
 
 #### __Nota di conformità__
 
-Poiché la console è ospitata su un'infrastruttura qualificata SecNumCloud, i suoi eventi sono conservati per un minimo di __6 mesi__, per rispondere ai requisiti di sicurezza e di tracciabilità.
+Una volta terminata l'operazione, un'attività passa nella scheda "Archiviati" tra 24 e 30 ore dopo la sua creazione. Le attività archiviate vengono conservate per __558 giorni__ (circa 18 mesi), oltre il minimo di 6 mesi associato alla qualifica SecNumCloud della Console. Vedi [Attività](./concepts.md#attività).
 
 ## Consultazione degli ultimi aggiornamenti
 

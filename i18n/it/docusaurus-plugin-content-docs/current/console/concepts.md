@@ -30,7 +30,7 @@ Il modello su cui si basa la Console (organizzazione, tenant, utenti e autorizza
 | API REST | API documentata in formato OpenAPI 3.0, consultabile dalla Console: vedete l'[API della Console](./api.md). |
 | Provider Terraform | Provider `Cloud-Temple/cloudtemple`, pubblicato sul Terraform Registry: vedete il [provider Terraform](../terraform/terraform.md). |
 | Server MCP | Collegamento di un client di IA compatibile MCP (*Model Context Protocol*) al vostro tenant, per interrogare il vostro ambiente. |
-| Monitoraggio delle operazioni | [Operazioni pianificate e incidenti](./status.md), registro delle attività. |
+| Monitoraggio delle operazioni | [Operazioni pianificate e incidenti](./status.md), [registro delle attività](#attività). |
 | Supporto | Creazione e monitoraggio delle richieste di supporto dalla Console. |
 
 ## Architettura
@@ -69,6 +69,39 @@ La stessa persona può ricoprire entrambi i ruoli. Le regole complete sono in [A
 
 Tutto ciò che fate nella Console è possibile anche tramite la sua [API](./api.md). Si autentica con una **chiave API** (*Personal Access Token*), legata a un tenant e all'utente che l'ha creata. Il [provider Terraform](../terraform/terraform.md), che gestisce la vostra piattaforma *as code*, si autentica anch'esso con credenziali API generate dalla Console.
 
+### Attività
+
+Ogni operazione eseguita dalla Console o tramite l'API genera un'**attività**: le scritture (creazione, modifica, eliminazione) come le letture. L'insieme delle attività forma il registro della Console. Lo consultate nel menu **Logs** con il permesso `activity_read`, o tramite l'[API](./api.md#le-attività).
+
+Per una scrittura, l'attività serve anche a seguire l'avanzamento dell'operazione: l'API restituisce il suo identificativo non appena la richiesta viene accettata.
+
+#### Recenti e Archiviati
+
+Il registro presenta due schede:
+
+- **Recenti**: le attività in corso e quelle più recenti;
+- **Archiviati**: lo storico. Una volta terminata l'operazione, con esito positivo o negativo, l'attività vi passa tra 24 e 30 ore dopo la sua creazione, o entro le 6 ore successive alla fine di un'operazione più lunga.
+
+Le attività archiviate vengono conservate per **558 giorni** (circa 18 mesi) a partire dalla loro archiviazione. Queste durate sono fissate da Cloud Temple, identiche per tutti i tenant, e non sono configurabili.
+
+#### Contenuto di un'attività
+
+| Informazione | Descrizione |
+|---|---|
+| Identificativo | Identificativo univoco (UUID) dell'attività. |
+| Tenant | Tenant o organizzazione su cui verte l'operazione. |
+| Iniziatore | Identificativo dell'utente che ha avviato l'operazione. |
+| Tipo di operazione | Lettura (`read`) o scrittura (`write`). |
+| Modulo | Prodotto interessato, ad esempio `ComputeActivity`, `IAMActivity` o `BackupActivity`. |
+| Descrizione e tag | Etichetta dell'operazione e parole chiave associate. |
+| Risorse interessate | Identificativi e tipi delle risorse oggetto dell'operazione. |
+| Data di creazione | Data e ora della richiesta. |
+| Stato | In attesa, in corso (con il suo avanzamento), completata (con il suo risultato, ad esempio l'identificativo della risorsa creata) o fallita (con il motivo). Sono indicate le date di inizio e di fine. |
+
+Il modello completo è descritto nell'[API della Console](./api.md#le-attività).
+
+Le attività tracciano le operazioni eseguite sulla Console e sulla sua API. Non coprono gli eventi dell'infrastruttura sottostante.
+
 ## Regioni e zone di disponibilità
 
 La Console e l'API sono ospitate in Francia. Gestiscono le risorse dei vostri tenant, distribuite nelle regioni e nelle zone di disponibilità proprie di ogni prodotto.
@@ -105,7 +138,7 @@ La procedura è descritta in [Collegarvi e proteggere i vostri accessi](./onboar
 
 ### Tracciabilità
 
-Le operazioni vengono registrate: identità di chi le avvia, data, tipo di operazione e stato. Poiché la Console è ospitata su un'infrastruttura qualificata SecNumCloud, i suoi eventi vengono conservati per almeno 6 mesi.
+Ogni operazione, in lettura come in scrittura, viene registrata sotto forma di [attività](#attività): identità di chi la avvia, data, tipo di operazione e stato. Le attività archiviate vengono conservate per 558 giorni (circa 18 mesi), oltre il minimo di 6 mesi associato alla qualifica SecNumCloud della Console.
 
 ### Certificazioni
 

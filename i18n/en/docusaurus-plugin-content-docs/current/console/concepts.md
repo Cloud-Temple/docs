@@ -30,7 +30,7 @@ The model on which the Console is based (organization, tenants, users and permis
 | REST API | API documented in OpenAPI 3.0 format, available from the Console: see the [Console API](./api.md). |
 | Terraform provider | `Cloud-Temple/cloudtemple` provider, published on the Terraform Registry: see the [Terraform provider](../terraform/terraform.md). |
 | MCP server | Connection of an MCP-compatible (*Model Context Protocol*) AI client to your tenant, to query your environment. |
-| Operations tracking | [Scheduled operations and incidents](./status.md), activity log. |
+| Operations tracking | [Scheduled operations and incidents](./status.md), [activity log](#activities). |
 | Support | Creation and tracking of support requests from the Console. |
 
 ## Architecture
@@ -69,6 +69,39 @@ The same person can hold both roles. The complete rules are in [Assigning permis
 
 Everything you do in the Console is also possible through its [API](./api.md). It authenticates with an **API key** (*Personal Access Token*), tied to a tenant and to the user who created it. The [Terraform provider](../terraform/terraform.md), which manages your platform *as code*, also authenticates with API credentials generated from the Console.
 
+### Activities
+
+Every operation performed from the Console or through the API generates an **activity**: writes (creation, modification, deletion) as well as reads. Together, activities form the Console log. You view it in the **Logs** menu with the `activity_read` permission, or through the [API](./api.md#activities).
+
+For a write, the activity is also used to track the operation's progress: the API returns its identifier as soon as the request is accepted.
+
+#### Recent and Archived
+
+The log has two tabs:
+
+- **Recent**: ongoing and most recent activities;
+- **Archived**: the history. Once the operation has finished, whether it succeeded or failed, the activity moves there between 24 and 30 hours after its creation, or within 6 hours after the end of a longer operation.
+
+Archived activities are retained for **558 days** (approximately 18 months) from the date they are archived. These durations are set by Cloud Temple, identical for all tenants, and cannot be configured.
+
+#### Activity content
+
+| Information | Description |
+|---|---|
+| Identifier | Unique identifier (UUID) of the activity. |
+| Tenant | Tenant or organization on which the operation is performed. |
+| Initiator | Identifier of the user who initiated the operation. |
+| Operation type | Read (`read`) or write (`write`). |
+| Module | Product concerned, for example `ComputeActivity`, `IAMActivity` or `BackupActivity`. |
+| Description and tags | Operation label and associated keywords. |
+| Affected resources | Identifiers and types of the resources targeted by the operation. |
+| Creation date | Date and time of the request. |
+| Status | Pending, in progress (with its progress), completed (with its result, for example the identifier of the created resource) or failed (with the reason). Start and end dates are shown. |
+
+The complete model is described in the [Console API](./api.md#activities).
+
+Activities track operations performed on the Console and its API. They do not cover events of the underlying infrastructure.
+
 ## Regions and availability zones
 
 The Console and the API are hosted in France. They drive the resources of your tenants, deployed in the regions and availability zones specific to each product.
@@ -105,7 +138,7 @@ The procedure is described in [Signing in and securing your access](./onboarding
 
 ### Traceability
 
-Operations are logged: identity of the initiator, date, type of operation and status. As the Console is hosted on a SecNumCloud-qualified infrastructure, its events are kept for at least 6 months.
+Every operation, read or write, is logged as an [activity](#activities): identity of the initiator, date, type of operation and status. Archived activities are retained for 558 days (approximately 18 months), beyond the 6-month minimum associated with the Console's SecNumCloud qualification.
 
 ### Certifications
 

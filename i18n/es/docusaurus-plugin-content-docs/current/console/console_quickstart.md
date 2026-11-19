@@ -318,7 +318,7 @@ Es posible abrir el detalle de un registro desplegando su línea.
 
 #### __Nota de cumplimiento__
 
-Al estar la consola alojada en una infraestructura cualificada SecNumCloud, sus eventos se conservan durante un mínimo de __6 meses__, para cumplir los requisitos de seguridad y trazabilidad.
+Una vez finalizada la operación, una actividad pasa a la pestaña "Archivadas" entre 24 y 30 horas después de su creación. Las actividades archivadas se conservan __558 días__ (aproximadamente 18 meses), más allá del mínimo de 6 meses asociado a la cualificación SecNumCloud de la Consola. Consulte [Actividades](./concepts.md#actividades).
 
 ## Consulta de las últimas actualizaciones
 
