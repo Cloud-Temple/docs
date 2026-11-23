@@ -1,10 +1,10 @@
 ---
-title: Getting started with the Marketplace
+title: Marketplace Getting Started Guide
 ---
 import marketplaceCatalog from '@site/docs/marketplace/images/marketplace_catalog.png'
 import marketplaceSolutionDetails from '@site/docs/marketplace/images/marketplace_solution_details.png'
 
-# Getting started with the Marketplace
+# Marketplace Getting Started Guide
 
 This page guides you through the initial steps to use the **Cloud Temple Marketplace** from the console. Follow these instructions to discover available solutions and deploy them quickly.
 
@@ -12,22 +12,22 @@ This page guides you through the initial steps to use the **Cloud Temple Marketp
 
 ## Prerequisites
 
-Before you begin, ensure the following:
+Before getting started, make sure of the following:
 
-1. **Active subscription**: To enable deployments, your organization must have subscribed to at least one Cloud Temple service (Open Source IaaS or VMware IaaS). When working with our partners, you do not need a specific subscription.
-2. **User permissions**: Your user account must have the necessary rights to access the console and write permissions on the target environments when you want to deploy resources there.
+1. **Active subscription**: To enable deployments, your organization must have subscribed to at least one Cloud Temple service (OpenIaaS, VMware, or VM Instances). When working in contact with our partners, you do not need a specific subscription.
+2. **User permissions**: Your user account must have the necessary rights to access the console and write permissions on the target environments when you wish to deploy resources.
 3. **Target environment**: Have a tenant configured for solution deployment.
 
 ---
 
-## Marketplace Access
+## Accessing the Marketplace
 
 ### 1. Access from the Console
 
-Once logged into the Cloud Temple console, you can access the Marketplace in several ways:
+Once logged in to the Cloud Temple console, you can access the Marketplace in several ways:
 
 - **Main menu**: A **Marketplace** menu is available in the main navigation
-- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS and VMware environments
+- **Virtual machine pages**: The Marketplace is also accessible from the virtual machine creation pages in OpenIaaS, VMware, and VM Instances environments
 
 ### 2. Marketplace Page
 
@@ -42,40 +42,41 @@ The Marketplace page presents a catalog of available solutions. Each solution di
 
 ---
 
-## Viewing the details of a solution
+## Viewing Solution Details
 
-### Access to detailed information
+### Accessing detailed information
 
-By clicking on a solution, you access a details page that includes:
+By clicking on a solution, you are taken to a details page including:
 
-- **Complete description** of the solution
+- **Full description** of the solution
 - **Technical specifications** (if applicable)
 - **Deployment prerequisites**
-- **Documentation** provided by the vendor
+- **Documentation** provided by the publisher
 - **Available deployment options**
 
 <img src={marketplaceSolutionDetails} />
 
 ---
 
-## Available actions
+## Available Actions
 
 Depending on the solution type, different actions are possible:
 
 ### Deploying virtual machine images
 
-For solutions compatible with your OpenIaaS or VMware environments, you can deploy directly from the Marketplace.
+For solutions compatible with your OpenIaaS, VMware, or VM Instances environments, you can deploy directly from the Marketplace.
 
-**Important note:** Direct deployment is only available for images that list your environment among their compatible targets.
+**Important note:** Direct deployment is only available for images that have your environment in their compatible targets.
 
 **Detailed guides:**
 
-- [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas)
-- [How to deploy an image on VMware?](tutorials/deploy_vmware)
+- [How to deploy an image on OpenIaaS?](tutorials/deploy_openiaas.md)
+- [How to deploy an image on VMware?](tutorials/deploy_vmware.md)
+- [How to deploy an image on VM Instance?](tutorials/deploy_vminstance.md)
 
-### Contact with Partners
+### Contacting partners
 
-For solutions requiring matchmaking, you can contact the vendor partner directly.
+For solutions requiring a connection, you can directly contact the publishing partner.
 
 **Detailed guide:**
 

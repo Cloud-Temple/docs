@@ -484,6 +484,7 @@ const sidebars: SidebarsConfig = {
         tutorials('marketplace', { type: 'generated-index', slug: '/marketplace/tutorials' }, [
           'marketplace/tutorials/deploy_openiaas',
           'marketplace/tutorials/deploy_vmware',
+          'marketplace/tutorials/deploy_vminstance',
           'marketplace/tutorials/contact_partner',
           'marketplace/tutorials/customize_image_openiaas',
           'marketplace/tutorials/customize_image_vmware',
