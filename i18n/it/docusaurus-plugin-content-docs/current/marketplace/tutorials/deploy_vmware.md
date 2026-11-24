@@ -1,27 +1,27 @@
 ---
-title: Distribuire un'immagine su VMware
+title: Deployare un'immagine su VMware
 ---
 import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
 import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
-Questo tutorial vi guida nel distribuire un'immagine di macchina virtuale dalla Marketplace Cloud Temple al vostro ambiente VMware.
+Questo tutorial ti guida nel deployment di un'immagine di macchina virtuale dalla Marketplace Cloud Temple verso il tuo ambiente VMware.
 
 ## Prerequisiti
 
 - Disporre di un ambiente VMware configurato
-- Avere i permessi per la creazione di macchine virtuali
-- L'immagine deve avere **VMware** nei target compatibili
+- Avere i permessi di creazione di macchine virtuali
+- L'immagine deve avere **VMware** tra le sue destinazioni compatibili
 
-## Fasi di distribuzione
+## Fasi di deployment
 
-### 1. Selezione e distribuzione
+### 1. Selezione e deployment
 
-Dalla pagina dei dettagli di una soluzione compatibile con VMware, selezionate il vostro ambiente di destinazione e fate clic su **Distribuisci** :
+Dalla pagina di dettaglio di una soluzione compatibile con VMware, seleziona il tuo ambiente di destinazione e fai clic su **Deploy** :
 <img src={marketplaceVmwareDeployment} />
 
 ### 2. Configurazione della macchina virtuale
 
-Configurate i parametri di base della vostra macchina virtuale :
+Configura i parametri di base della tua macchina virtuale :
 
 - **Nome** della VM
 - **Risorse** (CPU, RAM)
@@ -30,19 +30,21 @@ Configurate i parametri di base della vostra macchina virtuale :
 
 <img src={marketplaceVmwareConfig} />
 
-Il deployment avviene generalmente in meno di 10 minuti in base alla dimensione dell'immagine.
+Il deployment viene generalmente completato in meno di 10 minuti a seconda della dimensione dell'immagine.
 
 ## Accesso alternativo
 
-È inoltre possibile accedere direttamente ai template del Marketplace dall'interfaccia VMware:
+È inoltre possibile accedere ai template Marketplace direttamente dall'interfaccia VMware :
 
-1. Accedete a **vSphere** > **Distribuisci una VM**
-2. Selezionate **Template Marketplace** come origine
-3. Esplorate le immagini disponibili nel catalogo integrato
+1. Accedi a **vSphere** > **Deploy VM**
+2. Seleziona **Template Marketplace** come origine
+3. Sfoglia le immagini disponibili nel catalogo integrato
 
 ## Monitoraggio del deployment
 
-Una volta avviato il deployment:
+Una volta avviato il deployment :
 
-- Monitorate l'avanzamento dalla console VMware
-- La VM apparirà nel vostro inventario vSphere
+- Monitora l'avanzamento dalla console VMware
+- La VM apparirà nel tuo inventario vSphere
+
+Se l'immagine fornisce credenziali predefinite, sostituisci la password al primo accesso.

@@ -46,3 +46,5 @@ Une fois le déploiement lancé :
 
 - Suivez l'avancement depuis la console VMware
 - La VM apparaîtra dans votre inventaire vSphere
+
+Si l'image fournit des identifiants par défaut, remplacez le mot de passe dès la première connexion.
