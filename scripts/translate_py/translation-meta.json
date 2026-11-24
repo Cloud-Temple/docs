@@ -649,10 +649,10 @@
       "it": "f43e03c80b30273af60eab3fd56fe4cb7d8f574191d78ec97dfd520175bde003"
     },
     "marketplace/concepts.md": {
-      "en": "340c9fcf76c5d6bb8e8b159a6a9664b1ab33954fe2e03d240459ee6fc41d1a21",
-      "de": "340c9fcf76c5d6bb8e8b159a6a9664b1ab33954fe2e03d240459ee6fc41d1a21",
-      "es": "340c9fcf76c5d6bb8e8b159a6a9664b1ab33954fe2e03d240459ee6fc41d1a21",
-      "it": "340c9fcf76c5d6bb8e8b159a6a9664b1ab33954fe2e03d240459ee6fc41d1a21"
+      "en": "e95f7812ef9d2e71587da27f71cc1941e59ff9e77e69469776867c2cc2c09e57",
+      "de": "e95f7812ef9d2e71587da27f71cc1941e59ff9e77e69469776867c2cc2c09e57",
+      "es": "e95f7812ef9d2e71587da27f71cc1941e59ff9e77e69469776867c2cc2c09e57",
+      "it": "e95f7812ef9d2e71587da27f71cc1941e59ff9e77e69469776867c2cc2c09e57"
     },
     "marketplace/faq.md": {
       "en": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
@@ -667,10 +667,10 @@
       "it": "2a49f54b3ea5c8d58b7e4051fe93ef54fd475238c2e0d195cf179e190102a7ec"
     },
     "marketplace/quickstart.md": {
-      "en": "d9685d9af9edefbbcab208f992bf39a29dce7a9e097f130c1642152cec967e6a",
-      "de": "d9685d9af9edefbbcab208f992bf39a29dce7a9e097f130c1642152cec967e6a",
-      "es": "d9685d9af9edefbbcab208f992bf39a29dce7a9e097f130c1642152cec967e6a",
-      "it": "d9685d9af9edefbbcab208f992bf39a29dce7a9e097f130c1642152cec967e6a"
+      "en": "ddcf9541cd5829ba4a90c94739fcf79b88879e799294d7aa24ebf300556432b4",
+      "de": "ddcf9541cd5829ba4a90c94739fcf79b88879e799294d7aa24ebf300556432b4",
+      "es": "ddcf9541cd5829ba4a90c94739fcf79b88879e799294d7aa24ebf300556432b4",
+      "it": "ddcf9541cd5829ba4a90c94739fcf79b88879e799294d7aa24ebf300556432b4"
     },
     "marketplace/tutorials/contact_partner.md": {
       "en": "919d8dffb4e5d0ef80ae0563f80c63d78bce3fa575683a8f0b9d39eda62bdb4f",
@@ -691,16 +691,16 @@
       "it": "429c426eb07d8ecf2cc6043b1a43d92330d7ee28f775f6d8d30826896f8e0430"
     },
     "marketplace/tutorials/deploy_openiaas.md": {
-      "en": "7e3b5e63cd4ebeccdc1bca42e04c0ee5e08714fc8af6dba36d03b831eaad1067",
-      "de": "7e3b5e63cd4ebeccdc1bca42e04c0ee5e08714fc8af6dba36d03b831eaad1067",
-      "es": "7e3b5e63cd4ebeccdc1bca42e04c0ee5e08714fc8af6dba36d03b831eaad1067",
-      "it": "7e3b5e63cd4ebeccdc1bca42e04c0ee5e08714fc8af6dba36d03b831eaad1067"
+      "en": "ef73848a1da1023edc2a1346ebafcfa713c43be8d8c2872845831fdf9f1a710a",
+      "de": "ef73848a1da1023edc2a1346ebafcfa713c43be8d8c2872845831fdf9f1a710a",
+      "es": "ef73848a1da1023edc2a1346ebafcfa713c43be8d8c2872845831fdf9f1a710a",
+      "it": "ef73848a1da1023edc2a1346ebafcfa713c43be8d8c2872845831fdf9f1a710a"
     },
     "marketplace/tutorials/deploy_vmware.md": {
-      "en": "746cd9968d6afaa656d0d41a8dcb7555c37296ca8eb6ca686fe58d797ba427eb",
-      "de": "746cd9968d6afaa656d0d41a8dcb7555c37296ca8eb6ca686fe58d797ba427eb",
-      "es": "746cd9968d6afaa656d0d41a8dcb7555c37296ca8eb6ca686fe58d797ba427eb",
-      "it": "746cd9968d6afaa656d0d41a8dcb7555c37296ca8eb6ca686fe58d797ba427eb"
+      "en": "310a5260a25d666c7169febf7ca5261bce070f61ab11bc358ab81964410ce52c",
+      "de": "310a5260a25d666c7169febf7ca5261bce070f61ab11bc358ab81964410ce52c",
+      "es": "310a5260a25d666c7169febf7ca5261bce070f61ab11bc358ab81964410ce52c",
+      "it": "310a5260a25d666c7169febf7ca5261bce070f61ab11bc358ab81964410ce52c"
     },
     "network/anti_ddos/anti_ddos.md": {
       "en": "a9b0877d9906f13fb68f030f1cea424c1075aeef13b30ed2cd44dc0d9fde3195",
@@ -1193,8 +1193,14 @@
       "de": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
       "es": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f",
       "it": "755f348608e1e3aa053dc2ef11019194248a2d9f31d9df231d0e17a6f0a53d9f"
+    },
+    "marketplace/tutorials/deploy_vminstance.md": {
+      "en": "3937788bc775c711d2c8610b2d19e4f0fd810d7f68dcb946d223918cd5fefd15",
+      "de": "3937788bc775c711d2c8610b2d19e4f0fd810d7f68dcb946d223918cd5fefd15",
+      "es": "3937788bc775c711d2c8610b2d19e4f0fd810d7f68dcb946d223918cd5fefd15",
+      "it": "3937788bc775c711d2c8610b2d19e4f0fd810d7f68dcb946d223918cd5fefd15"
     }
   },
-  "last_update": "2026-11-18T17:44:45.111604",
+  "last_update": "2026-11-24T01:04:19.310702",
   "version": "2.0"
 }

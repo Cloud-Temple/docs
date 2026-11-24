@@ -14,7 +14,7 @@ Cette page vous guide à travers les étapes initiales pour utiliser la **Market
 
 Avant de commencer, assurez-vous des points suivants :
 
-1. **Souscription activée** : Pour permettre des déploiements votre organisation doit avoir souscrit à au moins un service Cloud Temple (IaaS OpenSource ou IaaS VMware). Dans le cadre de contact avec nos partenaire vous n'avez pas besoin de souscription spécifique.
+1. **Souscription activée** : Pour permettre des déploiements votre organisation doit avoir souscrit à au moins un service Cloud Temple (OpenIaaS, VMware ou VM Instances). Dans le cadre de contact avec nos partenaire vous n'avez pas besoin de souscription spécifique.
 2. **Permissions utilisateur** : Votre compte utilisateur doit disposer des droits nécessaires pour accéder à la console et des droits d'écritures sur les environnements cibles lorsque vous souhaitez y déployer des ressources.
 3. **Environnement cible** : Disposer d'un tenant configuré pour le déploiement des solutions.
 
@@ -27,7 +27,7 @@ Avant de commencer, assurez-vous des points suivants :
 Une fois connecté à la console Cloud Temple, vous pouvez accéder à la Marketplace de plusieurs façons :
 
 - **Menu principal** : Un menu **Marketplace** est disponible dans la navigation principale
-- **Pages machines virtuelles** : La Marketplace est également accessible depuis les pages de création de machines virtuelles dans les environnements OpenIaaS et VMware
+- **Pages machines virtuelles** : La Marketplace est également accessible depuis les pages de création de machines virtuelles dans les environnements OpenIaaS, VMware et VM Instances
 
 ### 2. Page Marketplace
 
@@ -64,14 +64,15 @@ Selon le type de solution, différentes actions sont possibles :
 
 ### Déploiement d'images de machines virtuelles
 
-Pour les solutions compatibles avec vos environnements OpenIaaS ou VMware, vous pouvez déployer directement depuis la Marketplace.
+Pour les solutions compatibles avec vos environnements OpenIaaS, VMware ou VM Instances, vous pouvez déployer directement depuis la Marketplace.
 
 **Note importante :** Le déploiement direct n'est disponible que pour les images ayant votre environnement dans leurs cibles compatibles.
 
 **Guides détaillés :**
 
-- [Comment déployer une image sur OpenIaaS ?](tutorials/deploy_openiaas)
-- [Comment déployer une image sur VMware ?](tutorials/deploy_vmware)
+- [Comment déployer une image sur OpenIaaS ?](tutorials/deploy_openiaas.md)
+- [Comment déployer une image sur VMware ?](tutorials/deploy_vmware.md)
+- [Comment déployer une image sur VM Instance ?](tutorials/deploy_vminstance.md)
 
 ### Contact avec les partenaires
 

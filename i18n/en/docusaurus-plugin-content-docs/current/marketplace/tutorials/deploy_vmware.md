@@ -1,5 +1,5 @@
 ---
-title: Deploy an image on VMware
+title: Deploying an image on VMware
 ---
 import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
 import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
@@ -12,16 +12,16 @@ This tutorial guides you through deploying a virtual machine image from the Clou
 - Have permissions to create virtual machines
 - The image must have **VMware** in its compatible targets
 
-## Deployment Steps
+## Deployment steps
 
 ### 1. Selection and deployment
 
-From the details page of a VMware-compatible solution, select your target environment and click **Deploy** :
+From the detail page of a VMware-compatible solution, select your target environment and click **Deploy**:
 <img src={marketplaceVmwareDeployment} />
 
-### 2. Virtual Machine Configuration
+### 2. Virtual machine configuration
 
-Configure the basic settings of your virtual machine:
+Configure the basic parameters of your virtual machine:
 
 - **Name** of the VM
 - **Resources** (CPU, RAM)
@@ -30,19 +30,21 @@ Configure the basic settings of your virtual machine:
 
 <img src={marketplaceVmwareConfig} />
 
-Deployment typically takes less than 10 minutes depending on the image size.
+Deployment generally takes less than 10 minutes depending on the image size.
 
-## Alternative Access
+## Alternative access
 
 You can also access Marketplace templates directly from the VMware interface:
 
-1. Navigate to **vSphere** > **Deploy a VM**
-2. Select **Template Marketplace** as the source
-3. Browse the available images in the built-in catalog
+1. Go to **vSphere** > **Deploy a VM**
+2. Select **Marketplace Template** as the source
+3. Browse the images available in the integrated catalog
 
-## Deployment Tracking
+## Deployment tracking
 
-Once the deployment has started:
+Once the deployment is launched:
 
 - Track progress from the VMware console
 - The VM will appear in your vSphere inventory
+
+If the image provides default credentials, change the password upon first login.

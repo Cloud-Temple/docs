@@ -1,22 +1,22 @@
 ---
-title: Bereitstellen eines Images auf VMware
+title: Ein Image auf VMware bereitstellen
 ---
 import marketplaceVmwareDeployment from '@site/docs/marketplace/images/marketplace_vmware_deploy.png'
 import marketplaceVmwareConfig from '@site/docs/marketplace/images/marketplace_vmware_config.png'
 
-Dieses Tutorial führt Sie bei der Bereitstellung eines Images einer virtuellen Maschine aus dem Cloud Temple Marketplace in Ihre VMware-Umgebung.
+Dieses Tutorial führt Sie durch die Bereitstellung eines virtuellen Maschinen-Images aus der Cloud Temple Marketplace in Ihre VMware-Umgebung.
 
 ## Voraussetzungen
 
-- Verfügen über eine konfigurierte VMware-Umgebung
-- Über die Berechtigungen zum Erstellen von virtuellen Maschinen verfügen
-- Das Image muss **VMware** in den kompatiblen Zielen enthalten
+- Eine konfigurierte VMware-Umgebung vorhanden haben
+- Berechtigungen zum Erstellen virtueller Maschinen besitzen
+- Das Image muss **VMware** in seinen kompatiblen Zielen enthalten
 
-## Deployment-Schritte
+## Bereitstellungsschritte
 
 ### 1. Auswahl und Bereitstellung
 
-Wählen Sie auf der Detailseite einer VMware-kompatiblen Lösung Ihre Zielumgebung aus und klicken Sie auf **Bereitstellen** :
+Auf der Detailseite einer VMware-kompatiblen Lösung wählen Sie Ihre Zielumgebung aus und klicken Sie auf **Bereitstellen**:
 <img src={marketplaceVmwareDeployment} />
 
 ### 2. Konfiguration der virtuellen Maschine
@@ -32,17 +32,19 @@ Konfigurieren Sie die grundlegenden Parameter Ihrer virtuellen Maschine:
 
 Die Bereitstellung dauert in der Regel weniger als 10 Minuten, abhängig von der Größe des Images.
 
-## Alternativer Zugriff
+## Alternative Zugriffsmöglichkeit
 
 Sie können auch direkt über die VMware-Oberfläche auf die Marketplace-Templates zugreifen:
 
 1. Navigieren Sie zu **vSphere** > **VM bereitstellen**
-2. Wählen Sie **Marketplace-Templates** als Quelle
+2. Wählen Sie **Template Marketplace** als Quelle
 3. Durchsuchen Sie die im integrierten Katalog verfügbaren Images
 
-## Deployment-Verfolgung
+## Bereitstellung verfolgen
 
-Sobald das Deployment gestartet wurde:
+Sobald die Bereitstellung gestartet wurde:
 
 - Verfolgen Sie den Fortschritt über die VMware-Konsole
 - Die VM wird in Ihrem vSphere-Inventar angezeigt
+
+Falls das Image Standard-Anmeldedaten bereitstellt, ersetzen Sie das Passwort bei der ersten Anmeldung.
